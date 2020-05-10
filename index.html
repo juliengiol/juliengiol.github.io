@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JG</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="jg.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-25018634-7');
+  </script>
+<!--script pour MathJax :-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [['\\(','\\)']]
+      },
+      asciimath2jax: {
+          ignoreClass: ".*",
+          processClass: "has_am"
+      },
+      jax: ["input/AsciiMath"],
+      extensions: ["asciimath2jax.js"],
+      TeX: {
+          extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+          // scrolling to fragment identifiers is controlled by other Javascript
+          positionToHash: false,
+          equationNumbers: { autoNumber: "none", useLabelIds: true, },
+          TagSide: "right",
+          TagIndent: ".8em",
+      },
+      // HTML-CSS output Jax to be dropped for MathJax 3.0
+      "HTML-CSS": {
+          scale: 88,
+          mtextFontInherit: true,
+      },
+      CommonHTML: {
+          scale: 88,
+          mtextFontInherit: true,
+      },
+  });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+<!--scripts pour SageMathCell :-->
+  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  'div.sagecell-interact',
+                           hide: ['editor', 'evalButton', 'permalink'],
+                           autoeval: true});
+    // Make *any* div with class 'compute' a Sage cell with Python
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           languages: ['python'],
+                           evalButtonText: 'Exécuter (Python)'});
+    });
+    </script>
+</head>
+
+<body>
+
+<div id="entete">
+  <h2>Julien Giol</h2>
+</div>
+
+<div>
+  <p><a href="https://juliengiol.github.io">Version française</a> / <a href="https://juliengiol.github.io/home.html">English version</a></p>
+  <p>Sur le Web :
+    <a href="https://www.linkedin.com/in/julien-giol-8a216443/?locale=fr_FR" target="_blank">LinkedIn</a>,
+    <a href="https://scholar.google.fr/citations?user=o3RET-QAAAAJ&hl=fr" target="_blank">Google Scholar</a>,
+    <a href="https://genealogy.math.ndsu.nodak.edu/id.php?id=131802" target="_blank">Généalogie Mathématique</a>,
+    <a href="https://math.stackexchange.com/users/38053/julien" target="_blank">Math Stack Exchange</a>.
+  </p>
+  <p>Contact : julien.giol arobase gmail.com.</p>
+</div>
+
+<div>
+  <p>Enseignement :</p>
+  <ul>
+    <li><a href="https://juliengiol.github.io/algorithmique/" target="_blank">Mathématiques et algorithmique</a></li>
+    <li><a href="https://juliengiol.github.io/ca/" target="_blank">Calcul avancé</a></li>
+    <li><a href="https://juliengiol.github.io/ci" target="_blank">Calcul de CI</a></li>
+  </ul>
+</div>
+
+<p>Voici comment calculer le PGCD de \(2589\) et de \(234\) avec l'algorithme d'Euclide implémenté en Python :</p>
+
+<div class="sagecell-python"><script type="text/x-sage"># entrées
+a = 2589
+b = 234
+# instructions
+while a % b != 0:
+    a, b = b, a % b
+# sortie
+print(b)
+</script></div>
+
+<p>Et voilà de quoi appliquer la méthode des rectangles pour calculer des valeurs approchées de l'intégrale définie \(\int_a^bf(x)\,\mathrm{d}x\) :</p>
+
+<div class="sagecell-interact"><script type="text/x-sage">@interact
+def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 5, width = 30), a = input_box(label = html(r'\(a\)'), default = 1, width = 10), b = input_box(label = html(r'\(b\)'), default = 7, width = 10), n = input_box(label = html(r'\(n\)'), default = 3, width = 10), Rectangles = ['Gauche', 'Milieu', 'Droite']):
+    if Rectangles == 'Gauche':
+        t = 0
+        couleur = 'blue'
+    elif Rectangles == 'Droite':
+        t = 1
+        couleur = 'yellow'
+    else:
+        t = 0.5
+        couleur = 'green'
+    f(x) = f
+    integrale = integral(f(x), x, a, b).n()
+    deltaX = (b - a) / n
+    x_k = a
+    approximation = 0
+    L = []
+    for i in range(0, n):
+        xi_i = x_k + t * deltaX
+        y_i = f(xi_i)
+        approximation = approximation + y_i
+        L = L + [(x_k, 0)]
+        L = L + [(x_k, y_i)]
+        x_k = x_k + deltaX
+        L = L + [(x_k, y_i)]
+    approximation = (deltaX * approximation).n()
+    erreur = integrale - approximation
+    L = L + [(x_k,0)]
+    G = plot(f(x), (x, a-(b-a)/20, b+(b-a)/20), color = 'red', thickness = 1)
+    G = G + plot(f(x), (x, a, b), color = 'red', thickness = 1, fill = true, fillcolor = 'grey')
+    G = G + polygon(L, edgecolor = 'black', color = couleur)
+    G.show(aspect_ratio = 'automatic', figsize = 5)
+    pretty_print(html(r'Valeur exacte : \[\int_{%s}^{%s}f(x)\,\mathrm{d}x=%s\]' %(a, b, integrale)))
+    pretty_print(html(r'Approximation par la méthode des rectangles : \[%s\]'%approximation))
+    pretty_print(html(r'Erreur : \[%s\]' %erreur))
+</script></div>
+
+<p>Apparemment, Einstein a dit ça : «La théorie, c'est quand on sait tout et que rien ne fonctionne. La pratique, c'est quand tout fonctionne et que personne ne sait pourquoi. Ici, nous avons réuni théorie et pratique : Rien ne fonctionne... et personne ne sait pourquoi !»</p>
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-7');
+</script><!--End: Google Global Site Tag code-->
+</body>
+
+</html>
