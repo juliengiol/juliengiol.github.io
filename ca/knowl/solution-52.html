@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:52-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.4.4.1</span><span class="period">.</span>
+</h6>
+<ul class="disc">
+<li>
+<p>Commençons par évaluer le gradient de \(f\)</p>
+<div class="displaymath">
+\begin{align*}
+\nabla f&amp;=\begin{bmatrix}f_x\\f_y\end{bmatrix}\\
+&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(\arctan(xy))\\\frac{\partial}{\partial y}(\arctan(xy))\end{bmatrix}\\
+&amp;=\begin{bmatrix}\frac{y}{1+(xy)^2}\\\frac{x}{1+(xy)^2}\end{bmatrix}
+\end{align*}
+</div>
+<p data-braille="continuation">au point \(P(1,2)\) :</p>
+<div class="displaymath">
+\begin{align*}
+\nabla f(1,2)&amp;=\begin{bmatrix}\frac{2}{1+(1\cdot 2)^2}\\\frac{1}{1+(1\cdot 2)^2}\end{bmatrix}\\
+&amp;=\begin{bmatrix}\frac{2}{5}\\\frac{1}{5}\end{bmatrix}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Rendons ensuite la direction \(\vec{v}\) unitaire :</p>
+<div class="displaymath">
+\begin{align*}
+\vec{u}&amp;=\frac{\overrightarrow{v}}{\|\overrightarrow{v}\|}\\
+&amp;=\frac{1}{\sqrt{5^2+10^2}}\begin{bmatrix}5\\10\end{bmatrix}\\
+&amp;=\frac{1}{5\sqrt{5}}\begin{bmatrix}5\\10\end{bmatrix}\\
+&amp;=\begin{bmatrix}\frac{1}{\sqrt{5}}\\\frac{2}{\sqrt{5}}\end{bmatrix}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Calculons enfin le produit scalaire de ces deux vecteurs :</p>
+<div class="displaymath">
+\begin{align*}
+f_{\vec{u}}(1,2)&amp;=\nabla f(1,2)\cdot\vec{u}\\
+&amp;=\begin{bmatrix}\frac{2}{5}\\\frac{1}{5}\end{bmatrix}\cdot\begin{bmatrix}\frac{1}{\sqrt{5}}\\\frac{2}{\sqrt{5}}\end{bmatrix}\\
+&amp;=\frac{2}{5}\cdot\frac{1}{\sqrt{5}}+\frac{1}{5}\cdot\frac{2}{\sqrt{5}}\\
+&amp;=\frac{4}{5\sqrt{5}}.
+\end{align*}
+</div>
+</li>
+</ul>
+</div>
+<span class="incontext"><a href="derivees-directionnelles.html#solution-52">??</a></span>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:17:16-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># fonction
+def rectanglesAuMilieu(f, a, b, n):
+    approximation = 0
+    deltaX = (b - a) / n
+    x = a + deltaX / 2
+    while x &lt; b:
+        approximation = approximation + f(x)
+        x = x + deltaX
+    approximation = deltaX * approximation
+    return approximation
+
+# test
+def f(x):
+    return 1 / (1 + x)
+print(rectanglesAuMilieu(f, 0.0, 1.0, 1000))
+</pre></div></body>
+</html>

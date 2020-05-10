@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="polaires" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Coordonnées polaires (6.3)</title>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-polaires-representation">
+    <statement>
+      <p>Les points ci-après sont donnés en coordonnées polaires <m>(r,\theta)</m>. Représentez-les graphiquement.
+        <ol>
+          <li><m>\displaystyle A=\left(2\,;\,\frac{\pi}{2}\right)</m></li>
+          <li><m>\displaystyle B=\left(2\,;\,\frac{2\pi}{3}\right)</m></li>
+          <li><m>\displaystyle C=\left(-2\,;\,\frac{2\pi}{3}\right)</m></li>
+          <li><m>\displaystyle D=\left(2\,;\,-5\pi\right)</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>Les quatre points sont situés sur le cercle de rayon <m>2</m> centré à l'origine.</p>
+      <p>Voici leur représentation avec Desmos : <url href="https://www.desmos.com/calculator/ydmxxp7ioe">Desmos</url>.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-polaires-a-cartesiennes">
+    <statement>
+      <p>Les points ci-après sont donnés en coordonnées polaires <m>(r,\theta)</m>. Calculez leurs coordonnées cartésiennes en utilisant les formules de conversion suivantes : <me>x=r\cos\theta\qquad\mbox{et}\qquad y=r\sin\theta</me>
+        <ol>
+          <li><m>\displaystyle\left(2\,;\,\frac{5\pi}{4}\right)</m></li>
+          <li><m>\displaystyle\left(2\,;\,\frac{13\pi}{4}\right)</m></li>
+          <li><m>\displaystyle\left(2\,;\,-\frac{3\pi}{4}\right)</m></li>
+          <li><m>\displaystyle\left(-2\,;\,\frac{\pi}{4}\right)</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>Les quatre points sont les mêmes et admettent <m>(-\sqrt{2}\,;\,-\sqrt{2})</m> comme coordonnées cartésiennes.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-ambiguite-cartesiennes-a-polaires">
+    <statement>
+      <p>Si un point admet <m>(x\,;\,y)</m> comme coordonnées cartésiennes et que <m>x</m> est différent de zéro, alors tout couple de coordonnées polaires <m>(r,\theta)</m> tel que <m>r</m> est positif vérifie :<me>r=\sqrt{x^2+y^2}\qquad\mbox{et}\qquad\tan\theta=\frac{y}{x}</me></p>
+      <p>Ceci permet de calculer <m>r</m> directement. Malheureusement, la formule <m>\arctan(y/x)</m> ne donne pas toujours une valeur de <m>\theta</m> adéquate.</p>
+      <p>Représentez graphiquement chacun des points ci-après, calculez <m>\sqrt{x^2+y^2}</m> et <m>\arctan(y/x)</m>, et indiquez si les valeurs obtenues fournissent un couple de coordonnées polaires valides.</p>
+      <p>
+        <ol>
+          <li><m>(1\,;\,\sqrt{3})</m></li>
+          <li><m>(-1\,;\,\sqrt{3})</m></li>
+          <li><m>(1\,;\,-\sqrt{3})</m></li>
+          <li><m>(-1\,;\,-\sqrt{3})</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>Voici comment représenter ces quatre points avec Desmos : <url href="https://www.desmos.com/calculator/3oak7h0ve2">Desmos</url>.</p>
+      <p>
+        <ol>
+          <li><m>\sqrt{x^2+y^2}=2</m> et <m>\arctan(y/x)=\frac{\pi}{3}</m> donnent des coordonnées polaires valides.</li>
+          <li><m>\sqrt{x^2+y^2}=2</m> et <m>\arctan(y/x)=-\frac{\pi}{3}</m> donnent des coordonnées polaires non valides.</li>
+          <li><m>\sqrt{x^2+y^2}=2</m> et <m>\arctan(y/x)=-\frac{\pi}{3}</m> donnent des coordonnées polaires valides.</li>
+          <li><m>\sqrt{x^2+y^2}=2</m> et <m>\arctan(y/x)=\frac{\pi}{3}</m> donnent des coordonnées polaires non valides.</li>
+        </ol>
+      </p>
+      <p>On remarque que dans les deux cas où on n'obtient pas des coordonnées polaires valides, <m>x</m> est négatif et il suffit de prendre <m>\pi+\arctan(y/x)</m> pour obtenir le bon <m>\theta</m>.</p>
+    </answer>
+  </exercise>
+
+  <p>Avec ce qu'on vient de remarquer dans l'exercice précédent, on est en mesure de définir un <url href="https://goo.gl/SQbppZ">algorithme de conversion</url> des coordonnées cartésiennes aux coordonnées polaires. On en profite pour l'appliquer au point <m>(-1\,;\,\sqrt{3})</m>.</p>
+
+  <sage>
+    <input>
+      def cartesiennes_a_polaires(x, y):
+        r = sqrt(x^2+y^2)
+        if x == 0:
+          if y == 0:
+            theta = 0
+          elif y > 0:
+            theta = pi/2
+          else:
+            theta = -pi/2
+        elif x > 0:
+          theta = arctan(y/x)
+        else:
+          theta = pi + arctan(y/x)
+        return r, theta
+
+      p = cartesiennes_a_polaires(-1, sqrt(3))
+
+      show(p)
+    </input>
+  </sage>
+
+  <exercise xml:id="exercice-cartesiennes-a-polaires">
+    <statement>
+      <p>Les points ci-après sont donnés en coordonnées cartésiennes. Représentez-les graphiquement, puis donnez l'unique couple de coordonnées polaires <m>(r\,;\,\theta)</m> vérifiant <m>r>0</m> et <m>\theta\in]-\pi\,;\,\pi]</m>.
+        <ol>
+          <li><m>\displaystyle\left(1\,;\,1\right)</m></li>
+          <li><m>\displaystyle\left(1\,;\,-1\right)</m></li>
+          <li><m>\displaystyle\left(-3\,;\,3\right)</m></li>
+          <li><m>\displaystyle\left(-2\,;\,-3\right)</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li><m>\displaystyle\left(\sqrt{2}\,;\,\frac{\pi}{4}\right)</m></li>
+          <li><m>\displaystyle\left(\sqrt{2}\,;\,-\frac{\pi}{4}\right)</m></li>
+          <li><m>\displaystyle\left(3\sqrt{2}\,;\,\frac{3\pi}{4}\right)</m></li>
+          <li><m>\displaystyle\left(\sqrt{13}\,;\,\arctan\left(\frac{3}{2}\right)-\pi\right)</m></li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-courbe-polaire-1">
+    <statement>
+      <p>L'équation polaire <m>r=2\cos\theta</m> définit une courbe du plan.
+        <ol>
+          <li>Parmi les coordonnées polaires <m>(r\,;\,\theta)</m> qui suivent, indiquez celles qui définissent des points appartenant à la courbe :
+            <me>\left(1\,;\,\frac{\pi}{3}\right)\qquad\left(\sqrt{2}\,;\,\frac{3\pi}{4}\right)\qquad\left(-\sqrt{2}\,;\,\frac{3\pi}{4}\right)\qquad\left(0\,;\,\frac{\pi}{2}\right)</me>
+          </li>
+          <li>Construisez les points de la courbe correspondant aux valeurs de <m>\theta</m> suivantes :<me>0\qquad\frac{\pi}{6}\qquad\frac{\pi}{2}\qquad\frac{5\pi}{6}\qquad\pi</me></li>
+          <li>Pourquoi suffit-il de construire les points correspondant aux valeurs de <m>\theta</m> appartenant à <m>[0\,;\,\pi[</m>?</li>
+          <li>Parmi les coordonnées cartésiennes <m>(x\,;\,y)</m> qui suivent, indiquez celles qui définissent des points appartenant à la courbe :
+            <me>\left(2\,;\,0\right)\qquad\left(-2\,;\,0\right)\qquad\left(0\,;\,1\right)\qquad\left(0\,;\,0\right)</me>
+          </li>
+          <li>Montrez que l'équation cartésienne de cette courbe peut s'écrire <m>(x-1)^2+y^2=1</m>.</li>
+          <li>Décrivez cette courbe en mots.</li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <me>\left(1\,;\,\frac{\pi}{3}\right)\qquad\left(-\sqrt{2}\,;\,\frac{3\pi}{4}\right)\qquad\left(0\,;\,\frac{\pi}{2}\right)</me>
+          </li>
+          <li>Voici le résultat avec Desmos : <url href="https://www.desmos.com/calculator/mkacfntzu0">Desmos</url>.</li>
+          <li>
+            <p>Essentiellement, c'est parce que <m>\cos(\theta+\pi)=-\cos(\theta)</m> pour tout <m>\theta</m>. En effet, cela entraîne que les points de la courbe obtenus pour <m>\theta</m> et <m>\theta+\pi</m> sont les mêmes.</p>
+            <p>Par exemple, <m>\theta=\frac{\pi}{6}</m> donne <m>r=2\cos(\pi/6)=\sqrt{3}</m> alors que <m>\theta=\frac{\pi}{6}+\pi</m> donne <m>r=2\cos(7\pi/6)=-\sqrt{3}</m>. Et les coordonnées polaires <m>(\sqrt{3}\,;\,\pi/6)</m> et  <m>(-\sqrt{3}\,;\,7\pi/6)</m> correspondent au même point.</p>
+          </li>
+          <li>
+            <me>\left(2\,;\,0\right)\qquad\left(0\,;\,0\right)</me>
+          </li>
+          <li>
+            <p>On note que <m>r=0</m> si et seulement si <m>x=y=0</m>, et que le point correspondant appartient à la fois à la courbe polaire <m>r=2\cos\theta</m> et la courbe cartésienne <m>(x-1)^2+y^2=1</m>.</p>
+            <p>Pour <m>r\neq 0</m>, l'équation est équivalente à <m>r^2=2r\cos\theta</m> après multiplication par <m>r</m>, c'est-à-dire à <m>x^2+y^2=2x</m>.</p>
+            <p>Après complétion du carré, on obtient bien <m>(x-1)^2+y^2=1</m>.</p>
+            <p>La courbe polaire <m>r=2\cos\theta</m> et la courbe cartésienne <m>(x-1)^2+y^2=1</m> sont donc constituées des mêmes points.</p>
+          </li>
+          <li>C'est le cercle de centre <m>(1\,;\,0)</m> et de rayon <m>1</m>.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-representation-courbe-polaire">
+    <statement>Esquissez la courbe polaire <m>r=1+\sin\theta</m>.
+    </statement>
+    <answer>
+      <p>Voici comment faire cela avec Desmos : <url href="https://www.desmos.com/calculator/fq6qm28oxe">courbe polaire avec Desmos</url>.</p>
+      <p>Notez que la lettre grecque <m>\theta</m> s'obtient en tapant theta.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-representation-courbes-polaire">
+    <statement>
+      <p>Utilisez un outil informatique pour représenter les courbes polaires qui suivent.
+        <ol>
+          <li><m>r=\cos(2\theta)</m></li>
+          <li><m>r=\sin(8\theta/5)</m></li>
+          <li><m>r=1+c\sin\theta</m> où <m>c\in\mathbb{R}</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>Voici comment faire cela avec Desmos : <url href="https://www.desmos.com/calculator/lr8otditqy">courbes polaires avec Desmos</url>.</p>
+    </answer>
+  </exercise>
+
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 2, 4, 6, 8, 10, 12, 69, 70, 71 et 74 de la section 6.3 dont voici les <url href="https://drive.google.com/file/d/1rnKfo4cEdCiKGmnmwuKwQjri-eM2WaYd/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+</section>

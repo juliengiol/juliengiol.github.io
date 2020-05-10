@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="serie-de-leibniz" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>La série de Leibniz</title>
+
+<p>Le but de cette section est de développer un exemple pas à pas pour comprendre les concepts fondamentaux du chapitre 2 concernant les séries entières et les séries de Taylor. On commence avec la fonction <m>\displaystyle f(x)=\frac{1}{1-x}</m>.</p>
+
+<ol>
+  <li><p>Pour tout <m>x\in ]-1\,;\,1[</m>, <m>f(x)</m> est égal à la somme de la série géométrique de raison <m>r=x</m> et de premier terme <m>a=1</m>:
+    <me>\frac{1}{1-x}=\sum_{n=0}^{+\infty}x^n</me>
+  On vient ainsi de développer la fonction <m>\displaystyle f(x)=\frac{1}{1-x}</m> en série entière autour de <m>0</m>.
+  </p></li>
+  <li><p>Par le théorème 2 page 62, on peut...</p><ul>
+    <li><p>dériver ce développement en série entière (DSE) terme à terme, ce qui donne :
+      <me>\frac{1}{(1-x)^2}=\sum_{n=0}^{+\infty}(n+1)x^n\qquad\forall x\in ]-1\,;\,1[</me>
+      On obtient ainsi le DSE autour de <m>0</m> d'une nouvelle fonction.</p>
+    </li>
+    <li><p>intégrer ce DSE terme à terme, ce qui donne, après ajustement de la constante d'intégration :
+      <me>-\ln(1-x)=\sum_{n=1}^{+\infty}\frac{x^n}{n}\qquad\forall x\in ]-1\,;\,1[</me>
+      En remplaçant x par 1/2, on en déduit la formule suivante :
+      <me>\ln(2)=\sum_{n=1}^{+\infty}\frac{1}{n2^n}</me></p>
+    </li>
+  </ul></li>
+  <li><p>Application : approximation de <m>\pi</m> à l'aide de la série de Leibniz.</p><ol>
+    <li>En remplaçant <m>x</m> par <m>-x^2</m> dans le DSE de <m>f(x)</m>, on trouve :
+      <me>\frac{1}{1+x^2}=\sum_{n=0}^{+\infty}(-1)^nx^{2n}\qquad\forall x\in ]-1\,;\,1[</me>
+    </li>
+    <li>En intégrant terme à terme le DSE précédent, on obtient, après ajustement de la constante d'intégration :
+      <me>\arctan(x)=\sum_{n=0}^{+\infty}(-1)^n\frac{x^{2n+1}}{2n+1}\qquad\forall x\in ]-1\,;\,1[</me>
+    </li>
+    <li>En faisant tendre <m>x</m> vers <m>1</m> terme à terme dans le DSE précédent, on a :
+      <me>\arctan(1)=\sum_{n=0}^{+\infty}(-1)^n\frac{1}{2n+1}</me>
+    </li>
+    <li>En multipliant l'équation précédente par 4, on obtient <m>\pi</m> comme somme d'une série satisfaisant les conditions d'application du test des séries alternées :
+      <me>\pi=\sum_{n=0}^{+\infty}(-1)^n\frac{4}{2n+1}</me>
+    </li>
+    <li>Explicitons le regroupement de termes <m>\displaystyle S=S_{19}+R_{19}</m> pour la série donnant <m>\pi</m> ci-dessus. Cela donne:
+      <me>\pi=\sum_{n=0}^{19}(-1)^n\frac{4}{2n+1}+\sum_{n=20}^{+\infty}(-1)^n\frac{4}{2n+1}</me>
+      <me>\pi=\underbrace{4-\frac{4}{3}+\frac{4}{5}-\ldots-\frac{4}{39}}_{S_{19}}+\underbrace{\frac{4}{41}-\frac{4}{43}+\ldots}_{R_{19}}</me>
+    </li>
+    <li><p>
+    Calculons <m>S_{19}</m> et estimons <m>R_{19}</m>. On obtient :</p>
+      <me>S_{19}=\sum_{n=0}^{19}(-1)^n\frac{4}{2n+1}=\frac{516197940314096}{166966608033225}\approx 3,09</me>
+      <me> |R_{19}|\leq \frac{4}{41}\approx 0,098</me>
+    </li>
+    <li>Concluons en encadrant <m>\pi</m> :
+      <me>3,0 &lt; S_{19} &lt; 3,1</me>
+      <me>0 &lt; R_{19} &lt; 0,1</me>
+      <me>3,0+0 &lt; S_{19}+R_{19} &lt; 3,1+0,1</me>
+      <me>3,0 &lt; \pi &lt; 3,2</me>
+    </li>
+    <li><p>Remarques :</p><ul>
+      <li>Le fait qu'on ait le droit d'effectuer des opérations comme la dérivation, l'intégration ou la limite terme à terme dans un DSE n'est pas évident. Il y a de vrais théorèmes cachés derrière. Pour le point 3 c. par exemple, on peut invoquer un <url href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_d%27Abel_%28analyse%29">théorème attribué à Abel</url>.</li>
+      <li>Dans le cadre du test des séries alternées, la valeur absolue de l'erreur est inférieure à la valeur absolue du premier terme oublié. De plus, l'erreur est positive si le premier terme oublié est positif, et elle est négative dans le cas contraire.</li>
+      <li>Quand on augmente <m>n</m>, on fait diminuer l'erreur <m>R_n</m>. Dans le cas de cette série, l'erreur ne diminue pas très vite : il faudrait se rendre très loin dans la somme partielle pour commencer à obtenir un nombre satisfaisant de décimales correctes pour la somme <m>S=\pi</m>.</li>
+      <li>L'estimation obtenue ci-dessus est toutefois suffisante pour réfuter <em>la <url href="https://fr.wikipedia.org/wiki/Projet_de_loi_pi_de_l%27Indiana">proposition de loi No 246</url> qui faillit être adoptée en 1897 par l'Assemblée législative de l'Indiana</em>. Si on en croit Wikipedia, cette dernière impliquait entre autres que <m>\pi</m> serait égal à 3,2.</li>
+    </ul></li>
+  </ol></li>
+</ol>
+
+</section>

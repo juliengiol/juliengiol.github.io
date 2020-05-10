@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:46-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">d.1</span><span class="period">.</span>
+</h6>
+<ul class="disc">
+<li>
+<p>Voici l'arbre de dépendance des variables \(x,y,z,s,t,u\) : <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/4.3_synthese4.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on en déduit que</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial t}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial t}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial t}\\
+&amp;=\frac{\partial}{\partial x}(x^4+x^2y)\cdot\frac{\partial}{\partial t}(s+2t-1)+\frac{\partial}{\partial y}(x^4+x^2y)\cdot\frac{\partial}{\partial t}(stu^2)\\
+&amp;=(4x^3+2xy)\cdot 2+x^2\cdot su^2.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Lorsque \(s=4,t=2,u=1\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+x=4+2\cdot 2-1=7\quad\text{et}\quad y=4\cdot 2\cdot 1^2=8.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>On obtient donc finalement</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial t}\Bigg\rvert_{(s,t,u)=(4,2,1)}&amp;=(4x^3+2xy)\cdot 2+x^2\cdot su^2\Bigg\rvert_{(s,t,u)=(4,2,1)}\\
+&amp;=(4\cdot 7^3+2\cdot 7\cdot 8)\cdot 2+7^2\cdot 4\cdot 1^2\\
+&amp;=3164.
+\end{align*}
+</div>
+</li>
+</ul>
+</div>
+<span class="incontext"><a href="derivation-en-chaine.html#solution-46">??</a></span>
+</body>
+</html>

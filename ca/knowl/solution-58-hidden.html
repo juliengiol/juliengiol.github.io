@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Il s'agit de calculer la dérivée directionnelle.</p>
+<ul class="disc">
+<li>
+<p>Commençons par évaluer le gradient de \(T\)</p>
+<div class="displaymath">
+\begin{align*}
+\nabla T&amp;=\begin{bmatrix}T_x\\T_y\\T_z\end{bmatrix}\\
+&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(200e^{-x^2-3y^2-9z^2})\\\frac{\partial}{\partial y}\left(200e^{-x^2-3y^2-9z^2}\right)\\\frac{\partial}{\partial z}(200e^{-x^2-3y^2-9z^2})\end{bmatrix}\\
+&amp;=200e^{-x^2-3y^2-9z^2}\begin{bmatrix}-2x\\-6y\\-18z\end{bmatrix}\\
+&amp;=-400e^{-x^2-3y^2-9z^2}\begin{bmatrix}x\\3y\\9z\end{bmatrix}
+\end{align*}
+</div>
+<p data-braille="continuation">au point \(P(2,-1,2)\) :</p>
+<div class="displaymath">
+\begin{align*}
+\nabla T(2,-2,1)&amp;=-400\exp\left(-2^2-3\cdot(-1)^2-9\cdot 2^2\right)\begin{bmatrix}2\\3\cdot(-1)\\9\cdot 2\end{bmatrix}\\
+&amp;=-400e^{-43}\begin{bmatrix}2\\-3\\18\end{bmatrix}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Déterminons ensuite la direction unitaire \(\vec{u}\) :</p>
+<div class="displaymath">
+\begin{align*}
+\vec{u}&amp;=\frac{\overrightarrow{PQ}}{\|\overrightarrow{PQ}\|}\\
+&amp;=\frac{1}{\sqrt{1^2+(-2)^2+1^2}}\begin{bmatrix}1\\-2\\1\end{bmatrix}\\
+&amp;=\frac{1}{\sqrt{6}}\begin{bmatrix}1\\-2\\1\end{bmatrix}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Calculons enfin le produit scalaire de ces deux vecteurs :</p>
+<div class="displaymath">
+\begin{align*}
+T_{\vec{u}}(2,-1,2)&amp;=\nabla T(2,-1,2)\cdot\vec{u}\\
+&amp;=-400e^{-43}\begin{bmatrix}2\\-3\\18\end{bmatrix}\cdot\frac{1}{\sqrt{6}}\begin{bmatrix}1\\-2\\1\end{bmatrix}\\
+&amp;=-\frac{400}{e^{43}\sqrt{6}}(2\cdot 1+(-3)\cdot(-2)+18\cdot 1)\\
+&amp;=-\frac{400\cdot 26}{e^{43}\sqrt{6}}\\
+&amp;\approx -8{,}98\times 10^{-16}\;\text{degrés/mètre}.
+\end{align*}
+</div>
+</li>
+</ul>
+<p>Cela veut dire qu'à partir du point \(P(2,-1,2)\text{,}\) la température diminue d'environ \(8,98\times 10^{-16}\) degrés Celsius par mètre parcouru en direction du point \(Q(3,-3,3)\text{.}\)</p>
+</div></body>
+</html>

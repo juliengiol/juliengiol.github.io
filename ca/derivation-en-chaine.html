@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:06-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>303 La règle de dérivation en chaîne</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://juliengiol.github.io/" target="_blank"><img src="images/yosemite.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="ca.html"><span class="title">Calcul avancé</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="plans-tangents-et-differentielle.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="chapitre4.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="derivees-directionnelles.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="plans-tangents-et-differentielle.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="chapitre4.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="derivees-directionnelles.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
+<li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Remerciements</a></li>
+</ul>
+</li>
+<li class="link part"><a href="coronavirus.html" data-scroll="coronavirus"><span class="codenumber">I</span> <span class="title">Coronavirus</span></a></li>
+<li class="link part"><a href="documents.html" data-scroll="documents"><span class="codenumber">II</span> <span class="title">Documents</span></a></li>
+<li class="link part"><a href="volume.html" data-scroll="volume"><span class="codenumber">III</span> <span class="title">Volume</span></a></li>
+<li class="link">
+<a href="chapitre1.html" data-scroll="chapitre1"><span class="codenumber">1</span> <span class="title">Les suites et les séries numériques</span></a><ul>
+<li><a href="suites.html" data-scroll="suites">Les suites</a></li>
+<li><a href="series.html" data-scroll="series">Les séries</a></li>
+<li><a href="seriesatermespositifs.html" data-scroll="seriesatermespositifs">Les séries à termes positifs</a></li>
+<li><a href="series-alternees.html" data-scroll="series-alternees">Les séries alternées</a></li>
+<li><a href="testdurapport.html" data-scroll="testdurapport">La convergence absolue, le test du rapport et le critère de Cauchy</a></li>
+<li><a href="strategieconvergence.html" data-scroll="strategieconvergence">Une stratégie pour tester la convergence d'une série</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre2.html" data-scroll="chapitre2"><span class="codenumber">2</span> <span class="title">Les séries de Taylor</span></a><ul>
+<li><a href="seriesentieres.html" data-scroll="seriesentieres">Les séries entières</a></li>
+<li><a href="devenserieentiere.html" data-scroll="devenserieentiere">Le développement des fonctions en séries entières</a></li>
+<li><a href="tayloretmaclaurin.html" data-scroll="tayloretmaclaurin">Les séries de Taylor et de Maclaurin</a></li>
+<li><a href="applicationstaylor.html" data-scroll="applicationstaylor">Des applications des polynômes de Taylor</a></li>
+<li><a href="nombrescomplexes.html" data-scroll="nombrescomplexes">Les nombres complexes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre3.html" data-scroll="chapitre3"><span class="codenumber">3</span> <span class="title">Les fonctions de plusieurs variables</span></a><ul>
+<li><a href="fonctionspv.html" data-scroll="fonctionspv">Les fonctions de plusieurs variables</a></li>
+<li><a href="limites-continuite.html" data-scroll="limites-continuite">Les limites et la continuité</a></li>
+<li><a href="quadriques.html" data-scroll="quadriques">Les cylindres et les surfaces quadriques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre4.html" data-scroll="chapitre4"><span class="codenumber">4</span> <span class="title">Les dérivées des fonctions de plusieurs variables</span></a><ul>
+<li><a href="derpartielles.html" data-scroll="derpartielles">Les dérivées partielles</a></li>
+<li><a href="plans-tangents-et-differentielle.html" data-scroll="plans-tangents-et-differentielle">Les plans tangents et les approximations linéaires</a></li>
+<li><a href="derivation-en-chaine.html" data-scroll="derivation-en-chaine" class="active">La règle de dérivation en chaîne</a></li>
+<li><a href="derivees-directionnelles.html" data-scroll="derivees-directionnelles">Les dérivées directionnelles et le vecteur gradient</a></li>
+<li><a href="approximationsdetaylor.html" data-scroll="approximationsdetaylor">Les approximations de Taylor en deux variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre5.html" data-scroll="chapitre5"><span class="codenumber">5</span> <span class="title">L'optimisation</span></a><ul>
+<li><a href="extremums.html" data-scroll="extremums">Extremums</a></li>
+<li><a href="gradient.html" data-scroll="gradient">Critère de Sylvester et méthode du gradient</a></li>
+<li><a href="lagrange.html" data-scroll="lagrange">Multiplicateurs de Lagrange</a></li>
+</ul>
+</li>
+<li class="link part"><a href="complements.html" data-scroll="complements"><span class="codenumber">IV</span> <span class="title">Compléments</span></a></li>
+<li class="link"><a href="sage.html" data-scroll="sage"><span class="codenumber">1</span> <span class="title">Sage</span></a></li>
+<li class="link"><a href="bornes.html" data-scroll="bornes"><span class="codenumber">2</span> <span class="title">Bornes d'erreur</span></a></li>
+<li class="link"><a href="serie-de-leibniz.html" data-scroll="serie-de-leibniz"><span class="codenumber">3</span> <span class="title">La série de Leibniz</span></a></li>
+<li class="link"><a href="polaires.html" data-scroll="polaires"><span class="codenumber">4</span> <span class="title">Coordonnées polaires (6.3)</span></a></li>
+<li class="link"><a href="coniques.html" data-scroll="coniques"><span class="codenumber">5</span> <span class="title">Coniques</span></a></li>
+<li class="link"><a href="epsilon.html" data-scroll="epsilon"><span class="codenumber">6</span> <span class="title">Epsilon-Delta</span></a></li>
+<li class="link"><a href="vectorielles.html" data-scroll="vectorielles"><span class="codenumber">7</span> <span class="title">Fonctions vectorielles</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="derivation-en-chaine"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">La règle de dérivation en chaîne</span>
+</h2>
+<a href="derivation-en-chaine.html" class="permalink">¶</a><article class="activity project-like" id="activity-10"><h6 class="heading">
+<span class="type">Outils</span><span class="period">.</span>
+</h6>
+<ul class="disc">
+<li id="li-390"><p id="p-564"><a class="external" href="https://tinyurl.com/wwddeou" target="_blank">Calculatrice</a> à règle de dérivation en chaîne pour une fonction \(z\) de deux variables \(x,y\) qui dépendent chacune de \(t\) : <div class="sagecell-sage" id="sage-6"><script type="text/x-sage">var('x, y, z, t')  # déclaration des variables
+x = function('x')(t)  # x dépend de t
+y = function('y')(t)  # y dépend de t
+
+z(t) = x^2 + (y/3)^2  # fonction composée
+derivee = derivative(z, t)  # dérivée
+
+pretty_print('Fonction composée :', z)
+pretty_print('Dérivée :', derivee)
+</script></div></p></li>
+<li id="li-391"><p id="p-565"><a class="external" href="https://www.geogebra.org/m/BzVfXX4S" target="_blank">Application</a> GeoGebra illustrant graphiquement la règle de dérivation en chaîne pour une fonction de deux variables qui dépendent chacune du temps.</p></li>
+</ul></article><article class="objectives goal-like" id="objectives-3"><h6 class="heading"><span class="type">Objectifs</span></h6>
+<ul class="disc">
+<li id="li-392">
+<p id="p-566">Connaître la règle de dérivation en chaîne pour une fonction différentiable de deux variables \(z(x,y)\) évaluée en deux fonctions dérivables d'une seule variable \(x(t)\) et \(y(t)\) :</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}z}{\mathrm{d}t}=\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}.
+\end{equation*}
+</div>
+</li>
+<li id="li-393">
+<p id="p-567">Savoir représenter la dépendance des variables entre elles par un arbre et savoir utiliser un tel arbre pour formuler la règle de dérivation chaîne désirée. Par exemple, si</p>
+<div class="displaymath">
+\begin{equation*}
+z=x^2+3xy^3\quad\text{où}\quad x=r+s-5t\quad\text{et}\quad y=2s+t
+\end{equation*}
+</div>
+<p data-braille="continuation">et qu'on cherche à déterminer \(\dfrac{\partial z}{\partial s}\text{,}\) on dessine l'arbre <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/4.3_objectifs.png" style="width: 100%; height: auto;" alt=""></div> et on en déduit que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial z}{\partial s}=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial s}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial s}.
+\end{equation*}
+</div>
+</li>
+<li id="li-394"><p id="p-568">Savoir calculer des dérivées partielles à l'aide de la règle de dérivation en chaîne.</p></li>
+<li id="li-395"><p id="p-569">Savoir exprimer le taux de variation d'une fonction dépendant de plusieurs variables en fonction des taux de variations de chacune de ces variables.</p></li>
+<li id="li-396"><p id="p-570">Pouvoir vérifier qu'une fonction donnée est solution d'une <a class="external" href="https://fr.wikipedia.org/wiki/%C3%89quation_aux_d%C3%A9riv%C3%A9es_partielles" target="_blank">équation aux dérivées partielles (EDP)</a> telle que l'équation des ondes.</p></li>
+</ul></article><article class="exercise exercise-like" id="exercise-92"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-92"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-92"><article class="exercise exercise-like"><p id="p-571">Un pétrolier vient de faire naufrage au large de la Nouvelle-Écosse et malheureusement sa cargaison se répand en formant une gigantesque nappe circulaire.</p>
+<p id="p-572">Sachant que le rayon de la nappe est désormais de \(3\) km et qu'il augmente à la vitesse de \(150\,\mathrm{m}/\mathrm{h}\text{,}\) quel est le taux de variation de l'aire de la nappe à ce moment-là?</p>
+<p id="p-573">Exprimez votre réponse en \(\mathrm{km}^2/\mathrm{h}\) et arrondissez à deux décimales.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-19" id="hint-19"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-19"><div class="hint solution-like">
+<p id="p-574">Notez \(r\) le rayon de la nappe en \(\mathrm{km}\) et</p>
+<div class="displaymath">
+\begin{equation*}
+A=\pi r^2
+\end{equation*}
+</div>
+<p data-braille="continuation">son aire en \(\mathrm{km}^2\text{,}\) puis utilisez la règle de dérivation en chaîne pour déterminer la valeur de</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}A}{\mathrm{d}t}
+\end{equation*}
+</div>
+<p data-braille="continuation">lorsque</p>
+<div class="displaymath">
+\begin{equation*}
+r=3\,\mathrm{km}\quad\text{et}\quad\frac{\mathrm{d}r}{\mathrm{d}t}=0{,}15\,\mathrm{km}/\mathrm{h}.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-90" id="answer-90"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-90"><div class="answer solution-like">
+<p id="p-575">On trouve</p>
+<div class="displaymath">
+\begin{equation*}
+2{,}83\,\mathrm{km}^2/\mathrm{h}.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like">
+<p id="p-576">Notons \(r\) le rayon de la nappe en \(\mathrm{km}\) et</p>
+<div class="displaymath">
+\begin{equation*}
+A=\pi r^2
+\end{equation*}
+</div>
+<p data-braille="continuation">son aire en \(\mathrm{km}^2\text{,}\) de sorte que</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}A}{\mathrm{d}t}&amp;=\frac{\mathrm{d}A}{\mathrm{d}r}\cdot\frac{\mathrm{d}r}{\mathrm{d}t}\\
+&amp;=2\pi r\cdot\frac{\mathrm{d}r}{\mathrm{d}t}
+\end{align*}
+</div>
+<p data-braille="continuation">par la règle de dérivation en chaîne.</p>
+<p id="p-577">Selon l'énoncé, on est rendu à un moment de la catastrophe où</p>
+<div class="displaymath">
+\begin{equation*}
+r=3\,\mathrm{km}\quad\text{et}\quad\frac{\mathrm{d}r}{\mathrm{d}t}=0{,}15\,\mathrm{km}/\mathrm{h}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}A}{\mathrm{d}t}\Bigg\rvert_{r=3\,\mathrm{km}}&amp;=2\pi\cdot 3\cdot 0{,}15\\
+&amp;=2{,}827\,433\ldots\\
+&amp;\approx 2{,}83\,\mathrm{km}^2/\mathrm{h}.
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-93"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-93"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-93"><article class="exercise exercise-like"><p id="p-578">On s'intéresse aux variables \(x,y,z,t\) qui dépendent les unes des autres comme suit :</p>
+<div class="displaymath">
+\begin{equation*}
+z=x^2+\dfrac{y^2}{9}\quad\text{avec}\quad x=\sin(2t)\quad\text{et}\quad y=\cos(t).
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-397"><p id="p-579">Placez ces variables dans un arbre de dépendance.</p></li>
+<li id="li-398">
+<p id="p-580">Calculez \(\frac{\mathrm{d}z}{\mathrm{d}t}\) à l'aide de la règle de dérivation en chaîne</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}z}{\mathrm{d}t}=\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}.
+\end{equation*}
+</div>
+</li>
+<li id="li-399"><p id="p-581">Vérifiez qu'on obtient la même réponse en remplaçant d'abord \(x\) et \(y\) par \(\sin(2t)\) et \(\cos(t)\) dans l'expression \(z=x^2+\frac{y^2}{9}\text{.}\)</p></li>
+<li id="li-400">
+<p id="p-582">Combien valent</p>
+<div class="displaymath">
+\begin{equation*}
+\dfrac{\mathrm{d}x}{\mathrm{d}t},\quad\dfrac{\mathrm{d}y}{\mathrm{d}t}\quad\text{et}\quad\dfrac{\mathrm{d}z}{\mathrm{d}t}
+\end{equation*}
+</div>
+<p data-braille="continuation">lorsque \(t=0\text{?}\)</p>
+</li>
+<li id="li-401">
+<p id="p-583">Supposez que les variables \(x,y,z\) donnent les coordonnées en mètres d'un point se déplaçant sur la surface d'équation \(z=x^2+\frac{y^2}{9}\) en fonction du temps \(t\) exprimé en secondes.</p>
+<p id="p-584">Interprétez physiquement les valeurs trouvées à la question précédente.</p>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-20" id="hint-20"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-20"><div class="hint solution-like"><ol class="decimal">
+<li id="li-402"><p id="p-585">Inspirez-vous de l'arbre donné en exemple au deuxième point des objectifs.</p></li>
+<li id="li-403"><p id="p-586">Appliquez la formule.</p></li>
+<li id="li-404"><p id="p-587">Après substitution, on obtient une fonction d'une seule variable qu'il suffit de dériver comme on a appris le faire en cours de calcul différentiel.</p></li>
+<li id="li-405"><p id="p-588">Remplacez \(t\) par \(0\text{.}\)</p></li>
+<li id="li-406"><p id="p-589">La dérivée de la position par rapport au temps donne la vitesse instantanée. Notez que vous pouvez visualiser le déplacement de ce point en fonction du temps grâce à <a class="external" href="https://www.geogebra.org/m/BzVfXX4S" target="_blank">cette application</a> GeoGebra.</p></li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-91" id="answer-91"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-91"><div class="answer solution-like"><ol class="decimal">
+<li id="li-407"><p id="p-590">On obtient l'arbre de dépendance suivant : <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/exercice_4.3.2.png" style="width: 100%; height: auto;" alt=""></div></p></li>
+<li id="li-408">
+<p id="p-591">La règle de dérivation en chaîne donne</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}z}{\mathrm{d}t}=4\sin(2t)\cos(2t)-\frac{2}{9}\sin(t)\cos(t).
+\end{equation*}
+</div>
+</li>
+<li id="li-409">
+<p id="p-592">Après substitution, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+z=\sin^2(2t)+\frac{1}{9}\cos^2(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}z}{\mathrm{d}t}=4\sin(2t)\cos(2t)-\frac{2}{9}\sin(t)\cos(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">comme à la question précédente.</p>
+</li>
+<li id="li-410">
+<p id="p-593">Lorsque \(t=0\text{,}\) on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{dx}}{\mathrm{d}t}\Bigg\rvert_{t=0}=2,\quad\frac{\mathrm{dy}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\quad\text{et}\quad\frac{\mathrm{d}z}{\mathrm{d}t}\Bigg\rvert_{t=0}=0.
+\end{equation*}
+</div>
+</li>
+<li id="li-411">
+<p id="p-594">Au temps \(t=0\,\mathrm{s}\text{,}\) le point se situe à la position</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y,z)=(0,1,1/9).
+\end{equation*}
+</div>
+<p data-braille="continuation">Ses vitesses horizontales selon les axes des \(x\) et des \(y\) valent respectivement</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{dx}}{\mathrm{d}t}\Bigg\rvert_{t=0}=2\,\mathrm{m}/\mathrm{s}\quad\text{et}\quad\frac{\mathrm{dy}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\,\mathrm{m}/\mathrm{s}
+\end{equation*}
+</div>
+<p data-braille="continuation">tandis que sa vitesse verticale vaut</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{dz}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\,\mathrm{m}/\mathrm{s}.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like"><ol class="decimal">
+<li id="li-412">
+<p id="p-595">Au premier niveau, \(z\) dépend de \(x\) et de \(y\text{,}\) ce qui donne deux branches issues du sommet \(z\text{.}\)</p>
+<p id="p-596">Au deuxième niveau, on a une seule branche de \(x\) (resp. \(y\)) vers \(t\text{,}\) car \(x\) (resp. \(y\)) ne dépend que de \(t\text{.}\)</p>
+<p id="p-597">On obtient donc l'arbre de dépendance suivant : <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/exercice_4.3.2.png" style="width: 100%; height: auto;" alt=""></div></p>
+</li>
+<li id="li-413">
+<p id="p-598">La règle de dérivation en chaîne donne</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}t}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\\
+&amp;=2x\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{2y}{9}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\\
+&amp;=2x\cdot(2\cos(2t))+\frac{2y}{9}\cdot(-\sin(t))\\
+&amp;=2\sin(2t)\cdot(2\cos(2t))+\frac{2\cos(t)}{9}\cdot(-\sin(t))\\
+&amp;=4\sin(2t)\cos(2t)-\frac{2}{9}\sin(t)\cos(t).
+\end{align*}
+</div>
+</li>
+<li id="li-414">
+<p id="p-599">Après substitution, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+z&amp;=x^2+\frac{y^2}{9}\\
+&amp;=(\sin(2t))^2+\frac{(\cos(t))^2}{9}\\
+&amp;=\sin^2(2t)+\frac{1}{9}\cos^2(t).
+\end{align*}
+</div>
+<p data-braille="continuation">Donc on a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}t}&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(\sin^2(2t)+\frac{1}{9}\cos^2(t)\right)\\
+&amp;=2\sin(2t)\cdot\cos(2t)\cdot 2+\frac{1}{9}\cdot 2\cos(t)\cdot(-\sin(t))\\
+&amp;=4\sin(2t)\cos(2t)-\frac{2}{9}\sin(t)\cos(t)
+\end{align*}
+</div>
+<p data-braille="continuation">comme à la question précédente.</p>
+</li>
+<li id="li-415">
+<p id="p-600">Lorsque \(t=0\text{,}\) on a <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-601">
+\begin{align*}
+\frac{\mathrm{dx}}{\mathrm{d}t}\Bigg\rvert_{t=0}&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(\sin(2t)\right)\Bigg\rvert_{t=0}\\
+&amp;=2\cos(2t)\Bigg\rvert_{t=0}\\
+&amp;=2\cos(0)\\
+&amp;=2\cdot 1\\
+&amp;=2
+\end{align*}
+</div></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-602">
+\begin{align*}
+\frac{\mathrm{dy}}{\mathrm{d}t}\Bigg\rvert_{t=0}&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(\cos(t)\right)\Bigg\rvert_{t=0}\\
+&amp;=-\sin(t)\Bigg\rvert_{t=0}\\
+&amp;=-\sin(0)\\
+&amp;=-0\\
+&amp;=0
+\end{align*}
+</div></div>
+</div></div> et <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-603">
+\begin{align*}
+x\Bigg\rvert_{t=0}&amp;=\sin(2t)\Bigg\rvert_{t=0}\\
+&amp;=\sin(0)\\
+&amp;=0
+\end{align*}
+</div></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-604">
+\begin{align*}
+y\Bigg\rvert_{t=0}&amp;=\cos(t)\Bigg\rvert_{t=0}\\
+&amp;=\cos(0)\\
+&amp;=1
+\end{align*}
+</div></div>
+</div></div> donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}t}\Bigg\rvert_{t=0}&amp;=\left(\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\right)\Bigg\rvert_{t=0}\\
+&amp;=\left(2x\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{2y}{9}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\right)\Bigg\rvert_{t=0}\\
+&amp;=2\cdot x\Bigg\rvert_{t=0}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}\Bigg\rvert_{t=0}+\frac{2}{9}\cdot y\Bigg\rvert_{t=0}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\Bigg\rvert_{t=0}\\
+&amp;=2\cdot 0\cdot 2+\frac{2}{9}\cdot 1\cdot 0\\
+&amp;=0.
+\end{align*}
+</div>
+</li>
+<li id="li-416">
+<p id="p-605">Au temps \(t=0\,\mathrm{s}\text{,}\) le point se situe à la position</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y,z)=(0,1,1/9).
+\end{equation*}
+</div>
+<p data-braille="continuation">Ses vitesses horizontales selon les axes des \(x\) et des \(y\) valent respectivement</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{dx}}{\mathrm{d}t}\Bigg\rvert_{t=0}=2\,\mathrm{m}/\mathrm{s}\quad\text{et}\quad\frac{\mathrm{dy}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\,\mathrm{m}/\mathrm{s}
+\end{equation*}
+</div>
+<p data-braille="continuation">tandis que sa vitesse verticale vaut</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{dz}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\,\mathrm{m}/\mathrm{s}.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-94"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-94"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-94"><article class="exercise exercise-like"><p id="p-606">Trouvez la dérivée de</p>
+<div class="displaymath">
+\begin{equation*}
+y=(\sin x)^{x^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">par rapport à \(x\text{.}\)</p>
+<ol class="decimal">
+<li id="li-417"><p id="p-607">En utilisant la dérivation logarithmique.</p></li>
+<li id="li-418">
+<p id="p-608">En utilisant la règle de dérivation en chaîne après avoir introduit les variables</p>
+<div class="displaymath">
+\begin{equation*}
+u=\sin x\quad\text{et}\quad v=x^2.
+\end{equation*}
+</div>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-92" id="answer-92"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-92"><div class="answer solution-like">
+<p id="p-609">D'une façon ou d'une autre, on obtient :</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}y}{\mathrm{d}x}=(\sin x)^{x^2}(x^2\cot x+2x\ln(\sin x)).
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like"><ol class="decimal">
+<li id="li-419"><ul class="disc">
+<li id="li-420">
+<p id="p-610">Pour commencer, on applique le logarithme naturel :</p>
+<div class="displaymath">
+\begin{align*}
+\ln y&amp;=\ln\left((\sin x)^{x^2}\right)\\
+&amp;=x^2\ln(\sin x).
+\end{align*}
+</div>
+</li>
+<li id="li-421">
+<p id="p-611">Ensuite, on dérive par rapport à \(x\) :</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{y}\cdot\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(\ln y)\\
+&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(x^2\cdot\ln(\sin x))\\
+&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(x^2)\cdot\ln(\sin x))+x^2\cdot\frac{\mathrm{d}}{\mathrm{d}x}(\ln(\sin x))\\
+&amp;=2x\cdot\ln(\sin x))+x^2\cdot\frac{1}{\sin x}\cdot\cos x\\
+&amp;=2x\ln(\sin x))+x^2\cot x.
+\end{align*}
+</div>
+</li>
+<li id="li-422">
+<p id="p-612">Enfin, on multiplie par \(y\) :</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=y\cdot\frac{\mathrm{d}}{\mathrm{d}x}(\ln y)\\
+&amp;=y\cdot(2x\ln(\sin x))+x^2\cot x)\\
+&amp;=(\sin x)^{x^2}(2x\ln(\sin x))+x^2\cot x).
+\end{align*}
+</div>
+</li>
+</ul></li>
+<li id="li-423">
+<p id="p-613">Les variables \(x,y,u,v\) sont liées comme suit :</p>
+<div class="displaymath">
+\begin{equation*}
+y=u^v\quad\text{avec}\quad u=\sin x\quad\text{et}\quad v=x^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Cela donne l'arbre de dépendance suivant : <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/exercice_4.3.3.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=\frac{\partial y}{\partial u}\cdot\frac{\mathrm{d}u}{\mathrm{d}x}+\frac{\partial y}{\partial v}\cdot\frac{\mathrm{d}v}{\mathrm{d}x}\\
+&amp;=vu^{v-1}\cdot\cos x+u^v\ln u\cdot 2x\\
+&amp;=x^2(\sin x)^{x^2-1}\cdot\cos x+(\sin x)^{x^2}\ln(\sin x)\cdot 2x\\
+&amp;=(\sin x)^{x^2}(x^2\cot x+2x\ln(\sin x))
+\end{align*}
+</div>
+<p data-braille="continuation">conformément au calcul effectué plus haut par dérivation logarithmique.</p>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-95"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-95"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-95"><article class="exercise exercise-like"><p id="p-614">Calculez les dérivées indiquées.</p>
+<ol class="decimal">
+<li id="li-424"><p id="p-615">\(\dfrac{dz}{dt}\) lorsque \(t=\dfrac{\pi}{2}\text{,}\) si \(\displaystyle z=e^{xy^2}\) avec \(x=t\cos t\) et \(y=t\sin t\text{.}\)</p></li>
+<li id="li-425"><p id="p-616">\(\dfrac{\partial z}{\partial v}\) lorsque \((u,v)=(3,-2)\text{,}\) si \(z=\tan\left(\dfrac{x}{y}\right)\) avec \(x=2u+3v\) et \(y=3u-2v\text{.}\)</p></li>
+<li id="li-426"><p id="p-617">\(\dfrac{\partial z}{\partial t}\) lorsque \(r=1\text{,}\) \(s=0\) et \(t=1\text{,}\) si \(z=w\arctan(uv)\) avec \(u=r+s\text{,}\) \(v=s+t\) et \(w=t+r\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-21" id="hint-21"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-21"><div class="hint solution-like"><p id="p-618">Pour chaque calcul, commencez par dresser un arbre de dépendance.</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-93" id="answer-93"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-93"><div class="answer solution-like"><ol class="decimal">
+<li id="li-427"><p id="p-619">\(-\dfrac{\pi^3}{8}\)</p></li>
+<li id="li-428"><p id="p-620">\(\dfrac{3}{13}\)</p></li>
+<li id="li-429"><p id="p-621">\(1+\dfrac{\pi}{4}\)</p></li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><ol class="decimal">
+<li id="li-430">
+<p id="p-622">Les variables sont liées de la façon suivante : <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/exercice_4.3.2.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}t}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\\
+&amp;=\frac{\partial}{\partial x}\left(e^{xy^2}\right)\cdot\frac{\mathrm{d}}{\mathrm{d}t}(t\cos t)+\frac{\partial}{\partial y}\left(e^{xy^2}\right)\cdot\frac{\mathrm{d}}{\mathrm{d}t}(t\sin t)\\
+&amp;=e^{xy^2}y^2\cdot(\cos t+t(-\sin t))+e^{xy^2}2xy\cdot(\sin t+t\cos t)\\
+&amp;=ye^{xy^2}\left(y(\cos t-t\sin t)+2x(\sin t+t\cos t)\right).
+\end{align*}
+</div>
+<p id="p-623">Lorsque \(t=\dfrac{\pi}{2}\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+x=\frac{\pi}{2}\cdot\underbrace{\cos\left(\frac{\pi}{2}\right)}_{=0}=0\quad\text{et}\quad y=\frac{\pi}{2}\cdot\underbrace{\sin\left(\frac{\pi}{2}\right)}_{=1}=\frac{\pi}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}t}\Bigg\rvert_{t=\frac{\pi}{2}}&amp;=\frac{\pi}{2}\cdot\underbrace{e^{0}}_{=1}\cdot\left(\frac{\pi}{2}\cdot\left(\underbrace{\cos\left(\frac{\pi}{2}\right)}_{=0}-\frac{\pi}{2}\cdot\underbrace{\sin\left(\frac{\pi}{2}\right)}_{=1}\right)+\cancel{2\cdot 0\cdot\ldots}\right)\\
+&amp;=-\frac{\pi^3}{8}.
+\end{align*}
+</div>
+</li>
+<li id="li-431">
+<p id="p-624">Les variables sont liées de la façon suivante : <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/exercice_4.3.4bis.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial v}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial v}\\
+&amp;=\frac{\partial}{\partial x}\left(\tan\left(\frac{x}{y}\right)\right)\cdot\frac{\partial}{\partial v}(2u+3v)+\frac{\partial}{\partial y}\left(\tan\left(\frac{x}{y}\right)\right)\cdot\frac{\partial}{\partial v}(3u-2v)\\
+&amp;=\sec^2\left(\frac{x}{y}\right)\cdot\frac{1}{y}\cdot 3+\sec^2\left(\frac{x}{y}\right)\cdot\left(-\frac{x}{y^2}\right)\cdot(-2)\\
+&amp;=\sec^2\left(\frac{x}{y}\right)\cdot\frac{3y+2x}{y^2}.
+\end{align*}
+</div>
+<p id="p-625">Lorsque \((u,v)=(3,-2)\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+x=2\cdot 3+3\cdot(-2)=0\quad\text{et}\quad y=3\cdot 3-2\cdot(-2)=13
+\end{equation*}
+</div>
+<p data-braille="continuation">donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial v}\Bigg\rvert_{(u,v)=(3,-2)}&amp;=(\underbrace{\sec(0)}_{=1})^2\cdot\frac{3\cdot 13+2\cdot 0}{13^2}\\
+&amp;=\frac{3}{13}.
+\end{align*}
+</div>
+</li>
+<li id="li-432">
+<p id="p-626">Les variables sont liées de la façon suivante : <div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="images/exercice_4.3.4ter.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial t}&amp;=\frac{\partial z}{\partial v}\cdot\frac{\partial v}{\partial t}+\frac{\partial z}{\partial w}\cdot\frac{\partial w}{\partial t}\\
+&amp;=\frac{\partial}{\partial v}\left(w\arctan(uv)\right)\cdot\frac{\partial}{\partial t}(s+t)+\frac{\partial}{\partial w}\left(w\arctan(uv)\right)\cdot\frac{\partial}{\partial t}(t+r)\\
+&amp;=w\cdot\frac{1}{1+(uv)^2}\cdot u\cdot 1+\arctan(uv)\cdot 1\\
+&amp;=\frac{uw}{1+u^2v^2}+\arctan(uv).
+\end{align*}
+</div>
+<p id="p-627">Lorsque \(r=1\text{,}\) \(s=0\) et \(t=1\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+u=1+0=1,\quad v=0+1=1\quad\text{et}\quad w=1+1=2
+\end{equation*}
+</div>
+<p data-braille="continuation">donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial t}\Bigg\rvert_{(r,s,t)=(1,0,1)}&amp;=\frac{1\cdot 2}{1+1^21^2}+\arctan(1\cdot 1)\\
+&amp;=\frac{2}{2}+\arctan(1)\\
+&amp;=1+\frac{\pi}{4}.
+\end{align*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-96"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-96"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-96"><article class="exercise exercise-like"><p id="p-628">On suppose que \(f(x,y)\) est une fonction différentiable de \(x\) et de \(y\text{,}\) et on pose</p>
+<div class="displaymath">
+\begin{equation*}
+g(u,v):=f(5u+3v-1,8u-6v+3).
+\end{equation*}
+</div>
+<p id="p-629">Utilisez le tableau de valeurs suivant</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|}
+\hline
+(x,y)&amp;f(x,y)&amp;f_x(x,y)&amp;f_y(x,y)\\
+\hline
+(0,0)&amp;-2&amp;9&amp;-1\\
+(-1,3)&amp;7&amp;-5&amp;4\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour calculer les dérivées partielles</p>
+<div class="displaymath">
+\begin{equation*}
+g_u(0,0)\quad\text{et}\quad g_v(0,0).
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-22" id="hint-22"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-22"><div class="hint solution-like">
+<p id="p-630">Introduisez la variable</p>
+<div class="displaymath">
+\begin{equation*}
+z:=g(u,v)=f(x,y)
+\end{equation*}
+</div>
+<p data-braille="continuation">où</p>
+<div class="displaymath">
+\begin{equation*}
+x=5u+3v-1\quad\text{et}\quad y=8u-6v+3.
+\end{equation*}
+</div>
+<p id="p-631">Puis dressez l'arbre de dépendance correspondant et appliquez la règle de dérivation en chaîne au calcul de</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial z}{\partial u}=g_u\quad\text{et}\quad\frac{\partial z}{\partial v}=g_v.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-94" id="answer-94"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-94"><div class="answer solution-like">
+<p id="p-632">On trouve</p>
+<div class="displaymath">
+\begin{equation*}
+g_u(0,0)=7\quad\text{et}\quad g_v(0,0)=-39.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
+<p id="p-633">On s'intéresse aux dérivées partielles de la variable</p>
+<div class="displaymath">
+\begin{equation*}
+z:=g(u,v)=f(x,y)
+\end{equation*}
+</div>
+<p data-braille="continuation">où</p>
+<div class="displaymath">
+\begin{equation*}
+x=5u+3v-1\quad\text{et}\quad y=8u-6v+3.
+\end{equation*}
+</div>
+<p data-braille="continuation">On a l'arbre de dépendance suivant : <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/exercice_4.3.6.png" style="width: 100%; height: auto;" alt=""></div></p>
+<p id="p-634">Avant d'évaluer, notons que</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y)=(-1,3)\quad\text{lorsque}\quad (u,v)=(0,0)
+\end{equation*}
+</div>
+<p data-braille="continuation">si bien que seules les valeurs</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(-1,3)=-5\quad\text{et}\quad f_y(-1,3)=4
+\end{equation*}
+</div>
+<p data-braille="continuation">nous seront utiles.</p>
+<ul class="disc">
+<li id="li-433">
+<p id="p-635">D'une part, la règle de dérivation en chaîne entraîne</p>
+<div class="displaymath">
+\begin{align*}
+g_u&amp;=\frac{\partial z}{\partial u}\\
+&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial u}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial u}\\
+&amp;=f_x\cdot\frac{\partial}{\partial u}(5u+3v-1)+f_y\cdot\frac{\partial}{\partial u}(8u-6v+3)\\
+&amp;=f_x\cdot 5+f_y\cdot 8
+\end{align*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{align*}
+g_u(0,0)&amp;=f_x(-1,3)\cdot 5+f_y(-1,3)\cdot 8\\
+&amp;=(-5)\cdot 5+4\cdot 8\\
+&amp;=7.
+\end{align*}
+</div>
+</li>
+<li id="li-434">
+<p id="p-636">D'autre part, la règle de dérivation en chaîne entraîne</p>
+<div class="displaymath">
+\begin{align*}
+g_v&amp;=\frac{\partial z}{\partial v}\\
+&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial v}\\
+&amp;=f_x\cdot\frac{\partial}{\partial v}(5u+3v-1)+f_y\cdot\frac{\partial}{\partial v}(8u-6v+3)\\
+&amp;=f_x\cdot 3+f_y\cdot(-6)
+\end{align*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{align*}
+g_v(0,0)&amp;=f_x(-1,3)\cdot 3+f_y(-1,3)\cdot(-6)\\
+&amp;=(-5)\cdot 3+4\cdot(-6)\\
+&amp;=-39.
+\end{align*}
+</div>
+</li>
+</ul>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-97"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-97"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-97"><article class="exercise exercise-like"><p id="p-637">Si \(z=f(x,y)\) est une fonction dont les dérivées partielles d'ordre deux sont continues et si</p>
+<div class="displaymath">
+\begin{equation*}
+x=r^2+s^2\quad\text{et}\quad y=2rs,
+\end{equation*}
+</div>
+<p data-braille="continuation">exprimez</p>
+<div class="displaymath">
+\begin{equation*}
+\dfrac{\partial z}{\partial r}\quad\text{et}\quad\dfrac{\partial^2 z}{\partial r^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">en fonction des dérivées partielles de \(z\) par rapport à \(x\) et à \(y\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-23" id="hint-23"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-23"><div class="hint solution-like">
+<p id="p-638">Pour la première dérivée, utilisez la règle de dérivation en chaîne.</p>
+<p id="p-639">Pour la seconde, vous pourrez sauver du temps en pensant à appliquer la première formule trouvée aux fonctions \(\frac{\partial z}{\partial x}\) et \(\frac{\partial z}{\partial y}\text{,}\) à la place de la fonction \(z\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-95" id="answer-95"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-95"><div class="answer solution-like">
+<p id="p-640">On trouve</p>
+<div class="displaymath">
+\begin{equation*}
+\dfrac{\partial z}{\partial r}=2r\dfrac{\partial z}{\partial x}+2s\dfrac{\partial z}{\partial y}
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\dfrac{\partial^2 z}{\partial r^2}=2\dfrac{\partial z}{\partial x}+4r^2\dfrac{\partial^2 z}{\partial x^2}+8rs\dfrac{\partial^2z}{\partial x\partial y}+4s^2\dfrac{\partial^2z}{\partial y^2}.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like"><ul class="disc">
+<li id="li-435">
+<p id="p-641">Voici l'arbre de dépendance des variables : <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/exercice_4.3.5.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial r}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial r}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial r}\\
+&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial}{\partial r}(r^2+s^2)+\frac{\partial z}{\partial y}\cdot\frac{\partial}{\partial r}(2rs)\\
+&amp;=\frac{\partial z}{\partial x}\cdot 2r+\frac{\partial z}{\partial y}\cdot 2s\\
+&amp;=2r\frac{\partial z}{\partial x}+2s\frac{\partial z}{\partial y}.
+\end{align*}
+</div>
+</li>
+<li id="li-436">
+<p id="p-642">Partant du calcul précédent, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial^2z}{\partial r^2}&amp;=\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial r}\right)\\
+&amp;=\frac{\partial}{\partial r}\left(2r\frac{\partial z}{\partial x}+2s\frac{\partial z}{\partial y}\right)\\
+&amp;=\frac{\partial}{\partial r}(2r)\cdot\frac{\partial z}{\partial x}+2r\cdot\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial x}\right)+2s\cdot\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial y}\right)\\
+&amp;=2\frac{\partial z}{\partial x}+2r\underbrace{\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial x}\right)}_{A}+2s\underbrace{\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial y}\right)}_{B}.
+\end{align*}
+</div>
+<p data-braille="continuation">Pour déterminer \(A\) et \(B\text{,}\) il suffit d'appliquer le point précédent aux fonctions \(\frac{\partial z}{\partial x}\) et \(\frac{\partial z}{\partial y}\text{,}\) à la place de la fonction \(z\text{.}\) Cela donne <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-643">
+\begin{align*}
+A&amp;=\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial x}\right)\\
+&amp;=2r\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right)+2s\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right)\\
+&amp;=2r\frac{\partial^2z}{\partial x^2}+2s\frac{\partial^2z}{\partial y\partial x}
+\end{align*}
+</div></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-644">
+\begin{align*}
+B&amp;=\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial y}\right)\\
+&amp;=2r\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right)+2s\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right)\\
+&amp;=2r\frac{\partial^2z}{\partial x\partial y}+2s\frac{\partial^2z}{\partial y^2}
+\end{align*}
+</div></div>
+</div></div> d'où</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial^2z}{\partial r^2}&amp;=2\frac{\partial z}{\partial x}+2rA+2sB\\
+&amp;=2\frac{\partial z}{\partial x}+4r^2\frac{\partial^2z}{\partial x^2}+4rs\frac{\partial^2z}{\partial y\partial x}+4rs\frac{\partial^2z}{\partial x\partial y}+4s^2\frac{\partial^2z}{\partial y^2}\\
+&amp;=2\frac{\partial z}{\partial x}+4r^2\frac{\partial^2z}{\partial x^2}+8rs\frac{\partial^2z}{\partial x\partial y}+4s^2\frac{\partial^2z}{\partial y^2}
+\end{align*}
+</div>
+<p data-braille="continuation">puisque</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2z}{\partial y\partial x}=\frac{\partial^2z}{\partial x\partial y}
+\end{equation*}
+</div>
+<p data-braille="continuation">par le théorème de Clairaut.</p>
+</li>
+</ul></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-98"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-98"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-98"><article class="exercise exercise-like"><p id="p-645">La tension \(V\) en volts d'un circuit est donnée par la loi d'Ohm</p>
+<div class="displaymath">
+\begin{equation*}
+V=IR
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(I\) est l'intensité en ampères du courant circulant dans le circuit, et \(R\) la résistance en ohms.</p>
+<p id="p-646">On place deux résistances \(R_1\) et \(R_2\) en parallèle, de sorte que la résistance équivalence \(R\) vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{R}=\frac{1}{R_1}+\frac{1}{R_2}.
+\end{equation*}
+</div>
+<p id="p-647">En supposant que</p>
+<ul class="disc">
+<li id="li-437"><p id="p-648">l'intensité du courant est de \(4\,\mathrm{A}\) et qu'elle augmente au taux de \(0{,}01\,\mathrm{A}/\mathrm{s}\text{,}\)</p></li>
+<li id="li-438"><p id="p-649">la résistance \(R_1\) vaut \(3\,\mathrm{\Omega}\) et qu'elle augmente au taux de \(0{,}5\,\mathrm{\Omega}/\mathrm{s}\text{,}\)</p></li>
+<li id="li-439"><p id="p-650">la résistance \(R_2\) vaut \(5\,\mathrm{\Omega}\) et qu'elle diminue au taux de \(0{,}2\,\mathrm{\Omega}/\mathrm{s}\text{,}\)</p></li>
+</ul>
+<p data-braille="continuation">calculez le taux de variation de la tension.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-24" id="hint-24"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-24"><div class="hint solution-like">
+<p id="p-651">Si on note \(t\) le temps en secondes, on a l'arbre de dépendance suivant <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/exercice_4.3.7.png" style="width: 100%; height: auto;" alt=""></div></p>
+<p id="p-652">Utilisez la règle de dérivation en chaîne pour calculer</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}V}{\mathrm{d}t}.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-96" id="answer-96"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-96"><div class="answer solution-like">
+<p id="p-653">La tension augmente au taux de</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}687\,5\,\mathrm{V}/\mathrm{s}.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like">
+<p id="p-654">Si on note \(t\) le temps exprimé en secondes, les taux de variations fournis par l'énoncé sont</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}I}{\mathrm{d}t}=0{,}01\,\mathrm{A}/\mathrm{s},\quad\frac{\mathrm{d}R_1}{\mathrm{d}t}=0{,}5\,\mathrm{\Omega}/\mathrm{s}\quad\text{et}\quad\frac{\mathrm{d}R_2}{\mathrm{d}t}=-0{,}2\,\mathrm{\Omega}/\mathrm{s}.
+\end{equation*}
+</div>
+<p id="p-655">On cherche la valeur de</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}V}{\mathrm{d}t}
+\end{equation*}
+</div>
+<p data-braille="continuation">sachant en outre que</p>
+<div class="displaymath">
+\begin{equation*}
+I=4\,\mathrm{A},\quad R_1=3\,\mathrm{\Omega}\quad\text{et}\quad R_2=5\,\mathrm{\Omega}.
+\end{equation*}
+</div>
+<ul class="disc">
+<li id="li-440">Notons pour commencer que<div class="displaymath">
+\begin{align*}
+\frac{1}{R}&amp;=\frac{1}{R_1}+\frac{1}{R_2}\\
+&amp;=\frac{R_2}{R_1R_2}+\frac{R_1}{R_1R_2}\\
+&amp;=\frac{R_2+R_1}{R_1R_2}.
+\end{align*}
+</div>On a donc la formule<div class="displaymath">
+\begin{equation*}
+R=\frac{R_1R_2}{R_1+R_2}
+\end{equation*}
+</div>qui entraîne que<div class="displaymath">
+\begin{equation*}
+R=\frac{3\cdot 5}{3+5}=1{,}875\,\mathrm{\Omega}.
+\end{equation*}
+</div>
+</li>
+<li id="li-441">
+<p id="p-656">Ensuite, la formule</p>
+<div class="displaymath">
+\begin{equation*}
+V=IR=\frac{IR_1R_2}{R_1+R_2}
+\end{equation*}
+</div>
+<p data-braille="continuation">implique l'arbre de dépendance <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/exercice_4.3.7.png" style="width: 100%; height: auto;" alt=""></div> dont on déduit la formule</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}V}{\mathrm{d}t}=\frac{\partial V}{\partial I}\cdot\frac{\mathrm{d}I}{\mathrm{d}t}+\frac{\partial V}{\partial R_1}\cdot\frac{\mathrm{d}R_1}{\mathrm{d}t}+\frac{\partial V}{\partial R_2}\cdot\frac{\mathrm{d}R_2}{\mathrm{d}t}
+\end{equation*}
+</div>
+<p data-braille="continuation">par la règle de dérivation en chaîne.</p>
+<ul class="circle">
+<li id="li-442">
+<p id="p-657">D'abord, on a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial V}{\partial I}&amp;=\frac{\partial}{\partial I}\left(I\cdot R\right)\\
+&amp;=R\\
+&amp;=1{,}875.
+\end{align*}
+</div>
+</li>
+<li id="li-443">
+<p id="p-658">Ensuite, on trouve</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial V}{\partial R_1}&amp;=\frac{\partial}{\partial R_1}\left(\frac{IR_1R_2}{R_1+R_2}\right)\\
+&amp;=IR_2\cdot\frac{\partial}{\partial R_1}\left(\frac{R_1}{R_1+R_2}\right)\\
+&amp;=IR_2\cdot\frac{\frac{\partial}{\partial R_1}(R_1)\cdot(R_1+R_2)-R_1\cdot\frac{\partial}{\partial R_1}(R_1+R_2)}{(R_1+R_2)^2}\\
+&amp;=IR_2\cdot\frac{1\cdot(R_1+R_2)-R_1\cdot 1}{(R_1+R_2)^2}\\
+&amp;=IR_2\cdot\frac{R_2}{(R_1+R_2)^2}\\
+&amp;=\frac{IR_2^2}{(R_1+R_2)^2}\\
+&amp;=\frac{4\cdot 5^2}{(3+5)^2}\\
+&amp;=1{,}562\,5.
+\end{align*}
+</div>
+</li>
+<li id="li-444">
+<p id="p-659">Puis, pour des raisons de symétrie, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial V}{\partial R_2}&amp;=\frac{IR_1^2}{(R_1+R_2)^2}\\
+&amp;=\frac{4\cdot 3^2}{(3+5)^2}\\
+&amp;=0{,}562\,5.
+\end{align*}
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<p id="p-660">Finalement, en revenant à la formule donnée par la règle de dérivation en chaîne et en utilisant les valeurs données et celles qu'on a calculées, on trouve</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}V}{\mathrm{d}t}&amp;=\frac{\partial V}{\partial I}\cdot\frac{\mathrm{d}I}{\mathrm{d}t}+\frac{\partial V}{\partial R_1}\cdot\frac{\mathrm{d}R_1}{\mathrm{d}t}+\frac{\partial V}{\partial R_2}\cdot\frac{\mathrm{d}R_2}{\mathrm{d}t}\\
+&amp;=1{,}875\cdot 0{,}01+1{,}562\,5\cdot 0{,}5+0{,}562\,5\cdot (-0{,}2)\\
+&amp;=1{,}875\cdot 0{,}01+1{,}562\,5\cdot 0{,}5+0{,}562\,5\cdot (-0{,}2)\\
+&amp;=0{,}687\,5.
+\end{align*}
+</div>
+<p data-braille="continuation">On en conclut que la tension augmente au taux de</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}687\,5\,\mathrm{V}/\mathrm{s}.
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-99"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-99"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-99"><article class="exercise exercise-like"><p id="p-661">Soit \(F(x)\) et \(G(x)\) des fonctions deux fois dérivables. Vérifez que la fonction de deux variables</p>
+<div class="displaymath">
+\begin{equation*}
+U(z,t):=F(z-ct)+G(z+ct)
+\end{equation*}
+</div>
+<p data-braille="continuation">est solution de l'<a class="external" href="https://fr.wikipedia.org/wiki/%C3%89quation_des_ondes" target="_blank">équation des ondes</a> en dimension 1</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2U}{\partial z^2}=\frac{1}{c^2}\frac{\partial^2U}{\partial t^2}.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-25" id="hint-25"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-25"><div class="hint solution-like">
+<p id="p-662">Introduisez les variables</p>
+<div class="displaymath">
+\begin{equation*}
+a:=z-ct\quad\text{et}\quad b:=z+ct
+\end{equation*}
+</div>
+<p data-braille="continuation">et dressez l'arbre de dépendance des variables \(a,b,z,t\) et</p>
+<div class="displaymath">
+\begin{equation*}
+U=F(a)+G(b).
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-97" id="answer-97"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-97"><div class="answer solution-like">
+<p id="p-663">On trouve</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2U}{\partial z^2}=F''(a)+G''(b)\quad\text{et}\quad\frac{\partial^2U}{\partial t^2}=c^2(F''(a)+G''(b))
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2U}{\partial z^2}=\frac{1}{c^2}\frac{\partial^2U}{\partial t^2}.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like">
+<p id="p-664">Introduisons les variables</p>
+<div class="displaymath">
+\begin{equation*}
+a:=z-ct\quad\text{et}\quad b:=z+ct.
+\end{equation*}
+</div>
+<p data-braille="continuation">Alors l'arbre de dépendance des variables \(a,b,z,t\) et</p>
+<div class="displaymath">
+\begin{equation*}
+U=F(a)+G(b)
+\end{equation*}
+</div>
+<p data-braille="continuation">est le suivant : <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/exercice_4.3.8.png" style="width: 100%; height: auto;" alt=""></div></p>
+<ul class="disc">
+<li id="li-445">
+<p id="p-665">Quand on dérive une telle fonction \(U=F(a)+G(b)\) par rapport à \(z\text{,}\) la règle de dérivation en chaîne donne</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial U}{\partial z}&amp;=\frac{\partial U}{\partial a}\cdot\frac{\partial a}{\partial z}+\frac{\partial U}{\partial b}\cdot\frac{\partial b}{\partial z}\\
+&amp;=\frac{\partial}{\partial a}(F(a)+G(b))\cdot\frac{\partial}{\partial z}(z-ct)+\frac{\partial}{\partial b}(F(a)+G(b))\cdot\frac{\partial}{\partial z}(z+ct)\\
+&amp;=(F'(a)+0)\cdot 1+(0+G'(b)\cdot 1\\
+&amp;=F'(a)+G'(b).
+\end{align*}
+</div>
+<p id="p-666">En appliquant le résultat précédent à la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+V=F'(a)+G'(b)
+\end{equation*}
+</div>
+<p data-braille="continuation">au lieu de la fonction \(U\text{,}\) on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial V}{\partial z}=F''(a)+G''(b)
+\end{equation*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2 U}{\partial z^2}=F''(a)+G''(b).
+\end{equation*}
+</div>
+</li>
+<li id="li-446">
+<p id="p-667">Quand on dérive une telle fonction \(U=F(a)+G(b)\) par rapport à \(t\text{,}\) la règle de dérivation en chaîne donne</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial U}{\partial t}&amp;=\frac{\partial U}{\partial a}\cdot\frac{\partial a}{\partial t}+\frac{\partial U}{\partial b}\cdot\frac{\partial b}{\partial t}\\
+&amp;=\frac{\partial}{\partial a}(F(a)+G(b))\cdot\frac{\partial}{\partial t}(z-ct)+\frac{\partial}{\partial b}(F(a)+G(b))\cdot\frac{\partial}{\partial t}(z+ct)\\
+&amp;=(F'(a)+0)\cdot (-c)+(0+G'(b)\cdot c\\
+&amp;=c\cdot(-F'(a)+G'(b)).
+\end{align*}
+</div>
+<p id="p-668">En appliquant le résultat précédent à la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+V=-F'(a)+G'(b)
+\end{equation*}
+</div>
+<p data-braille="continuation">au lieu de la fonction \(U\text{,}\) on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial V}{\partial t}=c\cdot(F''(a))+G''(b))
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial^2 U}{\partial t^2}&amp;=\frac{\partial}{\partial t}\left(\frac{\partial U}{\partial t}\right)\\
+&amp;=\frac{\partial}{\partial t}\left(c\cdot(-F'(a)+G'(b))\right)\\
+&amp;=c\cdot\frac{\partial}{\partial t}\left(-F'(a)+G'(b)\right)\\
+&amp;=c\cdot\frac{\partial V}{\partial t}\\
+&amp;=c\cdot c\cdot(F''(a))+G''(b))
+\end{align*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2 U}{\partial t^2}=c^2(F''(a)+G''(b)).
+\end{equation*}
+</div>
+</li>
+</ul>
+<p id="p-669">On a montré que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2U}{\partial z^2}=F''(a)+G''(b)\quad\text{et}\quad\frac{\partial^2U}{\partial t^2}=c^2(F''(a)+G''(b))
+\end{equation*}
+</div>
+<p data-braille="continuation">Cela prouve que \(U\) est bien solution de l'équation des ondes en dimension 1</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2U}{\partial z^2}=\frac{1}{c^2}\frac{\partial^2U}{\partial t^2}.
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="project project-like" id="project-3"><h6 class="heading">
+<span class="type">Synthèse</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-7"><p id="p-670">Les questions suivantes sont indépendantes les unes des autres.</p></div>
+<article class="task exercise-like" id="task-13"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-671">Soit \(x,y,z,w,r,\theta,\phi\) des variables telles que</p>
+<div class="displaymath">
+\begin{equation*}
+w=xy+yz+zx,\quad x=r\cos\phi,\quad y=r\sin\theta\sin\phi\quad\text{et}\quad z=r\theta.
+\end{equation*}
+</div>
+<p data-braille="continuation">Dresser leur arbre de dépendance.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like"><p id="p-672"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/4.3_synthese.png" style="width: 100%; height: auto;" alt=""></div></p></div></div>
+</div></article><article class="task exercise-like" id="task-14"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-673">Les variables \(x,y,z,u,v,w\) dépendent les unes des autres selon l'arbre suivant : <div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="images/4.3_synthese2.png" style="width: 100%; height: auto;" alt=""></div> Appliquer la règle de dérivation en chaîne au calcul de</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial z}{\partial v}\quad\text{et}\quad\frac{\partial z}{\partial w}.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like">
+<p id="p-674">On a</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial z}{\partial v}=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial v}
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial z}{\partial w}=\frac{\partial z}{\partial y}\cdot \frac{\partial y}{\partial w}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="task exercise-like" id="task-15"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-675">Soit \(f(x,y)\) une fonction différentiable et \(g(t),h(t)\) des fonctions dérivables.</p>
+<p id="p-676">Sachant que</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcrcrcr}
+g(5)&amp;=&amp;2&amp;&amp;h(5)&amp;=&amp;3\\
+g'(5)&amp;=&amp;-3&amp;&amp;h'(5)&amp;=&amp;6\\
+f_x(2,3)&amp;=&amp;-4&amp;&amp;f_y(2,3)&amp;=&amp;7
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">calculer la valeur de</p>
+<div class="displaymath">
+\begin{equation*}
+p'(5)
+\end{equation*}
+</div>
+<p data-braille="continuation">pour la fonction \(p(t)\) définie par</p>
+<div class="displaymath">
+\begin{equation*}
+p(t):=f(g(t),h(t)).
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-45" id="solution-45"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-45"><div class="solution solution-like">
+<p id="p-677">Considérons les variables</p>
+<div class="displaymath">
+\begin{equation*}
+p=f(x,y)\quad\text{avec}\quad x=g(t)\quad\text{et}\quad y=h(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">dont l'arbre de dépendance est le suivant : <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/4.3_synthese3.png" style="width: 100%; height: auto;" alt=""></div></p>
+<p id="p-678">Par la règle de dérivation en chaîne, on a</p>
+<div class="displaymath">
+\begin{align*}
+p'&amp;=\frac{\mathrm{d}p}{\mathrm{d}t}\\
+&amp;=\frac{\partial p}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial p}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\\
+&amp;=f_x\cdot g'+f_y\cdot h'.
+\end{align*}
+</div>
+<p data-braille="continuation">Comme par ailleurs</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y)=(g(5),h(5))=(2,3)\quad\text{lorsque}\quad t=5,
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient finalement</p>
+<div class="displaymath">
+\begin{align*}
+p'(5)&amp;=f_x(2,3)\cdot g'(5)+f_y(2,3)\cdot h'(5)\\
+&amp;=(-4)\cdot(-3)+7\cdot 6\\
+&amp;=54.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="task exercise-like" id="task-16"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-679">Sachant que</p>
+<div class="displaymath">
+\begin{equation*}
+z=x^4+x^2y\quad\text{avec}\quad x=s+2t-1\quad\text{et}\quad y=stu^2,
+\end{equation*}
+</div>
+<p data-braille="continuation">calculer</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial z}{\partial t}
+\end{equation*}
+</div>
+<p data-braille="continuation">lorsque \(s=4,t=2,u=1\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-46" id="solution-46"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-46"><div class="solution solution-like"><ul class="disc">
+<li id="li-447">
+<p id="p-680">Voici l'arbre de dépendance des variables \(x,y,z,s,t,u\) : <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/4.3_synthese4.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on en déduit que</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial t}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial t}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial t}\\
+&amp;=\frac{\partial}{\partial x}(x^4+x^2y)\cdot\frac{\partial}{\partial t}(s+2t-1)+\frac{\partial}{\partial y}(x^4+x^2y)\cdot\frac{\partial}{\partial t}(stu^2)\\
+&amp;=(4x^3+2xy)\cdot 2+x^2\cdot su^2.
+\end{align*}
+</div>
+</li>
+<li id="li-448">
+<p id="p-681">Lorsque \(s=4,t=2,u=1\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+x=4+2\cdot 2-1=7\quad\text{et}\quad y=4\cdot 2\cdot 1^2=8.
+\end{equation*}
+</div>
+</li>
+<li id="li-449">
+<p id="p-682">On obtient donc finalement</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial t}\Bigg\rvert_{(s,t,u)=(4,2,1)}&amp;=(4x^3+2xy)\cdot 2+x^2\cdot su^2\Bigg\rvert_{(s,t,u)=(4,2,1)}\\
+&amp;=(4\cdot 7^3+2\cdot 7\cdot 8)\cdot 2+7^2\cdot 4\cdot 1^2\\
+&amp;=3164.
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="task exercise-like" id="task-17"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-683">Soit \(L,l\) et \(h\) la longueur, la largeur et la hauteur d'un <a class="external" href="https://fr.wikipedia.org/wiki/Pav%C3%A9_droit" target="_blank">pavé droit</a> dont les dimensions varient en fonction du temps \(t\) selon les taux suivants :</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}L}{\mathrm{d}t}=\frac{\mathrm{d}l}{\mathrm{d}t}=2\,\mathrm{m}/\mathrm{s}\quad\text{et}\quad\frac{\mathrm{d}h}{\mathrm{d}t}=-3\,\mathrm{m}/\mathrm{s}
+\end{equation*}
+</div>
+<p id="p-684">Calculer le taux de variation de la longueur d'une grande diagonale au moment où</p>
+<div class="displaymath">
+\begin{equation*}
+L=1\,\mathrm{m}\quad\text{et}\quad l=h=2\,\mathrm{m}.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-47" id="solution-47"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-47"><div class="solution solution-like">
+<p id="p-685">En appliquant deux fois le théorème de Pythagore, on voit que la longueur d'une grande diagonale est donnée par</p>
+<div class="displaymath">
+\begin{equation*}
+D=\sqrt{L^2+l^2+h^2}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On a donc l'arbre de dépendance suivant : <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/4.3_synthese5.png" style="width: 100%; height: auto;" alt=""></div></p>
+<p id="p-686">Par la règle de dérivation en chaîne, on obtient donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}D}{\mathrm{d}t}&amp;=\frac{\partial D}{\partial L}\cdot\frac{\mathrm{d}L}{\mathrm{d}t}+\frac{\partial D}{\partial l}\cdot\frac{\mathrm{d}l}{\mathrm{d}t}+\frac{\partial D}{\partial h}\cdot\frac{\mathrm{d}h}{\mathrm{d}t}\\
+&amp;=\frac{1}{2\sqrt{L^2+l^2+h^2}}\cdot 2L\cdot\frac{\mathrm{d}L}{\mathrm{d}t}+\frac{1}{2\sqrt{L^2+l^2+h^2}}\cdot 2l\cdot\frac{\mathrm{d}l}{\mathrm{d}t}\\
+&amp;\qquad\qquad+\frac{1}{2\sqrt{L^2+l^2+h^2}}\cdot 2h\cdot\frac{\mathrm{d}h}{\mathrm{d}t}\\
+&amp;=\frac{1}{\sqrt{L^2+l^2+h^2}}\cdot\left(L\frac{\mathrm{d}L}{\mathrm{d}t}+l\frac{\mathrm{d}l}{\mathrm{d}t}+h\frac{\mathrm{d}h}{\mathrm{d}t}\right)\\
+&amp;=\frac{1}{\sqrt{1^2+2^2+2^2}}\cdot\left(1\cdot 2+2\cdot 2+2\cdot(-3)\right)\\
+&amp;=\frac{1}{\sqrt{9}}\cdot 0\\
+&amp;=0\,\mathrm{m}/\mathrm{s}.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="task exercise-like" id="task-18"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-687">Soit \(f\) une fonction différentiable et</p>
+<div class="displaymath">
+\begin{equation*}
+z=f(x,y)\quad\text{avec}\quad x=r\cos\theta\quad\text{et}\quad y=r\sin\theta.
+\end{equation*}
+</div>
+<p id="p-688">Montrer que \(z\) vérifie l'équation aux dérivées partielles suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2=\left(\frac{\partial z}{\partial r}\right)^2+\frac{1}{r^2}\left(\frac{\partial z}{\partial\theta}\right)^2.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-48" id="solution-48"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-48"><div class="solution solution-like"><ul class="disc">
+<li id="li-450">
+<p id="p-689">D'après l'arbre de dépendance <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/4.3_synthese6.png" style="width: 100%; height: auto;" alt=""></div> la règle de dérivation en chaîne entraîne</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial r}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial r}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial r}\\
+&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial}{\partial r}(r\cos\theta)+\frac{\partial z}{\partial y}\cdot\frac{\partial}{\partial r}(r\sin\theta)\\
+&amp;=\frac{\partial z}{\partial x}\cdot\cos\theta+\frac{\partial z}{\partial y}\cdot\sin\theta
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial\theta}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial\theta}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial\theta}\\
+&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial}{\partial\theta}(r\cos\theta)+\frac{\partial z}{\partial y}\cdot\frac{\partial}{\partial\theta}(r\sin\theta)\\
+&amp;=\frac{\partial z}{\partial x}\cdot(-r\sin\theta)+\frac{\partial z}{\partial y}\cdot r\cos\theta.
+\end{align*}
+</div>
+</li>
+<li id="li-451">
+<p id="p-690">Par conséquent, on a</p>
+<div class="displaymath">
+\begin{align*}
+\left(\frac{\partial z}{\partial r}\right)^2&amp;=\left(\frac{\partial z}{\partial x}\cdot\cos\theta+\frac{\partial z}{\partial y}\cdot\sin\theta\right)^2\\
+&amp;=\left(\frac{\partial z}{\partial x}\right)^2\cos^2\theta+2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}\cos\theta\sin\theta+\left(\frac{\partial z}{\partial y}\right)^2\sin^2\theta
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+\left(\frac{\partial z}{\partial\theta}\right)^2&amp;=\left(\frac{\partial z}{\partial x}\cdot(-r\sin\theta)+\frac{\partial z}{\partial y}\cdot r\cos\theta\right)^2\\
+&amp;=\left(\frac{\partial z}{\partial x}\right)^2r^2\sin^2\theta-2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}r^2\cos\theta\sin\theta+\left(\frac{\partial z}{\partial y}\right)^2r^2\cos^2\theta.
+\end{align*}
+</div>
+</li>
+<li id="li-452">
+<p id="p-691">Finalement, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\left(\frac{\partial z}{\partial r}\right)^2+\frac{1}{r^2}\left(\frac{\partial z}{\partial\theta}\right)^2\\
+=\quad&amp;\left(\frac{\partial z}{\partial x}\right)^2\cos^2\theta+\cancel{2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}\cos\theta\sin\theta}+\left(\frac{\partial z}{\partial y}\right)^2\sin^2\theta\\
+\quad+&amp;\left(\frac{\partial z}{\partial x}\right)^2\sin^2\theta-\cancel{2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}\cos\theta\sin\theta}+\left(\frac{\partial z}{\partial y}\right)^2\cos^2\theta\\
+=\quad&amp;\left(\frac{\partial z}{\partial x}\right)^2(\underbrace{\cos^2\theta+\sin^2\theta}_{=1})+\left(\frac{\partial z}{\partial y}\right)^2(\underbrace{\sin^2\theta+\cos^2\theta}_{=1})\\
+=\quad&amp;\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2
+\end{align*}
+</div>
+<p data-braille="continuation">comme souhaité.</p>
+</li>
+</ul></div></div>
+</div></article></article><p id="p-692">Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 2, 4, 6, 8, 10, 12, 18, 22, 24, 36, 38, 54 dont voici les <a class="external" href="https://drive.google.com/file/d/1Yi0H0JjmitiwZw0yK1JBmL0OLZoXQ8ZY/view?usp=sharing" target="_blank">solutions</a>.</p>
+<p id="p-693">Sinon, passez directement aux exercices prioritaires de cette section.</p>
+<p id="p-694">Remarque : Voici <a class="external" href="https://drive.google.com/file/d/1sNNXv1p3QRxiQyim3ZKpYBWdeaEut-en/view?usp=sharing" target="_blank">le document</a> distribué les sessions précédentes. Et en voilà <a class="external" href="https://drive.google.com/file/d/13cEmn4LYnlPL_KET_3oO33d1DfrNBtSq/view?usp=sharing" target="_blank">le solutionnaire</a>.</p></section></div></main>
+</div>
+</body>
+</html>

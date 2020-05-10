@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="varia" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Varia</title>
+
+<introduction>
+  <p>Ce chapitre regroupe toutes sortes d'exercices qu'on n'est pas parvenu à ranger dans les chapitres précédents.</p>
+
+</introduction>
+
+<section xml:id="SDR">
+  <title>Notation sigma et sommes de Riemann</title>
+
+  <introduction>
+    <p>Voici un <url href="https://goo.gl/hcvys3">calculateur de sommes de Riemann</url> laissant le choix entre trois méthodes de subdivision à pas constant privilégiant les points de gauche, ceux de droite, ou ceux du milieu.</p>
+  </introduction>
+
+  <exercise>
+      <statement>
+          <p>Explicitez les termes des sommations suivantes.<ol>
+              <li><p><m>\displaystyle\sum_{i=4}^9(-1)^i2^{i-1}</m></p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^5\frac{2k-1}{(k-1)!}</m></p></li>
+              <li><p><m>\displaystyle\sum_{j=2}^4\left(-1\right)^{j-1}(j^2-2)</m></p></li>
+              <li><p><m>\displaystyle\sum_{k=0}^7\cos\left(\frac{n\pi}{2}\right)</m></p></li>
+              <li><p><m>\displaystyle\sum_{i=0}^3(-1)^ix^i</m></p></li>
+              <li><p><m>\displaystyle\sum_{i=0}^na_ix^i</m></p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{1}{k}</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle 8-16+32-64+128-256</m></p></li>
+              <li><p><m>\displaystyle 1+3+\frac{5}{2}+\frac{7}{6}+\frac{9}{24}</m></p></li>
+              <li><p><m>\displaystyle -2+7-14</m></p></li>
+              <li><p><m>\displaystyle 1+0-1+0+1+0-1+0</m></p></li>
+              <li><p><m>\displaystyle 1-x+x^2-x^3</m></p></li>
+              <li><p><m>\displaystyle a_0+a_1x+a_2x^3+\ldots+a_nx^n</m></p></li>
+              <li><p><m>\displaystyle 1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\ldots</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Utilisez le symbole <m>\Sigma</m> pour représenter les sommes suivantes.<ol>
+              <li><p><m>\displaystyle 8-16+32-64+128-256</m></p></li>
+              <li><p><m>\displaystyle\frac{2}{3}-\frac{4}{5}+\frac{6}{7}-\frac{8}{9}+\frac{10}{11}</m></p></li>
+              <li><p><m>\displaystyle 1+3+5+\cdots+(2n-1)</m></p></li>
+              <li><p><m>\displaystyle \frac{1}{4}\left(\frac{1^2}{4^2}+\frac{2^2}{4^2}+\frac{3^2}{4^2}+\frac{4^2}{4^2}\right)</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle\sum_{i=4}^9(-1)^i2^{i-1}</m></p></li>
+              <li><p><m>\displaystyle\sum_{j=1}^5(-1)^{j+1}\frac{2j}{2j+1}</m></p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^n(2k-1)</m></p></li>
+              <li><p><m>\displaystyle\frac{1}{4}\sum_{k=1}^4\left(\frac{k}{4}\right)^2</m></p></li>
+
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Évaluez les sommes suivantes à l'aide des formules et des théorèmes.<ol>
+              <li><p><m>\displaystyle\sum_{i=21}^{78}i^3</m></p></li>
+              <li><p><m>\displaystyle\sum_{i=1}^{37}(5i-4)^2</m></p></li>
+              <li><p><m>\displaystyle\left(5+\frac{1}{11}\right)+\left(5+\frac{2}{11}\right)+\left(5+\frac{3}{11}\right)+\cdots+\left(5+\frac{29}{11}\right)</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle 9448461</m></p></li>
+              <li><p><m>\displaystyle 411847</m></p></li>
+              <li><p><m>\displaystyle\frac{2030}{11}</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Utilisez les formules de sommation pour exprimer les sommes suivantes en fonction de <m>n</m>.<ol>
+              <li><p><m>\displaystyle\sum_{i=1}^{n}\left(2+\frac{3i}{n}\right)</m></p></li>
+              <li><p><m>\displaystyle\sum_{i=1}^n\left(1+\frac{2(i-1)}{n}\right)^2</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle\frac{7n}{2}+\frac{3}{2}</m></p></li>
+              <li><p><m>\displaystyle\frac{13n}{3}-4+\frac{2}{3n} </m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Représentez graphiquement et évaluez.<ol>
+              <li><p><m>s_3</m> et <m>S_3</m> si <m>\displaystyle f(x)=\frac{1}{x+1}</m> sur <m>[0\,;\,3]</m></p></li>
+              <li><p><m>s_4</m> et <m>S_4</m> si <m>\displaystyle f(x)=x^2+4x+3</m> sur <m>[1\,;\,3]</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li>
+                <sidebyside widths="50% 50%">
+                  <p><image source="images/s3.png"/></p>
+                  <p><image source="images/S3gauche.png"/></p>
+                </sidebyside>
+                <sidebyside widths="50% 50%">
+                  <p><m>\displaystyle s_3=\frac{13}{12}</m></p>
+                  <p><m>\displaystyle S_3=\frac{11}{6}</m></p>
+                </sidebyside>
+              </li>
+              <li>
+                <sidebyside widths="50% 50%">
+                  <p><image source="images/s4.png"/></p>
+                  <p><image source="images/S4droite.png"/></p>
+                </sidebyside>
+                <sidebyside widths="50% 50%">
+                  <p><m>\displaystyle s_4=26,75</m></p>
+                  <p><m>\displaystyle S_4=34,75</m></p>
+                </sidebyside>
+              </li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Soit <m>g(x)=x^2+4x+3</m> sur <m>[1\,;\,3]</m>.<ol>
+              <li><p>Évaluez <m>\displaystyle s_n</m>.</p></li>
+              <li><p>Évaluez <m>\displaystyle S_n</m>.</p></li>
+              <li><p>En déduire la valeur de l'intégrale définie <m>\int_1^3 f(x)\,dx</m>.</p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle s_n=\frac{92}{3}-\frac{16}{n}+\frac{4}{3n^2}</m></p></li>
+              <li><p><m>\displaystyle S_n=\frac{92}{3}+\frac{16}{n}+\frac{4}{3n^2}</m></p></li>
+              <li><p><m>\displaystyle \frac{92}{3}</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="edo">
+  <title>Équations différentielles</title>
+
+  <introduction>
+    <p>On peut utiliser <url href="https://sagecell.sagemath.org/">Sage</url> pour résoudre une équation différentielle.</p>
+    <p>Par exemple, voici comment obtenir la solution générale implicite de l'équation différentielle ordinaire <m>\displaystyle\frac{dy}{dx}=\frac{e^y+1}{3x^2e^y}</m></p>
+    <sage>
+      <input>var('x'); y=function('y')(x); edo=diff(y,x)==(exp(y)+1)/(3*x^2*exp(y)); sol=desolve(edo, y); show(sol)</input>
+    </sage>
+    <p>ou la solution particulière impicite de l'équation différentielle <m>\displaystyle\frac{dv}{dt}=\sqrt{vt}</m> soumise à la condition <m>v(4)=9</m></p>
+    <sage>
+      <input>var('t'); v=function('v')(t); edo=diff(v,t)==sqrt(v*t); sol=desolve(edo, v, ics=[4,9]); show(sol)</input>
+    </sage>
+  </introduction>
+
+  <exercise>
+    <statement>
+      <p>Parmi les fonctions suivantes, lesquelles sont des solutions de l'équation différentielle <m>y''+y=\sin x</m>?<ol>
+        <li><p><m>\displaystyle y=\sin x</m></p></li>
+        <li><p><m>\displaystyle y=\cos x</m></p></li>
+        <li><p><m>\displaystyle y=-\frac{1}{2}x\cos x</m></p></li>
+        <li><p><m>\displaystyle y=\frac{1}{2}x\sin x</m></p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p>pas solution</p></li>
+        <li><p>pas solution</p></li>
+        <li><p>solution</p></li>
+        <li><p>pas solution</p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Déterminez la solution de l'équation différentielle qui vérifie la condition initiale donnée.<ol>
+        <li><p><m>\displaystyle \frac{dy}{dx}=\frac{x}{y}</m> et <m>\displaystyle y(0)=-3</m></p></li>
+        <li><p><m>\displaystyle \frac{dy}{dx}=\frac{\ln x}{xy}</m> et <m>\displaystyle y(1)=2</m></p></li>
+        <li><p><m>\displaystyle \frac{du}{dt}=\frac{2t+\sec^2 t}{2u}</m> et <m>\displaystyle u(0)=-5</m></p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p><m>\displaystyle y=-\sqrt{x^2+9}</m></p></li>
+        <li><p><m>\displaystyle y=\sqrt{(\ln x)^2+4}</m></p></li>
+        <li><p><m>\displaystyle u=-\sqrt{t^2+\tan t+25}</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Une famille de courbes est telle qu'en tout point d'une de ces courbes, la pente de la tangente est égale au quotient du carré de l'abscisse par la quatrième puissance de l'ordonnée du point de tangence.<ol>
+        <li><p>Déterminez l'équation générale de cette famille de courbes.</p></li>
+        <li><p>Déterminez l'équation de la courbe de cette famille dont l'ordonnée à l'origine est 2.</p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p>solution générale : <m>\displaystyle y=\sqrt[5]{\frac{5}{3}x^3+C}</m></p></li>
+        <li><p>solution particulière : <m>\displaystyle y=\sqrt[5]{\frac{5}{3}x^3+32}</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Déterminez la ou les solutions explicites des équations différentielles suivantes.<ol>
+        <li><p><m>\displaystyle\frac{dv}{dt}=\sqrt{vt}</m> où <m>v>0</m>, <m>t>0</m> et la courbe passe par le point <m>P(4;9)</m></p></li>
+        <li><p><m>\displaystyle\frac{dy}{dx}=\frac{e^y+1}{3x^2e^y}</m></p></li>
+        <li><p><m>\displaystyle\frac{dP}{dt}=kP</m> où <m>P(t)>0</m>, <m>k>0</m></p></li>
+        <li><p><m>\displaystyle\sec\theta\frac{dy}{d\theta}=y^4</m> et la courbe passe par le point <m>\displaystyle P\left(\frac{\pi}{6};\frac{1}{2}\right)</m></p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p>deux solutions : <m>\displaystyle v(t)=\frac{\left(\sqrt{t^3}+1\right)^2}{9}</m> et <m>\displaystyle v(t)=\frac{\left(\sqrt{t^3}-17\right)^2}{9}</m></p></li>
+        <li><p>solution générale : <m>\displaystyle y=\ln \left(Ce^{-\frac{1}{3x}}-1\right)</m></p></li>
+        <li><p>solution générale : <m>\displaystyle P=Ce^{kt}</m></p></li>
+        <li><p>une solution : <m>\displaystyle y=\sqrt[3]{\frac{19}{2}-\sin\theta}</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Une quantité <m>Q</m> de substance radioactive se désintègre de sorte que son taux de désintégration est proportionnel en tout temps à la quantité restante. La demi-vie de cette substance est de <m>t=12</m> heures.<ol>
+        <li><p>Déterminez l'équation différentielle à laquelle <m>Q(t)</m> obéit.</p></li>
+        <li><p>Quelle proportion d'une quantité donnée <m>Q_0</m> reste-t-il après <m>7</m> heures?</p></li>
+        <li><p>Combien de temps faut-il attendre pour qu'il n'en reste plus que <m>1\%</m>?</p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p><m>\displaystyle \frac{dQ}{dt}=-kQ</m> où <m>k>0</m></p></li>
+        <li><p><m>\displaystyle 2^{-\frac{7}{12}}\approx 66,7\%</m></p></li>
+        <li><p><m>\displaystyle \frac{24}{\log(2)}\approx 79</m> heures <m>43</m> minutes <m>35</m> secondes</p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p><ol>
+              <li><p>Soit <m>P</m> la population d'une ville dont le taux continu de natalité est de <m>3,5\,\%</m> par année, et dont le taux continu de mortalité est de <m>1,9\,\%</m> par année. En 2007, cette population était de 8000 habitants. On note <m>t</m> le nombre d'années écoulées depuis 2007.<ol>
+                    <li><p>Déterminez l'équation différentielle correspondant à cette situation.</p></li>
+                    <li><p>Donnez la solution particulière de cette équation différentielle.</p></li>
+                    <li><p>Quelle sera la population de cette ville en 2025?</p></li>
+                    <li><p>Cette population doublera-t-elle un jour? Si oui, en quelle année?</p></li>
+                    <li><p>Cette population finira-t-elle par s'annuler? Si oui, en quelle année?</p></li>
+
+                  </ol></p></li>
+              <li><p>Mêmes questions qu'au 1, si 500 personnes quittent la ville chaque année.</p></li>
+              <li><p>Mêmes questions qu'au 1, si 500 personnes s'installent dans cette ville chaque année.</p></li>
+              <li><p>Identifiez la situation à laquelle correspond chacune des courbes de population du graphique ci-après.</p>
+                  <sidebyside widths="90%" margins="auto">
+                  <p><image source="images/populations.png"/></p>
+                  </sidebyside></li>
+          </ol></p>
+      </statement>
+      <answer>
+        <p><ol>
+            <li><p><ol>
+                  <li><p><m>\displaystyle\frac{dP}{dt}=0,016 P</m></p></li>
+                  <li><p><m>\displaystyle P=8000 e^{0,016t}</m></p></li>
+                  <li><p><m>\displaystyle\approx 10670</m></p></li>
+                  <li><p>Oui, au cours de l'année 2050.</p></li>
+                  <li><p>Non.</p></li>
+                </ol></p></li>
+            <li><p><ol>
+                  <li><p><m>\displaystyle\frac{dP}{dt}=0,016 P-500</m></p></li>
+                  <li><p><m>\displaystyle P=31250-23250e^{0,016t}</m></p></li>
+                  <li><p><m>\displaystyle\approx 240</m></p></li>
+                  <li><p>Non.</p></li>
+                  <li><p>Oui, au cours de l'année 2025.</p></li>
+                </ol></p></li>
+            <li><p><ol>
+                  <li><p><m>\displaystyle\frac{dP}{dt}=0,016 P+500</m></p></li>
+                  <li><p><m>\displaystyle P=39250e^{0,016t}-31250</m></p></li>
+                  <li><p><m>\displaystyle\approx 21100</m></p></li>
+                  <li><p>Oui, au cours de l'année 2018.</p></li>
+                  <li><p>Non.</p></li>
+                </ol></p></li>
+            <li><p>La courbe décroissante correspond à la question 3. Celle qui croît le plus correspond à la question 2. Celle du milieu correspond à la question 1.</p></li>
+        </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Un écologiste estime qu'un lac artificiel peut contenir un maximum de 3600 brochets. Nous ensemençons ce lac avec 600 brochets. Supposons qu'un modèle logistique de croissance s'applique à cette population <m>P</m> avec une constante de proportionnalité égale à 0,000225 lorsque le temps écoulé <m>t</m> est compté en mois.<ol>
+              <li><p>Donnez l'équation logistique correspondante.</p></li>
+              <li><p>Résolvez cette équation afin d'exprimer le nombre de brochets en fonction du temps.</p></li>
+              <li><p>Déterminez le nombre de brochets après un an.</p></li>
+              <li><p>Dans combien de temps la population de brochets aura-t-elle atteint <m>90\,\%</m> de la capacité maximale du lac?</p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle\frac{dP}{dt}=0,000225\,P(3600-P)</m></p></li>
+              <li><p><m>\displaystyle P=\frac{3600}{1+5e^{-0,81t}}</m></p></li>
+              <li><p><m>\displaystyle \approx 3599</m></p></li>
+              <li><p><m>\displaystyle \approx 4,7</m> mois</p></li>
+          </ol></p>
+          <p>Il n'était pas demandé, mais voici le graphique de la fonction <m>P</m> en fonction du temps <m>t</m>:</p>
+          <sidebyside widths="90%" margins="auto">
+          <p><image source="images/brochets.png"/></p>
+          </sidebyside>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="suites">
+  <title>Suites</title>
+
+  <exercise xml:id="exercice-graphique-de-suite">
+    <statement>
+      <p>Pour chacune des suites suivantes, représentez les cinq premiers termes dans un même graphique.<ol>
+        <li><m>\left\{a_n\right\}_{n=0}^{+\infty}</m> où <m>a_n=\frac{n}{n+1}</m> pour tout <m>n\geq 0</m></li>
+        <li><m>\left\{f_n\right\}_{n=1}^{+\infty}</m> où <m>f_1=f_2=1</m> et <m>f_n=f_{n-1}+f_{n-2}</m> pour tout <m>n\geq 3</m></li>
+      </ol></p>
+    </statement>
+    <solution>
+      <p><ol>
+        <li><url href="https://www.desmos.com/calculator/ggynyfdl6r">graphique Desmos</url></li>
+        <li><url href="https://www.desmos.com/calculator/uahthe7h4g">graphique Desmos</url></li>
+      </ol></p>
+    </solution>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Déterminez si les suites suivantes sont croissantes ; décroissantes ; bornées supérieurement ; bornées inférieurement.<ol>
+              <li><p><m>\displaystyle\left\{ 1+\frac{7}{n+1}\right\}_{n\geq 3}</m></p></li>
+              <li><p><m>\displaystyle\left\{\frac{n-2}{n+1}\right\}_{n\geq 0}</m></p></li>
+              <li><p><m>\displaystyle\left\{2017-45n^2\right\}_{n\geq 1}</m></p></li>
+              <li><p><m>\displaystyle\left\{(-1)^nn^3\right\}_{n\geq 2}</m></p></li>
+              <li><p><m>\displaystyle\left\{\ln(n!)\right\}_{n\geq 1}</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p>décroissante et bornée (inférieurement et supérieurement)</p></li>
+              <li><p>croissante et bornée (inférieurement et supérieurement)</p></li>
+              <li><p>décroissante et bornée supérieurement (mais pas inférieurement)</p></li>
+              <li><p>ni bornée inférieurement ni bornée supérieurement ni croissante ni décroissante</p></li>
+              <li><p>croissante et bornée inférieurement (mais pas supérieurement)</p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-par-mise-en-evidence">
+    <statement>
+      <p>Déterminez la limite des suites suivantes.<ol>
+        <li><m>\displaystyle\left\{\frac{n}{n+1}\right\}_{n=0}^{+\infty}</m></li>
+        <li><m>\displaystyle\left\{\frac{n}{n+1}\right\}_{n=7}^{+\infty}</m></li>
+        <li><m>\displaystyle\left\{\frac{n^4-3n^2+7}{5n^4+8n-2}\right\}_{n=1}^{+\infty}</m></li>
+        <li><m>\displaystyle\left\{\frac{n^4-3n^2+7}{5n^3+8n-2}\right\}_{n=2}^{+\infty}</m></li>
+        <li><m>\displaystyle\left\{\frac{n^4-3n^2+7}{\sqrt{n^9+n^3+1}}\right\}_{n=1}^{+\infty}</m></li>
+      </ol></p>
+    </statement>
+    <hint>
+      <p>Mettez en évidence les termes dominants.</p>
+    </hint>
+    <answer>
+      <p><ol>
+        <li><m>1</m></li>
+        <li><m>1</m></li>
+        <li><m>\frac{1}{5}</m></li>
+        <li><m>+\infty</m></li>
+        <li><m>0</m></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-par-hospital">
+    <statement>
+      <p>Calculez les limites suivantes.<ol>
+        <li><m>\displaystyle\lim_{n\rightarrow +\infty}\frac{\ln n}{n}</m></li>
+        <li><m>\displaystyle\lim_{n\rightarrow +\infty}\frac{2^n}{n}</m></li>
+      </ol></p>
+    </statement>
+    <hint>
+      <p>Utilisez la règle de l'Hospital pour la fonction sous-jacente.</p>
+    </hint>
+    <answer>
+      <p><ol>
+        <li><m>0</m></li>
+        <li><m>+\infty</m></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-convergence-de-suite">
+    <statement>
+      <p>Dites si les suites suivantes sont convergentes. Si elles convergent, indiquez vers quelle valeur.<ol>
+        <li><m>\left\{(-1)^n\right\}</m></li>
+        <li><m>\left\{\frac{(-1)^n}{n}\right\}_{n\geq 1}</m></li>
+        <li><m>\left\{n\sin(2/n)\right\}_{n\geq 5}</m></li>
+        <li><m>\left\{\frac{\cos n}{\ln n}\right\}_{n\geq 2}</m></li>
+        <li><m>\left\{\left(1+\frac{1}{n}\right)^n\right\}_{n\geq 1}</m></li>
+        <li><m>\left\{\frac{n!}{n^n}\right\}_{n\geq 1}</m></li>
+        <li><m>\left\{\frac{n^n}{n!}\right\}_{n\geq 1}</m></li>
+        <li><m>\left\{r^n\right\}_{n\geq 0}</m></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li>diverge</li>
+        <li>converge vers <m>0</m></li>
+        <li>converge vers <m>2</m></li>
+        <li>converge vers <m>0</m></li>
+        <li>converge vers <m>e</m></li>
+        <li>converge vers <m>0</m></li>
+        <li>diverge</li>
+        <li>Une suite géométrique converge vers <m>0</m> si <m>|r| &lt; 1</m>, vers <m>1</m> si <m>r=1</m>, et sinon elle diverge.</li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="finance">
+  <title>Mathématiques financières</title>
+
+  <exercise>
+      <statement>
+          <p>On s'intéresse à un produit de consommation pour lequel la fonction <em>demande</em> est donnée par <m>D(q)=4000-300q</m> et la fonction <em>offre</em> par <m>O(q)=1000+200q</m>.
+          <sidebyside widths="70%" margins="auto">
+          <p><image source="images/surplus.png"/></p>
+          </sidebyside><ol>
+              <li><p>Pour combien d'unités produites <m>q_e</m> atteint-on le point d'équilibre?</p></li>
+              <li><p>Quel est le prix d'équilibre <m>p_e</m>?</p></li>
+              <li><p>Déterminez le surplus total ST et ombrez la région correspondante dans le graphique ci-dessus.</p></li>
+              <li><p>Déterminez le surplus du consommateur SC lorsque la quantité d'équilibre est atteinte et identifiez la région correspondante dans le graphique ci-dessus.</p></li>
+              <li><p>Déterminez le surplus du producteur SP lorsqu'on atteint le prix d'équilibre et identifiez la région correspondante dans le graphique ci-dessus.</p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle q_e=6</m></p></li>
+              <li><p><m>\displaystyle p_e=2200\;\$</m></p></li>
+          </ol></p>
+          <sidebyside widths="30% 30% 30%" margins="auto">
+            <p>3.<m>\quad</m> ST = <m>9000\;\$</m></p>
+            <p>4.<m>\quad</m> SC = <m>5400\;\$</m></p>
+            <p>5.<m>\quad</m> SP = <m>3600\;\$</m></p>
+          </sidebyside>
+          <sidebyside widths="30% 30% 30%" margins="auto">
+            <p><image source="images/surplustotal.png"/></p>
+            <p><image source="images/surplusC.png"/></p>
+            <p><image source="images/surplusP.png"/></p>
+          </sidebyside>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="theoremes">
+  <title>Théorèmes d'analyse</title>
+
+  <exercise>
+    <statement>
+      <p>Déterminez toutes les valeurs de <m>c</m> appartenant à l'intervalle indiqué qui vérifient les conclusions du théorème de Lagrange pour la fonction donnée.</p>
+        <ol>
+          <li><m>\displaystyle f(x)=x^2-3</m> sur <m>[-2;1]</m></li>
+          <li><m>\displaystyle g(x)=x^3-3x^2+3x+2</m> sur <m>[-3;3]</m></li>
+          <li><m>\displaystyle h(x)=3x+\frac{4}{x}</m> sur <m>[1;4]</m></li>
+          <li><m>\displaystyle f(t)=5+\sqrt[3]{t^2}</m> sur <m>[1;8]</m></li>
+        </ol>
+    </statement>
+    <solution>
+        <ol>
+          <li><m>\displaystyle c=-\frac{1}{2}</m></li>
+          <li><m>\displaystyle c=-1</m></li>
+          <li><m>\displaystyle c=2</m></li>
+          <li><m>\displaystyle c=\left(\frac{14}{9}\right)^3</m></li>
+        </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Utilisez le théorème de Lagrange pour démontrer l'inégalité suivante : <me>|\sin(x)|\leq |x| \qquad \forall x\in\mathbb{R}</me></p>
+    </statement>
+    <solution>
+      <p>Pour <m>x=0</m>, l'inégalité est satisfaite car <m>|\sin 0|=|0|\leq |0|</m>.</p>
+      <p>Prenons maintenant <m>x</m> positif. Comme la fonction sinus est dérivable (de dérivée la fonction cosinus) donc continue sur <m>\mathbb{R}</m>, elle est<ul>
+        <li>continue sur <m>[0\,;\,x],</m></li>
+        <li>et dérivable sur <m>]0\,;\,x[</m>.</li>
+      </ul>Elle vérifie donc les conditions d'application du théoème de Lagrange sur l'intervalle <m>[0\,;\,x],</m>. On en déduit qu'il existe <m>c\in]0\,;\,x[</m> tel que
+        <me>\frac{\sin(x)-\sin(0)}{x-0}=\sin'(c)\qquad\mbox{d'où}\quad\frac{\sin(x)}{x}=\cos(c)</me>
+        Comme l'image du cosinus est l'intervalle <m>[-1\,;\,1]</m>, on a <m>-1\leq\cos(c)\leq 1</m>. Donc <m>|\cos(c)|\leq 1</m> et finalement
+        <me>\frac{|\sin x|}{|x|}=|\cos(c)|\leq 1\qquad\mbox{d'où}\quad |\sin(x)|\leq |x|</me></p>
+      <p>Pour <m>x</m> négatif, un raisonnement analogue sur l'intervalle <m>[x\,;\,0]</m> conduit à la même inégalité.</p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Utilisez le théorème de Lagrange pour démontrer l'inégalité suivante : <me>e^x\geq x+1 \qquad \forall x\in[0\,;\,+\infty[</me></p>
+    </statement>
+    <hint><p>Utilisez la fonction adéquate sur l'intervalle <m>[0\,;\,x]</m>.</p></hint>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Soit <m>f</m> une fonction continue sur un intervalle <m>[a\,;\,b]</m>. Montrez que les deux propriétés suivantes sont équivalentes.<ol>
+        <li>La fonction <m>f</m> est constante sur <m>[a\,;\,b]</m></li>
+        <li>La fonction <m>f</m> est dérivable de dérivée nulle sur <m>[a\,;\,b]</m></li>
+      </ol></p>
+    </statement>
+    <hint><p>Une des implications découle directement de la définition de la dérivée, l'autre du théorème de Lagrange.</p></hint>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Démontrez la formule suivante : <me>\arctan(x)+\arctan\left(\frac{1}{x}\right)=\frac{\pi}{2}\qquad\forall x\in]0\,;\,+\infty[</me></p>
+    </statement>
+    <hint><p>Calculez la dérivée du membre de gauche.</p></hint>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Jean fait un test d'accélération avec son nouveau véhicule. Il part arrêté et se déplace en ligne droite. La distance qu'il parcourt, en fonction du temps <m>t</m> écoulé en secondes, est donnée par <m>\displaystyle d(t)=\frac{t^4}{100}</m> mètres.<ol>
+        <li>Quelle est sa vitesse moyenne entre 0 et 10 secondes?</li>
+        <li>Au bout de combien de temps sa vitesse instantanée dépasse-t-elle cette vitesse moyenne?</li>
+        <li>Quel est le théorème qui nous assure que la question précédente admet une réponse?</li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><quantity>
+            <mag>10</mag>
+            <unit base="meter" />
+            <per  base="second"/>
+        </quantity></li>
+        <li><m>\approx</m><quantity>
+            <mag>6,3</mag>
+            <unit  base="second"/>
+        </quantity></li>
+        <li>Le théorème de Lagrange.</li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="defis">
+  <title>Défis</title>
+
+  <exercise>
+      <statement>
+          <p>On considère la suite de terme général <m>\displaystyle a_n</m> définie comme suit :
+          <me>a_0=1\qquad\mbox{et}\qquad\frac{a_{n+1}}{a_n}=\frac{n+3}{n+5}\quad \forall n\in\mathbb{N}</me><ol>
+              <li><p>Montrez que la série de terme général <m>\displaystyle a_n</m> est convergente.</p></li>
+              <li><p>Montrez que la somme de cette série vaut <m>\displaystyle 4</m>.</p></li>
+              <li><p>Plus généralement, on remplace <m>3</m> et <m>5</m> par <m>u</m> et <m>v</m> dans la définition par récurrence de la suite de terme général <m>a_n</m> :
+              <me>a_0=1\qquad\mbox{et}\qquad\frac{a_{n+1}}{a_n}=\frac{n+u}{n+v}\quad \forall n\in\mathbb{N}</me>
+              Montrez que la série <m>\displaystyle\sum_{n=0}^{+\infty}a_n</m> converge si et seulement si <m>v>u+1</m>.</p></li>
+              <li><p>Calculez la somme de la série dans ce cas.</p></li>
+          </ol></p>
+      </statement>
+      <solution>
+          <p><ol>
+              <li><p>à venir</p></li>
+              <li><p>à venir</p></li>
+              <li><p>à venir</p></li>
+              <li><p><m>\displaystyle\sum_{n=0}^{+\infty}a_n=\frac{v-1}{v-u-1}</m></p></li>
+          </ol></p>
+      </solution>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Le but de cet exercice est de calculer la somme de la série suivante :<me>\sum_{n=1}^{+\infty}\frac{1}{n(4n^2-1)}</me>
+          On note<me>a_n=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}-\ln n=\sum_{k=1}^n\frac{1}{k}-\ln n</me>
+          et<me>b_n=\frac{1}{n(4n^2-1)}</me><ol>
+              <li><p>Montrez que la série de terme général <m>\displaystyle a_n-a_{n-1}</m> est convergente.</p></li>
+              <li><p>Montrez que la suite de terme général <m>\displaystyle a_n</m> est convergente.</p></li>
+              <li><p>Calculez la somme de la série de terme <m>\displaystyle b_n</m>.</p></li>
+          </ol></p>
+      </statement>
+      <hint>
+          <p><ol>
+              <li><p>Comparez cette série avec <m>\displaystyle\sum\frac{1}{n^2}</m> à l'aide du critère de comparaison par une limite.</p></li>
+              <li><p>Notez <m>\displaystyle a_0</m> et observez qu'on a <m>\displaystyle\sum_{k=1}^na_k-a_{k-1}=a_n</m>.</p></li>
+              <li><p>Décomposez d'abord la fraction <m>\displaystyle b_n</m> en somme de fractions partielles. Utilisez ensuite l'identité <m>\displaystyle\sum_{k=1}^n\frac{1}{k}=a_n+\ln n</m> afin d'exprimer la somme partielle <m>\sum_{k=1}^nb_k</m> en fonction de <m>\displaystyle c_n</m> et <m>\displaystyle c_{2n}</m>. Enfin, faites tendre <m>n</m> vers l'infini.</p></li>
+          </ol></p>
+      </hint>
+      <answer>
+          <p><me>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n(4n^2-1)}=2\ln 2-1</me></p>
+      </answer>
+  </exercise>
+
+</section>
+
+</chapter>

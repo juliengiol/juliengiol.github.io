@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><ol class="decimal">
+<li>
+<p>Au premier niveau, \(z\) dépend de \(x\) et de \(y\text{,}\) ce qui donne deux branches issues du sommet \(z\text{.}\)</p>
+<p>Au deuxième niveau, on a une seule branche de \(x\) (resp. \(y\)) vers \(t\text{,}\) car \(x\) (resp. \(y\)) ne dépend que de \(t\text{.}\)</p>
+<p>On obtient donc l'arbre de dépendance suivant : <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/exercice_4.3.2.png" style="width: 100%; height: auto;" alt=""></div></p>
+</li>
+<li>
+<p>La règle de dérivation en chaîne donne</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}t}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\\
+&amp;=2x\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{2y}{9}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\\
+&amp;=2x\cdot(2\cos(2t))+\frac{2y}{9}\cdot(-\sin(t))\\
+&amp;=2\sin(2t)\cdot(2\cos(2t))+\frac{2\cos(t)}{9}\cdot(-\sin(t))\\
+&amp;=4\sin(2t)\cos(2t)-\frac{2}{9}\sin(t)\cos(t).
+\end{align*}
+</div>
+</li>
+<li>
+<p>Après substitution, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+z&amp;=x^2+\frac{y^2}{9}\\
+&amp;=(\sin(2t))^2+\frac{(\cos(t))^2}{9}\\
+&amp;=\sin^2(2t)+\frac{1}{9}\cos^2(t).
+\end{align*}
+</div>
+<p data-braille="continuation">Donc on a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}t}&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(\sin^2(2t)+\frac{1}{9}\cos^2(t)\right)\\
+&amp;=2\sin(2t)\cdot\cos(2t)\cdot 2+\frac{1}{9}\cdot 2\cos(t)\cdot(-\sin(t))\\
+&amp;=4\sin(2t)\cos(2t)-\frac{2}{9}\sin(t)\cos(t)
+\end{align*}
+</div>
+<p data-braille="continuation">comme à la question précédente.</p>
+</li>
+<li>
+<p>Lorsque \(t=0\text{,}\) on a <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath">
+\begin{align*}
+\frac{\mathrm{dx}}{\mathrm{d}t}\Bigg\rvert_{t=0}&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(\sin(2t)\right)\Bigg\rvert_{t=0}\\
+&amp;=2\cos(2t)\Bigg\rvert_{t=0}\\
+&amp;=2\cos(0)\\
+&amp;=2\cdot 1\\
+&amp;=2
+\end{align*}
+</div></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath">
+\begin{align*}
+\frac{\mathrm{dy}}{\mathrm{d}t}\Bigg\rvert_{t=0}&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(\cos(t)\right)\Bigg\rvert_{t=0}\\
+&amp;=-\sin(t)\Bigg\rvert_{t=0}\\
+&amp;=-\sin(0)\\
+&amp;=-0\\
+&amp;=0
+\end{align*}
+</div></div>
+</div></div> et <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath">
+\begin{align*}
+x\Bigg\rvert_{t=0}&amp;=\sin(2t)\Bigg\rvert_{t=0}\\
+&amp;=\sin(0)\\
+&amp;=0
+\end{align*}
+</div></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath">
+\begin{align*}
+y\Bigg\rvert_{t=0}&amp;=\cos(t)\Bigg\rvert_{t=0}\\
+&amp;=\cos(0)\\
+&amp;=1
+\end{align*}
+</div></div>
+</div></div> donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}t}\Bigg\rvert_{t=0}&amp;=\left(\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\right)\Bigg\rvert_{t=0}\\
+&amp;=\left(2x\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{2y}{9}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\right)\Bigg\rvert_{t=0}\\
+&amp;=2\cdot x\Bigg\rvert_{t=0}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}\Bigg\rvert_{t=0}+\frac{2}{9}\cdot y\Bigg\rvert_{t=0}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\Bigg\rvert_{t=0}\\
+&amp;=2\cdot 0\cdot 2+\frac{2}{9}\cdot 1\cdot 0\\
+&amp;=0.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Au temps \(t=0\,\mathrm{s}\text{,}\) le point se situe à la position</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y,z)=(0,1,1/9).
+\end{equation*}
+</div>
+<p data-braille="continuation">Ses vitesses horizontales selon les axes des \(x\) et des \(y\) valent respectivement</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{dx}}{\mathrm{d}t}\Bigg\rvert_{t=0}=2\,\mathrm{m}/\mathrm{s}\quad\text{et}\quad\frac{\mathrm{dy}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\,\mathrm{m}/\mathrm{s}
+\end{equation*}
+</div>
+<p data-braille="continuation">tandis que sa vitesse verticale vaut</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{dz}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\,\mathrm{m}/\mathrm{s}.
+\end{equation*}
+</div>
+</li>
+</ol></div></body>
+</html>

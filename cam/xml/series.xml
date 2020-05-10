@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="series" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Séries</title>
+
+<introduction>
+  <p>
+    On peut utiliser <url href="https://sagecell.sagemath.org/">SageMathCell</url> pour calculer la somme d'une série.
+  </p>
+  <p>
+    Par exemple, voici comment obtenir la somme de la série suivante
+    <me>\sum_{n=1}^{+\infty}\frac{1}{n^2}</me>
+    <sage>
+      <input>
+        var('n')
+        S = sum(1/n^2, n, 1, oo)
+        show(S)
+      </input>
+    </sage>
+    ou ce qui se produit avec une série divergente telle que
+    <me>\sum_{n=1}^{+\infty}\frac{1}{n}</me>
+    <sage>
+      <input>
+        var('n')
+        S = sum(1/n, n, 1, oo)
+        show(S)
+      </input>
+    </sage>
+  </p>
+</introduction>
+
+<section xml:id="series-connues">
+  <title>Séries connues</title>
+
+  <exercise>
+      <statement>
+          <p>Déterminez si les séries suivantes convergent ou divergent. Calculez la somme de celles qui convergent.<ol>
+              <li><p><m>\displaystyle\sum_{n=0}^{+\infty}\frac{3}{4^n}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{n=15}^{+\infty}\frac{3}{4n}</m>.</p></li>
+              <li><p><m>\displaystyle\frac{1}{300}+\frac{1}{303}+\frac{1}{306}+\frac{1}{309}+\frac{1}{312}+\frac{1}{315}+\cdots</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{j=1}^{+\infty}\frac{7^j}{8^{j-1}}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{n=2}^{+\infty} \left( \frac{e}{2}\right)^n</m>.</p></li>
+              <li><p><m>\displaystyle\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\frac{1}{64}+\cdots</m>.</p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p>converge et vaut <m>4</m></p></li>
+            <li><p>diverge</p></li>
+            <li><p>diverge</p></li>
+            <li><p>converge et vaut <m>56</m></p></li>
+            <li><p>diverge</p></li>
+            <li><p>converge et vaut <m>1/2</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>En utilisant les résultats suivants: <m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n^4}=\frac{\pi^4}{90}</m><m>\displaystyle\sum_{n=0}^{+\infty}\frac{(-1)^n}{(2n)!}=\cos(1)</m><m>\displaystyle\sum_{n=0}^{+\infty}\frac{1}{n!}=e</m>
+déterminez si les séries suivantes convergent ou divergent. Si c'est possible, donnez leur somme.<ol>
+            <li><p><m>\displaystyle\sum_{n=1}^{+\infty}\frac{7}{n!}</m>.</p></li>
+            <li><p><m>\displaystyle\sum_{n=1}^{+\infty}\left(\frac{2}{n^4}+\frac{(-1)^n}{3(2n)!}\right)</m>.</p></li>
+            <li><p><m>\displaystyle\sum_{n=3}^{+\infty}\frac{1}{n^4}</m>.</p></li>
+            <li><p><m>\displaystyle\sum_{n=0}^{+\infty}\frac{(-1)^{n+1}}{(2n)!}</m>.</p></li>
+            <li><p><m>\displaystyle\sum_{n=5}^{+\infty}\frac{1}{(n-4)!}</m>.</p></li>
+            </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p><m>\displaystyle 7e-7</m>.</p></li>
+            <li><p><m>\displaystyle \frac{\pi^4}{45}+\frac{\cos(1)-1}{3}</m>.</p></li>
+            <li><p><m>\displaystyle \frac{\pi^4}{90}-\frac{17}{16}</m>.</p></li>
+            <li><p><m>\displaystyle -\cos(1)</m>.</p></li>
+            <li><p><m>\displaystyle e-1</m>.</p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="criteres">
+  <title>Critères de convergence et astuces</title>
+
+  <exercise>
+    <statement>
+      <p>Pour chacune des séries suivantes, calculez la somme partielle <m>S_n</m> et déterminez si la série converge ou non. Dans le cas où elle converge, donnez sa somme.<ol>
+        <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{1}{(2k-1)(2k+1)}</m></p></li>
+        <li><p><m>\displaystyle 0,203203203203\ldots</m></p></li>
+        <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{2^k+5^{k+1}}{3^{2k-3}}</m></p></li>
+        <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{2^k+3^{k+1}}{5^{2k-3}}</m></p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p>converge vers <m>\frac{1}{2}</m></p></li>
+        <li><p>converge vers <m>\frac{203}{999}</m></p></li>
+        <li><p>diverge</p></li>
+        <li><p>converge vers <m>\frac{31375}{506}</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>À l'aide du critère de votre choix, déterminez si la série converge ou diverge.<ol>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{3^{k-1}}{4^{k+1}}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{n=1}^{+\infty}n^{-0,99}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{n=1}^{+\infty}\frac{3n^2-1}{4n^2+1}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{n=1}^{+\infty}\frac{5^n}{n!}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=5}^{+\infty}\frac{1}{k\left(\ln k\right)^2}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{n=2}^{+\infty}\frac{1}{2n^3+7}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{n=3}^{+\infty}\frac{n^n}{n!}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{n=2}^{+\infty}\frac{n^2}{5n^3+2}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{(2k-1)(k^2-1)}{(k+1)(k^2+4)^2}</m>.</p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p>converge</p></li>
+            <li><p>diverge</p></li>
+            <li><p>diverge</p></li>
+            <li><p>converge</p></li>
+            <li><p>converge</p></li>
+            <li><p>converge</p></li>
+            <li><p>diverge</p></li>
+            <li><p>diverge</p></li>
+            <li><p>converge</p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Déterminez si la série est convergente ou divergente.<ol>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{3k^2+4}{5k^2-6k+1}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{3}{k^\frac{5}{4}}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{k^4+k^2+1}{k^5+k^3-k-1}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{-4}{\sqrt[3]{k}}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{1}{k^k+2}</m>.</p></li>
+              <li><p><m>\displaystyle 10+\frac{10^5}{2}+\frac{10^9}{6}+\frac{10^{13}}{24}+\cdots</m>.</p></li>
+              <li><p><m>\displaystyle\frac{3}{2}+1+\frac{5}{8}+\cdots</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{(2k)!}{10^{2k}(3k+2)}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\left(\frac{k^2-1}{4k^2+k+1}\right)^\frac{k}{2}</m>.</p></li>
+            </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p>diverge</p></li>
+            <li><p>converge</p></li>
+            <li><p>diverge</p></li>
+            <li><p>diverge</p></li>
+            <li><p>converge</p></li>
+            <li><p>converge</p></li>
+            <li><p>converge</p></li>
+            <li><p>diverge</p></li>
+            <li><p>converge</p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Déterminez si la série est absolument convergente, conditionnellement convergente ou divergente.<ol>
+              <li><m>\displaystyle\sum_{k=1}^{+\infty}\frac{(-2)^k}{k^2}</m></li>
+              <li><m>\displaystyle\sum_{n=1}^{+\infty}(-1)^n\frac{n}{n+5}</m></li>
+              <li><m>\displaystyle\sum_{n=1}^{+\infty}(-1)^n\frac{\cos(n)}{n^3+5}</m></li>
+              <li><m>\displaystyle\sum_{n=1}^{+\infty}(-1)^n\frac{n}{n^2+5}</m></li>
+              <li><m>\displaystyle\sum_{k=5}^{+\infty}\frac{(-1)^kk}{\sqrt{k^5+2}}</m></li>
+              <li><m>\displaystyle\sum_{n=2}^{+\infty}\frac{(-1)^{n-1}}{\ln n}</m></li>
+            </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p>diverge</p></li>
+            <li><p>diverge</p></li>
+            <li><p>converge absolument</p></li>
+            <li><p>converge conditionnellement</p></li>
+            <li><p>converge absolument</p></li>
+            <li><p>converge conditionnellement</p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="puissances">
+  <title>Séries de puissances</title>
+
+  <exercise>
+      <statement>
+          <p>Déterminez le rayon et l'intervalle de convergence des séries de puissances suivantes.<ol>
+              <li><p><m>\displaystyle\sum_{k=2}^{+\infty}\frac{x^k}{k+1}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{(2x+5)^k}{k!}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=3}^{+\infty}\frac{(2x-5)^k}{k^2}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=0}^{+\infty}k!(2x+5)^k</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=1}^{+\infty}\frac{(2x-5)^k}{3^k}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=15}^{+\infty}\frac{(x-7)^k}{\sqrt{k}}</m>.</p></li>
+              <li><p><m>\displaystyle\sum_{k=23}^{+\infty}\frac{(x+7)^k}{k^5+1}</m>.</p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p><m>\displaystyle r=1</m> et <m>\displaystyle I=[-1\;,\;1[</m>.</p></li>
+            <li><p><m>\displaystyle r=\infty</m> et <m>\displaystyle \mathbb{R}</m>.</p></li>
+            <li><p><m>\displaystyle r=1/2</m> et <m>\displaystyle I=[2\;,\;3]</m>.</p></li>
+            <li><p><m>\displaystyle r=0</m> et <m>\displaystyle I=\left\{-5/2\right\}</m>.</p></li>
+            <li><p><m>\displaystyle r=3/2</m> et <m>\displaystyle I=]1\;,\;4[</m>.</p></li>
+            <li><p><m>\displaystyle r=1</m> et <m>\displaystyle I=[6\;,\;8]</m>.</p></li>
+            <li><p><m>\displaystyle r=1</m> et <m>\displaystyle I=[-8\;,\;-6]</m>.</p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="taylor">
+  <title>Séries de Taylor et de Maclaurin</title>
+
+  <exercise>
+      <statement>
+          <p>Soit <m>f(x)=\sqrt{x}</m>.<ol>
+              <li><p>À l'aide de la formule de Taylor, donnez les trois premiers termes et le reste du développement de Taylor de <m>f</m> autour de <m>a=1</m>.</p></li>
+              <li><p>Utilisez la question précédente pour donner une approximation de <m>\sqrt{1,1}</m>.</p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle\sqrt{x}=1+\frac{x-1}{2}-\frac{(x-1)^2}{8}+\frac{(x-1)^3}{16c^{5/2}}</m></p></li>
+              <li><p><m>\displaystyle\sqrt{1,1}\approx 1+\frac{0,1}{2}-\frac{(0,1)^2}{8}=\frac{839}{800}=1,04875</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Donnez le développement indiqué pour la fonction <m>g(x)=\sin(x)</m>.<ol>
+              <li><p>développement en série de Maclaurin;</p></li>
+              <li><p>développement en série de Taylor autour de <m>a=\pi</m>;</p></li>
+              <li><p>développement en série de Taylor autour de <m>a=\displaystyle\frac{\pi}{3}</m>.</p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle x-\frac{x^3}{6}+\frac{x^5}{120}+\cdots+\frac{(-1)^nx^{2n+1}}{(2n+1)!}+\cdots</m></p></li>
+              <li><p><m>\displaystyle\pi-x+\frac{(x-\pi)^3}{6}-\frac{(x-\pi)^5}{120}+\cdots+\frac{(-1)^{n+1}(x-\pi)^{2n+1}}{(2n+1)!}+\cdots</m></p></li>
+              <li>
+                <p><m>\displaystyle\frac{\sqrt{3}}{2}+\frac{1}{2}\left(x-\frac{\pi}{3}\right)-\frac{\sqrt{3}}{2}\frac{\left(x-\frac{\pi}{3}\right)^2}{2}-\frac{1}{2}\frac{\left(x-\frac{\pi}{3}\right)^3}{6}+\frac{\sqrt{3}}{2}\frac{\left(x-\frac{\pi}{3}\right)^4}{24}+\cdots</m></p>
+                <p><m>\displaystyle\cdots+(-1)^n\frac{\sqrt{3}}{2}\frac{\left(x-\frac{\pi}{3}\right)^{2n}}{(2n)!}+(-1)^n\frac{1}{2}\frac{\left(x-\frac{\pi}{3}\right)^{2n+1}}{(2n+1)!}+\cdots</m></p>
+              </li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+</section>
+
+</chapter>

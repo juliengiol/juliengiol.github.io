@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-07T07:23:13-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WebCAM Équations différentielles</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Sauter</a><div class="hidden-content" style="display:none">\(\require{amsmath}\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\dropsign}[1]{\smash{\llap{\raisebox{-.5\normalbaselineskip}{$#1$\hspace{2\arraycolsep}}}}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.collegeahuntsic.qc.ca/" target="_blank"><img src="images/logocollege.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="cam.html"><span class="title">Mon p'tit WebCAM</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="SDR.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="varia.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="suites.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="SDR.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="varia.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="suites.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a></li>
+<li class="link part"><a href="coronavirus.html" data-scroll="coronavirus"><span class="codenumber">I</span> <span class="title">Coronavirus</span></a></li>
+<li class="link"><a href="ateliers_nyb_coronavirus.html" data-scroll="ateliers_nyb_coronavirus"><span class="codenumber">1</span> <span class="title">Ateliers de NYB</span></a></li>
+<li class="link"><a href="aide_individuelle_coronavirus.html" data-scroll="aide_individuelle_coronavirus"><span class="codenumber">2</span> <span class="title">Aide individuelle</span></a></li>
+<li class="link part"><a href="exercices_supplementaires.html" data-scroll="exercices_supplementaires"><span class="codenumber">II</span> <span class="title">Exercices supplémentaires</span></a></li>
+<li class="link">
+<a href="limites.html" data-scroll="limites"><span class="codenumber">1</span> <span class="title">Limites</span></a><ul>
+<li><a href="algebre.html" data-scroll="algebre">Détermination par l'algèbre</a></li>
+<li><a href="RH.html" data-scroll="RH">Règle de L'Hospital</a></li>
+<li><a href="continuite.html" data-scroll="continuite">Continuité</a></li>
+<li><a href="asymptotes.html" data-scroll="asymptotes">Asymptotes</a></li>
+<li><a href="lim_suites.html" data-scroll="lim_suites">Limites de suites</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="derivees.html" data-scroll="derivees"><span class="codenumber">2</span> <span class="title">Dérivées</span></a><ul>
+<li><a href="regles-derivation.html" data-scroll="regles-derivation">Règles de dérivation</a></li>
+<li><a href="tangentes.html" data-scroll="tangentes">Tangentes</a></li>
+<li><a href="differentielle.html" data-scroll="differentielle">Différentielle</a></li>
+<li><a href="etude.html" data-scroll="etude">Étude de fonctions</a></li>
+<li><a href="optimisation.html" data-scroll="optimisation">Optimisation</a></li>
+<li><a href="taux-lies.html" data-scroll="taux-lies">Taux liés</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="integrales.html" data-scroll="integrales"><span class="codenumber">3</span> <span class="title">Intégrales</span></a><ul>
+<li><a href="proprietes.html" data-scroll="proprietes">Primitives et propriétés de base</a></li>
+<li><a href="formules.html" data-scroll="formules">Formules d'intégration de base</a></li>
+<li><a href="CV.html" data-scroll="CV">Changement de variable</a></li>
+<li><a href="IPP.html" data-scroll="IPP">Intégration par parties</a></li>
+<li><a href="FT.html" data-scroll="FT">Fonctions trigonométriques</a></li>
+<li><a href="ST.html" data-scroll="ST">Substitutions trigonométriques</a></li>
+<li><a href="FR.html" data-scroll="FR">Fonctions rationnelles</a></li>
+<li><a href="aires-etc.html" data-scroll="aires-etc">Calculs de longueurs, d'aires et de volumes</a></li>
+<li><a href="impropres.html" data-scroll="impropres">Intégrales impropres</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="series.html" data-scroll="series"><span class="codenumber">4</span> <span class="title">Séries</span></a><ul>
+<li><a href="series-connues.html" data-scroll="series-connues">Séries connues</a></li>
+<li><a href="criteres.html" data-scroll="criteres">Critères de convergence et astuces</a></li>
+<li><a href="puissances.html" data-scroll="puissances">Séries de puissances</a></li>
+<li><a href="taylor.html" data-scroll="taylor">Séries de Taylor et de Maclaurin</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="varia.html" data-scroll="varia"><span class="codenumber">5</span> <span class="title">Varia</span></a><ul>
+<li><a href="SDR.html" data-scroll="SDR">Notation sigma et sommes de Riemann</a></li>
+<li><a href="edo.html" data-scroll="edo" class="active">Équations différentielles</a></li>
+<li><a href="suites.html" data-scroll="suites">Suites</a></li>
+<li><a href="finance.html" data-scroll="finance">Mathématiques financières</a></li>
+<li><a href="theoremes.html" data-scroll="theoremes">Théorèmes d'analyse</a></li>
+<li><a href="defis.html" data-scroll="defis">Défis</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="edo"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Équations différentielles</span>
+</h2>
+<a href="edo.html" class="permalink">¶</a><section class="introduction" id="introduction-7"><p id="p-718">On peut utiliser <a class="external" href="https://sagecell.sagemath.org/" target="_blank">Sage</a> pour résoudre une équation différentielle.</p>
+<p id="p-719">Par exemple, voici comment obtenir la solution générale implicite de l'équation différentielle ordinaire \(\displaystyle\frac{dy}{dx}=\frac{e^y+1}{3x^2e^y}\)</p>
+<div class="sagecell-sage" id="sage-11"><script type="text/x-sage">var('x'); y=function('y')(x); edo=diff(y,x)==(exp(y)+1)/(3*x^2*exp(y)); sol=desolve(edo, y); show(sol)
+</script></div>
+<p id="p-720">ou la solution particulière impicite de l'équation différentielle \(\displaystyle\frac{dv}{dt}=\sqrt{vt}\) soumise à la condition \(v(4)=9\)</p>
+<div class="sagecell-sage" id="sage-12"><script type="text/x-sage">var('t'); v=function('v')(t); edo=diff(v,t)==sqrt(v*t); sol=desolve(edo, v, ics=[4,9]); show(sol)
+</script></div></section><article class="exercise exercise-like" id="exercise-70"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-70"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-70"><article class="exercise exercise-like"><p id="p-721">Parmi les fonctions suivantes, lesquelles sont des solutions de l'équation différentielle \(y''+y=\sin x\text{?}\)</p>
+<ol class="decimal">
+<li id="li-582"><p id="p-722">\(\displaystyle y=\sin x\)</p></li>
+<li id="li-583"><p id="p-723">\(\displaystyle y=\cos x\)</p></li>
+<li id="li-584"><p id="p-724">\(\displaystyle y=-\frac{1}{2}x\cos x\)</p></li>
+<li id="li-585"><p id="p-725">\(\displaystyle y=\frac{1}{2}x\sin x\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-69" id="answer-69"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-69"><div class="answer solution-like"><ol id="p-726" class="decimal">
+<li id="li-586"><p id="p-727">pas solution</p></li>
+<li id="li-587"><p id="p-728">pas solution</p></li>
+<li id="li-588"><p id="p-729">solution</p></li>
+<li id="li-589"><p id="p-730">pas solution</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-71"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-71"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-71"><article class="exercise exercise-like"><p id="p-731">Déterminez la solution de l'équation différentielle qui vérifie la condition initiale donnée.</p>
+<ol class="decimal">
+<li id="li-590"><p id="p-732">\(\displaystyle \frac{dy}{dx}=\frac{x}{y}\) et \(\displaystyle y(0)=-3\)</p></li>
+<li id="li-591"><p id="p-733">\(\displaystyle \frac{dy}{dx}=\frac{\ln x}{xy}\) et \(\displaystyle y(1)=2\)</p></li>
+<li id="li-592"><p id="p-734">\(\displaystyle \frac{du}{dt}=\frac{2t+\sec^2 t}{2u}\) et \(\displaystyle u(0)=-5\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-70" id="answer-70"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-70"><div class="answer solution-like"><ol id="p-735" class="decimal">
+<li id="li-593"><p id="p-736">\(\displaystyle y=-\sqrt{x^2+9}\)</p></li>
+<li id="li-594"><p id="p-737">\(\displaystyle y=\sqrt{(\ln x)^2+4}\)</p></li>
+<li id="li-595"><p id="p-738">\(\displaystyle u=-\sqrt{t^2+\tan t+25}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-72"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-72"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-72"><article class="exercise exercise-like"><p id="p-739">Une famille de courbes est telle qu'en tout point d'une de ces courbes, la pente de la tangente est égale au quotient du carré de l'abscisse par la quatrième puissance de l'ordonnée du point de tangence.</p>
+<ol class="decimal">
+<li id="li-596"><p id="p-740">Déterminez l'équation générale de cette famille de courbes.</p></li>
+<li id="li-597"><p id="p-741">Déterminez l'équation de la courbe de cette famille dont l'ordonnée à l'origine est 2.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-71" id="answer-71"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-71"><div class="answer solution-like"><ol id="p-742" class="decimal">
+<li id="li-598"><p id="p-743">solution générale : \(\displaystyle y=\sqrt[5]{\frac{5}{3}x^3+C}\)</p></li>
+<li id="li-599"><p id="p-744">solution particulière : \(\displaystyle y=\sqrt[5]{\frac{5}{3}x^3+32}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-73"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-73"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-73"><article class="exercise exercise-like"><p id="p-745">Déterminez la ou les solutions explicites des équations différentielles suivantes.</p>
+<ol class="decimal">
+<li id="li-600"><p id="p-746">\(\displaystyle\frac{dv}{dt}=\sqrt{vt}\) où \(v&gt;0\text{,}\) \(t&gt;0\) et la courbe passe par le point \(P(4;9)\)</p></li>
+<li id="li-601"><p id="p-747">\(\displaystyle\frac{dy}{dx}=\frac{e^y+1}{3x^2e^y}\)</p></li>
+<li id="li-602"><p id="p-748">\(\displaystyle\frac{dP}{dt}=kP\) où \(P(t)&gt;0\text{,}\) \(k&gt;0\)</p></li>
+<li id="li-603"><p id="p-749">\(\displaystyle\sec\theta\frac{dy}{d\theta}=y^4\) et la courbe passe par le point \(\displaystyle P\left(\frac{\pi}{6};\frac{1}{2}\right)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-72" id="answer-72"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-72"><div class="answer solution-like"><ol id="p-750" class="decimal">
+<li id="li-604"><p id="p-751">deux solutions : \(\displaystyle v(t)=\frac{\left(\sqrt{t^3}+1\right)^2}{9}\) et \(\displaystyle v(t)=\frac{\left(\sqrt{t^3}-17\right)^2}{9}\)</p></li>
+<li id="li-605"><p id="p-752">solution générale : \(\displaystyle y=\ln \left(Ce^{-\frac{1}{3x}}-1\right)\)</p></li>
+<li id="li-606"><p id="p-753">solution générale : \(\displaystyle P=Ce^{kt}\)</p></li>
+<li id="li-607"><p id="p-754">une solution : \(\displaystyle y=\sqrt[3]{\frac{19}{2}-\sin\theta}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-74"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-74"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-74"><article class="exercise exercise-like"><p id="p-755">Une quantité \(Q\) de substance radioactive se désintègre de sorte que son taux de désintégration est proportionnel en tout temps à la quantité restante. La demi-vie de cette substance est de \(t=12\) heures.</p>
+<ol class="decimal">
+<li id="li-608"><p id="p-756">Déterminez l'équation différentielle à laquelle \(Q(t)\) obéit.</p></li>
+<li id="li-609"><p id="p-757">Quelle proportion d'une quantité donnée \(Q_0\) reste-t-il après \(7\) heures?</p></li>
+<li id="li-610"><p id="p-758">Combien de temps faut-il attendre pour qu'il n'en reste plus que \(1\%\text{?}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-73" id="answer-73"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-73"><div class="answer solution-like"><ol id="p-759" class="decimal">
+<li id="li-611"><p id="p-760">\(\displaystyle \frac{dQ}{dt}=-kQ\) où \(k&gt;0\)</p></li>
+<li id="li-612"><p id="p-761">\(\displaystyle 2^{-\frac{7}{12}}\approx 66,7\%\)</p></li>
+<li id="li-613"><p id="p-762">\(\displaystyle \frac{24}{\log(2)}\approx 79\) heures \(43\) minutes \(35\) secondes</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-75"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-75"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-75"><article class="exercise exercise-like"><ol id="p-763" class="decimal">
+<li id="li-614">
+<p id="p-764">Soit \(P\) la population d'une ville dont le taux continu de natalité est de \(3,5\,\%\) par année, et dont le taux continu de mortalité est de \(1,9\,\%\) par année. En 2007, cette population était de 8000 habitants. On note \(t\) le nombre d'années écoulées depuis 2007.</p>
+<ol class="lower-alpha">
+<li id="li-615"><p id="p-765">Déterminez l'équation différentielle correspondant à cette situation.</p></li>
+<li id="li-616"><p id="p-766">Donnez la solution particulière de cette équation différentielle.</p></li>
+<li id="li-617"><p id="p-767">Quelle sera la population de cette ville en 2025?</p></li>
+<li id="li-618"><p id="p-768">Cette population doublera-t-elle un jour? Si oui, en quelle année?</p></li>
+<li id="li-619"><p id="p-769">Cette population finira-t-elle par s'annuler? Si oui, en quelle année?</p></li>
+</ol>
+</li>
+<li id="li-620"><p id="p-770">Mêmes questions qu'au 1, si 500 personnes quittent la ville chaque année.</p></li>
+<li id="li-621"><p id="p-771">Mêmes questions qu'au 1, si 500 personnes s'installent dans cette ville chaque année.</p></li>
+<li id="li-622">
+<p id="p-772">Identifiez la situation à laquelle correspond chacune des courbes de population du graphique ci-après.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><p id="p-773"><img src="images/populations.png" style="width: 100%; height: auto;" alt=""></p></div></div></div>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-74" id="answer-74"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-74"><div class="answer solution-like"><ol id="p-774" class="decimal">
+<li id="li-623"><ol id="p-775" class="lower-alpha">
+<li id="li-624"><p id="p-776">\(\displaystyle\frac{dP}{dt}=0,016 P\)</p></li>
+<li id="li-625"><p id="p-777">\(\displaystyle P=8000 e^{0,016t}\)</p></li>
+<li id="li-626"><p id="p-778">\(\displaystyle\approx 10670\)</p></li>
+<li id="li-627"><p id="p-779">Oui, au cours de l'année 2050.</p></li>
+<li id="li-628"><p id="p-780">Non.</p></li>
+</ol></li>
+<li id="li-629"><ol id="p-781" class="lower-alpha">
+<li id="li-630"><p id="p-782">\(\displaystyle\frac{dP}{dt}=0,016 P-500\)</p></li>
+<li id="li-631"><p id="p-783">\(\displaystyle P=31250-23250e^{0,016t}\)</p></li>
+<li id="li-632"><p id="p-784">\(\displaystyle\approx 240\)</p></li>
+<li id="li-633"><p id="p-785">Non.</p></li>
+<li id="li-634"><p id="p-786">Oui, au cours de l'année 2025.</p></li>
+</ol></li>
+<li id="li-635"><ol id="p-787" class="lower-alpha">
+<li id="li-636"><p id="p-788">\(\displaystyle\frac{dP}{dt}=0,016 P+500\)</p></li>
+<li id="li-637"><p id="p-789">\(\displaystyle P=39250e^{0,016t}-31250\)</p></li>
+<li id="li-638"><p id="p-790">\(\displaystyle\approx 21100\)</p></li>
+<li id="li-639"><p id="p-791">Oui, au cours de l'année 2018.</p></li>
+<li id="li-640"><p id="p-792">Non.</p></li>
+</ol></li>
+<li id="li-641"><p id="p-793">La courbe décroissante correspond à la question 3. Celle qui croît le plus correspond à la question 2. Celle du milieu correspond à la question 1.</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-76"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-76"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-76"><article class="exercise exercise-like"><p id="p-794">Un écologiste estime qu'un lac artificiel peut contenir un maximum de 3600 brochets. Nous ensemençons ce lac avec 600 brochets. Supposons qu'un modèle logistique de croissance s'applique à cette population \(P\) avec une constante de proportionnalité égale à 0,000225 lorsque le temps écoulé \(t\) est compté en mois.</p>
+<ol class="decimal">
+<li id="li-642"><p id="p-795">Donnez l'équation logistique correspondante.</p></li>
+<li id="li-643"><p id="p-796">Résolvez cette équation afin d'exprimer le nombre de brochets en fonction du temps.</p></li>
+<li id="li-644"><p id="p-797">Déterminez le nombre de brochets après un an.</p></li>
+<li id="li-645"><p id="p-798">Dans combien de temps la population de brochets aura-t-elle atteint \(90\,\%\) de la capacité maximale du lac?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-75" id="answer-75"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-75"><div class="answer solution-like">
+<ol id="p-799" class="decimal">
+<li id="li-646"><p id="p-800">\(\displaystyle\frac{dP}{dt}=0,000225\,P(3600-P)\)</p></li>
+<li id="li-647"><p id="p-801">\(\displaystyle P=\frac{3600}{1+5e^{-0,81t}}\)</p></li>
+<li id="li-648"><p id="p-802">\(\displaystyle \approx 3599\)</p></li>
+<li id="li-649"><p id="p-803">\(\displaystyle \approx 4,7\) mois</p></li>
+</ol>
+<p id="p-804">Il n'était pas demandé, mais voici le graphique de la fonction \(P\) en fonction du temps \(t\text{:}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><p id="p-805"><img src="images/brochets.png" style="width: 100%; height: auto;" alt=""></p></div></div></div>
+</div></div>
+</div></article></div></section></div></main>
+</div>
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-9"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-9');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

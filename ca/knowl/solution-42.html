@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:45-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.3.8.1</span><span class="period">.</span>
+</h6>
+<p>Introduisons les variables</p>
+<div class="displaymath">
+\begin{equation*}
+a:=z-ct\quad\text{et}\quad b:=z+ct.
+\end{equation*}
+</div>
+<p data-braille="continuation">Alors l'arbre de dépendance des variables \(a,b,z,t\) et</p>
+<div class="displaymath">
+\begin{equation*}
+U=F(a)+G(b)
+\end{equation*}
+</div>
+<p data-braille="continuation">est le suivant : <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/exercice_4.3.8.png" style="width: 100%; height: auto;" alt=""></div></p>
+<ul class="disc">
+<li>
+<p>Quand on dérive une telle fonction \(U=F(a)+G(b)\) par rapport à \(z\text{,}\) la règle de dérivation en chaîne donne</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial U}{\partial z}&amp;=\frac{\partial U}{\partial a}\cdot\frac{\partial a}{\partial z}+\frac{\partial U}{\partial b}\cdot\frac{\partial b}{\partial z}\\
+&amp;=\frac{\partial}{\partial a}(F(a)+G(b))\cdot\frac{\partial}{\partial z}(z-ct)+\frac{\partial}{\partial b}(F(a)+G(b))\cdot\frac{\partial}{\partial z}(z+ct)\\
+&amp;=(F'(a)+0)\cdot 1+(0+G'(b)\cdot 1\\
+&amp;=F'(a)+G'(b).
+\end{align*}
+</div>
+<p>En appliquant le résultat précédent à la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+V=F'(a)+G'(b)
+\end{equation*}
+</div>
+<p data-braille="continuation">au lieu de la fonction \(U\text{,}\) on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial V}{\partial z}=F''(a)+G''(b)
+\end{equation*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2 U}{\partial z^2}=F''(a)+G''(b).
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Quand on dérive une telle fonction \(U=F(a)+G(b)\) par rapport à \(t\text{,}\) la règle de dérivation en chaîne donne</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial U}{\partial t}&amp;=\frac{\partial U}{\partial a}\cdot\frac{\partial a}{\partial t}+\frac{\partial U}{\partial b}\cdot\frac{\partial b}{\partial t}\\
+&amp;=\frac{\partial}{\partial a}(F(a)+G(b))\cdot\frac{\partial}{\partial t}(z-ct)+\frac{\partial}{\partial b}(F(a)+G(b))\cdot\frac{\partial}{\partial t}(z+ct)\\
+&amp;=(F'(a)+0)\cdot (-c)+(0+G'(b)\cdot c\\
+&amp;=c\cdot(-F'(a)+G'(b)).
+\end{align*}
+</div>
+<p>En appliquant le résultat précédent à la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+V=-F'(a)+G'(b)
+\end{equation*}
+</div>
+<p data-braille="continuation">au lieu de la fonction \(U\text{,}\) on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial V}{\partial t}=c\cdot(F''(a))+G''(b))
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial^2 U}{\partial t^2}&amp;=\frac{\partial}{\partial t}\left(\frac{\partial U}{\partial t}\right)\\
+&amp;=\frac{\partial}{\partial t}\left(c\cdot(-F'(a)+G'(b))\right)\\
+&amp;=c\cdot\frac{\partial}{\partial t}\left(-F'(a)+G'(b)\right)\\
+&amp;=c\cdot\frac{\partial V}{\partial t}\\
+&amp;=c\cdot c\cdot(F''(a))+G''(b))
+\end{align*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2 U}{\partial t^2}=c^2(F''(a)+G''(b)).
+\end{equation*}
+</div>
+</li>
+</ul>
+<p>On a montré que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2U}{\partial z^2}=F''(a)+G''(b)\quad\text{et}\quad\frac{\partial^2U}{\partial t^2}=c^2(F''(a)+G''(b))
+\end{equation*}
+</div>
+<p data-braille="continuation">Cela prouve que \(U\) est bien solution de l'équation des ondes en dimension 1</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2U}{\partial z^2}=\frac{1}{c^2}\frac{\partial^2U}{\partial t^2}.
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="derivation-en-chaine.html#solution-42">??</a></span>
+</body>
+</html>

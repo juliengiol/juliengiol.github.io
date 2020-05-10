@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:42-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><ol class="decimal">
+<li>
+<p>Les variables sont liées de la façon suivante : <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/exercice_4.3.2.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}t}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\\
+&amp;=\frac{\partial}{\partial x}\left(e^{xy^2}\right)\cdot\frac{\mathrm{d}}{\mathrm{d}t}(t\cos t)+\frac{\partial}{\partial y}\left(e^{xy^2}\right)\cdot\frac{\mathrm{d}}{\mathrm{d}t}(t\sin t)\\
+&amp;=e^{xy^2}y^2\cdot(\cos t+t(-\sin t))+e^{xy^2}2xy\cdot(\sin t+t\cos t)\\
+&amp;=ye^{xy^2}\left(y(\cos t-t\sin t)+2x(\sin t+t\cos t)\right).
+\end{align*}
+</div>
+<p>Lorsque \(t=\dfrac{\pi}{2}\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+x=\frac{\pi}{2}\cdot\underbrace{\cos\left(\frac{\pi}{2}\right)}_{=0}=0\quad\text{et}\quad y=\frac{\pi}{2}\cdot\underbrace{\sin\left(\frac{\pi}{2}\right)}_{=1}=\frac{\pi}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}t}\Bigg\rvert_{t=\frac{\pi}{2}}&amp;=\frac{\pi}{2}\cdot\underbrace{e^{0}}_{=1}\cdot\left(\frac{\pi}{2}\cdot\left(\underbrace{\cos\left(\frac{\pi}{2}\right)}_{=0}-\frac{\pi}{2}\cdot\underbrace{\sin\left(\frac{\pi}{2}\right)}_{=1}\right)+\cancel{2\cdot 0\cdot\ldots}\right)\\
+&amp;=-\frac{\pi^3}{8}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Les variables sont liées de la façon suivante : <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/exercice_4.3.4bis.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial v}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial v}\\
+&amp;=\frac{\partial}{\partial x}\left(\tan\left(\frac{x}{y}\right)\right)\cdot\frac{\partial}{\partial v}(2u+3v)+\frac{\partial}{\partial y}\left(\tan\left(\frac{x}{y}\right)\right)\cdot\frac{\partial}{\partial v}(3u-2v)\\
+&amp;=\sec^2\left(\frac{x}{y}\right)\cdot\frac{1}{y}\cdot 3+\sec^2\left(\frac{x}{y}\right)\cdot\left(-\frac{x}{y^2}\right)\cdot(-2)\\
+&amp;=\sec^2\left(\frac{x}{y}\right)\cdot\frac{3y+2x}{y^2}.
+\end{align*}
+</div>
+<p>Lorsque \((u,v)=(3,-2)\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+x=2\cdot 3+3\cdot(-2)=0\quad\text{et}\quad y=3\cdot 3-2\cdot(-2)=13
+\end{equation*}
+</div>
+<p data-braille="continuation">donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial v}\Bigg\rvert_{(u,v)=(3,-2)}&amp;=(\underbrace{\sec(0)}_{=1})^2\cdot\frac{3\cdot 13+2\cdot 0}{13^2}\\
+&amp;=\frac{3}{13}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Les variables sont liées de la façon suivante : <div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="images/exercice_4.3.4ter.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial t}&amp;=\frac{\partial z}{\partial v}\cdot\frac{\partial v}{\partial t}+\frac{\partial z}{\partial w}\cdot\frac{\partial w}{\partial t}\\
+&amp;=\frac{\partial}{\partial v}\left(w\arctan(uv)\right)\cdot\frac{\partial}{\partial t}(s+t)+\frac{\partial}{\partial w}\left(w\arctan(uv)\right)\cdot\frac{\partial}{\partial t}(t+r)\\
+&amp;=w\cdot\frac{1}{1+(uv)^2}\cdot u\cdot 1+\arctan(uv)\cdot 1\\
+&amp;=\frac{uw}{1+u^2v^2}+\arctan(uv).
+\end{align*}
+</div>
+<p>Lorsque \(r=1\text{,}\) \(s=0\) et \(t=1\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+u=1+0=1,\quad v=0+1=1\quad\text{et}\quad w=1+1=2
+\end{equation*}
+</div>
+<p data-braille="continuation">donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial t}\Bigg\rvert_{(r,s,t)=(1,0,1)}&amp;=\frac{1\cdot 2}{1+1^21^2}+\arctan(1\cdot 1)\\
+&amp;=\frac{2}{2}+\arctan(1)\\
+&amp;=1+\frac{\pi}{4}.
+\end{align*}
+</div>
+</li>
+</ol></div></body>
+</html>

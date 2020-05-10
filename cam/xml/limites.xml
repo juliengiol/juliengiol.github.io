@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="limites" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Limites</title>
+
+<introduction>
+  <p>
+    On peut utiliser <url href="https://sagecell.sagemath.org/">SageMathCell</url> pour calculer une limite.
+  </p>
+  <p>
+    Par exemple, voici comment obtenir
+    <me>\lim_{x\rightarrow 1}\frac{\ln x}{x-1}</me>
+    <sage>
+      <input>
+        f(x) = ln(x) / x
+        L = limit(f(x), x = 1)
+        show(L)
+      </input>
+    </sage>
+    ou la limite à l'infini
+    <me>\lim_{x\rightarrow +\infty}\frac{e^x}{x^2}</me>
+    <sage>
+      <input>
+        g(x) = e^x / x^2
+        L = limit(g(x), x = +Infinity)
+        show(L)
+      </input>
+    </sage>
+    ou encore la limite à droite
+    <me>\displaystyle\lim_{x\rightarrow 0^+}x\ln(x)</me>
+    <sage>
+      <input>
+        h(x) = x * ln(x)
+        L = limit(h(x), x = 0, dir = 'plus')
+        show(L)
+      </input>
+    </sage>
+  </p>
+</introduction>
+
+<section xml:id="algebre">
+  <title>Détermination par l'algèbre</title>
+
+  <exercise>
+      <statement>
+        <p>Déterminez les limites suivantes à l'aide de l'algèbre.<ol>
+          <li><p><m>\displaystyle\lim_{x\rightarrow -1}\frac{x+1}{x^2+2x+1}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow -1}\frac{2x^4+4x^2+2x^3+3x-1}{-2x^2+3x+5}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow 4}\frac{4-x}{\sqrt{4x}-4}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow 8}\frac{\frac{1}{3}-\frac{x}{24}}{x^2-64}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow +\infty}\frac{7x^2+2x^2-1}{5-28x^4}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow -\infty}\frac{x^2+4x-12}{2x^3-7x^2+7x-2}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow 1^+}\frac{3}{(x-1)^2}-\frac{2}{x-1}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow +\infty}\frac{\sqrt{4x^2-1}}{x+2}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow -\infty}\frac{12x+7}{\sqrt{9x^2+1}}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow 3}\frac{x^2-5x+6}{|x-3|}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow 3}\frac{x-3}{\sqrt{x+6}}</m></p></li>
+        </ol></p>
+      </statement>
+      <answer>
+        <p><ol>
+          <li><p><m>\displaystyle\lim_{x\rightarrow -1^-}\frac{x+1}{x^2+2x+1}=-\infty</m> et <m>\displaystyle\lim_{x\rightarrow -1^+}\frac{x+1}{x^2+2x+1}=+\infty</m></p></li>
+          <li><p><m>\displaystyle -1</m></p></li>
+          <li><p><m>\displaystyle -2</m></p></li>
+          <li><p><m>\displaystyle -\frac{1}{384}</m></p></li>
+          <li><p><m>\displaystyle -\frac{1}{4}</m></p></li>
+          <li><p><m>\displaystyle 0</m></p></li>
+          <li><p><m>\displaystyle +\infty</m></p></li>
+          <li><p><m>\displaystyle 2</m></p></li>
+          <li><p><m>\displaystyle -4</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\rightarrow 3^-}\frac{x^2-5x+6}{|x-3|}=-1</m> et <m>\displaystyle\lim_{x\rightarrow 3^+}\frac{x^2-5x+6}{|x-3|}=1</m></p></li>
+          <li><p><m>\displaystyle 0</m></p></li>
+        </ol></p>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="RH">
+  <title>Règle de L'Hospital</title>
+
+  <exercise>
+      <statement>
+          <p>Calculez les limites suivantes.<ol>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 1}\frac{\ln x}{x-1}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow +\infty}\frac{e^x}{x^2}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow +\infty}\frac{\ln x}{\sqrt[3]{x}}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 0}\frac{\tan x-x}{x^3}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow \pi^-}\frac{\sin x}{1-\cos x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 0^+}x\ln x</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow\left(\frac{\pi}{2}\right)^-}\sec x-\tan x</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 0^+}\left(1+\sin 4x\right)^{\cot x}</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle 1</m></p></li>
+              <li><p><m>\displaystyle +\infty</m></p></li>
+              <li><p><m>\displaystyle 0</m></p></li>
+              <li><p><m>\displaystyle \frac{1}{3}</m></p></li>
+              <li><p><m>\displaystyle 0</m></p></li>
+              <li><p><m>\displaystyle 0</m></p></li>
+              <li><p><m>\displaystyle 0</m></p></li>
+              <li><p><m>\displaystyle e^4</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Calculez les limites indiquées. Appliquez la règle de L'Hospital s'il y a lieu, mais essayez d'utiliser une approche plus simple quand c'est possible.<ol>
+              <li><p><m>\displaystyle\lim_{x\rightarrow -2}\frac{x^2-4}{x^2+2x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow +\infty}\frac{2x^7-4x^6+9x^5-x^2+18}{9x^7+4x^5+23x^3-123}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow -\infty}\frac{2x^7-4x^6+9x^5-x^2+18}{9x^8+4x^5+23x^3-123}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 0}\frac{\sin x}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 0}\frac{\sin x}{\tan x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow \left(\frac{\pi}{2}\right)^+}\frac{\cos x}{1-\sin x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 0}\frac{\sqrt{1+2x}-\sqrt{1-4x}}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 0}\frac{e^x-1-x}{x^2}</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle 2</m></p></li>
+              <li><p><m>\displaystyle \frac{2}{9}</m></p></li>
+              <li><p><m>\displaystyle 0</m></p></li>
+              <li><p><m>\displaystyle 1</m></p></li>
+              <li><p><m>\displaystyle 1</m></p></li>
+              <li><p><m>\displaystyle -\infty</m></p></li>
+              <li><p><m>\displaystyle 3</m></p></li>
+              <li><p><m>\displaystyle \frac{1}{2}</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Évaluez les limites suivantes.<ol>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 0}\frac{\tan x-x}{3x\sin x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 3^+}\frac{2}{x^2-9}+\frac{4x}{3-x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow +\infty}\left(\frac{x+4}{x-1}\right)^x</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 0}\frac{2e^x+e^{-x}-\frac{x^3}{6}-\frac{3x^2}{2}-x-3}{x^4}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow \pi^-}\left(\frac{x}{\pi}\right)^{\tan(x/2)}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\rightarrow 1^-}\left(\ln\left(\frac{1}{1-x}\right)\right)^{1-x}</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle 0</m></p></li>
+              <li><p><m>\displaystyle -\infty</m></p></li>
+              <li><p><m>\displaystyle e^5</m></p></li>
+              <li><p><m>\displaystyle \frac{1}{8}</m></p></li>
+              <li><p><m>\displaystyle e^\frac{-2}{\pi}</m></p></li>
+              <li><p><m>\displaystyle 1</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Discutez, et réévaluez s'il y a lieu, la limite suivante :</p>
+      <p><me>\lim_{x\rightarrow 0}\frac{\ln\left(e^x+2x\right)}{x} \stackrel{RH}{=}\lim_{x\rightarrow 0}\frac{e^x+2}{e^x+2x}\stackrel{RH}{=}\lim_{x\rightarrow 0}\frac{e^x}{e^x+2x}=\frac{1}{3}</me></p>
+    </statement>
+    <answer>
+      <p>La première application de la Règle de L'Hospital est correcte, car on est en présence d'une forme <m>\frac{0}{0}</m>.</p>
+      <p>En revanche, la deuxième application de la Règle de L'Hospital est incorrecte et il suffit d'évaluer rendu là.</p>
+      <p><me>\lim_{x\rightarrow 0}\frac{\ln\left(e^x+2x\right)}{x} \stackrel{RH}{=}\lim_{x\rightarrow 0}\frac{e^x+2}{e^x+2x}=\frac{e^0+2}{e^0+2\cdot 0}=3</me></p>
+    </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="continuite">
+  <title>Continuité</title>
+
+  <exercise>
+      <statement>
+        <p>On considère la fonction définie par morceaux qui suit :
+          <md alignment="alignat" alignat-columns="3">
+            <mrow>f(x) &amp;= \left\{\begin{matrix}\frac{x+4}{x^2-16} &amp; \mbox{si } &amp; x &lt; 1 \\ 2x-6 &amp; \mbox{si } &amp; 1\leq x\leq 4\\ \sqrt{x} &amp; \mbox{si } &amp; x &gt; 4\end{matrix}\right.
+              &amp;</mrow>
+          </md></p><ol>
+          <li><p>La fonction <m>f</m> est-elle continue en <m>x=1</m>? Identifiez le type de discontinuité s'il y a lieu.</p></li>
+          <li><p>La fonction <m>f</m> est-elle continue en <m>x=4</m>? Identifiez le type de discontinuité s'il y a lieu.</p></li>
+          <li><p>La fonction <m>f</m> est-elle continue en <m>x=-4</m>? Identifiez le type de discontinuité s'il y a lieu.</p></li>
+        </ol>
+      </statement>
+      <answer>
+        <p><ol>
+          <li><p>Non. Discontinuité de saut.</p></li>
+          <li><p>Oui.</p></li>
+          <li><p>Non. Discontinuité apparente.</p></li>
+        </ol></p>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="asymptotes">
+  <title>Asymptotes</title>
+
+  <exercise>
+      <statement>
+          <p>Déterminez les équations des asymptotes horizontales au graphique de la fonction suivante.
+          <me>f(x)=\frac{x}{2e^x-xe^x-x-2}</me></p>
+      </statement>
+      <answer>
+          <p>Asymptote horizontale à droite <m>y=0</m></p>
+          <p>Asymptote horizontale à gauche <m>y=-1</m></p>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="lim_suites">
+  <title>Limites de suites</title>
+
+  <exercise>
+      <statement>
+          <p>Calculez la limite des suites suivantes.<ol>
+              <li><p><m>\displaystyle\left\{\frac{2n^3+5n^2-n+1}{9-n^2-8n^3}\right\}</m></p></li>
+              <li><p><m>\displaystyle\left\{\cos\left(\frac{3}{n}\right)\right\}</m></p></li>
+              <li><p><m>\displaystyle\left\{n^2e^{-2n}\right\}</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle -0,25</m></p></li>
+              <li><p><m>\displaystyle 1</m></p></li>
+              <li><p><m>\displaystyle 0</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+</section>
+
+</chapter>

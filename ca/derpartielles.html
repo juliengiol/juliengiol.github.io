@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:03-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>303 Les dérivées partielles</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://juliengiol.github.io/" target="_blank"><img src="images/yosemite.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="ca.html"><span class="title">Calcul avancé</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapitre4.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="chapitre4.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="plans-tangents-et-differentielle.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="chapitre4.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="chapitre4.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="plans-tangents-et-differentielle.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
+<li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Remerciements</a></li>
+</ul>
+</li>
+<li class="link part"><a href="coronavirus.html" data-scroll="coronavirus"><span class="codenumber">I</span> <span class="title">Coronavirus</span></a></li>
+<li class="link part"><a href="documents.html" data-scroll="documents"><span class="codenumber">II</span> <span class="title">Documents</span></a></li>
+<li class="link part"><a href="volume.html" data-scroll="volume"><span class="codenumber">III</span> <span class="title">Volume</span></a></li>
+<li class="link">
+<a href="chapitre1.html" data-scroll="chapitre1"><span class="codenumber">1</span> <span class="title">Les suites et les séries numériques</span></a><ul>
+<li><a href="suites.html" data-scroll="suites">Les suites</a></li>
+<li><a href="series.html" data-scroll="series">Les séries</a></li>
+<li><a href="seriesatermespositifs.html" data-scroll="seriesatermespositifs">Les séries à termes positifs</a></li>
+<li><a href="series-alternees.html" data-scroll="series-alternees">Les séries alternées</a></li>
+<li><a href="testdurapport.html" data-scroll="testdurapport">La convergence absolue, le test du rapport et le critère de Cauchy</a></li>
+<li><a href="strategieconvergence.html" data-scroll="strategieconvergence">Une stratégie pour tester la convergence d'une série</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre2.html" data-scroll="chapitre2"><span class="codenumber">2</span> <span class="title">Les séries de Taylor</span></a><ul>
+<li><a href="seriesentieres.html" data-scroll="seriesentieres">Les séries entières</a></li>
+<li><a href="devenserieentiere.html" data-scroll="devenserieentiere">Le développement des fonctions en séries entières</a></li>
+<li><a href="tayloretmaclaurin.html" data-scroll="tayloretmaclaurin">Les séries de Taylor et de Maclaurin</a></li>
+<li><a href="applicationstaylor.html" data-scroll="applicationstaylor">Des applications des polynômes de Taylor</a></li>
+<li><a href="nombrescomplexes.html" data-scroll="nombrescomplexes">Les nombres complexes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre3.html" data-scroll="chapitre3"><span class="codenumber">3</span> <span class="title">Les fonctions de plusieurs variables</span></a><ul>
+<li><a href="fonctionspv.html" data-scroll="fonctionspv">Les fonctions de plusieurs variables</a></li>
+<li><a href="limites-continuite.html" data-scroll="limites-continuite">Les limites et la continuité</a></li>
+<li><a href="quadriques.html" data-scroll="quadriques">Les cylindres et les surfaces quadriques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre4.html" data-scroll="chapitre4"><span class="codenumber">4</span> <span class="title">Les dérivées des fonctions de plusieurs variables</span></a><ul>
+<li><a href="derpartielles.html" data-scroll="derpartielles" class="active">Les dérivées partielles</a></li>
+<li><a href="plans-tangents-et-differentielle.html" data-scroll="plans-tangents-et-differentielle">Les plans tangents et les approximations linéaires</a></li>
+<li><a href="derivation-en-chaine.html" data-scroll="derivation-en-chaine">La règle de dérivation en chaîne</a></li>
+<li><a href="derivees-directionnelles.html" data-scroll="derivees-directionnelles">Les dérivées directionnelles et le vecteur gradient</a></li>
+<li><a href="approximationsdetaylor.html" data-scroll="approximationsdetaylor">Les approximations de Taylor en deux variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre5.html" data-scroll="chapitre5"><span class="codenumber">5</span> <span class="title">L'optimisation</span></a><ul>
+<li><a href="extremums.html" data-scroll="extremums">Extremums</a></li>
+<li><a href="gradient.html" data-scroll="gradient">Critère de Sylvester et méthode du gradient</a></li>
+<li><a href="lagrange.html" data-scroll="lagrange">Multiplicateurs de Lagrange</a></li>
+</ul>
+</li>
+<li class="link part"><a href="complements.html" data-scroll="complements"><span class="codenumber">IV</span> <span class="title">Compléments</span></a></li>
+<li class="link"><a href="sage.html" data-scroll="sage"><span class="codenumber">1</span> <span class="title">Sage</span></a></li>
+<li class="link"><a href="bornes.html" data-scroll="bornes"><span class="codenumber">2</span> <span class="title">Bornes d'erreur</span></a></li>
+<li class="link"><a href="serie-de-leibniz.html" data-scroll="serie-de-leibniz"><span class="codenumber">3</span> <span class="title">La série de Leibniz</span></a></li>
+<li class="link"><a href="polaires.html" data-scroll="polaires"><span class="codenumber">4</span> <span class="title">Coordonnées polaires (6.3)</span></a></li>
+<li class="link"><a href="coniques.html" data-scroll="coniques"><span class="codenumber">5</span> <span class="title">Coniques</span></a></li>
+<li class="link"><a href="epsilon.html" data-scroll="epsilon"><span class="codenumber">6</span> <span class="title">Epsilon-Delta</span></a></li>
+<li class="link"><a href="vectorielles.html" data-scroll="vectorielles"><span class="codenumber">7</span> <span class="title">Fonctions vectorielles</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="derpartielles"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Les dérivées partielles</span>
+</h2>
+<a href="derpartielles.html" class="permalink">¶</a><article class="activity project-like" id="activity-8"><h6 class="heading">
+<span class="type">Outils</span><span class="period">.</span>
+</h6>
+<ul class="disc">
+<li id="li-281"><p id="p-335"><a class="external" href="https://tinyurl.com/rj94lnn" target="_blank">Calculatrice</a> à dérivées partielles : <div class="sagecell-sage" id="sage-4"><script type="text/x-sage">f(x, y) = x^5 + 3 * y^4 + x * y^2 + 7  # fonction
+g(x, y) = derivative(f, x)  # dérivée partielle
+
+pretty_print('Fonction :', f)
+pretty_print('Dérivée partielle :', g)
+</script></div></p></li>
+<li id="li-282"><p id="p-336"><a class="external" href="https://www.geogebra.org/m/fQ3gN72x" target="_blank">Application</a> GeoGebra illustrant graphiquement le concept de dérivée partielle.</p></li>
+<li id="li-283"><p id="p-337"><a class="external" href="https://tinyurl.com/vqyub2p" target="_blank">Exemple de calcul</a> de dérivée partielle avec WolframAlpha.</p></li>
+</ul></article><article class="objectives goal-like" id="objectives-1"><h6 class="heading"><span class="type">Objectifs</span></h6>
+<ul class="disc">
+<li id="li-284">
+<p id="p-338">Savoir calculer, définir, estimer et interpréter graphiquement les dérivées partielles</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial f}{\partial x}=f_x(x,y)\quad\text{et}\quad\frac{\partial f}{\partial y}=f_y(x,y)
+\end{equation*}
+</div>
+<p data-braille="continuation">d'une fonction de deux variables \(f(x,y)\text{.}\)</p>
+</li>
+<li id="li-285"><p id="p-339">Savoir calculer les dérivées partielles d'une fonction de trois variables ou plus.</p></li>
+<li id="li-286">
+<p id="p-340">Savoir calculer des dérivées partielles d'ordre deux ou plus telles que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2 f}{\partial x\partial y}=f_{yx}\quad\text{ou}\quad\frac{\partial^3 f}{\partial y\partial x^2}=f_{xxy}.
+\end{equation*}
+</div>
+</li>
+<li id="li-287">
+<p id="p-341">Comprendre et savoir appliquer le <a class="external" href="https://tinyurl.com/uwvy29l" target="_blank">théorème de Clairaut</a> qui garantit l'égalité des dérivées mixtes du second ordre</p>
+<div class="displaymath">
+\begin{equation*}
+f_{xy}(x_0,y_0)=f_{yx}(x_0,y_0)
+\end{equation*}
+</div>
+<p data-braille="continuation">en tout point \((x_0,y_0)\) où elles sont continues.</p>
+</li>
+</ul></article><article class="exercise exercise-like" id="exercice-tangentes-paraboloide"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-tangentes-paraboloide"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-tangentes-paraboloide"><article class="exercise exercise-like"><p id="p-342">Soit S la surface d'équation</p>
+<div class="displaymath">
+\begin{equation*}
+z=x^2+y^2.
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-288">
+<p id="p-343">Calculez la pente de la tangente à la trace de la surface S dans le plan d'équation</p>
+<div class="displaymath">
+\begin{equation*}
+y=2
+\end{equation*}
+</div>
+<p data-braille="continuation">au point \((1,2,5)\text{.}\)</p>
+</li>
+<li id="li-289">
+<p id="p-344">Calculez la pente de la tangente à la trace de la surface S dans le plan d'équation</p>
+<div class="displaymath">
+\begin{equation*}
+x=1
+\end{equation*}
+</div>
+<p data-braille="continuation">au point \((1,2,5)\text{.}\)</p>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-6" id="hint-6"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like">
+<p id="p-345">Pour commencer, utilisez votre logiciel préféré pour interpréter graphiquement la question. Voici à quoi ressemble la surface en rouge <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/exercice_4.1.1.png" style="width: 100%; height: auto;" alt=""></div> avec le plan d'équation \(y=2\) en bleu pâle, et la trace de la surface dans ce plan en bleu plus foncé.</p>
+<ol class="decimal">
+<li id="li-290">
+<p id="p-346">Cette trace est la parabole d'équation</p>
+<div class="displaymath">
+\begin{equation*}
+z=x^2+4
+\end{equation*}
+</div>
+<p data-braille="continuation">dans le plan d'équation \(y=2\text{.}\)</p>
+<p id="p-347">En voici une représentation graphique <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/exercice_4.1.1bis.png" style="width: 100%; height: auto;" alt=""></div> avec la tangente au point considéré en mauve.</p>
+<p id="p-348">La pente de la tangente cherchée s'obtient donc en évaluant la dérivée de \(z=x^2+4\) par rapport à \(x\) en \(x=1\text{.}\)</p>
+</li>
+<li id="li-291">
+<p id="p-349">Cette trace est la parabole d'équation</p>
+<div class="displaymath">
+\begin{equation*}
+z=1+y^2
+\end{equation*}
+</div>
+<p data-braille="continuation">dans le plan d'équation \(x=1\text{.}\)</p>
+<p id="p-350">La pente de la tangente cherchée s'obtient donc en évaluant la dérivée de \(z=1+y^2\) par rapport à \(y\) en \(y=2\text{.}\)</p>
+</li>
+</ol>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-78" id="answer-78"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-78"><div class="answer solution-like"><ol class="decimal">
+<li id="li-292"><p id="p-351">Cette pente vaut \(2\text{.}\)</p></li>
+<li id="li-293"><p id="p-352">Cette pente vaut \(4\text{.}\)</p></li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><ol class="decimal">
+<li id="li-294">
+<p id="p-353">Suivons l'indication et dérivons l'équation de la trace</p>
+<div class="displaymath">
+\begin{equation*}
+z=x^2+4
+\end{equation*}
+</div>
+<p data-braille="continuation">par rapport à \(x\) :</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}x}&amp;=\frac{\mathrm{d}}{\mathrm{d}x}\left(x^2+4\right)\\
+&amp;=2x+0\\
+&amp;=2x.
+\end{align*}
+</div>
+<p id="p-354">Au point \((1,2,5)\text{,}\) la tangente a donc pour pente</p>
+<div class="displaymath">
+\begin{equation*}
+\left.\frac{\mathrm{d}z}{\mathrm{d}x}\right|_{x=1}=2\cdot 1=2.
+\end{equation*}
+</div>
+</li>
+<li id="li-295">
+<p id="p-355">De même, suivons l'indication et dérivons l'équation de la trace</p>
+<div class="displaymath">
+\begin{equation*}
+z=1+y^2
+\end{equation*}
+</div>
+<p data-braille="continuation">par rapport à \(y\) :</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}z}{\mathrm{d}y}&amp;=\frac{\mathrm{d}}{\mathrm{d}y}\left(1+y^2\right)\\
+&amp;=0+2y\\
+&amp;=2y.
+\end{align*}
+</div>
+<p id="p-356">Au point \((1,2,5)\text{,}\) la tangente a donc pour pente</p>
+<div class="displaymath">
+\begin{equation*}
+\left.\frac{\mathrm{d}z}{\mathrm{d}y}\right|_{y=2}=2\cdot 2=4.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><ol class="decimal">
+<li id="li-296">
+<p id="p-357">On a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial x}&amp;=\frac{\partial}{\partial x}\left(x^2+y^2\right)\\
+&amp;=2x+0\\
+&amp;=2x.
+\end{align*}
+</div>
+<p id="p-358">La pente cherchée vaut donc</p>
+<div class="displaymath">
+\begin{equation*}
+\left.\frac{\partial z}{\partial x}\right|_{(x,y)=(1,2)}=2\cdot 1=2.
+\end{equation*}
+</div>
+</li>
+<li id="li-297">
+<p id="p-359">On a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial y}&amp;=\frac{\partial}{\partial y}\left(x^2+y^2\right)\\
+&amp;=0+2y\\
+&amp;=2y.
+\end{align*}
+</div>
+<p id="p-360">La pente cherchée vaut donc</p>
+<div class="displaymath">
+\begin{equation*}
+\left.\frac{\partial z}{\partial y}\right|_{(x,y)=(1,2)}=2\cdot 2=4.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">3</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">
+<p id="p-361">La surface S est le graphe de la fonction de deux variables</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y)=x^2+y^2
+\end{equation*}
+</div>
+<p data-braille="continuation">dont les dérivées partielles sont</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(x,y)=\frac{\partial f}{\partial x}=2x
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+f_y(x,y)=\frac{\partial f}{\partial y}=2y.
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-298">
+<p id="p-362">La pente cherchée est</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(1,2)=2\cdot 1=2.
+\end{equation*}
+</div>
+</li>
+<li id="li-299">
+<p id="p-363">La pente cherchée est</p>
+<div class="displaymath">
+\begin{equation*}
+f_y(1,2)=2\cdot 2=4.
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-80"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-80"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-80"><article class="exercise exercise-like"><p id="p-364">On s'intéresse à la fonction de deux variables</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y)=\cos(x)\sin(y).
+\end{equation*}
+</div>
+<p data-braille="continuation">Représentez le graphe de cette fonction à l'aide de votre logiciel favori.</p>
+<p id="p-365">Sans faire de calculs, déterminez visuellement le signe des dérivées partielles indiquées.</p>
+<ol class="decimal">
+<li id="li-300"><p id="p-366">\(f_y(0,1)\text{.}\)</p></li>
+<li id="li-301"><p id="p-367">\(f_y(0,2)\text{.}\)</p></li>
+<li id="li-302"><p id="p-368">\(f_x(1,2)\text{.}\)</p></li>
+<li id="li-303"><p id="p-369">\(f_x(0,2)\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-7" id="hint-7"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like">
+<p id="p-370">Commencer par représenter le graphe de cette fonction à l'aide de votre logiciel favori.</p>
+<p id="p-371">Pour chaque dérivée partielle, visualisez la tangente adéquate : sa pente est-elle positive, négative, ou nulle? Faites attention à orienter l'axe de la variable indépendante (\(x\) pour \(f_x\) et \(y\) s'il s'agit de \(f_y\)) vers la droite, et celui de la variable dépendante (\(z\)) vers le haut.</p>
+<p id="p-372">Alternativement, imaginez que vous marchez sur la surface et que la variable \(z\) correspond à votre altitude. Par exemple, pour déterminer le signe de \(f_x(1,2)\text{,}\) rendez-vous au point \((1,2,f(1,2))\text{.}\) Avancez ensuite tout droit dans le sens des \(x\) croissants. Êtes-vous en train de monter ou de descendre?</p>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-79" id="answer-79"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-79"><div class="answer solution-like"><ol class="decimal">
+<li id="li-304"><p id="p-373">\(f_y(0,1)&gt;0\text{.}\)</p></li>
+<li id="li-305"><p id="p-374">\(f_y(0,2)&lt;0\text{.}\)</p></li>
+<li id="li-306"><p id="p-375">\(f_x(1,2)&lt;0\text{.}\)</p></li>
+<li id="li-307"><p id="p-376">\(f_x(0,2)=0\text{.}\)</p></li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
+<p id="p-377">Voici le graphe de la fonction \(f\) <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/exercice_4.1.2ter.png" style="width: 100%; height: auto;" alt=""></div> où \(A,B,C\) sont les trois points à considérer.</p>
+<ul class="disc">
+<li id="li-308">
+<p id="p-378">Voici la trace du graphe de la fonction \(f\) dans le plan d'équation</p>
+<div class="displaymath">
+\begin{equation*}
+x=0
+\end{equation*}
+</div>
+<p data-braille="continuation"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/exercice_4.1.2.png" style="width: 100%; height: auto;" alt=""></div> où les points identifiés sont</p>
+<div class="displaymath">
+\begin{equation*}
+A=(0,1,f(0,1))\quad\text{et}\quad B=(0,2,f(0,2)).
+\end{equation*}
+</div>
+<p id="p-379">1. Comme la tangente au point \(A\) a une pente positive, on a</p>
+<div class="displaymath">
+\begin{equation*}
+f_y(0,1)&gt;0.
+\end{equation*}
+</div>
+<p id="p-380">2. Comme la tangente au point \(B\) a une pente négative, on a</p>
+<div class="displaymath">
+\begin{equation*}
+f_y(0,2)&lt;0.
+\end{equation*}
+</div>
+</li>
+<li id="li-309">
+<p id="p-381">Voici la trace du graphe de la fonction \(f\) dans le plan d'équation</p>
+<div class="displaymath">
+\begin{equation*}
+y=2
+\end{equation*}
+</div>
+<p data-braille="continuation"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/exercice_4.1.2bis.png" style="width: 100%; height: auto;" alt=""></div> où les points identifiés sont</p>
+<div class="displaymath">
+\begin{equation*}
+C=(1,2,f(1,2))\quad\text{et}\quad B=(0,2,f(0,2)).
+\end{equation*}
+</div>
+<p id="p-382">3. Comme la tangente au point \(C\) a une pente négative, on a</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(1,2)&lt;0.
+\end{equation*}
+</div>
+<p id="p-383">4. Comme la tangente au point \(B\) est horizontale, on a</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(0,2)=0.
+\end{equation*}
+</div>
+</li>
+</ul>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-81"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-81"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-81"><article class="exercise exercise-like"><ol class="decimal">
+<li id="li-310">
+<p id="p-384">Soit \(f\) une fonction d'une seule variable \(x\text{.}\)</p>
+<p id="p-385">Définissez le nombre</p>
+<div class="displaymath">
+\begin{equation*}
+f'(2)
+\end{equation*}
+</div>
+<p data-braille="continuation">à l'aide d'une limite. Comment l'appelle-t-on? Comment se note-t-il si on utilise des \(\mathrm{d}\;\text{?}\)</p>
+</li>
+<li id="li-311">
+<p id="p-386">Soit \(f\) une fonction de deux variables \(x,y\text{.}\)</p>
+<p id="p-387">Définissez le nombre</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,1)
+\end{equation*}
+</div>
+<p data-braille="continuation">à l'aide d'une limite. Comment l'appelle-t-on? Comment se note-t-il si on utilise des \(\partial\;\text{?}\)</p>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-8" id="hint-8"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like"><ol class="decimal">
+<li id="li-312"><p id="p-388">Consultez votre cours de calcul différentiel préféré.</p></li>
+<li id="li-313">
+<p id="p-389">Ajoutez une deuxième variable et donnez-lui la valeur</p>
+<div class="displaymath">
+\begin{equation*}
+y=1
+\end{equation*}
+</div>
+<p data-braille="continuation">partout, ce qui revient à travailler dans le plan d'équation \(y=1\) et à se ramener à une seule variable \(x\text{.}\)</p>
+</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><ol class="decimal">
+<li id="li-314">
+<p id="p-390">Le nombre \(f'(2)\) est égal à la limite suivante, si elle existe :</p>
+<div class="displaymath">
+\begin{equation*}
+f'(2)=\lim_{x\rightarrow 2}\frac{f(x)-f(2)}{x-2}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On l'appelle dérivée de \(f\) en \(x=2\) et on le note aussi</p>
+<div class="displaymath">
+\begin{equation*}
+f'(2)=\left.\frac{\mathrm{d}f}{\mathrm{d}x}\right|_{x=2}.
+\end{equation*}
+</div>
+</li>
+<li id="li-315">
+<p id="p-391">Le nombre \(f_x(2,1)\) est égal à la limite suivante, si elle existe :</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,1)=\lim_{x\rightarrow 2}\frac{f(x,1)-f(2,1)}{x-2}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On l'appelle dérivée partielle de \(f\) par rapport à \(x\) au point \((x,y)=(2,1)\) et on le note aussi</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,1)=\left.\frac{\partial f}{\partial x}\right|_{(x,y)=(2,1)}.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-82"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-82"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-82"><article class="exercise exercise-like"><p id="p-392">Utilisez le diagramme de courbes de niveau <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/exercice_4.1.4.png" style="width: 100%; height: auto;" alt=""></div> de la fonction de deux variables \(f\) pour estimer les nombres</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,1)\quad\text{et}\quad f_y(2,1).
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-9" id="hint-9"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-9"><div class="hint solution-like">
+<p id="p-393">Quand on ne connaît qu'un nombre fini de valeurs prises par la fonction \(f\text{,}\) la dérivée partielle</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,1)=\frac{\partial f}{\partial x}(2,1)=\lim_{x\rightarrow 2}\frac{f(x,1)-f(2,1)}{x-2}
+\end{equation*}
+</div>
+<p data-braille="continuation">peut être estimée à l'aide de quotients du type</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\Delta z}{\Delta x}=\frac{f(x,1)-f(2,1)}{x-2}
+\end{equation*}
+</div>
+<p data-braille="continuation">où la valeur de \(x\) est assez proche de \(2\) et permet de lire la valeur de \(f(x,1)\text{.}\)</p>
+<p id="p-394">Dans le cas de ce diagramme de courbes de niveau, voici un exemple de stratégie pour effectuer une estimation de</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,1).
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-316"><p id="p-395">Repérez le point \((2,1)\) et notez la valeur de \(f(2,1)\text{.}\)</p></li>
+<li id="li-317"><p id="p-396">Déplacez-vous horizontalement vers la gauche jusqu'à la première courbe de niveau rencontrée et notez la valeur de \(f\) correspondante : vous avez votre \(\Delta z\text{.}\)</p></li>
+<li id="li-318"><p id="p-397">Mesurez le déplacement horizontal algébrique : vous avez votre \(\Delta x\text{.}\)</p></li>
+<li id="li-319">
+<p id="p-398">Faites la division. Vous avez votre première estimation :</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,1)\approx\frac{\Delta z}{\Delta x}.
+\end{equation*}
+</div>
+</li>
+<li id="li-320"><p id="p-399">Répétez les étapes précédentes en vous déplaçant cette fois-ci horizontalement vers la droite : vous obtenez une deuxième estimation.</p></li>
+<li id="li-321"><p id="p-400">Faites la moyenne de vos deux estimations.</p></li>
+</ol>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-80" id="answer-80"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-80"><div class="answer solution-like">
+<p id="p-401">Avec ma démarche, et mes mesures, j'ai trouvé</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,1)\approx 2{,}65\quad\text{et}\quad f_y(2,1)\approx -2{,}11.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like">
+<p id="p-402">Voici une illustration de ce que nous allons faire : <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/exercice_4.1.4bis.png" style="width: 100%; height: auto;" alt=""></div></p>
+<ul class="disc">
+<li id="li-322">
+<p id="p-403">Pour estimer \(f_x(2,1)\text{,}\) commençons par nous déplacer horizontalement vers la gauche en partant du point \((2,1)\) où \(z=1\text{,}\) jusqu'à la première courbe de niveau rencontrée où \(z=8\text{.}\) On obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\Delta z}{\Delta x}=\frac{8-10}{-0{,}85}\approx 2{,}35.
+\end{equation*}
+</div>
+<p data-braille="continuation">En faisant la même chose, mais en se déplaçant vers la droite, on trouve</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\Delta z}{\Delta x}=\frac{12-10}{0{,}68}\approx 2{,}94.
+\end{equation*}
+</div>
+<p data-braille="continuation">Pour finir, on prend la moyenne de ces deux valeurs :</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,1)\approx\frac{2{,}35+2{,}94}{2}\approx 2{,}65.
+\end{equation*}
+</div>
+</li>
+<li id="li-323">
+<p id="p-404">Pour estimer \(f_y(2,1)\text{,}\) commençons par nous déplacer verticalement vers le haut en partant du point \((2,1)\) où \(z=1\text{,}\) jusqu'à la première courbe de niveau rencontrée où \(z=8\text{.}\) On obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\Delta z}{\Delta y}=\frac{8-10}{0{,}9}\approx -2{,}22.
+\end{equation*}
+</div>
+<p data-braille="continuation">En faisant la même chose, mais en se déplaçant vers la bas, on trouve</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\Delta z}{\Delta y}=\frac{12-10}{-1}=-2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Pour finir, on prend la moyenne de ces deux valeurs :</p>
+<div class="displaymath">
+\begin{equation*}
+f_y(2,1)\approx\frac{-2{,}22+(-2)}{2}\approx -2{,}11.
+\end{equation*}
+</div>
+</li>
+</ul>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-calcul-derivees-partielles"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-calcul-derivees-partielles"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-calcul-derivees-partielles"><article class="exercise exercise-like"><p id="p-405">Calculez toutes les dérivées partielles de</p>
+<ol class="decimal">
+<li id="li-324">
+<p id="p-406">\(f\) si</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y)=3x+2y^2-4xy.
+\end{equation*}
+</div>
+</li>
+<li id="li-325">
+<p id="p-407">\(z\) si</p>
+<div class="displaymath">
+\begin{equation*}
+z=x\cos(x+y^2).
+\end{equation*}
+</div>
+</li>
+<li id="li-326">
+<p id="p-408">\(u\) si</p>
+<div class="displaymath">
+\begin{equation*}
+u(x,y,z)=x^2-5xe^y+z\sin(x).
+\end{equation*}
+</div>
+</li>
+<li id="li-327">
+<p id="p-409">\(f\) si</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y)=x^y.
+\end{equation*}
+</div>
+</li>
+<li id="li-328">
+<p id="p-410">\(w\) si</p>
+<div class="displaymath">
+\begin{equation*}
+w=\frac{e^v}{u+v^2}.
+\end{equation*}
+</div>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-10" id="hint-10"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-10"><div class="hint solution-like">
+<p id="p-411">Une fonction \(f\) qui dépend de deux variables \(x\) et \(y\) admet deux dérivées partielles notées</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial f}{\partial x}=f_x\quad\text{et}\quad\frac{\partial f}{\partial y}=f_y.
+\end{equation*}
+</div>
+<ul class="disc">
+<li id="li-329"><p id="p-412">Pour calculer \(f_x\text{,}\) on traite \(y\) comme une constante et on dérive par rapport à \(x\text{.}\)</p></li>
+<li id="li-330"><p id="p-413">Pour calculer \(f_y\text{,}\) on traite \(x\) comme une constante et on dérive par rapport à \(y\text{.}\)</p></li>
+</ul>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-81" id="answer-81"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-81"><div class="answer solution-like"><ol class="decimal">
+<li id="li-331">
+<p id="p-414">On trouve</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(x,y)=3-4y\quad\text{et}\quad f_y(x,y)=4y-4x.
+\end{equation*}
+</div>
+</li>
+<li id="li-332">
+<p id="p-415">On trouve</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial z}{\partial x}=\cos(x+y^2)-x\sin(x+y^2)\quad\text{et}\quad\frac{\partial z}{\partial y}=-2xy\sin(x+y^2).
+\end{equation*}
+</div>
+</li>
+<li id="li-333">
+<p id="p-416">On trouve</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial u}{\partial x}=2x-5e^y+z\cos x,\quad\frac{\partial u}{\partial y}=-5xe^y\quad\text{et}\quad\frac{\partial u}{\partial z}=\sin x.
+\end{equation*}
+</div>
+</li>
+<li id="li-334">
+<p id="p-417">On trouve</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(x,y)=yx^{y-1}\quad\text{et}\quad f_y(x;y)=x^y\ln x.
+\end{equation*}
+</div>
+</li>
+<li id="li-335">
+<p id="p-418">On trouve</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial w}{\partial u}=-\frac{e^v}{(u+v^2)^2}\quad\text{et}\quad\frac{\partial w}{\partial v}=\frac{e^v(u+v^2-2v)}{(u+v^2)^2}.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><ol class="decimal">
+<li id="li-336">
+<p id="p-419">On a</p>
+<div class="displaymath">
+\begin{align*}
+f_x(x,y)&amp;=\frac{\partial}{\partial x}\left(3x+2y^2-4xy\right)\\
+&amp;=\frac{\partial}{\partial x}\left(3x\right)+\frac{\partial}{\partial x}\left(2y^2\right)-\frac{\partial}{\partial x}\left(4xy\right)\\
+&amp;=3+0-4y\\
+&amp;=3-4y
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+f_y(x,y)&amp;=\frac{\partial}{\partial y}\left(3x+2y^2-4xy\right)\\
+&amp;=\frac{\partial}{\partial y}\left(3x\right)+\frac{\partial}{\partial y}\left(2y^2\right)-\frac{\partial}{\partial y}\left(4xy\right)\\
+&amp;=0+4y-4x\\
+&amp;=4y-4x.
+\end{align*}
+</div>
+</li>
+<li id="li-337">
+<p id="p-420">On a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial x}&amp;=\frac{\partial}{\partial x}\left(x\cdot\cos(x+y^2)\right)\\
+&amp;=\frac{\partial}{\partial x}\left(x\right)\cdot\cos(x+y^2)+x\cdot\frac{\partial}{\partial x}\left(\cos(x+y^2)\right)\\
+&amp;=1\cdot\cos(x+y^2)+x\cdot\left(-\sin(x+y^2)\right)\frac{\partial}{\partial x}\left(x+y^2\right)\\
+&amp;=1\cdot\cos(x+y^2)+x\cdot\left(-\sin(x+y^2)\right)\cdot(1+0)\\
+&amp;=\cos(x+y^2)-x\sin(x+y^2)
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial y}&amp;=\frac{\partial}{\partial y}\left(x\cdot\cos(x+y^2)\right)\\
+&amp;=x\cdot\frac{\partial}{\partial y}\left(\cos(x+y^2)\right)\\
+&amp;=x\cdot\left(-\sin(x+y^2)\right)\frac{\partial}{\partial y}\left(x+y^2\right)\\
+&amp;=x\cdot\left(-\sin(x+y^2)\right)\cdot(0+2y)\\
+&amp;=-2xy\sin(x+y^2).
+\end{align*}
+</div>
+</li>
+<li id="li-338">
+<p id="p-421">On a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial u}{\partial x}&amp;=\frac{\partial}{\partial x}\left(x^2-5xe^y+z\sin x\right)\\
+&amp;=\frac{\partial}{\partial x}\left(x^2\right)-\frac{\partial}{\partial x}\left(5xe^y\right)+\frac{\partial}{\partial x}\left(z\sin x\right)\\
+&amp;=2x-5e^y+z\cos x,
+\end{align*}
+</div>
+<p data-braille="continuation">puis</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial u}{\partial y}&amp;=\frac{\partial}{\partial y}\left(x^2-5xe^y+z\sin x\right)\\
+&amp;=\frac{\partial}{\partial y}\left(x^2\right)-\frac{\partial}{\partial y}\left(5xe^y\right)+\frac{\partial}{\partial y}\left(z\sin x\right)\\
+&amp;=0-5xe^y+0\\
+&amp;=-5xe^y,
+\end{align*}
+</div>
+<p data-braille="continuation">et enfin</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial u}{\partial z}&amp;=\frac{\partial}{\partial z}\left(x^2-5xe^y+z\sin x\right)\\
+&amp;=\frac{\partial}{\partial z}\left(x^2\right)-\frac{\partial}{\partial z}\left(5xe^y\right)+\frac{\partial}{\partial z}\left(z\sin x\right)\\
+&amp;=0-0+\sin x\\
+&amp;=\sin x.
+\end{align*}
+</div>
+</li>
+<li id="li-339">
+<p id="p-422">On a</p>
+<div class="displaymath">
+\begin{align*}
+f_x(x,y)&amp;=\frac{\partial}{\partial x}\left(x^y\right)\\
+&amp;=yx^{y-1}
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+f_y(x,y)&amp;=\frac{\partial}{\partial y}\left(x^y\right)\\
+&amp;=x^y\ln y.
+\end{align*}
+</div>
+</li>
+<li id="li-340">
+<p id="p-423">On a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial w}{\partial u}&amp;=\frac{\partial}{\partial u}\left(\frac{e^v}{u+v^2}\right)\\
+&amp;=\frac{\frac{\partial}{\partial u}\left(e^v\right)\cdot(u+v^2)-e^v\cdot\frac{\partial}{\partial u}\left(u+v^2\right)}{(u+v^2)^2}\\
+&amp;=\frac{0\cdot(u+v^2)-e^v\cdot 1}{(u+v^2)^2}\\
+&amp;=-\frac{e^v}{(u+v^2)^2}
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial w}{\partial v}&amp;=\frac{\partial}{\partial v}\left(\frac{e^v}{u+v^2}\right)\\
+&amp;=\frac{\frac{\partial}{\partial v}\left(e^v\right)\cdot(u+v^2)-e^v\cdot\frac{\partial}{\partial v}\left(u+v^2\right)}{(u+v^2)^2}\\
+&amp;=\frac{e^v\cdot(u+v^2)-e^v\cdot(2v)}{(u+v^2)^2}\\
+&amp;=\frac{e^v(u+v^2-2v)}{(u+v^2)^2}.
+\end{align*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-derivees-partielles-secondes"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-derivees-partielles-secondes"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-derivees-partielles-secondes"><article class="exercise exercise-like"><p id="p-424">Trouvez toutes les dérivées partielles secondes de la fonction de deux variables</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y)=x^2y+3y^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">La conclusion du théorème de Clairaut est-elle vérifiée?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-11" id="hint-11"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-11"><div class="hint solution-like"><ul class="disc">
+<li id="li-341">
+<p id="p-425">Commencez par calculer la dérivée première</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial f}{\partial x}=f_x.
+\end{equation*}
+</div>
+<p data-braille="continuation">Dérivez ensuite cette fonction par rapport à \(x\) pour obtenir</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2 f}{\partial x^2}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}\right)=\frac{\partial}{\partial x}\left(f_x\right)=(f_x)_x=f_{xx},
+\end{equation*}
+</div>
+<p data-braille="continuation">puis par rapport à \(y\) pour obtenir</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)=\frac{\partial}{\partial y}\left(f_x\right)=(f_x)_y=f_{xy}.
+\end{equation*}
+</div>
+</li>
+<li id="li-342">
+<p id="p-426">Après cela, calculez la dérivée première</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial f}{\partial y}=f_y.
+\end{equation*}
+</div>
+<p data-braille="continuation">Dérivez ensuite cette fonction par rapport à \(y\) pour obtenir</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2 f}{\partial y^2}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial y}\right)=\frac{\partial}{\partial y}\left(f_y\right)=(f_y)_y=f_{yy},
+\end{equation*}
+</div>
+<p data-braille="continuation">puis par rapport à \(x\) pour obtenir</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^2 f}{\partial x\partial y}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right)=\frac{\partial}{\partial x}\left(f_y\right)=(f_y)_x=f_{yx}.
+\end{equation*}
+</div>
+</li>
+<li id="li-343"><p id="p-427">Pour finir, comparez les dérivées mixtes \(f_{xy}=\dfrac{\partial^2 f}{\partial y\partial x}\) et \(f_{yx}=\dfrac{\partial^2 f}{\partial x\partial y}\text{.}\)</p></li>
+</ul></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-82" id="answer-82"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-82"><div class="answer solution-like">
+<p id="p-428">On obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+f_{xx}=\dfrac{\partial^2f}{\partial x^2}=2y&amp;\quad f_{yx}=\dfrac{\partial^2f}{\partial x\partial y}=2x\\
+f_{xy}=\dfrac{\partial^2f}{\partial y\partial x}=2x&amp;\quad f_{yy}=\dfrac{\partial^2f}{\partial y^2}=6
+\end{matrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">et la conclusion du théorème de Clairaut est vérifiée, car on a bien</p>
+<div class="displaymath">
+\begin{equation*}
+f_{xy}=f_{yx}.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like">
+<ul class="disc">
+<li id="li-344">
+<p id="p-429">D'une part, on a</p>
+<div class="displaymath">
+\begin{equation*}
+f_x=\frac{\partial}{\partial x}(x^2y+3y^2)=2xy,
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{align*}
+f_{xx}&amp;=\frac{\partial}{\partial x}\left(f_x\right)\\
+&amp;=\frac{\partial}{\partial x}\left(2xy\right)\\
+&amp;=2y
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+f_{xy}&amp;=\frac{\partial}{\partial y}\left(f_x\right)\\
+&amp;=\frac{\partial}{\partial y}\left(2xy\right)\\
+&amp;=2x.
+\end{align*}
+</div>
+</li>
+<li id="li-345">
+<p id="p-430">D'autre part, on a</p>
+<div class="displaymath">
+\begin{equation*}
+f_y=\frac{\partial}{\partial y}(x^2y+3y^2)=x^2+6y,
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{align*}
+f_{yy}&amp;=\frac{\partial}{\partial y}\left(f_y\right)\\
+&amp;=\frac{\partial}{\partial y}\left(x^2+6y\right)\\
+&amp;=6
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+f_{yx}&amp;=\frac{\partial}{\partial x}\left(f_y\right)\\
+&amp;=\frac{\partial}{\partial x}\left(x^2+6y\right)\\
+&amp;=2x.
+\end{align*}
+</div>
+</li>
+</ul>
+<p id="p-431">En résumé, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+f_{xx}=\dfrac{\partial^2f}{\partial x^2}=2y&amp;\quad f_{yx}=\dfrac{\partial^2f}{\partial x\partial y}=2x\\
+f_{xy}=\dfrac{\partial^2f}{\partial y\partial x}=2x&amp;\quad f_{yy}=\dfrac{\partial^2f}{\partial y^2}=6
+\end{matrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">et la conclusion du théorème de Clairaut est vérifiée, car on a bien</p>
+<div class="displaymath">
+\begin{equation*}
+f_{xy}=f_{yx}.
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-derivee-partielle-troisieme"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-derivee-partielle-troisieme"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-derivee-partielle-troisieme"><article class="exercise exercise-like"><p id="p-432">Pour la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y)=x^2y+3y^2
+\end{equation*}
+</div>
+<p data-braille="continuation">de l'exercice précédent <a class="xref" data-knowl="./knowl/exercice-derivees-partielles-secondes.html" title="Exercice 4.1.6">4.1.6</a>, calculez</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^3f}{\partial y^2\partial x}
+\end{equation*}
+</div>
+<p data-braille="continuation">de deux façons différentes au moins.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-12" id="hint-12"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-12"><div class="hint solution-like">
+<p id="p-433">En partant des calculs faits à l'exercice précédent <a class="xref" data-knowl="./knowl/exercice-derivees-partielles-secondes.html" title="Exercice 4.1.6">4.1.6</a>, calculez d'abord</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^3f}{\partial y^2\partial x}
+\end{equation*}
+</div>
+<p data-braille="continuation">en suivant la définition, c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^3f}{\partial y^2\partial x}=\frac{\partial}{\partial y}\left(\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)\right)=f_{xyy}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis utilisez le théorème de Clairaut pour justifier la permutation de l'ordre des dérivations et aboutir au même résultat en empruntant un chemin différent.</p>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-83" id="answer-83"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-83"><div class="answer solution-like">
+<p id="p-434">Quel que soit l'ordre des dérivations choisi, on trouve</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial^3f}{\partial y^2\partial x}=f_{xyy}=f_{yxy}=f_{yyx}=0.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
+<p id="p-435">Rappelons d'abord les calculs</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+f_{xx}=\dfrac{\partial^2f}{\partial x^2}=2y&amp;\quad f_{yx}=\dfrac{\partial^2f}{\partial x\partial y}=2x\\
+f_{xy}=\dfrac{\partial^2f}{\partial y\partial x}=2x&amp;\quad f_{yy}=\dfrac{\partial^2f}{\partial y^2}=6
+\end{matrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">effectués à l'exercice précédent <a class="xref" data-knowl="./knowl/exercice-derivees-partielles-secondes.html" title="Exercice 4.1.6">4.1.6</a>.</p>
+<ul class="disc">
+<li id="li-346">
+<p id="p-436">Par définition, on a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial^3f}{\partial y^2\partial x}&amp;=\frac{\partial}{\partial y}\left(\frac{\partial^2f}{\partial y\partial x}\right)\\
+&amp;=\frac{\partial}{\partial y}\left(2x\right)\\
+&amp;=0.
+\end{align*}
+</div>
+</li>
+<li id="li-347">
+<p id="p-437">Grâce au théorème de Clairaut, on peut permuter les dérivations partielles et prendre ainsi un chemin différent :</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial^3f}{\partial y^2\partial x}&amp;=f_{xyy}\\
+&amp;=f_{yyx}\\
+&amp;=\frac{\partial}{\partial x}\left(f_{yy}\right)\\
+&amp;=\frac{\partial}{\partial x}\left(6\right)\\
+&amp;=0.
+\end{align*}
+</div>
+</li>
+</ul>
+</div></div>
+</div></article></div>
+<article class="project project-like" id="project-1"><h6 class="heading">
+<span class="type">Synthèse</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-5">
+<p id="p-438">On considère la fonction de deux variables</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y)=\arctan\left(\frac{y}{x}\right).
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-1"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-439">Dériver \(f(x,y)\) par rapport à \(y\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like">
+<p id="p-440">Commençons par remarquer que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial}{\partial y}\left(\frac{y}{x}\right)=\frac{1}{x}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Par dérivation en chaîne, on obtient alors</p>
+<div class="displaymath">
+\begin{align*}
+f_y(x,y)&amp;=\frac{\partial}{\partial y}\left(\arctan\left(\frac{y}{x}\right)\right)\\
+&amp;=\frac{1}{1+\left(\frac{y}{x}\right)^2}\cdot\frac{\partial}{\partial y}\left(\frac{y}{x}\right)\\
+&amp;=\frac{1}{1+\frac{y^2}{x^2}}\cdot\frac{1}{x}\\
+&amp;=\frac{x}{x^2+y^2}.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="task exercise-like" id="task-2"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-441">Dériver \(f(x,y)\) par rapport à \(x\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like">
+<p id="p-442">Commençons par remarquer que</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial}{\partial x}\left(\frac{y}{x}\right)&amp;=\frac{\partial}{\partial x}\left(yx^{-1}\right)\\
+&amp;=y\cdot\frac{\partial}{\partial x}\left(x^{-1}\right)\\
+&amp;=y\cdot(-1)\cdot x^{-2}\\
+&amp;=-\frac{y}{x^2}.
+\end{align*}
+</div>
+<p data-braille="continuation">Par dérivation en chaîne, on obtient alors</p>
+<div class="displaymath">
+\begin{align*}
+f_x(x,y)&amp;=\frac{\partial}{\partial x}\left(\arctan\left(\frac{y}{x}\right)\right)\\
+&amp;=\frac{1}{1+\left(\frac{y}{x}\right)^2}\cdot\frac{\partial}{\partial x}\left(\frac{y}{x}\right)\\
+&amp;=\frac{1}{1+\frac{y^2}{x^2}}\cdot\left(-\frac{y}{x^2}\right)\\
+&amp;=-\frac{y}{x^2+y^2}.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="task exercise-like" id="task-3"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-443">Représenter l'intersection du graphe de la fonction \(f\) avec le plan d'équation \(y=3\text{.}\) Comment appelle-t-on cette courbe?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><p id="p-444">Voici le graphe de la fonction <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/exercice_4.1.6.png" style="width: 100%; height: auto;" alt=""></div> avec le plan en bleu ciel et leur intersection en noir. On appelle cette intersection la trace du graphe dans le plan d'équation \(y=3\text{.}\)</p></div></div>
+</div></article><article class="task exercise-like" id="task-4"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-445">Interpréter graphiquement le nombre \(f_x(2,3)\text{.}\) Dire sans calcul s'il est positif, négatif ou nul.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
+<p id="p-446">Le nombre \(f_x(2,3)\) est la pente de la tangente à la trace du graphe de la fonction \(f\) avec le plan d'équation \(y=3\) au point \((2,3,f(2,3))\text{.}\)</p>
+<p id="p-447">Voici la représentation graphique de la trace en question <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/exercice_4.1.6bis.png" style="width: 100%; height: auto;" alt=""></div> dans le plan d'équation \(y=3\text{.}\)</p>
+<p id="p-448">La pente de la tangente au point donné est clairement négative. On en déduit donc que</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,3)&lt;0
+\end{equation*}
+</div>
+<p data-braille="continuation">sans calculs.</p>
+</div></div>
+</div></article><article class="task exercise-like" id="task-5"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-449">Définir \(f_x(2,3)\) à l'aide d'une limite.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like">
+<p id="p-450">Si la limite suivante existe, alors</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,3)=\lim_{x\rightarrow 2}\frac{f(x,3)-f(2,3)}{x-2}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="task exercise-like" id="task-6"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-451">Sachant que</p>
+<div class="displaymath">
+\begin{equation*}
+f(2;3)\approx 0{,}983\quad\text{et}\quad f(2{,}1;3)\approx 0{,}960
+\end{equation*}
+</div>
+<p data-braille="continuation">donner une estimation de \(f_x(2,3)\) sans dériver.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
+<p id="p-452">Comme</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(2,3)=\lim_{x\rightarrow 2}\frac{f(x,3)-f(2,3)}{x-2}
+\end{equation*}
+</div>
+<p data-braille="continuation">on peut estimer cette limite par</p>
+<div class="displaymath">
+\begin{align*}
+\frac{f(2{,}1;3)-f(2;3)}{2{,}1-2}&amp;\quad\approx\quad\frac{0{,}960-0{,}983}{0{,}1}\\
+&amp;\quad=\quad-0{,}023\cdot 10\\
+&amp;\quad=\quad-0{,}23.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="task exercise-like" id="task-7"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-453">Donner la valeur exacte de \(f_x(2,3)\) et comparer avec l'estimation obtenue à la question précédente.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">
+<p id="p-454">On a déjà calculé la dérivée partielle</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(x,y)=-\frac{y}{x^2+y^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">plus haut. Il en découle que</p>
+<div class="displaymath">
+\begin{align*}
+f_x(2,3)&amp;=-\frac{3}{2^2+3^2}\\
+&amp;=-\frac{3}{13}\\
+&amp;=-0{,}230\,769\ldots
+\end{align*}
+</div>
+<p id="p-455">On avait donc deux déjà deux décimales correctes avec l'estimation précédente.</p>
+</div></div>
+</div></article><article class="task exercise-like" id="task-8"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-456">Vérifier que la fonction \(f\) satisfait la conclusion du théorème de Clairaut.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
+<p id="p-457">On a déjà calculé</p>
+<div class="displaymath">
+\begin{equation*}
+f_x=-\frac{y}{x^2+y^2}\quad\text{et}\quad f_y=\frac{x}{x^2+y^2}.
+\end{equation*}
+</div>
+<p id="p-458">Alors</p>
+<div class="displaymath">
+\begin{align*}
+f_{xy}&amp;=(f_x)_y\\
+&amp;=\frac{\partial}{\partial y}(f_x)\\
+&amp;=\frac{\partial}{\partial y}\left(-\frac{y}{x^2+y^2}\right)\\
+&amp;=-\frac{\partial}{\partial y}\left(\frac{y}{x^2+y^2}\right)\\
+&amp;=-\frac{\frac{\partial}{\partial y}(y)\cdot(x^2+y^2)-y\cdot\frac{\partial}{\partial y}(x^2+y^2)}{(x^2+y^2)^2}\\
+&amp;=-\frac{1\cdot(x^2+y^2)-y\cdot 2y}{(x^2+y^2)^2}\\
+&amp;=-\frac{x^2+y^2-2y^2}{(x^2+y^2)^2}\\
+&amp;=\frac{y^2-x^2}{(x^2+y^2)^2}
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+f_{yx}&amp;=(f_y)_x\\
+&amp;=\frac{\partial}{\partial x}(f_y)\\
+&amp;=\frac{\partial}{\partial y}\left(\frac{x}{x^2+y^2}\right)\\
+&amp;=\frac{\frac{\partial}{\partial x}(x)\cdot(x^2+y^2)-x\cdot\frac{\partial}{\partial x}(x^2+y^2)}{(x^2+y^2)^2}\\
+&amp;=\frac{1\cdot(x^2+y^2)-x\cdot 2x}{(x^2+y^2)^2}\\
+&amp;=\frac{x^2+y^2-2x^2}{(x^2+y^2)^2}\\
+&amp;=\frac{y^2-x^2}{(x^2+y^2)^2}.
+\end{align*}
+</div>
+<p id="p-459">Donc on a</p>
+<div class="displaymath">
+\begin{equation*}
+f_{xy}=f_{yx}
+\end{equation*}
+</div>
+<p data-braille="continuation">et la conclusion du théorème de Clairaut est bien vérifiée.</p>
+</div></div>
+</div></article></article><p id="p-460">Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 6, 10 (déjà fait plus haut), 18, 20, 22, 28, 32, 34, 42, 46, 48, 50, 58, 76, 78ab, 80abc dont voici les <a class="external" href="https://drive.google.com/file/d/1JPEzgYefUOxozUHNvA7IKcwdBAC3g1WC/view?usp=sharing" target="_blank">solutions</a>.</p>
+<p id="p-461">Sinon, passez directement aux exercices prioritaires de cette section.</p>
+<p id="p-462">Remarque : Voici <a class="external" href="https://drive.google.com/file/d/13p_rPzCtj1yxo_svxW_SPxG-W7wZcJ5w/view?usp=sharing" target="_blank">le document</a> distribué les sessions précédentes. Et en voilà <a class="external" href="https://drive.google.com/file/d/1gCz_wOxhJmL_pzjzLhRdAYJx7WkMXXIN/view?usp=sharing" target="_blank">le solutionnaire</a>.</p></section></div></main>
+</div>
+</body>
+</html>

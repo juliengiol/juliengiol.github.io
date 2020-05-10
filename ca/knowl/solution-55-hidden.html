@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:54-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Commençons par évaluer le gradient de \(f\)</p>
+<div class="displaymath">
+\begin{align*}
+\nabla f&amp;=\begin{bmatrix}f_x\\f_y\end{bmatrix}\\
+&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(xe^{-x^2-y^2})\\\frac{\partial}{\partial y}(xe^{-x^2-y^2})\end{bmatrix}\\
+&amp;=\begin{bmatrix}e^{-x^2-y^2}+xe^{-x^2-y^2}(-2x)\\xe^{-x^2-y^2}(-2y)\end{bmatrix}\\
+&amp;=\begin{bmatrix}(1-2x^2)e^{-x^2-y^2}\\-2xye^{-x^2-y^2}\end{bmatrix}
+\end{align*}
+</div>
+<p data-braille="continuation">au point \((1,1)\) :</p>
+<div class="displaymath">
+\begin{align*}
+\nabla f(1,1)&amp;=\begin{bmatrix}(1-2\cdot 1^2)e^{-1^2-1^2}\\-2\cdot 1\cdot 1\cdot e^{-1^2-1^2}\end{bmatrix}\\
+&amp;=\begin{bmatrix}-e^{-2}\\-2e^{-2}\end{bmatrix}\\
+&amp;=e^{-2}\begin{bmatrix}-1\\-2\end{bmatrix}.
+\end{align*}
+</div>
+<ol class="decimal">
+<li>
+<p>Le taux de variation est maximal dans la direction donnée par le gradient \(\nabla f(1,1)\text{,}\) soit celle du vecteur</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}-1\\-2\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">si on préfère.</p>
+</li>
+<li>
+<p>Dans cette direction, le taux de variation vaut</p>
+<div class="displaymath">
+\begin{align*}
+\|\nabla f(1,1)\|&amp;=\left\|e^{-2}\begin{bmatrix}-1\\-2\end{bmatrix}\right\|\\
+&amp;=e^{-2}\left\|\begin{bmatrix}-1\\-2\end{bmatrix}\right\|\\
+&amp;=e^{-2}\sqrt{(-1)^2+(-2)^2}\\
+&amp;=\frac{\sqrt{5}}{e^2}.
+\end{align*}
+</div>
+</li>
+</ol>
+</div></body>
+</html>

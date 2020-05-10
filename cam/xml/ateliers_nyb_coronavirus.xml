@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="ateliers_nyb_coronavirus" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Ateliers de NYB</title>
+
+  <p>
+    Bonjour! Tu suis le cours de calcul intégral en sciences de la nature (NYB)?
+    Ceci est pour toi.
+  </p>
+
+  <assemblage>
+    <title>Les ateliers NYB du p'tit WebCAM</title>
+    <p>
+      Tu trouveras <url href="https://docs.google.com/document/d/1cZrT_46lttjs42qN-fSAb2D790ARNOUQxDiDZeI2Bbo/edit?usp=sharing">en cliquant ici</url>
+      <ul>
+        <li>
+          <p>
+            la liste des exercices choisis pour les ateliers par ton enseignante,
+          </p>
+        </li>
+        <li>
+          <p>
+            des liens vers mes solutionnaires en PDF,
+          </p>
+        </li>
+        <li>
+          <p>
+            ainsi que mes explications détailées en vidéo.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </assemblage>
+
+  <p>
+    Bonne étude, ça va bien aller!
+  </p>
+
+<!--
+    <exercise>
+      <title>(Ex. 3a p. 195)</title>
+
+      <statement>
+        <p>
+          Évaluez l'aire de la surface S sous la courbe décrite par la fonction <m>f(x)=e^{x/3}</m> au-dessus de l'intervalle <m>[-3,6]</m>.
+        </p>
+      </statement>
+      <hint>
+        <interactive desmos="ttox1bvxku" width="60%" aspect="2:3" />
+      </hint>
+      <solution>
+        <p>
+          On a
+          <aside>
+            <p>CV :
+              <md>
+                <mrow>u&amp;=x/3</mrow>
+                <mrow>\mathrm{d}u&amp;=\mathrm{d}x/3</mrow>
+                <mrow>3\,\mathrm{d}u&amp;=\mathrm{d}x</mrow>
+                <mrow></mrow>
+                <mrow>-3&amp;\rightarrow -3/3=-1</mrow>
+                <mrow>6&amp;\rightarrow 6/3=2</mrow>
+            </md>
+            </p>
+          </aside>
+          <md>
+            <mrow>\text{Aire}&amp;\quad=\quad\int_{-3}^6e^{x/3}\,\mathrm{d}x</mrow>
+            <mrow>&amp;\quad\stackrel{\text{CV}}{=}\quad\int_{-1}^2e^u\,3\,\mathrm{d}u</mrow>
+            <mrow>&amp;\quad=\quad 3e^u\Bigg|_{-1}^2</mrow>
+            <mrow>&amp;\quad=\quad 3e^2-3e^{-1}</mrow>
+          </md>
+          grâce au changement de variable <m>u=x/3</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise>
+      <title>(Ex. 3b p. 195)</title>
+
+      <statement>
+        <p>
+          Évaluez l'aire de la surface S sous la courbe décrite par la fonction <m>f(x)=\ln x</m> au-dessus de l'intervalle <m>[1,e^3]</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+        </p>
+      </hint>
+      <solution>
+        <p>
+          On a
+          <aside>
+            <p>IPP :
+            <md>
+              <mrow>u\amp =\ln x\amp\mathrm{d}v\amp=\mathrm{d}x </mrow>
+              <mrow>\mathrm{d}u\amp =\frac{1}{x}\mathrm{d}x\amp v\amp =x</mrow>
+            </md>
+            </p>
+          </aside>
+          <md>
+            <mrow>\text{Aire}&amp;\quad=\quad\int_1^{e^3}\ln x\,\mathrm{d}x</mrow>
+            <mrow>&amp;\quad\stackrel{\text{IPP}}{=}\quad x\ln x\Bigg|_1^{e^3}-\int_1^{e^3}\bcancel{x}\cdot\frac{1}{\bcancel{x}}\,\mathrm{d}x</mrow>
+            <mrow>&amp;\quad=\quad x\ln x-x\Bigg|_1^{e^3}</mrow>
+            <mrow>&amp;\quad=\quad (e^3\underbrace{\ln\left(e^3\right)}_{=\,3}-e^3)-(1\underbrace{\ln(1)}_{=\,0}-1)</mrow>
+            <mrow>&amp;\quad=\quad 3e^3-e^3+1</mrow>
+            <mrow>&amp;\quad=\quad 2e^3+1</mrow>
+          </md>
+          grâce à l'intégration par parties <m>u=\ln x,\;\mathrm{d}v=\mathrm{d}x</m>.
+        </p>
+      </solution>
+    </exercise>
+-->
+
+</section>

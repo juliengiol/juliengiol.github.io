@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:55:58-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>303 Les séries de Taylor et de Maclaurin</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://juliengiol.github.io/" target="_blank"><img src="images/yosemite.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="ca.html"><span class="title">Calcul avancé</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="devenserieentiere.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="chapitre2.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="applicationstaylor.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="devenserieentiere.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="chapitre2.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="applicationstaylor.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
+<li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Remerciements</a></li>
+</ul>
+</li>
+<li class="link part"><a href="coronavirus.html" data-scroll="coronavirus"><span class="codenumber">I</span> <span class="title">Coronavirus</span></a></li>
+<li class="link part"><a href="documents.html" data-scroll="documents"><span class="codenumber">II</span> <span class="title">Documents</span></a></li>
+<li class="link part"><a href="volume.html" data-scroll="volume"><span class="codenumber">III</span> <span class="title">Volume</span></a></li>
+<li class="link">
+<a href="chapitre1.html" data-scroll="chapitre1"><span class="codenumber">1</span> <span class="title">Les suites et les séries numériques</span></a><ul>
+<li><a href="suites.html" data-scroll="suites">Les suites</a></li>
+<li><a href="series.html" data-scroll="series">Les séries</a></li>
+<li><a href="seriesatermespositifs.html" data-scroll="seriesatermespositifs">Les séries à termes positifs</a></li>
+<li><a href="series-alternees.html" data-scroll="series-alternees">Les séries alternées</a></li>
+<li><a href="testdurapport.html" data-scroll="testdurapport">La convergence absolue, le test du rapport et le critère de Cauchy</a></li>
+<li><a href="strategieconvergence.html" data-scroll="strategieconvergence">Une stratégie pour tester la convergence d'une série</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre2.html" data-scroll="chapitre2"><span class="codenumber">2</span> <span class="title">Les séries de Taylor</span></a><ul>
+<li><a href="seriesentieres.html" data-scroll="seriesentieres">Les séries entières</a></li>
+<li><a href="devenserieentiere.html" data-scroll="devenserieentiere">Le développement des fonctions en séries entières</a></li>
+<li><a href="tayloretmaclaurin.html" data-scroll="tayloretmaclaurin" class="active">Les séries de Taylor et de Maclaurin</a></li>
+<li><a href="applicationstaylor.html" data-scroll="applicationstaylor">Des applications des polynômes de Taylor</a></li>
+<li><a href="nombrescomplexes.html" data-scroll="nombrescomplexes">Les nombres complexes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre3.html" data-scroll="chapitre3"><span class="codenumber">3</span> <span class="title">Les fonctions de plusieurs variables</span></a><ul>
+<li><a href="fonctionspv.html" data-scroll="fonctionspv">Les fonctions de plusieurs variables</a></li>
+<li><a href="limites-continuite.html" data-scroll="limites-continuite">Les limites et la continuité</a></li>
+<li><a href="quadriques.html" data-scroll="quadriques">Les cylindres et les surfaces quadriques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre4.html" data-scroll="chapitre4"><span class="codenumber">4</span> <span class="title">Les dérivées des fonctions de plusieurs variables</span></a><ul>
+<li><a href="derpartielles.html" data-scroll="derpartielles">Les dérivées partielles</a></li>
+<li><a href="plans-tangents-et-differentielle.html" data-scroll="plans-tangents-et-differentielle">Les plans tangents et les approximations linéaires</a></li>
+<li><a href="derivation-en-chaine.html" data-scroll="derivation-en-chaine">La règle de dérivation en chaîne</a></li>
+<li><a href="derivees-directionnelles.html" data-scroll="derivees-directionnelles">Les dérivées directionnelles et le vecteur gradient</a></li>
+<li><a href="approximationsdetaylor.html" data-scroll="approximationsdetaylor">Les approximations de Taylor en deux variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre5.html" data-scroll="chapitre5"><span class="codenumber">5</span> <span class="title">L'optimisation</span></a><ul>
+<li><a href="extremums.html" data-scroll="extremums">Extremums</a></li>
+<li><a href="gradient.html" data-scroll="gradient">Critère de Sylvester et méthode du gradient</a></li>
+<li><a href="lagrange.html" data-scroll="lagrange">Multiplicateurs de Lagrange</a></li>
+</ul>
+</li>
+<li class="link part"><a href="complements.html" data-scroll="complements"><span class="codenumber">IV</span> <span class="title">Compléments</span></a></li>
+<li class="link"><a href="sage.html" data-scroll="sage"><span class="codenumber">1</span> <span class="title">Sage</span></a></li>
+<li class="link"><a href="bornes.html" data-scroll="bornes"><span class="codenumber">2</span> <span class="title">Bornes d'erreur</span></a></li>
+<li class="link"><a href="serie-de-leibniz.html" data-scroll="serie-de-leibniz"><span class="codenumber">3</span> <span class="title">La série de Leibniz</span></a></li>
+<li class="link"><a href="polaires.html" data-scroll="polaires"><span class="codenumber">4</span> <span class="title">Coordonnées polaires (6.3)</span></a></li>
+<li class="link"><a href="coniques.html" data-scroll="coniques"><span class="codenumber">5</span> <span class="title">Coniques</span></a></li>
+<li class="link"><a href="epsilon.html" data-scroll="epsilon"><span class="codenumber">6</span> <span class="title">Epsilon-Delta</span></a></li>
+<li class="link"><a href="vectorielles.html" data-scroll="vectorielles"><span class="codenumber">7</span> <span class="title">Fonctions vectorielles</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="tayloretmaclaurin"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Les séries de Taylor et de Maclaurin</span>
+</h2>
+<a href="tayloretmaclaurin.html" class="permalink">¶</a><p id="p-184">Voici une <a class="external" href="https://tinyurl.com/tgsqfo4" target="_blank">application</a> qui calcule et représente graphiquement le polynôme de Taylor de degré au plus \(n\) centré en \(a\) d'une fonction donnée.</p>
+<iframe id="interactive_polynome_taylor" width="600" height="750" src="interactive_polynome_taylor-if.html"></iframe><p id="p-185">Essayez de résoudre les exercices qui suivent.</p>
+<article class="exercise exercise-like" id="exercice-DSE-exp"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-DSE-exp"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-DSE-exp"><article class="exercise exercise-like"><p id="p-186">Trouvez la série de Taylor de \(e^x\) centrée en \(a=2\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-39" id="answer-39"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-39"><div class="answer solution-like"><p id="p-187">\(\displaystyle\sum_{n=0}^{+\infty}\frac{e^2}{n!}(x-2)^n\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-DSE-sin"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-DSE-sin"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-DSE-sin"><article class="exercise exercise-like"><p id="p-188">On s'intéresse à la fonction \(f(x)=\sin(x)\text{.}\)</p>
+<ol class="decimal">
+<li id="li-175">Quelle est la série de Maclaurin de \(f\text{?}\)</li>
+<li id="li-176">Sur quel intervalle \(f\) est-elle égale à la somme de sa série de Maclaurin?</li>
+<li id="li-177">Quelle est la série de Maclaurin de \(g(x)=x\cos(x)\text{?}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-40" id="answer-40"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-40"><div class="answer solution-like"><ol id="p-189" class="decimal">
+<li id="li-178">\(\displaystyle \displaystyle\sum_{n=0}^{+\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}\)</li>
+<li id="li-179">\(\displaystyle \mathbb{R}\)</li>
+<li id="li-180">\(\displaystyle \displaystyle\sum_{n=0}^{+\infty}(-1)^n\frac{x^{2n+1}}{(2n)!}\)</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-DSE-binomiale"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-DSE-binomiale"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-DSE-binomiale"><article class="exercise exercise-like"><p id="p-190">Trouvez la série de Maclaurin de \(\displaystyle\frac{1}{\sqrt{4-x}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-41" id="answer-41"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-41"><div class="answer solution-like"><p id="p-191">\(\displaystyle\frac{1}{2}\sum_{n=0}^{+\infty}\binom{-1/2}{n}\left(-\frac{x}{4}\right)^n\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-calcul-sommme-DSE"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-calcul-sommme-DSE"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-calcul-sommme-DSE"><article class="exercise exercise-like"><p id="p-192">Calculez la somme de la série suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^{+\infty}(-1)^{n-1}\frac{1}{n2^n}.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-42" id="answer-42"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-42"><div class="answer solution-like"><p id="p-193">\(\ln\left(\frac{3}{2}\right)\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-calcul-limite-DSE"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-calcul-limite-DSE"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-calcul-limite-DSE"><article class="exercise exercise-like"><p id="p-194">Calculez la limite suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\rightarrow 0}\frac{e^x-1-x}{x^2}.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-43" id="answer-43"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-43"><div class="answer solution-like"><p id="p-195">\(\frac{1}{2}\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-calcul-integrale-DSE"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-calcul-integrale-DSE"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-calcul-integrale-DSE"><article class="exercise exercise-like"><p id="p-196">Estimez l'intégrale suivante avec une erreur inférieure à \(0{,}001\) :</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^1e^{-x^2}dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-44" id="answer-44"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-44"><div class="answer solution-like"><p id="p-197">\(1-\frac{1}{3}+\frac{1}{10}-\frac{1}{42}+\frac{1}{216}\approx 0{,}747\,5\)</p></div></div>
+</div></article></div>
+<p id="p-198">Voici <a class="external" href="https://drive.google.com/file/d/1qydUklbezOyaTpv699g_Cy3KsZOjBp7c/view?usp=sharing" target="_blank">comment répondre</a> aux exercices qui précèdent.</p>
+<p id="p-199">Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 4, 8, 16, 30, 58, 70, 84 dont voici les <a class="external" href="https://drive.google.com/file/d/1APnykdH3N7oRuKrmrswZI60Qt4UJl-__/view?usp=sharing" target="_blank">solutions</a>.</p>
+<p id="p-200">Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p></section></div></main>
+</div>
+</body>
+</html>

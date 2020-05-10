@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:14:22-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>M&amp;A Présentation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_green.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://juliengiol.github.io/" target="_blank"><img src="images/ossau.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="mea.html"><span class="title">Mathématiques et algorithmique</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="newton.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="newton.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="algorithmenewton.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="newton.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="newton.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="algorithmenewton.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
+<li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Droits d'auteur</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Remerciements</a></li>
+<li><a href="preface-3.html" data-scroll="preface-3">Témoignages</a></li>
+</ul>
+</li>
+<li class="link part"><a href="algodebase.html" data-scroll="algodebase"><span class="codenumber">I</span> <span class="title">Algorithmique de base</span></a></li>
+<li class="link">
+<a href="assignetc.html" data-scroll="assignetc"><span class="codenumber">1</span> <span class="title">Assignations, boucles et conditionnelles</span></a><ul>
+<li><a href="assignations.html" data-scroll="assignations">Assignations</a></li>
+<li><a href="boucles.html" data-scroll="boucles">Boucles</a></li>
+<li><a href="conditionnelles.html" data-scroll="conditionnelles">Conditionnelles</a></li>
+<li><a href="exercicesassignetc.html" data-scroll="exercicesassignetc">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fonctions.html" data-scroll="fonctions"><span class="codenumber">2</span> <span class="title">Fonctions</span></a><ul>
+<li><a href="syntaxefonctions.html" data-scroll="syntaxefonctions">Syntaxe : def / return</a></li>
+<li><a href="recursivite.html" data-scroll="recursivite">Récursivité</a></li>
+<li><a href="exercicesfonctions.html" data-scroll="exercicesfonctions">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="complexite.html" data-scroll="complexite"><span class="codenumber">3</span> <span class="title">Complexité</span></a><ul>
+<li><a href="sommeentiers.html" data-scroll="sommeentiers">Somme des premiers entiers</a></li>
+<li><a href="exponentiation.html" data-scroll="exponentiation">Exponentiation rapide</a></li>
+<li><a href="horner.html" data-scroll="horner">Méthode de Horner</a></li>
+<li><a href="fibonacci.html" data-scroll="fibonacci">Nombres de Fibonacci</a></li>
+<li><a href="exercicescomplexite.html" data-scroll="exercicescomplexite">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="rechzeros.html" data-scroll="rechzeros"><span class="codenumber">II</span> <span class="title">Recherche de zéros</span></a></li>
+<li class="link">
+<a href="bissection.html" data-scroll="bissection"><span class="codenumber">4</span> <span class="title">Méthode de la bissection</span></a><ul>
+<li><a href="presentationbissection.html" data-scroll="presentationbissection">Présentation</a></li>
+<li><a href="algorithmebissection.html" data-scroll="algorithmebissection">Algorithme</a></li>
+<li><a href="exercicesbissection.html" data-scroll="exercicesbissection">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="newton.html" data-scroll="newton"><span class="codenumber">5</span> <span class="title">Méthode de Newton-Raphson</span></a><ul>
+<li><a href="presentationnewton.html" data-scroll="presentationnewton" class="active">Présentation</a></li>
+<li><a href="algorithmenewton.html" data-scroll="algorithmenewton">Algorithme</a></li>
+<li><a href="exercicesnewton.html" data-scroll="exercicesnewton">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="interpolation.html" data-scroll="interpolation"><span class="codenumber">III</span> <span class="title">Interpolation polynomiale</span></a></li>
+<li class="link">
+<a href="lagrange.html" data-scroll="lagrange"><span class="codenumber">6</span> <span class="title">Forme de Lagrange</span></a><ul>
+<li><a href="presentationlagrange.html" data-scroll="presentationlagrange">Présentation</a></li>
+<li><a href="algorithmelagrange.html" data-scroll="algorithmelagrange">Algorithme</a></li>
+<li><a href="exerciceslagrange.html" data-scroll="exerciceslagrange">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="diffdivisees.html" data-scroll="diffdivisees"><span class="codenumber">7</span> <span class="title">Forme de Newton</span></a><ul>
+<li><a href="presentationdiffdiv.html" data-scroll="presentationdiffdiv">Présentation</a></li>
+<li><a href="algorithmediffdiv.html" data-scroll="algorithmediffdiv">Algorithme</a></li>
+<li><a href="exercicesdiffdiv.html" data-scroll="exercicesdiffdiv">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="integration.html" data-scroll="integration"><span class="codenumber">IV</span> <span class="title">Intégration numérique</span></a></li>
+<li class="link">
+<a href="rectangles.html" data-scroll="rectangles"><span class="codenumber">8</span> <span class="title">Méthode des rectangles</span></a><ul>
+<li><a href="presentationrectangles.html" data-scroll="presentationrectangles">Présentation</a></li>
+<li><a href="algorithmerectangles.html" data-scroll="algorithmerectangles">Algorithme</a></li>
+<li><a href="exercicesrectangles.html" data-scroll="exercicesrectangles">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="trapezes.html" data-scroll="trapezes"><span class="codenumber">9</span> <span class="title">Méthode des trapèzes</span></a><ul>
+<li><a href="presentationtrapezes.html" data-scroll="presentationtrapezes">Présentation</a></li>
+<li><a href="algorithmetrapezes.html" data-scroll="algorithmetrapezes">Algorithme</a></li>
+<li><a href="exercicestrapezes.html" data-scroll="exercicestrapezes">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="simpson.html" data-scroll="simpson"><span class="codenumber">10</span> <span class="title">Méthode de Simpson</span></a><ul>
+<li><a href="presentationsimpson.html" data-scroll="presentationsimpson">Présentation</a></li>
+<li><a href="algorithmesimpson.html" data-scroll="algorithmesimpson">Algorithme</a></li>
+<li><a href="exercicessimpson.html" data-scroll="exercicessimpson">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="thdesnombres.html" data-scroll="thdesnombres"><span class="codenumber">V</span> <span class="title">Théorie des nombres</span></a></li>
+<li class="link">
+<a href="euclide.html" data-scroll="euclide"><span class="codenumber">11</span> <span class="title">Algorithme d'Euclide</span></a><ul>
+<li><a href="presentationeuclide.html" data-scroll="presentationeuclide">Présentation</a></li>
+<li><a href="algorithmeeuclide.html" data-scroll="algorithmeeuclide">Algorithme</a></li>
+<li><a href="exerciceseuclide.html" data-scroll="exerciceseuclide">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="bezout.html" data-scroll="bezout"><span class="codenumber">12</span> <span class="title">Algorithme d'Euclide étendu</span></a><ul>
+<li><a href="presentationbezout.html" data-scroll="presentationbezout">Présentation</a></li>
+<li><a href="algorithmebezout.html" data-scroll="algorithmebezout">Algorithme</a></li>
+<li><a href="exercicesbezout.html" data-scroll="exercicesbezout">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chinois.html" data-scroll="chinois"><span class="codenumber">13</span> <span class="title">Théorème des restes chinois</span></a><ul>
+<li><a href="presentationchinois.html" data-scroll="presentationchinois">Présentation</a></li>
+<li><a href="algorithmechinois.html" data-scroll="algorithmechinois">Algorithme</a></li>
+<li><a href="exerciceschinois.html" data-scroll="exerciceschinois">Exercices</a></li>
+</ul>
+</li>
+<li class="link"><a href="appendices.html" data-scroll="appendices"><span class="title">Appendices</span></a></li>
+<li class="link">
+<a href="approximation.html" data-scroll="approximation"><span class="codenumber">A</span> <span class="title">Approximations et erreurs</span></a><ul>
+<li><a href="erreur_abs_et_rel.html" data-scroll="erreur_abs_et_rel">Erreur et erreur relative</a></li>
+<li><a href="intervalle_encadrement.html" data-scroll="intervalle_encadrement">Intervalle d'encadrement</a></li>
+<li><a href="decimales.html" data-scroll="decimales">Décimales exactes et arrondissements</a></li>
+<li><a href="exercicesapproximation.html" data-scroll="exercicesapproximation">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="sagemath.html" data-scroll="sagemath"><span class="codenumber">B</span> <span class="title">À propos de SageMath</span></a><ul>
+<li><a href="sage_mathcell.html" data-scroll="sage_mathcell">SageMathCell</a></li>
+<li><a href="sage_cocalc.html" data-scroll="sage_cocalc">CoCalc</a></li>
+<li><a href="exercicessagemath.html" data-scroll="exercicessagemath">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="aide-memoire-python.html" data-scroll="aide-memoire-python"><span class="codenumber">C</span> <span class="title">Aide-mémoire Python</span></a><ul>
+<li><a href="python_varia.html" data-scroll="python_varia">Affichage, commentaires et variables</a></li>
+<li><a href="python_operateurs.html" data-scroll="python_operateurs">Opérateurs et comparaisons</a></li>
+<li><a href="python_boucles_et_cond.html" data-scroll="python_boucles_et_cond">Boucles, conditionnelles et fonctions</a></li>
+<li><a href="python_types.html" data-scroll="python_types">Principaux types</a></li>
+</ul>
+</li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">Bibliographie</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="presentationnewton"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Présentation</span>
+</h2>
+<a href="presentationnewton.html" class="permalink">¶</a><article class="lemma theorem-like" id="basedenewton"><h6 class="heading">
+<span class="type">Lemme</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-435">Soit \(f\) une fonction réelle de la variable réelle et \(x_0\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+f'(x_0)\neq 0.
+\end{equation*}
+</div>
+<p id="p-436">Alors l'abscisse \(x_1\) du point d'intersection de l'axe des \(x\) avec la tangente au graphe de \(f\) au point \((x_0;f(x_0))\) vaut</p>
+<div class="displaymath">
+\begin{equation*}
+x_1=x_0-\frac{f(x_0)}{f'(x_0)}.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref original" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-437">L'équation de la tangente au point \((x_0;f(x_0))\) est donnée par</p>
+<div class="displaymath">
+\begin{equation*}
+y=\text{polynôme de Taylor de degré un au plus en }x_0
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+y=f(x_0)+f'(x_0)(x-x_0).
+\end{equation*}
+</div>
+<p id="p-438">Comme l'axe des \(x\) a pour équation \(y=0\text{,}\) on obtient l'abscisse de son intersection avec la tangente ci-dessus en résolvant l'équation suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccc}
+&amp;f(x_0)+f'(x_0)(x-x_0)&amp;=&amp;0\\
+\Leftrightarrow&amp;f'(x_0)(x-x_0)&amp;=&amp;-f(x_0)\\
+\Leftrightarrow&amp;x-x_0&amp;=&amp;-\frac{f(x_0)}{f'(x_0)}\\
+\Leftrightarrow&amp;x&amp;=&amp;x_0-\frac{f(x_0)}{f'(x_0)}
+\end{array}
+\end{equation*}
+</div></article></div>
+<article class="example example-like" id="exempleiterationnewton"><a data-knowl="" class="id-ref original" data-refid="hk-exempleiterationnewton"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exempleiterationnewton"><article class="example example-like"><p id="p-439">Soit \(f(x)=x^2-2\) et \(x_0=2\text{.}\)</p>
+<p id="p-440">On a \(f'(x)=2x\text{,}\) donc \(f'(2)=4\neq 0\) et on peut appliquer le lemme <a class="xref" data-knowl="./knowl/basedenewton.html" title="Lemme 5.1.1">5.1.1</a> : l'abscisse \(x_1\) du point d'intersection de l'axe des \(x\) avec la tangente au graphe de \(f\) au point \((2;f(2))=(2;2)\) vaut</p>
+<div class="displaymath">
+\begin{align*}
+x_1&amp;=2-\frac{f(2)}{f'(2)}\\
+&amp;=2-\frac{2}{4}\\
+&amp;=\frac{3}{2}.
+\end{align*}
+</div>
+<p id="p-441"><a class="external" href="https://www.desmos.com/calculator/6l4xvj0f6p" target="_blank">Cliquez ici</a> pour vérifier cela graphiquement avec Desmos.</p></article></div>
+<article class="proposition theorem-like" id="criterepournewton"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-442">Soit \(f:[c;b]\longrightarrow\mathbb{R}\) une fonction continue sur \([c;b]\) et deux fois dérivable sur \(]c;b[\text{,}\) telle que</p>
+<ul class="disc">
+<li id="li-226"><p id="p-443">\(f(c)=0\;\text{;}\)</p></li>
+<li id="li-227"><p id="p-444">\(f'(x)&gt;0\) et \(f''(x)&gt;0\) pour tout \(x\in ]c;b[\;\text{.}\)</p></li>
+</ul>
+<p id="p-445">Si \(x_0\in ]c;b[\text{,}\) alors l'abscisse \(\displaystyle x_1=x_0-\frac{f(x_0)}{f'(x_0)}\) donnée par le lemme <a class="xref" data-knowl="./knowl/basedenewton.html" title="Lemme 5.1.1">5.1.1</a> vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+c&lt;x_1&lt;x_0.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-446">Par le <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_des_accroissements_finis#%C3%89nonc%C3%A9" target="_blank">théorème des accroissements finis</a> (le cas \(n=0\) de la <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Taylor#Formule_de_Taylor-Lagrange" target="_blank">formule de Taylor-Lagrange</a>, parfois aussi appelé théorème de Lagrange) appliqué à l'intervalle \([c;x_0]\text{,}\) il existe \(\xi\in\;]c;x_0[\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{f(x_0)-f(c)}{x_0-c}=f'(\xi).
+\end{equation*}
+</div>
+<p data-braille="continuation">On en déduit que</p>
+<div class="displaymath">
+\begin{equation*}
+f(x_0)-f(c)=f'(\xi)(x_0-c)
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation}
+f(x_0)=f'(\xi)(x_0-c)\label{application_taylor_lagrange}\tag{5.1.1}
+\end{equation}
+</div>
+<p data-braille="continuation">puisque \(f(c)=0\text{.}\)</p>
+<p id="p-447">On va maintenant établir les inégalités \(c&lt;x_1\) et \(x_1&lt;x_0\text{.}\)</p>
+<p id="p-448">Commençons par la seconde. Comme \(f'(\xi)&gt;0\) et \(x_0&gt;c\) par hypothèses, on déduit de <a class="xref" data-knowl="./knowl/application_taylor_lagrange.html" title="Équation 5.1.1">(5.1.1)</a> que  \(f(x_0)&gt;0\text{.}\) D'autre part, on a \(f'(x_0)&gt;0\) par hypothèse. Donc</p>
+<div class="displaymath">
+\begin{equation*}
+-\frac{f(x_0)}{f'(x_0)}&lt;0\quad\Rightarrow\quad\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}&lt;x_0.
+\end{equation*}
+</div>
+<p id="p-449">Il reste à montrer que \(c&lt;x_1\text{.}\) Par positivité de \(f''\text{,}\) la fonction \(f'\) est strictement croissante sur \(]c;b[\text{.}\) En utilisant cela et <a class="xref" data-knowl="./knowl/application_taylor_lagrange.html" title="Équation 5.1.1">(5.1.1)</a>, on a</p>
+<div class="displaymath">
+\begin{align*}
+\xi&lt;x_0&amp;\quad\Rightarrow\quad f'(\xi)&lt;f'(x_0)\\
+&amp;\quad\Rightarrow\quad\underbrace{f'(\xi)(x_0-c)}_{f(x_0)}&lt;f'(x_0)(x_0-c)\\
+&amp;\quad\Rightarrow\quad \frac{f(x_0)}{f'(x_0)}&lt;x_0-c\\
+&amp;\quad\Rightarrow\quad c&lt;\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}.
+\end{align*}
+</div></article></div>
+<article class="example example-like" id="exempledecroissanceiteration"><a data-knowl="" class="id-ref original" data-refid="hk-exempledecroissanceiteration"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exempledecroissanceiteration"><article class="example example-like"><p id="p-450">Reprenons la fonction \(f(x)=x^2-2\) et \(x_0=2\text{.}\)</p>
+<p id="p-451">Comme \(f'(x)=2x\) et \(f''(x)=2\text{,}\) les hypothèses de la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.3">5.1.3</a> sont satisfaites avec \([c;b]=[\sqrt{2};3]\text{.}\)</p>
+<p id="p-452">Comme on l'a calculé à l'exemple <a class="xref" data-knowl="./knowl/exempleiterationnewton.html" title="Exemple 5.1.2">5.1.2</a>, on a</p>
+<div class="displaymath">
+\begin{equation*}
+x_1=x_0-\frac{f(x_0)}{f'(x_0)}=\frac{3}{2}=1{,}5
+\end{equation*}
+</div>
+<p data-braille="continuation">et, comme prévu par la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.3">5.1.3</a>, on a bien</p>
+<div class="displaymath">
+\begin{equation*}
+c&lt;x_1&lt;x_0
+\end{equation*}
+</div>
+<p data-braille="continuation">car</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{2}=1{,}414\ldots&lt;1{,}5&lt;2.
+\end{equation*}
+</div></article></div>
+<article class="remark remark-like" id="remark-3"><h6 class="heading">
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-453">En d'autres termes, la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.3">5.1.3</a> dit qu'on s'est rapproché du zéro \(c\) en passant de \(x_0\) à \(x_1\text{.}\)</p>
+<p id="p-454">C'est le principe itératif de la méthode de Newton-Raphson.</p></article><article class="theorem theorem-like" id="methodedenewton"><h6 class="heading">
+<span class="type">Théorème</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode de Newton-Raphson.</span>
+</h6>
+<p id="p-455">Soit \(f:[c;b]\longrightarrow\mathbb{R}\) une fonction continue sur \([c;b]\) et deux fois dérivable sur \(]c;b[\text{,}\) telle que</p>
+<ul class="disc">
+<li id="li-228"><p id="p-456">\(f(c)=0\;\text{;}\)</p></li>
+<li id="li-229"><p id="p-457">\(f'(x)&gt;0\) et \(f''(x)&gt;0\) pour tout \(x\in ]c;b[\;\text{.}\)</p></li>
+</ul>
+<p id="p-458">Si \(x_0\in ]c;b[\text{,}\) alors la formule de récurrence</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
+\end{equation*}
+</div>
+<p data-braille="continuation">définit une suite strictement décroissante \(\{x_n\}\) telle que</p>
+<div class="displaymath">
+\begin{equation*}
+c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0&lt;b\qquad\text{pour tout}\;n\geq 0
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}x_n=c.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-459">En itérant la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.3">5.1.3</a>, on voit que la suite \(\{x_n\}\) est bien définie et qu'elle vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0&lt;b\qquad\text{pour tout}\;n\geq 0.
+\end{equation*}
+</div>
+<p id="p-460">En particulier, \(\{x_n\}\) est décroissante et minorée par \(c\text{.}\) Par le <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_la_limite_monotone#%C3%89nonc%C3%A9_pour_les_suites" target="_blank">théorème de la limite monotone</a>, on en déduit que</p>
+<div class="displaymath">
+\begin{equation*}
+\ell=\lim_{n\rightarrow+\infty}x_n\quad\text{existe et vérifie}\quad c\leq\ell&lt;b.
+\end{equation*}
+</div>
+<p data-braille="continuation">Il ne reste plus qu'à montrer que \(\ell=c\text{.}\)</p>
+<p id="p-461">Raisonnons par l'absurde et supposons que \(c&lt;\ell\text{.}\) Notons alors que</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}x_{n+1}=\lim_{n\rightarrow+\infty}x_n=\ell
+\end{equation*}
+</div>
+<p data-braille="continuation">puis que</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}f(x_n)=f(\ell)
+\end{equation*}
+</div>
+<p data-braille="continuation">par la continuité de \(f\) en \(\ell\) (qui découle de sa dérivabilité en ce point), et enfin que</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}f'(x_n)=f'(\ell)&gt;0
+\end{equation*}
+</div>
+<p data-braille="continuation">par la continuité de \(f'\) en \(\ell\) (qui découle de sa dérivabilité en ce point). En faisant tendre \(n\) vers l'infini, la relation de récurrence</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
+\end{equation*}
+</div>
+<p data-braille="continuation">entraîne</p>
+<div class="displaymath">
+\begin{align*}
+\ell=\ell-\frac{f(\ell)}{f'(\ell)}&amp;\quad\Rightarrow\quad\frac{f(\ell)}{f'(\ell)}=0\\
+&amp;\quad\Rightarrow\quad f(\ell)=0.
+\end{align*}
+</div>
+<p data-braille="continuation">Mais comme \(f\) est strictement croissante sur \([c;b]\) par positivité de \(f'\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+c&lt;\ell\qquad\Rightarrow\qquad f(c)=0&lt;f(\ell)
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où la contradiction.</p></article></div>
+<article class="example example-like" id="x2moins2newton"><a data-knowl="" class="id-ref original" data-refid="hk-x2moins2newton"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-x2moins2newton"><article class="example example-like"><p id="p-462">Partant de \(x_0=2\text{,}\) effectuons trois itérations de la méthode de Newton-Raphson pour la fonction \(f(x)=x^2-2\text{,}\) dont on a déjà observé à l'exemple <a class="xref" data-knowl="./knowl/exempledecroissanceiteration.html" title="Exemple 5.1.4">5.1.4</a> qu'elle vérifie les conditions du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> \([c;b]=[\sqrt{2};3]\text{.}\)</p>
+<p id="p-463">Notons que</p>
+<div class="displaymath">
+\begin{equation*}
+x-\frac{f(x)}{f'(x)}=x-\frac{x^2-2}{2x}=x-\frac{x}{2}+\frac{1}{x}=\frac{x}{2}+\frac{1}{x}
+\end{equation*}
+</div>
+<p id="p-464">On trouve donc</p>
+<div class="displaymath">
+\begin{align*}
+x_0&amp;=2\\
+x_1&amp;=\frac{x_0}{2}+\frac{1}{x_0}=\frac{2}{2}+\frac{1}{2}=\frac{3}{2}=1{,}5\\
+x_2&amp;=\frac{x_1}{2}+\frac{1}{x_1}=\frac{3}{4}+\frac{2}{3}=\frac{17}{12}=1{,}41\overline{6}\\
+x_3&amp;=\frac{x_2}{2}+\frac{1}{x_2}=\frac{17}{24}+\frac{12}{17}=\frac{577}{408}=1{,}414\,215\,686\ldots
+\end{align*}
+</div>
+<p id="p-465">Comme \(\sqrt{2}=1{,}414\,213\,562\ldots\text{,}\) trois itérations ont suffi pour obtenir cinq décimales correctes du zéro \(c=\sqrt{2}\) de \(f(x)=x^2-2\text{.}\)</p></article></div>
+<article class="remark remark-like" id="methodedenewtonbis"><h6 class="heading">
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
+</h6>
+<p id="p-466">On déduit du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> la version symétrique suivante.</p>
+<p id="p-467">Soit \(f:[a;c]\longrightarrow\mathbb{R}\) une fonction continue sur \([a;c]\) et deux fois dérivable sur \(]a;c[\text{,}\) telle que</p>
+<ul class="disc">
+<li id="li-230"><p id="p-468">\(f(c)=0\;\text{;}\)</p></li>
+<li id="li-231"><p id="p-469">\(f'(x)&lt;0\) et \(f''(x)&gt;0\) pour tout \(x\in ]a;c[\;\text{.}\)</p></li>
+</ul>
+<p id="p-470">Si \(x_0\in ]a;c[\text{,}\) alors la formule de récurrence</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
+\end{equation*}
+</div>
+<p data-braille="continuation">définit une suite strictement croissante \(\{x_n\}\) telle que</p>
+<div class="displaymath">
+\begin{equation*}
+a&lt;x_0&lt;x_1&lt;\ldots&lt;x_n&lt;x_{n+1}&lt;\ldots&lt;c\qquad\text{pour tout}\;n\geq 0
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}x_n=c.
+\end{equation*}
+</div></article><article class="example example-like" id="example-9"><a data-knowl="" class="id-ref original" data-refid="hk-example-9"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-471">Partant de \(x_0=-2\text{,}\) effectuons trois itérations de la méthode de Newton-Raphson pour la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=x^2-3
+\end{equation*}
+</div>
+<p data-braille="continuation">qui satisfait les hypothèses vues à la remarque <a class="xref" data-knowl="./knowl/methodedenewtonbis.html" title="Remarque 5.1.8">5.1.8</a> avec \([a;b]=[-3;-\sqrt{3}]\text{,}\) car</p>
+<div class="displaymath">
+\begin{equation*}
+f'(x)=2x&lt;0\quad\text{et}\quad f''(x)=2&gt;0\quad\forall x\in]-3;-\sqrt{3}[.
+\end{equation*}
+</div>
+<p id="p-472">Comme</p>
+<div class="displaymath">
+\begin{equation*}
+x-\frac{f(x)}{f'(x)}=x-\frac{x^2-3}{2x}=x-\frac{x}{2}+\frac{3}{2x}=\frac{x}{2}+\frac{3}{2x}
+\end{equation*}
+</div>
+<p id="p-473">on trouve</p>
+<div class="displaymath">
+\begin{align*}
+x_0&amp;=-2\\
+x_1&amp;=\frac{x_0}{2}+\frac{3}{2x_0}=-1-\frac{3}{4}=-\frac{7}{4}=-1{,}75\\
+x_2&amp;=\frac{x_1}{2}+\frac{3}{2x_1}=-\frac{7}{8}-\frac{6}{7}=-\frac{97}{56}=-1{,}732\,142\,857\,142\,8\ldots\\
+x_3&amp;=\frac{x_2}{2}+\frac{3}{2x_2}=-\frac{97}{112}-\frac{84}{97}=-\frac{18817}{10864}=-1{,}732\,050\,810\,014\,7\ldots
+\end{align*}
+</div>
+<p id="p-474">Puisque \(-\sqrt{3}=-1{,}732\,050\,807\,568\,8\ldots\text{,}\) trois itérations ont suffi pour obtenir sept décimales correctes du zéro \(c=-\sqrt{3}\) de \(f(x)=x^2-3\text{.}\)</p></article></div>
+<article class="remark remark-like" id="remark-5"><h6 class="heading">
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span>
+</h6>
+<p id="p-475">Quitte à changer \(f\) pour \(-f\) qui a les mêmes zéros, on peut inclure aussi les deux cas suivants.</p>
+<ul class="disc">
+<li id="li-232"><p id="p-476">Si \(f'&lt;0\) et \(f''&lt;0\) sur \(]c;b[\text{,}\) alors \(x_0\in ]c;b[\) engendre une suite strictement décroissante qui converge vers \(c\text{.}\)</p></li>
+<li id="li-233"><p id="p-477">Si \(f'&lt;0\) et \(f''&gt;0\) sur \(]a;c[\text{,}\) alors \(x_0\in ]a;c[\) engendre une suite strictement croissante qui converge vers \(c\text{.}\)</p></li>
+</ul></article><p id="p-478">La méthode de Newton-Raphson semble donc fournir de bonnes approximations lorsqu'on cherche les zéros d'une fonction. Il reste à trouver des hypothèses qui permettent d'en estimer la précision.</p>
+<ul class="disc">
+<li id="li-234"><p id="p-479">Voir l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.7">5.3.7</a> pour un résultat pas trop difficile à démontrer, sous les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> ou de n'importe laquelle de ses versions symétriques.</p></li>
+<li id="li-235"><p id="p-480">Voir le théorème <a class="xref" data-knowl="./knowl/convergence_quadratique_newton.html" title="Théorème 5.1.11">5.1.11</a> ci-après pour un résultat plus général, mais plus difficile à démontrer.</p></li>
+</ul>
+<article class="theorem theorem-like" id="convergence_quadratique_newton"><h6 class="heading">
+<span class="type">Théorème</span><span class="space"> </span><span class="codenumber">5.1.11</span><span class="period">.</span>
+</h6>
+<p id="p-481">Soit \(f\) une fonction deux fois dérivable autour d'un zéro \(c\) de sorte qu'il existe \(r&gt;0\) tel que</p>
+<ul class="disc">
+<li id="li-236"><p id="p-482">\(f'(x)\neq 0\) pour tout \(x\in[c-r;c+r]\text{;}\)</p></li>
+<li id="li-237"><p id="p-483">\(f''\) est continue sur \(x\in[c-r;c+r]\text{.}\)</p></li>
+</ul>
+<p id="p-484">Soit \(M&gt;0\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{|f''(x)|}{|f'(x)|}\leq M\qquad\text{pour tout }x\in[c-r;c+r].
+\end{equation*}
+</div>
+<p id="p-485">Alors pour tout point de départ \(x_0\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+|x_0-c|&lt;\min\left\{r;\frac{1}{M}\right\}
+\end{equation*}
+</div>
+<p data-braille="continuation">la suite définie par la formule de récurrence</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
+\end{equation*}
+</div>
+<p data-braille="continuation">converge vers \(c\) et vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+|x_{n+1}-c|\leq M|x_n-c|^2\qquad\text{pour tout }n\geq 0
+\end{equation*}
+</div>
+<p data-braille="continuation">ainsi que</p>
+<div class="displaymath">
+\begin{equation*}
+|x_n-c|\leq\frac{1}{M}\left(M|x_0-c|\right)^{2^n}\qquad\text{pour tout }n\geq 1.
+\end{equation*}
+</div>
+<p id="p-486">Remarque : Cet énoncé est très fortement inspiré d'un théorème de l'excellent livre <a class="external" href="https://www.grenoble-sciences.fr/pap-ebook/demailly/accueil" target="_blank">Analyse numérique et équations différentielles</a> de Jean-Pierre Demailly, avec l'accord de son auteur.</p></article><article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref original" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-487">Il me semble que c'est trop difficile au niveau cégep.</p></article></div>
+<article class="remark remark-like" id="remark-6"><h6 class="heading">
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span>
+</h6>
+<p id="p-488">Dans le cas de l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.7">5.3.7</a> ou du théorème <a class="xref" data-knowl="./knowl/convergence_quadratique_newton.html" title="Théorème 5.1.11">5.1.11</a>, on parle de convergence quadratique à cause de l'exposant \(2\) dans les inégalités qui en découlent.</p>
+<p id="p-489">En pratique, cela entraîne que le nombre de décimales exactes double grosso modo à chaque itération.</p>
+<p id="p-490">Pour simplifier, on se contentera des hypothèses indiquées dans l'encadré qui suit.</p></article><article class="assemblage assemblage-like" id="assemblage-2"><h6 class="heading"><span class="title">Méthode de Newton-Raphson : Approcher un zéro en calculant successivement les zéros des tangentes.</span></h6>
+<ul id="p-491" class="disc">
+<li id="li-238"><p id="p-492">Objectif : Obtenir des approximations d'un zéro \(c\) de la fonction \(f\text{.}\)</p></li>
+<li id="li-239">
+<p id="p-493">Hypothèses : On suppose que la fonction \(f\) est deux fois dérivable et que \(f''\) est continue autour de \(c\text{,}\) ainsi que</p>
+<div class="displaymath">
+\begin{equation*}
+f'(c)\neq 0.
+\end{equation*}
+</div>
+</li>
+<li id="li-240">
+<p id="p-494">Principe : Choisir une valeur initiale \(x_0\) assez proche de \(c\text{,}\) et appliquer la formule de récurrence</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}
+\end{equation*}
+</div>
+<p data-braille="continuation">autant de fois que désiré.</p>
+</li>
+<li id="li-241"><p id="p-495">Précision : Le nombre de décimales exactes obtenues via l'approximation de \(c\) par \(x_n\) double grosso modo à chaque itération, car la convergence est quadratique sous les hypothèses précédentes.</p></li>
+<li id="li-242"><p id="p-496">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1rn77nSLrjoZnc63BLKJmpv4pwiL2fYJc/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
+</ul></article></section></div></main>
+</div>
+<!--Start: StatCounter code--><script>
+var sc_project=12152300;
+var sc_invisible=1;
+var sc_security="5132c4de";
+var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "https://www.");
+document.write("<sc"+"ript src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
+</script><noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12152300/0/5132c4de/1/" alt="web analytics"></a></div></noscript>
+<!--End: StatCounter code-->
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-8"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-8');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

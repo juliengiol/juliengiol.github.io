@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="chapitre3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Les fonctions de plusieurs variables</title>
+
+<section xml:id="fonctionspv">
+  <title>Les fonctions de plusieurs variables</title>
+
+  <introduction>
+
+  <p>Il est recommandé d'utiliser Geogebra pour visualiser les objets en 3D . Voici par exemple comment :
+    <ul>
+      <li>représenter les traces de la quadrique <m>x^2+y^2=z</m> dans les plans <m>x=k</m>, <m>y=k</m> et <m>z=k</m> : <url href="https://www.geogebra.org/3d/qpsgf7gs">traces avec GeoGebra 3D</url>.</li>
+      <li>représenter les courbes de niveau de la fonction de deux variables <m>f(x,y)=x^4+y^4-4xy+1</m> : <url href="https://www.geogebra.org/classic/rfjp8f7e">courbes de niveau avec GeoGebra Classic</url>.</li>
+    </ul>
+  </p>
+
+  <p>Le code qui suit produit <url href="https://tinyurl.com/u2e6m2z">une application</url> qui trace le diagramme des courbes de niveau et le graphe d'une fonction donnée.</p>
+  <sage>
+    <input>
+      x, y, z = var('x, y, z')
+      @interact
+      def courbes_de_niveau(f = input_box(default=x*y, label="f(x,y)"), r = input_box(default=10, label="r"), graphe = ("Graphe", True)):
+          f(x,y)=f
+          G1 = contour_plot(f, (x, -r, r), (y, -r, r), colorbar=True, plot_points=150)
+          show(G1)
+          if graphe:
+              G2 = implicit_plot3d(z==f(x,y), (x, -r, r), (y, -r, r), (z, -r, r), plot_points=30, color='orange', mesh=1, opacity=.7)
+              show(G2, spin=1)
+    </input>
+  </sage>
+  </introduction>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-domaine-image-une-variable">
+    <statement>
+      <p>Pour chacune des fonctions <m>f</m> suivantes, donnez le domaine et l'image, puis calculez <m>f(-4)</m> et <m>f(10)</m>.
+        <ol>
+          <li><m>f(x)=x^2</m></li>
+          <li><m>f(x)=\sqrt{25-x^2}</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <ul>
+              <li>domaine = <m>\mathbb{R}</m> et image = <m>[0;+\infty[</m></li>
+              <li><m>f(-4)=16</m> et <m>f(10)=100</m></li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>domaine = <m>[-5;5]</m> et image = <m>[0;5]</m></li>
+              <li><m>f(-4)=3</m> et <m>f(10)</m> n'existe pas</li>
+            </ul>
+          </li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-domaine-image-deux-variables">
+    <statement>
+      <p>On s'intéresse à la fonction de deux variables <m>f(x;y)=\sqrt{25-x^2-y^2}</m>.
+        <ol>
+          <li>Déterminez le domaine de <m>f</m> et représentez-le graphiquement.</li>
+          <li>Déterminez l'image de <m>f</m>.</li>
+          <li>Évaluez <m>f(-4;1)</m> et <m>f(10;0)</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>Voici comment représenter cette fonction avec <url href="https://www.geogebra.org/3d/nfeyrwju">GeoGebra</url>.
+        <ol>
+          <li>domaine = <m>\{(x;y)\in\mathbb{R}^2\;|\;x^2+y^2\leq 25\}</m> disque fermé de rayon 5 centré à l'origine</li>
+          <li>image = <m>[0;5]</m></li>
+          <li><m>f(-4;1)=\sqrt{8}</m> et <m>f(10;0)</m> n'existe pas</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-domaine-deux-variables">
+    <statement>
+      <p>Pour chacune des fonctions suivantes, déterminez le domaine puis représentez-le graphiquement.
+        <ol>
+          <li><m>\displaystyle f(x;y)=\frac{\sqrt{1-x-y}}{x-3}</m></li>
+          <li><m>f(x;y)=x\ln(x^2-y)</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>domaine = <m>\{(x;y)\in\mathbb{R}^2\;|\;y\leq -x+1\mbox{ et }x\neq 3\}</m></li>
+          <li>domaine = <m>\{(x;y)\in\mathbb{R}^2\;|\;y &lt; x^2\}</m></li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-graphe-donne-plan">
+    <statement>
+      <p>Tracez le graphe de <m>f(x;y)=-3x-4y+12</m></p>
+    </statement>
+    <answer>
+      <p>Il s'agit du plan passant par les points <m>(4;0;0)</m>, <m>(0;3;0)</m> et <m>(0;0;12)</m>.</p>
+      <p>Voici le représenter avec <url href="https://www.geogebra.org/3d/e6wb3wq6">GeoGebra</url>.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-estimation-apres-diagramme">
+    <statement>
+      <p>On s'intéresse à la fonction <m>f</m> dont le diagramme des courbes de niveau est donné ci-dessous. Estimez <m>f(5;4)</m> et <m>f(1;2)</m>.</p>
+      <p><image source="images/3.1-diagramme1.png"/></p>
+    </statement>
+    <answer>
+      <p><m>f(5;4)\approx 69</m> et <m>f(1;2)\approx 69</m>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-courbes-de-niveau-fonction-affine">
+    <statement>
+      <p>Tracez les courbes de niveau de la fonction <m>f(x;y)=6-3x-2y</m> pour <m>k=-6, 0, 6, 12</m>.</p>
+    </statement>
+    <answer>
+      <p><image source="images/3.1-diagramme2.png"/></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-courbes-de-niveau-fonction-donne-cercles">
+    <statement>
+      <p>Tracez les courbes de niveau de la fonction <m>g(x;y)=\sqrt{9-x^2-y^2}</m> pour <m>k=-0, 1, 2, 3</m>.</p>
+    </statement>
+    <answer>
+      <p><image source="images/3.1-diagramme3.png"/></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-description-domaine-et-graphe">
+    <statement>
+      <p>Pour chacune des fonctions suivantes, décrivez en mots l'allure générale des courbes de niveau puis faites une esquisse du graphe.
+        <ol>
+          <li><m>\displaystyle f(x;y)=x^2+y^2</m></li>
+          <li><m>\displaystyle f(x;y)=9-x^2-y^2</m></li>
+          <li><m>\displaystyle f(x;y)=y</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <ul>
+              <li>courbes de niveau <m>x^2+y^2=k</m> : cercles de rayons <m>\sqrt{k}</m> centrés à l'origine</li>
+              <li>graphe <m>z=x^2+y^2</m> : paraboloïde circulaire de sommet <m>(0;0;0)</m>, dont l'axe est celui des z, ouvert vers le haut</li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>courbes de niveau <m>x^2+y^2=9-k</m> : cercles de rayons <m>\sqrt{9-k}</m> centrés à l'origine</li>
+              <li>graphe <m>z=9-x^2-y^2</m> : paraboloïde circulaire de sommet <m>(0;0;9)</m>, dont l'axe est celui des z, ouvert vers le bas</li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>courbes de niveau <m>y=k</m> : droites parallèles à l'axe des x, également espacées pour des valeurs de k prises à intervalles réguliers</li>
+              <li>graphe <m>z=y</m> : plan faisant un angle de 45 degrés avec le plan <m>\{z=0\}</m></li>
+            </ul>
+          </li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <p>Complétez <url href="https://drive.google.com/file/d/1LojruuZ3VsfrdUoezQAKM6_bxaQlc8oN/view?usp=sharing">ce document</url>. En voici le <url href="https://drive.google.com/file/d/12YSbtX2Z4Du57RyOsuoGDAqAmMD3cWUl/view?usp=sharing">solutionnaire</url>.</p>
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 4, 10, 14, 18, 26, 28, 34, 42, 50, 58 dont voici les <url href="https://drive.google.com/file/d/1MIs0h57nrGljT8-e6X4bGAAfrNXUCtih/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+</section>
+
+<section xml:id="limites-continuite">
+  <title>Les limites et la continuité</title>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-limite-une-variable-algebre">
+    <statement>
+      <p>Calculez la limite suivante :
+        <me>\lim_{x\rightarrow 3}\frac{x^2-9}{x-3}</me>
+      </p>
+    </statement>
+    <answer>
+      <p><m>6</m></p>
+    </answer>
+    <solution>
+      <p><ul>
+        <li>En évaluant directement en <m>x=3</m>, on obtient la forme indéterminée <m>\frac{0}{0}</m>.</li>
+        <li>Grâce à l'algèbre, on lève l'indétermination et on trouve :<me>\lim_{x\rightarrow 3}\frac{x^2-9}{x-3}=\lim_{x\rightarrow 3}\frac{(\cancel{x-3})(x+3)}{\cancel{x-3}}=3+3=6</me></li>
+        <li>Pour l'approche graphique de la question, <url href="https://www.desmos.com/calculator/eu0ll5uysx">voir Desmos</url>.</li>
+      </ul></p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-deux-variables-algebre">
+    <statement>
+      <p>Calculez la limite suivante :
+        <me>\lim_{(x;y)\rightarrow (5;2)\;,\,2x-5y\neq 0}\frac{4x^2-25y^2}{2x-5y}</me>
+      </p>
+    </statement>
+    <answer>
+      <p><m>20</m></p>
+      <p>Pour l'approche graphique de la question, <url href="https://www.geogebra.org/3d/xc5kpf4g">voir Geogebra 3D</url>.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-une-variable-sandwich">
+    <statement>
+      <p>Calculez la limite suivante :
+        <me>\lim_{x\rightarrow 0}x\sin\left(\frac{1}{x}\right)</me>
+      </p>
+    </statement>
+    <answer>
+      <p><m>0</m></p>
+    </answer>
+    <solution>
+      <p><ul>
+        <li>En évaluant directement en <m>x=0</m>, on obtient une indétermination liée au fait que la fonction sinus n'a pas de limite en <m>\frac{1}{0^+}=+\infty</m> ni en <m>\frac{1}{0^-}=-\infty</m>.</li>
+        <li>Comme <m>|\sin(t)|\leq 1</m> pour tout nombre réel <m>t</m>, on a l'encadrement :<me>0\leq \left|x\sin\left(\frac{1}{x}\right)\right|\leq |x|</me></li>
+        <li>Puisque <m>\displaystyle\lim_{x\rightarrow 0}|x|=0</m>, le théorème du sandwich nous permet de conclure que <m>\displaystyle\lim_{x\rightarrow 0} \left|x\sin\left(\frac{1}{x}\right)\right|=0</m>.</li>
+        <li>Finalement, on en déduit que <me>\lim_{x\rightarrow 0}x\sin\left(\frac{1}{x}\right)=0</me></li>
+      </ul></p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-deux-variables-sandwich">
+    <statement>
+      <p>Calculez la limite suivante :
+        <me>\lim_{(x;y)\rightarrow (0;0)}\frac{x^3\cos(y)}{x^2+y^2}</me>
+      </p>
+    </statement>
+    <answer>
+      <p><m>0</m></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-une-variable-deux-chemins">
+    <statement>
+      <p>Calculez la limite suivante :
+        <me>\lim_{x\rightarrow 0}\frac{\sqrt{x^2}}{x}</me>
+      </p>
+    </statement>
+    <answer>
+      <p>n'existe pas</p>
+    </answer>
+    <solution>
+      <p><ul>
+        <li>Limite à gauche :<me>\lim_{x\rightarrow 0^-}\frac{\sqrt{x^2}}{x}=\lim_{x\rightarrow 0^-}\frac{-x}{x}=-1</me></li>
+        <li>Limite à droite :<me>\lim_{x\rightarrow 0^+}\frac{\sqrt{x^2}}{x}=\lim_{x\rightarrow 0^+}\frac{x}{x}=1</me></li>
+        <li>Nouvelle terminologie : ces deux limites correspondent à deux façons de tendre vers <m>0</m> selon <em>deux chemins</em> différents.</li>
+        <li>Conclusion : comme ces deux limites sont différentes, la limite en <m>0</m> n'existe pas.</li>
+      </ul></p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-deux-variables-deux-chemins">
+    <statement>
+      <p>Calculez la limite suivante :
+        <me>\lim_{(x;y)\rightarrow (0;0)}\frac{xy}{x^2+y^2}</me>
+      </p>
+    </statement>
+    <answer>
+      <p>n'existe pas</p>
+      <p>Voici une approche graphique avec <url href="https://www.geogebra.org/3d/fqytz8nt">Desmos 3D</url>.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-continuite-une-variable">
+    <statement>
+      <p>On s'intéresse à la fonction
+        <me>f(x)=\left\{\begin{array}{cl}
+          <![CDATA[ \frac{x^2-9}{x-3}& \mbox{ si }x\neq 3\\
+          2 & \mbox{ si }x=3]]>
+          \end{array}\right.</me>
+      </p>
+      <p>Déterminez l'ensemble des points où elle est continue.</p>
+    </statement>
+    <answer>
+      <p><m>\mathbb{R}\setminus\{3\}</m></p>
+    </answer>
+    <solution>
+      <p><ul>
+        <li>La fonction <m>x\mapsto\frac{x^2-9}{x-3}</m> est continue sur son domaine comme toutes les fonctions usuelles. Donc <m>f</m> est continue sur <m>\mathbb{R}\setminus\{3\}</m> et il reste à étudier la continuité en <m>x=3</m>.</li>
+        <li>Comme on l'a vu plus haut, <m>\displaystyle\lim_{x\rightarrow 3}\frac{x^2-9}{x-3}=6</m> donc <m>\displaystyle\lim_{x\rightarrow 3}f(x)\neq f(3)</m> et la fonction <m>f</m> est discontinue en <m>x=3</m>.</li>
+      </ul></p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-continuite-deux-variables">
+    <statement>
+      <p>On s'intéresse à la fonction
+        <me>f(x;y)=\left\{\begin{array}{cl}
+          <![CDATA[ \frac{x^3\cos(y)}{x^2+y^2}& \mbox{ si }(x;y)\neq (0;0)\\
+          7 & \mbox{ si }(x;y)=(0;0)]]>
+          \end{array}\right.</me>
+      </p>
+      <p>Déterminez l'ensemble des points où elle est continue.</p>
+    </statement>
+    <answer>
+      <p><m>\mathbb{R}^2\setminus\{(0;0)\}</m></p>
+    </answer>
+  </exercise>
+
+  <p>Voici <url href="https://drive.google.com/file/d/15PNoDprlBnhUOtFlqPqIsbpenDe1IhtE/view?usp=sharing">comment répondre</url> aux exercices qui précèdent.</p>
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 14, 16, 18, 20, 30, 38, 42 dont voici les <url href="https://drive.google.com/file/d/13myVbuIU-mDAKzyPDTKuUIWQMpPonQLA/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+</section>
+
+<section xml:id="quadriques">
+  <title>Les cylindres et les surfaces quadriques</title>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-comprendre-trace">
+    <statement>
+      <p>Prendre la trace d'une surface 3D dans un plan <m>z=k</m>, c'est remplacer la variable <m>z</m> par la constante <m>k</m> dans l'équation qui la définit, puis étudier l'objet 2D obtenu.</p>
+      <p>On s'intéresse à la surface d'équation <me>z=x^2+y^2</me>.</p>
+      <ol>
+        <li>Décrivez la trace de cette surface dans le plan horizontal <m>z=1</m>.</li>
+        <li>Décrivez la trace de cette surface dans le plan horizontal <m>z=3</m>.</li>
+        <li>Décrivez la trace de cette surface dans le plan horizontal <m>z=0</m>.</li>
+        <li>Décrivez la trace de cette surface dans le plan horizontal <m>z=-2</m>.</li>
+        <li>Décrivez la trace de cette surface dans le plan vertical <m>x=0</m>.</li>
+        <li>Décrivez la trace de cette surface dans le plan vertical <m>y=0</m>.</li>
+        <li>Esquissez la représentation graphique de cette surface.</li>
+      </ol>
+    </statement>
+    <answer>
+      <ol>
+        <li>Cercle d'équation <m>x^2+y^2=1</m>, de centre <m>(x=0\,;\,y=0\,;\,z=1)</m> et de rayon <m>1</m>.</li>
+        <li>Cercle d'équation <m>x^2+y^2=3</m>, de centre <m>(x=0\,;\,y=0\,;\,z=3)</m> et de rayon <m>\sqrt{3}</m>.</li>
+        <li>Équation <m>x^2+y^2=0</m>, donc un seul point <m>(x=0\,;\,y=0\,;\,z=0)</m>.</li>
+        <li>Équation <m>x^2+y^2=-2</m> sans solution, donc trace inexistante.</li>
+        <li>Parabole d'équation <m>z=y^2</m> de sommet <m>(x=0\,;\,y=0\,;\,z=0)</m>.</li>
+        <li>Parabole d'équation <m>z=x^2</m> de sommet <m>(x=0\,;\,y=0\,;\,z=0)</m>.</li>
+        <li>Voici le résultat avec GeoGebra 3D : <url href="https://www.geogebra.org/3d/su4c47jr">traces avec GeoGebra</url>.</li>
+      </ol>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-types-de-quadriques">
+    <statement>
+      <p>Les surfaces définies par une équation quadratique à trois variables <m>(x\,;\,y\,;\,z)</m> <me>Ax^2+By^2+Cz^2+Exy+Fyz+Gzx+Hx+Iy+Jz+K=0</me> s'appellent des quadriques.</p>
+      <p>Leurs traces horizontales et verticales sont des coniques.</p>
+      <p>La technique de la complétion du carré et un peu de géométrie permettent de se ramener à l'une des situations suivantes :
+        <ol>
+          <li>Cylindres : si l'une des variables est absente.</li>
+          <li>Ellipsoïdes : <m>\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1</m></li>
+          <li>Paraboloïdes elliptiques : <m>\displaystyle\frac{z}{c}=\frac{x^2}{a^2}+\frac{y^2}{b^2}</m></li>
+          <li>Paraboloïdes hyperboliques : <m>\displaystyle\frac{z}{c}=\frac{x^2}{a^2}-\frac{y^2}{b^2}</m></li>
+          <li>Hyperboloïdes à une nappe : <m>\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1</m></li>
+          <li>Hyperboloïdes à deux nappes : <m>\displaystyle-\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1</m></li>
+          <li>Cônes : <m>\displaystyle\frac{z^2}{c^2}=\frac{x^2}{a^2}+\frac{y^2}{b^2}</m></li>
+        </ol>
+      </p>
+      <p>Utilisez un outil informatique pour visualiser ces différents types de courbes.</p>
+    </statement>
+    <answer>
+      <p>Voici comment faire avec GeoGebra 3D : <url href="https://www.geogebra.org/3d/qvvxbxqq">types de quadriques avec GeoGebra</url>.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-cylindre-parabolique">
+    <statement>
+      <p>Esquissez la surface d'équation <m>z=x^2</m>.</p>
+    </statement>
+    <answer>
+      <p>La variable <m>y</m> étant absente, il s'agit d'un cylindre d'axe l'axe des <m>y</m>.</p>
+      <p>Dans tous les plans <m>y=k</m>, la trace de cette surface a pour équation <m>z=x^2</m> qui donne une parabole.</p>
+      <p>On appelle cette surface un cylindre parabolique.</p>
+      <p>Voici comment le représenter avec GeoGebra 3D : <url href="https://www.geogebra.org/3d/jneugpkp">GeoGebra</url>.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-axes-cylindres">
+    <statement>
+      <p>Esquissez les surfaces suivantes.
+        <ol>
+          <li><m>\displaystyle x^2+y^2=1</m></li>
+          <li><m>\displaystyle y^2+z^2=1</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>C'est un cylindre circulaire dont l'axe est l'axe des <m>z</m>.</p>
+          </li>
+          <li>
+            <p>C'est un cylindre circulaire dont l'axe est l'axe des <m>x</m>.</p>
+          </li>
+        </ol>
+      </p>
+      <p>Voici comment représenter ces deux cylindres avec GeoGebra 3D : <url href="https://www.geogebra.org/3d/ehuntzxk">GeoGebra</url>.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-esquisse-quadrique-par-traces">
+    <statement>
+      <p>Utilisez des traces pour esquisser la surface quadrique d'équation <m>x^2+\frac{y^2}{9}+\frac{z^2}{4}=1</m>.</p>
+    </statement>
+    <answer>
+      <p>Voici comment représenter cette surface avec GeoGebra 3D : <url href="https://www.geogebra.org/3d/xp4npcb2">GeoGebra</url>.</p>
+      <p>Toutes les traces dans les plans <m>x=k</m>, <m>y=k</m> et <m>z=k</m> sont des ellipses.</p>
+      <p>Ce type de quadrique s'appelle un ellipsoïde.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-esquisse-quadrique-par-traces-2">
+    <statement>
+      <p>Utilisez des traces pour esquisser la surface quadrique d'équation <m>z=4x^2+y^2</m>.</p>
+    </statement>
+    <answer>
+      <p>Voici comment représenter cette surface avec GeoGebra 3D : <url href="https://www.geogebra.org/3d/xcfypu3u">GeoGebra</url>.</p>
+      <p>Les traces dans les plans <m>x=k</m> et <m>y=k</m> sont des paraboles.</p>
+      <p>Les traces dans les plans <m>z=k</m> sont des ellipses.</p>
+      <p>Ce type de quadrique s'appelle paraboloïde elliptique.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-esquisse-quadrique-par-traces-3">
+    <statement>
+      <p>Utilisez des traces pour esquisser la surface quadrique d'équation <m>z=y^2-x^2</m>.</p>
+    </statement>
+    <answer>
+      <p>Voici comment représenter cette surface avec GeoGebra 3D : <url href="https://www.geogebra.org/3d/qyy4js5c">GeoGebra</url>.</p>
+      <p>Les traces dans les plans <m>x=k</m> et <m>y=k</m> sont des paraboles.</p>
+      <p>Les traces dans les plans <m>z=k</m> sont des hyperboles.</p>
+      <p>Ce type de quadrique s'appelle un paraboloïde hyperbolique.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-esquisse-quadrique-par-traces-4">
+    <statement>
+      <p>Utilisez des traces pour esquisser la surface quadrique d'équation <m>\frac{x^2}{4}+y^2-\frac{z^2}{4}=1</m>.</p>
+    </statement>
+    <answer>
+      <p>Voici comment représenter cette surface avec GeoGebra 3D : <url href="https://www.geogebra.org/3d/rntuaxtz">GeoGebra</url>.</p>
+      <p>Les traces dans les plans <m>x=k</m> et <m>y=k</m> sont des hyperboles.</p>
+      <p>Les traces dans les plans <m>z=k</m> sont des ellipses.</p>
+      <p>Ce type de quadrique s'appelle hyperboloïde à une nappe.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-esquisse-quadrique-par-traces-5">
+    <statement>
+      <p>Utilisez des traces pour esquisser la surface quadrique d'équation <m>4x^2-y^2+2z^2+4=0</m>.</p>
+    </statement>
+    <answer>
+      <p>Voici comment représenter cette surface avec GeoGebra 3D : <url href="https://www.geogebra.org/3d/vfeetvsn">GeoGebra</url>.</p>
+      <p>Les traces dans les plans <m>x=k</m> et <m>z=k</m> sont des hyperboles.</p>
+      <p>Les traces dans les plans <m>y=k</m> sont des ellipses.</p>
+      <p>Ce type de quadrique s'appelle hyperboloïde à deux nappes.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-esquisse-quadrique-par-traces-6">
+    <statement>
+      <p>Utilisez des traces pour esquisser la surface quadrique d'équation <m>z^2=4x^2+y^2</m>.</p>
+    </statement>
+    <answer>
+      <p>Voici comment représenter cette surface avec GeoGebra 3D : <url href="https://www.geogebra.org/3d/a2cysvue">GeoGebra</url>.</p>
+      <p>Les traces dans les plans <m>x=k</m> et <m>y=k</m> sont des hyperboles, sauf pour <m>k=0</m> qui donne des paires de droites.</p>
+      <p>Les traces dans les plans <m>z=k</m> sont des ellipses.</p>
+      <p>Ce type de quadrique s'appelle un cône.</p>
+    </answer>
+  </exercise>
+
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 12, 14, 16, 18, 20, 22, 24, 26, 28 dont voici les <url href="https://drive.google.com/file/d/1eHF4EX7cnlM_t83madKJW7Z5Kq5vj8om/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+  <p>Ce qui suit ne concerne que la session hiver 2018 :</p>
+
+  <p>Complétez <url href="https://drive.google.com/file/d/1IsgXP7cHzG_agiFY7F_fM5-3E2snOXCl/view?usp=sharing">ce document</url>. En voici le <url href="https://drive.google.com/file/d/1Abd9Pvav2T25MDQ6opcSBDY-Umdfm6L6/view?usp=sharing">solutionnaire</url>.</p>
+
+  <p>Le code qui suit produit <url href="https://goo.gl/jijeBd">une application</url> qui trace tous les types de quadriques en 3D.</p>
+  <sage>
+    <input>
+      var('x,y,z')
+      quadrics = {u'Ellipsoïde':x^2+y^2+z^2-1, u'Paraboloïde elliptique':x^2+y^2-z,
+          u'Paraboloïde hyperbolique':x^2-y^2-z, u'Hyperboloïde à une nappe':x^2+y^2-z^2-1,
+          u'Hyperboloïde à deux nappes':x^2-y^2-z^2-1, u'Cône':x^2+y^2-z^2}
+      @interact
+      def quads(q = selector(quadrics.keys(), label='Quadrique'), a = input_box(default=1), b = input_box(default=1), c = input_box(default=1), r = input_box(default=3)):
+        f = quadrics[q].subs({x:x/a}, {y:y/b}, {z:z/c})
+        if q==u'Cône':
+          pretty_print(latex(f)+'=0'+'\mbox{ (quadrique dégénérée)}')
+        else:
+          pretty_print(latex(f)+'=0')
+        p = implicit_plot3d(f,(x,-r,r),(y,-r,r),(z,-r,r), plot_points=75, mesh=1, opacity=.7)
+        show(p, spin=1)
+    </input>
+  </sage>
+
+  </section>
+
+</chapter>

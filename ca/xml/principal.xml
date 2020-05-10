@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="fr-FR">
+
+    <docinfo>
+
+      <brandlogo url="https://juliengiol.github.io/" source="images/yosemite.jpg" />
+
+      <latex-preamble>
+          <package>cancel</package>
+      </latex-preamble>
+
+      <macros>
+      \newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} % this comment will be stripped
+      \newcommand{\myequation}[2]{#1\amp =#2} % testing alignment override
+      % comments anywhere get stripped, with or without faux % comment \% characters
+      \newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+      \newcommand{\testingescapedpercent}{ \% } % just testing
+      </macros>
+              -->
+      <cross-references text="global" />
+
+      <latex-image-preamble>
+      \usepackage{pgfplots}               % loads tikz package
+      \usepackage{smartdiagram}           % for a circular diagram
+      \pgfplotsset{axis x line = middle,
+                   axis y line = middle}
+      \usetikzlibrary{backgrounds}
+      \usetikzlibrary{arrows,matrix}
+      \usetikzlibrary{positioning}        % for Dave R's worksheet
+      \usepackage{circuitikz}             % for Virgil P's worksheet
+      </latex-image-preamble>
+
+      <initialism>303</initialism>
+
+      <rename element="frontmatter" xml:lang="fr-FR">Accueil</rename>
+      <rename element="acknowledgement" xml:lang="fr-FR">Remerciements</rename>
+      <rename element="incontext" xml:lang="fr-FR">??</rename>
+      <rename element="skip-to-content" xml:lang="fr-FR">Avancer</rename>
+      <rename element="project" xml:lang="fr-FR">Synthèse</rename>
+      <rename element="activity" xml:lang="fr-FR">Outils</rename>
+      <rename element="inlineexercise" xml:lang="fr-FR">Exercice</rename>
+
+    </docinfo>
+
+    <book xml:id="ca">
+        <title>Calcul avancé</title>
+
+        <frontmatter xml:id="accueil">
+
+            <titlepage>
+              <author>
+                <personname>Julien Giol</personname>
+                <department>Département de mathématiques</department>
+                <institution>
+                  <line>Collège Ahuntsic</line>
+                </institution>
+                <email>julien.giol@collegeahuntsic.qc.ca</email>
+              </author>
+            </titlepage>
+
+            <abstract>
+              <p>
+                Ce matériel numérique accompagne le cours de calcul avancé (201-303-AH). Il se base principalement sur les cinq premiers chapitres du volume suivant :
+              </p>
+              <p>
+                <em>Calcul à plusieurs variables</em>, James Stewart (adaptation de Jean Guérin), 2e édition, Modulo 2016.
+              </p>
+              <p>
+                Vous trouverez ici :
+                <ul>
+                  <li><xref ref="coronavirus"> Coronavirus | Partie</xref> : Informations essentielles concernant la reprise des activités pédagogiques propres à ce cours.</li>
+                  <li><xref ref="documents"> Partie</xref> : Échéanciers, exercices suggérés, errata et anciennes évaluations.</li>
+                  <li><xref ref="volume"> Partie</xref> : Notes de cours suivant le volume.</li>
+                  <li><xref ref="complements"> Partie</xref> : Matière non couverte par le volume, Sage, etc...</li>
+                </ul>
+              </p>
+            </abstract>
+
+            <preface>
+              <title>Introduction</title>
+                <p>D'un point de vue technique, le contenu de ce cours constitue un approfondissement et une généralisation à plusieurs variables du cours de calcul différentiel (201-NYA-05), tout en commençant par une reprise de l'étape 3 du cours de calcul intégral (201-NYB-05). Quelques aspects du cours d'algèbre linéaire et géométrie vectorielle (201-NYC-05) y sont également présents, tels que le déterminant d'une matrice, ou les notions de droite et de plan dans l'espace.</p>
+                <p>Sujet brûlant au niveau mondial et au Québec tout particulièrement, l'intelligence artificielle nous fournit une bonne raison d'étudier les concepts mis en avant dans ce cours. En effet, la méthode du gradient (voir la section 5.2 à l'étape 3) constitue l'un des outils fondamentaux de l'apprentissage profond (<url href="https://www.youtube.com/watch?v=trWrEWfhTVg">Deep Learning</url>).</p>
+                <p>Plus généralement, l'analyse d'un grand nombre de données (<url href="https://fr.wikipedia.org/wiki/Science_des_donn%C3%A9es">Science des données</url>) passe par l'étude des objets de dimensions supérieures foisonnant derrière les algorithmes qui régissent désormais notre quotidien à travers internet.</p>
+                <p>Tout cela fait du calcul à plusieurs variables un point de passage obligé pour quiconque souhaite comprendre le monde virtuel qui nous entoure. Et c'est sans compter ses innombrables applications en physique, chimie, économie, etc...</p>
+            </preface>
+
+            <acknowledgement>
+              <p><image source="images/caview.png"/></p>
+              <p>Merci à tous les membres du département de mathématiques du <url href="https://www.collegeahuntsic.qc.ca/">Collège Ahuntsic</url> dont le travail m'a aidé dans la préparation de ce cours.
+              Merci tout particulièrement à Johanne Paquin (la plupart des documents pdf accessibles par ce site lui sont dus), Marie-José Dutil, Charles Bariteau et Luc Poitras.
+              Désolé pour ceux que j'oublie.</p>
+              <p>Merci aussi à <url href="https://wstein.org/">William Stein</url> et à ses collaborateurs pour <url href="http://www.sagemath.org/index.html">SageMath</url> et <url href="https://cocalc.com">CoCalc</url>.</p>
+              <p>Merci mille fois à <url href="http://buzzard.ups.edu/">Rob Beezer</url> pour <url href="https://pretextbook.org">PreTeXt</url>, grâce à quoi j'ai pu créer ces pages html.</p>
+            </acknowledgement>
+
+        </frontmatter>
+
+        <part xml:id="coronavirus">
+          <title>Coronavirus</title>
+
+          <p>
+            Ça va bien aller!
+          </p>
+
+          <p>
+            La fermeture du Collège et la nécessité de poursuivre la session à distance changent beaucoup de choses.
+            Voici les informations essentielles concernant la reprise des activités pédagogiques propres à ce cours.
+          </p>
+          <ul>
+            <li>
+              <p>
+                Modifications apportées au plan de cours : PDF disponible le 13 avril au plus tard.
+              </p>
+            </li>
+            <li>
+              <p>
+                <url href="https://docs.google.com/document/d/12M2FZVuVME2tAZCHmEgPoWySnNx3Bsz3ZAYTwdBbG6Q/edit?usp=sharing">Échéancier du restant de la session</url> : À consulter soigneusement et régulièrement.
+                Le but de cet échéancier évolutif est de rassembler en un seul endroit tout ce dont vous aurez besoin pour réussir ce cours sans stress inutile.
+              </p>
+            </li>
+            <li>
+              <p>
+                Zoom : Chaque fois que ce sera possible et nécessaire, j'animerai une rencontre Zoom à l'horaire habituel du cours, le mardi à 12h ou le jeudi à 12h.
+                Je vous préviendrai à l'avance par Mio lorsqu'une telle rencontre aura lieu en vous indiquant comment y accéder.
+                A priori, ces rencontres ne seront pas consacrées à la présentation de la nouvelle matière, mais aux clarifications, corrections d'exercices, et autres séances de révisions.
+              </p>
+            </li>
+            <li>
+              <p>
+                Vidéos : Je présenterai la nouvelle matière dans des vidéos que je partagerai avec vous dans l'échéancier, section par section.
+              </p>
+            </li>
+            <li>
+              <p>
+                Forum de la classe : J'ai activé le forum de la classe dans Léa, sur <url href="https://collegeahuntsic.omnivox.ca/">Omnivox</url>, pour que vous puissiez y poser vos questions, mathématiques ou autres, en lien direct avec ce cours.
+                Le but de ce forum sera de favoriser l'entraide et de faire en sorte que les réponses (les miennes ou les vôtres) à chaque question soulevée puissent profiter à tout le monde.
+                Par exemple, si vous avez de la misère avec l'exercice x page y, le forum devrait être votre premier réflexe pour aller chercher de l'aide.
+                Je le consulterai régulièrement et j'y interviendrai chaque fois que ce sera nécessaire et possible.
+                Cela devrait me permettre de prendre le pouls de la classe, afin notamment de savoir quels points clarifier et quels exercices corriger lors des rencontres Zoom.
+              </p>
+            </li>
+            <li>
+              <p>
+                Mio : Si vous avez une question d'ordre personnel, veuillez me contacter par Mio.
+                Mais s'il s'agit d'une question que n'importe qui aurait pu poser, notamment à propos d'un exercice de l'échéancier, merci d'utiliser le forum.
+              </p>
+            </li>
+            <li>
+              <p>
+                Disponibilités : Le forum de la classe et les rencontres Zoom mentionnés ci-dessus tiendront lieu de disponibilités.
+                Si vous éprouvez un besoin spécifique pour lequel aucune de ces deux options ne peut convenir, n'hésitez pas à me contacter par Mio.
+              </p>
+            </li>
+          </ul>
+
+          <p>
+            En résumé, les choses à consulter régulièrement pour bien vous organiser et ne manquer aucune information sont <url href="https://docs.google.com/document/d/12M2FZVuVME2tAZCHmEgPoWySnNx3Bsz3ZAYTwdBbG6Q/edit?usp=sharing">l'échéancier du restant de la session</url> et <url href="https://collegeahuntsic.omnivox.ca/">Omnivox</url> (Mio et forum de la classe).
+          </p>
+
+        </part>
+
+        <part xml:id="documents">
+          <title>Documents</title>
+
+          <ul>
+            <li>
+              <p>Voici le <url href="https://drive.google.com/file/d/1O5HA-aL8FDaMp-vkm6_RY8BbPygT5mO5/view?usp=sharing">plan de cours abrégé</url>.</p>
+            </li>
+            <li>
+              <p>Les échéanciers sont là pour indiquer la matière couverte à chaque rencontre, ainsi que les événements particuliers tels que les quiz et les examens. Ne les imprimez pas, car ils sont toujours susceptibles d'être modifiés si nécessaire.
+                <ul>
+                  <li><url href="https://docs.google.com/document/d/1oN0a4lbX9GJwneVtcnLeERK5vfgdQv-bb9WcgVUQGH4/edit?usp=sharing">Échéancier de l'étape 1</url></li>
+                  <li><url href="https://docs.google.com/document/d/12M2FZVuVME2tAZCHmEgPoWySnNx3Bsz3ZAYTwdBbG6Q/edit?usp=sharing">Échéancier des étapes 2 et 3</url></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <p>Qu'ils soient prioritaires ou supplémentaires, les exercices suggérés dans le volume sont répertoriés à l'adresse suivante : <url href="https://docs.google.com/document/d/1ZlLbTfEt6OqJ5w7dPL3atJV00KUW8Pga-n7PUkrvfY8/edit?usp=sharing">liste des exercices suggérés</url>.</p>
+              <p>
+                Voici les erreurs connues dans les réponses aux exercices prioritaires sélectionnés : <url href="https://drive.google.com/file/d/1BEmbDDyL3zoY5CQg5HAVvuJu40qDc6Vk/view?usp=sharing">errata</url>.
+                Que vous trouviez une nouvelle erreur ou que vous ayez le moindre doute, merci d'écrire à <email>julien.giol@collegeahuntsic.qc.ca</email>.
+              </p>
+            </li>
+            <li>
+              <p>L'annexe autorisée lors de chacun des trois examens est ici : <url href="https://drive.google.com/file/d/151AXCD-sMKPT1599E_EIFVTZmMBfthYh/view?usp=sharing">annexe pour les examens</url>.</p>
+              <p>Les évaluations de l'hiver 2018 sont disponibles ici : <url href="https://drive.google.com/drive/folders/1GGyPWxv3l1awt0JWWvOHB_X_ErlVKFmM?usp=sharing">anciennes évaluations</url>.</p>
+            </li>
+            <li>
+              <p>
+                Pour commencer, essayez de compléter les exercices de l'<url href="https://drive.google.com/file/d/1CK99sjElWh-nasBSp5mY0CSLHGRUU5K_/view?usp=sharing">échauffement</url> donné les sessions passées.
+                En voici un <url href="https://drive.google.com/file/d/1sZu5A6db9NjH14RvjAnfjT_lNAO0ka3a/view?usp=sharing">solutionnaire</url>.</p>
+            </li>
+          </ul>
+
+        </part>
+
+        <part xml:id="volume" xmlns:xi="http://www.w3.org/2001/XInclude">
+          <title>Volume</title>
+
+          <introduction>
+            <p>
+              Le code fourni à la première page du volume permet de le consulter en ligne à l'adresse suivante : <url href="https://www.cheneliere.ca/Accueil.html">Chenelière Éducation</url>.
+            </p>
+          </introduction>
+
+          <xi:include href="./chapitre1.xml" />
+
+          <xi:include href="./chapitre2.xml" />
+
+          <xi:include href="./chapitre3.xml" />
+
+          <xi:include href="./chapitre4.xml" />
+
+          <xi:include href="./chapitre5.xml" />
+        </part>
+
+        <part xml:id="complements" xmlns:xi="http://www.w3.org/2001/XInclude">
+          <title>Compléments</title>
+
+          <section xml:id="sage" xmlns:xi="http://www.w3.org/2001/XInclude">
+            <title>Sage</title>
+
+            <ul>
+              <li><p><url href="http://www.sagemath.org/index.html">SageMath</url> est un logiciel semblable à Maple et Maxima, pour ne citer que ces derniers. Ses principales forces sont les suivantes.<ul>
+                <li>Il est gratuit.</li>
+                <li>Il peut être utilisé en ligne sans autre outil qu'un fureteur à jour tel que Chrome ou Firefox.</li>
+              </ul></p></li>
+
+              <li><p>Pour effectuer de petites opérations comme un calcul de dérivée ou la représentation graphique d'une surface, on peut se contenter d'utiliser <url href="https://sagecell.sagemath.org/">SageMathCell</url>. Cette option permet en outre de partager facilement les quelques lignes de code qu'on a utilisées pour ce calcul sous la forme d'un lien internet permanent.</p></li>
+
+              <li><p>Pour des calculs plus nombreux ou plus élaborés, on utilise <url href="https://cocalc.com/app">CoCalc</url>. On travaille alors dans des <em>feuilles de travail</em> (fichiers .sagews) qu'on peut ensuite partager de plusieurs façons, incluant le format pdf. Pour pouvoir utiliser <url href="https://cocalc.com/app">CoCalc</url>, on commence par se créer un compte (gratuit) qui donne accès à un environnement de travail en ligne personnel.</p></li>
+
+              <li>
+                <p>Documentation :
+                  <ul>
+                    <li><p><url href="https://wiki.sagemath.org/quickref">Quick Reference Cards</url>.</p></li>
+                    <li><p><url href="http://sagebook.gforge.inria.fr/">Calcul mathématique avec Sage</url>.</p></li>
+                  </ul>
+                </p>
+              </li>
+            </ul>
+
+          </section>
+
+          <xi:include href="./bornes.xml" />
+
+          <xi:include href="./series-entieres.xml" />
+
+          <xi:include href="./polaires.xml" />
+
+          <xi:include href="./coniques.xml" />
+
+          <xi:include href="./epsilon.xml" />
+
+          <xi:include href="./vectorielles.xml" />
+
+        </part>
+
+    </book>
+
+</pretext>

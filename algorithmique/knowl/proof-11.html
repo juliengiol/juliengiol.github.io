@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:17:05-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Démonstration</span></h6>
+<p>Nous allons démontrer ce résultat pour la méthode des rectangles à gauche (\(\xi_k=x_{k-1)}\)).</p>
+<p>Commençons par établir le cas \(n=1\text{,}\) pour lequel \(\Delta x=b-a\) et il y a un seul rectangle d'aire \(f(a)(b-a)\text{.}\)</p>
+<p>L'idée fondamentale de la preuve repose sur l'observation suivante :</p>
+<div class="displaymath">
+\begin{align*}
+\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-f(a)(b-a)\\
+&amp;=\int_a^bf(x)\mathrm{d}x-f(a)\int_a^b\mathrm{d}x\\
+&amp;=\int_a^bf(x)\mathrm{d}x-\int_a^bf(a)\mathrm{d}x\\
+&amp;=\int_a^b(f(x)-f(a))\mathrm{d}x.
+\end{align*}
+</div>
+<p data-braille="continuation">Ceci entraîne</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\int_a^b(f(x)-f(a))\mathrm{d}x\right|\\
+&amp;\leq\int_a^b|f(x)-f(a)|\mathrm{d}x.
+\end{align*}
+</div>
+<p>Par le théorème de Lagrange (ou théorème des accroissements finis), pour tout \(x\in]a;b]\text{,}\) il existe \(c_x\in]a;x[\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)-f(a)=f'(c_x)(x-a).
+\end{equation*}
+</div>
+<p data-braille="continuation">Et cela reste vrai pour \(x=a\) car \(f(a)-f(a)=f'(c)(a-a)\Leftrightarrow 0=f'(c)\cdot 0\) pour n'importe quelle valeur de \(c\in]a;b[\text{.}\)</p>
+<p>Pour tout \(x\in[a;b]\text{,}\) on a donc</p>
+<div class="displaymath">
+\begin{align*}
+|f(x)-f(a)|&amp;=|f'(c_x)|\cdot|x-a|\\
+&amp;\leq M\cdot|x-a|\\
+&amp;= M\cdot (x-a).
+\end{align*}
+</div>
+<p>Par conséquent, on a</p>
+<div class="displaymath">
+\begin{align*}
+\left|\int_a^b(f(x)-f(a))\mathrm{d}x\right|&amp;\leq\int_a^b|f(x)-f(a)|\mathrm{d}x\\
+&amp;\leq\int_a^bM\cdot(x-a)\mathrm{d}x\\
+&amp;=\frac{M(x-a)^2}{2}\bigg\rvert_a^b\\
+&amp;=\frac{M(b-a)^2}{2}.
+\end{align*}
+</div>
+<p>Pour traiter le cas général avec \(n\) rectangles, on commence par l'observation suivante :</p>
+<div class="displaymath">
+\begin{align*}
+\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\Delta x\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})(x_k-x_{k-1})\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\int_{x_{k-1}}^{x_k}\mathrm{d}x\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x_{k-1})\mathrm{d}x\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x.
+\end{align*}
+</div>
+<p>En procédant comme ci-dessus pour le cas \(n=1\) sur chaque sous-intervalle \([x_{k-1};x_k]\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\leq \frac{M(\Delta x)^2}{2}\quad\text{où }\Delta x=x_k-x_{k-1}=\frac{b-a}{n}.
+\end{equation*}
+</div>
+<p>Ainsi</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
+&amp;\leq\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
+&amp;=\sum_{k=1}^n\frac{M(\Delta x)^2}{2}\\
+&amp;=\sum_{k=1}^n\frac{M(b-a)^2}{2n^2}\\
+&amp;=n\cdot\frac{M(b-a)^2}{2n^2}\\
+&amp;=\frac{M(b-a)^2}{2n}.
+\end{align*}
+</div></article><span class="incontext"><a href="presentationrectangles.html#proof-11">Contexte</a></span>
+</body>
+</html>

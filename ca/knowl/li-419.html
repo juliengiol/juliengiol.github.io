@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:41-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="li"><h6 class="heading">
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">4.3.3.1</span><span class="period">.</span>
+</h6>
+<ul class="disc">
+<li>
+<p>Pour commencer, on applique le logarithme naturel :</p>
+<div class="displaymath">
+\begin{align*}
+\ln y&amp;=\ln\left((\sin x)^{x^2}\right)\\
+&amp;=x^2\ln(\sin x).
+\end{align*}
+</div>
+</li>
+<li>
+<p>Ensuite, on dérive par rapport à \(x\) :</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{y}\cdot\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(\ln y)\\
+&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(x^2\cdot\ln(\sin x))\\
+&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(x^2)\cdot\ln(\sin x))+x^2\cdot\frac{\mathrm{d}}{\mathrm{d}x}(\ln(\sin x))\\
+&amp;=2x\cdot\ln(\sin x))+x^2\cdot\frac{1}{\sin x}\cdot\cos x\\
+&amp;=2x\ln(\sin x))+x^2\cot x.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Enfin, on multiplie par \(y\) :</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=y\cdot\frac{\mathrm{d}}{\mathrm{d}x}(\ln y)\\
+&amp;=y\cdot(2x\ln(\sin x))+x^2\cot x)\\
+&amp;=(\sin x)^{x^2}(2x\ln(\sin x))+x^2\cot x).
+\end{align*}
+</div>
+</li>
+</ul></article><span class="incontext"><a href="derivation-en-chaine.html#li-419">??</a></span>
+</body>
+</html>

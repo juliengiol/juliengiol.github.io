@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="integrales" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Intégrales</title>
+
+<introduction>
+  <p>
+    On peut utiliser <url href="https://sagecell.sagemath.org/">SageMathCell</url> pour calculer une intégrale.
+  </p>
+  <p>
+    Par exemple, voici comment obtenir l'intégrale indéfinie
+    <me>\int \cos(x)\;\mathrm{d}x</me>
+    <sage>
+      <input>
+        f(x) = cos(x)
+        I = integral(f(x), x)
+        show(I)
+      </input>
+    </sage>
+    ou l'intégrale définie
+    <me>\int_{-2}^5(4-3x)^8\;\mathrm{d}x</me>
+    <sage>
+      <input>
+        g(x) = (4 - 3*x)^8
+        J = integral(g(x), x, -2, 5)
+        show(J)
+      </input>
+    </sage>
+  </p>
+
+</introduction>
+
+<section xml:id="proprietes">
+  <title>Primitives et propriétés de base</title>
+
+      <exercise>
+          <statement><p>Déterminez la famille de toutes les primitives de la fonction donnée.</p>
+            <ol>
+              <li><m>\displaystyle x^{7/3}</m></li>
+              <li><m>\displaystyle\cos(9x)</m></li>
+              <li><m>\displaystyle\sin\left(\frac{x}{5}\right)</m></li>
+              <li><m>\displaystyle\frac{1}{\sqrt[7]{x^3}}</m></li>
+              <li><m>\displaystyle\frac{1}{e^{4x}}</m></li>
+              <li><m>\displaystyle\sec^2(3x)</m></li>
+              <li><m>\displaystyle\frac{1}{\sin^2\left(\frac{x}{7}\right)}</m></li>
+              <li><m>\displaystyle\frac{\sin(8x)}{\cos^2(8x)}</m></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><m>\displaystyle \frac{3x^{10/3}}{10}+C</m></li>
+              <li><m>\displaystyle\frac{\sin(9x)}{9}+C</m></li>
+              <li><m>\displaystyle-5\cos\left(\frac{x}{5}\right)+C</m></li>
+              <li><m>\displaystyle7\frac{\sqrt[7]{x^4}}{4}+C</m></li>
+              <li><m>\displaystyle-\frac{1}{4e^{4x}}+C</m></li>
+              <li><m>\displaystyle\frac{\tan(3x)}{3}+C</m></li>
+              <li><m>\displaystyle-7\cot\left(\frac{x}{7}\right)+C</m></li>
+              <li><m>\displaystyle\frac{\sec(8x)}{8}+C</m></li>
+            </ol>
+          </answer>
+      </exercise>
+
+      <exercise>
+        <statement><p>Vérifiez que la fonction <m>F(x)</m> est une primitive de la fonction <m>f(x)</m>, puis évaluez l'intégrale demandée en utilisant le théorème fondamental du calcul intégral.</p>
+          <ol>
+            <li><m>\displaystyle F(x)=x\ln(x)-x</m>, <m>\displaystyle f(x)=\ln(x)</m>, <m>\displaystyle I=\int_e^{e^2}\ln(x)dx</m></li>
+            <li><m>\displaystyle F(x)=\frac{x}{2}+\frac{\sin(2x)}{4}</m>, <m>\displaystyle f(x)=\cos^2(x)</m>, <m>\displaystyle I=\int_0^{\frac{\pi}{3}}\cos^2(x)dx</m></li>
+            <li><m>\displaystyle F(x)=\frac{1}{3}\arctan\left(\frac{x}{3}\right)</m>, <m>\displaystyle f(x)=\frac{1}{x^2+9}</m>, <m>\displaystyle I=\int_0^{\frac{3\pi}{4}}\frac{1}{x^2+9}dx</m></li>
+            <li><m>\displaystyle F(x)=\frac{9}{2}\arcsin\left(\frac{x}{3}\right)+\frac{x\sqrt{9-x^2}}{2}</m>, <m>\displaystyle f(x)=\sqrt{9-x^2}</m>, <m>\displaystyle I=\int_0^3\sqrt{9-x^2}dx</m></li>
+            <li><m>\displaystyle F(x)=\ln\left(x+\sqrt{x^2-9}\right)</m>, <m>\displaystyle f(x)=\frac{1}{\sqrt{x^2-9}}</m>, <m>\displaystyle I=\int_3^5\frac{1}{\sqrt{x^2-9}}dx</m></li>
+          </ol>
+        </statement>
+        <answer>
+          <ol>
+            <li><m>\displaystyle I=e^2</m></li>
+            <li><m>\displaystyle I=\frac{\pi}{6}+\frac{\sqrt{3}}{8}</m></li>
+            <li><m>\displaystyle I=\frac{1}{3}</m></li>
+            <li><m>\displaystyle I=\frac{9\pi}{4}</m></li>
+            <li><m>\displaystyle I=\ln(3)</m></li>
+          </ol>
+        </answer>
+      </exercise>
+
+      <exercise>
+          <statement><p>Sachant que <m>\displaystyle\int_1^5f(x)\;dx=7</m>, <m>\displaystyle\int_0^1f(x)\;dx=-4</m>, <m>\displaystyle\int_5^7f(x)\;dx=0</m> et <m>\displaystyle\int_5^7g(x)\;dx=-2</m>, utilisez les propriétés de l'intégrale définie pour évaluer les intégrales suivantes.<ol>
+              <li><p><m>\displaystyle\int_5^1f(x)\;dx</m></p></li>
+              <li><p><m>\displaystyle\int_0^5f(x)\;dx</m></p></li>
+              <li><p><m>\displaystyle\int_7^0f(x)\;dx</m></p></li>
+              <li><p><m>\displaystyle\int_7^54g(x)\;dx</m></p></li>
+              <li><p><m>\displaystyle\int_5^7(3f(x)-9g(x))\;dx</m></p></li>
+          </ol></p>
+          </statement>
+          <answer>
+            <p><ol>
+              <li><p><m>\displaystyle -7</m></p></li>
+              <li><p><m>\displaystyle 3</m></p></li>
+              <li><p><m>\displaystyle -3</m></p></li>
+              <li><p><m>\displaystyle 8</m></p></li>
+              <li><p><m>\displaystyle 18</m></p></li>
+            </ol></p>
+          </answer>
+      </exercise>
+
+</section>
+
+  <section xml:id="formules">
+    <title>Formules d'intégration de base</title>
+
+    <exercise>
+        <statement>
+            <p>Calculez les intégrales indéfinies suivantes.<ol>
+                <li><p><m>\displaystyle\int\left(x^3+\pi+x^{-3}\right)\;dx</m></p></li>
+                <li><p><m>\displaystyle\int(t+3)(2t+5)\;dt</m></p></li>
+                <li><p><m>\displaystyle\int\left(e+x+\sqrt{x}-4\sqrt[3]{x^5}\right)\;dx</m></p></li>
+                <li><p><m>\displaystyle\int\frac{x^4-3\sqrt{x}}{x}\;dx</m></p></li>
+                <li><p><m>\displaystyle\int\left(\sec s+\tan s\right)\sec s\;ds</m></p></li>
+                <li><p><m>\displaystyle\int\frac{\sin 2x}{\sin x}\;dx</m></p></li>
+                <li><p><m>\displaystyle\int\frac{\sin^2 x}{\sin x}\;dx</m></p></li>
+                <li><p><m>\displaystyle\int(x^3+1)x^2\;dx</m></p></li>
+                <li><p><m>\displaystyle\int\frac{-11}{\sin^2x}\;dx</m></p></li>
+                <li><p><m>\displaystyle\int(x^3-x^2+1)\sqrt{x}\;dx</m></p></li>
+            </ol></p>
+        </statement>
+        <answer>
+            <p><ol>
+              <li><p><m>\displaystyle\frac{x^4}{4}+\pi x-\frac{1}{2x^2}+C</m></p></li>
+              <li><p><m>\displaystyle\frac{2t^3}{3}+\frac{11t^2}{2}+15t+C</m></p></li>
+              <li><p><m>\displaystyle ex+\frac{x^2}{2}+\frac{2x^\frac{3}{2}}{3}-\frac{3x^\frac{8}{3}}{2}+C</m></p></li>
+              <li><p><m>\displaystyle\frac{1}{4}x^4-6\sqrt{x}+C</m></p></li>
+              <li><p><m>\displaystyle\sec s+\tan s+C</m></p></li>
+              <li><p><m>\displaystyle 2\sin x+C</m></p></li>
+              <li><p><m>\displaystyle-\cos x+C</m></p></li>
+              <li><p><m>\displaystyle\frac{x^6}{6}+\frac{x^3}{3}+C</m></p></li>
+              <li><p><m>\displaystyle 11\cot x+C</m></p></li>
+              <li><p><m>\displaystyle\frac{2x^\frac{9}{2}}{9}-\frac{2x^\frac{7}{2}}{7}+\frac{2x^\frac{3}{2}}{3}+C</m></p></li>
+            </ol></p>
+        </answer>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>Calculez les intégrales indéfinies suivantes.<ol>
+                <li><p><m>\displaystyle\int\frac{(x^{-2}+x)^2}{x}\;dx</m></p></li>
+                <li><p><m>\displaystyle\int\frac{2x^3+x^2+2x+4}{5x^2+5}\;dx</m></p></li>
+                <li><p><m>\displaystyle\int 7^{5z}\;dz</m></p></li>
+                <li><p><m>\displaystyle\int(e^x+e^{-x})^2\;dx</m></p></li>
+                <li><p><m>\displaystyle\int\frac{3}{\sin t}\;dt</m></p></li>
+                <li><p><m>\displaystyle\int\frac{6}{\mathrm{cotan}\theta}\;d\theta</m></p></li>
+                <li><p><m>\displaystyle\int\frac{1}{\cos^2y}\;dy</m></p></li>
+                <li><p><m>\displaystyle\int\frac{2}{1-\cos^2t}\;dt</m></p></li>
+                <li><p><m>\displaystyle\int\frac{1}{1-\cos\theta}\;d\theta</m></p></li>
+                <li><p><m>\displaystyle\int\tan^2x\;dx</m></p></li>
+            </ol></p>
+        </statement>
+        <answer>
+            <p><ol>
+              <li><p><m>\displaystyle-\frac{1}{4x^4}-\frac{2}{x}+\frac{x^2}{2}+C</m></p></li>
+              <li><p><m>\displaystyle\frac{x^2}{5}+\frac{x}{5}+\frac{3}{5}\arctan(x)+C</m></p></li>
+              <li><p><m>\displaystyle\frac{7^{5z}}{5\ln(7)}+C</m></p></li>
+              <li><p><m>\displaystyle\frac{e^{2x}}{2}+2x-\frac{1}{2e^{2x}}+C</m></p></li>
+              <li><p><m>\displaystyle-3\ln|\mathrm{cosec}(t)+\mathrm{cotan}(t)|+C</m></p></li>
+              <li><p><m>\displaystyle 6\ln|\sec\theta|+C</m></p></li>
+              <li><p><m>\displaystyle\tan y+C</m></p></li>
+              <li><p><m>\displaystyle-2\mathrm{cotan}t+C</m></p></li>
+              <li><p><m>\displaystyle-\mathrm{cotan}\theta-\mathrm{cosec}\theta+C</m></p></li>
+              <li><p><m>\displaystyle\tan x-x+C</m></p></li>
+            </ol></p>
+        </answer>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>Calculez les intégrales définies suivantes.<ol>
+                <li><p><m>\displaystyle\int_{-1}^4|3x-4|\;dx</m></p></li>
+                <li><p><m>\displaystyle\int_0^{\pi/4}\sin\left(\frac{x}{2}\right)\cos\left(\frac{x}{2}\right)\;dx</m></p></li>
+            </ol></p>
+        </statement>
+        <answer>
+            <p><ol>
+              <li><p><m>\displaystyle\frac{113}{6}</m></p></li>
+              <li><p><m>\displaystyle\frac{1}{2}-\frac{\sqrt{2}}{4}</m></p></li>
+            </ol></p>
+        </answer>
+    </exercise>
+
+</section>
+
+<section xml:id="CV">
+  <title>Changement de variable</title>
+
+  <exercise>
+      <statement>
+          <p>Calculez les intégrales indéfinies suivantes.<ol>
+              <li><p><m>\displaystyle\int(x^3+1)x^2\;dx</m></p></li>
+              <li><p><m>\displaystyle\int(x^3+1)^{150}x^2\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{5x+15}{(x^2+6x)^3}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\sqrt[3]{x^5-2x^3}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{e^\frac{1}{x}}{x^2}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{1}{(2x-3)\ln(2x-3)}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{8x^6}{\sqrt{1-x^{14}}}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int A\sin(\omega t+\phi)\;dt</m></p></li>
+              <li><p><m>\displaystyle\int\frac{1}{\sqrt[n]{ax+b}}\;dx</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p><m>\displaystyle\frac{x^6}{6}+\frac{x^3}{3}+C</m></p></li>
+            <li><p><m>\displaystyle\frac{(x^3+1)^{151}}{453}+C</m></p></li>
+            <li><p><m>\displaystyle-\frac{5}{4(x^2+6x)^2}+C</m></p></li>
+            <li><p><m>\displaystyle\frac{3(x^2-2)^\frac{4}{3}}{8}+C</m></p></li>
+            <li><p><m>\displaystyle-e^\frac{1}{x}+C</m></p></li>
+            <li><p><m>\displaystyle\frac{1}{2}\ln\left|\ln(2x-3)\right|+C</m></p></li>
+            <li><p><m>\displaystyle\frac{8}{7}\arcsin(x^7)+C</m></p></li>
+            <li><p><m>\displaystyle-\frac{A}{\omega}\cos(\omega t+\phi)+C</m></p></li>
+            <li><p><m>\displaystyle\frac{n(ax+b)^\frac{n-1}{n}}{a(n-1)}+C</m></p></li>
+        </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Utilisez un changement de variable pour calculer les intégrales indéfinies suivantes.<ol>
+              <li><p><m>\displaystyle\int(4-3x)^8\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\sin(7t+2)\;dt</m></p></li>
+              <li><p><m>\displaystyle\int x^3\cos\left(x^4+2\right)\;dx</m></p></li>
+              <li><p><m>\displaystyle\int e^x\cos(e^x)\;dx</m></p></li>
+              <li><p><m>\displaystyle\int e^{5x}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{e^u}{(1-e^u)^2}\;du</m></p></li>
+              <li><p><m>\displaystyle\int\frac{x}{\sqrt{1-4x^2}}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{\sin\sqrt{x}}{\sqrt{x}}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{\left(\ln x\right)^2}{x}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\cos^3\theta\sin\theta\;d\theta</m></p></li>
+              <li><p><m>\displaystyle\int\cot s\;ds</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle\frac{1}{27}(3x-4)^9+C</m></p></li>
+              <li><p><m>\displaystyle-\frac{1}{7}\cos(7t+2)+C</m></p></li>
+              <li><p><m>\displaystyle\frac{1}{4}\sin(x^4+2)+C</m></p></li>
+              <li><p><m>\displaystyle\sin(e^x)+C</m></p></li>
+              <li><p><m>\displaystyle\frac{e^{5x}}{5}+C</m></p></li>
+              <li><p><m>\displaystyle\frac{1}{1-e^u}+C</m></p></li>
+              <li><p><m>\displaystyle-\frac{1}{4}\sqrt{1-4x^2}+C</m></p></li>
+              <li><p><m>\displaystyle-2\cos\left(\sqrt{x}\right)+C</m></p></li>
+              <li><p><m>\displaystyle\frac{1}{3}\left(\ln x\right)^3+C</m></p></li>
+              <li><p><m>\displaystyle-\frac{1}{4}\cos^4\theta+C</m></p></li>
+              <li><p><m>\displaystyle\ln|\sin s|+C</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Calculez les intégrales indéfinies suivantes.<ol>
+              <li><p><m>\displaystyle\int\frac{15x^2+x+5}{5x^2+1}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int(x+7)\sqrt[3]{3-2x}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\cos^3\theta\;d\theta</m></p></li>
+              <li><p><m>\displaystyle\int\sqrt{1+\sqrt{x}}\;dx</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p><m>\displaystyle 3x+\frac{2\sqrt{5}}{5}\arctan(\sqrt{5}x)+\frac{1}{10}\ln(5x^2+1)+C</m></p></li>
+            <li><p><m>\displaystyle\frac{3}{28}(3-2x)^{\frac{7}{3}}-\frac{51}{16}(3-2x)^{\frac{4}{3}}+C</m></p></li>
+            <li><p><m>\displaystyle\sin\theta-\frac{1}{3}\sin^3\theta+C</m></p></li>
+            <li><p><m>\displaystyle\frac{4}{5}(1+\sqrt{x})^{\frac{5}{2}}-\frac{4}{3}(1+\sqrt{x})^{\frac{3}{2}}+C</m></p></li>
+        </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Évaluez les intégrales définies suivantes à l'aide d'un changement de variable.<ol>
+              <li><p><m>\displaystyle\int_1^2x(x^2-4)^3\;dx</m></p></li>
+              <li><p><m>\displaystyle\int_{(\ln 5)^2}^{(\ln 15)^2}\frac{e^\sqrt{x}}{5\sqrt{x}}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int_e^{e^e}\frac{-1}{x\ln\sqrt{x}}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int_0^{\frac{\pi}{8}}\sin^3(4\theta)\cos(4\theta)\;d\theta</m></p></li>
+              <li><p><m>\displaystyle\int_{\frac{\pi}{6}}^{\frac{\pi}{3}}\frac{1}{1+\cos\theta}\;d\theta</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p><m>\displaystyle-\frac{81}{8}</m></p></li>
+            <li><p><m>\displaystyle 4</m></p></li>
+            <li><p><m>\displaystyle-2</m></p></li>
+            <li><p><m>\displaystyle\frac{1}{16}</m></p></li>
+            <li><p><m>\displaystyle 4\frac{\sqrt{3}}{3}-2</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Calculez <m>\int\sec(x)\,dx</m>.</p>
+      </statement>
+      <hint>
+          <p>Utilisez <m>\displaystyle\frac{\sec(x)+\tan(x)}{\sec(x)+\tan(x)}=1</m> puis le changement de variable <m>u=\sec(x)+\tan(x)</m>.</p>
+      </hint>
+      <answer>
+          <p><m>\displaystyle\ln|\sec(x)+\tan(x)|+C</m></p>
+      </answer>
+  </exercise>
+
+
+</section>
+
+<section xml:id="IPP">
+  <title>Intégration par parties</title>
+
+  <exercise>
+      <statement>
+          <p>Intégrez par partie pour calculer les intégrales indéfinies suivantes. Attention: il se peut que vous ayez à utiliser plusieurs intégrations par partie.<ol>
+              <li><p><m>\displaystyle\int\ln x\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\arcsin w\;dw</m></p></li>
+              <li><p><m>\displaystyle\int t^2e^t\;dt</m></p></li>
+              <li><p><m>\displaystyle\int e^x\sin x\;dx</m></p></li>
+              <li><p><m>\displaystyle\int u\cos(5u)\;du</m></p></li>
+              <li><p><m>\displaystyle\int\arctan(3x)\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\cos\theta\,\ln(\sin\theta)\;d\theta</m></p></li>
+              <li><p><m>\displaystyle\int\left(s^5+2s\right)e^{2s}\;ds</m></p></li>
+              <li><p><m>\displaystyle\int e^{3\theta}\cos\left(2\theta\right)\;d\theta</m></p></li>
+              <li><p><m>\displaystyle\int x^3\cos\left(x^2\right)\;dx</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p><m>\displaystyle x\ln(x)-x+C</m></p></li>
+            <li><p><m>\displaystyle w\arcsin w+\sqrt{1-w^2}+C</m></p></li>
+            <li><p><m>\displaystyle t^2e^t-2te^t+2e^t+C</m></p></li>
+            <li><p><m>\displaystyle\frac{e^x(\sin x-\cos x)}{2}+C</m></p></li>
+            <li><p><m>\displaystyle\frac{1}{5}u\sin(5u)+\frac{1}{25}\cos(5u)+C</m></p></li>
+            <li><p><m>\displaystyle x\arctan(3x)-\frac{1}{6}\ln|9x^2+1|+C</m></p></li>
+            <li><p><m>\displaystyle\left(\ln(\sin\theta)-1\right)\sin\theta+C</m></p></li>
+            <li><p><m>\displaystyle\frac{e^{2s}}{8}(4s^5-10s^4+20s^3-30s^2+38s-19)+C</m></p></li>
+            <li><p><m>\displaystyle\frac{3e^{3\theta}\cos\left(2\theta\right)}{13}+\frac{2e^{3\theta}\sin\left(2\theta\right)}{13}+C</m></p></li>
+            <li><p><m>\displaystyle\frac{x^2\sin\left(x^2\right)}{2}+\frac{\cos\left(x^2\right)}{2}+C</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Calculez les intégrales indéfinies suivantes.<ol>
+              <li><p><m>\displaystyle\int x^4\ln\left(x^3\right)\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{\cos(5t)}{e^{7t}}\;dt</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+            <li><p><m>\displaystyle\frac{3}{5}x^5\ln(x)-\frac{3}{25}x^5+C</m></p></li>
+            <li><p><m>\displaystyle\frac{5\sin(5t)-7\cos(5t)}{74e^{7t}}+C</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Calculez l'intégrale définie <m>\displaystyle\int_4^9\frac{\ln y}{\sqrt{y}}\,dy</m> à l'aide d'une intégration par parties.
+          </p>
+      </statement>
+      <answer>
+          <p><m>\displaystyle 6\ln(9)-4\ln(4)-4</m></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Utilisez l'intégration par parties pour obtenir la formule de réduction.<ol>
+              <li><p><m>\displaystyle\int x^n\sin ax\;dx=-\frac{1}{a}x^n\cos ax+\frac{n}{a}\int x^{n-1}\cos ax\;dx\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\cos^nx\;dx=\frac{1}{n}\cos^{n-1}x\sin x+\frac{n-1}{n}\int\cos^{n-2}x\;dx</m></p></li>
+          </ol></p>
+      </statement>
+  </exercise>
+
+</section>
+
+
+<section xml:id="FT">
+  <title>Fonctions trigonométriques</title>
+
+  <exercise>
+      <statement>
+        <p>Calculez les intégrales suivantes.<ol>
+          <li><m>\displaystyle\int\cos^3x\;dx</m></li>
+          <li><m>\displaystyle\int\sin^5x\cos^2x\;dx</m></li>
+          <li><m>\displaystyle\int\sin^4x\;dx</m></li>
+          <li><m>\displaystyle\int\tan^6x\sec^4x\;dx</m></li>
+          <li><m>\displaystyle\int\tan^5x\sec^7x\;dx</m></li>
+        </ol></p>
+      </statement>
+      <answer>
+        <p><ol>
+          <li><m>\displaystyle\sin x-\frac{\sin^3x}{3}+C</m></li>
+          <li><m>\displaystyle-\frac{1}{3}\cos^3x+\frac{2}{5}\cos^5x-\frac{1}{7}\cos^7x+C</m></li>
+          <li><m>\displaystyle\frac{1}{4}\left(\frac{3}{2}x-\sin(2x)+\frac{1}{8}\sin(4x)\right)+C</m></li>
+          <li><m>\displaystyle\frac{1}{7}\tan^7x+\frac{1}{9}\tan^9x+C</m></li>
+          <li><m>\displaystyle\frac{1}{11}\sec^{11}x-\frac{2}{9}\sec^9x+\frac{1}{7}\sec^7x+C</m></li>
+        </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+        <p>Déterminez l'intégrale indéfinie.<ol>
+          <li><m>\displaystyle\int\sin^3x\;dx</m></li>
+          <li><m>\displaystyle\int\cos^4x\;dx</m></li>
+          <li><m>\displaystyle\int\tan^4x\;dx</m></li>
+          <li><m>\displaystyle\int\csc x\;dx</m></li>
+        </ol></p>
+      </statement>
+      <answer>
+        <p><ol>
+          <li><m>\displaystyle\frac{\cos^3x}{3}-\cos x+C</m></li>
+          <li><m>\displaystyle\frac{\sin(4x)+8\sin(2x)+12x}{32}+C</m></li>
+          <li><m>\displaystyle\frac{\tan^3x}{3}-\tan x+x+C</m></li>
+          <li><m>\displaystyle\ln\left|\tan\left(\frac{x}{2}\right)\right|+C</m></li>
+        </ol></p>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="ST">
+  <title>Substitutions trigonométriques</title>
+
+  <exercise>
+      <statement>
+          <p>Utilisez la substitution trigonométrique appropriée pour évaluer les intégrales indéfinies suivantes.<ol>
+              <li><p><m>\displaystyle\int\frac{\sqrt{9-x^2}}{x^2}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{1}{x^2\sqrt{x^2+4}}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{x}{\sqrt{x^2-7}}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\sqrt{2-3x^2}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{1}{x^5\sqrt{9x^2-1}}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{1}{(x^2+1)^2}\;dx</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle-\frac{\sqrt{9-x^2}}{x}-\arcsin\left(\frac{x}{3}\right)+C</m></p></li>
+              <li><p><m>\displaystyle-\frac{\sqrt{x^2+4}}{4x}+C</m></p></li>
+              <li><p><m>\displaystyle\sqrt{x^2-7}+C</m></p></li>
+              <li><p><m>\displaystyle\frac{x\sqrt{2-3x^2}}{2}+\frac{\sqrt{3}}{3}\arcsin\left(\frac{\sqrt{6}x}{2}\right)+C</m></p></li>
+              <li><p><m>\displaystyle\frac{243}{8}\mathrm{arcsec}(3x)+\frac{27}{8}\frac{\sqrt{9x^2-1}}{x^2}+\frac{\sqrt{9x^2-1}}{4x^4}+C</m></p></li>
+              <li><p><m>\displaystyle\frac{x}{2(x^2+1)}+\frac{1}{2}\arctan(x)+C</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Utilisez la substitution trigonométrique appropriée pour évaluer les intégrales indéfinies suivantes.<ol>
+              <li><p><m>\displaystyle\int\frac{x^2}{\sqrt{x^2-4}}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{1}{x^2\sqrt{9-x^2}}\;dx</m></p></li>
+              <li><p><m>\displaystyle\int\frac{\sqrt{9-4x^2}}{x}\;dx</m></p></li>
+          </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><p><m>\displaystyle\frac{x\sqrt{x^2-4}}{2}+2\ln\left|x+\sqrt{x^2-4}\right|+C</m></p></li>
+              <li><p><m>\displaystyle-\frac{x}{9\sqrt{9-x^2}}+C</m></p></li>
+              <li><p><m>\displaystyle 3\ln\left|\frac{\sqrt{9-4x^2}-3}{x}\right|+\sqrt{9-4x^2}+C</m></p></li>
+          </ol></p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+        <p>Calculez l'intégrale indéfinie suivante :
+          <me>\displaystyle\int\frac{x}{\sqrt{3-2x-x^2}}\;dx</me>
+        </p>
+      </statement>
+      <answer>
+        <p><m>\displaystyle-\sqrt{3-2x-x^2}-\arcsin\left(\frac{x+1}{2}\right)+C</m></p>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="FR">
+  <title>Fonctions rationnelles</title>
+
+  <exercise>
+      <statement>
+          <p>Associez chaque fonction rationnelle de la colonne de gauche à sa décomposition en fractions partielles parmi les choix proposés dans la colonne de droite.
+            <sidebyside widths="45% 45%" margins="auto">
+              <p>
+                <p>(a) <m>\displaystyle\frac{3x^2+4x+2}{x^3+2x^2+x}</m></p>
+                <p>(b) <m>\displaystyle\frac{x^2+3x-5}{x^3+2x^2-x-2}</m></p>
+                <p>(c) <m>\displaystyle\frac{2x^3-8x^2+9x-1}{x^2-4x+3}</m></p>
+                <p>(d) <m>\displaystyle\frac{x^2+4x+1}{(x+1)(x^2+2x+2)}</m></p>
+             </p>
+              <p>
+                <p>(I) <m>\displaystyle 2x-\frac{1}{x-1}+\frac{4}{x-3}</m></p>
+                <p>(II) <m>\displaystyle\frac{7}{2(x+1)}-\frac{7}{3(x+2)}-\frac{1}{6(x-1)}</m></p>
+                <p>(III) <m>\displaystyle-\frac{2}{x+1}+\frac{3x+5}{x^2+2x+2}</m></p>
+                <p>(IV) <m>\displaystyle\frac{2}{x}+\frac{1}{x+1}-\frac{1}{(x+1)^2}</m></p>
+              </p>
+            </sidebyside>
+          </p>
+      </statement>
+      <answer>
+          <p>
+            <p>(a) - (IV)</p>
+            <p>(b) - (II)</p>
+            <p>(c) - (I)</p>
+            <p>(d) - (III)</p>
+          </p>
+      </answer>
+  </exercise>
+
+  <exercise>
+      <statement>
+          <p>Caculez les intégrales indéfinies suivantes.<ol>
+                <li><m>\displaystyle\int\frac{x^3+x}{x-1}\,dx</m></li>
+                <li><m>\displaystyle\int\frac{1}{x^2-25}\,dx</m></li>
+                <li><m>\displaystyle\int\frac{x^2+2x-1}{2x^3+3x^2-2x}\,dx</m></li>
+                <li><m>\displaystyle\int\frac{x^4-2x^2+4x+1}{x^3-x^2-x+1}\,dx</m></li>
+                <li><m>\displaystyle\int\frac{x^3+x-1}{(x-1)(x-3)^2}\,dx</m></li>
+                <li><m>\displaystyle\int\frac{1-x-2x^2-x^3}{x(x^2+1)^2}\,dx</m></li>
+             </ol></p>
+      </statement>
+      <answer>
+          <p><ol>
+              <li><m>\displaystyle\frac{x^3}{3}+\frac{x^2}{2}+2x+2\ln|x-1|+C</m></li>
+              <li><m>\displaystyle\frac{1}{10}\ln\left|\frac{x-5}{x+5}\right|+C</m></li>
+              <li><m>\displaystyle\frac{1}{2}\ln\left|x\right|+\frac{1}{10}\ln\left|2x-1\right|-\frac{1}{10}\ln\left|x+2\right|+C</m></li>
+              <li><m>\displaystyle\frac{x^2}{2}+x-\frac{2}{x-1}+\ln\left|\frac{x-1}{x+1}\right|+C</m></li>
+              <li><m>\displaystyle x-\frac{29}{2(x-3)}+\frac{27}{4}\ln|x-3|+\frac{1}{4}\ln|x-1|+C</m></li>
+              <li><m>\displaystyle\ln|x|-\frac{1}{2}\ln(x^2+1)-\arctan(x)-\frac{3}{2(x^2+1)}+C</m></li>
+           </ol></p>
+      </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="aires-etc">
+  <title>Calculs de longueurs, d'aires et de volumes</title>
+
+  <exercise>
+    <statement>
+      <p>Déterminez la longueur de la courbe donnée.<ol>
+        <li><p><m>\displaystyle y=\frac{x^3}{3}+\frac{1}{4x}</m> pour <m>1\leq x\leq 2</m></p></li>
+        <li><p><m>\displaystyle x=\frac{\sqrt{y}(y-3)}{3}</m> pour <m>1\leq y\leq 9</m></p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p><m>\displaystyle\frac{59}{3}</m></p></li>
+        <li><p><m>\displaystyle\frac{32}{3}</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Déterminez l'aire de la surface fermée comprise entre l'axe des abscisses et le graphique de la fonction <m>f(x)=x^3-x^2-2x</m>.</p>
+    </statement>
+    <answer>
+      <p><m>\displaystyle\frac{37}{12}</m></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Déterminez l'aire de la surface fermée comprise entre l'axe des ordonnées et le graphique de la courbe <m>\frac{x}{3}=1-y^4</m>.</p>
+    </statement>
+    <answer>
+      <p><m>\displaystyle\frac{24}{5}</m></p>
+    </answer>
+  </exercise>
+
+
+  <exercise>
+    <statement>
+      <p>Sachant que les courbes ci-dessous correspondent aux équations <m>\displaystyle  y=x</m> et <m>\displaystyle y=\frac{2}{x+1}</m>, calculez l'aire des régions ombrées.</p>
+      <sidebyside widths="45% 45%" margins="auto">
+        <p>1.</p>
+        <p>2.</p>
+      </sidebyside>
+      <sidebyside widths="45% 45%" margins="auto">
+        <p><image source="images/zone1.png"/></p>
+        <p><image source="images/zone2.png"/></p>
+      </sidebyside>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p><m>\displaystyle\frac{1}{2}+2\ln\left(\frac{3}{2}\right)</m></p></li>
+        <li><p><m>\displaystyle 1+4\ln(2)-2\ln(3)</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Calculez l'aire des régions fermées comprises entre les courbes indiquées.<ol>
+        <li><p><m>\displaystyle y=x</m> et <m>\displaystyle y=x^3</m></p></li>
+        <li><p><m>\displaystyle x=y^2</m> et <m>\displaystyle x=5y-6</m></p></li>
+        <li><p><m>\displaystyle y=2x^2-5</m> et <m>\displaystyle y=7-x^2</m></p></li>
+        <li><p><m>\displaystyle y^2=x+1</m> et <m>\displaystyle y=x-1</m></p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p><m>\displaystyle \frac{1}{2}</m></p></li>
+        <li><p><m>\displaystyle \frac{1}{6}</m></p></li>
+        <li><p><m>\displaystyle 32</m></p></li>
+        <li><p><m>\displaystyle \frac{9}{2}</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Déterminez l'aire de la région sous la courbe d'équation <m>\displaystyle y=\frac{1}{x^3}</m><ol>
+        <li><p>entre <m>x=1</m> et <m>x=10</m></p></li>
+        <li><p>entre <m>x=1</m> et <m>x=100</m></p></li>
+        <li><p>pour <m>x\geq 1</m></p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p><m>\displaystyle\frac{99}{200}</m></p></li>
+        <li><p><m>\displaystyle\frac{9999}{20000}</m></p></li>
+        <li><p><m>\displaystyle\frac{1}{2}</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Évaluez l'aire de la surface obtenue par rotation de la courbe donnée autour de l'axe indiqué.<ol>
+        <li><p>courbe: <m>\displaystyle y=\sqrt{4-x^2}</m> pour <m>-1\leq x\leq 1</m> - axe: <m>y=0</m></p></li>
+        <li><p>courbe: <m>\displaystyle x=1+2y^2</m> pour <m>1\leq y\leq 2</m> - axe: l'axe des <m>x</m></p></li>
+        <li><p>courbe: <m>\displaystyle y=x^2</m> pour <m>1\leq x\leq 2</m> - axe: <m>x=0</m></p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p><m>\displaystyle 8\pi</m></p></li>
+        <li><p><m>\displaystyle\frac{\pi}{24}\left(65\sqrt{65}-17\sqrt{17}\right)</m></p></li>
+        <li><p><m>\displaystyle\frac{\pi}{6}\left(17\sqrt{17}-5\sqrt{5}\right)</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Calculez le volume du solide obtenu par rotation autour de l'axe indiqué de la région fermée délimitée par les courbes données. Utilisez la méthode de votre choix.<ol>
+        <li><p>région: <m>\displaystyle y=2-\frac{x}{2}\;;\;y=0\;;\;x=1\;;\;x=2</m> - axe: l'axe des <m>x</m></p></li>
+        <li><p>région: <m>\displaystyle y=x\;;\;y=x^2</m> - axe: <m>y=0</m></p></li>
+        <li><p>région: <m>\displaystyle y=2x^2-x^3\;;\;y=0</m> - axe: l'axe des <m>y</m></p></li>
+        <li><p>région: <m>\displaystyle y=x-x^2\;;\;y=0</m> - axe: <m>x=2</m></p></li>
+        <li><p>région: <m>\displaystyle y=x^2\;;\;x=y^2</m> - axe: <m>y=1</m></p></li>
+        <li><p>région: <m>\displaystyle x=y^3\;;\;y=0\;;\;x=1</m> - axe: <m>x=2</m></p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p><m>\displaystyle\frac{19\pi}{12}</m></p></li>
+        <li><p><m>\displaystyle\frac{2\pi}{15}</m></p></li>
+        <li><p><m>\displaystyle\frac{16\pi}{5}</m></p></li>
+        <li><p><m>\displaystyle\frac{\pi}{2}</m></p></li>
+        <li><p><m>\displaystyle\frac{11\pi}{30}</m></p></li>
+        <li><p><m>\displaystyle\frac{3\pi}{5}</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Calculez le volume du solide obtenu par rotation de la surface délimitée par <m>f(x)=x^2</m> et <m>g(x)=4</m> pour <m>x\geq 0</m><ol>
+        <li><p>autour de l'axe des abscisses.</p></li>
+        <li><p>autour de l'axe des ordonnées.</p></li>
+        <li><p>autour de l'axe <m>y=5</m>.</p></li>
+        <li><p>autour de l'axe <m>x=3</m>.</p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p><m>\displaystyle\frac{128\pi}{5}</m></p></li>
+        <li><p><m>\displaystyle 8\pi</m></p></li>
+        <li><p><m>\displaystyle\frac{416\pi}{15}</m></p></li>
+        <li><p><m>\displaystyle 24\pi</m></p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+</section>
+
+<section xml:id="impropres">
+  <title>Intégrales impropres</title>
+
+  <exercise>
+    <statement>
+      <p>Déterminez si l'intégrale donnée est convergente ou divergente. Si elle converge, donnez-en la valeur.<ol>
+        <li><p><m>\displaystyle \int_0^{+\infty}\frac{1}{1+x^2}\,dx</m></p></li>
+        <li><p><m>\displaystyle \int_2^5\frac{1}{\sqrt{t-2}}\,dt</m></p></li>
+        <li><p><m>\displaystyle \int_0^4\frac{1}{x^2-4}\,dx</m></p></li>
+        <li><p><m>\displaystyle \int_7^{+\infty}\frac{1}{x^2-5x+6}\,dx</m></p></li>
+        <li><p><m>\displaystyle \int_0^7\frac{1}{x^2-5x+6}\,dx</m></p></li>
+        <li><p><m>\displaystyle \int_0^{\pi/2}\sec\theta\,d\theta</m></p></li>
+        <li><p><m>\displaystyle \int_0^1\ln x\,dx</m></p></li>
+        <li><p><m>\displaystyle \int_1^{+\infty}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx</m></p></li>
+        <li><p><m>\displaystyle \int_1^{+\infty}\frac{\ln x}{x}\,dx</m></p></li>
+        <li><p><m>\displaystyle \int_0^5\frac{y}{y-2}\,dy</m></p></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><p><m>\displaystyle\frac{\pi}{2}</m></p></li>
+        <li><p><m>\displaystyle 2\sqrt{3}</m></p></li>
+        <li><p>divergente</p></li>
+        <li><p><m>\displaystyle \ln(5)-2\ln(2)</m></p></li>
+        <li><p>divergente</p></li>
+        <li><p>divergente</p></li>
+        <li><p><m>\displaystyle -1</m></p></li>
+        <li><p><m>\displaystyle\frac{2}{e}</m></p></li>
+        <li><p>divergente</p></li>
+        <li><p>divergente</p></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+</section>
+
+</chapter>

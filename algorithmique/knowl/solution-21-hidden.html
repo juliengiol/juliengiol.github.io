@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:15:29-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><ol class="decimal">
+<li><pre class="code-block tex2jax_ignore">def combienDeDeux1(n):
+    compteur = 0
+    while n % 2 == 0:
+        compteur = compteur + 1
+        n = n / 2
+    return compteur
+
+print(combienDeDeux1(45))
+print(combienDeDeux1(24))
+</pre></li>
+<li><pre class="code-block tex2jax_ignore">def combienDeDeux2(n):
+    if n % 2 != 0:
+        return 0
+    else:
+        return 1 + combienDeDeux2(n / 2)
+
+print(combienDeDeux2(45))
+print(combienDeDeux2(24))
+</pre></li>
+</ol></div></body>
+</html>

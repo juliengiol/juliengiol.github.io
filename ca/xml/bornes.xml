@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="bornes" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Bornes d'erreur</title>
+
+<ol>
+  <li>
+    <p>Une somme partielle (finie) donne une valeur approchée de la somme (infinie) d'une série convergente. Pour qu'une telle approximation soit utile, il est important de pouvoir contrôler l'erreur commise, c'est-à-dire la différence entre la valeur de la somme <m>S</m> et celle de la somme partielle <m>S_n</m> utilisée. Cette différence, notée <m>R_n</m>, s'appelle le reste.</p>
+  </li>
+  <li>
+    <p>Le but des points qui suivent consiste à se familiariser avec le concept de borne d'erreur pour l'estimation d'une somme de série.</p>
+    <p>Voici les solutions aux questions posées ci-après :
+      <url href="https://drive.google.com/file/d/1Q2_cX7yfp4ipXv2QIL4JVuox-Lts0rwc/view?usp=sharing">Corrigé</url>
+    </p>
+  </li>
+  <li>
+    <p>Dans l'exemple 5 page 32, on s'intéresse à la somme de la série suivante :<me>S=\sum_{n=1}^{+\infty}\frac{1}{n^3}</me></p>
+    <ol>
+      <li>Calculez la valeur exacte de la somme partielle suivante :<me>S_3=\sum_{n=1}^3\frac{1}{n^3}</me></li>
+      <li>Exprimez le reste correspondant <m>R_3=S-S_3</m> sous forme de somme de série.</li>
+      <li>Comme la fonction donnant le terme général <m>\displaystyle f(x)=\frac{1}{x^3}</m> est continue, positive et décroissante sur <m>\displaystyle[1\,;\,+\infty]</m>, cette série satisfait les conditions du test de l'intégrale : estimez l'erreur commise dans l'approximation <m>\displaystyle S\approx S_3</m>.</li>
+      <li>Déduisez des questions précédentes un encadrement pour l'estimation de la somme de la série <m>S</m>.</li>
+      <li>Cette somme de série <m>S</m> est un nombre irrationnel connu sous le nom de <url href="https://fr.wikipedia.org/wiki/Constante_d%27Ap%C3%A9ry">Constante d'Apéry</url>. Votre estimation est-elle conforme au <url href="https://oeis.org/A002117">développement décimal</url> présenté dans le site de l'OEIS?</li>
+      <li><p>Utilisez l'<url href="https://goo.gl/7ncctQ">application pour calculer les sommes partielles</url> afin de vérifier que l'approximation de <m>S</m>...</p>
+        <ul>
+          <li>par <m>S_{20}</m> a deux décimales correctes;</li>
+          <li>par <m>S_{150}</m> a quatre décimales correctes;</li>
+          <li>par <m>S_{999}</m> a six décimales correctes.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Dans l'exemple 4 page 42, on s'intéresse à la somme de la série suivante :<me>S=\sum_{n=0}^{+\infty}\frac{(-1)^n}{n!}</me></p>
+    <ol>
+      <li>Calculez la valeur exacte de la somme partielle suivante :<me>S_6=\sum_{n=0}^6\frac{(-1)^n}{n!}</me></li>
+      <li>Exprimez le reste correspondant <m>R_6=S-S_6</m> sous forme de somme de série.</li>
+      <li>Il s'agit d'une série alternée : estimez l'erreur commise dans l'approximation <m>\displaystyle S\approx S_6</m>.</li>
+      <li>Déduisez des questions précédentes un encadrement pour l'estimation de la somme de la série <m>S</m>.</li>
+      <li>Grâce à la théorie des sommes de Taylor (voir le point suivant), on sait que cette somme de série <m>S</m> vaut exactement <m>\displaystyle e^{-1}</m>. Votre estimation est-elle conforme?</li>
+    </ol>
+  </li>
+  <li>
+    <p>Dans l'exemple 2 page 70, on s'intéresse à la série suivante :<me>\sum_{n=0}^{+\infty}\frac{x^n}{n!}</me></p>
+    <ol>
+      <li>
+        <p>Montrez que cette série converge pour tout <m>x\in\mathbb{R}</m>.</p>
+        <p>Le but principal des questions suivantes est de déterminer la fonction somme.</p></li>
+      <li>Déduisez de la question précédente que <me>\lim_{n\rightarrow+\infty}\frac{x^n}{n!}=0\qquad \forall x\in\mathbb{R}</me></li>
+      <li><p>On note <m>f(x)=e^x</m> la fonction exponentielle et on admet qu'elle vérifie les propriétés suivantes :<me>f'(x)=f(x)\quad\forall x\in\mathbb{R}\qquad\mbox{ et }\qquad f(0)=1</me>Combien vaut <m>f^{(n)}(0)</m> pour <m>n\in\mathbb{N}</m>?</p>
+      </li>
+      <li>Vérifiez que la série ci-dessus n'est autre que la série de Taylor de <m>f</m> centrée en <m>0</m> (on parle de série de Maclaurin).</li>
+      <li>Utilisez l'<url href="https://goo.gl/vqXDDy">application</url> afin d'expliciter les quatre premiers polynômes de Taylor <m>T_0(x), T_1(x), T_2(x)</m> et <m>T_3(x)</m> de <m>f</m> centrés en <m>0</m>, puis représentez-les graphiquement en même temps que <m>f</m> à l'aide de <url href="https://www.desmos.com/calculator/l79y6dn3se">Desmos</url>.</li>
+      <li>Pour ce point, on s'intéresse plus particulièrement à <m>T_3(x)</m> (somme partielle jusqu'à <m>n=3</m>). Si on approche <m>f(x)=e^x</m> par <m>T_3(x)</m>, on commet l'erreur <m>R_3(x)=f(x)-T_3(x)</m>. Donnez-en une estimation sur l'intervalle <m>[-1\,;\,1]</m>.</li>
+      <li>Plus généralement, donnez une estimation de l'erreur <m>R_n(x)=f(x)-T_n(x)</m> lorsque <m>|x|\leq d</m> pour un entier <m>n</m> et un réel positif <m>d</m> quelconques.</li>
+      <li>
+        <p>Utilisez l'estimation précédente pour en conclure que la fonction <m>f(x)=e^x</m> est égale à la somme de sa série de Maclaurin pour tout <m>x\in\mathbb{R}</m>, c'est-à-dire que <me>e^x=\sum_{n=0}^{+\infty}\frac{x^n}{n!}\qquad\forall x\in\mathbb{R}</me></p>
+        <p>Remarques :<ul>
+          <li>Le fait qu'une fonction soit égale à la somme de sa série de Taylor n'est pas anodin. Il est notamment possible de construire une fonction non nulle dont la série de Maclaurin est nulle.</li>
+          <li>La démarche adoptée au dernier point dans le solutionnaire est très légèrement différente de celle choisie par le volume. En prenant <m>\displaystyle\frac{e^dd^{n+1}}{(n+1)!}</m> comme estimation au lieu de <m>\displaystyle\frac{e^d|x|^{n+1}}{(n+1)!}</m>, on démontre que le reste tend vers 0 uniformément sur l'intervalle <m>[-d\,;\,d]</m>. C'est-à-dire que le contrôle qu'on a s'applique à tous les <m>x</m> de l'intervalle en même temps. Ce concept est fondamental lorsqu'on veut prouver que la fonction somme d'une série entière est continue.</li>
+        </ul></p>
+      </li>
+    </ol>
+  </li>
+  </ol>
+
+</section>

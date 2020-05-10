@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-07T07:23:07-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WebCAM Règles de dérivation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Sauter</a><div class="hidden-content" style="display:none">\(\require{amsmath}\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\dropsign}[1]{\smash{\llap{\raisebox{-.5\normalbaselineskip}{$#1$\hspace{2\arraycolsep}}}}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.collegeahuntsic.qc.ca/" target="_blank"><img src="images/logocollege.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="cam.html"><span class="title">Mon p'tit WebCAM</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="derivees.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="derivees.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="tangentes.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="derivees.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="derivees.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="tangentes.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a></li>
+<li class="link part"><a href="coronavirus.html" data-scroll="coronavirus"><span class="codenumber">I</span> <span class="title">Coronavirus</span></a></li>
+<li class="link"><a href="ateliers_nyb_coronavirus.html" data-scroll="ateliers_nyb_coronavirus"><span class="codenumber">1</span> <span class="title">Ateliers de NYB</span></a></li>
+<li class="link"><a href="aide_individuelle_coronavirus.html" data-scroll="aide_individuelle_coronavirus"><span class="codenumber">2</span> <span class="title">Aide individuelle</span></a></li>
+<li class="link part"><a href="exercices_supplementaires.html" data-scroll="exercices_supplementaires"><span class="codenumber">II</span> <span class="title">Exercices supplémentaires</span></a></li>
+<li class="link">
+<a href="limites.html" data-scroll="limites"><span class="codenumber">1</span> <span class="title">Limites</span></a><ul>
+<li><a href="algebre.html" data-scroll="algebre">Détermination par l'algèbre</a></li>
+<li><a href="RH.html" data-scroll="RH">Règle de L'Hospital</a></li>
+<li><a href="continuite.html" data-scroll="continuite">Continuité</a></li>
+<li><a href="asymptotes.html" data-scroll="asymptotes">Asymptotes</a></li>
+<li><a href="lim_suites.html" data-scroll="lim_suites">Limites de suites</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="derivees.html" data-scroll="derivees"><span class="codenumber">2</span> <span class="title">Dérivées</span></a><ul>
+<li><a href="regles-derivation.html" data-scroll="regles-derivation" class="active">Règles de dérivation</a></li>
+<li><a href="tangentes.html" data-scroll="tangentes">Tangentes</a></li>
+<li><a href="differentielle.html" data-scroll="differentielle">Différentielle</a></li>
+<li><a href="etude.html" data-scroll="etude">Étude de fonctions</a></li>
+<li><a href="optimisation.html" data-scroll="optimisation">Optimisation</a></li>
+<li><a href="taux-lies.html" data-scroll="taux-lies">Taux liés</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="integrales.html" data-scroll="integrales"><span class="codenumber">3</span> <span class="title">Intégrales</span></a><ul>
+<li><a href="proprietes.html" data-scroll="proprietes">Primitives et propriétés de base</a></li>
+<li><a href="formules.html" data-scroll="formules">Formules d'intégration de base</a></li>
+<li><a href="CV.html" data-scroll="CV">Changement de variable</a></li>
+<li><a href="IPP.html" data-scroll="IPP">Intégration par parties</a></li>
+<li><a href="FT.html" data-scroll="FT">Fonctions trigonométriques</a></li>
+<li><a href="ST.html" data-scroll="ST">Substitutions trigonométriques</a></li>
+<li><a href="FR.html" data-scroll="FR">Fonctions rationnelles</a></li>
+<li><a href="aires-etc.html" data-scroll="aires-etc">Calculs de longueurs, d'aires et de volumes</a></li>
+<li><a href="impropres.html" data-scroll="impropres">Intégrales impropres</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="series.html" data-scroll="series"><span class="codenumber">4</span> <span class="title">Séries</span></a><ul>
+<li><a href="series-connues.html" data-scroll="series-connues">Séries connues</a></li>
+<li><a href="criteres.html" data-scroll="criteres">Critères de convergence et astuces</a></li>
+<li><a href="puissances.html" data-scroll="puissances">Séries de puissances</a></li>
+<li><a href="taylor.html" data-scroll="taylor">Séries de Taylor et de Maclaurin</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="varia.html" data-scroll="varia"><span class="codenumber">5</span> <span class="title">Varia</span></a><ul>
+<li><a href="SDR.html" data-scroll="SDR">Notation sigma et sommes de Riemann</a></li>
+<li><a href="edo.html" data-scroll="edo">Équations différentielles</a></li>
+<li><a href="suites.html" data-scroll="suites">Suites</a></li>
+<li><a href="finance.html" data-scroll="finance">Mathématiques financières</a></li>
+<li><a href="theoremes.html" data-scroll="theoremes">Théorèmes d'analyse</a></li>
+<li><a href="defis.html" data-scroll="defis">Défis</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="regles-derivation"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Règles de dérivation</span>
+</h2>
+<a href="regles-derivation.html" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-9"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-9"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-9"><article class="exercise exercise-like"><p id="p-123">Calculez \(\displaystyle\frac{dy}{dx}\text{.}\)</p>
+<ol class="decimal">
+<li id="li-90"><p id="p-124">\(\displaystyle y=\left(x^3+x^5\right)^7\)</p></li>
+<li id="li-91"><p id="p-125">\(\displaystyle y=\frac{3}{\sqrt[3]{x}}-\frac{7}{\sqrt[7]{x^5}}\)</p></li>
+<li id="li-92"><p id="p-126">\(\displaystyle y=\frac{x^2+3x^4-5}{\sqrt{x}}\)</p></li>
+<li id="li-93"><p id="p-127">\(\displaystyle y=\frac{\cos(x)}{1+\sin(x)}\)</p></li>
+<li id="li-94"><p id="p-128">\(\displaystyle y=x\arcsin(x)\)</p></li>
+<li id="li-95"><p id="p-129">\(\displaystyle xe^y=y\sin(x)\)</p></li>
+<li id="li-96"><p id="p-130">\(\displaystyle y=\frac{s^5+e^t}{t^2+t+1}\)</p></li>
+<li id="li-97"><p id="p-131">\(\displaystyle y=x\ln\left(x\ln(x)\right)\)</p></li>
+<li id="li-98"><p id="p-132">\(\displaystyle y=\sqrt{x}\tan\left(\sqrt{x}\right)\)</p></li>
+<li id="li-99"><p id="p-133">\(\displaystyle y=\sqrt{\arctan(x)}\)</p></li>
+<li id="li-100"><p id="p-134">\(\displaystyle y=x^3\arcsin(2x+3)\)</p></li>
+<li id="li-101"><p id="p-135">\(\displaystyle y=e^{\sin(\pi x)}\)</p></li>
+<li id="li-102"><p id="p-136">\(\displaystyle y=\sqrt{\ln\left(x^2\right)}\)</p></li>
+<li id="li-103"><p id="p-137">\(\displaystyle y=7^{\cos(x)}\)</p></li>
+<li id="li-104"><p id="p-138">\(\displaystyle y=3^{\sin(x^2)}\)</p></li>
+<li id="li-105"><p id="p-139">\(\displaystyle \cos(xy)=y-x^2\)</p></li>
+<li id="li-106"><p id="p-140">\(\displaystyle y=\log_3(3x+2)\)</p></li>
+<li id="li-107"><p id="p-141">\(\displaystyle y=(\sin(x))^x\)</p></li>
+<li id="li-108"><p id="p-142">\(\displaystyle y+x\cos(y)=x^2y\)</p></li>
+<li id="li-109"><p id="p-143">\(\displaystyle y=\ln\left(\frac{x^2-9}{x^3+27}\right)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-9" id="answer-9"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-9"><div class="answer solution-like"><ol id="p-144" class="decimal">
+<li id="li-110"><p id="p-145">\(\displaystyle y'=7\left(x^3+x^5\right)^6(3x^2+5x^4)\)</p></li>
+<li id="li-111"><p id="p-146">\(\displaystyle y'=\frac{5}{\sqrt[7]{x^{12}}}-\frac{1}{\sqrt[3]{x^4}}\)</p></li>
+<li id="li-112"><p id="p-147">\(\displaystyle y'=\frac{3\sqrt{x}}{2}+\frac{21\sqrt{x^5}}{2}+\frac{5}{2\sqrt{x^3}}\)</p></li>
+<li id="li-113"><p id="p-148">\(\displaystyle y'=-\frac{1}{1+\sin(x)}\)</p></li>
+<li id="li-114"><p id="p-149">\(\displaystyle y'=\arcsin(x)+\frac{x}{\sqrt{1-x^2}}\)</p></li>
+<li id="li-115"><p id="p-150">\(\displaystyle y'=\frac{y\cos(x)-e^y}{xe^y-\sin(x)}\)</p></li>
+<li id="li-116"><p id="p-151">\(\displaystyle y'=0\)</p></li>
+<li id="li-117"><p id="p-152">\(\displaystyle y'=\ln\left(x\ln(x)\right)+1+\frac{1}{\ln(x)}\)</p></li>
+<li id="li-118"><p id="p-153">\(\displaystyle y'=\frac{\tan\left(\sqrt{x}\right)}{2\sqrt{x}}+\frac{\sec^2\left(\sqrt{x}\right)}{2}\)</p></li>
+<li id="li-119"><p id="p-154">\(\displaystyle y'=\frac{1}{2(1+x^2)\sqrt{\arctan(x)}}\)</p></li>
+<li id="li-120"><p id="p-155">\(\displaystyle y'=3x^2\arcsin(2x+3)+\frac{2x^3}{\sqrt{1-(2x+3)^2}}\)</p></li>
+<li id="li-121"><p id="p-156">\(\displaystyle y'=\pi\cos(\pi x)e^{\sin(\pi x)}\)</p></li>
+<li id="li-122"><p id="p-157">\(\displaystyle y'=\frac{1}{x\sqrt{\ln\left(x^2\right)}}\)</p></li>
+<li id="li-123"><p id="p-158">\(\displaystyle y'=-\ln(7)\sin(x)7^{\cos(x)}\)</p></li>
+<li id="li-124"><p id="p-159">\(\displaystyle y'=2\ln(3)x\cos(x^2)3^{\sin(x^2)}\)</p></li>
+<li id="li-125"><p id="p-160">\(\displaystyle y'=\frac{2x-\sin(xy)}{1+x\sin(xy)}\)</p></li>
+<li id="li-126"><p id="p-161">\(\displaystyle y'=\frac{3}{\ln(3)(3x+2)}\)</p></li>
+<li id="li-127"><p id="p-162">\(\displaystyle y'=\left(\ln(\sin(x))+x\cot(x)\right)(\sin(x))^x\)</p></li>
+<li id="li-128"><p id="p-163">\(\displaystyle y'=\frac{2xy-\cos(y)}{1-x^2-x\sin(y)}\)</p></li>
+<li id="li-129"><p id="p-164">\(\displaystyle y'=\frac{2x}{x^2-9}-\frac{3x^2}{x^3+27}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-10"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-10"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-10"><article class="exercise exercise-like"><p id="p-165">Évaluez :</p>
+<ol class="decimal">
+<li id="li-130"><p id="p-166">\(\displaystyle f'(x)\) si \(\displaystyle f(x)=3x^{\frac{1}{3}}+\frac{7}{4x^{\frac{3}{4}}}-\frac{2x^{\frac{5}{2}}}{5}+4^4\)</p></li>
+<li id="li-131"><p id="p-167">\(\displaystyle f'(1)\) si \(\displaystyle f(x)=x^4(x^3-\sqrt{x})+\sqrt{3x}-3\sqrt{x}-\sqrt{\frac{x}{3}}\)</p></li>
+<li id="li-132"><p id="p-168">\(\displaystyle \frac{dy}{dx}\) si \(\displaystyle y=(x^2+3)^4(2x^3-5)^3\)</p></li>
+<li id="li-133"><p id="p-169">\(\displaystyle \frac{dy}{dx}\) si \(\displaystyle y=\left(\frac{x}{7+x}\right)^5\)</p></li>
+<li id="li-134"><p id="p-170">\(\displaystyle \frac{dh}{dt}\) si \(\displaystyle h(t)=\sqrt[3]{(1-t)^3+\sqrt{t^2-2t}}\)</p></li>
+<li id="li-135"><p id="p-171">\(\displaystyle \left.\frac{dg}{dt}\right|_{t=-2}\) si \(\displaystyle g(t)=\frac{t}{t+1}+\frac{t+1}{t^2}\)</p></li>
+<li id="li-136"><p id="p-172">\(\displaystyle \left.\frac{dy}{dz}\right|_{z=1/2}\) si \(\displaystyle y=5x^2-\sqrt{x}\quad x=3u+1\quad u=1-t^4\quad t=\frac{1}{z}\)</p></li>
+<li id="li-137"><p id="p-173">\(\displaystyle \left.\frac{dy}{dx}\right|_{x=-1}\) si \(\displaystyle y=x^6-\frac{1}{x^6}\)</p></li>
+<li id="li-138"><p id="p-174">\(\displaystyle \frac{dy}{dx}\) si \(\displaystyle x^2y+5y^2=3x+y\)</p></li>
+<li id="li-139"><p id="p-175">\(\displaystyle \left.\frac{dy}{dx}\right|_{x=1\;y=1}\) si \(\displaystyle 3x^3y-4y^2=5x^2y^4-6\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-10" id="answer-10"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-10"><div class="answer solution-like">
+<p id="p-176">Évaluez :</p>
+<ol class="decimal">
+<li id="li-140"><p id="p-177">\(\displaystyle f'(x)=\frac{1}{x^\frac{2}{3}}-\frac{21}{16x^{\frac{7}{4}}}-x^\frac{3}{2}\)</p></li>
+<li id="li-141"><p id="p-178">\(\displaystyle f'(1)=1+\frac{\sqrt{3}}{6}\)</p></li>
+<li id="li-142"><p id="p-179">\(\displaystyle \frac{dy}{dx}=2x(x^2+3)^3(2x^3-5)^2(17x^3+27x-20)\)</p></li>
+<li id="li-143"><p id="p-180">\(\displaystyle \frac{dy}{dx}=\frac{35x^4}{(7+x)^6}\)</p></li>
+<li id="li-144"><p id="p-181">\(\displaystyle \frac{dh}{dt}=\frac{\frac{t-1}{\sqrt{t^2-2t}}-3(1-t)^2}{3\sqrt[3]{\left((1-t)^3+\sqrt{t^2-2t}\right)^2}}\)</p></li>
+<li id="li-145"><p id="p-182">\(\displaystyle \left.\frac{dg}{dt}\right|_{t=-2}=1\)</p></li>
+<li id="li-146"><p id="p-183">\(\displaystyle \left.\frac{dy}{dz}\right|_{z=1/2}=-\frac{1\,316\,928}{7}\)</p></li>
+<li id="li-147"><p id="p-184">\(\displaystyle \left.\frac{dy}{dx}\right|_{x=-1}=-12\)</p></li>
+<li id="li-148"><p id="p-185">\(\displaystyle \frac{dy}{dx}=\frac{3-2xy}{x^2+10y-1}\)</p></li>
+<li id="li-149"><p id="p-186">\(\displaystyle \left.\frac{dy}{dx}\right|_{x=1\;y=1}=-0,04\)</p></li>
+</ol>
+</div></div>
+</div></article></div></section></div></main>
+</div>
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-9"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-9');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

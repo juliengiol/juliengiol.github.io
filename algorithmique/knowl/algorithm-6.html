@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:17:18-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="algorithm theorem-like"><h6 class="heading">
+<span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">9.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode des trapèzes.</span>
+</h6>
+<ul class="disc">
+<li>
+<p>Entrées :</p>
+<ul class="circle">
+<li><p>Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
+<li><p>Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
+<li><p>Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
+</ul>
+</li>
+<li>
+<p>Instructions :</p>
+<ul class="circle">
+<li><p>Initialiser \(\text{approximation}\text{,}\) la variable qui donnera l'approximation de l'intégrale : \(\text{approximation}=0\text{.}\)</p></li>
+<li><p>Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
+<li>
+<p>Pour \(\text{k}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
+<ul class="square">
+<li><p>assigner à \(\text{xi1}\) la valeur \(\text{a}+(\text{k}-1)\cdot\text{deltaX}\) ;</p></li>
+<li><p>assigner à \(\text{xi2}\) la valeur \(\text{xi1}+\text{deltaX}\) ;</p></li>
+<li><p>assigner à \(\text{approximation}\) la valeur de \(\text{approximation}+\text{f}(\text{xi1})+\text{f}(\text{xi2})\text{.}\)</p></li>
+</ul>
+</li>
+<li><p>Assigner à \(\text{approximation}\) la valeur de \(\text{approximation}\cdot\text{deltaX}/2\text{.}\)</p></li>
+</ul>
+</li>
+<li><p>Résultat : Afficher \(\text{approximation}\text{.}\)</p></li>
+</ul></article><span class="incontext"><a href="algorithmetrapezes.html#algorithm-6">Contexte</a></span>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-07T07:23:30-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Par exemple, voici comment obtenir la somme de la série suivante</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^{+\infty}\frac{1}{n^2}
+\end{equation*}
+</div>
+<p data-braille="continuation"><div class="sagecell-sage" id="sage-9"><script type="text/x-sage">var('n')
+S = sum(1/n^2, n, 1, oo)
+show(S)
+</script></div> ou ce qui se produit avec une série divergente telle que</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^{+\infty}\frac{1}{n}
+\end{equation*}
+</div>
+<p data-braille="continuation"><div class="sagecell-sage" id="sage-10"><script type="text/x-sage">var('n')
+S = sum(1/n, n, 1, oo)
+show(S)
+</script></div></p>
+<span class="incontext"><a href="series.html#p-540">Dans son contexte</a></span>
+</body>
+</html>

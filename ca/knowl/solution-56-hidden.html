@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:55-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Introduisons la fonction de trois variables</p>
+<div class="displaymath">
+\begin{equation*}
+F(x,y,z)=2(x-2)^2+(y-1)^2+(z-3)^2
+\end{equation*}
+</div>
+<p data-braille="continuation">dont la surface de niveau d'équation</p>
+<div class="displaymath">
+\begin{equation*}
+F(x,y,z)=10
+\end{equation*}
+</div>
+<p data-braille="continuation">correspond à l'ellisoïde considéré et contient le point \(P_0(3,3,5)\) car</p>
+<div class="displaymath">
+\begin{equation*}
+F(3,3,5)=10.
+\end{equation*}
+</div>
+<ul class="disc">
+<li>
+<p>Commençons par évaluer le gradient de \(F\)</p>
+<div class="displaymath">
+\begin{align*}
+\nabla F&amp;=\begin{bmatrix}F_x\\F_y\\F_z\end{bmatrix}\\
+&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(2(x-2)^2+(y-1)^2+(z-3)^2)\\\frac{\partial}{\partial y}(2(x-2)^2+(y-1)^2+(z-3)^2)\\\frac{\partial}{\partial z}(2(x-2)^2+(y-1)^2+(z-3)^2)\end{bmatrix}\\
+&amp;=\begin{bmatrix}4(x-2)\\2(y-1)\\2(z-3)\end{bmatrix}
+\end{align*}
+</div>
+<p data-braille="continuation">au point \((3,3,5)\) :</p>
+<div class="displaymath">
+\begin{align*}
+\nabla F(3,3,5))&amp;=\begin{bmatrix}4\cdot(3-2)\\2\cdot(3-1)\\2\cdot(5-3)\end{bmatrix}\\
+&amp;=\begin{bmatrix}4\\4\\4\end{bmatrix}\\
+&amp;=4\begin{bmatrix}1\\1\\1\end{bmatrix}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Le plan tangent en ce point admet pour équation cartésienne</p>
+<div class="displaymath">
+\begin{align*}
+\nabla F(3,3,5)\cdot\begin{bmatrix}x-3\\y-3\\z-5\end{bmatrix}=0&amp;\quad\Leftrightarrow\quad\cancel{4}\cdot\begin{bmatrix}1\\1\\1\end{bmatrix}\cdot\begin{bmatrix}x-3\\y-3\\z-5\end{bmatrix}=0\\
+&amp;\quad\Leftrightarrow\quad(x-3)+(y-3)+(z-5)=0\\
+&amp;\quad\Leftrightarrow\quad x+y+z=11.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Et la droite normale à la surface qui passe par ce point admet pour équations paramétriques</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}3\\3\\5\end{bmatrix}+t\,\nabla F(3,3,5)\quad\text{où}\;t\in\mathbb{R}
+\end{equation*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+x=3+4t\\
+y=3+4t\\
+z=5+4t
+\end{cases}
+\quad\text{où}\;t\in\mathbb{R}
+\end{equation*}
+</div>
+<p data-braille="continuation">ou, si on préfère,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+x=3+s\\
+y=3+s\\
+z=5+s
+\end{cases}
+\quad\text{où}\;s\in\mathbb{R}.
+\end{equation*}
+</div>
+</li>
+</ul>
+<p>Voici de quoi vérifier graphiquement ces calculs à l'aide de <a class="external" href="https://www.geogebra.org/3d/kzzvr7cs" target="_blank">Geogebra</a>.</p>
+<p>PS : Merci à Frédérick et son frère d'avoir vu mon erreur de calcul!</p>
+</div></body>
+</html>

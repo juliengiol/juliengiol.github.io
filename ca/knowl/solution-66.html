@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:57:06-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.1.7.2</span><span class="period">.</span>
+</h6>
+<p>En isolant \(x\) dans l'équation du plan</p>
+<div class="displaymath">
+\begin{equation*}
+x-2y+3z=6\quad\Leftrightarrow\quad x=6+2y-3z
+\end{equation*}
+</div>
+<p data-braille="continuation">on voit que tout point du plan peut s'écrire</p>
+<div class="displaymath">
+\begin{equation*}
+Q=(6+2y-3z,y,z)\quad\text{avec}\quad (x,y)\in\mathbb{R}^2.
+\end{equation*}
+</div>
+<p>Considérons donc la fonction</p>
+<div class="displaymath">
+\begin{align*}
+f(y,z):&amp;=\left\|\overrightarrow{PQ}\right\|^2\\
+&amp;=\left\|(6+2y-3z,y-1,z-1)\right\|^2\\
+&amp;=(6+2y-3z)^2+(y-1)^2+(z-1)^2
+\end{align*}
+</div>
+<p data-braille="continuation">et déterminons les zéros de son gradient. On a</p>
+<div class="displaymath">
+\begin{align*}
+\nabla f=\vec{0}&amp;\quad\Leftrightarrow\quad\begin{cases}f_y=0\\f_z=0\end{cases}\\
+&amp;\quad\Leftrightarrow\quad\begin{cases}2(6+2y-3z)2+2(y-1)=0\\2(6+2y-3z)(-3)+2(z-1)=0\end{cases}\\
+&amp;\quad\Leftrightarrow\quad\begin{cases}2(6+2y-3z)+(y-1)=0\\(6+2y-3z)(-3)+(z-1)=0\end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">ce qui conduit au système linéaire</p>
+<div class="displaymath">
+\begin{alignat*}{3}
+5y &amp; {}-{} &amp; 6z &amp; {}={} &amp; -11\\
+-6y &amp; {}+{} &amp; 10z &amp; {}={} &amp; 19
+\end{alignat*}
+</div>
+<p data-braille="continuation">dont la solution est donnée par la <a class="external" href="https://en.wikipedia.org/wiki/Cramer%27s_rule#Explicit_formulas_for_small_systems" target="_blank">règle de Cramer</a> :</p>
+<div class="displaymath">
+\begin{equation*}
+y=\frac{\begin{vmatrix}-11&amp;-6\\19&amp;10\end{vmatrix}}{\begin{vmatrix}5&amp;-6\\-6&amp;10\end{vmatrix}}=\frac{4}{14}=\frac{2}{7}\quad\text{et}\quad z=\frac{\begin{vmatrix}5&amp;-11\\-6&amp;19\end{vmatrix}}{\begin{vmatrix}5&amp;-6\\-6&amp;10\end{vmatrix}}=\frac{29}{14}.
+\end{equation*}
+</div>
+<p>Enfin, cela donne</p>
+<div class="displaymath">
+\begin{equation*}
+x=6+2y-3z=\frac{84}{14}+\frac{8}{14}-\frac{87}{14}=\frac{5}{14}.
+\end{equation*}
+</div>
+<p>Le point cherché est donc</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{5}{14},\frac{2}{7},\frac{29}{14}\right).
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="extremums.html#solution-66">??</a></span>
+</body>
+</html>

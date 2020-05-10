@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:47-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p><a class="external" href="https://tinyurl.com/y8x2mrzg" target="_blank">Calculatrice</a> à gradient et à dérivée directionnelle : <div class="sagecell-sage" id="sage-7"><script type="text/x-sage">f(x, y) = x^2 * y^3 - 4 * y  # fonction
+(x0, y0) = (2, -1)  # point
+theta = arctan(5 / 2)  # direction
+
+fx = derivative(f, x)
+fy = derivative(f, y)
+gradient = vector([fx(x0, y0), fy(x0, y0)])
+u = vector([cos(theta), sin(theta)])
+derivee = gradient.dot_product(u)
+
+pretty_print('Gradient :', gradient)
+pretty_print('Dérivée directionnelle :', derivee)
+</script></div></p>
+<span class="incontext"><a href="derivees-directionnelles.html#p-695">??</a></span>
+</body>
+</html>

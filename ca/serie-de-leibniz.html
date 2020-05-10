@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:11-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>303 La série de Leibniz</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://juliengiol.github.io/" target="_blank"><img src="images/yosemite.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="ca.html"><span class="title">Calcul avancé</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="bornes.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="complements.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="polaires.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="bornes.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="complements.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="polaires.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
+<li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Remerciements</a></li>
+</ul>
+</li>
+<li class="link part"><a href="coronavirus.html" data-scroll="coronavirus"><span class="codenumber">I</span> <span class="title">Coronavirus</span></a></li>
+<li class="link part"><a href="documents.html" data-scroll="documents"><span class="codenumber">II</span> <span class="title">Documents</span></a></li>
+<li class="link part"><a href="volume.html" data-scroll="volume"><span class="codenumber">III</span> <span class="title">Volume</span></a></li>
+<li class="link">
+<a href="chapitre1.html" data-scroll="chapitre1"><span class="codenumber">1</span> <span class="title">Les suites et les séries numériques</span></a><ul>
+<li><a href="suites.html" data-scroll="suites">Les suites</a></li>
+<li><a href="series.html" data-scroll="series">Les séries</a></li>
+<li><a href="seriesatermespositifs.html" data-scroll="seriesatermespositifs">Les séries à termes positifs</a></li>
+<li><a href="series-alternees.html" data-scroll="series-alternees">Les séries alternées</a></li>
+<li><a href="testdurapport.html" data-scroll="testdurapport">La convergence absolue, le test du rapport et le critère de Cauchy</a></li>
+<li><a href="strategieconvergence.html" data-scroll="strategieconvergence">Une stratégie pour tester la convergence d'une série</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre2.html" data-scroll="chapitre2"><span class="codenumber">2</span> <span class="title">Les séries de Taylor</span></a><ul>
+<li><a href="seriesentieres.html" data-scroll="seriesentieres">Les séries entières</a></li>
+<li><a href="devenserieentiere.html" data-scroll="devenserieentiere">Le développement des fonctions en séries entières</a></li>
+<li><a href="tayloretmaclaurin.html" data-scroll="tayloretmaclaurin">Les séries de Taylor et de Maclaurin</a></li>
+<li><a href="applicationstaylor.html" data-scroll="applicationstaylor">Des applications des polynômes de Taylor</a></li>
+<li><a href="nombrescomplexes.html" data-scroll="nombrescomplexes">Les nombres complexes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre3.html" data-scroll="chapitre3"><span class="codenumber">3</span> <span class="title">Les fonctions de plusieurs variables</span></a><ul>
+<li><a href="fonctionspv.html" data-scroll="fonctionspv">Les fonctions de plusieurs variables</a></li>
+<li><a href="limites-continuite.html" data-scroll="limites-continuite">Les limites et la continuité</a></li>
+<li><a href="quadriques.html" data-scroll="quadriques">Les cylindres et les surfaces quadriques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre4.html" data-scroll="chapitre4"><span class="codenumber">4</span> <span class="title">Les dérivées des fonctions de plusieurs variables</span></a><ul>
+<li><a href="derpartielles.html" data-scroll="derpartielles">Les dérivées partielles</a></li>
+<li><a href="plans-tangents-et-differentielle.html" data-scroll="plans-tangents-et-differentielle">Les plans tangents et les approximations linéaires</a></li>
+<li><a href="derivation-en-chaine.html" data-scroll="derivation-en-chaine">La règle de dérivation en chaîne</a></li>
+<li><a href="derivees-directionnelles.html" data-scroll="derivees-directionnelles">Les dérivées directionnelles et le vecteur gradient</a></li>
+<li><a href="approximationsdetaylor.html" data-scroll="approximationsdetaylor">Les approximations de Taylor en deux variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre5.html" data-scroll="chapitre5"><span class="codenumber">5</span> <span class="title">L'optimisation</span></a><ul>
+<li><a href="extremums.html" data-scroll="extremums">Extremums</a></li>
+<li><a href="gradient.html" data-scroll="gradient">Critère de Sylvester et méthode du gradient</a></li>
+<li><a href="lagrange.html" data-scroll="lagrange">Multiplicateurs de Lagrange</a></li>
+</ul>
+</li>
+<li class="link part"><a href="complements.html" data-scroll="complements"><span class="codenumber">IV</span> <span class="title">Compléments</span></a></li>
+<li class="link"><a href="sage.html" data-scroll="sage"><span class="codenumber">1</span> <span class="title">Sage</span></a></li>
+<li class="link"><a href="bornes.html" data-scroll="bornes"><span class="codenumber">2</span> <span class="title">Bornes d'erreur</span></a></li>
+<li class="link active"><a href="serie-de-leibniz.html" data-scroll="serie-de-leibniz"><span class="codenumber">3</span> <span class="title">La série de Leibniz</span></a></li>
+<li class="link"><a href="polaires.html" data-scroll="polaires"><span class="codenumber">4</span> <span class="title">Coordonnées polaires (6.3)</span></a></li>
+<li class="link"><a href="coniques.html" data-scroll="coniques"><span class="codenumber">5</span> <span class="title">Coniques</span></a></li>
+<li class="link"><a href="epsilon.html" data-scroll="epsilon"><span class="codenumber">6</span> <span class="title">Epsilon-Delta</span></a></li>
+<li class="link"><a href="vectorielles.html" data-scroll="vectorielles"><span class="codenumber">7</span> <span class="title">Fonctions vectorielles</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="serie-de-leibniz"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3</span> <span class="title">La série de Leibniz</span>
+</h2>
+<a href="serie-de-leibniz.html" class="permalink">¶</a><p id="p-992">Le but de cette section est de développer un exemple pas à pas pour comprendre les concepts fondamentaux du chapitre 2 concernant les séries entières et les séries de Taylor. On commence avec la fonction \(\displaystyle f(x)=\frac{1}{1-x}\text{.}\)</p>
+<ol class="decimal">
+<li id="li-672">
+<p id="p-993">Pour tout \(x\in ]-1\,;\,1[\text{,}\) \(f(x)\) est égal à la somme de la série géométrique de raison \(r=x\) et de premier terme \(a=1\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{1-x}=\sum_{n=0}^{+\infty}x^n
+\end{equation*}
+</div>
+<p data-braille="continuation">On vient ainsi de développer la fonction \(\displaystyle f(x)=\frac{1}{1-x}\) en série entière autour de \(0\text{.}\)</p>
+</li>
+<li id="li-673">
+<p id="p-994">Par le théorème 2 page 62, on peut...</p>
+<ul class="disc">
+<li id="li-674">
+<p id="p-995">dériver ce développement en série entière (DSE) terme à terme, ce qui donne :</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{(1-x)^2}=\sum_{n=0}^{+\infty}(n+1)x^n\qquad\forall x\in ]-1\,;\,1[
+\end{equation*}
+</div>
+<p data-braille="continuation">On obtient ainsi le DSE autour de \(0\) d'une nouvelle fonction.</p>
+</li>
+<li id="li-675">
+<p id="p-996">intégrer ce DSE terme à terme, ce qui donne, après ajustement de la constante d'intégration :</p>
+<div class="displaymath">
+\begin{equation*}
+-\ln(1-x)=\sum_{n=1}^{+\infty}\frac{x^n}{n}\qquad\forall x\in ]-1\,;\,1[
+\end{equation*}
+</div>
+<p data-braille="continuation">En remplaçant x par 1/2, on en déduit la formule suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+\ln(2)=\sum_{n=1}^{+\infty}\frac{1}{n2^n}
+\end{equation*}
+</div>
+</li>
+</ul>
+</li>
+<li id="li-676">
+<p id="p-997">Application : approximation de \(\pi\) à l'aide de la série de Leibniz.</p>
+<ol class="lower-alpha">
+<li id="li-677">En remplaçant \(x\) par \(-x^2\) dans le DSE de \(f(x)\text{,}\) on trouve :<div class="displaymath">
+\begin{equation*}
+\frac{1}{1+x^2}=\sum_{n=0}^{+\infty}(-1)^nx^{2n}\qquad\forall x\in ]-1\,;\,1[
+\end{equation*}
+</div>
+</li>
+<li id="li-678">En intégrant terme à terme le DSE précédent, on obtient, après ajustement de la constante d'intégration :<div class="displaymath">
+\begin{equation*}
+\arctan(x)=\sum_{n=0}^{+\infty}(-1)^n\frac{x^{2n+1}}{2n+1}\qquad\forall x\in ]-1\,;\,1[
+\end{equation*}
+</div>
+</li>
+<li id="li-679">En faisant tendre \(x\) vers \(1\) terme à terme dans le DSE précédent, on a :<div class="displaymath">
+\begin{equation*}
+\arctan(1)=\sum_{n=0}^{+\infty}(-1)^n\frac{1}{2n+1}
+\end{equation*}
+</div>
+</li>
+<li id="li-680">En multipliant l'équation précédente par 4, on obtient \(\pi\) comme somme d'une série satisfaisant les conditions d'application du test des séries alternées :<div class="displaymath">
+\begin{equation*}
+\pi=\sum_{n=0}^{+\infty}(-1)^n\frac{4}{2n+1}
+\end{equation*}
+</div>
+</li>
+<li id="li-681">Explicitons le regroupement de termes \(\displaystyle S=S_{19}+R_{19}\) pour la série donnant \(\pi\) ci-dessus. Cela donne:<div class="displaymath">
+\begin{equation*}
+\pi=\sum_{n=0}^{19}(-1)^n\frac{4}{2n+1}+\sum_{n=20}^{+\infty}(-1)^n\frac{4}{2n+1}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\pi=\underbrace{4-\frac{4}{3}+\frac{4}{5}-\ldots-\frac{4}{39}}_{S_{19}}+\underbrace{\frac{4}{41}-\frac{4}{43}+\ldots}_{R_{19}}
+\end{equation*}
+</div>
+</li>
+<li id="li-682">
+<p id="p-998">Calculons \(S_{19}\) et estimons \(R_{19}\text{.}\) On obtient :</p>
+<div class="displaymath">
+\begin{equation*}
+S_{19}=\sum_{n=0}^{19}(-1)^n\frac{4}{2n+1}=\frac{516197940314096}{166966608033225}\approx 3,09
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+|R_{19}|\leq \frac{4}{41}\approx 0,098
+\end{equation*}
+</div>
+</li>
+<li id="li-683">Concluons en encadrant \(\pi\) :<div class="displaymath">
+\begin{equation*}
+3,0 &lt; S_{19} &lt; 3,1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0 &lt; R_{19} &lt; 0,1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+3,0+0 &lt; S_{19}+R_{19} &lt; 3,1+0,1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+3,0 &lt; \pi &lt; 3,2
+\end{equation*}
+</div>
+</li>
+<li id="li-684">
+<p id="p-999">Remarques :</p>
+<ul class="disc">
+<li id="li-685">Le fait qu'on ait le droit d'effectuer des opérations comme la dérivation, l'intégration ou la limite terme à terme dans un DSE n'est pas évident. Il y a de vrais théorèmes cachés derrière. Pour le point 3 c. par exemple, on peut invoquer un <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_d%27Abel_%28analyse%29" target="_blank">théorème attribué à Abel</a>.</li>
+<li id="li-686">Dans le cadre du test des séries alternées, la valeur absolue de l'erreur est inférieure à la valeur absolue du premier terme oublié. De plus, l'erreur est positive si le premier terme oublié est positif, et elle est négative dans le cas contraire.</li>
+<li id="li-687">Quand on augmente \(n\text{,}\) on fait diminuer l'erreur \(R_n\text{.}\) Dans le cas de cette série, l'erreur ne diminue pas très vite : il faudrait se rendre très loin dans la somme partielle pour commencer à obtenir un nombre satisfaisant de décimales correctes pour la somme \(S=\pi\text{.}\)</li>
+<li id="li-688">L'estimation obtenue ci-dessus est toutefois suffisante pour réfuter <em class="emphasis">la <a class="external" href="https://fr.wikipedia.org/wiki/Projet_de_loi_pi_de_l%27Indiana" target="_blank">proposition de loi No 246</a> qui faillit être adoptée en 1897 par l'Assemblée législative de l'Indiana</em>. Si on en croit Wikipedia, cette dernière impliquait entre autres que \(\pi\) serait égal à 3,2.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol></section></div></main>
+</div>
+</body>
+</html>

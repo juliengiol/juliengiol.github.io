@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:18:44-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>Résolvons le système linéaire suivant avec SageMath.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+a_0&amp;+&amp;a_1&amp;+&amp;a_2&amp;=&amp;-3\\
+a_0&amp;+&amp;2a_1&amp;+&amp;4a_2&amp;=&amp;7\\
+a_0&amp;+&amp;3a_1&amp;+&amp;9a_2&amp;=&amp;0\\
+\end{cases}
+\end{equation*}
+</div>
+<p>Pour cela, il suffit d'appliquer la méthode de Gauss-Jordan à la matrice augmentée du système.</p>
+<div class="displaymath">
+\begin{equation*}
+\text{M} =
+\begin{bmatrix}
+1&amp;1&amp;1&amp;-3\\
+1&amp;2&amp;4&amp;7\\
+1&amp;3&amp;9&amp;0
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>Voici le code SageMath à exécuter :<pre class="code-block tex2jax_ignore">M = matrix(3, 4, [1,1,1,-3,1,2,4,7,1,3,9,0])
+show(M)
+GJ = M.rref()
+show(GJ)
+</pre></p>
+<p><a class="external" href="https://tinyurl.com/y58gkw26" target="_blank">Cliquez sur ce lien</a> pour voir ce code en action dans SageMathCell.</p>
+<p>À la sortie de ce bloc de code, on obtient \(\text{GJ}\text{,}\) la forme échelonnée réduite de \(\text{M}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\text{GJ} =
+\begin{bmatrix}
+1&amp;0&amp;0&amp;-30\\
+0&amp;1&amp;0&amp;71/2\\
+0&amp;0&amp;1&amp;-17/2
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>On en déduit qu'il y a une unique solution :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+a_0&amp;=&amp;-30\\
+a_1&amp;=&amp;71/2\\
+a_2&amp;=&amp;-17/2\\
+\end{cases}
+\end{equation*}
+</div></article></body>
+</html>

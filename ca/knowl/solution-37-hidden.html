@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:41-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><ol class="decimal">
+<li><ul class="disc">
+<li>
+<p>Pour commencer, on applique le logarithme naturel :</p>
+<div class="displaymath">
+\begin{align*}
+\ln y&amp;=\ln\left((\sin x)^{x^2}\right)\\
+&amp;=x^2\ln(\sin x).
+\end{align*}
+</div>
+</li>
+<li>
+<p>Ensuite, on dérive par rapport à \(x\) :</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{y}\cdot\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(\ln y)\\
+&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(x^2\cdot\ln(\sin x))\\
+&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(x^2)\cdot\ln(\sin x))+x^2\cdot\frac{\mathrm{d}}{\mathrm{d}x}(\ln(\sin x))\\
+&amp;=2x\cdot\ln(\sin x))+x^2\cdot\frac{1}{\sin x}\cdot\cos x\\
+&amp;=2x\ln(\sin x))+x^2\cot x.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Enfin, on multiplie par \(y\) :</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=y\cdot\frac{\mathrm{d}}{\mathrm{d}x}(\ln y)\\
+&amp;=y\cdot(2x\ln(\sin x))+x^2\cot x)\\
+&amp;=(\sin x)^{x^2}(2x\ln(\sin x))+x^2\cot x).
+\end{align*}
+</div>
+</li>
+</ul></li>
+<li>
+<p>Les variables \(x,y,u,v\) sont liées comme suit :</p>
+<div class="displaymath">
+\begin{equation*}
+y=u^v\quad\text{avec}\quad u=\sin x\quad\text{et}\quad v=x^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Cela donne l'arbre de dépendance suivant : <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/exercice_4.3.3.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=\frac{\partial y}{\partial u}\cdot\frac{\mathrm{d}u}{\mathrm{d}x}+\frac{\partial y}{\partial v}\cdot\frac{\mathrm{d}v}{\mathrm{d}x}\\
+&amp;=vu^{v-1}\cdot\cos x+u^v\ln u\cdot 2x\\
+&amp;=x^2(\sin x)^{x^2-1}\cdot\cos x+(\sin x)^{x^2}\ln(\sin x)\cdot 2x\\
+&amp;=(\sin x)^{x^2}(x^2\cot x+2x\ln(\sin x))
+\end{align*}
+</div>
+<p data-braille="continuation">conformément au calcul effectué plus haut par dérivation logarithmique.</p>
+</li>
+</ol></div></body>
+</html>

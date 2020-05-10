@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:17:47-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>Montrer que \((a;b)\) et \((b;r)\) ont les mêmes diviseurs positifs communs revient à établir l'équivalence suivante, pour \(d\in\mathbb{N}^*\) :</p>
+<div class="displaymath">
+\begin{equation*}
+d\vert a\text{ et }d\vert b\quad\Leftrightarrow\quad d\vert b\text{ et }d\vert r.
+\end{equation*}
+</div>
+<p>Pour cela, nous allons démontrer chacune des deux implications concernées :</p>
+<ol class="decimal">
+<li><p>\(d\vert a\) et \(d\vert b\quad\Rightarrow\quad d\vert r\;\text{;}\)</p></li>
+<li><p>\(d\vert b\) et \(d\vert r\quad\Rightarrow\quad d\vert a\;\text{.}\)</p></li>
+</ol>
+<p>Commençons par l'implication 1. Supposons que \(d\vert a\) et \(d\vert b\text{,}\) de sorte qu'il existe deux entiers relatifs \(\alpha\) et \(\beta\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+a=\alpha\cdot d\qquad\text{et}\qquad b=\beta\cdot d.
+\end{equation*}
+</div>
+<p>Comme \(a=b\cdot q+r\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+\alpha\cdot d=\beta\cdot d\cdot q+r&amp;\quad\Rightarrow\quad r=\alpha\cdot d-\beta\cdot d\cdot q\\
+&amp;\quad\Rightarrow\quad r=(\alpha-\beta\cdot q)\cdot d\\
+&amp;\quad\Rightarrow\quad r=\delta\cdot d\quad\text{avec }\delta=\alpha-\beta\cdot q\in\mathbb{Z}\\
+&amp;\quad\Rightarrow\quad d\vert r.
+\end{align*}
+</div>
+<p>Passons maintenant à l'implication 2. Supposons que \(d\vert b\) et \(d\vert r\text{,}\) de sorte qu'il existe deux entiers relatifs \(\beta\) et \(\rho\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+b=\beta\cdot d\qquad\text{et}\qquad r=\rho\cdot d.
+\end{equation*}
+</div>
+<p>Comme \(a=b\cdot q+r\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+a=\beta\cdot d\cdot q+\rho\cdot d &amp;\quad\Rightarrow\quad a=(\beta\cdot q+\rho)\cdot d\\
+&amp;\quad\Rightarrow\quad a=\alpha\cdot d\quad\text{avec }\alpha=\beta\cdot q+\rho\in\mathbb{Z}\\
+&amp;\quad\Rightarrow\quad d\vert a.
+\end{align*}
+</div>
+<p>Les deux implications étant démontrées, nous avons prouvé que les couples \((a;b)\) et \((b;r)\) ont les mêmes diviseurs positifs communs.</p>
+<p>Par définition du PGCD, il en découle que \(\text{PGCD}(a;b)=\text{PGCD}(b;r)\text{.}\)</p></article></body>
+</html>

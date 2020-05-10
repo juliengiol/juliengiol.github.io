@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="aide_individuelle_coronavirus" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Aide individuelle</title>
+
+  <p>
+    Bonjour! Tu es en sciences de la nature et tu as besoin d'aide pour un exercice spécifique dans l'un des cours suivants?
+    <ul>
+      <li>
+        <p>
+          Maths pour les sciences (code 130).
+        </p>
+      </li>
+      <li>
+        <p>
+          Calcul intégral (code NYB).
+        </p>
+      </li>
+      <li>
+        <p>
+          Algèbre linéaire (code NYC).
+        </p>
+      </li>
+    </ul>
+  </p>
+  <assemblage>
+    <title>Aide individuelle en 130, NYB et NYC</title>
+    <p>
+      Écris un <url href="https://collegeahuntsic.omnivox.ca/Login/Account/Login?isLogout=1">Mio</url> à Julien Giol incluant
+      <ul>
+        <li>
+          <p>
+            dans le <em>sujet</em> : le code du cours (130, NYB ou NYC),
+          </p>
+        </li>
+        <li>
+          <p>
+            en <em>fichier joint</em> : l'énoncé et ta démarche jusque-là,
+          </p>
+        </li>
+        <li>
+          <p>
+            dans le <em>message</em> : la description du problème que tu rencontres.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </assemblage>
+  <p>
+    Je réponds généralement le matin du mardi au vendredi et j'essaie de respecter un délai de 24h maximum.
+    S'il y a trop d'achalandage et que je ne parviens pas à respecter ce délai, je t'inviterai à reposer ta question.
+  </p>
+  <p>
+    Bonne étude, ça va bien aller!
+  </p>
+
+</section>

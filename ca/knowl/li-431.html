@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:42-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="li"><h6 class="heading">
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">4.3.4.2</span><span class="period">.</span>
+</h6>
+<p>Les variables sont liées de la façon suivante : <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/exercice_4.3.4bis.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial v}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial v}\\
+&amp;=\frac{\partial}{\partial x}\left(\tan\left(\frac{x}{y}\right)\right)\cdot\frac{\partial}{\partial v}(2u+3v)+\frac{\partial}{\partial y}\left(\tan\left(\frac{x}{y}\right)\right)\cdot\frac{\partial}{\partial v}(3u-2v)\\
+&amp;=\sec^2\left(\frac{x}{y}\right)\cdot\frac{1}{y}\cdot 3+\sec^2\left(\frac{x}{y}\right)\cdot\left(-\frac{x}{y^2}\right)\cdot(-2)\\
+&amp;=\sec^2\left(\frac{x}{y}\right)\cdot\frac{3y+2x}{y^2}.
+\end{align*}
+</div>
+<p>Lorsque \((u,v)=(3,-2)\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+x=2\cdot 3+3\cdot(-2)=0\quad\text{et}\quad y=3\cdot 3-2\cdot(-2)=13
+\end{equation*}
+</div>
+<p data-braille="continuation">donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial v}\Bigg\rvert_{(u,v)=(3,-2)}&amp;=(\underbrace{\sec(0)}_{=1})^2\cdot\frac{3\cdot 13+2\cdot 0}{13^2}\\
+&amp;=\frac{3}{13}.
+\end{align*}
+</div></article><span class="incontext"><a href="derivation-en-chaine.html#li-431">??</a></span>
+</body>
+</html>

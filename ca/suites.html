@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:55:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>303 Les suites</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://juliengiol.github.io/" target="_blank"><img src="images/yosemite.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="ca.html"><span class="title">Calcul avancé</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapitre1.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="chapitre1.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="series.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="chapitre1.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="chapitre1.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="series.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
+<li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Remerciements</a></li>
+</ul>
+</li>
+<li class="link part"><a href="coronavirus.html" data-scroll="coronavirus"><span class="codenumber">I</span> <span class="title">Coronavirus</span></a></li>
+<li class="link part"><a href="documents.html" data-scroll="documents"><span class="codenumber">II</span> <span class="title">Documents</span></a></li>
+<li class="link part"><a href="volume.html" data-scroll="volume"><span class="codenumber">III</span> <span class="title">Volume</span></a></li>
+<li class="link">
+<a href="chapitre1.html" data-scroll="chapitre1"><span class="codenumber">1</span> <span class="title">Les suites et les séries numériques</span></a><ul>
+<li><a href="suites.html" data-scroll="suites" class="active">Les suites</a></li>
+<li><a href="series.html" data-scroll="series">Les séries</a></li>
+<li><a href="seriesatermespositifs.html" data-scroll="seriesatermespositifs">Les séries à termes positifs</a></li>
+<li><a href="series-alternees.html" data-scroll="series-alternees">Les séries alternées</a></li>
+<li><a href="testdurapport.html" data-scroll="testdurapport">La convergence absolue, le test du rapport et le critère de Cauchy</a></li>
+<li><a href="strategieconvergence.html" data-scroll="strategieconvergence">Une stratégie pour tester la convergence d'une série</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre2.html" data-scroll="chapitre2"><span class="codenumber">2</span> <span class="title">Les séries de Taylor</span></a><ul>
+<li><a href="seriesentieres.html" data-scroll="seriesentieres">Les séries entières</a></li>
+<li><a href="devenserieentiere.html" data-scroll="devenserieentiere">Le développement des fonctions en séries entières</a></li>
+<li><a href="tayloretmaclaurin.html" data-scroll="tayloretmaclaurin">Les séries de Taylor et de Maclaurin</a></li>
+<li><a href="applicationstaylor.html" data-scroll="applicationstaylor">Des applications des polynômes de Taylor</a></li>
+<li><a href="nombrescomplexes.html" data-scroll="nombrescomplexes">Les nombres complexes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre3.html" data-scroll="chapitre3"><span class="codenumber">3</span> <span class="title">Les fonctions de plusieurs variables</span></a><ul>
+<li><a href="fonctionspv.html" data-scroll="fonctionspv">Les fonctions de plusieurs variables</a></li>
+<li><a href="limites-continuite.html" data-scroll="limites-continuite">Les limites et la continuité</a></li>
+<li><a href="quadriques.html" data-scroll="quadriques">Les cylindres et les surfaces quadriques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre4.html" data-scroll="chapitre4"><span class="codenumber">4</span> <span class="title">Les dérivées des fonctions de plusieurs variables</span></a><ul>
+<li><a href="derpartielles.html" data-scroll="derpartielles">Les dérivées partielles</a></li>
+<li><a href="plans-tangents-et-differentielle.html" data-scroll="plans-tangents-et-differentielle">Les plans tangents et les approximations linéaires</a></li>
+<li><a href="derivation-en-chaine.html" data-scroll="derivation-en-chaine">La règle de dérivation en chaîne</a></li>
+<li><a href="derivees-directionnelles.html" data-scroll="derivees-directionnelles">Les dérivées directionnelles et le vecteur gradient</a></li>
+<li><a href="approximationsdetaylor.html" data-scroll="approximationsdetaylor">Les approximations de Taylor en deux variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre5.html" data-scroll="chapitre5"><span class="codenumber">5</span> <span class="title">L'optimisation</span></a><ul>
+<li><a href="extremums.html" data-scroll="extremums">Extremums</a></li>
+<li><a href="gradient.html" data-scroll="gradient">Critère de Sylvester et méthode du gradient</a></li>
+<li><a href="lagrange.html" data-scroll="lagrange">Multiplicateurs de Lagrange</a></li>
+</ul>
+</li>
+<li class="link part"><a href="complements.html" data-scroll="complements"><span class="codenumber">IV</span> <span class="title">Compléments</span></a></li>
+<li class="link"><a href="sage.html" data-scroll="sage"><span class="codenumber">1</span> <span class="title">Sage</span></a></li>
+<li class="link"><a href="bornes.html" data-scroll="bornes"><span class="codenumber">2</span> <span class="title">Bornes d'erreur</span></a></li>
+<li class="link"><a href="serie-de-leibniz.html" data-scroll="serie-de-leibniz"><span class="codenumber">3</span> <span class="title">La série de Leibniz</span></a></li>
+<li class="link"><a href="polaires.html" data-scroll="polaires"><span class="codenumber">4</span> <span class="title">Coordonnées polaires (6.3)</span></a></li>
+<li class="link"><a href="coniques.html" data-scroll="coniques"><span class="codenumber">5</span> <span class="title">Coniques</span></a></li>
+<li class="link"><a href="epsilon.html" data-scroll="epsilon"><span class="codenumber">6</span> <span class="title">Epsilon-Delta</span></a></li>
+<li class="link"><a href="vectorielles.html" data-scroll="vectorielles"><span class="codenumber">7</span> <span class="title">Fonctions vectorielles</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="suites"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Les suites</span>
+</h2>
+<a href="suites.html" class="permalink">¶</a><p id="p-30">Essayez de résoudre les exercices qui suivent.</p>
+<article class="exercise exercise-like" id="exercice-graphique-de-suite"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-graphique-de-suite"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-graphique-de-suite"><article class="exercise exercise-like"><p id="p-31">Pour chacune des suites suivantes, représentez les cinq premiers termes dans un même graphique.</p>
+<ol class="decimal">
+<li id="li-19"><p id="p-32">\(\left\{a_n\right\}_{n=0}^{+\infty}\) où \(a_n=\frac{n}{n+1}\) pour tout \(n\geq 0\text{.}\)</p></li>
+<li id="li-20"><p id="p-33">\(\left\{f_n\right\}_{n=1}^{+\infty}\) où \(f_1=f_2=1\) et \(f_n=f_{n-1}+f_{n-2}\) pour tout \(n\geq 3\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><ol id="p-34" class="decimal">
+<li id="li-21"><p id="p-35"><a class="external" href="https://www.desmos.com/calculator/ggynyfdl6r" target="_blank">Graphique Desmos.</a></p></li>
+<li id="li-22"><p id="p-36"><a class="external" href="https://www.desmos.com/calculator/uahthe7h4g" target="_blank">Graphique Desmos</a>.</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-limite-par-mise-en-evidence"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-limite-par-mise-en-evidence"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-limite-par-mise-en-evidence"><article class="exercise exercise-like"><p id="p-37">Déterminez la limite des suites suivantes.</p>
+<ol class="decimal">
+<li id="li-23">\(\displaystyle \displaystyle\left\{\frac{n}{n+1}\right\}_{n=0}^{+\infty}\)</li>
+<li id="li-24">\(\displaystyle \displaystyle\left\{\frac{n}{n+1}\right\}_{n=7}^{+\infty}\)</li>
+<li id="li-25">\(\displaystyle \displaystyle\left\{\frac{n^4-3n^2+7}{5n^4+8n-2}\right\}_{n=1}^{+\infty}\)</li>
+<li id="li-26">\(\displaystyle \displaystyle\left\{\frac{n^4-3n^2+7}{5n^3+8n-2}\right\}_{n=2}^{+\infty}\)</li>
+<li id="li-27">\(\displaystyle \displaystyle\left\{\frac{n^4-3n^2+7}{\sqrt{n^9+n^3+1}}\right\}_{n=1}^{+\infty}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-1" id="hint-1"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-38">Mettez en évidence les termes dominants.</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-1" id="answer-1"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><ol id="p-39" class="decimal">
+<li id="li-28">\(\displaystyle 1\)</li>
+<li id="li-29">\(\displaystyle 1\)</li>
+<li id="li-30">\(\displaystyle \frac{1}{5}\)</li>
+<li id="li-31">\(\displaystyle +\infty\)</li>
+<li id="li-32">\(\displaystyle 0\)</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-limite-par-hospital"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-limite-par-hospital"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-limite-par-hospital"><article class="exercise exercise-like"><p id="p-40">Calculez les limites suivantes.</p>
+<ol class="decimal">
+<li id="li-33">\(\displaystyle \displaystyle\lim_{n\rightarrow +\infty}\frac{\ln n}{n}\)</li>
+<li id="li-34">\(\displaystyle \displaystyle\lim_{n\rightarrow +\infty}\frac{2^n}{n}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-2" id="hint-2"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-41">Utilisez la règle de l'Hospital pour la fonction sous-jacente.</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-2" id="answer-2"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><ol id="p-42" class="decimal">
+<li id="li-35">\(\displaystyle 0\)</li>
+<li id="li-36">\(\displaystyle +\infty\)</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-convergence-de-suite"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-convergence-de-suite"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-convergence-de-suite"><article class="exercise exercise-like"><p id="p-43">Dites si les suites suivantes sont convergentes. Si elles convergent, indiquez vers quelle valeur.</p>
+<ol class="decimal">
+<li id="li-37">\(\displaystyle \left\{(-1)^n\right\}\)</li>
+<li id="li-38">\(\displaystyle \left\{\frac{(-1)^n}{n}\right\}_{n\geq 1}\)</li>
+<li id="li-39">\(\displaystyle \left\{n\sin(2/n)\right\}_{n\geq 5}\)</li>
+<li id="li-40">\(\displaystyle \left\{\frac{\cos n}{\ln n}\right\}_{n\geq 2}\)</li>
+<li id="li-41">\(\displaystyle \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n\geq 1}\)</li>
+<li id="li-42">\(\displaystyle \left\{\frac{n!}{n^n}\right\}_{n\geq 1}\)</li>
+<li id="li-43">\(\displaystyle \left\{\frac{n^n}{n!}\right\}_{n\geq 1}\)</li>
+<li id="li-44">\(\displaystyle \left\{r^n\right\}_{n\geq 0}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-3" id="answer-3"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><ol id="p-44" class="decimal">
+<li id="li-45">Cette suite diverge.</li>
+<li id="li-46">Cette suite converge vers \(0\text{.}\)</li>
+<li id="li-47">Cette suite converge vers \(2\text{.}\)</li>
+<li id="li-48">Cette suite converge vers \(0\text{.}\)</li>
+<li id="li-49">Cette suite converge vers \(e\text{.}\)</li>
+<li id="li-50">Cette suite converge vers \(0\text{.}\)</li>
+<li id="li-51">Cette suite diverge.</li>
+<li id="li-52">Une suite géométrique de raison \(r\) converge vers \(0\) si \(|r| &lt; 1\text{,}\) vers \(1\) si \(r=1\text{,}\) et sinon elle diverge.</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-monotonie"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-monotonie"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-monotonie"><article class="exercise exercise-like"><p id="p-45">Les suites suivantes sont-elles monotones?</p>
+<ol class="decimal">
+<li id="li-53">\(\displaystyle \left\{\frac{n!}{3^n}\right\}_{n\geq 0}\)</li>
+<li id="li-54">\(\displaystyle \left\{\frac{n}{n^2+1}\right\}_{n\geq 1}\)</li>
+<li id="li-55">\(\displaystyle \left\{2+\frac{(-1)^n}{n}\right\}_{n\geq 1}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-4" id="answer-4"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-4"><div class="answer solution-like"><ol id="p-46" class="decimal">
+<li id="li-56">Cette suite est croissante à partir du rang \(n=2\text{.}\)</li>
+<li id="li-57">Cette suite est décroissante.</li>
+<li id="li-58">Cette suite n'est pas monotone.</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-bornitude"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-bornitude"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-bornitude"><article class="exercise exercise-like"><p id="p-47">Les suites suivantes sont-elles bornées?</p>
+<ol class="decimal">
+<li id="li-59">\(\displaystyle \left\{n^2+3\right\}_{n\geq 1}\)</li>
+<li id="li-60">\(\displaystyle \left\{(-5)^n\right\}_{n\geq 0}\)</li>
+<li id="li-61">\(\displaystyle \left\{\frac{1}{3n+7}\right\}_{n\geq 0}\)</li>
+<li id="li-62">\(\displaystyle \left\{2+\frac{(-1)^n}{n}\right\}_{n\geq 1}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-5" id="answer-5"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-5"><div class="answer solution-like"><ol id="p-48" class="decimal">
+<li id="li-63">Cette suite est bornée inférieurement, mais pas supérieurement.</li>
+<li id="li-64">Cette suite n'est ni bornée inférieurement, ni bornée supérieurement.</li>
+<li id="li-65">Cette suite est bornée inférieurement et supérieurement.</li>
+<li id="li-66">Cette suite est bornée inférieurement et supérieurement.</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-limite-suite-recurrente"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-limite-suite-recurrente"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-limite-suite-recurrente"><article class="exercise exercise-like"><p id="p-49">On s'intéresse à la suite \(\left\{a_n\right\}\) définie par récurrence de la façon suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+a_1=1\qquad\mbox{et}\qquad a_{n+1}=\frac{1}{1+a_n}\quad\mbox{ pour tout }n\geq 1.
+\end{equation*}
+</div>
+<p data-braille="continuation">En admettant qu'elle converge, calculez sa limite.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-6" id="answer-6"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-6"><div class="answer solution-like"><p id="p-50">\(\displaystyle\frac{-1+\sqrt{5}}{2}\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-limite-suite-recurrente-plus-preuves-induction"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-limite-suite-recurrente-plus-preuves-induction"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-limite-suite-recurrente-plus-preuves-induction"><article class="exercise exercise-like"><p id="p-51">On s'intéresse à la suite \(\left\{a_n\right\}\) définie par récurrence de la façon suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+a_1=2\qquad\mbox{et}\qquad a_{n+1}=\frac{1}{3-a_n}\quad\mbox{ pour tout }n\geq 1.
+\end{equation*}
+</div>
+<p id="p-52">Montrez qu'elle satisfait \(0&lt;a_n\leq 2\) pour tout \(n\geq 1\text{,}\) et qu'elle est décroissante.</p>
+<p id="p-53">Déduisez-en que cette suite converge et trouvez sa limite.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-3" id="hint-3"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><p id="p-54">Pour la première partie, utilisez une preuve par induction.</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-7" id="answer-7"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-7"><div class="answer solution-like"><p id="p-55">Cette suite converge vers \(\frac{3-\sqrt{5}}{2}\text{.}\)</p></div></div>
+</div></article></div>
+<p id="p-56">Voici <a class="external" href="https://drive.google.com/file/d/1jCaAHDQeES_0PqwjbaCeiRY5s9ypKKaw/view?usp=sharing" target="_blank">comment répondre</a> aux exercices qui précèdent.</p>
+<p id="p-57">Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 6, 12, 24, 26, 28, 30, 32, 42, 74, 80, 82 dont voici les <a class="external" href="https://drive.google.com/file/d/1LD8LQ98IA5O6RToMETwFFQ_L9JRU7n6p/view?usp=sharing" target="_blank">solutions</a>.</p>
+<p id="p-58">Vous pouvez maintenant passer aux exercices prioritaires de cette section.</p>
+<article class="activity project-like" id="une-suite-trompeuse"><h6 class="heading">
+<span class="type">Outils</span><span class="period">.</span><span class="space"> </span><span class="title">Une suite trompeuse.</span>
+</h6>
+<p id="p-59">On place \(n\) points sur un cercle et on les relie deux par deux avec des segments. On suppose en outre qu'aucun point intérieur au cercle n'est l'intersection de plus de deux segments. Cela divise le cercle en \(a_n\) régions.</p>
+<p id="p-60">On calcule facilement les premiers termes : \(a_2=2, a_3=4, a_4=8, a_5=16\text{.}\)</p>
+<p id="p-61">Il est alors tentant de conjecturer que \(a_n=2^{n-1}\) pour tout \(n\geq 2\text{.}\)</p>
+<p id="p-62">Est-ce correct? Sinon, combien vaut \(a_n\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-8" id="answer-8"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-8"><div class="answer solution-like">
+<p id="p-63">C'est faux car, par exemple, \(a_6=31\neq 2^4\text{.}\) En fait, on a</p>
+<div class="displaymath">
+\begin{equation*}
+a_n=\binom{n-1}{0}+\binom{n-1}{1}+\binom{n-1}{2}+\binom{n-1}{3}+\binom{n-1}{4}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><p id="p-64">Voici maintenant quelques lignes de code en lien avec le contenu de cette section. Sauriez-vous en prédire le résultat?</p>
+<div class="sagecell-sage" id="sage-1"><script type="text/x-sage">def suivant(x):
+    if x % 2 == 0:
+        return x / 2
+    else:
+        return 3 * x + 1
+
+x = 14
+n = 5
+for i in range(1, n+1):
+    x = suivant(x)
+
+print(x)
+</script></div>
+<article class="exploration project-like" id="syracuse"><h6 class="heading">
+<span class="type">Exploration</span><span class="period">.</span><span class="space"> </span><span class="title">La conjecture de Syracuse.</span>
+</h6>
+<p id="p-65">Toute suite de Syracuse finit-elle par atteindre la valeur \(1\text{?}\) Voir la page <a class="external" href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse" target="_blank">Wikipédia</a> pour plus de détails.</p></article></section></div></main>
+</div>
+</body>
+</html>

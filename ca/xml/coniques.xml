@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="coniques" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Coniques</title>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-type-de-coniques">
+    <statement>
+      <p>Les courbes définies par une équation quadratique à deux variables <m>(x\,;\,y)</m> <me>Ax^2+By^2+Cxy+Dx+Ey+F=0</me> s'appellent des coniques.</p>
+      <p>La technique de la complétion du carré et un peu de géométrie permettent de se ramener à l'une des quatre situations suivantes :
+        <ol>
+          <li>Ellipses : <m>\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m></li>
+          <li>Paraboles : <m>\displaystyle\frac{y}{c}=\frac{x^2}{a^2}</m></li>
+          <li>Hyperboles : <m>\displaystyle\frac{x^2}{a^2}-\frac{y^2}{b^2}=1</m></li>
+          <li>Coniques dégénérées (deux droites) : <m>\displaystyle\frac{x^2}{a^2}=\frac{y^2}{b^2}</m></li>
+        </ol>
+      </p>
+      <p>Utilisez un outil informatique pour visualiser ces différents types de courbes.</p>
+    </statement>
+    <answer>
+      <p>Voici comment faire avec Desmos : <url href="https://www.desmos.com/calculator/696n8tpmy6">types de coniques avec Desmos</url>.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-completion-du-carre-conique">
+    <statement>
+      <p>On considère la conique dont l'équation est la suivante :<me>25x^2+9y^2+100x-18y-116=0</me></p>
+      <p><ol>
+        <li>Complétez les carrés.</li>
+        <li>Mettez cette équation sous la forme d'un des quatre types vus à l'exercice précédent.</li>
+        <li>De quel type de conique s'agit-il?</li>
+        <li>Quel est son centre?</li>
+      </ol></p>
+    </statement>
+    <answer>
+      <ol>
+        <li><m>\displaystyle 25(x+2)^2+9(y-1)^2-225=0</m></li>
+        <li><m>\displaystyle\frac{(x+2)^2}{9}+\frac{(y-1)^2}{25}=1</m></li>
+        <li>Conique.</li>
+        <li><m>(-2\,;\,1)</m></li>
+      </ol>
+    </answer>
+  </exercise>
+
+  <p>Ce qui suit ne concerne que la session hiver 2018 :</p>
+
+  <p>Complétez le document suivant :
+    <url href="https://drive.google.com/file/d/1JYHuxmDhlUE1vL0JAOTvDjRhuK0lCZV6/view?usp=sharing">Annexe I - Coniques</url>.
+  Voici le <url href="https://drive.google.com/file/d/1DFh2S79-p89coGz_MhBjCmLxWeBlkBUJ/view?usp=sharing">solutionnaire</url>.
+  </p>
+
+</section>

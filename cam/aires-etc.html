@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-07T07:23:10-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WebCAM Calculs de longueurs, d'aires et de volumes</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Sauter</a><div class="hidden-content" style="display:none">\(\require{amsmath}\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\dropsign}[1]{\smash{\llap{\raisebox{-.5\normalbaselineskip}{$#1$\hspace{2\arraycolsep}}}}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.collegeahuntsic.qc.ca/" target="_blank"><img src="images/logocollege.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="cam.html"><span class="title">Mon p'tit WebCAM</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="FR.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="integrales.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="impropres.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="FR.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="integrales.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="impropres.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a></li>
+<li class="link part"><a href="coronavirus.html" data-scroll="coronavirus"><span class="codenumber">I</span> <span class="title">Coronavirus</span></a></li>
+<li class="link"><a href="ateliers_nyb_coronavirus.html" data-scroll="ateliers_nyb_coronavirus"><span class="codenumber">1</span> <span class="title">Ateliers de NYB</span></a></li>
+<li class="link"><a href="aide_individuelle_coronavirus.html" data-scroll="aide_individuelle_coronavirus"><span class="codenumber">2</span> <span class="title">Aide individuelle</span></a></li>
+<li class="link part"><a href="exercices_supplementaires.html" data-scroll="exercices_supplementaires"><span class="codenumber">II</span> <span class="title">Exercices supplémentaires</span></a></li>
+<li class="link">
+<a href="limites.html" data-scroll="limites"><span class="codenumber">1</span> <span class="title">Limites</span></a><ul>
+<li><a href="algebre.html" data-scroll="algebre">Détermination par l'algèbre</a></li>
+<li><a href="RH.html" data-scroll="RH">Règle de L'Hospital</a></li>
+<li><a href="continuite.html" data-scroll="continuite">Continuité</a></li>
+<li><a href="asymptotes.html" data-scroll="asymptotes">Asymptotes</a></li>
+<li><a href="lim_suites.html" data-scroll="lim_suites">Limites de suites</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="derivees.html" data-scroll="derivees"><span class="codenumber">2</span> <span class="title">Dérivées</span></a><ul>
+<li><a href="regles-derivation.html" data-scroll="regles-derivation">Règles de dérivation</a></li>
+<li><a href="tangentes.html" data-scroll="tangentes">Tangentes</a></li>
+<li><a href="differentielle.html" data-scroll="differentielle">Différentielle</a></li>
+<li><a href="etude.html" data-scroll="etude">Étude de fonctions</a></li>
+<li><a href="optimisation.html" data-scroll="optimisation">Optimisation</a></li>
+<li><a href="taux-lies.html" data-scroll="taux-lies">Taux liés</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="integrales.html" data-scroll="integrales"><span class="codenumber">3</span> <span class="title">Intégrales</span></a><ul>
+<li><a href="proprietes.html" data-scroll="proprietes">Primitives et propriétés de base</a></li>
+<li><a href="formules.html" data-scroll="formules">Formules d'intégration de base</a></li>
+<li><a href="CV.html" data-scroll="CV">Changement de variable</a></li>
+<li><a href="IPP.html" data-scroll="IPP">Intégration par parties</a></li>
+<li><a href="FT.html" data-scroll="FT">Fonctions trigonométriques</a></li>
+<li><a href="ST.html" data-scroll="ST">Substitutions trigonométriques</a></li>
+<li><a href="FR.html" data-scroll="FR">Fonctions rationnelles</a></li>
+<li><a href="aires-etc.html" data-scroll="aires-etc" class="active">Calculs de longueurs, d'aires et de volumes</a></li>
+<li><a href="impropres.html" data-scroll="impropres">Intégrales impropres</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="series.html" data-scroll="series"><span class="codenumber">4</span> <span class="title">Séries</span></a><ul>
+<li><a href="series-connues.html" data-scroll="series-connues">Séries connues</a></li>
+<li><a href="criteres.html" data-scroll="criteres">Critères de convergence et astuces</a></li>
+<li><a href="puissances.html" data-scroll="puissances">Séries de puissances</a></li>
+<li><a href="taylor.html" data-scroll="taylor">Séries de Taylor et de Maclaurin</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="varia.html" data-scroll="varia"><span class="codenumber">5</span> <span class="title">Varia</span></a><ul>
+<li><a href="SDR.html" data-scroll="SDR">Notation sigma et sommes de Riemann</a></li>
+<li><a href="edo.html" data-scroll="edo">Équations différentielles</a></li>
+<li><a href="suites.html" data-scroll="suites">Suites</a></li>
+<li><a href="finance.html" data-scroll="finance">Mathématiques financières</a></li>
+<li><a href="theoremes.html" data-scroll="theoremes">Théorèmes d'analyse</a></li>
+<li><a href="defis.html" data-scroll="defis">Défis</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="aires-etc"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.8</span> <span class="title">Calculs de longueurs, d'aires et de volumes</span>
+</h2>
+<a href="aires-etc.html" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-45"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-45"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.8.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-45"><article class="exercise exercise-like"><p id="p-449">Déterminez la longueur de la courbe donnée.</p>
+<ol class="decimal">
+<li id="li-372"><p id="p-450">\(\displaystyle y=\frac{x^3}{3}+\frac{1}{4x}\) pour \(1\leq x\leq 2\)</p></li>
+<li id="li-373"><p id="p-451">\(\displaystyle x=\frac{\sqrt{y}(y-3)}{3}\) pour \(1\leq y\leq 9\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-44" id="answer-44"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-44"><div class="answer solution-like"><ol id="p-452" class="decimal">
+<li id="li-374"><p id="p-453">\(\displaystyle\frac{59}{3}\)</p></li>
+<li id="li-375"><p id="p-454">\(\displaystyle\frac{32}{3}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-46"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-46"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.8.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-46"><article class="exercise exercise-like"><p id="p-455">Déterminez l'aire de la surface fermée comprise entre l'axe des abscisses et le graphique de la fonction \(f(x)=x^3-x^2-2x\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-45" id="answer-45"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-45"><div class="answer solution-like"><p id="p-456">\(\displaystyle\frac{37}{12}\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-47"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-47"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.8.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-47"><article class="exercise exercise-like"><p id="p-457">Déterminez l'aire de la surface fermée comprise entre l'axe des ordonnées et le graphique de la courbe \(\frac{x}{3}=1-y^4\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-46" id="answer-46"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-46"><div class="answer solution-like"><p id="p-458">\(\displaystyle\frac{24}{5}\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-48"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-48"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.8.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-48"><article class="exercise exercise-like"><p id="p-459">Sachant que les courbes ci-dessous correspondent aux équations \(\displaystyle  y=x\) et \(\displaystyle y=\frac{2}{x+1}\text{,}\) calculez l'aire des régions ombrées.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><p id="p-460">1.</p></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><p id="p-461">2.</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><p id="p-462"><img src="images/zone1.png" style="width: 100%; height: auto;" alt=""></p></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><p id="p-463"><img src="images/zone2.png" style="width: 100%; height: auto;" alt=""></p></div>
+</div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-47" id="answer-47"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-47"><div class="answer solution-like"><ol id="p-464" class="decimal">
+<li id="li-376"><p id="p-465">\(\displaystyle\frac{1}{2}+2\ln\left(\frac{3}{2}\right)\)</p></li>
+<li id="li-377"><p id="p-466">\(\displaystyle 1+4\ln(2)-2\ln(3)\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-49"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-49"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.8.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-49"><article class="exercise exercise-like"><p id="p-467">Calculez l'aire des régions fermées comprises entre les courbes indiquées.</p>
+<ol class="decimal">
+<li id="li-378"><p id="p-468">\(\displaystyle y=x\) et \(\displaystyle y=x^3\)</p></li>
+<li id="li-379"><p id="p-469">\(\displaystyle x=y^2\) et \(\displaystyle x=5y-6\)</p></li>
+<li id="li-380"><p id="p-470">\(\displaystyle y=2x^2-5\) et \(\displaystyle y=7-x^2\)</p></li>
+<li id="li-381"><p id="p-471">\(\displaystyle y^2=x+1\) et \(\displaystyle y=x-1\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-48" id="answer-48"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-48"><div class="answer solution-like"><ol id="p-472" class="decimal">
+<li id="li-382"><p id="p-473">\(\displaystyle \frac{1}{2}\)</p></li>
+<li id="li-383"><p id="p-474">\(\displaystyle \frac{1}{6}\)</p></li>
+<li id="li-384"><p id="p-475">\(\displaystyle 32\)</p></li>
+<li id="li-385"><p id="p-476">\(\displaystyle \frac{9}{2}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-50"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-50"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.8.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-50"><article class="exercise exercise-like"><p id="p-477">Déterminez l'aire de la région sous la courbe d'équation \(\displaystyle y=\frac{1}{x^3}\)</p>
+<ol class="decimal">
+<li id="li-386"><p id="p-478">entre \(x=1\) et \(x=10\)</p></li>
+<li id="li-387"><p id="p-479">entre \(x=1\) et \(x=100\)</p></li>
+<li id="li-388"><p id="p-480">pour \(x\geq 1\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-49" id="answer-49"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-49"><div class="answer solution-like"><ol id="p-481" class="decimal">
+<li id="li-389"><p id="p-482">\(\displaystyle\frac{99}{200}\)</p></li>
+<li id="li-390"><p id="p-483">\(\displaystyle\frac{9999}{20000}\)</p></li>
+<li id="li-391"><p id="p-484">\(\displaystyle\frac{1}{2}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-51"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-51"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.8.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-51"><article class="exercise exercise-like"><p id="p-485">Évaluez l'aire de la surface obtenue par rotation de la courbe donnée autour de l'axe indiqué.</p>
+<ol class="decimal">
+<li id="li-392"><p id="p-486">courbe: \(\displaystyle y=\sqrt{4-x^2}\) pour \(-1\leq x\leq 1\) - axe: \(y=0\)</p></li>
+<li id="li-393"><p id="p-487">courbe: \(\displaystyle x=1+2y^2\) pour \(1\leq y\leq 2\) - axe: l'axe des \(x\)</p></li>
+<li id="li-394"><p id="p-488">courbe: \(\displaystyle y=x^2\) pour \(1\leq x\leq 2\) - axe: \(x=0\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-50" id="answer-50"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-50"><div class="answer solution-like"><ol id="p-489" class="decimal">
+<li id="li-395"><p id="p-490">\(\displaystyle 8\pi\)</p></li>
+<li id="li-396"><p id="p-491">\(\displaystyle\frac{\pi}{24}\left(65\sqrt{65}-17\sqrt{17}\right)\)</p></li>
+<li id="li-397"><p id="p-492">\(\displaystyle\frac{\pi}{6}\left(17\sqrt{17}-5\sqrt{5}\right)\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-52"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-52"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.8.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-52"><article class="exercise exercise-like"><p id="p-493">Calculez le volume du solide obtenu par rotation autour de l'axe indiqué de la région fermée délimitée par les courbes données. Utilisez la méthode de votre choix.</p>
+<ol class="decimal">
+<li id="li-398"><p id="p-494">région: \(\displaystyle y=2-\frac{x}{2}\;;\;y=0\;;\;x=1\;;\;x=2\) - axe: l'axe des \(x\)</p></li>
+<li id="li-399"><p id="p-495">région: \(\displaystyle y=x\;;\;y=x^2\) - axe: \(y=0\)</p></li>
+<li id="li-400"><p id="p-496">région: \(\displaystyle y=2x^2-x^3\;;\;y=0\) - axe: l'axe des \(y\)</p></li>
+<li id="li-401"><p id="p-497">région: \(\displaystyle y=x-x^2\;;\;y=0\) - axe: \(x=2\)</p></li>
+<li id="li-402"><p id="p-498">région: \(\displaystyle y=x^2\;;\;x=y^2\) - axe: \(y=1\)</p></li>
+<li id="li-403"><p id="p-499">région: \(\displaystyle x=y^3\;;\;y=0\;;\;x=1\) - axe: \(x=2\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-51" id="answer-51"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-51"><div class="answer solution-like"><ol id="p-500" class="decimal">
+<li id="li-404"><p id="p-501">\(\displaystyle\frac{19\pi}{12}\)</p></li>
+<li id="li-405"><p id="p-502">\(\displaystyle\frac{2\pi}{15}\)</p></li>
+<li id="li-406"><p id="p-503">\(\displaystyle\frac{16\pi}{5}\)</p></li>
+<li id="li-407"><p id="p-504">\(\displaystyle\frac{\pi}{2}\)</p></li>
+<li id="li-408"><p id="p-505">\(\displaystyle\frac{11\pi}{30}\)</p></li>
+<li id="li-409"><p id="p-506">\(\displaystyle\frac{3\pi}{5}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-53"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-53"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.8.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-53"><article class="exercise exercise-like"><p id="p-507">Calculez le volume du solide obtenu par rotation de la surface délimitée par \(f(x)=x^2\) et \(g(x)=4\) pour \(x\geq 0\)</p>
+<ol class="decimal">
+<li id="li-410"><p id="p-508">autour de l'axe des abscisses.</p></li>
+<li id="li-411"><p id="p-509">autour de l'axe des ordonnées.</p></li>
+<li id="li-412"><p id="p-510">autour de l'axe \(y=5\text{.}\)</p></li>
+<li id="li-413"><p id="p-511">autour de l'axe \(x=3\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-52" id="answer-52"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-52"><div class="answer solution-like"><ol id="p-512" class="decimal">
+<li id="li-414"><p id="p-513">\(\displaystyle\frac{128\pi}{5}\)</p></li>
+<li id="li-415"><p id="p-514">\(\displaystyle 8\pi\)</p></li>
+<li id="li-416"><p id="p-515">\(\displaystyle\frac{416\pi}{15}\)</p></li>
+<li id="li-417"><p id="p-516">\(\displaystyle 24\pi\)</p></li>
+</ol></div></div>
+</div></article></div></section></div></main>
+</div>
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-9"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-9');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

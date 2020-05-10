@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:47-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">f.1</span><span class="period">.</span>
+</h6>
+<ul class="disc">
+<li>
+<p>D'après l'arbre de dépendance <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/4.3_synthese6.png" style="width: 100%; height: auto;" alt=""></div> la règle de dérivation en chaîne entraîne</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial r}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial r}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial r}\\
+&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial}{\partial r}(r\cos\theta)+\frac{\partial z}{\partial y}\cdot\frac{\partial}{\partial r}(r\sin\theta)\\
+&amp;=\frac{\partial z}{\partial x}\cdot\cos\theta+\frac{\partial z}{\partial y}\cdot\sin\theta
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial\theta}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial\theta}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial\theta}\\
+&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial}{\partial\theta}(r\cos\theta)+\frac{\partial z}{\partial y}\cdot\frac{\partial}{\partial\theta}(r\sin\theta)\\
+&amp;=\frac{\partial z}{\partial x}\cdot(-r\sin\theta)+\frac{\partial z}{\partial y}\cdot r\cos\theta.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Par conséquent, on a</p>
+<div class="displaymath">
+\begin{align*}
+\left(\frac{\partial z}{\partial r}\right)^2&amp;=\left(\frac{\partial z}{\partial x}\cdot\cos\theta+\frac{\partial z}{\partial y}\cdot\sin\theta\right)^2\\
+&amp;=\left(\frac{\partial z}{\partial x}\right)^2\cos^2\theta+2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}\cos\theta\sin\theta+\left(\frac{\partial z}{\partial y}\right)^2\sin^2\theta
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+\left(\frac{\partial z}{\partial\theta}\right)^2&amp;=\left(\frac{\partial z}{\partial x}\cdot(-r\sin\theta)+\frac{\partial z}{\partial y}\cdot r\cos\theta\right)^2\\
+&amp;=\left(\frac{\partial z}{\partial x}\right)^2r^2\sin^2\theta-2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}r^2\cos\theta\sin\theta+\left(\frac{\partial z}{\partial y}\right)^2r^2\cos^2\theta.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Finalement, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\left(\frac{\partial z}{\partial r}\right)^2+\frac{1}{r^2}\left(\frac{\partial z}{\partial\theta}\right)^2\\
+=\quad&amp;\left(\frac{\partial z}{\partial x}\right)^2\cos^2\theta+\cancel{2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}\cos\theta\sin\theta}+\left(\frac{\partial z}{\partial y}\right)^2\sin^2\theta\\
+\quad+&amp;\left(\frac{\partial z}{\partial x}\right)^2\sin^2\theta-\cancel{2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}\cos\theta\sin\theta}+\left(\frac{\partial z}{\partial y}\right)^2\cos^2\theta\\
+=\quad&amp;\left(\frac{\partial z}{\partial x}\right)^2(\underbrace{\cos^2\theta+\sin^2\theta}_{=1})+\left(\frac{\partial z}{\partial y}\right)^2(\underbrace{\sin^2\theta+\cos^2\theta}_{=1})\\
+=\quad&amp;\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2
+\end{align*}
+</div>
+<p data-braille="continuation">comme souhaité.</p>
+</li>
+</ul>
+</div>
+<span class="incontext"><a href="derivation-en-chaine.html#solution-48">??</a></span>
+</body>
+</html>

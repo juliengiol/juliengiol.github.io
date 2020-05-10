@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:15:32-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Par exemple, pour le polynôme</p>
+<div class="displaymath">
+\begin{equation*}
+P(x)=10+7x+3x^2+5x^3,
+\end{equation*}
+</div>
+<p data-braille="continuation">le calcul de</p>
+<div class="displaymath">
+\begin{align*}
+P(9)&amp;=10+7\cdot 9+3\cdot 9^2+5\cdot 9^3\\
+&amp;=10+9\cdot(7+3\cdot 9+5\cdot 9^2)\\
+&amp;=10+9\cdot(7+9\cdot(3+9\cdot 5))
+\end{align*}
+</div>
+<p data-braille="continuation">par la méthode de Horner revient à suivre les étapes</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{lcl}
+\text{Étape 0 :}&amp;\text{Valeur = }&amp;5\\
+\text{Étape 1 :}&amp;\text{Valeur = }&amp;3+9\cdot 5=48\\
+\text{Étape 2 :}&amp;\text{Valeur = }&amp;7+9\cdot 48=439\\
+\text{Étape 3 :}&amp;\text{Valeur = }&amp;10+9\cdot 439=3961
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">dont on déduit que</p>
+<div class="displaymath">
+\begin{equation*}
+P(9)=3961
+\end{equation*}
+</div>
+<p data-braille="continuation">après trois additions et trois multiplications.</p>
+<span class="incontext"><a href="horner.html#p-221">Contexte</a></span>
+</body>
+</html>

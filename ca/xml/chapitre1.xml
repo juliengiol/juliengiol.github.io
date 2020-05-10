@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="chapitre1" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Les suites et les séries numériques</title>
+
+<section xml:id="suites">
+  <title>Les suites</title>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-graphique-de-suite">
+    <statement>
+      <p>Pour chacune des suites suivantes, représentez les cinq premiers termes dans un même graphique.<ol>
+        <li><p><m>\left\{a_n\right\}_{n=0}^{+\infty}</m> où <m>a_n=\frac{n}{n+1}</m> pour tout <m>n\geq 0</m>.</p></li>
+        <li><p><m>\left\{f_n\right\}_{n=1}^{+\infty}</m> où <m>f_1=f_2=1</m> et <m>f_n=f_{n-1}+f_{n-2}</m> pour tout <m>n\geq 3</m>.</p></li>
+      </ol></p>
+    </statement>
+    <solution>
+      <p><ol>
+        <li><p><url href="https://www.desmos.com/calculator/ggynyfdl6r">Graphique Desmos.</url></p></li>
+        <li><p><url href="https://www.desmos.com/calculator/uahthe7h4g">Graphique Desmos</url>.</p></li>
+      </ol></p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-par-mise-en-evidence">
+    <statement>
+      <p>Déterminez la limite des suites suivantes.<ol>
+        <li><m>\displaystyle\left\{\frac{n}{n+1}\right\}_{n=0}^{+\infty}</m></li>
+        <li><m>\displaystyle\left\{\frac{n}{n+1}\right\}_{n=7}^{+\infty}</m></li>
+        <li><m>\displaystyle\left\{\frac{n^4-3n^2+7}{5n^4+8n-2}\right\}_{n=1}^{+\infty}</m></li>
+        <li><m>\displaystyle\left\{\frac{n^4-3n^2+7}{5n^3+8n-2}\right\}_{n=2}^{+\infty}</m></li>
+        <li><m>\displaystyle\left\{\frac{n^4-3n^2+7}{\sqrt{n^9+n^3+1}}\right\}_{n=1}^{+\infty}</m></li>
+      </ol></p>
+    </statement>
+    <hint>
+      <p>Mettez en évidence les termes dominants.</p>
+    </hint>
+    <answer>
+      <p><ol>
+        <li><m>1</m></li>
+        <li><m>1</m></li>
+        <li><m>\frac{1}{5}</m></li>
+        <li><m>+\infty</m></li>
+        <li><m>0</m></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-par-hospital">
+    <statement>
+      <p>Calculez les limites suivantes.<ol>
+        <li><m>\displaystyle\lim_{n\rightarrow +\infty}\frac{\ln n}{n}</m></li>
+        <li><m>\displaystyle\lim_{n\rightarrow +\infty}\frac{2^n}{n}</m></li>
+      </ol></p>
+    </statement>
+    <hint>
+      <p>Utilisez la règle de l'Hospital pour la fonction sous-jacente.</p>
+    </hint>
+    <answer>
+      <p><ol>
+        <li><m>0</m></li>
+        <li><m>+\infty</m></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-convergence-de-suite">
+    <statement>
+      <p>Dites si les suites suivantes sont convergentes. Si elles convergent, indiquez vers quelle valeur.<ol>
+        <li><m>\left\{(-1)^n\right\}</m></li>
+        <li><m>\left\{\frac{(-1)^n}{n}\right\}_{n\geq 1}</m></li>
+        <li><m>\left\{n\sin(2/n)\right\}_{n\geq 5}</m></li>
+        <li><m>\left\{\frac{\cos n}{\ln n}\right\}_{n\geq 2}</m></li>
+        <li><m>\left\{\left(1+\frac{1}{n}\right)^n\right\}_{n\geq 1}</m></li>
+        <li><m>\left\{\frac{n!}{n^n}\right\}_{n\geq 1}</m></li>
+        <li><m>\left\{\frac{n^n}{n!}\right\}_{n\geq 1}</m></li>
+        <li><m>\left\{r^n\right\}_{n\geq 0}</m></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li>Cette suite diverge.</li>
+        <li>Cette suite converge vers <m>0</m>.</li>
+        <li>Cette suite converge vers <m>2</m>.</li>
+        <li>Cette suite converge vers <m>0</m>.</li>
+        <li>Cette suite converge vers <m>e</m>.</li>
+        <li>Cette suite converge vers <m>0</m>.</li>
+        <li>Cette suite diverge.</li>
+        <li>Une suite géométrique de raison <m>r</m> converge vers <m>0</m> si <m>|r| &lt; 1</m>, vers <m>1</m> si <m>r=1</m>, et sinon elle diverge.</li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-monotonie">
+    <statement>
+      <p>Les suites suivantes sont-elles monotones?<ol>
+        <li><m>\left\{\frac{n!}{3^n}\right\}_{n\geq 0}</m></li>
+        <li><m>\left\{\frac{n}{n^2+1}\right\}_{n\geq 1}</m></li>
+        <li><m>\left\{2+\frac{(-1)^n}{n}\right\}_{n\geq 1}</m></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li>Cette suite est croissante à partir du rang <m>n=2</m>.</li>
+        <li>Cette suite est décroissante.</li>
+        <li>Cette suite n'est pas monotone.</li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-bornitude">
+    <statement>
+      <p>Les suites suivantes sont-elles bornées?<ol>
+        <li><m>\left\{n^2+3\right\}_{n\geq 1}</m></li>
+        <li><m>\left\{(-5)^n\right\}_{n\geq 0}</m></li>
+        <li><m>\left\{\frac{1}{3n+7}\right\}_{n\geq 0}</m></li>
+        <li><m>\left\{2+\frac{(-1)^n}{n}\right\}_{n\geq 1}</m></li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li>Cette suite est bornée inférieurement, mais pas supérieurement.</li>
+        <li>Cette suite n'est ni bornée inférieurement, ni bornée supérieurement.</li>
+        <li>Cette suite est bornée inférieurement et supérieurement.</li>
+        <li>Cette suite est bornée inférieurement et supérieurement.</li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-suite-recurrente">
+    <statement>
+      <p>On s'intéresse à la suite <m>\left\{a_n\right\}</m> définie par récurrence de la façon suivante :
+      <me>a_1=1\qquad\mbox{et}\qquad a_{n+1}=\frac{1}{1+a_n}\quad\mbox{ pour tout }n\geq 1.</me>
+      En admettant qu'elle converge, calculez sa limite.</p>
+    </statement>
+    <answer>
+      <p><m>\displaystyle\frac{-1+\sqrt{5}}{2}</m></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-limite-suite-recurrente-plus-preuves-induction">
+    <statement>
+      <p>On s'intéresse à la suite <m>\left\{a_n\right\}</m> définie par récurrence de la façon suivante :
+      <me>a_1=2\qquad\mbox{et}\qquad a_{n+1}=\frac{1}{3-a_n}\quad\mbox{ pour tout }n\geq 1.</me>
+      </p>
+      <p>Montrez qu'elle satisfait <m>0&lt;a_n\leq 2</m> pour tout <m>n\geq 1</m>, et qu'elle est décroissante.</p>
+      <p>Déduisez-en que cette suite converge et trouvez sa limite.</p>
+    </statement>
+    <hint>
+      <p>Pour la première partie, utilisez une preuve par induction.</p>
+    </hint>
+    <answer>
+      <p>Cette suite converge vers <m>\frac{3-\sqrt{5}}{2}</m>.</p>
+    </answer>
+  </exercise>
+
+  <p>Voici <url href="https://drive.google.com/file/d/1jCaAHDQeES_0PqwjbaCeiRY5s9ypKKaw/view?usp=sharing">comment répondre</url> aux exercices qui précèdent.</p>
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 6, 12, 24, 26, 28, 30, 32, 42, 74, 80, 82 dont voici les <url href="https://drive.google.com/file/d/1LD8LQ98IA5O6RToMETwFFQ_L9JRU7n6p/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant passer aux exercices prioritaires de cette section.</p>
+
+  <activity xml:id="une-suite-trompeuse">
+    <title>Une suite trompeuse</title>
+
+    <statement>
+      <p>On place <m>n</m> points sur un cercle et on les relie deux par deux avec des segments. On suppose en outre qu'aucun point intérieur au cercle n'est l'intersection de plus de deux segments. Cela divise le cercle en <m>a_n</m> régions.</p>
+      <p>On calcule facilement les premiers termes : <m>a_2=2, a_3=4, a_4=8, a_5=16</m>.</p>
+      <p>Il est alors tentant de conjecturer que <m>a_n=2^{n-1}</m> pour tout <m>n\geq 2</m>.</p>
+      <p>Est-ce correct? Sinon, combien vaut <m>a_n</m>?</p>
+    </statement>
+
+    <answer>
+      <p>C'est faux car, par exemple, <m>a_6=31\neq 2^4</m>. En fait, on a
+        <me>a_n=\binom{n-1}{0}+\binom{n-1}{1}+\binom{n-1}{2}+\binom{n-1}{3}+\binom{n-1}{4}.</me>
+      </p>
+    </answer>
+  </activity>
+
+  <p>Voici maintenant quelques lignes de code en lien avec le contenu de cette section. Sauriez-vous en prédire le résultat?</p>
+
+  <sage>
+    <input>
+      def suivant(x):
+          if x % 2 == 0:
+              return x / 2
+          else:
+              return 3 * x + 1
+
+      x = 14
+      n = 5
+      for i in range(1, n+1):
+          x = suivant(x)
+
+      print(x)
+    </input>
+  </sage>
+
+  <exploration xml:id="syracuse">
+    <title>La conjecture de Syracuse</title>
+
+    <statement>
+      <p>
+        Toute suite de Syracuse finit-elle par atteindre la valeur <m>1</m>?
+        Voir la page <url href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">Wikipédia</url> pour plus de détails.
+      </p>
+    </statement>
+
+  </exploration>
+
+</section>
+
+<section xml:id="series">
+  <title>Les séries</title>
+
+  <introduction>
+    <p>
+      Voici une <url href="https://tinyurl.com/s4zdena">une application</url> qui donne la valeur de la somme partielle
+      <me>S_k=\sum_{n=n_0}^ka(n)</me>
+      et qui représente graphiquement les sommes partielles de la série
+      <me>\sum_{n\geq n_0}a(n)</me>
+      de <m>S_{n_0}</m> jusqu'à <m>S_k</m>.
+    </p>
+
+    <interactive xml:id="interactive_sommes_partielles" platform="sage" width="100%" aspect="4:5">
+      <slate surface="sage">
+        @interact
+        def _(a = input_box(label = html(r'\(a(x)\)'), default = 1/2^x, width = 30),
+              n0 = input_box(label = html(r'\(n_0\)'), default = 1, width = 10),
+              k = input_box(label = html(r'\(k\)'), default = 15, width = 10)):
+            sommes = tuple([0 for i in range(0, n0)])
+            a(x) = a
+            sommes += tuple([a(n0)])
+            graphique = points([n0, a(n0)], color = 'darkgreen', pointsize = 50)
+            for i in range(n0, k):
+                somme = sommes[i] + a(i+1)
+                sommes += tuple([somme])
+                graphique += points([i+1, somme], color = 'darkgreen', pointsize = 50)
+            pretty_print(html(r'Voici la valeur de la somme partielle désirée :'))
+            pretty_print(html(r'\[\sum_{n=%s}^{%s}a(n)\;=\;%s\]'%(n0, k, latex(sommes[k].n()))))
+            pretty_print(html(r'Et voilà la représentation graphique des %s premières sommes partielles :'%(k-n0+1)))
+            graphique.show(figsize = 5, aspect_ratio = 'automatic')
+      </slate>
+    </interactive>
+
+  </introduction>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-sommes-partielles-convergentes">
+    <statement>
+      <ol>
+        <li><p>Utilisez l'application ci-dessus pour évaluer les sommes partielles suivantes :</p>
+          <ul>
+            <li><m>\displaystyle\sum_{n=0}^{2}\frac{1}{2^n}</m></li>
+            <li><m>\displaystyle\sum_{n=0}^{7}\frac{1}{2^n}</m></li>
+            <li><m>\displaystyle\sum_{n=0}^{25}\frac{1}{2^n}</m></li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            La série <m>\displaystyle\sum_{n=0}^{+\infty}\frac{1}{2^n}</m> est-elle convergente?
+            Si oui, quelle est sa somme?
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <answer>
+      <ol>
+        <li>
+          <ul>
+            <li><m>\displaystyle\sum_{n=0}^{2}\frac{1}{2^n}=1,75</m></li>
+            <li><m>\displaystyle\sum_{n=0}^{7}\frac{1}{2^n}=1,9921875</m></li>
+            <li><m>\displaystyle\sum_{n=0}^{25}\frac{1}{2^n}\approx 1,99999999</m></li>
+          </ul>
+        </li>
+        <li><p>Convergente, de somme <m>\displaystyle\sum_{n=0}^{+\infty}\frac{1}{2^n}=2</m>.</p>
+        </li>
+      </ol>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-sommes-partielles-divergentes">
+    <statement>
+      <ol>
+        <li><p>Utilisez l'application ci-dessus pour évaluer les sommes partielles suivantes :</p>
+          <ul>
+            <li><m>\displaystyle\sum_{n=1}^{2}2^n</m></li>
+            <li><m>\displaystyle\sum_{n=1}^{7}2^n</m></li>
+            <li><m>\displaystyle\sum_{n=1}^{25}2^n</m></li>
+          </ul>
+        </li>
+        <li><p>La série <m>\displaystyle\sum_{n=1}^{+\infty}2^n</m> est-elle convergente? Si oui, quelle est sa somme?</p>
+        </li>
+      </ol>
+    </statement>
+    <answer>
+      <ol>
+        <li>
+          <ul>
+            <li><m>\displaystyle\sum_{n=1}^{2}2^n=6</m></li>
+            <li><m>\displaystyle\sum_{n=1}^{7}2^n=254</m></li>
+            <li><m>\displaystyle\sum_{n=1}^{25}2^n\approx 6,7\times 10^7</m></li>
+          </ul>
+        </li>
+        <li><p>Divergente.</p>
+        </li>
+      </ol>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-nature-de-la-serie-avec-application">
+    <statement>
+      <p>Déterminez la nature des séries suivantes à l'aide de l'application ci-dessus.</p>
+      <ol>
+        <li><m>\displaystyle\sum_{n=2}^{+\infty}\left(-\frac{1}{5}\right)^n</m></li>
+        <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n}</m></li>
+        <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n^2}</m></li>
+        <li><m>\displaystyle\sum_{n=1}^{+\infty}\sin(n)</m></li>
+        <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{\sin(n)}{n^2}</m></li>
+      </ol>
+    </statement>
+    <answer>
+      <ol>
+        <li>Convergente.</li>
+        <li>Divergente.</li>
+        <li>Convergente.</li>
+        <li>Divergente.</li>
+        <li>Convergente.</li>
+      </ol>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-somme-geometrique">
+    <statement>
+      <p>Trouvez la somme de la série géométrique suivante :
+      <me>5-\frac{10}{3}+\frac{20}{9}-\frac{40}{27}+\ldots</me>
+      </p>
+    </statement>
+    <answer>
+      <p><m>3</m></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-serie-geometrique">
+    <statement>
+      <p>La série <m>\displaystyle\sum_{n=1}^{+\infty}2^{2n}3^{1-n}</m> est-elle convergente ou divergente? </p>
+    </statement>
+    <answer>
+      <p>Divergente.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-developpement-rationnel">
+    <statement>
+      <p>Écrivez le nombre <m>2,3171717\ldots</m> sous la forme d'une fraction de deux nombres entiers.</p>
+    </statement>
+    <answer>
+      <p><m>\displaystyle\frac{1147}{495}</m></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-somme-telescopique">
+    <statement>
+      <p>Montrez que la série suivante converge et calculez sa somme :
+      <me>\sum_{n=1}^{+\infty}\frac{1}{n(n+1)}.</me>
+      </p>
+    </statement>
+    <answer>
+      <p><m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n(n+1)}=1</m></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-serie-harmonique">
+    <statement>
+      <p>Montrez que la série harmonique
+      <me>\sum_{n=1}^{+\infty}\frac{1}{n}.</me>
+      diverge.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="exercice-test-de-divergence">
+    <statement>
+      <p>Montrez que la série
+        <me>\displaystyle\sum_{n=1}^{+\infty}\frac{n^2}{5n^2+4}</me>
+        diverge.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="exercice-cl-de-series">
+    <statement>
+      <p>Trouvez la somme de la série suivante :
+        <me>\sum_{n=1}^{+\infty}\left(\frac{3}{n(n+1)}+\frac{1}{2^n}\right).</me>
+      </p>
+    </statement>
+    <answer>
+      <p><m>4</m></p>
+    </answer>
+  </exercise>
+
+  <p>Voici <url href="https://drive.google.com/file/d/1voAMfBYLuKfC2FTN4FW2kkUxrkufLdQO/view?usp=sharing">comment répondre</url> aux exercices qui précèdent.</p>
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 18, 22, 24, 32, 34, 36, 44, 54, 60, 76 dont voici les <url href="https://drive.google.com/file/d/1JPRE_ixoUlDIwmZj-jhd1KCrfDznqpYe/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+  <exploration xml:id="pavage">
+    <title>Pavage</title>
+
+    <statement>
+      <p>
+        On a calculé plus haut la somme de la série télescopique suivante :
+        <me>\sum_{k=1}\frac{1}{k(k+1)}=1.</me>
+      </p>
+      <p>
+        Est-il possible de paver un carré <m>1\times 1</m> par une infinité de rectangles de côtés
+        <me>\frac{1}{k}\times\frac{1}{k+1}</me>
+        où <m>k=1, 2, 3, \ldots</m>?
+      </p>
+    </statement>
+
+  </exploration>
+
+</section>
+
+<section xml:id="seriesatermespositifs">
+  <title>Les séries à termes positifs</title>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-series-de-riemann">
+    <statement>
+      <p>Les séries suivantes sont-elles convergentes ou divergentes?
+        <ol>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n^3}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n^{1/3}}</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>Convergente.</li>
+          <li>Divergente.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-test-integrale">
+    <statement>
+      <p>Appliquez le test de l'intégrale pour déterminer si les séries suivantes convergent.
+        <ol>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n^2+1}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{\ln n}{n}</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>Elle converge.</li>
+          <li>Elle diverge.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-decouverte-estimation-du-reste">
+    <statement>
+      <p>On s'intéresse à la série géométrique convergente <m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{2^n}=1</m>, à ses sommes partielles <m>S_k=\displaystyle\sum_{n=1}^{k}\frac{1}{2^n}</m> et à ses restes <m>R_k=\displaystyle\sum_{n=k+1}^{+\infty}\frac{1}{2^n}</m>.</p>
+      <p>Notez que
+        <me>\sum_{n=1}^{+\infty}\frac{1}{2^n}=\sum_{n=1}^{k}\frac{1}{2^n}+\sum_{n=k+1}^{+\infty}\frac{1}{2^n}</me>
+        ou encore
+        <me>1=\underbrace{\frac{1}{2}+\frac{1}{4}+\ldots+\frac{1}{2^k}}_{S_k}+\underbrace{\frac{1}{2^{k+1}}+\frac{1}{2^{k+2}}+\ldots}_{R_k}</me>
+      </p>
+      <p>
+        <ol>
+          <li>Calculez <m>S_2</m> et <m>R_2</m>.</li>
+          <li>Calculez <m>S_7</m> et <m>R_7</m>.</li>
+          <li>Calculez <m>S_{25}</m> et <m>R_{25}</m>.</li>
+          <li>Qu'observez-vous?</li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li><m>S_2=0,75</m> et <m>R_2=0,25</m>.</li>
+          <li><m>S_7=0,9921875</m> et <m>R_7=0,0078125</m>.</li>
+          <li><m>S_{25}\approx 0,999 999 97</m> et <m>R_{25}\approx 0,000 000 03</m>.</li>
+          <li>Plus <m>k</m> augmente, plus le reste s'approche de <m>0</m> et plus la somme partielle <m>S_k</m> s'approche de la somme de la série qui vaut <m>1</m>.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-estimation-reste-test-integrale">
+    <statement>
+      <p>On s'intéresse à la série de Riemann convergente <m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n^3}</m>.
+        <ol>
+          <li>Estimez l'erreur commise si on approche la somme de cette série par la somme partielle <m>\displaystyle S_{10}=\sum_{n=1}^{10}\frac{1}{n^3}</m>.</li>
+          <li>Combien de termes faut-il additionner pour s'assurer que l'erreur d'approximation soit inférieure à <m>0{,}000\,5</m>?</li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li><m>0\leq R_{10}\leq 0{,}005</m></li>
+          <li><m>32</m></li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-test-comparaison">
+    <statement>
+      <p>Appliquez le test de comparaison pour déterminer si les séries suivantes convergent.
+        <ol>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{5}{2n^2+4n+3}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{\ln n}{n}</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>Elle converge.</li>
+          <li>Elle diverge.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-forme-limite-du-test-comparaison">
+    <statement>
+      <p>Appliquez la forme limite du test de comparaison pour déterminer si les séries suivantes convergent.
+        <ol>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{2^n-1}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{2n^2+3n}{\sqrt{5+n^5}}</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>Elle converge.</li>
+          <li>Elle diverge.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <p>Voici <url href="https://drive.google.com/file/d/1k_GVlZ0u5Y1o_D_FsZcyWpscQv0nqwqY/view?usp=sharing">comment répondre</url> aux exercices qui précèdent.</p>
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 4, 8, 16, 18, 22, 54, 56, 58, 82, 90 dont voici les <url href="https://drive.google.com/file/d/1dbHiVMI0Ml_I-pXorr9rLCs5NfEivmY-/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+  <activity xml:id="serie-harmonique-ecremee">
+    <title>La série harmonique bien écrémée</title>
+
+    <statement>
+      <p>La série harmonique diverge.</p>
+      <p>Et elle diverge toujours si on enlève un terme sur deux, voire même neuf termes sur dix.</p>
+      <p>Alors que se passe-t-il si on enlève tous les inverses d'entiers contenant le chiffre <m>9</m>?</p>
+    </statement>
+
+    <hint>
+      <p>Utilisez le test de comparaison avec une série géométrique adéquate.</p>
+    </hint>
+
+    <answer>
+      <p>Cette série converge.</p>
+    </answer>
+
+    <solution>
+      <p>Voir ce <url href="https://www.math.hmc.edu/funfacts/ffiles/20005.3.shtml">lien</url>.</p>
+    </solution>
+
+  </activity>
+
+</section>
+
+<section xml:id="series-alternees">
+  <title>Les séries alternées</title>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-verif-alternee">
+    <statement>
+      <p>Pour chacune des séries suivantes, calculez les cinq premières sommes partielles et dire si elle est alternée.</p>
+        <ol>
+          <li><m>\displaystyle\sum_{n=0}^{+\infty}\frac{(-1)^{n-1}}{n+1}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{\cos(n\pi)}{\sqrt{n}}</m></li>
+          <li><m>\displaystyle\sum_{n=2}^{+\infty}\frac{\sin(n)}{n^2}</m></li>
+        </ol>
+    </statement>
+    <answer>
+      <ol>
+        <li>
+          <p><m>S_0=-1</m> ; <m>S_1=-0{,}5</m> ; <m>S_2\approx -0{,}83</m> ; <m>S_3\approx -0{,}58</m> ; <m>S_4\approx -0{,}78</m></p>
+          <p>C'est une série alternée.</p>
+        </li>
+        <li>
+          <p><m>S_1=-1</m> ; <m>S_2\approx -0{,}29</m> ; <m>S_3\approx -0{,}87</m> ; <m>S_4\approx -0{,}37</m> ; <m>S_5\approx -0{,}82</m></p>
+          <p>C'est une série alternée.</p>
+        </li>
+        <li>
+          <p><m>S_2\approx 0{,}16</m> ; <m>S_3\approx 0{,}24</m> ; <m>S_4\approx 0{,}20</m> ; <m>S_5\approx 0{,}16</m> ; <m>S_6\approx 0{,}15</m></p>
+          <p>Ce n'est pas une série alternée.</p>
+        </li>
+      </ol>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-test-leibniz">
+    <statement>
+      <p>Appliquez le test de convergence pour les séries alternées afin de déterminer si les séries suivantes convergent.
+        <ol>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{(-1)^n}{n}</m></li>
+          <li><m>\displaystyle\sum_{n=0}^{+\infty}\frac{(-1)^{n-1}n^2}{n^3+1}</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>Elle converge.</li>
+          <li>Elle converge.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-faux-test-leibniz">
+    <statement>
+      <p>Quelle est la nature de la série <m>\displaystyle\sum_{n=1}^{+\infty}(-1)^n\frac{3n}{4n-1}</m>?
+      </p>
+    </statement>
+    <answer>
+      <p>Elle diverge par le test de divergence.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-estimation-leibniz">
+    <statement>
+      <p>
+        On s'intéresse à la série <m>\displaystyle\sum_{n=1}^{+\infty}\frac{(-1)^n}{n!}</m>.
+        Estimez l'erreur produite lorsqu'on approche la somme de cette série par sa somme partielle <m>S_6</m>.
+      </p>
+    </statement>
+    <answer>
+      <p>On a <m>|\text{Erreur}|\leq 0{,}000\,2</m>.</p>
+      <p>Plus précisément, on a <m>-0{,}000\,2\leq \text{Erreur}\leq 0</m> car le premier terme négligé est négatif.</p>
+    </answer>
+  </exercise>
+
+  <p>Voici <url href="https://drive.google.com/file/d/1wjp2HlZHV2ZROnr0UWshmMRWQfRsUbh-/view?usp=sharing">comment répondre</url> aux exercices qui précèdent.</p>
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 6, 8, 16, 24, 28, 32 dont voici les <url href="https://drive.google.com/file/d/1UmHSTH_89sNzxMPIefpTvcLkmx1gzxly/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+  <activity xml:id="e-irrationnel">
+    <title><m>e</m> est irrationnel</title>
+
+    <statement>
+      <p>
+        Pour tout nombre réel <m>x</m>, le nombre <m>e^x</m> est défini comme la somme de la série suivante :
+        <me>e^x=\sum_{n=0}^{+\infty}\frac{x^n}{n}.</me>
+      </p>
+      <p>
+        Une fois qu'on sait majorer l'erreur d'approximation d'une série alternée par ses sommes partielles, on dispose de tous les outils nécessaires pour démontrer que <m>e</m> est irrationnel.
+      </p>
+    </statement>
+
+    <hint>
+      <p>Remarquez d'abord que <m>e</m> est irrationnel si et seulement si <m>\frac{1}{e}</m> est irrationnel.</p>
+    </hint>
+
+    <solution>
+      <p>Voir ce <url href="https://www.math.hmc.edu/funfacts/ffiles/20001.3-5.shtml">lien</url>.</p>
+    </solution>
+
+  </activity>
+
+</section>
+
+<section xml:id="testdurapport">
+  <title>La convergence absolue, le test du rapport et le critère de Cauchy</title>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-convergence-absolue">
+    <statement>
+      <p>Les séries suivantes sont-elles absolument convergentes ou simplement convergentes?
+        <ol>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{n^2}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{n}</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>Absolument convergente.</li>
+          <li>Simplement convergente.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-convergence-par-absolue-convergence">
+    <statement>
+      <p>Quelle est la nature de la série <m>\displaystyle\sum_{n=1}^{+\infty}\frac{\cos n}{n^2}</m>?</p>
+    </statement>
+    <answer>
+      <p>Absolument convergente, donc convergente.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-test-rapport-et-cauchy">
+    <statement>
+      <p>Quelle est la nature des séries suivantes?
+        <ol>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{(-1)^{n}n^3}{3^n}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{n^n}{n!}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\left(\frac{2n+3}{3n+2}\right)^n</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>Convergente.</li>
+          <li>Divergente.</li>
+          <li>Convergente.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <p>Voici <url href="https://drive.google.com/file/d/1LMPL7DAIiztqClBsL8ZHaGHe4hUDYJVH/view?usp=sharing">comment répondre</url> aux exercices qui précèdent.</p>
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 4, 6, 8, 10, 12, 20, 32, 34, 36, 38, 40 dont voici les <url href="https://drive.google.com/file/d/1Wunt2y_Ta4xrY8SyjNAcHXGIQNCFb4M9/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+  <activity xml:id="series-simplement-convergentes">
+    <title>Et si on change l'ordre des termes?</title>
+
+    <statement>
+      <p>
+        Lorsqu'une série converge absolument, on peut changer l'ordre de ses termes comme on veut sans modifier la valeur de la somme.
+        Cette propriété caractérise même les séries absolument convergentes.
+      </p>
+      <p>
+        Ce n'est donc plus le cas pour une série simplement convergente.
+        Par exemple, on a
+        <me>1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\frac{1}{5}-\frac{1}{6}+\ldots=\ln(2)</me>
+          alors que
+        <me>1+\frac{1}{3}-\frac{1}{2}+\frac{1}{5}+\frac{1}{7}-\frac{1}{4}+\ldots=\frac{3}{2}\ln(2).</me>
+      </p>
+    </statement>
+
+  </activity>
+
+</section>
+
+<section xml:id="strategieconvergence">
+  <title>Une stratégie pour tester la convergence d'une série</title>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-choix-de-test">
+    <statement>
+      <p>À quels tests pouvez-vous recourir pour déterminer la nature des séries suivantes?
+        <ol>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{n-1}{2n+1}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{\sqrt{n^3+1}}{3n^3+4n^2+2}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}ne^{-n^2}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}(-1)^n\frac{n^3}{n^4+1}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{2^n}{n!}</m></li>
+          <li><m>\displaystyle\sum_{n=1}^{+\infty}\frac{1}{2+3^n}</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>Test de divergence.</li>
+          <li>Forme limite du test de comparaison.</li>
+          <li>Test de l'intégrale.</li>
+          <li>Test des séries alternées.</li>
+          <li>Test du rapport.</li>
+          <li>Test de comparaison ou sa forme limite.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <p>Voici <url href="https://drive.google.com/file/d/1Zw87w3NCzQ-W9486TNJSJFiyeqg9j5Ld/view?usp=sharing">comment répondre</url> aux exercices qui précèdent.</p>
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 2, 4, 6, 8, 10, 14, 18, 24, 28, 32 dont voici les <url href="https://drive.google.com/file/d/1ZHDt1q-G7em6yyT-Z5tCkDNnv6NW2imj/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+  <p>
+    Pour conclure ce chapitre, je vous invite à regarder la vidéo qui suit : elle montre qu'il reste bien des mystères à éclaircir en ce qui concerne les sommes infinies.
+
+    <figure>
+      <title>L'incroyable addition par Mickaël Launay</title>
+      <caption>L'incroyable addition par Mickaël Launay</caption>
+      <video youtube="xqTWRtNDO3U"  width="100%"/>
+    </figure>
+  </p>
+
+</section>
+
+</chapter>

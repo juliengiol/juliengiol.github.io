@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="chapitre5" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>L'optimisation</title>
+
+<section xml:id="extremums">
+  <title>Extremums</title>
+
+  <activity>
+    <ul>
+      <li>
+        <p>
+          <url href="https://tinyurl.com/ycneog34">Calculatrice</url> à zéros pour le gradient d'une fonction de deux variables :
+          <sage language='sage'>
+            <input>
+              f(x, y) = (x + y) * (x * y + x * y^2)  # fonction dont on cherche les zéros du gradient
+
+              fx = derivative(f, x)
+              fy = derivative(f, y)
+              zerosDuGradient = solve([fx == 0, fy == 0], x, y)
+
+              pretty_print('Le gradient de la fonction ')
+              pretty_print(f)
+              pretty_print('est nul aux points suivants :')
+              for p in zerosDuGradient:
+                  pretty_print(p)
+            </input>
+          </sage>
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://www.geogebra.org/m/tZgrSxQ4#material/xms3ryhq">Application</url> GeoGebra illustrant graphiquement le test des dérivées secondes pour une fonction de deux variables.
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://tinyurl.com/y8yfydh9">Exemple de calcul</url> de minimum absolu avec WolframAlpha.
+        </p>
+      </li>
+    </ul>
+  </activity>
+
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Connaître le théorème suivant : si <m>f(x,y)</m> admet un minimum local ou un maximum local en <m>(x_0,y_0)</m> et si le gradient existe en ce point, alors
+          <me>\nabla f(x_0,y_0)=\vec{0}.</me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Connaître la définition de <url href="https://en.wikipedia.org/wiki/Critical_point_(mathematics)#Several_variables">point critique</url> pour une fonction de plusieurs variables, et savoir dresser la liste de tous les points critiques d'une fonction
+          <ul>
+            <li>
+              <p>
+                par la lecture d'un diagramme de courbes de niveau,
+              </p>
+            </li>
+            <li>
+              <p>
+                en observant le graphe,
+              </p>
+            </li>
+            <li>
+              <p>
+                ou en déterminant le domaine et les zéros du gradient.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir déterminer la nature d'un point critique (point de <em>minimum local</em>, de <em>maximum local</em>, ou <em>point de selle</em>) graphiquement, ainsi qu'à l'aide du <url href="https://en.wikipedia.org/wiki/Second_partial_derivative_test">test des dérivées secondes</url>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir déterminer le maximum et le minimum absolus d'une fonction <m>f(x,y)</m> continue sur un ensemble fermé et borné <m>D</m> de <m>\mathbb{R}^2</m> tel qu'un triangle ou un rectangle en appliquant la procédure suivante :
+          <ol>
+            <li>
+              <p>
+                Calculer <m>f(P_c)</m> pour tous les points critiques <m>P_c</m> de <m>f</m> qui se trouvent à l'intérieur de <m>D</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Déterminer les extremums de <m>f</m> sur la frontière de <m>D</m> en se ramenant à une variable par paramétrisation de la frontière.
+              </p>
+            </li>
+            <li>
+              <p>
+                Le maximum (resp. minimum) absolu de <m>f</m> sur <m>D</m> est la plus grande (resp. petite) des valeurs trouvées aux étapes 1. et 2.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ul>
+  </objectives>
+
+  <exercise>
+    <statement>
+      <p>
+        Le but de cet exercice est de réviser certains des concepts liés à l'optimisation rencontrés dans un cours de calcul différentiel à une variable.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Quelle est la nature des points critiques identifiés dans le graphique qui suit?
+            <image source="images/exercice_5.1.1.png" width="65%"/>
+          </p>
+        </li>
+        <li>
+          <p>
+            On s'intéresse à la fonction
+            <me>f(x)=\frac{1}{4}x^4-\frac{7}{3}x^3+\frac{15}{2}x^2-9x.</me>
+            <ol>
+              <li>
+                <p>
+                  Donnez la liste des points critiques de cette fonction.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Quelles informations peut-on tirer du test de la dérivée seconde?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Dressez le tableau de variations de <m>f</m> relatif à <m>f'</m> sur <m>[0,4]</m> et déduisez-en les extremums absolus de <m>f</m> sur cet intervalle.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Retrouvez les résultats de la question précédente en appliquant la procédure qui suit.
+                  <ol>
+                    <li>
+                      <p>
+                        Calculer <m>f(c)</m> pour tout point critique <m>c</m> de <m>f</m> situé à l'intérieur de l'intervalle <m>[0,4]</m>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Calculer <m>f(b)</m> pour chacune des bornes <m>b</m> de l'intervalle <m>[0,4]</m>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Le maximum (resp. minimum) absolu de <m>f</m> sur <m>[0,4]</m> est la plus grande (resp. petite) valeur trouvées aux étapes précédentes.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            De gauche à droite, les cinq points critiques identifiés sur ce graphique
+            <image source="images/exercice_5.1.1.png" width="65%"/>
+            sont des points
+            <ol>
+              <li>
+                <p>
+                  de minimum local,
+                </p>
+              </li>
+              <li>
+                <p>
+                  de maximum local,
+                </p>
+              </li>
+              <li>
+                <p>
+                  de minimum absolu,
+                </p>
+              </li>
+              <li>
+                <p>
+                  d'inflexion,
+                </p>
+              </li>
+              <li>
+                <p>
+                  et de maximum absolu.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+        <li>
+          <p>
+            Notons tout de suite que les dérivées première et seconde de la fonction
+            <me>f(x)=\frac{1}{4}x^4-\frac{7}{3}x^3+\frac{15}{2}x^2-9x</me>
+            sont
+            <me>f'(x)=x^3-7x^2+15x-9</me>
+            et
+            <me>f''(x)=3x^2-14x+15.</me>
+            <ol>
+              <li>
+                <p>
+                  Comme <m>f</m> est dérivable partout, les points critiques de <m>f</m> sont précisément les zéros de <m>f'</m>.
+                  On va donc factoriser ce polynôme.
+                </p>
+                <p>
+                  D'abord, on remarque que
+                  <me>f'(1)=1-7+15-9=0</me>
+                  donc <m>f'(x)</m> est divisible par <m>x-1</m>.
+                </p>
+                <p>
+                  En divisant <m>f'(x)</m> par <m>x-1</m>, puis en factorisant le quotient, on obtient
+                  <md>
+                    <mrow>f'(x)&amp;=x^3-7x^2+15x-9</mrow>
+                    <mrow>&amp;=(x-1)(x^2-6x+9)</mrow>
+                    <mrow>&amp;=(x-1)(x-3)^2.</mrow>
+                  </md>
+                </p>
+                <p>
+                  Les points critiques de <m>f</m> sont donc
+                  <me>1\quad\text{et}\quad 3.</me>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <ul>
+                    <li>
+                      <p>
+                        Au point critique <m>x=1</m>, on a
+                        <md>
+                          <mrow>f''(1)&amp;=3\cdot 1^2-14\cdot 1+15</mrow>
+                          <mrow>&amp;=3-14+15</mrow>
+                          <mrow>&amp;=4</mrow>
+                          <mrow>&amp;&gt;0</mrow>
+                        </md>
+                        donc c'est un point de minimum local.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Au point critique <m>x=3</m>, on a
+                        <md>
+                          <mrow>f''(3)&amp;=3\cdot3^2-14\cdot 3+15</mrow>
+                          <mrow>&amp;=27-42+15</mrow>
+                          <mrow>&amp;=0</mrow>
+                        </md>
+                        donc on ne peut rien conclure.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Voici le tableau de variations de <m>f</m> relatif à <m>f'</m> sur <m>[0,4]</m> :
+                  <me>
+                    \begin{array}{c|ccccc}
+                    x&amp;0&amp;&amp;1&amp;&amp;3&amp;&amp;4\\
+                    \hline
+                    f'(x)&amp;\not\exists&amp;-&amp;0&amp;+&amp;0&amp;+&amp;\not\exists\\
+                    \hline
+                    f(x)&amp;0&amp;\searrow&amp;-43/12&amp;\nearrow&amp;-9/4&amp;\nearrow&amp;-4/3
+                    \end{array}
+                  </me>
+                  On en déduit que
+                  <ul>
+                    <li>
+                      <p>
+                        le maximum absolu vaut <m>0</m> et est réalisé à la borne <m>b=0</m>,
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        et le minimum absolu vaut <m>-43/12</m> et est réalisé au point critique <m>c=1</m>.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Appliquons la procédure indiquée.
+                  <ol>
+                    <li>
+                      <p>
+                        Aux points critiques <m>c=1</m> et <m>c=3</m>, on a
+                        <me>f(1)=-\frac{43}{12}\approx -3{,}58\quad\text{et}\quad f(3)=-2{,}25.</me>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Aux bornes <m>b=0</m> et <m>b=4</m>, on a
+                        <me>f(0)=0\quad\text{et}\quad f(4)=-\frac{4}{3}\approx-1{,}33.</me>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        On retrouve bien que
+                        <ul>
+                          <li>
+                            <p>
+                              le maximum absolu vaut <m>0</m> et est réalisé à la borne <m>b=0</m>,
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              et le minimum absolu vaut <m>-43/12</m> et est réalisé au point critique <m>c=1</m>.
+                            </p>
+                          </li>
+                        </ul>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Quelle est la nature de chacun des points critiques identifiés sur les graphes suivants :
+        <ol>
+          <li>
+            <p>
+              <image source="images/exercice_5.1.2bis.png" width="75%"/>
+            </p>
+          </li>
+          <li>
+            <p>
+              <image source="images/exercice_5.1.2.png" width="75%"/>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <ol>
+        <li>
+          <p>
+            Les points A et B sont des points de minimum relatifs (et très probablement absolus), tandis que le point C est un point de selle.
+          </p>
+        </li>
+        <li>
+          <p>
+            Le point identifié est un point de selle.
+          </p>
+        </li>
+      </ol>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Où sont les points critiques dans ce diagramme de courbes de niveau
+        <image source="images/exercice_5.1.3.gif" width="50%" />
+        et quelle est la nature de chacun d'eux?
+      </p>
+    </statement>
+    <answer>
+      <p>
+        On détecte deux points critiques :
+        <ul>
+          <li>
+            <p>
+              <m>(1,1)</m> qui correspond à un minimum local;
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(0,0)</m> qui correspond à un point de selle.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Soit <m>(3,4)</m> un point critique d'une fonction ayant des dérivées secondes continues.
+      </p>
+      <p>
+        Quelle information pouvez-vous tirer du test des dérivées secondes dans chacun des cas suivants?
+        <ol>
+          <li>
+            <p>
+              <m>f_{xx}(3,4)=-1,\quad f_{xy}(3,4)=6,\quad f_{yy}(3,4)=1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f_{xx}(3,4)=8,\quad f_{xy}(3,4)=-2,\quad f_{yy}(3,4)=1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f_{xx}(3,4)=-8,\quad f_{xy}(3,4)=2,\quad f_{yy}(3,4)=-1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f_{xx}(3,4)=9,\quad f_{xy}(3,4)=6,\quad f_{yy}(3,4)=4</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Le point <m>(3,4)</m> est un point de selle.
+            </p>
+          </li>
+          <li>
+            <p>
+              Le point <m>(3,4)</m> donne un minimum local.
+            </p>
+          </li>
+          <li>
+            <p>
+              Le point <m>(3,4)</m> donne un maximum local.
+            </p>
+          </li>
+          <li>
+            <p>
+              On ne peut rien conclure quant à la nature du point <m>(3,4)</m> par le seul test des dérivées secondes..
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Si <m>f_{xx}(3,4)=-1,\;f_{xy}(3,4)=6,\;f_{yy}(3,4)=1</m>, alors
+              <me>\alpha_2=\begin{vmatrix}f_{xx}&amp;f_{xy}\\f_{yx}&amp;f_{yy}\end{vmatrix}=\begin{vmatrix}-1&amp;6\\6&amp;1\end{vmatrix}=-1-36=-37&lt;0</me>
+              donc <m>(3,4)</m> est un point de selle.
+            </p>
+          </li>
+          <li>
+            <p>
+              Si <m>f_{xx}(3,4)=8,\;f_{xy}(3,4)=-2,\;f_{yy}(3,4)=1</m>, alors
+              <me>\alpha_2=\begin{vmatrix}f_{xx}&amp;f_{xy}\\f_{yx}&amp;f_{yy}\end{vmatrix}=\begin{vmatrix}8&amp;-2\\-2&amp;1\end{vmatrix}=8\cdot 1-(-2)(-2)=4&gt;0</me>
+              et
+              <me>\alpha_1=f_{xx}=8&gt;0</me>
+              donc <m>(3,4)</m> donne un minimum local.
+            </p>
+          </li>
+          <li>
+            <p>
+              Si <m>f_{xx}(3,4)=-8,\;f_{xy}(3,4)=2,\;f_{yy}(3,4)=-1</m>, alors
+              <me>\alpha_2=\begin{vmatrix}f_{xx}&amp;f_{xy}\\f_{yx}&amp;f_{yy}\end{vmatrix}=\begin{vmatrix}-8&amp;2\\2&amp;-1\end{vmatrix}=(-8)\cdot(-1)-2\cdot 2=4&gt;0</me>
+              et
+              <me>\alpha_1=f_{xx}=-8&gt;0</me>
+              donc <m>(3,4)</m> donne un maximum local.
+            </p>
+          </li>
+          <li>
+            <p>
+              Si <m>f_{xx}(3,4)=9,\;f_{xy}(3,4)=6,\;f_{yy}(3,4)=4</m>, alors
+              <me>\alpha_2=\begin{vmatrix}f_{xx}&amp;f_{xy}\\f_{yx}&amp;f_{yy}\end{vmatrix}=\begin{vmatrix}9&amp;6\\6&amp;4\end{vmatrix}=9\cdot 4-6\cdot 6=0</me>
+              donc on ne peut rien conclure.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-application-test-derivees-secondes">
+    <statement>
+      <p>
+        Trouvez les extremums locaux et les points de selle de la fonction
+        <me>f(x,y)=x^3-3x+y^3-3y.</me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Déterminez les points critiques en résolvant l'équation
+        <me>\nabla f=\vec{0}.</me>
+      </p>
+      <p>
+        Puis déterminez leur nature à l'aide du test des dérivées secondes.
+      </p>
+    </hint>
+    <answer>
+      <p>
+        Il y a
+        <ul>
+          <li>
+            <p>
+              un maximum local au point <m>(-1,-1)</m>,
+            </p>
+          </li>
+          <li>
+            <p>
+              un minimum local au point <m>(1,1)</m>,
+            </p>
+          </li>
+          <li>
+            <p>
+              et deux points de selle aux points <m>(1,-1)</m> et <m>(-1,1)</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Commençons par chercher les zéros du gradient :
+        <md>
+          <mrow>\nabla f=\vec{0}&amp;\quad\Leftrightarrow\quad\begin{cases}f_x=0\\f_y=0\end{cases}</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad\begin{cases}3x^2-3=0\\3y^2-3=0\end{cases}</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad\begin{cases}x^2-1=0\\y^2-1=0\end{cases}</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad\begin{cases}(x-1)(x+1)=0\\(y-1)(y+1)=0\end{cases}</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad\begin{cases}x=\pm 1\\y=\pm 1\end{cases}.</mrow>
+        </md>
+      </p>
+      <p>
+        Comme le gradient existe en tout point de <m>\mathbb{R}^2</m>, il n'y a pas d'autre point critique à ajouter aux quatre zéros du gradient trouvés :
+        <me>(1,1),\quad(1,-1),\quad(-1,1)\quad\text{et}\quad(-1,-1).</me>
+      </p>
+      <p>
+        Préparons-nous à appliquer le test des dérivées secondes en calculant ces dernières :
+        <me>f_{xx}=6x,\quad f_{xy}=f_{yx}=0\quad\text{et}\quad f_{yy}=6y.</me>
+      </p>
+      <p>
+        On a donc
+        <me>\alpha_1=f_{xx}=6x</me>
+        et
+        <me>\alpha_2=\begin{vmatrix}f_{xx}&amp;f_{xy}\\f_{yx}&amp;f_{yy}\end{vmatrix}=\begin{vmatrix}6x&amp;0\\0&amp;6y\end{vmatrix}=36xy</me>
+        en tout point <m>(x,y)\in\mathbb{R}^2</m>.
+      </p>
+      <ul>
+        <li>
+          <p>
+            Au point <m>(1,1)</m>, on a
+            <me>\alpha_2=36\cdot 1\cdot 1=36&gt;0\quad\text{et}\quad\alpha_1=6\cdot 1=6&gt;0</me>
+            donc <m>f</m> possède un minimum local.
+          </p>
+        </li>
+        <li>
+          <p>
+            Au point <m>(-1,-1)</m>, on a
+            <me>\alpha_2=36\cdot(-1)\cdot(-1)=36&gt;0\quad\text{et}\quad\alpha_1=6\cdot(-1)=-6&lt;0</me>
+            donc <m>f</m> possède un maximum local.
+          </p>
+        </li>
+        <li>
+          <p>
+            Au point <m>(1,-1)</m>, on a
+            <me>\alpha_2=36\cdot 1\cdot(-1)=-36&lt;0</me>
+            donc <m>f</m> possède un point de selle.
+          </p>
+        </li>
+        <li>
+          <p>
+            Au point <m>(-1,1)</m>, on a
+            <me>\alpha_2=36\cdot(-1)\cdot 1=-36&lt;0</me>
+            donc <m>f</m> possède un point de selle.
+          </p>
+        </li>
+      </ul>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-recherche-d-extremums">
+    <statement>
+      <p>
+        On s'intéresse à la fonction de deux variables
+        <me>f(x,y)=3+xy-x-2y.</me>
+        Trouvez le maximum et le minimum absolus de cette fonction sur la région triangulaire fermée de sommets
+        <me>A(1,0),\quad B(5,0)\quad\text{et}\quad C(1,4).</me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Appliquez la procédure en trois étapes décrite au dernier point des objectifs.
+      </p>
+    </hint>
+    <answer>
+      <p>
+        Le maximum absolu vaut <m>2</m> et le minimum absolu <m>-2</m>.
+      </p>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Commençons par déterminer les zéros du gradient
+            <md>
+              <mrow>\nabla f=\vec{0}&amp;\quad\Leftrightarrow\quad\begin{cases}f_x=0\\f_y=0\end{cases}</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad\begin{cases}y-1=0\\x-2=0\end{cases}</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad\begin{cases}y=1\\x=2\end{cases}.</mrow>
+            </md>
+            Comme <m>\nabla f</m> existe en tout point de <m>\mathbb{R}^2</m>, il n'y a pas d'autres points critiques.
+            De plus, le point
+            <me>P_c=(2,1)</me>
+            est situé à l'intérieur du triangle <m>ABC</m>
+            <image source="images/exercice_5.1.6.png" width="65%"/>
+            On retient donc la valeur
+            <me>f(P_c)=f(2,1)=3+2\cdot 1-2-2\cdot 1=1.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            La frontière du triangle <m>ABC</m> est constituée des trois segments <m>[A,B], [B,C]</m> et <m>[C,A]</m>.
+          </p>
+          <ul>
+            <li>
+              <p>
+                Extremums de <m>f</m> sur <m>[A,B]</m> : On peut paramétrer ce segment par
+                <me>1\leq x\leq 5\quad\text{et}\quad y=0</me>
+                donc on cherche les extremums de la fonction
+                <md>
+                  <mrow>f_1(x)&amp;=f(x,0)</mrow>
+                  <mrow>&amp;=3+x\cdot 0-x-2\cdot 0</mrow>
+                  <mrow>&amp;=3-x</mrow>
+                </md>
+                pour <m>x\in[1,5]</m>.
+              </p>
+              <p>
+                Comme cette fonction est décroissante, on a
+                <me>\max_{[A,B]}f=\max_{[1,5]}f_1=f_1(1)=3-1=2</me>
+                et
+                <me>\min_{[A,B]}f=\min_{[1,5]}f_1=f_1(5)=3-5=-2.</me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Extremums de <m>f</m> sur <m>[B,C]</m> : On peut paramétrer ce segment par
+                <me>1\leq x\leq 5\quad\text{et}\quad y=5-x</me>
+                donc on cherche les extremums de la fonction
+                <md>
+                  <mrow>f_2(x)&amp;=f(x,5-x)</mrow>
+                  <mrow>&amp;=3+x\cdot(5-x)-x-2\cdot(5-x)</mrow>
+                  <mrow>&amp;=3+5x-x^2-x-10+2x</mrow>
+                  <mrow>&amp;=-x^2+6x-7</mrow>
+                </md>
+                pour <m>x\in[1,5]</m>.
+              </p>
+              <p>
+                Voici le tableau de variations de cette fonction relativement à sa dérivée :
+                <me>
+                  \begin{array}{c|ccccc}
+                  x&amp;1&amp;&amp;3&amp;&amp;5\\
+                  \hline
+                  f_2'(x)=-2x+6&amp;&amp;+&amp;0&amp;-&amp;\\
+                  \hline
+                  f_2(x)=-x^2+6x-7&amp;-2&amp;\nearrow&amp;2&amp;\searrow&amp;-2
+                  \end{array}
+                </me>
+                On en déduit que
+                <me>\max_{[B,C]}f=\max_{[1,5]}f_2=2</me>
+                et
+                <me>\min_{[B,C]}f=\min_{[1,5]}f_2=-2.</me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Extremums de <m>f</m> sur <m>[C,A]</m> : On peut paramétrer ce segment par
+                <me>x=1\quad\text{et}\quad 0\leq y\leq 4</me>
+                donc on cherche les extremums de la fonction
+                <md>
+                  <mrow>f_3(y)&amp;=f(1,y)</mrow>
+                  <mrow>&amp;=3+1\cdot y-1-2y</mrow>
+                  <mrow>&amp;=2-y</mrow>
+                </md>
+                pour <m>y\in[0,4]</m>.
+              </p>
+              <p>
+                Comme cette fonction est décroissante, on a
+                <me>\max_{[C,A]}f=\max_{[0,4]}f_3=f_2(0)=2-0=2</me>
+                et
+                <me>\min_{[C,A]}f=\min_{[0,4]}f_3=f_2(4)=2-4=-2.</me>
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            À l'étape 1. est apparue la valeur
+            <me>1.</me>
+            À l'étape 2. sont apparues les valeurs
+            <me>-2\quad\text{et}\quad 2.</me>
+          </p>
+          <p>
+            Par conséquent, on a
+            <me>\max_Df=2\quad\text{et}\quad\min_Df=-2.</me>
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Trouvez le point du plan d'équation
+        <me>x-2y+3z=6</me>
+        qui est le plus proche du point
+        <me>P(0,1,1).</me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        <url href="https://www.geogebra.org/3d/xkvmuxtc">Géométriquement</url>, il est clair qu'un tel point existe et qu'il est unique.
+        C'est la projection orthogonale de <m>P(0,1,1)</m> sur le plan.
+      </p>
+      <p>
+        Voici deux options.
+        <ol>
+          <li>
+            <p>
+              Vous pouvez l'obtenir comme intersection du plan avec la droite normale au plan passant par <m>P</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Ou vous pouvez transformer la question en un problème d'optimisation pour la fonction de deux variables calculant (le carré de) la distance entre le point <m>P</m> et le point
+              <me>Q(6+2y-3z,y,z)</me>
+              qui parcourt le plan lorsque <m>(y,z)</m> décrit <m>\mathbb{R}^2</m>.
+            </p>
+            <p>
+              Cette fonction est différentiable partout, elle n'admet pas de maximum local.
+              Le point cherché donne un minimum global et ce sera le seul point critique.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        Il s'agit du point
+        <me>\left(\frac{5}{14},\frac{2}{7},\frac{29}{14}\right).</me>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        De l'équation cartésienne <m>x-2y+3z=6</m> on tire un vecteur normal au plan
+        <me>\vec{n}=\begin{bmatrix}1\\-2\\3\end{bmatrix}</me>
+        qui nous permet de donner des équations paramétriques de la droite normale au plan passant par <m>P(0,1,1)</m> :
+        <me>\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}0\\1\\1\end{bmatrix}+t\begin{bmatrix}1\\-2\\3\end{bmatrix}</me>
+        soit
+        <me>\begin{cases}x=t\\y=1-2t\\z=1+3t\end{cases}</me>
+      </p>
+      <p>
+        On susbstitue ensuite dans l'équation du plan afin de trouver la valeur de <m>t</m> correspondant au point d'intersection :
+        <md>
+          <mrow>x-2y+3z=6&amp;\quad\Leftrightarrow\quad t-2(1-2t)+3(1+3t)=6</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad 14t=5</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad t=\frac{5}{14}.</mrow>
+        </md>
+      </p>
+      <p>
+        Finalement, on a
+        <me>\begin{cases}x=\dfrac{5}{14}\\y=1-2\cdot\dfrac{5}{14}\\z=1+3\cdot\dfrac{5}{14}\end{cases}</me>
+        qui donne le point
+        <me>\left(\frac{5}{14},\frac{2}{7},\frac{29}{14}\right).</me>
+      </p>
+    </solution>
+    <solution>
+      <p>
+        En isolant <m>x</m> dans l'équation du plan
+        <me>x-2y+3z=6\quad\Leftrightarrow\quad x=6+2y-3z</me>
+        on voit que tout point du plan peut s'écrire
+        <me>Q=(6+2y-3z,y,z)\quad\text{avec}\quad (x,y)\in\mathbb{R}^2.</me>
+      </p>
+      <p>
+        Considérons donc la fonction
+        <md>
+          <mrow>f(y,z):&amp;=\left\|\overrightarrow{PQ}\right\|^2</mrow>
+          <mrow>&amp;=\left\|(6+2y-3z,y-1,z-1)\right\|^2</mrow>
+          <mrow>&amp;=(6+2y-3z)^2+(y-1)^2+(z-1)^2</mrow>
+        </md>
+        et déterminons les zéros de son gradient.
+        On a
+        <md>
+          <mrow>\nabla f=\vec{0}&amp;\quad\Leftrightarrow\quad\begin{cases}f_y=0\\f_z=0\end{cases}</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad\begin{cases}2(6+2y-3z)2+2(y-1)=0\\2(6+2y-3z)(-3)+2(z-1)=0\end{cases}</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad\begin{cases}2(6+2y-3z)+(y-1)=0\\(6+2y-3z)(-3)+(z-1)=0\end{cases}</mrow>
+        </md>
+        ce qui conduit au système linéaire
+        <md alignment="alignat">
+          <mrow>5y &amp; {}-{} &amp; 6z &amp; {}={} &amp; -11</mrow>
+          <mrow>-6y &amp; {}+{} &amp; 10z &amp; {}={} &amp; 19</mrow>
+        </md>
+        dont la solution est donnée par la <url href="https://en.wikipedia.org/wiki/Cramer%27s_rule#Explicit_formulas_for_small_systems">règle de Cramer</url> :
+        <me>y=\frac{\begin{vmatrix}-11&amp;-6\\19&amp;10\end{vmatrix}}{\begin{vmatrix}5&amp;-6\\-6&amp;10\end{vmatrix}}=\frac{4}{14}=\frac{2}{7}\quad\text{et}\quad z=\frac{\begin{vmatrix}5&amp;-11\\-6&amp;19\end{vmatrix}}{\begin{vmatrix}5&amp;-6\\-6&amp;10\end{vmatrix}}=\frac{29}{14}.</me>
+      </p>
+      <p>
+        Enfin, cela donne
+        <me>x=6+2y-3z=\frac{84}{14}+\frac{8}{14}-\frac{87}{14}=\frac{5}{14}.</me>
+      </p>
+      <p>
+        Le point cherché est donc
+        <me>\left(\frac{5}{14},\frac{2}{7},\frac{29}{14}\right).</me>
+      </p>
+    </solution>
+  </exercise>
+
+  <p>
+    Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 2, 4, 6, 12, 32, 34, 42 dont voici les <url href="https://drive.google.com/file/d/1i1xMsVz5CpxkaMm_4K8yWe7k3poZw-5A/view?usp=sharing">solutions</url>.
+  </p>
+  <p>
+    Sinon, passez directement aux exercices prioritaires de cette section.
+  </p>
+  <p>
+    Remarque : Voici <url href="https://drive.google.com/file/d/1wUvSEDO6NPtvjzIRM15rlrGZjtrHcJ4r/view?usp=sharing">le document</url> distribué les sessions précédentes.
+    Et en voilà <url href="https://drive.google.com/file/d/184DQfexizuPZ1jRo_5a1yopVRSLMO-34/view?usp=sharing">le solutionnaire</url>.
+  </p>
+
+</section>
+
+<section xml:id="gradient">
+  <title>Critère de Sylvester et méthode du gradient</title>
+
+  <introduction>
+    <p>Le code qui suit produit <url href="https://goo.gl/ypPFif">une application</url> qui minimise une fonction de deux variables par descente de gradient. Ce code est essentiellement tiré du <url href="https://goo.gl/xxHg8E">volume suivant</url>.</p>
+
+    <sage>
+      <input>
+        def descente_de_gradient_epsilon(f, p, epsilon, d):
+            p = vector(p).n()
+            L = [p]
+            q = p
+            p = p + vector ([1,0])
+            grad = f.gradient()
+            while round(norm(p-q), d) > 0:
+                p = q
+                q = p - epsilon*grad(p[0], p[1])
+                L.append(q)
+            return L
+        def xyminmax(L):
+            xvals = [pt[0] for pt in L]
+            yvals = [pt[1] for pt in L]
+            xmin = min(xvals)
+            xmax = max(xvals)
+            ymin = min(xvals)
+            ymax = max(xvals)
+            return xmin, xmax, ymin, ymax
+        var('x, y')
+        @interact
+        def methode_du_gradient(f = input_box(default=(x-1)/(1+x^2+y^2)), p = input_box(default=[3,3]), epsilon = input_box(default=0.2), d = input_box(default=3), graphique = (True)):
+            f(x,y) = f
+            L = descente_de_gradient_epsilon(f, p, epsilon, d)
+            q = L[-1]
+            minimum = f(q[0], q[1])
+            pretty_print(html('Le minimum vaut : %s' %(minimum) ))
+            pretty_print(html('Il est atteint au point : %s' %(q) ))
+            if graphique:
+                xmin, xmax, ymin, ymax = xyminmax(L)
+                x_range = xmax - xmin
+                y_range = ymax - ymin
+                g = plot3d(f, (x, xmin - .1*x_range, xmax + .1*x_range), (y, ymin - .1*y_range, ymax + .1*y_range), opacity = .5)
+                g = g + line3d([(pt[0], pt[1], f(x=pt[0], y=pt[1])) for pt in L], color='red', arrow=True, size=30)
+                show(g)
+      </input>
+    </sage>
+
+  </introduction>
+
+  <p>Essayez de résoudre les exercices qui suivent.</p>
+
+  <exercise xml:id="exercice-calcul-gradient-hessienne">
+    <statement>
+      <p>Donnez le gradient <m>\nabla f(-1;2)</m> et la hessienne <m>\nabla^2f(1;2)</m> du polynôme <m>f(x;y)=9+5x+y+x^2-3xy-7y^2</m>.</p>
+    </statement>
+    <answer>
+      <p>
+        <me>\nabla f(-1;2)=\begin{bmatrix}-3\\ 24\end{bmatrix}</me>
+        <me>\nabla^2f(1;2)=\begin{bmatrix}2 &amp; -3\\ -3 &amp; -14\end{bmatrix}</me>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-recherche-points-critiques">
+    <statement>
+      <p>Trouvez tous les points critiques de la fonction <m>f(x;y;z)=x^3-2x+2y^2+2xy+z^3-27z</m>.</p>
+    </statement>
+    <answer>
+      <p>Il y a quatre points critiques : <m>(-2/3;1/3;\pm 3)</m> et <m>(1;-1/2;\pm 3)</m>.</p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-signe-matrices-symetriques">
+    <statement>
+      <p>Déterminez le signe des matrices suivantes.
+        <ol>
+          <li><m>A=\begin{bmatrix}3 &amp; -2\\ -2 &amp; 2\end{bmatrix}</m></li>
+          <li><m>B=\begin{bmatrix}3 &amp; -3\\ -3 &amp; 3\end{bmatrix}</m></li>
+          <li><m>C=\begin{bmatrix}3 &amp; -2 &amp; 0\\ -2 &amp; 2 &amp; 0\\ 0 &amp; 0 &amp; -1\end{bmatrix}</m></li>
+          <li><m>D=\begin{bmatrix}-3 &amp; -2 &amp; 0\\ -2 &amp; -2 &amp; 0\\ 0 &amp; 0 &amp; -1\end{bmatrix}</m></li>
+          <li><m>E=\begin{bmatrix}-1 &amp; -1 &amp; 1\\ -1 &amp; 0 &amp; -1\\ 1 &amp; -1 &amp; 1\end{bmatrix}</m></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li><m>A</m> est définie positive.</li>
+          <li><m>B</m> est de signe indéterminé.</li>
+          <li><m>C</m> est indéfinie.</li>
+          <li><m>D</m> est définie négative.</li>
+          <li><m>E</m> est indéfinie.</li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-nature-points-critiques">
+    <statement>
+      <p>Déterminez la nature des points critiques de la fonction <m>f(x;y;z)=x^3-2x+2y^2+2xy+z^3-27z</m>.</p>
+    </statement>
+    <answer>
+      <p>
+        <ul>
+          <li><m>(-2/3;1/3;3)</m> est un point de selle.</li>
+          <li><m>(-2/3;1/3;-3)</m> est un point de selle.</li>
+          <li><m>(1;-1/2;3)</m> est un point de minimum local.</li>
+          <li><m>(1;-1/2;-3)</m> est un point de selle.</li>
+        </ul>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-methode-du-gradient">
+    <statement>
+      <p>On cherche à optimiser la fonction <m>f(x;y)=3x-x^3-2y^2+y^4</m> par la méthode du gradient.
+        <ol>
+          <li>Si on part du point <m>P_0=(0;1/2)</m> et qu'on veut maximiser <m>f</m>, quelles sont les équations paramétriques de la demi-droite sur laquelle on prendra le point suivant?</li>
+          <li>Même question que la précédente, mais en minimisant.</li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <md>
+                <mrow>x &amp; =3t</mrow>
+                <mrow>y &amp; =\frac{1}{2}-\frac{3}{2}t</mrow>
+                <mrow>\mbox{où } &amp; t>0</mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              <md>
+                <mrow>x &amp; =-3t</mrow>
+                <mrow>y &amp; =\frac{1}{2}+\frac{3}{2}t</mrow>
+                <mrow>\mbox{où } &amp; t>0</mrow>
+              </md>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-methode-du-gradient-2">
+    <statement>
+      <p>On cherche à minimiser la fonction <m>f(x;y)=3x^2+x^4+y^2</m> par la méthode du gradient. Trouvez le premier point produit à partir du point <m>(1;1)</m> si on adopte un pas proportionnel avec <m>\epsilon=0,2</m>.
+      </p>
+    </statement>
+    <answer>
+      <p><m>(-1;0,6)</m></p>
+    </answer>
+  </exercise>
+
+  <p>Complétez <url href="https://drive.google.com/file/d/1msOsgOtZjXtWxaxBoRGaYcSYQpJwzsKE/view?usp=sharing">ce document</url>. En voici le <url href="https://drive.google.com/file/d/1giNEp0wTTI8juiodEHAENqGh8in7O6nJ/view?usp=sharing">solutionnaire</url>.</p>
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 2, 4, 8, 14, 18, 24 dont voici les <url href="https://drive.google.com/file/d/1rdj7-dqTHGdmqvNBJVWCcQrgevSGwjUn/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+</section>
+
+<section xml:id="lagrange">
+  <title>Multiplicateurs de Lagrange</title>
+
+  <activity>
+    <ul>
+      <li>
+        <p>
+          <url href="https://www.geogebra.org/m/gXyun8mD">Application</url> GeoGebra illustrant graphiquement la méthode des multiplicateurs de Lagrange.
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://www.wolframalpha.com/widgets/gallery/view.jsp?id=1451afdfe5a25b2a316377c1cd488883">Calculatrice</url> à extremums WolframAlpha par la méthode des multiplicateurs de Lagrange.
+        </p>
+      </li>
+    </ul>
+  </activity>
+
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Savoir déterminer les extremums d'une fonction <m>f(x,y)</m> sous une contrainte <m>g(x,y)=k</m> en lisant un diagramme de courbes de niveau de <m>f</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Comprendre l'idée générale de la méthode des multiplicateurs de Lagrange telle qu'expliquée dans la vidéo ci-dessous.
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir appliquer la méthode des multiplicateurs de Lagrange pour la recherche des extremums d'une fonction <m>f(x,y)</m> :
+          <ul>
+            <li>
+              <p>
+                sous une contrainte du type <m>g(x,y)=k</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                sous deux contraintes du type <m>g_1(x,y)=k_1</m> et <m>g_2(x,y)=k_2</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                sous une contrainte du type <m>g(x,y)\leq k</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+    </ul>
+  </objectives>
+
+  <p>
+    Pour commencer, voici une vidéo de la chaîne <url href="https://www.youtube.com/channel/UCZZTo-2xK39nW49EvGtNUTA">Mathématiques CSF</url> :
+    <figure>
+      <title>Principe de la méthode des multiplicateurs de Lagrange</title>
+      <caption>Principe de la méthode des multiplicateurs de Lagrange</caption>
+      <video youtube="y377VIUP39Y" width="80%" />
+    </figure>
+  </p>
+
+  <exercise xml:id="exercice-recherche-d-extremums-par-lagrange">
+    <statement>
+      <p>
+        À l'aide de la méthode des multiplicateurs de Lagrange, trouvez les extremums de la fonction
+        <me>f(x,y)=x^2+2y^2</me>
+        sous la contrainte
+        <me>x^2+y^2=1.</me>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        Le maximum absolu vaut <m>2</m> et il est atteint aux points <m>(0,\pm 1)</m>.
+      </p>
+      <p>
+        Le minimum absolu vaut <m>1</m> et il est atteint aux points <m>(\pm 1,0)</m>.
+      </p>
+    </answer>
+    <solution>
+      <figure>
+        <title>Application de la méthode des multiplicateurs de Lagrange</title>
+        <caption>Application de la méthode des multiplicateurs de Lagrange</caption>
+        <video youtube="vfgIsCeinIw" width="95%" />
+      </figure>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-recherche-d-extremums-par-lagrange-2">
+    <statement>
+      <p>
+        À l'aide de la méthode des multiplicateurs de Lagrange, trouvez les extremums de la fonction
+        <me>f(x,y,z)=x^4+y^4+z^4</me>
+        sous la contrainte
+        <me>x^2+y^2+z^2=1.</me>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        Le maximum absolu vaut <m>1</m> et il est atteint aux points <m>(0,0,\pm 1)</m>, <m>(0,\pm 1,0)</m> et <m>(\pm 1,0,0)</m>.
+      </p>
+      <p>
+        Le minimum absolu vaut <m>1/3</m> et il est atteint aux points <m>(\pm 1/\sqrt{3},\pm 1/\sqrt{3},\pm 1/\sqrt{3})</m>.
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-recherche-d-extremums-par-lagrange-3">
+    <statement>
+      <p>
+        À l'aide de la méthode des multiplicateurs de Lagrange, trouvez les extremums de la fonction
+        <me>f(x,y,z)=3x-y-3z</me>
+        sous les contraintes
+        <me>x+y-z=0=1\quad\text{et}\quad x^2+2z^2=1.</me>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        Le maximum absolu vaut <m>2\sqrt{6}</m> et il est atteint au point <m>(2/\sqrt{6},-3/\sqrt{6},-1/\sqrt{6})</m>.
+      </p>
+      <p>
+        Le minimum absolu vaut <m>-2\sqrt{6}</m> et il est atteint au point <m>(-2/\sqrt{6},3/\sqrt{6},1/\sqrt{6})</m>.
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-recherche-d-extremums-par-lagrange-4">
+    <statement>
+      <p>
+        À l'aide de la méthode des multiplicateurs de Lagrange, trouvez les extremums de la fonction
+        <me>f(x,y)=2x^2+3y^2-4x-5</me>
+        sous la contrainte
+        <me>x^2+y^2\leq 16.</me>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        Le maximum absolu vaut <m>47</m> et il est atteint aux points <m>(-2,\pm 2\sqrt{3})</m>.
+      </p>
+      <p>
+        Le minimum absolu vaut <m>11</m> et il est atteint au point <m>(4,0)</m>.
+      </p>
+    </answer>
+  </exercise>
+
+  <p>
+    Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 2, 8, 20, 34 dont voici les <url href="https://drive.google.com/file/d/1VXY-RauTyoXEe0iAgiw2_DlmOJgPvjHy/view?usp=sharing">solutions</url>.
+  </p>
+  <p>
+    Sinon, passez directement aux exercices prioritaires de cette section.
+  </p>
+  <p>
+    Remarque : Voici <url href="https://drive.google.com/file/d/1rjR864crRhnDDIM8KAOipw1-TtrUCUIK/view?usp=sharing">le document</url> distribué les sessions précédentes.
+    Et en voilà <url href="https://drive.google.com/file/d/1BqL4TOxR9obyPzRzxrGKEb8IA5XjWm-_/view?usp=sharing">le solutionnaire</url>.
+  </p>
+
+</section>
+
+</chapter>

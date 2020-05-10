@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:16:24-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>La définition du polynôme \(L_i(t)\) se traduit ainsi :</p>
+<div class="displaymath">
+\begin{equation*}
+L_i(t)=\frac{(t-x_0)\cdots (t-x_{i-1})(t-x_{i+1})\cdots(t-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}.
+\end{equation*}
+</div>
+<p>Le numérateur est le produit de \(n\) facteurs de degré \(1\text{.}\) Il s'agit donc d'un polynôme de degré \(n\text{.}\)</p>
+<p>Comme les \(x_j\) sont distincts deux à deux, le dénominateur est un nombre réel non nul.</p>
+<p>Chaque polynôme \(L_i(t)\) est donc un polynôme de degré \(n\text{.}\)</p>
+<p>Si \(i\neq j\text{,}\) alors \(t-x_j\) est l'un de facteurs du numérateur de \(L_i(t)\text{.}\) Donc</p>
+<div class="displaymath">
+\begin{align*}
+L_i(x_j)&amp;=\frac{(x_j-x_0)\cdots (x_j-x_j)\cdots(x_j-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=\frac{0}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=0.
+\end{align*}
+</div>
+<p>Enfin, il reste à évaluer \(L_i(x_i)\text{,}\) ce qui donne</p>
+<div class="displaymath">
+\begin{align*}
+L_i(x_i)&amp;=\frac{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=1.
+\end{align*}
+</div></article></body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:45-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="li"><h6 class="heading">
+<span class="type">Point</span><span class="period">.</span>
+</h6>
+<p>Ensuite, la formule</p>
+<div class="displaymath">
+\begin{equation*}
+V=IR=\frac{IR_1R_2}{R_1+R_2}
+\end{equation*}
+</div>
+<p data-braille="continuation">implique l'arbre de dépendance <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/exercice_4.3.7.png" style="width: 100%; height: auto;" alt=""></div> dont on déduit la formule</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}V}{\mathrm{d}t}=\frac{\partial V}{\partial I}\cdot\frac{\mathrm{d}I}{\mathrm{d}t}+\frac{\partial V}{\partial R_1}\cdot\frac{\mathrm{d}R_1}{\mathrm{d}t}+\frac{\partial V}{\partial R_2}\cdot\frac{\mathrm{d}R_2}{\mathrm{d}t}
+\end{equation*}
+</div>
+<p data-braille="continuation">par la règle de dérivation en chaîne.</p>
+<ul class="circle">
+<li>
+<p>D'abord, on a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial V}{\partial I}&amp;=\frac{\partial}{\partial I}\left(I\cdot R\right)\\
+&amp;=R\\
+&amp;=1{,}875.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Ensuite, on trouve</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial V}{\partial R_1}&amp;=\frac{\partial}{\partial R_1}\left(\frac{IR_1R_2}{R_1+R_2}\right)\\
+&amp;=IR_2\cdot\frac{\partial}{\partial R_1}\left(\frac{R_1}{R_1+R_2}\right)\\
+&amp;=IR_2\cdot\frac{\frac{\partial}{\partial R_1}(R_1)\cdot(R_1+R_2)-R_1\cdot\frac{\partial}{\partial R_1}(R_1+R_2)}{(R_1+R_2)^2}\\
+&amp;=IR_2\cdot\frac{1\cdot(R_1+R_2)-R_1\cdot 1}{(R_1+R_2)^2}\\
+&amp;=IR_2\cdot\frac{R_2}{(R_1+R_2)^2}\\
+&amp;=\frac{IR_2^2}{(R_1+R_2)^2}\\
+&amp;=\frac{4\cdot 5^2}{(3+5)^2}\\
+&amp;=1{,}562\,5.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Puis, pour des raisons de symétrie, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial V}{\partial R_2}&amp;=\frac{IR_1^2}{(R_1+R_2)^2}\\
+&amp;=\frac{4\cdot 3^2}{(3+5)^2}\\
+&amp;=0{,}562\,5.
+\end{align*}
+</div>
+</li>
+</ul></article><span class="incontext"><a href="derivation-en-chaine.html#li-441">??</a></span>
+</body>
+</html>

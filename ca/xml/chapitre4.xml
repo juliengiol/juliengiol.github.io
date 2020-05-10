@@ -1,0 +1,4040 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="chapitre4" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Les dérivées des fonctions de plusieurs variables</title>
+
+<section xml:id="derpartielles">
+  <title>Les dérivées partielles</title>
+
+  <activity>
+    <ul>
+      <li>
+        <p>
+          <url href="https://tinyurl.com/rj94lnn">Calculatrice</url> à dérivées partielles :
+          <sage language='sage'>
+            <input>
+              f(x, y) = x^5 + 3 * y^4 + x * y^2 + 7  # fonction
+              g(x, y) = derivative(f, x)  # dérivée partielle
+
+              pretty_print('Fonction :', f)
+              pretty_print('Dérivée partielle :', g)
+            </input>
+          </sage>
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://www.geogebra.org/m/fQ3gN72x">Application</url> GeoGebra illustrant graphiquement le concept de dérivée partielle.
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://tinyurl.com/vqyub2p">Exemple de calcul</url> de dérivée partielle avec WolframAlpha.
+        </p>
+      </li>
+    </ul>
+  </activity>
+
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Savoir calculer, définir, estimer et interpréter graphiquement les dérivées partielles
+          <me>\frac{\partial f}{\partial x}=f_x(x,y)\quad\text{et}\quad\frac{\partial f}{\partial y}=f_y(x,y)</me>
+          d'une fonction de deux variables <m>f(x,y)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir calculer les dérivées partielles d'une fonction de trois variables ou plus.
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir calculer des dérivées partielles d'ordre deux ou plus telles que
+          <me>\frac{\partial^2 f}{\partial x\partial y}=f_{yx}\quad\text{ou}\quad\frac{\partial^3 f}{\partial y\partial x^2}=f_{xxy}.</me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Comprendre et savoir appliquer le <url href="https://tinyurl.com/uwvy29l">théorème de Clairaut</url> qui garantit l'égalité des dérivées mixtes du second ordre
+          <me>f_{xy}(x_0,y_0)=f_{yx}(x_0,y_0)</me>
+          en tout point <m>(x_0,y_0)</m> où elles sont continues.
+        </p>
+      </li>
+    </ul>
+  </objectives>
+
+  <exercise xml:id="exercice-tangentes-paraboloide">
+    <statement>
+      <p>Soit S la surface d'équation
+        <me>z=x^2+y^2.</me>
+        <ol>
+          <li>
+            <p>
+              Calculez la pente de la tangente à la trace de la surface S dans le plan d'équation
+              <me>y=2</me>
+              au point <m>(1,2,5)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculez la pente de la tangente à la trace de la surface S dans le plan d'équation
+              <me>x=1</me>
+              au point <m>(1,2,5)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Pour commencer, utilisez votre logiciel préféré pour interpréter graphiquement la question.
+        Voici à quoi ressemble la surface en rouge
+        <image source="images/exercice_4.1.1.png" />
+        avec le plan d'équation <m>y=2</m> en bleu pâle, et la trace de la surface dans ce plan en bleu plus foncé.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Cette trace est la parabole d'équation
+            <me>z=x^2+4</me>
+            dans le plan d'équation <m>y=2</m>.
+          </p>
+          <p>
+            En voici une représentation graphique
+            <image source="images/exercice_4.1.1bis.png" />
+            avec la tangente au point considéré en mauve.
+          </p>
+          <p>
+            La pente de la tangente cherchée s'obtient donc en évaluant la dérivée de <m>z=x^2+4</m> par rapport à <m>x</m> en <m>x=1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Cette trace est la parabole d'équation
+            <me>z=1+y^2</me>
+            dans le plan d'équation <m>x=1</m>.
+          </p>
+          <p>
+            La pente de la tangente cherchée s'obtient donc en évaluant la dérivée de <m>z=1+y^2</m> par rapport à <m>y</m> en <m>y=2</m>.
+          </p>
+        </li>
+      </ol>
+    </hint>
+    <answer>
+      <ol>
+        <li><p>Cette pente vaut <m>2</m>.</p></li>
+        <li><p>Cette pente vaut <m>4</m>.</p></li>
+      </ol>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Suivons l'indication et dérivons l'équation de la trace
+            <me>z=x^2+4</me>
+            par rapport à <m>x</m> :
+            <md>
+              <mrow>\frac{\mathrm{d}z}{\mathrm{d}x}&amp;=\frac{\mathrm{d}}{\mathrm{d}x}\left(x^2+4\right)</mrow>
+              <mrow>&amp;=2x+0</mrow>
+              <mrow>&amp;=2x.</mrow>
+            </md>
+          </p>
+          <p>
+            Au point <m>(1,2,5)</m>, la tangente a donc pour pente
+            <me>\left.\frac{\mathrm{d}z}{\mathrm{d}x}\right|_{x=1}=2\cdot 1=2.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            De même, suivons l'indication et dérivons l'équation de la trace
+            <me>z=1+y^2</me>
+            par rapport à <m>y</m> :
+            <md>
+              <mrow>\frac{\mathrm{d}z}{\mathrm{d}y}&amp;=\frac{\mathrm{d}}{\mathrm{d}y}\left(1+y^2\right)</mrow>
+              <mrow>&amp;=0+2y</mrow>
+              <mrow>&amp;=2y.</mrow>
+            </md>
+          </p>
+          <p>
+            Au point <m>(1,2,5)</m>, la tangente a donc pour pente
+            <me>\left.\frac{\mathrm{d}z}{\mathrm{d}y}\right|_{y=2}=2\cdot 2=4.</me>
+          </p>
+        </li>
+      </ol>
+    </solution>
+    <solution>
+      <ol>
+        <li>
+          <p>On a
+            <md>
+              <mrow>\frac{\partial z}{\partial x}&amp;=\frac{\partial}{\partial x}\left(x^2+y^2\right)</mrow>
+              <mrow>&amp;=2x+0</mrow>
+              <mrow>&amp;=2x.</mrow>
+            </md>
+          </p>
+          <p>
+            La pente cherchée vaut donc
+            <me>\left.\frac{\partial z}{\partial x}\right|_{(x,y)=(1,2)}=2\cdot 1=2.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On a
+            <md>
+              <mrow>\frac{\partial z}{\partial y}&amp;=\frac{\partial}{\partial y}\left(x^2+y^2\right)</mrow>
+              <mrow>&amp;=0+2y</mrow>
+              <mrow>&amp;=2y.</mrow>
+            </md>
+          </p>
+          <p>La pente cherchée vaut donc
+            <me>\left.\frac{\partial z}{\partial y}\right|_{(x,y)=(1,2)}=2\cdot 2=4.</me>
+          </p>
+        </li>
+      </ol>
+    </solution>
+    <solution>
+      <p>
+        La surface S est le graphe de la fonction de deux variables
+        <me>f(x,y)=x^2+y^2</me>
+        dont les dérivées partielles sont
+        <me>f_x(x,y)=\frac{\partial f}{\partial x}=2x</me>
+        et
+        <me>f_y(x,y)=\frac{\partial f}{\partial y}=2y.</me>
+      </p>
+      <ol>
+        <li>
+          <p>
+            La pente cherchée est
+            <me>f_x(1,2)=2\cdot 1=2.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            La pente cherchée est
+            <me>f_y(1,2)=2\cdot 2=4.</me>
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        On s'intéresse à la fonction de deux variables
+        <me>f(x,y)=\cos(x)\sin(y).</me>
+        Représentez le graphe de cette fonction à l'aide de votre logiciel favori.
+      </p>
+      <p>
+        Sans faire de calculs, déterminez visuellement le signe des dérivées partielles indiquées.
+        <ol>
+          <li>
+            <p><m>f_y(0,1)</m>.</p>
+          </li>
+          <li>
+            <p><m>f_y(0,2)</m>.</p>
+          </li>
+          <li>
+            <p><m>f_x(1,2)</m>.</p>
+          </li>
+          <li>
+            <p><m>f_x(0,2)</m>.</p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Commencer par représenter le graphe de cette fonction à l'aide de votre logiciel favori.
+      </p>
+      <p>
+        Pour chaque dérivée partielle, visualisez la tangente adéquate : sa pente est-elle positive, négative, ou nulle?
+        Faites attention à orienter l'axe de la variable indépendante (<m>x</m> pour <m>f_x</m> et <m>y</m> s'il s'agit de <m>f_y</m>) vers la droite, et celui de la variable dépendante (<m>z</m>) vers le haut.
+      </p>
+      <p>
+        Alternativement, imaginez que vous marchez sur la surface et que la variable <m>z</m> correspond à votre altitude.
+        Par exemple, pour déterminer le signe de <m>f_x(1,2)</m>, rendez-vous au point <m>(1,2,f(1,2))</m>.
+        Avancez ensuite tout droit dans le sens des <m>x</m> croissants.
+        Êtes-vous en train de monter ou de descendre?
+      </p>
+    </hint>
+    <answer>
+      <ol>
+        <li>
+          <p><m>f_y(0,1)&gt;0</m>.</p>
+        </li>
+        <li>
+          <p><m>f_y(0,2)&lt;0</m>.</p>
+        </li>
+        <li>
+          <p><m>f_x(1,2)&lt;0</m>.</p>
+        </li>
+        <li>
+          <p><m>f_x(0,2)=0</m>.</p>
+        </li>
+      </ol>
+    </answer>
+    <solution>
+      <p>
+        Voici le graphe de la fonction <m>f</m>
+        <image source="images/exercice_4.1.2ter.png" />
+        où <m>A,B,C</m> sont les trois points à considérer.
+      </p>
+      <ul>
+        <li>
+          <p>
+            Voici la trace du graphe de la fonction <m>f</m> dans le plan d'équation
+            <me>x=0</me>
+            <image source="images/exercice_4.1.2.png" />
+            où les points identifiés sont
+            <me>A=(0,1,f(0,1))\quad\text{et}\quad B=(0,2,f(0,2)).</me>
+          </p>
+          <p>
+            1. Comme la tangente au point <m>A</m> a une pente positive, on a
+            <me>f_y(0,1)&gt;0.</me>
+          </p>
+          <p>
+            2. Comme la tangente au point <m>B</m> a une pente négative, on a
+            <me>f_y(0,2)&lt;0.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Voici la trace du graphe de la fonction <m>f</m> dans le plan d'équation
+            <me>y=2</me>
+            <image source="images/exercice_4.1.2bis.png" />
+            où les points identifiés sont
+            <me>C=(1,2,f(1,2))\quad\text{et}\quad B=(0,2,f(0,2)).</me>
+          </p>
+          <p>
+            3. Comme la tangente au point <m>C</m> a une pente négative, on a
+            <me>f_x(1,2)&lt;0.</me>
+          </p>
+          <p>
+            4. Comme la tangente au point <m>B</m> est horizontale, on a
+            <me>f_x(0,2)=0.</me>
+          </p>
+        </li>
+      </ul>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <ol>
+        <li>
+          <p>
+            Soit <m>f</m> une fonction d'une seule variable <m>x</m>.
+          </p>
+          <p>
+            Définissez le nombre
+            <me>f'(2)</me>
+            à l'aide d'une limite.
+            Comment l'appelle-t-on?
+            Comment se note-t-il si on utilise des <m>\mathrm{d}\;</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            Soit <m>f</m> une fonction de deux variables <m>x,y</m>.
+          </p>
+          <p>
+            Définissez le nombre
+            <me>f_x(2,1)</me>
+            à l'aide d'une limite.
+            Comment l'appelle-t-on?
+            Comment se note-t-il si on utilise des <m>\partial\;</m>?
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <hint>
+      <ol>
+        <li>
+          <p>
+            Consultez votre cours de calcul différentiel préféré.
+          </p>
+        </li>
+        <li>
+          <p>
+            Ajoutez une deuxième variable et donnez-lui la valeur
+            <me>y=1</me>
+            partout, ce qui revient à travailler dans le plan d'équation <m>y=1</m> et à se ramener à une seule variable <m>x</m>.
+          </p>
+        </li>
+      </ol>
+    </hint>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Le nombre <m>f'(2)</m> est égal à la limite suivante, si elle existe :
+            <me>f'(2)=\lim_{x\rightarrow 2}\frac{f(x)-f(2)}{x-2}.</me>
+            On l'appelle dérivée de <m>f</m> en <m>x=2</m> et on le note aussi
+            <me>f'(2)=\left.\frac{\mathrm{d}f}{\mathrm{d}x}\right|_{x=2}.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Le nombre <m>f_x(2,1)</m> est égal à la limite suivante, si elle existe :
+            <me>f_x(2,1)=\lim_{x\rightarrow 2}\frac{f(x,1)-f(2,1)}{x-2}.</me>
+            On l'appelle dérivée partielle de <m>f</m> par rapport à <m>x</m> au point <m>(x,y)=(2,1)</m> et on le note aussi
+            <me>f_x(2,1)=\left.\frac{\partial f}{\partial x}\right|_{(x,y)=(2,1)}.</me>
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Utilisez le diagramme de courbes de niveau
+        <image source="images/exercice_4.1.4.png" width="60%"/>
+        de la fonction de deux variables <m>f</m> pour estimer les nombres
+        <me>f_x(2,1)\quad\text{et}\quad f_y(2,1).</me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Quand on ne connaît qu'un nombre fini de valeurs prises par la fonction <m>f</m>, la dérivée partielle
+        <me>f_x(2,1)=\frac{\partial f}{\partial x}(2,1)=\lim_{x\rightarrow 2}\frac{f(x,1)-f(2,1)}{x-2}</me>
+        peut être estimée à l'aide de quotients du type
+        <me>\frac{\Delta z}{\Delta x}=\frac{f(x,1)-f(2,1)}{x-2}</me>
+        où la valeur de <m>x</m> est assez proche de <m>2</m> et permet de lire la valeur de <m>f(x,1)</m>.
+      </p>
+      <p>
+        Dans le cas de ce diagramme de courbes de niveau, voici un exemple de stratégie pour effectuer une estimation de
+        <me>f_x(2,1).</me>
+        <ol>
+          <li>
+            <p>
+              Repérez le point <m>(2,1)</m> et notez la valeur de <m>f(2,1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Déplacez-vous horizontalement vers la gauche jusqu'à la première courbe de niveau rencontrée et notez la valeur de <m>f</m> correspondante : vous avez votre <m>\Delta z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Mesurez le déplacement horizontal algébrique : vous avez votre <m>\Delta x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Faites la division. Vous avez votre première estimation :
+              <me>f_x(2,1)\approx\frac{\Delta z}{\Delta x}.</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              Répétez les étapes précédentes en vous déplaçant cette fois-ci horizontalement vers la droite : vous obtenez une deuxième estimation.
+            </p>
+          </li>
+          <li>
+            <p>
+              Faites la moyenne de vos deux estimations.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        Avec ma démarche, et mes mesures, j'ai trouvé
+        <me>f_x(2,1)\approx 2{,}65\quad\text{et}\quad f_y(2,1)\approx -2{,}11.</me>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Voici une illustration de ce que nous allons faire :
+        <image source="images/exercice_4.1.4bis.png" width="80%"/>
+      </p>
+      <ul>
+        <li>
+          <p>
+            Pour estimer <m>f_x(2,1)</m>, commençons par nous déplacer horizontalement vers la gauche en partant du point <m>(2,1)</m> où <m>z=1</m>, jusqu'à la première courbe de niveau rencontrée où <m>z=8</m>.
+            On obtient
+            <me>\frac{\Delta z}{\Delta x}=\frac{8-10}{-0{,}85}\approx 2{,}35.</me>
+            En faisant la même chose, mais en se déplaçant vers la droite, on trouve
+            <me>\frac{\Delta z}{\Delta x}=\frac{12-10}{0{,}68}\approx 2{,}94.</me>
+            Pour finir, on prend la moyenne de ces deux valeurs :
+            <me>f_x(2,1)\approx\frac{2{,}35+2{,}94}{2}\approx 2{,}65.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Pour estimer <m>f_y(2,1)</m>, commençons par nous déplacer verticalement vers le haut en partant du point <m>(2,1)</m> où <m>z=1</m>, jusqu'à la première courbe de niveau rencontrée où <m>z=8</m>.
+            On obtient
+            <me>\frac{\Delta z}{\Delta y}=\frac{8-10}{0{,}9}\approx -2{,}22.</me>
+            En faisant la même chose, mais en se déplaçant vers la bas, on trouve
+            <me>\frac{\Delta z}{\Delta y}=\frac{12-10}{-1}=-2.</me>
+            Pour finir, on prend la moyenne de ces deux valeurs :
+            <me>f_y(2,1)\approx\frac{-2{,}22+(-2)}{2}\approx -2{,}11.</me>
+          </p>
+        </li>
+      </ul>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-calcul-derivees-partielles">
+    <statement>
+      <p>Calculez toutes les dérivées partielles de
+        <ol>
+          <li>
+            <p>
+              <m>f</m> si
+              <me>f(x,y)=3x+2y^2-4xy.</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z</m> si
+              <me>z=x\cos(x+y^2).</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>u</m> si
+              <me>u(x,y,z)=x^2-5xe^y+z\sin(x).</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f</m> si
+              <me>f(x,y)=x^y.</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>w</m> si
+              <me>w=\frac{e^v}{u+v^2}.</me>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Une fonction <m>f</m> qui dépend de deux variables <m>x</m> et <m>y</m> admet deux dérivées partielles notées
+        <me>\frac{\partial f}{\partial x}=f_x\quad\text{et}\quad\frac{\partial f}{\partial y}=f_y.</me>
+      </p>
+      <ul>
+        <li>
+          <p>
+            Pour calculer <m>f_x</m>, on traite <m>y</m> comme une constante et on dérive par rapport à <m>x</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Pour calculer <m>f_y</m>, on traite <m>x</m> comme une constante et on dérive par rapport à <m>y</m>.
+          </p>
+        </li>
+      </ul>
+    </hint>
+    <answer>
+      <ol>
+        <li>
+          <p>
+            On trouve
+            <me>f_x(x,y)=3-4y\quad\text{et}\quad f_y(x,y)=4y-4x.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On trouve
+            <me>\frac{\partial z}{\partial x}=\cos(x+y^2)-x\sin(x+y^2)\quad\text{et}\quad\frac{\partial z}{\partial y}=-2xy\sin(x+y^2).</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On trouve
+            <me>\frac{\partial u}{\partial x}=2x-5e^y+z\cos x,\quad\frac{\partial u}{\partial y}=-5xe^y\quad\text{et}\quad\frac{\partial u}{\partial z}=\sin x.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On trouve
+            <me>f_x(x,y)=yx^{y-1}\quad\text{et}\quad f_y(x;y)=x^y\ln x.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On trouve
+            <me>\frac{\partial w}{\partial u}=-\frac{e^v}{(u+v^2)^2}\quad\text{et}\quad\frac{\partial w}{\partial v}=\frac{e^v(u+v^2-2v)}{(u+v^2)^2}.</me>
+          </p>
+        </li>
+      </ol>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            On a
+            <md>
+              <mrow>f_x(x,y)&amp;=\frac{\partial}{\partial x}\left(3x+2y^2-4xy\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial x}\left(3x\right)+\frac{\partial}{\partial x}\left(2y^2\right)-\frac{\partial}{\partial x}\left(4xy\right)</mrow>
+              <mrow>&amp;=3+0-4y</mrow>
+              <mrow>&amp;=3-4y</mrow>
+            </md>
+            et
+            <md>
+              <mrow>f_y(x,y)&amp;=\frac{\partial}{\partial y}\left(3x+2y^2-4xy\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial y}\left(3x\right)+\frac{\partial}{\partial y}\left(2y^2\right)-\frac{\partial}{\partial y}\left(4xy\right)</mrow>
+              <mrow>&amp;=0+4y-4x</mrow>
+              <mrow>&amp;=4y-4x.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            On a
+            <md>
+              <mrow>\frac{\partial z}{\partial x}&amp;=\frac{\partial}{\partial x}\left(x\cdot\cos(x+y^2)\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial x}\left(x\right)\cdot\cos(x+y^2)+x\cdot\frac{\partial}{\partial x}\left(\cos(x+y^2)\right)</mrow>
+              <mrow>&amp;=1\cdot\cos(x+y^2)+x\cdot\left(-\sin(x+y^2)\right)\frac{\partial}{\partial x}\left(x+y^2\right)</mrow>
+              <mrow>&amp;=1\cdot\cos(x+y^2)+x\cdot\left(-\sin(x+y^2)\right)\cdot(1+0)</mrow>
+              <mrow>&amp;=\cos(x+y^2)-x\sin(x+y^2)</mrow>
+            </md>
+            et
+            <md>
+              <mrow>\frac{\partial z}{\partial y}&amp;=\frac{\partial}{\partial y}\left(x\cdot\cos(x+y^2)\right)</mrow>
+              <mrow>&amp;=x\cdot\frac{\partial}{\partial y}\left(\cos(x+y^2)\right)</mrow>
+              <mrow>&amp;=x\cdot\left(-\sin(x+y^2)\right)\frac{\partial}{\partial y}\left(x+y^2\right)</mrow>
+              <mrow>&amp;=x\cdot\left(-\sin(x+y^2)\right)\cdot(0+2y)</mrow>
+              <mrow>&amp;=-2xy\sin(x+y^2).</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            On a
+            <md>
+              <mrow>\frac{\partial u}{\partial x}&amp;=\frac{\partial}{\partial x}\left(x^2-5xe^y+z\sin x\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial x}\left(x^2\right)-\frac{\partial}{\partial x}\left(5xe^y\right)+\frac{\partial}{\partial x}\left(z\sin x\right)</mrow>
+              <mrow>&amp;=2x-5e^y+z\cos x,</mrow>
+            </md>
+            puis
+            <md>
+              <mrow>\frac{\partial u}{\partial y}&amp;=\frac{\partial}{\partial y}\left(x^2-5xe^y+z\sin x\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial y}\left(x^2\right)-\frac{\partial}{\partial y}\left(5xe^y\right)+\frac{\partial}{\partial y}\left(z\sin x\right)</mrow>
+              <mrow>&amp;=0-5xe^y+0</mrow>
+              <mrow>&amp;=-5xe^y,</mrow>
+            </md>
+            et enfin
+            <md>
+              <mrow>\frac{\partial u}{\partial z}&amp;=\frac{\partial}{\partial z}\left(x^2-5xe^y+z\sin x\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial z}\left(x^2\right)-\frac{\partial}{\partial z}\left(5xe^y\right)+\frac{\partial}{\partial z}\left(z\sin x\right)</mrow>
+              <mrow>&amp;=0-0+\sin x</mrow>
+              <mrow>&amp;=\sin x.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            On a
+            <md>
+              <mrow>f_x(x,y)&amp;=\frac{\partial}{\partial x}\left(x^y\right)</mrow>
+              <mrow>&amp;=yx^{y-1}</mrow>
+            </md>
+            et
+            <md>
+              <mrow>f_y(x,y)&amp;=\frac{\partial}{\partial y}\left(x^y\right)</mrow>
+              <mrow>&amp;=x^y\ln y.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            On a
+            <md>
+              <mrow>\frac{\partial w}{\partial u}&amp;=\frac{\partial}{\partial u}\left(\frac{e^v}{u+v^2}\right)</mrow>
+              <mrow>&amp;=\frac{\frac{\partial}{\partial u}\left(e^v\right)\cdot(u+v^2)-e^v\cdot\frac{\partial}{\partial u}\left(u+v^2\right)}{(u+v^2)^2}</mrow>
+              <mrow>&amp;=\frac{0\cdot(u+v^2)-e^v\cdot 1}{(u+v^2)^2}</mrow>
+              <mrow>&amp;=-\frac{e^v}{(u+v^2)^2}</mrow>
+            </md>
+            et
+            <md>
+              <mrow>\frac{\partial w}{\partial v}&amp;=\frac{\partial}{\partial v}\left(\frac{e^v}{u+v^2}\right)</mrow>
+              <mrow>&amp;=\frac{\frac{\partial}{\partial v}\left(e^v\right)\cdot(u+v^2)-e^v\cdot\frac{\partial}{\partial v}\left(u+v^2\right)}{(u+v^2)^2}</mrow>
+              <mrow>&amp;=\frac{e^v\cdot(u+v^2)-e^v\cdot(2v)}{(u+v^2)^2}</mrow>
+              <mrow>&amp;=\frac{e^v(u+v^2-2v)}{(u+v^2)^2}.</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-derivees-partielles-secondes">
+    <statement>
+      <p>
+        Trouvez toutes les dérivées partielles secondes de la fonction de deux variables
+        <me>f(x,y)=x^2y+3y^2.</me>
+        La conclusion du théorème de Clairaut est-elle vérifiée?
+      </p>
+    </statement>
+    <hint>
+      <ul>
+        <li>
+          <p>
+            Commencez par calculer la dérivée première
+            <me>\frac{\partial f}{\partial x}=f_x.</me>
+            Dérivez ensuite cette fonction par rapport à <m>x</m> pour obtenir
+            <me>\frac{\partial^2 f}{\partial x^2}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}\right)=\frac{\partial}{\partial x}\left(f_x\right)=(f_x)_x=f_{xx},</me>
+            puis par rapport à <m>y</m> pour obtenir
+            <me>\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)=\frac{\partial}{\partial y}\left(f_x\right)=(f_x)_y=f_{xy}.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Après cela, calculez la dérivée première
+            <me>\frac{\partial f}{\partial y}=f_y.</me>
+            Dérivez ensuite cette fonction par rapport à <m>y</m> pour obtenir
+            <me>\frac{\partial^2 f}{\partial y^2}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial y}\right)=\frac{\partial}{\partial y}\left(f_y\right)=(f_y)_y=f_{yy},</me>
+            puis par rapport à <m>x</m> pour obtenir
+            <me>\frac{\partial^2 f}{\partial x\partial y}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right)=\frac{\partial}{\partial x}\left(f_y\right)=(f_y)_x=f_{yx}.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Pour finir, comparez les dérivées mixtes <m>f_{xy}=\dfrac{\partial^2 f}{\partial y\partial x}</m> et <m>f_{yx}=\dfrac{\partial^2 f}{\partial x\partial y}</m>.
+          </p>
+        </li>
+      </ul>
+    </hint>
+    <answer>
+      <p>
+        On obtient
+        <me>
+          \begin{matrix}
+          f_{xx}=\dfrac{\partial^2f}{\partial x^2}=2y&amp;\quad f_{yx}=\dfrac{\partial^2f}{\partial x\partial y}=2x\\
+          f_{xy}=\dfrac{\partial^2f}{\partial y\partial x}=2x&amp;\quad f_{yy}=\dfrac{\partial^2f}{\partial y^2}=6
+          \end{matrix}
+        </me>
+        et la conclusion du théorème de Clairaut est vérifiée, car on a bien
+        <me>f_{xy}=f_{yx}.</me>
+      </p>
+    </answer>
+    <solution>
+      <ul>
+        <li>
+          <p>
+            D'une part, on a
+            <me>f_x=\frac{\partial}{\partial x}(x^2y+3y^2)=2xy,</me>
+            d'où
+            <md>
+              <mrow>f_{xx}&amp;=\frac{\partial}{\partial x}\left(f_x\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial x}\left(2xy\right)</mrow>
+              <mrow>&amp;=2y</mrow>
+            </md>
+            et
+            <md>
+              <mrow>f_{xy}&amp;=\frac{\partial}{\partial y}\left(f_x\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial y}\left(2xy\right)</mrow>
+              <mrow>&amp;=2x.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            D'autre part, on a
+            <me>f_y=\frac{\partial}{\partial y}(x^2y+3y^2)=x^2+6y,</me>
+            d'où
+            <md>
+              <mrow>f_{yy}&amp;=\frac{\partial}{\partial y}\left(f_y\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial y}\left(x^2+6y\right)</mrow>
+              <mrow>&amp;=6</mrow>
+            </md>
+            et
+            <md>
+              <mrow>f_{yx}&amp;=\frac{\partial}{\partial x}\left(f_y\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial x}\left(x^2+6y\right)</mrow>
+              <mrow>&amp;=2x.</mrow>
+            </md>
+          </p>
+        </li>
+      </ul>
+      <p>
+        En résumé, on obtient
+        <me>
+          \begin{matrix}
+          f_{xx}=\dfrac{\partial^2f}{\partial x^2}=2y&amp;\quad f_{yx}=\dfrac{\partial^2f}{\partial x\partial y}=2x\\
+          f_{xy}=\dfrac{\partial^2f}{\partial y\partial x}=2x&amp;\quad f_{yy}=\dfrac{\partial^2f}{\partial y^2}=6
+          \end{matrix}
+        </me>
+        et la conclusion du théorème de Clairaut est vérifiée, car on a bien
+        <me>f_{xy}=f_{yx}.</me>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-derivee-partielle-troisieme">
+    <statement>
+      <p>
+        Pour la fonction
+        <me>f(x,y)=x^2y+3y^2</me>
+        de l'exercice précédent <xref ref="exercice-derivees-partielles-secondes" />, calculez
+        <me>\frac{\partial^3f}{\partial y^2\partial x}</me>
+        de deux façons différentes au moins.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        En partant des calculs faits à l'exercice précédent <xref ref="exercice-derivees-partielles-secondes" />, calculez d'abord
+        <me>\frac{\partial^3f}{\partial y^2\partial x}</me>
+        en suivant la définition, c'est-à-dire
+        <me>\frac{\partial^3f}{\partial y^2\partial x}=\frac{\partial}{\partial y}\left(\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)\right)=f_{xyy}.</me>
+        Puis utilisez le théorème de Clairaut pour justifier la permutation de l'ordre des dérivations et aboutir au même résultat en empruntant un chemin différent.
+      </p>
+    </hint>
+    <answer>
+      <p>
+        Quel que soit l'ordre des dérivations choisi, on trouve
+        <me>\frac{\partial^3f}{\partial y^2\partial x}=f_{xyy}=f_{yxy}=f_{yyx}=0.</me>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Rappelons d'abord les calculs
+        <me>
+          \begin{matrix}
+          f_{xx}=\dfrac{\partial^2f}{\partial x^2}=2y&amp;\quad f_{yx}=\dfrac{\partial^2f}{\partial x\partial y}=2x\\
+          f_{xy}=\dfrac{\partial^2f}{\partial y\partial x}=2x&amp;\quad f_{yy}=\dfrac{\partial^2f}{\partial y^2}=6
+          \end{matrix}
+        </me>
+        effectués à l'exercice précédent <xref ref="exercice-derivees-partielles-secondes" />.
+      </p>
+      <ul>
+        <li>
+          <p>
+            Par définition, on a
+            <md>
+              <mrow>\frac{\partial^3f}{\partial y^2\partial x}&amp;=\frac{\partial}{\partial y}\left(\frac{\partial^2f}{\partial y\partial x}\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial y}\left(2x\right)</mrow>
+              <mrow>&amp;=0.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Grâce au théorème de Clairaut, on peut permuter les dérivations partielles et prendre ainsi un chemin différent :
+            <md>
+              <mrow>\frac{\partial^3f}{\partial y^2\partial x}&amp;=f_{xyy}</mrow>
+              <mrow>&amp;=f_{yyx}</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial x}\left(f_{yy}\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial x}\left(6\right)</mrow>
+              <mrow>&amp;=0.</mrow>
+            </md>
+          </p>
+        </li>
+      </ul>
+    </solution>
+  </exercise>
+
+  <project>
+    <introduction>
+      <p>
+        On considère la fonction de deux variables
+        <me>f(x,y)=\arctan\left(\frac{y}{x}\right).</me>
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Dériver <m>f(x,y)</m> par rapport à <m>y</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Commençons par remarquer que
+          <me>\frac{\partial}{\partial y}\left(\frac{y}{x}\right)=\frac{1}{x}.</me>
+          Par dérivation en chaîne, on obtient alors
+          <md>
+            <mrow>f_y(x,y)&amp;=\frac{\partial}{\partial y}\left(\arctan\left(\frac{y}{x}\right)\right)</mrow>
+            <mrow>&amp;=\frac{1}{1+\left(\frac{y}{x}\right)^2}\cdot\frac{\partial}{\partial y}\left(\frac{y}{x}\right)</mrow>
+            <mrow>&amp;=\frac{1}{1+\frac{y^2}{x^2}}\cdot\frac{1}{x}</mrow>
+            <mrow>&amp;=\frac{x}{x^2+y^2}.</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Dériver <m>f(x,y)</m> par rapport à <m>x</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Commençons par remarquer que
+          <md>
+            <mrow>\frac{\partial}{\partial x}\left(\frac{y}{x}\right)&amp;=\frac{\partial}{\partial x}\left(yx^{-1}\right)</mrow>
+            <mrow>&amp;=y\cdot\frac{\partial}{\partial x}\left(x^{-1}\right)</mrow>
+            <mrow>&amp;=y\cdot(-1)\cdot x^{-2}</mrow>
+            <mrow>&amp;=-\frac{y}{x^2}.</mrow>
+          </md>
+          Par dérivation en chaîne, on obtient alors
+          <md>
+            <mrow>f_x(x,y)&amp;=\frac{\partial}{\partial x}\left(\arctan\left(\frac{y}{x}\right)\right)</mrow>
+            <mrow>&amp;=\frac{1}{1+\left(\frac{y}{x}\right)^2}\cdot\frac{\partial}{\partial x}\left(\frac{y}{x}\right)</mrow>
+            <mrow>&amp;=\frac{1}{1+\frac{y^2}{x^2}}\cdot\left(-\frac{y}{x^2}\right)</mrow>
+            <mrow>&amp;=-\frac{y}{x^2+y^2}.</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Représenter l'intersection du graphe de la fonction <m>f</m> avec le plan d'équation <m>y=3</m>.
+          Comment appelle-t-on cette courbe?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Voici le graphe de la fonction
+          <image source="images/exercice_4.1.6.png" width="80%"/>
+          avec le plan en bleu ciel et leur intersection en noir.
+          On appelle cette intersection la trace du graphe dans le plan d'équation <m>y=3</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Interpréter graphiquement le nombre <m>f_x(2,3)</m>.
+          Dire sans calcul s'il est positif, négatif ou nul.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Le nombre <m>f_x(2,3)</m> est la pente de la tangente à la trace du graphe de la fonction <m>f</m> avec le plan d'équation <m>y=3</m> au point <m>(2,3,f(2,3))</m>.
+        </p>
+        <p>
+          Voici la représentation graphique de la trace en question
+          <image source="images/exercice_4.1.6bis.png" width="80%"/>
+           dans le plan d'équation <m>y=3</m>.
+        </p>
+        <p>
+          La pente de la tangente au point donné est clairement négative.
+          On en déduit donc que
+          <me>f_x(2,3)&lt;0</me>
+          sans calculs.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Définir <m>f_x(2,3)</m> à l'aide d'une limite.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Si la limite suivante existe, alors
+          <me>f_x(2,3)=\lim_{x\rightarrow 2}\frac{f(x,3)-f(2,3)}{x-2}.</me>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Sachant que
+          <me>f(2;3)\approx 0{,}983\quad\text{et}\quad f(2{,}1;3)\approx 0{,}960</me>
+          donner une estimation de <m>f_x(2,3)</m> sans dériver.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Comme
+          <me>f_x(2,3)=\lim_{x\rightarrow 2}\frac{f(x,3)-f(2,3)}{x-2}</me>
+          on peut estimer cette limite par
+          <md>
+            <mrow>\frac{f(2{,}1;3)-f(2;3)}{2{,}1-2}&amp;\quad\approx\quad\frac{0{,}960-0{,}983}{0{,}1}</mrow>
+            <mrow>&amp;\quad=\quad-0{,}023\cdot 10</mrow>
+            <mrow>&amp;\quad=\quad-0{,}23.</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Donner la valeur exacte de <m>f_x(2,3)</m> et comparer avec l'estimation obtenue à la question précédente.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          On a déjà calculé la dérivée partielle
+          <me>f_x(x,y)=-\frac{y}{x^2+y^2}</me>
+          plus haut.
+          Il en découle que
+          <md>
+            <mrow>f_x(2,3)&amp;=-\frac{3}{2^2+3^2}</mrow>
+            <mrow>&amp;=-\frac{3}{13}</mrow>
+            <mrow>&amp;=-0{,}230\,769\ldots</mrow>
+          </md>
+        </p>
+        <p>
+          On avait donc deux déjà deux décimales correctes avec l'estimation précédente.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Vérifier que la fonction <m>f</m> satisfait la conclusion du théorème de Clairaut.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          On a déjà calculé
+          <me>f_x=-\frac{y}{x^2+y^2}\quad\text{et}\quad f_y=\frac{x}{x^2+y^2}.</me>
+        </p>
+        <p>
+          Alors
+          <md>
+            <mrow>f_{xy}&amp;=(f_x)_y</mrow>
+            <mrow>&amp;=\frac{\partial}{\partial y}(f_x)</mrow>
+            <mrow>&amp;=\frac{\partial}{\partial y}\left(-\frac{y}{x^2+y^2}\right)</mrow>
+            <mrow>&amp;=-\frac{\partial}{\partial y}\left(\frac{y}{x^2+y^2}\right)</mrow>
+            <mrow>&amp;=-\frac{\frac{\partial}{\partial y}(y)\cdot(x^2+y^2)-y\cdot\frac{\partial}{\partial y}(x^2+y^2)}{(x^2+y^2)^2}</mrow>
+            <mrow>&amp;=-\frac{1\cdot(x^2+y^2)-y\cdot 2y}{(x^2+y^2)^2}</mrow>
+            <mrow>&amp;=-\frac{x^2+y^2-2y^2}{(x^2+y^2)^2}</mrow>
+            <mrow>&amp;=\frac{y^2-x^2}{(x^2+y^2)^2}</mrow>
+          </md>
+          et
+          <md>
+            <mrow>f_{yx}&amp;=(f_y)_x</mrow>
+            <mrow>&amp;=\frac{\partial}{\partial x}(f_y)</mrow>
+            <mrow>&amp;=\frac{\partial}{\partial y}\left(\frac{x}{x^2+y^2}\right)</mrow>
+            <mrow>&amp;=\frac{\frac{\partial}{\partial x}(x)\cdot(x^2+y^2)-x\cdot\frac{\partial}{\partial x}(x^2+y^2)}{(x^2+y^2)^2}</mrow>
+            <mrow>&amp;=\frac{1\cdot(x^2+y^2)-x\cdot 2x}{(x^2+y^2)^2}</mrow>
+            <mrow>&amp;=\frac{x^2+y^2-2x^2}{(x^2+y^2)^2}</mrow>
+            <mrow>&amp;=\frac{y^2-x^2}{(x^2+y^2)^2}.</mrow>
+          </md>
+        </p>
+        <p>
+          Donc on a
+          <me>f_{xy}=f_{yx}</me>
+          et la conclusion du théorème de Clairaut est bien vérifiée.
+        </p>
+      </solution>
+    </task>
+  </project>
+
+  <p>
+    Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 6, 10 (déjà fait plus haut), 18, 20, 22, 28, 32, 34, 42, 46, 48, 50, 58, 76, 78ab, 80abc dont voici les <url href="https://drive.google.com/file/d/1JPEzgYefUOxozUHNvA7IKcwdBAC3g1WC/view?usp=sharing">solutions</url>.
+  </p>
+  <p>
+    Sinon, passez directement aux exercices prioritaires de cette section.
+  </p>
+  <p>
+    Remarque : Voici <url href="https://drive.google.com/file/d/13p_rPzCtj1yxo_svxW_SPxG-W7wZcJ5w/view?usp=sharing">le document</url> distribué les sessions précédentes.
+    Et en voilà <url href="https://drive.google.com/file/d/1gCz_wOxhJmL_pzjzLhRdAYJx7WkMXXIN/view?usp=sharing">le solutionnaire</url>.
+  </p>
+
+</section>
+
+<section xml:id="plans-tangents-et-differentielle">
+  <title>Les plans tangents et les approximations linéaires</title>
+
+  <activity>
+    <ul>
+      <li>
+        <p>
+          <url href="https://tinyurl.com/v6rzle9">Calculatrice</url> à équations de plans tangents au graphe d'une fonction de deux variables :
+          <sage language='sage'>
+            <input>
+              var('x, y, z')
+              f(x, y) = ln( 2 * x + y )  # fonction de deux variables
+              (x0, y0) = (-1, 3)  # point
+
+              fx = derivative(f, x)
+              fy = derivative(f, y)
+              equation = z == f(x0, y0) + fx(x0, y0) * (x - x0) + fy(x0, y0) * (y - y0)
+
+              pretty_print('Graphe :', z == f(x, y))
+              pretty_print('Point :', (x0, y0, f(x0, y0)))
+              pretty_print('Plan tangent :', equation)
+            </input>
+          </sage>
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://www.geogebra.org/m/nKra5HVX">Application</url> GeoGebra illustrant graphiquement le concept de plan tangent au graphe d'une fonction de deux variables.
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://tinyurl.com/ul8cjbp">Exemple de calcul</url> d'équation de plan tangent avec WolframAlpha.
+        </p>
+      </li>
+    </ul>
+  </activity>
+
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Connaître la <url href="https://tinyurl.com/s2gm3ov">condition suffisante de différentiabilité en un point</url> pour une fonction de plusieurs variables.
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir utiliser les dérivées partielles d'une fonction de deux variables pour déterminer l'équation du plan tangent à son graphe en un point.
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir déterminer la linéarisation et la différentielle d'une fonction de plusieurs variables.
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir donner une approximation de la valeur d'une fonction en la linéarisant.
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir utiliser la différentielle pour estimer rapidement des variations.
+        </p>
+      </li>
+    </ul>
+  </objectives>
+
+  <exercise>
+    <statement>
+      <p>
+        Le but de cet exercice est de réviser les concepts de tangence, d'approximation linéaire et de différentielle dans le cas des fonctions d'une variable.
+      </p>
+      <p>
+        On s'intéresse à la fonction
+        <me>f(x)=\sqrt{x}.</me>
+      </p>
+      <ol>
+        <li>
+          <p>
+            Donnez l'équation de la tangente au graphe de <m>f</m> au point <m>(4,f(4))=(4,2)</m> sous la forme
+            <me>y=ax+b</me>
+            en déterminant la pente <m>a</m>, puis l'ordonnée à l'origine <m>b</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Déterminez la linéarisation <m>L(x)</m> de la fonction <m>f(x)</m> en <m>x_0=4</m> (c'est-à-dire son polynôme de Taylor de degré au plus <m>1</m> centré en <m>x_0=4</m>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Vérifiez que
+            <me>y=L(x)</me>
+            fournit une nouvelle équation de la tangente, équivalente à celle trouvée en 1.
+          </p>
+        </li>
+        <li>
+          <p>
+            Si <m>y=f(x)</m>, déterminez la différentielle <m>\mathrm{d}y</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Utilisez la linéarisation <m>L(x)</m> pour obtenir une approximation de <m>\sqrt{4{,}1}</m> sans calculatrice.
+            Comparez avec la valeur exacte.
+          </p>
+        </li>
+        <li>
+          <p>
+            Si <m>y=f(x)</m>, comparez les valeurs de <m>\Delta y</m> et de <m>\mathrm{d}y</m> lorsque <m>x</m> varie de <m>4</m> à <m>4{,}1</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <hint>
+      <p>
+        Voici la synthèse graphique des concepts évoqués dans cet exercice :
+        <image source="images/exercice_4.2.1.png" width="50%"/>
+      </p>
+    </hint>
+    <answer>
+      <ol>
+        <li>
+          <p>
+            On obtient
+            <me>y=\frac{1}{4}x+1.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On trouve
+            <me>L(x)=2+\frac{1}{4}(x-4).</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            En effet, on a
+            <md>
+              <mrow>y=L(x)&amp;\quad\Leftrightarrow\quad y=2+\frac{1}{4}(x-4)</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad y=2+\frac{1}{4}x-1</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad y=\frac{1}{4}x+1.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            On a
+            <me>\mathrm{d}y=\frac{1}{2\sqrt{x}}\,\mathrm{d}x.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Comme <m>f</m> est dérivable en <m>x_0=4</m>, cela a du sens d'approcher
+            <me>f(4{,}1)=\sqrt{4{,}1}</me>
+            par
+            <me>L(4{,}1)=2{,}025.</me>
+          </p>
+          <p>
+            À l'aide d'une calculatrice, on obtient la valeur exacte
+            <me>f(4{,}1)=\sqrt{4{,}1}=2{,}024\,845\ldots.</me>
+            Donc l'erreur commise en approchant <m>f(4{,}1)</m> par <m>L(4{,}1)</m> vaut
+            <me>f(4{,}1)-L(4{,}1)\approx -0{,}000\,2.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On trouve
+            <me>\Delta y=0{,}024\,845\ldots</me>
+            et
+            <me>\mathrm{d}y=0{,}025</me>
+            qui fournit une bonne estimation de <m>\Delta y</m> sans avoir recours à la calculatrice.
+          </p>
+        </li>
+      </ol>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            D'abord, on calcule la pente de la tangente à l'aide de la dérivée
+            <me>f'(x)=\frac{1}{2\sqrt{x}}.</me>
+            On trouve
+            <md>
+              <mrow>a&amp;=f'(4)</mrow>
+              <mrow>&amp;=\frac{1}{2\sqrt{4}}</mrow>
+              <mrow>&amp;=\frac{1}{4}.</mrow>
+            </md>
+          </p>
+          <p>
+            Ensuite, on remplace <m>(x,y)</m> par <m>(4,f(4))=(4,2)</m> dans l'équation
+            <me>y=\frac{1}{4}x+b.</me>
+            On trouve
+            <me>2=\frac{1}{\cancel{4}}\cancel{4}+b</me>
+            d'où
+            <me>b=2-1=1.</me>
+          </p>
+          <p>
+            Finalement, on obtient l'équation suivante
+            <me>y=\frac{1}{4}x+1</me>
+            pour la tangente  au graphe de <m>f</m> au point <m>(4,f(4))=(4,2)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Par définition, on a
+            <md>
+              <mrow>L(x)&amp;=f(4)+f'(4)(x-4)</mrow>
+              <mrow>&amp;=2+\frac{1}{4}(x-4).</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            En effet, on a
+            <md>
+              <mrow>y=L(x)&amp;\quad\Leftrightarrow\quad y=2+\frac{1}{4}(x-4)</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad y=2+\frac{1}{4}x-1</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad y=\frac{1}{4}x+1.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Si <m>y=f(x)</m>, on a
+            <md>
+              <mrow>\mathrm{d}y&amp;=f'(x)\,\mathrm{d}x</mrow>
+              <mrow>&amp;=\frac{1}{2\sqrt{x}}\,\mathrm{d}x</mrow>
+            </md>
+            par définition.
+          </p>
+        </li>
+        <li>
+          <p>
+            Comme <m>f</m> est dérivable en <m>x_0=4</m>, cela a du sens d'approcher
+            <me>f(4{,}1)=\sqrt{4{,}1}</me>
+            par
+            <md>
+              <mrow>L(4{,}1)&amp;=2+\frac{1}{4}(x-4)\Bigg\rvert_{x=4{,}1}</mrow>
+              <mrow>&amp;=2+\frac{1}{4}(4{,}1-4)</mrow>
+              <mrow>&amp;=2+\frac{0{,}1}{4}\cdot </mrow>
+              <mrow>&amp;=2+0{,}025</mrow>
+              <mrow>&amp;=2{,}025.</mrow>
+            </md>
+          </p>
+          <p>
+            À l'aide d'une calculatrice, on obtient la valeur exacte
+            <me>f(4{,}1)=\sqrt{4{,}1}=2{,}024\,845\ldots.</me>
+            Donc l'erreur commise en approchant <m>f(4{,}1)</m> par <m>L(4{,}1)</m> vaut
+            <md>
+              <mrow>f(4{,}1)-L(4{,}1)&amp;=2{,}024\,845\ldots-2{,}025</mrow>
+              <mrow>&amp;=-0{,}000\,15\ldots</mrow>
+              <mrow>&amp;\approx -0{,}000\,2.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            D'une part, la variation exacte de <m>y=f(x)</m> vaut
+            <md>
+              <mrow>\Delta y&amp;=f(4{,}1)-f(4)</mrow>
+              <mrow>&amp;=\sqrt{4{,}1}-\sqrt{4}</mrow>
+              <mrow>&amp;=2{,}024\,845\ldots-2</mrow>
+              <mrow>&amp;=0{,}024\,845\ldots</mrow>
+            </md>
+          </p>
+          <p>
+            D'autre part, la différentielle donne
+            <md>
+              <mrow>\mathrm{d}y&amp;=f'(4)\,\Delta x</mrow>
+              <mrow>&amp;=\frac{1}{4}(4{,}1-4)</mrow>
+              <mrow>&amp;=\frac{1}{4}\cdot 0{,}1</mrow>
+              <mrow>&amp;=0{,}025</mrow>
+            </md>
+            qui fournit une bonne estimation de <m>\Delta y</m> sans avoir recours à la calculatrice.
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <ul>
+        <li>
+          <p>
+            Pour une fonction d'une variable <m>f(x)</m>, l'existence de
+            <me>f'(x_0)</me>
+            est nécessaire et suffisante pour pouvoir parler de droite tangente au graphe de <m>f</m> au point <m>(x_0,f(x_0))</m>.
+          </p>
+          <p>
+            Autrement dit, le graphe de <m>f</m> admet une droite tangente au point <m>(x_0,f(x_0))</m> si et seulement si <m>f</m> est dérivable en <m>x_0</m>.
+          </p>
+          <p>
+            Quand c'est le cas, cela se traduit visuellement par le fait que plus on <em>zoome</em> sur le point <m>(x_0,f(x_0))</m>, plus le graphe ressemble à cette droite dont l'équation peut s'écrire
+            <me>y=f(x_0)+f'(x_0)(x-x_0).</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Pour une fonction de deux variables <m>g(x,y)</m>, l'existence de
+            <me>f_x(x_0,y_0)\quad\text{et}\quad f_y(x_0,y_0)</me>
+            est nécessaire, mais pas suffisante, pour pouvoir parler de plan tangent au graphe de <m>g</m> au point <m>(x_0,y_0,f(x_0,y_0))</m>.
+          </p>
+          <p>
+            En fait, le graphe de <m>g</m> admet un plan tangent au point <m>(x_0,y_0,f(x_0,y_0))</m> si et seulement si <m>g</m> est différentiable en <m>(x_0,y_0)</m>.
+            Ce concept est délicat à définir, alors nous sous contenterons de la  <url href="https://tinyurl.com/s2gm3ov">condition suffisante de différentiabilité en un point</url> suivante : si <m>g_x</m> et <m>g_y</m> existent au voisinage de <m>(x_0,y_0)</m> et qu'elles sont continues en ce point, alors <m>g</m> est différentiable en ce point et cela a un sens de parler de plan tangent et d'approximation linéaire.
+          </p>
+          <p>
+            Quand c'est le cas, cela se traduit visuellement par le fait que plus on <em>zoome</em> sur le point <m>(x_0,y_0,g(x_0,y_0))</m>, plus le graphe ressemble à ce plan dont l'équation peut s'écrire
+            <me>z=g(x_0,y_0)+g_x(x_0,y_0)(x-x_0)+g_y(x_0,y_0)(y-y_0).</me>
+          </p>
+        </li>
+      </ul>
+      <ol>
+        <li>
+          <p>
+            Donnez un exemple graphique de fonction d'une variable <m>f(x)</m> dont le graphe n'admet pas de droite tangente au point <m>(0,f(0))</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Donnez un exemple graphique de fonction de deux variables <m>g(x,y)</m> dont le graphe n'admet pas de plan tangent au point <m>(0,0,g(0,0))</m> même si les dérivées partielles <m>g_x(0,0)</m> et <m>g_y(0,0)</m> existent.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <hint>
+      <ol>
+        <li>
+          <p>
+            Connaissez-vous une fonction dont le graphe présente un point anguleux en <m>(0,0)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            Jouez avec votre logiciel favori pour trouver par exemple une fonction dont les traces dans les plans d'équations <m>x=0</m> et <m>y=0</m> donnent des droites, mais dont la trace dans le plan d'équation <m>x=y</m> donne une courbe présentant un point de rebroussement à l'origine.
+          </p>
+        </li>
+      </ol>
+    </hint>
+    <answer>
+      <ol>
+        <li>
+          <p>
+            La fonction valeur absolue
+            <me>f(x)=|x|</me>
+            fournit un tel exemple :
+            <image source="images/exercice_4.2.2.png" width="60%"/>
+          </p>
+        </li>
+        <li>
+          <p>
+            La fonction
+            <me>g(x,y)=\sqrt[3]{xy}</me>
+            fournit un tel exemple :
+            <image source="images/exercice_4.2.2bis.png" width="90%"/>
+          </p>
+        </li>
+      </ol>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Comme la fonction valeur absolue
+            <me>f(x)=|x|</me>
+            n'est pas dérivable en <m>x=0</m>, son graphe
+            <image source="images/exercice_4.2.2.png" width="60%"/>
+             n'admet pas de tangente au point <m>(0,f(0))</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Considérons la fonction
+            <me>g(x,y)=\sqrt[3]{xy}.</me>
+            Comme
+            <me>g(x,0)=\sqrt[3]{x\cdot0}=\sqrt[3]{0}=0\quad\text{pout tout }x\in\mathbb{R},</me>
+            on a
+            <md>
+              <mrow>g_x(0,0)&amp;=\lim_{x\rightarrow 0}\frac{g(x,0)-g(0,0)}{x-0}</mrow>
+              <mrow>&amp;=\lim_{x\rightarrow 0}\frac{0-0}{x}</mrow>
+              <mrow>&amp;=\lim_{x\rightarrow 0}0</mrow>
+              <mrow>&amp;=0.</mrow>
+            </md>
+            De même, la dérivée partielle <m>g_y(0,0)</m> existe et vaut
+            <me>g_y(0,0)=0.</me>
+          </p>
+          <p>
+            Mais quand on prend la trace du graphe de <m>g</m>
+            <image source="images/exercice_4.2.2bis.png" width="90%"/>
+            dans le plan d'équation
+            <me>x=y</me>
+            on obtient une courbe
+            <image source="images/exercice_4.2.2ter.png" width="60%"/>
+            qui présente un point de rebroussement à l'origine.
+          </p>
+          <p>
+            Par conséquent, on aura beau <em>zoomer</em> autant qu'on voudra sur le point <m>(0,0,g(0,0))</m>, le graphe de <m>g</m> ne ressemblera jamais à aucun plan.
+            Voici pourquoi, intuitivement, il n'y a pas de plan tangent en ce point.
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-equation-plan-tangent">
+    <statement>
+      <p>
+        Trouvez l'équation du plan tangent à la surface d'équation
+        <me>z=\ln(2x+y)</me>
+        au point
+        <me>(-1,3,0).</me>
+      </p>
+      <p>
+        Vérifiez graphiquement votre réponse à l'aide de votre logiciel préféré.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Si <m>f</m> est différentiable au point <m>(x_0,y_0)</m>, la surface d'équation
+        <me>z=f(x,y)</me>
+        admet un plan tangent au point
+        <me>(x_0,y_0,f(x_0,y_0))</me>
+        et l'équation de ce plan tangent peut s'écrire
+        <me>z=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0).</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        On obtient l'équation
+        <me>z=2x+y-1.</me>
+      </p>
+      <p>
+        En représentant graphiquement ce plan,
+        <image source="images/exercice_4.2.3.png" width="80%"/>
+        on vérifie qu'il est bien tangent à la surface au point donné.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Introduisons la fonction
+        <me>f(x,y)=\ln(2x+y)</me>
+        dont le graphe correspond à la surface considérée.
+      </p>
+      <p>
+        L'évaluation de ses dérivées partielles
+        <me>f_x(x,y)=\frac{2}{2x+y}\quad\text{et}\quad f_y(x,y)=\frac{1}{2x+y}</me>
+        au point <m>(-1,3)</m> donne
+        <me>f_x(-1,3)=\frac{2}{2(-1)+3}=2\quad\text{et}\quad f_y(x,y)=\frac{1}{2(-1)+3}=1.</me>
+      </p>
+      <p>
+        Au point <m>(-1,3,0)</m>, l'équation du plan tangent au graphe de <m>f</m>
+        <me>z=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)</me>
+        prend donc la forme
+        <me>z=0+2(x+1)+1(y-3)</me>
+        ou encore
+        <me>z=2x+y-1.</me>
+      </p>
+      <p>
+        Remarque : Comme les dérivées partielles <m>f_x</m> et <m>f_y</m> existent autour du point <m>(-1,3)</m> qu'elles y sont continues, la fonction <m>f</m> est différentiable en ce point et cela a un bien un sens de parler de plan tangent.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-approximation-lineaire">
+    <statement>
+      <p>
+        Utilisez la linéarisation de la fonction
+        <me>f(x,y)=\ln(2x+y)</me>
+        au point <m>(-1,3)</m> pour obtenir une approximation de
+        <me>f(-1{,}2;3{,}3)</me>
+        sans calculatrice.
+      </p>
+      <p>
+        Calculez ensuite l'erreur commise et arrondissez-la à trois décimales.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Linéariser une fonction de deux variables en un point, c'est remplacer son graphe par le plan qui lui est tangent en ce point.
+      </p>
+      <p>
+        Concrètement, la linéarisation de <m>f(x,y)</m> au point <m>(x_0,y_0)</m> est la fonction
+        <me>L(x,y)=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0).</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        On trouve
+        <me>\text{Approximation}=-0{,}1</me>
+        et
+        <me>\text{Erreur}\approx-0{,}005.</me>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Les calculs faits à l'exercice précédent <xref ref="exercice-equation-plan-tangent"/> donnent la linéarisation
+        <md>
+          <mrow>L(x,y)&amp;\quad =\quad f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)</mrow>
+          <mrow>&amp;\quad =\quad 0+2(x+1)+1(y-3)</mrow>
+          <mrow>&amp;\quad =\quad 2(x+1)+y-3</mrow>
+        </md>
+        qui fournit l'approximation de <m>f(-1{,}2;3{,}3)</m> suivante
+        <md>
+          <mrow>L(-1{,}2;3{,}3))&amp;\quad =\quad 2(-1{,}2+1)+3{,}3-3</mrow>
+          <mrow>&amp;\quad =\quad 2(-0{,}2)+0{,}3</mrow>
+          <mrow>&amp;\quad =\quad -0{,}4+0{,}3</mrow>
+          <mrow>&amp;\quad =\quad -0{,}1.</mrow>
+        </md>
+        sans nécessiter de calculatrice.
+      </p>
+      <p>
+        En calculant la valeur exacte
+        <md>
+          <mrow>f(-1{,}2;3{,}3)&amp;\quad =\quad \ln(2(-1{,}2)+3{,}3)</mrow>
+          <mrow>&amp;\quad =\quad\ln(0{,}9)</mrow>
+          <mrow>&amp;\quad =\quad -0{,}105\,360\ldots</mrow>
+        </md>
+        à l'aide d'une calculatrice, on voit que l'erreur commise vaut
+        <md>
+          <mrow>\text{Erreur}&amp;\quad =\quad\text{Valeur exacte}-\text{Approximation}</mrow>
+          <mrow>&amp;\quad =\quad f(-1{,}2;3{,}3)-L(-1{,}2;3{,}3)</mrow>
+          <mrow>&amp;\quad =\quad -0{,}105\,360\ldots+0{,}1</mrow>
+          <mrow>&amp;\quad =\quad -0{,}005\,360\ldots</mrow>
+          <mrow>&amp;\quad \approx\quad -0{,}005.</mrow>
+        </md>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-differentielle">
+    <statement>
+      <p>
+        On s'intéresse aux variables <m>x,y,z</m> liées comme suit :
+        <me>z=x^2-xy+3y^2.</me>
+        <ol>
+          <li>
+            <p>
+              Calculez la différentielle <m>\mathrm{d}z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Comparez les valeurs de
+              <me>\mathrm{d}z\quad\text{et}\quad\Delta z</me>
+              lorsque <m>(x,y)</m> varie
+              <me>\text{de}\quad(1,2)\quad\text{à}\quad(1{,}05;2{,}10).</me>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Si <m>z=f(x,y)</m> alors la différentielle <m>\mathrm{d}z</m> est définie par
+        <me>\mathrm{d}z=\frac{\partial f}{\partial x}\mathrm{d}x+\frac{\partial f}{\partial y}\mathrm{d}y.</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>\mathrm{d}z=(2x-y)\mathrm{d}x+(6y-x)\mathrm{d}y</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathrm{d}z=1{,}1</m> et <m>\Delta z=1{,}127\,5</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Notons <m>f(x,y)=x^2-xy+3y^2</m> et calculons
+        <me>\frac{\partial f}{\partial x}=2x-y\quad\text{et}\quad\frac{\partial f}{\partial y}=6y-x.</me>
+        <ol>
+          <li>
+            <p>
+              Par définition, on a alors
+              <md>
+                <mrow>\mathrm{d}z&amp;=\frac{\partial f}{\partial x}\mathrm{d}x+\frac{\partial f}{\partial y}\mathrm{d}y</mrow>
+                <mrow>&amp;=(2x-y)\mathrm{d}x+(6y-x)\mathrm{d}y.</mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Lorsque <m>(x,y)</m> varie de <m>(1,2)</m> à <m>(1{,}05;2{,}10)</m>, on part de
+              <me>x=1\quad\text{et}\quad y=2</me>
+              puis on ajoute
+              <me>\Delta x=1{,}05-1=0{,}05\quad\text{et}\quad\Delta y=2{,}10-2=0{,}10.</me>
+            </p>
+            <p>
+              Alors <m>\mathrm{d}z</m> prend la valeur
+              <md>
+                <mrow>\mathrm{d}z&amp;=(2x-y)\Delta x+(6y-x)\Delta y</mrow>
+                <mrow>&amp;=(2\cdot 1-2)\cdot 0{,}05+(6\cdot 2-1)\cdot 0{,}10</mrow>
+                <mrow>&amp;=0\cdot 0{,}05+11\cdot 0{,}1</mrow>
+                <mrow>&amp;=1{,}1</mrow>
+              </md>
+              qu'on peut évaluer rapidement sans calculatrice.
+            </p>
+            <p>
+              Par ailleurs, la différence exacte <m>\Delta z</m> entre les valeurs de <m>z=f(x,y)</m> s'obtient grâce au calcul
+              <md>
+                <mrow>\Delta z&amp;=f(1{,}05;2{,}10)-f(1,2)</mrow>
+                <mrow>&amp;=(\underbrace{1{,}05^2-1{,}05\cdot 2{,}10+3\cdot 2{,}10^2}_{=12{,}127\,5})-(\underbrace{1^2-1\cdot 2+3\cdot 2^2}_{=11})</mrow>
+                <mrow>&amp;=1{,}127\,5</mrow>
+              </md>
+              qu'on n'a pas vraiment envie de faire de tête.
+            </p>
+            <p>
+              Comme la valeur de <m>\mathrm{d}z</m> est proche de celle de <m>\Delta z</m>, il est tentant de s'en contenter pour obtenir un ordre de grandeur et sauver du temps.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-erreur-relative">
+    <statement>
+      <p>
+        On mesure les dimensions d'une boîte rectangulaire à l'aide d'un ruban à mesurer.
+        On trouve une largeur de <m>20\,\mathrm{cm}</m>, une longueur de <m>25\,\mathrm{cm}</m>, et une hauteur de <m>10\,\mathrm{cm}</m>.
+      </p>
+      <p>
+        Sachant que le ruban à mesurer est précis à <m>\pm 0{,}2\,\mathrm{cm}</m>, utilisez la différentielle pour estimer l'erreur maximale commise sur le calcul du volume de la boîte.
+      </p>
+      <p>
+        Déduisez-en une estimation de l'erreur relative commise.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Notez <m>x,y,z</m> la largeur, la longueur et la hauteur, de sorte que le volume vaut
+        <me>V=xyz</me>
+        et que la précision du ruban se traduit par les inégalités
+        <me>|\Delta x|\leq 0{,}2\qquad |\Delta y|\leq 0{,}2\qquad |\Delta z|\leq 0{,}2</me>
+        qui permettent de majorer la valeur de la différentielle
+        <me>\mathrm{d}V=\frac{\partial V}{\partial x}\mathrm{d}x+\frac{\partial V}{\partial y}\mathrm{d}y+\frac{\partial V}{\partial z}\mathrm{d}z.</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        On estime l'erreur maximale à
+        <me>\pm 190\,\mathrm{cm}^3</me>
+        et l'erreur relative maximale à
+        <me>\pm 3{,}8\,\%</me>
+        environ.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Suivons l'indication et notons <m>x,y,z</m> la largeur, la longueur et la hauteur, de sorte que le volume vaut
+        <me>V=xyz</me>
+        et que la précision du ruban se traduit par les inégalités
+        <me>|\Delta x|\leq 0{,}2\qquad |\Delta y|\leq 0{,}2\qquad |\Delta z|\leq 0{,}2.</me>
+      </p>
+      <p>
+        Alors la différentielle
+        <md>
+          <mrow>\mathrm{d}V&amp;=\frac{\partial V}{\partial x}\mathrm{d}x+\frac{\partial V}{\partial y}\mathrm{d}y+\frac{\partial V}{\partial z}\mathrm{d}z</mrow>
+          <mrow>&amp;=yz\,\mathrm{d}x+xz\,\mathrm{d}y+xy\,\mathrm{d}z</mrow>
+        </md>
+        prend la valeur
+        <md>
+          <mrow>\mathrm{d}V&amp;=(25\cdot 10)\Delta x+(20\cdot 10)\Delta y+(20\cdot 25)\Delta z</mrow>
+          <mrow>&amp;=250\Delta x+200\Delta y+500\Delta z.</mrow>
+        </md>
+      </p>
+      <p>
+        Par inégalité triangulaire, on obtient la majoration
+        <md>
+          <mrow>|\mathrm{d}V|&amp;=\left|250\Delta x+200\Delta y+500\Delta z\right|</mrow>
+          <mrow>&amp;\leq |250\Delta x|+|200\Delta y|+|500\Delta z|</mrow>
+          <mrow>&amp;=250|\Delta x|+200|\Delta y|+500|\Delta z|</mrow>
+          <mrow>&amp;\leq 250\cdot 0{,}2+200\cdot 0{,}2+500\cdot 0{,}2</mrow>
+          <mrow>&amp;=50+40+100</mrow>
+          <mrow>&amp;=190\,\mathrm{cm}^3.</mrow>
+        </md>
+        qui indique une erreur maximale de
+        <me>\pm 190\,\mathrm{cm}^3</me>
+        environ.
+      </p>
+      <p>
+        Pour l'erreur relative correspondante
+        <me>\frac{\Delta V}{V}</me>
+        on en déduit l'estimation
+        <md>
+          <mrow>\left|\frac{\mathrm{d}V}{V}\right|&amp;=\frac{|\mathrm{d}V|}{20\cdot 25\cdot 10}</mrow>
+          <mrow>&amp;\leq\frac{190}{5000}</mrow>
+          <mrow>&amp;=0{,}038</mrow>
+          <mrow>&amp;=3{,}8\,\%</mrow>
+        </md>
+        qui indique une erreur relative maximale de
+        <me>\pm 3{,}8\,\%</me>
+        environ.
+      </p>
+    </solution>
+  </exercise>
+
+  <project>
+    <introduction>
+      <p>
+        Pour retenir toutes les formules de cette section, il peut être utile de les comparer à celles rencontrées en cours de calcul différentiel pour des fonctions d'une seule variable.
+      </p>
+      <p>
+        Soit <m>f(x)</m> une fonction d'une variable dérivable en <m>x_0</m> et <m>g(x,y)</m> une fonction de deux variables admettant des dérivées partielles <m>\frac{\partial f}{\partial x}</m> et <m>\frac{\partial f}{\partial y}</m> au point <m>(x_0,y_0)</m>.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Rappeler les équations des graphes de <m>f</m> et de <m>g</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Le graphe de <m>f</m> a pour équation
+          <me>y=f(x)</me>
+          et celui de <m>g</m> a pour équation
+          <me>z=g(x,y).</me>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Comparer la linéarisation de <m>f</m> en <m>x_0</m> et celle de <m>g</m> au point <m>(x_0,y_0)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          La linéarisation de <m>f</m> est
+          <me>L(x)=f(x_0)+f'(x_0)(x-x_0)</me>
+          et celle de <m>g</m>
+          <me>L(x,y)=g(x_0,y_0)+g_x(x_0,y_0)(x-x_0)+g_y(x_0,y_0)(y-y_0).</me>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Comparer l'équation de la tangente au graphe de <m>f</m> au point <m>(x_0,f(x_0))</m> et celle du plan tangent au graphe de <m>g</m> au point <m>(x_0,y_0,f(x_0,y_0))</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          La tangente a pour équation
+          <me>y=f(x_0)+f'(x_0)(x-x_0)</me>
+          et le plan tangent
+          <me>z=g(x_0,y_0)+g_x(x_0,y_0)(x-x_0)+g_y(x_0,y_0)(y-y_0).</me>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Comparer les différentielles <m>\mathrm{d}f</m> et <m>\mathrm{d}g</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Avec une variable, on a
+          <me>\mathrm{d}f=f'(x_0)\mathrm{d}x</me>
+          et avec deux variables,
+          <me>\mathrm{d}g=\frac{\partial g}{\partial x}\mathrm{d}x+\frac{\partial g}{\partial y}\mathrm{d}y.</me>
+        </p>
+      </solution>
+    </task>
+  </project>
+
+  <p>
+    Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 2, 4, 12, 14, 26, 32, 38, 44 dont voici les <url href="https://drive.google.com/file/d/1WrNPr-O8D0u6HN-wis3lMtKP_xzh_4N2/view?usp=sharing">solutions</url>.
+  </p>
+  <p>
+    Sinon, passez directement aux exercices prioritaires de cette section.
+  </p>
+  <p>
+    Remarque : Voici <url href="https://drive.google.com/file/d/1gDkb6hvPJ8Geuq94OGi44yK46XEIoMCr/view?usp=sharing">le document</url> distribué les sessions précédentes.
+    Et en voilà <url href="https://drive.google.com/file/d/1zNiQEEVNcpVwL-wQ3XYdkfwuUPMLyQor/view?usp=sharing">le solutionnaire</url>.
+  </p>
+
+</section>
+
+<section xml:id="derivation-en-chaine">
+  <title>La règle de dérivation en chaîne</title>
+
+  <activity>
+    <ul>
+      <li>
+        <p>
+          <url href="https://tinyurl.com/wwddeou">Calculatrice</url> à règle de dérivation en chaîne pour une fonction <m>z</m> de deux variables <m>x,y</m> qui dépendent chacune de <m>t</m> :
+          <sage language='sage'>
+            <input>
+              var('x, y, z, t')  # déclaration des variables
+              x = function('x')(t)  # x dépend de t
+              y = function('y')(t)  # y dépend de t
+
+              z(t) = x^2 + (y/3)^2  # fonction composée
+              derivee = derivative(z, t)  # dérivée
+
+              pretty_print('Fonction composée :', z)
+              pretty_print('Dérivée :', derivee)
+            </input>
+          </sage>
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://www.geogebra.org/m/BzVfXX4S">Application</url> GeoGebra illustrant graphiquement la règle de dérivation en chaîne pour une fonction de deux variables qui dépendent chacune du temps.
+        </p>
+      </li>
+    </ul>
+  </activity>
+
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Connaître la règle de dérivation en chaîne pour une fonction différentiable de deux variables <m>z(x,y)</m> évaluée en deux fonctions dérivables d'une seule variable <m>x(t)</m> et <m>y(t)</m> :
+          <me>\frac{\mathrm{d}z}{\mathrm{d}t}=\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}.</me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir représenter la dépendance des variables entre elles par un arbre et savoir utiliser un tel arbre pour formuler la règle de dérivation chaîne désirée.
+          Par exemple, si
+          <me>z=x^2+3xy^3\quad\text{où}\quad x=r+s-5t\quad\text{et}\quad y=2s+t</me>
+          et qu'on cherche à déterminer <m>\dfrac{\partial z}{\partial s}</m>, on dessine l'arbre
+          <image source="images/4.3_objectifs.png" width="80%" />
+          et on en déduit que
+          <me>\frac{\partial z}{\partial s}=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial s}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial s}.</me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir calculer des dérivées partielles à l'aide de la règle de dérivation en chaîne.
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir exprimer le taux de variation d'une fonction dépendant de plusieurs variables en fonction des taux de variations de chacune de ces variables.
+        </p>
+      </li>
+      <li>
+        <p>
+          Pouvoir vérifier qu'une fonction donnée est solution d'une <url href="https://fr.wikipedia.org/wiki/%C3%89quation_aux_d%C3%A9riv%C3%A9es_partielles">équation aux dérivées partielles (EDP)</url> telle que l'équation des ondes.
+        </p>
+      </li>
+    </ul>
+  </objectives>
+
+  <exercise>
+    <statement>
+      <p>
+        Un pétrolier vient de faire naufrage au large de la Nouvelle-Écosse et malheureusement sa cargaison se répand en formant une gigantesque nappe circulaire.
+      </p>
+      <p>
+        Sachant que le rayon de la nappe est désormais de <m>3</m> km et qu'il augmente à la vitesse de <m>150\,\mathrm{m}/\mathrm{h}</m>, quel est le taux de variation de l'aire de la nappe à ce moment-là?
+      </p>
+      <p>
+        Exprimez votre réponse en <m>\mathrm{km}^2/\mathrm{h}</m> et arrondissez à deux décimales.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Notez <m>r</m> le rayon de la nappe en <m>\mathrm{km}</m> et
+        <me>A=\pi r^2</me>
+        son aire en <m>\mathrm{km}^2</m>, puis utilisez la règle de dérivation en chaîne pour déterminer la valeur de
+        <me>\frac{\mathrm{d}A}{\mathrm{d}t}</me>
+        lorsque
+        <me>r=3\,\mathrm{km}\quad\text{et}\quad\frac{\mathrm{d}r}{\mathrm{d}t}=0{,}15\,\mathrm{km}/\mathrm{h}.</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        On trouve
+        <me>2{,}83\,\mathrm{km}^2/\mathrm{h}.</me>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Notons <m>r</m> le rayon de la nappe en <m>\mathrm{km}</m> et
+        <me>A=\pi r^2</me>
+        son aire en <m>\mathrm{km}^2</m>, de sorte que
+        <md>
+          <mrow>\frac{\mathrm{d}A}{\mathrm{d}t}&amp;=\frac{\mathrm{d}A}{\mathrm{d}r}\cdot\frac{\mathrm{d}r}{\mathrm{d}t}</mrow>
+          <mrow>&amp;=2\pi r\cdot\frac{\mathrm{d}r}{\mathrm{d}t}</mrow>
+        </md>
+        par la règle de dérivation en chaîne.
+      </p>
+      <p>
+        Selon l'énoncé, on est rendu à un moment de la catastrophe où
+        <me>r=3\,\mathrm{km}\quad\text{et}\quad\frac{\mathrm{d}r}{\mathrm{d}t}=0{,}15\,\mathrm{km}/\mathrm{h}.</me>
+        On a donc
+        <md>
+          <mrow>\frac{\mathrm{d}A}{\mathrm{d}t}\Bigg\rvert_{r=3\,\mathrm{km}}&amp;=2\pi\cdot 3\cdot 0{,}15</mrow>
+          <mrow>&amp;=2{,}827\,433\ldots</mrow>
+          <mrow>&amp;\approx 2{,}83\,\mathrm{km}^2/\mathrm{h}.</mrow>
+        </md>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        On s'intéresse aux variables <m>x,y,z,t</m> qui dépendent les unes des autres comme suit :
+        <me>z=x^2+\dfrac{y^2}{9}\quad\text{avec}\quad x=\sin(2t)\quad\text{et}\quad y=\cos(t).</me>
+        <ol>
+          <li>
+            <p>
+              Placez ces variables dans un arbre de dépendance.
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculez <m>\frac{\mathrm{d}z}{\mathrm{d}t}</m> à l'aide de la règle de dérivation en chaîne
+              <me>\frac{\mathrm{d}z}{\mathrm{d}t}=\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}.</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              Vérifiez qu'on obtient la même réponse en remplaçant d'abord <m>x</m> et <m>y</m> par <m>\sin(2t)</m> et <m>\cos(t)</m> dans l'expression <m>z=x^2+\frac{y^2}{9}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Combien valent
+              <me>\dfrac{\mathrm{d}x}{\mathrm{d}t},\quad\dfrac{\mathrm{d}y}{\mathrm{d}t}\quad\text{et}\quad\dfrac{\mathrm{d}z}{\mathrm{d}t}</me>
+              lorsque <m>t=0</m>?
+            </p>
+          </li>
+          <li>
+            <p>
+              Supposez que les variables <m>x,y,z</m> donnent les coordonnées en mètres d'un point se déplaçant sur la surface d'équation <m>z=x^2+\frac{y^2}{9}</m> en fonction du temps <m>t</m> exprimé en secondes.
+            </p>
+            <p>
+              Interprétez physiquement les valeurs trouvées à la question précédente.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <hint>
+      <ol>
+        <li>
+          <p>
+            Inspirez-vous de l'arbre donné en exemple au deuxième point des objectifs.
+          </p>
+        </li>
+        <li>
+          <p>
+            Appliquez la formule.
+          </p>
+        </li>
+        <li>
+          <p>
+            Après substitution, on obtient une fonction d'une seule variable qu'il suffit de dériver comme on a appris le faire en cours de calcul différentiel.
+          </p>
+        </li>
+        <li>
+          <p>
+            Remplacez <m>t</m> par <m>0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            La dérivée de la position par rapport au temps donne la vitesse instantanée.
+            Notez que vous pouvez visualiser le déplacement de ce point en fonction du temps grâce à <url href="https://www.geogebra.org/m/BzVfXX4S">cette application</url> GeoGebra.
+          </p>
+        </li>
+      </ol>
+    </hint>
+    <answer>
+      <ol>
+        <li>
+          <p>
+            On obtient l'arbre de dépendance suivant :
+            <image source="images/exercice_4.3.2.png" width="50%" />
+          </p>
+        </li>
+        <li>
+          <p>
+            La règle de dérivation en chaîne donne
+            <me>\frac{\mathrm{d}z}{\mathrm{d}t}=4\sin(2t)\cos(2t)-\frac{2}{9}\sin(t)\cos(t).</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Après substitution, on obtient
+            <me>z=\sin^2(2t)+\frac{1}{9}\cos^2(t)</me>
+            d'où
+            <me>\frac{\mathrm{d}z}{\mathrm{d}t}=4\sin(2t)\cos(2t)-\frac{2}{9}\sin(t)\cos(t)</me>
+            comme à la question précédente.
+          </p>
+        </li>
+        <li>
+          <p>
+            Lorsque <m>t=0</m>, on obtient
+            <me>\frac{\mathrm{dx}}{\mathrm{d}t}\Bigg\rvert_{t=0}=2,\quad\frac{\mathrm{dy}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\quad\text{et}\quad\frac{\mathrm{d}z}{\mathrm{d}t}\Bigg\rvert_{t=0}=0.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Au temps <m>t=0\,\mathrm{s}</m>, le point se situe à la position
+            <me>(x,y,z)=(0,1,1/9).</me>
+            Ses vitesses horizontales selon les axes des <m>x</m> et des <m>y</m> valent respectivement
+            <me>\frac{\mathrm{dx}}{\mathrm{d}t}\Bigg\rvert_{t=0}=2\,\mathrm{m}/\mathrm{s}\quad\text{et}\quad\frac{\mathrm{dy}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\,\mathrm{m}/\mathrm{s}</me>
+            tandis que sa vitesse verticale vaut
+            <me>\frac{\mathrm{dz}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\,\mathrm{m}/\mathrm{s}.</me>
+          </p>
+        </li>
+      </ol>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Au premier niveau, <m>z</m> dépend de <m>x</m> et de <m>y</m>, ce qui donne deux branches issues du sommet <m>z</m>.
+          </p>
+          <p>
+            Au deuxième niveau, on a une seule branche de <m>x</m> (resp. <m>y</m>) vers <m>t</m>, car <m>x</m> (resp. <m>y</m>) ne dépend que de <m>t</m>.
+          </p>
+          <p>
+            On obtient donc l'arbre de dépendance suivant :
+            <image source="images/exercice_4.3.2.png" width="50%" />
+          </p>
+        </li>
+        <li>
+          <p>
+            La règle de dérivation en chaîne donne
+            <md>
+              <mrow>\frac{\mathrm{d}z}{\mathrm{d}t}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}</mrow>
+              <mrow>&amp;=2x\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{2y}{9}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}</mrow>
+              <mrow>&amp;=2x\cdot(2\cos(2t))+\frac{2y}{9}\cdot(-\sin(t))</mrow>
+              <mrow>&amp;=2\sin(2t)\cdot(2\cos(2t))+\frac{2\cos(t)}{9}\cdot(-\sin(t))</mrow>
+              <mrow>&amp;=4\sin(2t)\cos(2t)-\frac{2}{9}\sin(t)\cos(t).</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Après substitution, on obtient
+            <md>
+              <mrow>z&amp;=x^2+\frac{y^2}{9}</mrow>
+              <mrow>&amp;=(\sin(2t))^2+\frac{(\cos(t))^2}{9}</mrow>
+              <mrow>&amp;=\sin^2(2t)+\frac{1}{9}\cos^2(t).</mrow>
+            </md>
+            Donc on a
+            <md>
+              <mrow>\frac{\mathrm{d}z}{\mathrm{d}t}&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(\sin^2(2t)+\frac{1}{9}\cos^2(t)\right)</mrow>
+              <mrow>&amp;=2\sin(2t)\cdot\cos(2t)\cdot 2+\frac{1}{9}\cdot 2\cos(t)\cdot(-\sin(t))</mrow>
+              <mrow>&amp;=4\sin(2t)\cos(2t)-\frac{2}{9}\sin(t)\cos(t)</mrow>
+            </md>
+            comme à la question précédente.
+          </p>
+        </li>
+        <li>
+          <p>
+            Lorsque <m>t=0</m>, on a
+            <sidebyside>
+              <p>
+                <md>
+                  <mrow>\frac{\mathrm{dx}}{\mathrm{d}t}\Bigg\rvert_{t=0}&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(\sin(2t)\right)\Bigg\rvert_{t=0}</mrow>
+                  <mrow>&amp;=2\cos(2t)\Bigg\rvert_{t=0}</mrow>
+                  <mrow>&amp;=2\cos(0)</mrow>
+                  <mrow>&amp;=2\cdot 1</mrow>
+                  <mrow>&amp;=2</mrow>
+                </md>
+              </p>
+              <p>
+                <md>
+                  <mrow>\frac{\mathrm{dy}}{\mathrm{d}t}\Bigg\rvert_{t=0}&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(\cos(t)\right)\Bigg\rvert_{t=0}</mrow>
+                  <mrow>&amp;=-\sin(t)\Bigg\rvert_{t=0}</mrow>
+                  <mrow>&amp;=-\sin(0)</mrow>
+                  <mrow>&amp;=-0</mrow>
+                  <mrow>&amp;=0</mrow>
+                </md>
+              </p>
+            </sidebyside>
+            et
+            <sidebyside>
+              <p>
+                <md>
+                  <mrow>x\Bigg\rvert_{t=0}&amp;=\sin(2t)\Bigg\rvert_{t=0}</mrow>
+                  <mrow>&amp;=\sin(0)</mrow>
+                  <mrow>&amp;=0</mrow>
+                </md>
+              </p>
+              <p>
+                <md>
+                  <mrow>y\Bigg\rvert_{t=0}&amp;=\cos(t)\Bigg\rvert_{t=0}</mrow>
+                  <mrow>&amp;=\cos(0)</mrow>
+                  <mrow>&amp;=1</mrow>
+                </md>
+              </p>
+            </sidebyside>
+            donc
+            <md>
+              <mrow>\frac{\mathrm{d}z}{\mathrm{d}t}\Bigg\rvert_{t=0}&amp;=\left(\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\right)\Bigg\rvert_{t=0}</mrow>
+              <mrow>&amp;=\left(2x\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{2y}{9}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\right)\Bigg\rvert_{t=0}</mrow>
+              <mrow>&amp;=2\cdot x\Bigg\rvert_{t=0}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}\Bigg\rvert_{t=0}+\frac{2}{9}\cdot y\Bigg\rvert_{t=0}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}\Bigg\rvert_{t=0}</mrow>
+              <mrow>&amp;=2\cdot 0\cdot 2+\frac{2}{9}\cdot 1\cdot 0</mrow>
+              <mrow>&amp;=0.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Au temps <m>t=0\,\mathrm{s}</m>, le point se situe à la position
+            <me>(x,y,z)=(0,1,1/9).</me>
+            Ses vitesses horizontales selon les axes des <m>x</m> et des <m>y</m> valent respectivement
+            <me>\frac{\mathrm{dx}}{\mathrm{d}t}\Bigg\rvert_{t=0}=2\,\mathrm{m}/\mathrm{s}\quad\text{et}\quad\frac{\mathrm{dy}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\,\mathrm{m}/\mathrm{s}</me>
+            tandis que sa vitesse verticale vaut
+            <me>\frac{\mathrm{dz}}{\mathrm{d}t}\Bigg\rvert_{t=0}=0\,\mathrm{m}/\mathrm{s}.</me>
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Trouvez la dérivée de
+        <me>y=(\sin x)^{x^2}</me>
+        par rapport à <m>x</m>.
+        <ol>
+          <li>
+            <p>
+              En utilisant la dérivation logarithmique.
+            </p>
+          </li>
+          <li>
+            <p>
+              En utilisant la règle de dérivation en chaîne après avoir introduit les variables
+              <me>u=\sin x\quad\text{et}\quad v=x^2.</me>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        D'une façon ou d'une autre, on obtient :
+        <me>\frac{\mathrm{d}y}{\mathrm{d}x}=(\sin x)^{x^2}(x^2\cot x+2x\ln(\sin x)).</me>
+      </p>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <ul>
+            <li>
+              <p>
+                Pour commencer, on applique le logarithme naturel :
+                <md>
+                  <mrow>\ln y&amp;=\ln\left((\sin x)^{x^2}\right)</mrow>
+                  <mrow>&amp;=x^2\ln(\sin x).</mrow>
+                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                Ensuite, on dérive par rapport à <m>x</m> :
+                <md>
+                  <mrow>\frac{1}{y}\cdot\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(\ln y)</mrow>
+                  <mrow>&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(x^2\cdot\ln(\sin x))</mrow>
+                  <mrow>&amp;=\frac{\mathrm{d}}{\mathrm{d}x}(x^2)\cdot\ln(\sin x))+x^2\cdot\frac{\mathrm{d}}{\mathrm{d}x}(\ln(\sin x))</mrow>
+                  <mrow>&amp;=2x\cdot\ln(\sin x))+x^2\cdot\frac{1}{\sin x}\cdot\cos x</mrow>
+                  <mrow>&amp;=2x\ln(\sin x))+x^2\cot x.</mrow>
+                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                Enfin, on multiplie par <m>y</m> :
+                <md>
+                  <mrow>\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=y\cdot\frac{\mathrm{d}}{\mathrm{d}x}(\ln y)</mrow>
+                  <mrow>&amp;=y\cdot(2x\ln(\sin x))+x^2\cot x)</mrow>
+                  <mrow>&amp;=(\sin x)^{x^2}(2x\ln(\sin x))+x^2\cot x).</mrow>
+                </md>
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            Les variables <m>x,y,u,v</m> sont liées comme suit :
+            <me>y=u^v\quad\text{avec}\quad u=\sin x\quad\text{et}\quad v=x^2.</me>
+            Cela donne l'arbre de dépendance suivant :
+            <image source="images/exercice_4.3.3.png" width="50%" />
+            Par la règle de dérivation en chaîne, on a donc
+            <md>
+              <mrow>\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=\frac{\partial y}{\partial u}\cdot\frac{\mathrm{d}u}{\mathrm{d}x}+\frac{\partial y}{\partial v}\cdot\frac{\mathrm{d}v}{\mathrm{d}x}</mrow>
+              <mrow>&amp;=vu^{v-1}\cdot\cos x+u^v\ln u\cdot 2x</mrow>
+              <mrow>&amp;=x^2(\sin x)^{x^2-1}\cdot\cos x+(\sin x)^{x^2}\ln(\sin x)\cdot 2x</mrow>
+              <mrow>&amp;=(\sin x)^{x^2}(x^2\cot x+2x\ln(\sin x))</mrow>
+            </md>
+            conformément au calcul effectué plus haut par dérivation logarithmique.
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Calculez les dérivées indiquées.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\dfrac{dz}{dt}</m> lorsque <m>t=\dfrac{\pi}{2}</m>, si <m>\displaystyle z=e^{xy^2}</m> avec <m>x=t\cos t</m> et <m>y=t\sin t</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\partial z}{\partial v}</m> lorsque <m>(u,v)=(3,-2)</m>, si <m>z=\tan\left(\dfrac{x}{y}\right)</m> avec <m>x=2u+3v</m> et <m>y=3u-2v</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\partial z}{\partial t}</m> lorsque <m>r=1</m>, <m>s=0</m> et <m>t=1</m>, si <m>z=w\arctan(uv)</m> avec <m>u=r+s</m>, <m>v=s+t</m> et <m>w=t+r</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <hint>
+      <p>
+        Pour chaque calcul, commencez par dresser un arbre de dépendance.
+      </p>
+    </hint>
+    <answer>
+      <ol>
+        <li>
+          <p>
+            <m>-\dfrac{\pi^3}{8}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{3}{13}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1+\dfrac{\pi}{4}</m>
+          </p>
+        </li>
+      </ol>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Les variables sont liées de la façon suivante :
+            <image source="images/exercice_4.3.2.png" width="50%" />
+            Par la règle de dérivation en chaîne, on a donc
+            <md>
+              <mrow>\frac{\mathrm{d}z}{\mathrm{d}t}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial z}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial x}\left(e^{xy^2}\right)\cdot\frac{\mathrm{d}}{\mathrm{d}t}(t\cos t)+\frac{\partial}{\partial y}\left(e^{xy^2}\right)\cdot\frac{\mathrm{d}}{\mathrm{d}t}(t\sin t)</mrow>
+              <mrow>&amp;=e^{xy^2}y^2\cdot(\cos t+t(-\sin t))+e^{xy^2}2xy\cdot(\sin t+t\cos t)</mrow>
+              <mrow>&amp;=ye^{xy^2}\left(y(\cos t-t\sin t)+2x(\sin t+t\cos t)\right).</mrow>
+            </md>
+          </p>
+          <p>
+            Lorsque <m>t=\dfrac{\pi}{2}</m>, on a
+            <me>x=\frac{\pi}{2}\cdot\underbrace{\cos\left(\frac{\pi}{2}\right)}_{=0}=0\quad\text{et}\quad y=\frac{\pi}{2}\cdot\underbrace{\sin\left(\frac{\pi}{2}\right)}_{=1}=\frac{\pi}{2}</me>
+            donc
+            <md>
+              <mrow>\frac{\mathrm{d}z}{\mathrm{d}t}\Bigg\rvert_{t=\frac{\pi}{2}}&amp;=\frac{\pi}{2}\cdot\underbrace{e^{0}}_{=1}\cdot\left(\frac{\pi}{2}\cdot\left(\underbrace{\cos\left(\frac{\pi}{2}\right)}_{=0}-\frac{\pi}{2}\cdot\underbrace{\sin\left(\frac{\pi}{2}\right)}_{=1}\right)+\cancel{2\cdot 0\cdot\ldots}\right)</mrow>
+              <mrow>&amp;=-\frac{\pi^3}{8}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Les variables sont liées de la façon suivante :
+            <image source="images/exercice_4.3.4bis.png" width="70%" />
+            Par la règle de dérivation en chaîne, on a donc
+            <md>
+              <mrow>\frac{\partial z}{\partial v}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial v}</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial x}\left(\tan\left(\frac{x}{y}\right)\right)\cdot\frac{\partial}{\partial v}(2u+3v)+\frac{\partial}{\partial y}\left(\tan\left(\frac{x}{y}\right)\right)\cdot\frac{\partial}{\partial v}(3u-2v)</mrow>
+              <mrow>&amp;=\sec^2\left(\frac{x}{y}\right)\cdot\frac{1}{y}\cdot 3+\sec^2\left(\frac{x}{y}\right)\cdot\left(-\frac{x}{y^2}\right)\cdot(-2)</mrow>
+              <mrow>&amp;=\sec^2\left(\frac{x}{y}\right)\cdot\frac{3y+2x}{y^2}.</mrow>
+            </md>
+          </p>
+          <p>
+            Lorsque <m>(u,v)=(3,-2)</m>, on a
+            <me>x=2\cdot 3+3\cdot(-2)=0\quad\text{et}\quad y=3\cdot 3-2\cdot(-2)=13</me>
+            donc
+            <md>
+              <mrow>\frac{\partial z}{\partial v}\Bigg\rvert_{(u,v)=(3,-2)}&amp;=(\underbrace{\sec(0)}_{=1})^2\cdot\frac{3\cdot 13+2\cdot 0}{13^2}</mrow>
+              <mrow>&amp;=\frac{3}{13}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Les variables sont liées de la façon suivante :
+            <image source="images/exercice_4.3.4ter.png" width="85%" />
+            Par la règle de dérivation en chaîne, on a donc
+            <md>
+              <mrow>\frac{\partial z}{\partial t}&amp;=\frac{\partial z}{\partial v}\cdot\frac{\partial v}{\partial t}+\frac{\partial z}{\partial w}\cdot\frac{\partial w}{\partial t}</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial v}\left(w\arctan(uv)\right)\cdot\frac{\partial}{\partial t}(s+t)+\frac{\partial}{\partial w}\left(w\arctan(uv)\right)\cdot\frac{\partial}{\partial t}(t+r)</mrow>
+              <mrow>&amp;=w\cdot\frac{1}{1+(uv)^2}\cdot u\cdot 1+\arctan(uv)\cdot 1</mrow>
+              <mrow>&amp;=\frac{uw}{1+u^2v^2}+\arctan(uv).</mrow>
+            </md>
+          </p>
+          <p>
+            Lorsque <m>r=1</m>, <m>s=0</m> et <m>t=1</m>, on a
+            <me>u=1+0=1,\quad v=0+1=1\quad\text{et}\quad w=1+1=2</me>
+            donc
+            <md>
+              <mrow>\frac{\partial z}{\partial t}\Bigg\rvert_{(r,s,t)=(1,0,1)}&amp;=\frac{1\cdot 2}{1+1^21^2}+\arctan(1\cdot 1)</mrow>
+              <mrow>&amp;=\frac{2}{2}+\arctan(1)</mrow>
+              <mrow>&amp;=1+\frac{\pi}{4}.</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        On suppose que <m>f(x,y)</m> est une fonction différentiable de <m>x</m> et de <m>y</m>, et on pose
+        <me>g(u,v):=f(5u+3v-1,8u-6v+3).</me>
+      </p>
+      <p>
+        Utilisez le tableau de valeurs suivant
+        <me>
+          \begin{array}{|c|c|c|c|}
+          \hline
+          (x,y)&amp;f(x,y)&amp;f_x(x,y)&amp;f_y(x,y)\\
+          \hline
+          (0,0)&amp;-2&amp;9&amp;-1\\
+          (-1,3)&amp;7&amp;-5&amp;4\\
+          \hline
+          \end{array}
+        </me>
+        pour calculer les dérivées partielles
+        <me>g_u(0,0)\quad\text{et}\quad g_v(0,0).</me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Introduisez la variable
+        <me>z:=g(u,v)=f(x,y)</me>
+        où
+        <me>x=5u+3v-1\quad\text{et}\quad y=8u-6v+3.</me>
+      </p>
+      <p>
+        Puis dressez l'arbre de dépendance correspondant et appliquez la règle de dérivation en chaîne au calcul de
+        <me>\frac{\partial z}{\partial u}=g_u\quad\text{et}\quad\frac{\partial z}{\partial v}=g_v.</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        On trouve
+        <me>g_u(0,0)=7\quad\text{et}\quad g_v(0,0)=-39.</me>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        On s'intéresse aux dérivées partielles de la variable
+        <me>z:=g(u,v)=f(x,y)</me>
+        où
+        <me>x=5u+3v-1\quad\text{et}\quad y=8u-6v+3.</me>
+        On a l'arbre de dépendance suivant :
+        <image source="images/exercice_4.3.6.png" width="70%" />
+      </p>
+      <p>
+        Avant d'évaluer, notons que
+        <me>(x,y)=(-1,3)\quad\text{lorsque}\quad (u,v)=(0,0)</me>
+        si bien que seules les valeurs
+        <me>f_x(-1,3)=-5\quad\text{et}\quad f_y(-1,3)=4</me>
+        nous seront utiles.
+      </p>
+      <ul>
+        <li>
+          <p>
+            D'une part, la règle de dérivation en chaîne entraîne
+            <md>
+              <mrow>g_u&amp;=\frac{\partial z}{\partial u}</mrow>
+              <mrow>&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial u}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial u}</mrow>
+              <mrow>&amp;=f_x\cdot\frac{\partial}{\partial u}(5u+3v-1)+f_y\cdot\frac{\partial}{\partial u}(8u-6v+3)</mrow>
+              <mrow>&amp;=f_x\cdot 5+f_y\cdot 8</mrow>
+            </md>
+            d'où
+            <md>
+              <mrow>g_u(0,0)&amp;=f_x(-1,3)\cdot 5+f_y(-1,3)\cdot 8</mrow>
+              <mrow>&amp;=(-5)\cdot 5+4\cdot 8</mrow>
+              <mrow>&amp;=7.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            D'autre part, la règle de dérivation en chaîne entraîne
+            <md>
+              <mrow>g_v&amp;=\frac{\partial z}{\partial v}</mrow>
+              <mrow>&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial v}</mrow>
+              <mrow>&amp;=f_x\cdot\frac{\partial}{\partial v}(5u+3v-1)+f_y\cdot\frac{\partial}{\partial v}(8u-6v+3)</mrow>
+              <mrow>&amp;=f_x\cdot 3+f_y\cdot(-6)</mrow>
+            </md>
+            d'où
+            <md>
+              <mrow>g_v(0,0)&amp;=f_x(-1,3)\cdot 3+f_y(-1,3)\cdot(-6)</mrow>
+              <mrow>&amp;=(-5)\cdot 3+4\cdot(-6)</mrow>
+              <mrow>&amp;=-39.</mrow>
+            </md>
+          </p>
+        </li>
+      </ul>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Si <m>z=f(x,y)</m> est une fonction dont les dérivées partielles d'ordre deux sont continues et si
+        <me>x=r^2+s^2\quad\text{et}\quad y=2rs,</me>
+        exprimez
+        <me>\dfrac{\partial z}{\partial r}\quad\text{et}\quad\dfrac{\partial^2 z}{\partial r^2}</me>
+        en fonction des dérivées partielles de <m>z</m> par rapport à <m>x</m> et à <m>y</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Pour la première dérivée, utilisez la règle de dérivation en chaîne.
+      </p>
+      <p>
+        Pour la seconde, vous pourrez sauver du temps en pensant à appliquer la première formule trouvée aux fonctions <m>\frac{\partial z}{\partial x}</m> et <m>\frac{\partial z}{\partial y}</m>, à la place de la fonction <m>z</m>.
+      </p>
+    </hint>
+    <answer>
+      <p>
+        On trouve
+        <me>\dfrac{\partial z}{\partial r}=2r\dfrac{\partial z}{\partial x}+2s\dfrac{\partial z}{\partial y}</me>
+        et
+        <me>\dfrac{\partial^2 z}{\partial r^2}=2\dfrac{\partial z}{\partial x}+4r^2\dfrac{\partial^2 z}{\partial x^2}+8rs\dfrac{\partial^2z}{\partial x\partial y}+4s^2\dfrac{\partial^2z}{\partial y^2}.</me>
+      </p>
+    </answer>
+    <solution>
+      <ul>
+        <li>
+          <p>
+            Voici l'arbre de dépendance des variables :
+            <image source="images/exercice_4.3.5.png" width="50%" />
+            Par la règle de dérivation en chaîne, on a donc
+            <md>
+              <mrow>\frac{\partial z}{\partial r}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial r}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial r}</mrow>
+              <mrow>&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial}{\partial r}(r^2+s^2)+\frac{\partial z}{\partial y}\cdot\frac{\partial}{\partial r}(2rs)</mrow>
+              <mrow>&amp;=\frac{\partial z}{\partial x}\cdot 2r+\frac{\partial z}{\partial y}\cdot 2s</mrow>
+              <mrow>&amp;=2r\frac{\partial z}{\partial x}+2s\frac{\partial z}{\partial y}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Partant du calcul précédent, on obtient
+            <md>
+              <mrow>\frac{\partial^2z}{\partial r^2}&amp;=\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial r}\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial r}\left(2r\frac{\partial z}{\partial x}+2s\frac{\partial z}{\partial y}\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial r}(2r)\cdot\frac{\partial z}{\partial x}+2r\cdot\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial x}\right)+2s\cdot\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial y}\right)</mrow>
+              <mrow>&amp;=2\frac{\partial z}{\partial x}+2r\underbrace{\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial x}\right)}_{A}+2s\underbrace{\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial y}\right)}_{B}.</mrow>
+            </md>
+            Pour déterminer <m>A</m> et <m>B</m>, il suffit d'appliquer le point précédent aux fonctions <m>\frac{\partial z}{\partial x}</m> et <m>\frac{\partial z}{\partial y}</m>, à la place de la fonction <m>z</m>.
+            Cela donne
+            <sidebyside>
+              <p>
+                <md>
+                  <mrow>A&amp;=\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial x}\right)</mrow>
+                  <mrow>&amp;=2r\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right)+2s\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right)</mrow>
+                  <mrow>&amp;=2r\frac{\partial^2z}{\partial x^2}+2s\frac{\partial^2z}{\partial y\partial x}</mrow>
+                </md>
+              </p>
+              <p>
+                <md>
+                  <mrow>B&amp;=\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial y}\right)</mrow>
+                  <mrow>&amp;=2r\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right)+2s\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right)</mrow>
+                  <mrow>&amp;=2r\frac{\partial^2z}{\partial x\partial y}+2s\frac{\partial^2z}{\partial y^2}</mrow>
+                </md>
+              </p>
+            </sidebyside>
+            d'où
+            <md>
+              <mrow>\frac{\partial^2z}{\partial r^2}&amp;=2\frac{\partial z}{\partial x}+2rA+2sB</mrow>
+              <mrow>&amp;=2\frac{\partial z}{\partial x}+4r^2\frac{\partial^2z}{\partial x^2}+4rs\frac{\partial^2z}{\partial y\partial x}+4rs\frac{\partial^2z}{\partial x\partial y}+4s^2\frac{\partial^2z}{\partial y^2}</mrow>
+              <mrow>&amp;=2\frac{\partial z}{\partial x}+4r^2\frac{\partial^2z}{\partial x^2}+8rs\frac{\partial^2z}{\partial x\partial y}+4s^2\frac{\partial^2z}{\partial y^2}</mrow>
+            </md>
+            puisque
+            <me>\frac{\partial^2z}{\partial y\partial x}=\frac{\partial^2z}{\partial x\partial y}</me>
+            par le théorème de Clairaut.
+          </p>
+        </li>
+      </ul>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        La tension <m>V</m> en volts d'un circuit est donnée par la loi d'Ohm
+        <me>V=IR</me>
+        où <m>I</m> est l'intensité en ampères du courant circulant dans le circuit, et <m>R</m> la résistance en ohms.
+      </p>
+      <p>
+        On place deux résistances <m>R_1</m> et <m>R_2</m> en parallèle, de sorte que la résistance équivalence <m>R</m> vérifie
+        <me>\frac{1}{R}=\frac{1}{R_1}+\frac{1}{R_2}.</me>
+      </p>
+      <p>
+        En supposant que
+        <ul>
+          <li>
+            <p>
+              l'intensité du courant est de <m>4\,\mathrm{A}</m> et qu'elle augmente au taux de <m>0{,}01\,\mathrm{A}/\mathrm{s}</m>,
+            </p>
+          </li>
+          <li>
+            <p>
+              la résistance <m>R_1</m> vaut <m>3\,\mathrm{\Omega}</m> et qu'elle augmente au taux de <m>0{,}5\,\mathrm{\Omega}/\mathrm{s}</m>,
+            </p>
+          </li>
+          <li>
+            <p>
+              la résistance <m>R_2</m> vaut <m>5\,\mathrm{\Omega}</m> et qu'elle diminue au taux de <m>0{,}2\,\mathrm{\Omega}/\mathrm{s}</m>,
+            </p>
+          </li>
+        </ul>
+        calculez le taux de variation de la tension.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Si on note <m>t</m> le temps en secondes, on a l'arbre de dépendance suivant
+        <image source="images/exercice_4.3.7.png" width="70%" />
+      </p>
+      <p>
+        Utilisez la règle de dérivation en chaîne pour calculer
+        <me>\frac{\mathrm{d}V}{\mathrm{d}t}.</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        La tension augmente au taux de
+        <me>0{,}687\,5\,\mathrm{V}/\mathrm{s}.</me>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Si on note <m>t</m> le temps exprimé en secondes, les taux de variations fournis par l'énoncé sont
+        <me>\frac{\mathrm{d}I}{\mathrm{d}t}=0{,}01\,\mathrm{A}/\mathrm{s},\quad\frac{\mathrm{d}R_1}{\mathrm{d}t}=0{,}5\,\mathrm{\Omega}/\mathrm{s}\quad\text{et}\quad\frac{\mathrm{d}R_2}{\mathrm{d}t}=-0{,}2\,\mathrm{\Omega}/\mathrm{s}.</me>
+      </p>
+      <p>
+        On cherche la valeur de
+        <me>\frac{\mathrm{d}V}{\mathrm{d}t}</me>
+        sachant en outre que
+        <me>I=4\,\mathrm{A},\quad R_1=3\,\mathrm{\Omega}\quad\text{et}\quad R_2=5\,\mathrm{\Omega}.</me>
+      </p>
+      <ul>
+        <li>
+          Notons pour commencer que
+          <md>
+            <mrow>\frac{1}{R}&amp;=\frac{1}{R_1}+\frac{1}{R_2}</mrow>
+            <mrow>&amp;=\frac{R_2}{R_1R_2}+\frac{R_1}{R_1R_2}</mrow>
+            <mrow>&amp;=\frac{R_2+R_1}{R_1R_2}.</mrow>
+          </md>
+          On a donc la formule
+          <me>R=\frac{R_1R_2}{R_1+R_2}</me>
+          qui entraîne que
+          <me>R=\frac{3\cdot 5}{3+5}=1{,}875\,\mathrm{\Omega}.</me>
+        </li>
+        <li>
+          <p>
+            Ensuite, la formule
+            <me>V=IR=\frac{IR_1R_2}{R_1+R_2}</me>
+            implique l'arbre de dépendance
+            <image source="images/exercice_4.3.7.png" width="70%" />
+            dont on déduit la formule
+            <me>\frac{\mathrm{d}V}{\mathrm{d}t}=\frac{\partial V}{\partial I}\cdot\frac{\mathrm{d}I}{\mathrm{d}t}+\frac{\partial V}{\partial R_1}\cdot\frac{\mathrm{d}R_1}{\mathrm{d}t}+\frac{\partial V}{\partial R_2}\cdot\frac{\mathrm{d}R_2}{\mathrm{d}t}</me>
+            par la règle de dérivation en chaîne.
+          </p>
+          <ul>
+            <li>
+              <p>
+                D'abord, on a
+                <md>
+                  <mrow>\frac{\partial V}{\partial I}&amp;=\frac{\partial}{\partial I}\left(I\cdot R\right)</mrow>
+                  <mrow>&amp;=R</mrow>
+                  <mrow>&amp;=1{,}875.</mrow>
+                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                Ensuite, on trouve
+                <md>
+                  <mrow>\frac{\partial V}{\partial R_1}&amp;=\frac{\partial}{\partial R_1}\left(\frac{IR_1R_2}{R_1+R_2}\right)</mrow>
+                  <mrow>&amp;=IR_2\cdot\frac{\partial}{\partial R_1}\left(\frac{R_1}{R_1+R_2}\right)</mrow>
+                  <mrow>&amp;=IR_2\cdot\frac{\frac{\partial}{\partial R_1}(R_1)\cdot(R_1+R_2)-R_1\cdot\frac{\partial}{\partial R_1}(R_1+R_2)}{(R_1+R_2)^2}</mrow>
+                  <mrow>&amp;=IR_2\cdot\frac{1\cdot(R_1+R_2)-R_1\cdot 1}{(R_1+R_2)^2}</mrow>
+                  <mrow>&amp;=IR_2\cdot\frac{R_2}{(R_1+R_2)^2}</mrow>
+                  <mrow>&amp;=\frac{IR_2^2}{(R_1+R_2)^2}</mrow>
+                  <mrow>&amp;=\frac{4\cdot 5^2}{(3+5)^2}</mrow>
+                  <mrow>&amp;=1{,}562\,5.</mrow>
+                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                Puis, pour des raisons de symétrie, on obtient
+                <md>
+                  <mrow>\frac{\partial V}{\partial R_2}&amp;=\frac{IR_1^2}{(R_1+R_2)^2}</mrow>
+                  <mrow>&amp;=\frac{4\cdot 3^2}{(3+5)^2}</mrow>
+                  <mrow>&amp;=0{,}562\,5.</mrow>
+                </md>
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        Finalement, en revenant à la formule donnée par la règle de dérivation en chaîne et en utilisant les valeurs données et celles qu'on a calculées, on trouve
+        <md>
+          <mrow>\frac{\mathrm{d}V}{\mathrm{d}t}&amp;=\frac{\partial V}{\partial I}\cdot\frac{\mathrm{d}I}{\mathrm{d}t}+\frac{\partial V}{\partial R_1}\cdot\frac{\mathrm{d}R_1}{\mathrm{d}t}+\frac{\partial V}{\partial R_2}\cdot\frac{\mathrm{d}R_2}{\mathrm{d}t}</mrow>
+          <mrow>&amp;=1{,}875\cdot 0{,}01+1{,}562\,5\cdot 0{,}5+0{,}562\,5\cdot (-0{,}2)</mrow>
+          <mrow>&amp;=1{,}875\cdot 0{,}01+1{,}562\,5\cdot 0{,}5+0{,}562\,5\cdot (-0{,}2)</mrow>
+          <mrow>&amp;=0{,}687\,5.</mrow>
+        </md>
+        On en conclut que la tension augmente au taux de
+        <me>0{,}687\,5\,\mathrm{V}/\mathrm{s}.</me>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Soit <m>F(x)</m> et <m>G(x)</m> des fonctions deux fois dérivables.
+        Vérifez que la fonction de deux variables
+        <me>U(z,t):=F(z-ct)+G(z+ct)</me>
+        est solution de l'<url href="https://fr.wikipedia.org/wiki/%C3%89quation_des_ondes">équation des ondes</url> en dimension 1
+        <me>\frac{\partial^2U}{\partial z^2}=\frac{1}{c^2}\frac{\partial^2U}{\partial t^2}.</me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Introduisez les variables
+        <me>a:=z-ct\quad\text{et}\quad b:=z+ct</me>
+        et dressez l'arbre de dépendance des variables <m>a,b,z,t</m> et
+        <me>U=F(a)+G(b).</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        On trouve
+        <me>\frac{\partial^2U}{\partial z^2}=F''(a)+G''(b)\quad\text{et}\quad\frac{\partial^2U}{\partial t^2}=c^2(F''(a)+G''(b))</me>
+        d'où
+        <me>\frac{\partial^2U}{\partial z^2}=\frac{1}{c^2}\frac{\partial^2U}{\partial t^2}.</me>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Introduisons les variables
+        <me>a:=z-ct\quad\text{et}\quad b:=z+ct.</me>
+        Alors l'arbre de dépendance des variables <m>a,b,z,t</m> et
+        <me>U=F(a)+G(b)</me>
+        est le suivant :
+        <image source="images/exercice_4.3.8.png" width="70%" />
+      </p>
+      <ul>
+        <li>
+          <p>
+            Quand on dérive une telle fonction <m>U=F(a)+G(b)</m> par rapport à <m>z</m>, la règle de dérivation en chaîne donne
+            <md>
+              <mrow>\frac{\partial U}{\partial z}&amp;=\frac{\partial U}{\partial a}\cdot\frac{\partial a}{\partial z}+\frac{\partial U}{\partial b}\cdot\frac{\partial b}{\partial z}</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial a}(F(a)+G(b))\cdot\frac{\partial}{\partial z}(z-ct)+\frac{\partial}{\partial b}(F(a)+G(b))\cdot\frac{\partial}{\partial z}(z+ct)</mrow>
+              <mrow>&amp;=(F'(a)+0)\cdot 1+(0+G'(b)\cdot 1</mrow>
+              <mrow>&amp;=F'(a)+G'(b).</mrow>
+            </md>
+          </p>
+          <p>
+            En appliquant le résultat précédent à la fonction
+            <me>V=F'(a)+G'(b)</me>
+            au lieu de la fonction <m>U</m>, on obtient
+            <me>\frac{\partial V}{\partial z}=F''(a)+G''(b)</me>
+            soit
+            <me>\frac{\partial^2 U}{\partial z^2}=F''(a)+G''(b).</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Quand on dérive une telle fonction <m>U=F(a)+G(b)</m> par rapport à <m>t</m>, la règle de dérivation en chaîne donne
+            <md>
+              <mrow>\frac{\partial U}{\partial t}&amp;=\frac{\partial U}{\partial a}\cdot\frac{\partial a}{\partial t}+\frac{\partial U}{\partial b}\cdot\frac{\partial b}{\partial t}</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial a}(F(a)+G(b))\cdot\frac{\partial}{\partial t}(z-ct)+\frac{\partial}{\partial b}(F(a)+G(b))\cdot\frac{\partial}{\partial t}(z+ct)</mrow>
+              <mrow>&amp;=(F'(a)+0)\cdot (-c)+(0+G'(b)\cdot c</mrow>
+              <mrow>&amp;=c\cdot(-F'(a)+G'(b)).</mrow>
+            </md>
+          </p>
+          <p>
+            En appliquant le résultat précédent à la fonction
+            <me>V=-F'(a)+G'(b)</me>
+            au lieu de la fonction <m>U</m>, on obtient
+            <me>\frac{\partial V}{\partial t}=c\cdot(F''(a))+G''(b))</me>
+            d'où
+            <md>
+              <mrow>\frac{\partial^2 U}{\partial t^2}&amp;=\frac{\partial}{\partial t}\left(\frac{\partial U}{\partial t}\right)</mrow>
+              <mrow>&amp;=\frac{\partial}{\partial t}\left(c\cdot(-F'(a)+G'(b))\right)</mrow>
+              <mrow>&amp;=c\cdot\frac{\partial}{\partial t}\left(-F'(a)+G'(b)\right)</mrow>
+              <mrow>&amp;=c\cdot\frac{\partial V}{\partial t}</mrow>
+              <mrow>&amp;=c\cdot c\cdot(F''(a))+G''(b))</mrow>
+            </md>
+            soit
+            <me>\frac{\partial^2 U}{\partial t^2}=c^2(F''(a)+G''(b)).</me>
+          </p>
+        </li>
+      </ul>
+      <p>
+        On a montré que
+        <me>\frac{\partial^2U}{\partial z^2}=F''(a)+G''(b)\quad\text{et}\quad\frac{\partial^2U}{\partial t^2}=c^2(F''(a)+G''(b))</me>
+        Cela prouve que <m>U</m> est bien solution de l'équation des ondes en dimension 1
+        <me>\frac{\partial^2U}{\partial z^2}=\frac{1}{c^2}\frac{\partial^2U}{\partial t^2}.</me>
+      </p>
+    </solution>
+  </exercise>
+
+  <project>
+    <introduction>
+      <p>
+        Les questions suivantes sont indépendantes les unes des autres.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Soit <m>x,y,z,w,r,\theta,\phi</m> des variables telles que
+          <me>w=xy+yz+zx,\quad x=r\cos\phi,\quad y=r\sin\theta\sin\phi\quad\text{et}\quad z=r\theta.</me>
+          Dresser leur arbre de dépendance.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <image source="images/4.3_synthese.png" />
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Les variables <m>x,y,z,u,v,w</m> dépendent les unes des autres selon l'arbre suivant :
+          <image source="images/4.3_synthese2.png" width="85%" />
+          Appliquer la règle de dérivation en chaîne au calcul de
+          <me>\frac{\partial z}{\partial v}\quad\text{et}\quad\frac{\partial z}{\partial w}.</me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          On a
+          <me>\frac{\partial z}{\partial v}=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial v}</me>
+          et
+          <me>\frac{\partial z}{\partial w}=\frac{\partial z}{\partial y}\cdot \frac{\partial y}{\partial w}.</me>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Soit <m>f(x,y)</m> une fonction différentiable et <m>g(t),h(t)</m> des fonctions dérivables.
+        </p>
+        <p>
+          Sachant que
+          <me>
+            \begin{array}{rcrcrcr}
+            g(5)&amp;=&amp;2&amp;&amp;h(5)&amp;=&amp;3\\
+            g'(5)&amp;=&amp;-3&amp;&amp;h'(5)&amp;=&amp;6\\
+            f_x(2,3)&amp;=&amp;-4&amp;&amp;f_y(2,3)&amp;=&amp;7
+            \end{array}
+          </me>
+          calculer la valeur de
+          <me>p'(5)</me>
+          pour la fonction <m>p(t)</m> définie par
+          <me>p(t):=f(g(t),h(t)).</me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Considérons les variables
+          <me>p=f(x,y)\quad\text{avec}\quad x=g(t)\quad\text{et}\quad y=h(t)</me>
+          dont l'arbre de dépendance est le suivant :
+          <image source="images/4.3_synthese3.png" width="50%" />
+        </p>
+        <p>
+          Par la règle de dérivation en chaîne, on a
+          <md>
+            <mrow>p'&amp;=\frac{\mathrm{d}p}{\mathrm{d}t}</mrow>
+            <mrow>&amp;=\frac{\partial p}{\partial x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial p}{\partial y}\cdot\frac{\mathrm{d}y}{\mathrm{d}t}</mrow>
+            <mrow>&amp;=f_x\cdot g'+f_y\cdot h'.</mrow>
+          </md>
+          Comme par ailleurs
+          <me>(x,y)=(g(5),h(5))=(2,3)\quad\text{lorsque}\quad t=5,</me>
+          on obtient finalement
+          <md>
+            <mrow>p'(5)&amp;=f_x(2,3)\cdot g'(5)+f_y(2,3)\cdot h'(5)</mrow>
+            <mrow>&amp;=(-4)\cdot(-3)+7\cdot 6</mrow>
+            <mrow>&amp;=54.</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Sachant que
+          <me>z=x^4+x^2y\quad\text{avec}\quad x=s+2t-1\quad\text{et}\quad y=stu^2,</me>
+          calculer
+          <me>\frac{\partial z}{\partial t}</me>
+          lorsque <m>s=4,t=2,u=1</m>.
+        </p>
+      </statement>
+      <solution>
+        <ul>
+          <li>
+            <p>
+              Voici l'arbre de dépendance des variables <m>x,y,z,s,t,u</m> :
+              <image source="images/4.3_synthese4.png" width="90%" />
+              Par la règle de dérivation en chaîne, on en déduit que
+              <md>
+                <mrow>\frac{\partial z}{\partial t}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial t}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial t}</mrow>
+                <mrow>&amp;=\frac{\partial}{\partial x}(x^4+x^2y)\cdot\frac{\partial}{\partial t}(s+2t-1)+\frac{\partial}{\partial y}(x^4+x^2y)\cdot\frac{\partial}{\partial t}(stu^2)</mrow>
+                <mrow>&amp;=(4x^3+2xy)\cdot 2+x^2\cdot su^2.</mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Lorsque <m>s=4,t=2,u=1</m>, on a
+              <me>x=4+2\cdot 2-1=7\quad\text{et}\quad y=4\cdot 2\cdot 1^2=8.</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              On obtient donc finalement
+              <md>
+                <mrow>\frac{\partial z}{\partial t}\Bigg\rvert_{(s,t,u)=(4,2,1)}&amp;=(4x^3+2xy)\cdot 2+x^2\cdot su^2\Bigg\rvert_{(s,t,u)=(4,2,1)}</mrow>
+                <mrow>&amp;=(4\cdot 7^3+2\cdot 7\cdot 8)\cdot 2+7^2\cdot 4\cdot 1^2</mrow>
+                <mrow>&amp;=3164.</mrow>
+              </md>
+            </p>
+          </li>
+        </ul>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Soit <m>L,l</m> et <m>h</m> la longueur, la largeur et la hauteur d'un <url href="https://fr.wikipedia.org/wiki/Pav%C3%A9_droit">pavé droit</url> dont les dimensions varient en fonction du temps <m>t</m> selon les taux suivants :
+          <me>\frac{\mathrm{d}L}{\mathrm{d}t}=\frac{\mathrm{d}l}{\mathrm{d}t}=2\,\mathrm{m}/\mathrm{s}\quad\text{et}\quad\frac{\mathrm{d}h}{\mathrm{d}t}=-3\,\mathrm{m}/\mathrm{s}</me>
+        </p>
+        <p>
+          Calculer le taux de variation de la longueur d'une grande diagonale au moment où
+          <me>L=1\,\mathrm{m}\quad\text{et}\quad l=h=2\,\mathrm{m}.</me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          En appliquant deux fois le théorème de Pythagore, on voit que la longueur d'une grande diagonale est donnée par
+          <me>D=\sqrt{L^2+l^2+h^2}.</me>
+          On a donc l'arbre de dépendance suivant :
+          <image source="images/4.3_synthese5.png" width="70%" />
+        </p>
+        <p>
+          Par la règle de dérivation en chaîne, on obtient donc
+          <md>
+            <mrow>\frac{\mathrm{d}D}{\mathrm{d}t}&amp;=\frac{\partial D}{\partial L}\cdot\frac{\mathrm{d}L}{\mathrm{d}t}+\frac{\partial D}{\partial l}\cdot\frac{\mathrm{d}l}{\mathrm{d}t}+\frac{\partial D}{\partial h}\cdot\frac{\mathrm{d}h}{\mathrm{d}t}</mrow>
+            <mrow>&amp;=\frac{1}{2\sqrt{L^2+l^2+h^2}}\cdot 2L\cdot\frac{\mathrm{d}L}{\mathrm{d}t}+\frac{1}{2\sqrt{L^2+l^2+h^2}}\cdot 2l\cdot\frac{\mathrm{d}l}{\mathrm{d}t}</mrow>
+            <mrow>&amp;\qquad\qquad+\frac{1}{2\sqrt{L^2+l^2+h^2}}\cdot 2h\cdot\frac{\mathrm{d}h}{\mathrm{d}t}</mrow>
+            <mrow>&amp;=\frac{1}{\sqrt{L^2+l^2+h^2}}\cdot\left(L\frac{\mathrm{d}L}{\mathrm{d}t}+l\frac{\mathrm{d}l}{\mathrm{d}t}+h\frac{\mathrm{d}h}{\mathrm{d}t}\right)</mrow>
+            <mrow>&amp;=\frac{1}{\sqrt{1^2+2^2+2^2}}\cdot\left(1\cdot 2+2\cdot 2+2\cdot(-3)\right)</mrow>
+            <mrow>&amp;=\frac{1}{\sqrt{9}}\cdot 0</mrow>
+            <mrow>&amp;=0\,\mathrm{m}/\mathrm{s}.</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Soit <m>f</m> une fonction différentiable et
+          <me>z=f(x,y)\quad\text{avec}\quad x=r\cos\theta\quad\text{et}\quad y=r\sin\theta.</me>
+        </p>
+        <p>
+          Montrer que <m>z</m> vérifie l'équation aux dérivées partielles suivante :
+          <me>\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2=\left(\frac{\partial z}{\partial r}\right)^2+\frac{1}{r^2}\left(\frac{\partial z}{\partial\theta}\right)^2.</me>
+        </p>
+      </statement>
+      <solution>
+        <ul>
+          <li>
+            <p>
+              D'après l'arbre de dépendance
+              <image source="images/4.3_synthese6.png" width="70%" />
+              la règle de dérivation en chaîne entraîne
+              <md>
+                <mrow>\frac{\partial z}{\partial r}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial r}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial r}</mrow>
+                <mrow>&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial}{\partial r}(r\cos\theta)+\frac{\partial z}{\partial y}\cdot\frac{\partial}{\partial r}(r\sin\theta)</mrow>
+                <mrow>&amp;=\frac{\partial z}{\partial x}\cdot\cos\theta+\frac{\partial z}{\partial y}\cdot\sin\theta</mrow>
+              </md>
+              et
+              <md>
+                <mrow>\frac{\partial z}{\partial\theta}&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial\theta}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial\theta}</mrow>
+                <mrow>&amp;=\frac{\partial z}{\partial x}\cdot\frac{\partial}{\partial\theta}(r\cos\theta)+\frac{\partial z}{\partial y}\cdot\frac{\partial}{\partial\theta}(r\sin\theta)</mrow>
+                <mrow>&amp;=\frac{\partial z}{\partial x}\cdot(-r\sin\theta)+\frac{\partial z}{\partial y}\cdot r\cos\theta.</mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Par conséquent, on a
+              <md>
+                <mrow>\left(\frac{\partial z}{\partial r}\right)^2&amp;=\left(\frac{\partial z}{\partial x}\cdot\cos\theta+\frac{\partial z}{\partial y}\cdot\sin\theta\right)^2</mrow>
+                <mrow>&amp;=\left(\frac{\partial z}{\partial x}\right)^2\cos^2\theta+2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}\cos\theta\sin\theta+\left(\frac{\partial z}{\partial y}\right)^2\sin^2\theta</mrow>
+              </md>
+              et
+              <md>
+                <mrow>\left(\frac{\partial z}{\partial\theta}\right)^2&amp;=\left(\frac{\partial z}{\partial x}\cdot(-r\sin\theta)+\frac{\partial z}{\partial y}\cdot r\cos\theta\right)^2</mrow>
+                <mrow>&amp;=\left(\frac{\partial z}{\partial x}\right)^2r^2\sin^2\theta-2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}r^2\cos\theta\sin\theta+\left(\frac{\partial z}{\partial y}\right)^2r^2\cos^2\theta.</mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Finalement, on obtient
+              <md>
+                <mrow>&amp;\left(\frac{\partial z}{\partial r}\right)^2+\frac{1}{r^2}\left(\frac{\partial z}{\partial\theta}\right)^2</mrow>
+                <mrow>=\quad&amp;\left(\frac{\partial z}{\partial x}\right)^2\cos^2\theta+\cancel{2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}\cos\theta\sin\theta}+\left(\frac{\partial z}{\partial y}\right)^2\sin^2\theta</mrow>
+                <mrow>\quad+&amp;\left(\frac{\partial z}{\partial x}\right)^2\sin^2\theta-\cancel{2\frac{\partial z}{\partial x}\frac{\partial z}{\partial y}\cos\theta\sin\theta}+\left(\frac{\partial z}{\partial y}\right)^2\cos^2\theta</mrow>
+                <mrow>=\quad&amp;\left(\frac{\partial z}{\partial x}\right)^2(\underbrace{\cos^2\theta+\sin^2\theta}_{=1})+\left(\frac{\partial z}{\partial y}\right)^2(\underbrace{\sin^2\theta+\cos^2\theta}_{=1})</mrow>
+                <mrow>=\quad&amp;\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2</mrow>
+              </md>
+              comme souhaité.
+            </p>
+          </li>
+        </ul>
+      </solution>
+    </task>
+  </project>
+
+  <p>
+    Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 2, 4, 6, 8, 10, 12, 18, 22, 24, 36, 38, 54 dont voici les <url href="https://drive.google.com/file/d/1Yi0H0JjmitiwZw0yK1JBmL0OLZoXQ8ZY/view?usp=sharing">solutions</url>.
+  </p>
+  <p>
+    Sinon, passez directement aux exercices prioritaires de cette section.
+  </p>
+  <p>
+    Remarque : Voici <url href="https://drive.google.com/file/d/1sNNXv1p3QRxiQyim3ZKpYBWdeaEut-en/view?usp=sharing">le document</url> distribué les sessions précédentes.
+    Et en voilà <url href="https://drive.google.com/file/d/13cEmn4LYnlPL_KET_3oO33d1DfrNBtSq/view?usp=sharing">le solutionnaire</url>.
+  </p>
+
+</section>
+
+<section xml:id="derivees-directionnelles">
+  <title>Les dérivées directionnelles et le vecteur gradient</title>
+
+  <activity>
+    <ul>
+      <li>
+        <p>
+          <url href="https://tinyurl.com/y8x2mrzg">Calculatrice</url> à gradient et à dérivée directionnelle :
+          <sage language='sage'>
+            <input>
+              f(x, y) = x^2 * y^3 - 4 * y  # fonction
+              (x0, y0) = (2, -1)  # point
+              theta = arctan(5 / 2)  # direction
+
+              fx = derivative(f, x)
+              fy = derivative(f, y)
+              gradient = vector([fx(x0, y0), fy(x0, y0)])
+              u = vector([cos(theta), sin(theta)])
+              derivee = gradient.dot_product(u)
+
+              pretty_print('Gradient :', gradient)
+              pretty_print('Dérivée directionnelle :', derivee)
+            </input>
+          </sage>
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://www.geogebra.org/m/VKU7BrFK">Application</url> GeoGebra illustrant graphiquement les concepts de dérivée directionnelle et de gradient pour une fonction de deux variables.
+        </p>
+      </li>
+    </ul>
+  </activity>
+
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Connaître la définition de la <em>dérivée directionnelle</em> au point <m>P_0(x_0,y_0)</m> d'une fonction de deux variables <m>f(x,y)</m> dans la direction donnée par un vecteur
+          <me>\vec{u}=\begin{bmatrix}a\\b\end{bmatrix}\quad\text{tel que}\;a^2+b^2=1</me>
+          c'est-à-dire <m>\vec{u}</m> unitaire :
+          <me>f_{\vec{u}}(P_0)=\lim_{h\rightarrow 0}\frac{f(P_0+h\vec{u})-f(P_0)}{h}</me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir déterminer le <em>gradient</em>
+          <me>\nabla f=\begin{bmatrix}f_x\\f_y\end{bmatrix}</me>
+          d'une fonction de deux variables ou plus.
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir utiliser le gradient pour calculer la <em>dérivée directionnelle</em>
+          <me>f_{\vec{u}}=\nabla f\cdot\vec{u}=\begin{bmatrix}f_x\\f_y\end{bmatrix}\cdot\begin{bmatrix}a\\b\end{bmatrix}=af_x+bf_y</me>
+          où <m>\vec{u}</m> est unitaire.
+        </p>
+      </li>
+      <li>
+        <p>
+          Connaître le cas particulier où la direction est donnée par un angle <m>\theta</m>, ce qui revient à prendre le vecteur unitaire
+          <me>\vec{u}=\begin{bmatrix}\cos\theta\\\sin\theta\end{bmatrix}</me>
+          d'où
+          <me>f_{\vec{u}}=\cos\theta f_x+\sin\theta f_y.</me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Étant donné une fonction de deux variables <m>f(x,y)</m>, savoir que
+          <ul>
+            <li>
+              <p>
+                la dérivée directionnelle <m>f_{\vec{u}}</m> est maximale dans la direction indiquée par le gradient, et nulle dans toute direction perpendiculaire au gradient;
+              </p>
+            </li>
+            <li>
+              <p>
+                le taux de variation maximal de <m>f</m> au point <m>(x_0,y_0)</m> est donné par <m>\|\nabla f(x_0,y_0)\|</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                le gradient <m>\nabla f(x_0,y_0)</m> est perpendiculaire à la courbe de niveau passant par <m>(x_0,y_0)</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          Savoir utiliser le gradient pour donner une équation cartésienne de plan tangent et des équations paramétriques de droite normale à une surface en un point donné.
+        </p>
+      </li>
+    </ul>
+  </objectives>
+
+  <exercise>
+    <statement>
+      <p>
+        Soit <m>f</m> une fonction de deux variables dont seules les valeurs données dans la table suivante sont connues :
+        <me>
+          \begin{array}{r|rrr}
+          &amp;0&amp;1&amp;2\\
+          \hline
+          1&amp;6&amp;8&amp;9\\
+          2&amp;5&amp;7&amp;8\\
+          3&amp;4&amp;6&amp;7
+          \end{array}
+          \qquad\text{où par exemple }f(0,2)=5.
+        </me>
+      </p>
+      <ol>
+        <li>
+          <p>
+            Explicitez la définition de la dérivée directionnelle
+            <me>f_{\vec{u}}(P_0)=\lim_{h\rightarrow 0}\frac{f(P_0+h\vec{u})-f(P_0)}{h}</me>
+            pour
+            <me>P_0(1,2)\quad\text{et}\quad\vec{u}=\begin{bmatrix}\frac{\sqrt{2}}{2}\\-\frac{\sqrt{2}}{2}\end{bmatrix}.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Quelle approximation de <m>f_{\vec{u}}(1,2)</m> obtenez-vous en prenant <m>h=\sqrt{2}</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            Quelle approximation de <m>f_{\vec{u}}(1,2)</m> obtenez-vous en prenant <m>h=-\sqrt{2}</m>?
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <answer>
+      <ol>
+        <li>
+          <p>
+            On a
+            <me>f_{\vec{u}}(1,2)=\lim_{h\rightarrow 0}\frac{f\left(1+h\frac{\sqrt{2}}{2},2-h\frac{\sqrt{2}}{2}\right)-f(1,2)}{h}.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On obtient l'approximation de <m>f_{\vec{u}}(1,2)</m> suivante :
+            <me>\sqrt{2}\approx 1{,}414.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On obtient l'approximation de <m>f_{\vec{u}}(1,2)</m> suivante :
+            <me>\frac{3}{\sqrt{2}}\approx 2{,}121.</me>
+          </p>
+        </li>
+      </ol>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Ajouter le vecteur
+            <me>h\vec{u}=\begin{bmatrix}h\frac{\sqrt{2}}{2}\\-h\frac{\sqrt{2}}{2}\end{bmatrix}</me>
+            au point <m>P_0(1,2)</m> donne le point de coordonnées
+            <me>\left(1+h\frac{\sqrt{2}}{2},2-h\frac{\sqrt{2}}{2}\right)</me>
+            donc
+            <me>f_{\vec{u}}(1,2)=\lim_{h\rightarrow 0}\frac{f\left(1+h\frac{\sqrt{2}}{2},2-h\frac{\sqrt{2}}{2}\right)-f(1,2)}{h}.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            En prenant <m>h=\sqrt{2}</m>, on obtient l'approximation de <m>f_{\vec{u}}(1,2)</m> suivante :
+            <md>
+              <mrow>\frac{f\left(1+\sqrt{2}\frac{\sqrt{2}}{2},2-\sqrt{2}\frac{\sqrt{2}}{2}\right)-f(1,2)}{\sqrt{2}}&amp;=\frac{f(2,1)-f(1,2)}{\sqrt{2}}</mrow>
+              <mrow>&amp;=\frac{9-7}{\sqrt{2}}</mrow>
+              <mrow>&amp;=\sqrt{2}</mrow>
+              <mrow>&amp;\approx 1{,}414.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            En prenant <m>h=-\sqrt{2}</m>, on obtient l'approximation de <m>f_{\vec{u}}(1,2)</m> suivante :
+            <md>
+              <mrow>\frac{f\left(1-\sqrt{2}\frac{\sqrt{2}}{2},2+\sqrt{2}\frac{\sqrt{2}}{2}\right)-f(1,2)}{-\sqrt{2}}&amp;=\frac{f(0,3)-f(1,2)}{-\sqrt{2}}</mrow>
+              <mrow>&amp;=\frac{4-7}{-\sqrt{2}}</mrow>
+              <mrow>&amp;=\frac{3}{\sqrt{2}}</mrow>
+              <mrow>&amp;\approx 2{,}121.</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Voici un diagramme de courbes de niveaux
+        <image source="images/exercice_4.4.2.png" width="40%" />
+        correspondant à une certaine fonction <m>f(x,y)</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Combien vaut <m>f(4,6)</m> approximativement?
+          </p>
+        </li>
+        <li>
+          <p>
+            Si <m>\vec{u}</m> désigne le vecteur unitaire
+            <me>\vec{u}=\frac{1}{\sqrt{2}}\begin{bmatrix}-1\\1\end{bmatrix}</me>
+            déterminez le signe de la dérivée directionnelle <m>f_{\vec{u}}(4,6)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Représentez la direction du gradient <m>\nabla f(4,6)</m> par une flèche ayant pour origine le point <m>(4,6)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Soit <m>\vec{u}</m> un vecteur unitaire quelconque et <m>\alpha\in[0,2\pi[</m> l'angle qu'il forme avec le gradient <m>\nabla f(4,6)</m>.
+            Exprimez la dérivée directionnelle <m>f_{\vec{u}}(4,6)</m> à l'aide de <m>\alpha</m> et de la norme du gradient <m>\|\nabla f(4,6)\|</m>, puis déduisez-en pour quelles valeurs de <m>\alpha</m> la dérivée directionnelle est :
+            <ul>
+              <li>
+                <p>
+                  nulle;
+                </p>
+              </li>
+              <li>
+                <p>
+                  minimale;
+                </p>
+              </li>
+              <li>
+                <p>
+                  maximale.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            Estimez la dérivée directionnelle de <m>f</m> au point <m>(4,6)</m> dans la direction donnée par le gradient <m>\nabla f(4,6)</m>, càd
+            <me>\vec{v}=\frac{\nabla f(4,6)}{\|\nabla f(4,6)\|}.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Estimez la norme du gradient <m>\|\nabla f(4,6)\|</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Esquissez le gradient <m>\nabla f(4,6)</m> avec le point <m>(4,6)</m> pour origine.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <answer>
+      <ol>
+        <li>
+          <p>
+            On lit approximativement <m>-2{,}5</m> sur le diagramme.
+          </p>
+        </li>
+        <li>
+          <p>
+            On voit que
+            <me>f_{\vec{u}}(4,6)&lt;0.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Le gradient <m>\nabla f(4,6)</m> est orienté comme suit :
+            <image source="images/exercice_4.4.2bis.png" width="40%" />
+          </p>
+        </li>
+        <li>
+          <p>
+            On a
+            <me>f_{\vec{u}}(4,6)=\|\nabla f(4,6)\|\cos(\alpha).</me>
+            Par conséquent la dérivée directionnelle est :
+            <ul>
+              <li>
+                <p>
+                  nulle si et seulement si <m>\alpha\pm\frac{\pi}{2}</m> (càd <m>\cos(\alpha)=0</m>);
+                </p>
+              </li>
+              <li>
+                <p>
+                  minimale si et seulement si <m>\alpha=\pi</m> (càd <m>\cos(\alpha)=-1</m>);
+                </p>
+              </li>
+              <li>
+                <p>
+                  maximale si et seulement si <m>\alpha=0</m> (càd <m>\cos(\alpha)=1</m>).
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            On obtient l'estimation
+            <me>\frac{\Delta z}{h}=\frac{1}{0{,}63}\approx1{,}59</me>
+            environ pour la dérivée directionnelle <m>f_{\vec{v}}(4,6)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            On prend la même estimation qu'à la question précédente, soit
+            <me>\|\nabla f(4,6)\|=1{,}59</me>
+            environ.
+          </p>
+        </li>
+        <li>
+          <p>
+            L'esquisse du gradient <m>\nabla f(4,6)</m> donne
+            <image source="images/exercice_4.4.2quater.png" width="40%" />
+          </p>
+        </li>
+      </ol>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Le point <m>(4,6)</m> se situe entre les courbes de niveau
+            <me>f(x,y)=-2\quad\text{et}\quad f(x,y)=-3</me>
+            alors disons que <m>f(4,6)</m> vaut approximativement <m>-2{,}5</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Voici dans quelle direction pointe le vecteur <m>\vec{u}</m> :
+            <image source="images/exercice_4.4.2ter.png" width="40%" />
+            En lisant les valeurs des courbes de niveau, on voit que que <m>f(x,y)</m> diminue lorsqu'on part du point <m>(4,6)</m> en prenant la direction donnée par <m>\vec{u}</m>.
+            On a donc
+            <me>f_{\vec{u}}(4,6)&lt;0.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Le gradient <m>\nabla f(4,6)</m> est perpendiculaire à la courbe de niveau passant par le point <m>(4,6)</m> et il pointe dans la direction où <m>f(x,y)</m> augmente le plus :
+            <image source="images/exercice_4.4.2bis.png" width="40%" />
+          </p>
+        </li>
+        <li>
+          <p>
+            On a
+            <md>
+              <mrow>f_{\vec{u}}(4,6)&amp;=\nabla f(4,6)\cdot\vec{u}</mrow>
+              <mrow>&amp;=\|\nabla f(4,6)\|\cdot\|\vec{u}\|\cdot\cos(\alpha)</mrow>
+              <mrow>&amp;=\|\nabla f(4,6)\|\cos(\alpha).</mrow>
+            </md>
+            Par conséquent la dérivée directionnelle est :
+            <ul>
+              <li>
+                <p>
+                  nulle si et seulement si <m>\alpha\pm\frac{\pi}{2}</m> (càd <m>\cos(\alpha)=0</m>);
+                </p>
+              </li>
+              <li>
+                <p>
+                  minimale si et seulement si <m>\alpha=\pi</m> (càd <m>\cos(\alpha)=-1</m>);
+                </p>
+              </li>
+              <li>
+                <p>
+                  maximale si et seulement si <m>\alpha=0</m> (càd <m>\cos(\alpha)=1</m>).
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            Estimons cette dérivée directionnelle par un quotient
+            <me>\frac{\Delta z}{h}</me>
+            en prenant les valeurs de <m>z</m> sur les deux courbes de niveau les plus proches du point <m>(4,6)</m>, soit
+            <me>\Delta z=-2-(-3)=1</me>
+            de sorte que <m>h</m> s'obtient en mesurant la distance entre ces lignes de niveau en passant par le point <m>(4,6)</m> et en suivant la direction du gradient, soit perpendiculairement aux courbes de niveaux.
+            Cela donne environ
+            <me>h=0{,}63.</me>
+            On obtient donc l'estimation
+            <me>\frac{\Delta z}{h}=\frac{1}{0{,}63}\approx1{,}59</me>
+            environ pour la dérivée directionnelle <m>f_{\vec{v}}(4,6)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            D'après la question 4., dans la direction
+            <me>\vec{v}=\frac{\nabla f(4,6)}{\|\nabla f(4,6)\|}</me>
+            donnée par le gradient (càd <m>\alpha=0</m>), la dérivée directionnelle est maximale et vaut
+            <md>
+              <mrow>f_{\vec{v}}(4,6)&amp;=\|\nabla f(4,6)\|\cos(0)</mrow>
+              <mrow>&amp;=\|\nabla f(4,6)\|.</mrow>
+            </md>
+            Nous pouvons donc prendre la même estimation qu'à la question précédente, soit
+            <me>\|\nabla f(4,6)\|=1{,}59</me>
+            environ.
+          </p>
+        </li>
+        <li>
+          <p>
+            Maintenant qu'on connaît la direction et la norme du gradient <m>\nabla f(4,6)</m>, on peut en faire l'esquisse :
+            <image source="images/exercice_4.4.2quater.png" width="40%" />
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-gradient">
+    <statement>
+      <p>
+        Déterminez le gradient de la fonction
+        <me>f(x,y)=x^2+3xy^5-4y^4</me>
+        puis évaluez-le au point
+        <me>P(1,-1).</me>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        On trouve
+        <me>\nabla f=\begin{bmatrix}2x+3y^5\\15xy^4-16y^3\end{bmatrix}</me>
+        et en particulier
+        <me>\nabla f(1,-1)=\begin{bmatrix}-1\\31\end{bmatrix}</me>
+        au point <m>P(1,-1)</m>.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Par définition, on a
+        <md>
+          <mrow>\nabla f&amp;=\begin{bmatrix}f_x\\f_y\end{bmatrix}</mrow>
+          <mrow>&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(x^2+3xy^5-4y^4)\\\frac{\partial}{\partial y}(x^2+3xy^5-4y^4)\end{bmatrix}</mrow>
+          <mrow>&amp;=\begin{bmatrix}2x+3y^5\\15xy^4-16y^3\end{bmatrix}.</mrow>
+        </md>
+        En particulier, au point <m>P(1,-1)</m>, cela donne
+        <md>
+          <mrow>\nabla f(1,-1)&amp;=\begin{bmatrix}2\cdot 1+3\cdot (-1)^5\\15\cdot 1\cdot(-1)^4-16\cdot(-1)^3\end{bmatrix}</mrow>
+          <mrow>&amp;=\begin{bmatrix}-1\\31\end{bmatrix}.</mrow>
+        </md>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-derivee-directionnelle-3">
+    <statement>
+      <p>
+        Calculez la dérivée directionnelle de la fonction
+        <me>f(x,y)=\arctan(xy)</me>
+        dans la direction du vecteur
+        <me>\overrightarrow{v}=\begin{bmatrix}5\\10\end{bmatrix}</me>
+        au point
+        <me>P(1,2).</me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Attention, le vecteur <m>\overrightarrow{v}</m> n'est pas unitaire.
+        Prenez
+        <me>\overrightarrow{u}=\frac{\overrightarrow{v}}{\|\overrightarrow{v}\|}</me>
+        puis appliquez la formule
+        <me>f_{\vec{u}}=\nabla f\cdot\vec{u}.</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        On trouve
+        <me>\frac{4}{5\sqrt{5}}.</me>
+      </p>
+    </answer>
+    <solution>
+      <ul>
+        <li>
+          <p>
+            Commençons par évaluer le gradient de <m>f</m>
+            <md>
+              <mrow>\nabla f&amp;=\begin{bmatrix}f_x\\f_y\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(\arctan(xy))\\\frac{\partial}{\partial y}(\arctan(xy))\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}\frac{y}{1+(xy)^2}\\\frac{x}{1+(xy)^2}\end{bmatrix}</mrow>
+            </md>
+            au point <m>P(1,2)</m> :
+            <md>
+              <mrow>\nabla f(1,2)&amp;=\begin{bmatrix}\frac{2}{1+(1\cdot 2)^2}\\\frac{1}{1+(1\cdot 2)^2}\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}\frac{2}{5}\\\frac{1}{5}\end{bmatrix}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Rendons ensuite la direction <m>\vec{v}</m> unitaire :
+            <md>
+              <mrow>\vec{u}&amp;=\frac{\overrightarrow{v}}{\|\overrightarrow{v}\|}</mrow>
+              <mrow>&amp;=\frac{1}{\sqrt{5^2+10^2}}\begin{bmatrix}5\\10\end{bmatrix}</mrow>
+              <mrow>&amp;=\frac{1}{5\sqrt{5}}\begin{bmatrix}5\\10\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}\frac{1}{\sqrt{5}}\\\frac{2}{\sqrt{5}}\end{bmatrix}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Calculons enfin le produit scalaire de ces deux vecteurs :
+            <md>
+              <mrow>f_{\vec{u}}(1,2)&amp;=\nabla f(1,2)\cdot\vec{u}</mrow>
+              <mrow>&amp;=\begin{bmatrix}\frac{2}{5}\\\frac{1}{5}\end{bmatrix}\cdot\begin{bmatrix}\frac{1}{\sqrt{5}}\\\frac{2}{\sqrt{5}}\end{bmatrix}</mrow>
+              <mrow>&amp;=\frac{2}{5}\cdot\frac{1}{\sqrt{5}}+\frac{1}{5}\cdot\frac{2}{\sqrt{5}}</mrow>
+              <mrow>&amp;=\frac{4}{5\sqrt{5}}.</mrow>
+            </md>
+          </p>
+        </li>
+      </ul>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-derivee-directionnelle-2">
+    <statement>
+      <p>
+        Calculez la dérivée directionnelle de la fonction
+        <me>g(x,y)=\cos(xy)+y^2</me>
+        au point
+        <me>R(0,1)</me>
+        dans la direction donnée par l'angle
+        <me>\theta=\frac{2\pi}{3}.</me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Déterminez le vecteur unitaire donnant la direction
+        <me>\vec{u}=\begin{bmatrix}\cos\theta\\\sin\theta\end{bmatrix}</me>
+        puis appliquez la formule
+        <me>g_{\vec{u}}=\nabla g\cdot\vec{u}.</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        On trouve
+        <me>\sqrt{3}.</me>
+      </p>
+    </answer>
+    <solution>
+      <ul>
+        <li>
+          <p>
+            Commençons par évaluer le gradient de <m>g</m>
+            <md>
+              <mrow>\nabla g&amp;=\begin{bmatrix}g_x\\g_y\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(\cos(xy)+y^2)\\\frac{\partial}{\partial y}(\cos(xy)+y^2)\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}-y\sin(xy)\\-x\sin(xy)+2y\end{bmatrix}</mrow>
+            </md>
+            au point <m>R(0,1)</m> :
+            <md>
+              <mrow>\nabla g(0,1)&amp;=\begin{bmatrix}-1\cdot\sin(0\cdot 1)\\-0\cdot\sin(0\cdot 1)+2\cdot 1\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}0\\2\end{bmatrix}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Déterminons ensuite la direction unitaire <m>\vec{u}</m> :
+            <md>
+              <mrow>\vec{u}&amp;=\begin{bmatrix}\cos\left(\frac{2\pi}{3}\right)\\\sin\left(\frac{2\pi}{3}\right)\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}-\frac{1}{2}\\\frac{\sqrt{3}}{2}\end{bmatrix}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Calculons enfin le produit scalaire de ces deux vecteurs :
+            <md>
+              <mrow>g_{\vec{u}}(0,1)&amp;=\nabla g(0,1)\cdot\vec{u}</mrow>
+              <mrow>&amp;=\begin{bmatrix}0\\2\end{bmatrix}\cdot\begin{bmatrix}-\frac{1}{2}\\\frac{\sqrt{3}}{2}\end{bmatrix}</mrow>
+              <mrow>&amp;=0\cdot\left(-\frac{1}{2}\right)+2\cdot\left(\frac{\sqrt{3}}{2}\right)</mrow>
+              <mrow>&amp;=\sqrt{3}.</mrow>
+            </md>
+          </p>
+        </li>
+      </ul>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-derivee-directionnelle">
+    <statement>
+      <p>
+        Déterminez le taux de variation de la fonction
+        <me>g(x,y)=\cos(xy)+y^2</me>
+        au point
+        <me>R(0,1)</me>
+        dans la direction du point
+        <me>Q(1,2).</me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        L'exercice demande de calculer la dérivée directionnelle de <m>g</m> au point <m>R</m>, dans la direction donnée par le vecteur unitaire
+        <me>\vec{u}=\frac{\overrightarrow{RQ}}{\|\overrightarrow{RQ}\|}.</me>
+      </p>
+    </hint>
+    <answer>
+      <p>
+        On trouve
+        <me>\sqrt{2}.</me>
+      </p>
+    </answer>
+    <solution>
+      <ul>
+        <li>
+          <p>
+            Pour commencer, rappelons que
+            <me>\nabla g(0,1)=\begin{bmatrix}0\\2\end{bmatrix}</me>
+            grâce aux calculs de l'exercice <xref ref="exercice-derivee-directionnelle-2" /> qui précède.
+          </p>
+        </li>
+        <li>
+          <p>
+            Déterminons ensuite la direction unitaire <m>\vec{u}</m> :
+            <md>
+              <mrow>\vec{u}&amp;=\frac{\overrightarrow{RQ}}{\|\overrightarrow{RQ}\|}</mrow>
+              <mrow>&amp;=\frac{1}{\sqrt{1^2+1^2}}\begin{bmatrix}1\\1\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Calculons enfin le produit scalaire de ces deux vecteurs :
+            <md>
+              <mrow>g_{\vec{u}}(0,1)&amp;=\nabla g(0,1)\cdot\vec{u}</mrow>
+              <mrow>&amp;=\begin{bmatrix}0\\2\end{bmatrix}\cdot\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}</mrow>
+              <mrow>&amp;=0\cdot\frac{1}{\sqrt{2}}+2\cdot\frac{1}{\sqrt{2}}</mrow>
+              <mrow>&amp;=\sqrt{2}.</mrow>
+            </md>
+          </p>
+        </li>
+      </ul>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-accroissement-maximal">
+    <statement>
+      <p>
+        On considère la fonction de deux variables
+        <me>f(x,y)=xe^{-x^2-y^2}.</me>
+        <ol>
+          <li>
+            <p>
+              Déterminez la direction dans laquelle le taux de variation de <m>f</m> est le plus grand au point <m>(1,1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Quelle est la valeur de ce taux de variation maximal?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Le taux de variation (ou la dérivée directionnelle) de <m>f</m> au point <m>(x_0,y_0)</m> est maximal dans la direction du gradient.
+        Il vaut alors
+        <me>\|\nabla f(x_0,y_0)\|.</me>
+      </p>
+    </hint>
+    <answer>
+      <ol>
+        <li>
+          <p>
+            Dans la direction du vecteur
+            <me>(-1,-2).</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On trouve
+            <me>\frac{\sqrt{5}}{e^2}.</me>
+          </p>
+        </li>
+      </ol>
+    </answer>
+    <solution>
+      <p>
+        Commençons par évaluer le gradient de <m>f</m>
+        <md>
+          <mrow>\nabla f&amp;=\begin{bmatrix}f_x\\f_y\end{bmatrix}</mrow>
+          <mrow>&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(xe^{-x^2-y^2})\\\frac{\partial}{\partial y}(xe^{-x^2-y^2})\end{bmatrix}</mrow>
+          <mrow>&amp;=\begin{bmatrix}e^{-x^2-y^2}+xe^{-x^2-y^2}(-2x)\\xe^{-x^2-y^2}(-2y)\end{bmatrix}</mrow>
+          <mrow>&amp;=\begin{bmatrix}(1-2x^2)e^{-x^2-y^2}\\-2xye^{-x^2-y^2}\end{bmatrix}</mrow>
+        </md>
+        au point <m>(1,1)</m> :
+        <md>
+          <mrow>\nabla f(1,1)&amp;=\begin{bmatrix}(1-2\cdot 1^2)e^{-1^2-1^2}\\-2\cdot 1\cdot 1\cdot e^{-1^2-1^2}\end{bmatrix}</mrow>
+          <mrow>&amp;=\begin{bmatrix}-e^{-2}\\-2e^{-2}\end{bmatrix}</mrow>
+          <mrow>&amp;=e^{-2}\begin{bmatrix}-1\\-2\end{bmatrix}.</mrow>
+        </md>
+      </p>
+      <ol>
+        <li>
+          <p>
+            Le taux de variation est maximal dans la direction donnée par le gradient <m>\nabla f(1,1)</m>, soit celle du vecteur
+            <me>\begin{bmatrix}-1\\-2\end{bmatrix}</me>
+            si on préfère.
+          </p>
+        </li>
+        <li>
+          <p>
+            Dans cette direction, le taux de variation vaut
+            <md>
+              <mrow>\|\nabla f(1,1)\|&amp;=\left\|e^{-2}\begin{bmatrix}-1\\-2\end{bmatrix}\right\|</mrow>
+              <mrow>&amp;=e^{-2}\left\|\begin{bmatrix}-1\\-2\end{bmatrix}\right\|</mrow>
+              <mrow>&amp;=e^{-2}\sqrt{(-1)^2+(-2)^2}</mrow>
+              <mrow>&amp;=\frac{\sqrt{5}}{e^2}.</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="exercice-plan-tangent-2">
+    <statement>
+      <p>
+        Donnez les équations du plan tangent et de la normale à l'ellipsoïde d'équation
+        <me>2(x-2)^2+(y-1)^2+(z-3)^2=10</me>
+        au point
+        <me>P_0(3,3,5).</me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        On rappelle que pour une fonction de deux variables <m>f(x,y)</m>, le gradient <m>\nabla f(x_0,y_0)</m> est perpendiculaire à la courbe de niveau d'équation <m>f(x,y)=k</m> passant par <m>(x_0,y_0)</m>.
+      </p>
+      <p>
+        De même, pour une fonction de trois variables <m>F(x,y,z)</m>, le gradient <m>\nabla F(x_0,y_0,z_0)</m> est perpendiculaire à la surface de niveau d'équation <m>F(x,y,z)=k</m> passant par <m>(x_0,y_0,z_0)</m>.
+      </p>
+      <p>
+        Par conséquent, si
+        <me>\nabla F(x_0,y_0,z_0)\neq\vec{0}</me>
+        alors le plan tangent à la surface d'équation
+        <me>F(x,y,z)=k</me>
+        au point <m>P_0(x_0,y_0,z_0)</m> a pour équation
+        <me>\nabla F(x_0,y_0,z_0)\cdot\begin{bmatrix}x-x_0\\y-y_0\\z-z_0\end{bmatrix}=0</me>
+        et la droite normale à la surface passant par ce même point admet
+        <me>\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}x_0\\y_0\\z_0\end{bmatrix}+t\,\nabla F(x_0,y_0,z_0)\quad\text{où}\;t\in\mathbb{R}</me>
+        pour équations paramétriques.
+      </p>
+    </hint>
+    <answer>
+      <ul>
+        <li>
+          <p>
+            Le plan tangent en ce point admet pour équation cartésienne
+            <me>x+y+z=11.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Et la droite normale à la surface qui passe par ce point admet pour équations paramétriques
+            <me>
+              \begin{cases}
+              x=3+4t\\
+              y=3+4t\\
+              z=5+4t
+              \end{cases}
+            \quad\text{où}\;t\in\mathbb{R}.</me>
+          </p>
+        </li>
+      </ul>
+      <p>
+        Voici de quoi vérifier graphiquement ces calculs à l'aide de <url href="https://www.geogebra.org/3d/kzzvr7cs">Geogebra</url>.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Introduisons la fonction de trois variables
+        <me>F(x,y,z)=2(x-2)^2+(y-1)^2+(z-3)^2</me>
+        dont la surface de niveau d'équation
+        <me>F(x,y,z)=10</me>
+        correspond à l'ellisoïde considéré et contient le point <m>P_0(3,3,5)</m> car
+        <me>F(3,3,5)=10.</me>
+      </p>
+      <ul>
+        <li>
+          <p>
+            Commençons par évaluer le gradient de <m>F</m>
+            <md>
+              <mrow>\nabla F&amp;=\begin{bmatrix}F_x\\F_y\\F_z\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(2(x-2)^2+(y-1)^2+(z-3)^2)\\\frac{\partial}{\partial y}(2(x-2)^2+(y-1)^2+(z-3)^2)\\\frac{\partial}{\partial z}(2(x-2)^2+(y-1)^2+(z-3)^2)\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}4(x-2)\\2(y-1)\\2(z-3)\end{bmatrix}</mrow>
+            </md>
+            au point <m>(3,3,5)</m> :
+            <md>
+              <mrow>\nabla F(3,3,5))&amp;=\begin{bmatrix}4\cdot(3-2)\\2\cdot(3-1)\\2\cdot(5-3)\end{bmatrix}</mrow>
+              <mrow>&amp;=\begin{bmatrix}4\\4\\4\end{bmatrix}</mrow>
+              <mrow>&amp;=4\begin{bmatrix}1\\1\\1\end{bmatrix}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Le plan tangent en ce point admet pour équation cartésienne
+            <md>
+              <mrow>\nabla F(3,3,5)\cdot\begin{bmatrix}x-3\\y-3\\z-5\end{bmatrix}=0&amp;\quad\Leftrightarrow\quad\cancel{4}\cdot\begin{bmatrix}1\\1\\1\end{bmatrix}\cdot\begin{bmatrix}x-3\\y-3\\z-5\end{bmatrix}=0</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad(x-3)+(y-3)+(z-5)=0</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad x+y+z=11.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Et la droite normale à la surface qui passe par ce point admet pour équations paramétriques
+            <me>\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}3\\3\\5\end{bmatrix}+t\,\nabla F(3,3,5)\quad\text{où}\;t\in\mathbb{R}</me>
+            soit
+            <me>
+            \begin{cases}
+              x=3+4t\\
+              y=3+4t\\
+              z=5+4t
+            \end{cases}
+            \quad\text{où}\;t\in\mathbb{R}
+          </me>
+            ou, si on préfère,
+          <me>
+            \begin{cases}
+              x=3+s\\
+              y=3+s\\
+              z=5+s
+            \end{cases}
+            \quad\text{où}\;s\in\mathbb{R}.
+          </me>
+          </p>
+        </li>
+      </ul>
+      <p>
+        Voici de quoi vérifier graphiquement ces calculs à l'aide de <url href="https://www.geogebra.org/3d/kzzvr7cs">Geogebra</url>.
+      </p>
+      <p>
+        PS : Merci à Frédérick et son frère d'avoir vu mon erreur de calcul!
+      </p>
+    </solution>
+  </exercise>
+
+  <project>
+    <introduction>
+      <p>
+        Pour une certaine région de l'espace, la température est donnée par
+        <me>T(x,y,z)=200e^{-x^2-3y^2-9z^2}</me>
+        où <m>T</m> est en degrés Celsius et <m>x, y, z</m> sont en mètres.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Donner la température au point <m>P(2,-1,2)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          En évaluant la fonction <m>T(x,y,z)</m> au point considéré, on obtient
+          <md>
+            <mrow>T(2,-1,2)&amp;=200\cdot\exp(-2^2-3\cdot(-1)^2-9\cdot 2^2)</mrow>
+            <mrow>&amp;=200\cdot\exp(-43)</mrow>
+            <mrow>&amp;\approx 4{,}23\times 10^{-17}\;\text{degrés}.</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Trouver le taux de variation de la température au point <m>P(2,-1,2)</m> dans la direction du point <m>Q(3,-3,3)</m>.
+          Interpréter.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Il s'agit de calculer la dérivée directionnelle.
+        </p>
+        <ul>
+          <li>
+            <p>
+              Commençons par évaluer le gradient de <m>T</m>
+              <md>
+                <mrow>\nabla T&amp;=\begin{bmatrix}T_x\\T_y\\T_z\end{bmatrix}</mrow>
+                <mrow>&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(200e^{-x^2-3y^2-9z^2})\\\frac{\partial}{\partial y}\left(200e^{-x^2-3y^2-9z^2}\right)\\\frac{\partial}{\partial z}(200e^{-x^2-3y^2-9z^2})\end{bmatrix}</mrow>
+                <mrow>&amp;=200e^{-x^2-3y^2-9z^2}\begin{bmatrix}-2x\\-6y\\-18z\end{bmatrix}</mrow>
+                <mrow>&amp;=-400e^{-x^2-3y^2-9z^2}\begin{bmatrix}x\\3y\\9z\end{bmatrix}</mrow>
+              </md>
+              au point <m>P(2,-1,2)</m> :
+              <md>
+                <mrow>\nabla T(2,-2,1)&amp;=-400\exp\left(-2^2-3\cdot(-1)^2-9\cdot 2^2\right)\begin{bmatrix}2\\3\cdot(-1)\\9\cdot 2\end{bmatrix}</mrow>
+                <mrow>&amp;=-400e^{-43}\begin{bmatrix}2\\-3\\18\end{bmatrix}.</mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Déterminons ensuite la direction unitaire <m>\vec{u}</m> :
+              <md>
+                <mrow>\vec{u}&amp;=\frac{\overrightarrow{PQ}}{\|\overrightarrow{PQ}\|}</mrow>
+                <mrow>&amp;=\frac{1}{\sqrt{1^2+(-2)^2+1^2}}\begin{bmatrix}1\\-2\\1\end{bmatrix}</mrow>
+                <mrow>&amp;=\frac{1}{\sqrt{6}}\begin{bmatrix}1\\-2\\1\end{bmatrix}.</mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculons enfin le produit scalaire de ces deux vecteurs :
+              <md>
+                <mrow>T_{\vec{u}}(2,-1,2)&amp;=\nabla T(2,-1,2)\cdot\vec{u}</mrow>
+                <mrow>&amp;=-400e^{-43}\begin{bmatrix}2\\-3\\18\end{bmatrix}\cdot\frac{1}{\sqrt{6}}\begin{bmatrix}1\\-2\\1\end{bmatrix}</mrow>
+                <mrow>&amp;=-\frac{400}{e^{43}\sqrt{6}}(2\cdot 1+(-3)\cdot(-2)+18\cdot 1)</mrow>
+                <mrow>&amp;=-\frac{400\cdot 26}{e^{43}\sqrt{6}}</mrow>
+                <mrow>&amp;\approx -8{,}98\times 10^{-16}\;\text{degrés/mètre}.</mrow>
+              </md>
+            </p>
+          </li>
+        </ul>
+        <p>
+          Cela veut dire qu'à partir du point <m>P(2,-1,2)</m>, la température diminue d'environ <m>8,98\times 10^{-16}</m> degrés Celsius par mètre parcouru en direction du point <m>Q(3,-3,3)</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Déterminer la direction dans laquelle la température augmente le plus rapidement si on se place au point <m>P(2,-1,2)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          C'est dans la direction donnée par le gradient
+          <me>\nabla T(2,-1,2)=-400e^{-43}\begin{bmatrix}2\\-3\\18\end{bmatrix}</me>
+          soit celle du vecteur
+          <me>\begin{bmatrix}-2\\3\\-18\end{bmatrix}.</me>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Calculer le taux de variation maximal de la température au point <m>P(2,-1,2)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Il s'agit de la norme du gradient
+          <me>\nabla T(2,-1,2)=-400e^{-43}\begin{bmatrix}2\\-3\\18\end{bmatrix}</me>
+          soit
+          <md>
+            <mrow>\|\nabla T(2,-1,2)\|&amp;=400e^{-43}\sqrt{2^2+(-3)^2+18^2}</mrow>
+            <mrow>&amp;=\frac{400\sqrt{337}}{e^{43}}</mrow>
+            <mrow>&amp;\approx 1{,}55\times 10^{-15}\text{degrés/mètre}.</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+  </project>
+
+  <p>
+    Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 4, 6, 8, 12, 20, 50 dont voici les <url href="https://drive.google.com/file/d/1y0ylHt1Ig5FZD6wOvstz4qfiUw0DDb-m/view?usp=sharing">solutions</url>.
+  </p>
+  <p>
+    Sinon, passez directement aux exercices prioritaires de cette section.
+  </p>
+  <p>
+    Remarque : Voici <url href="https://drive.google.com/file/d/1rZyHIiQi2oqH4lQEwVj_pKSKlWwQER8c/view?usp=sharing">le document</url> distribué les sessions précédentes.
+    Et en voilà <url href="https://drive.google.com/file/d/1MaMdZl9SrrLIDN2hN3rPtt7lwKtp5NFT/view?usp=sharing">le solutionnaire</url>.
+  </p>
+
+</section>
+
+<section xml:id="approximationsdetaylor">
+  <title>Les approximations de Taylor en deux variables</title>
+
+  <exercise xml:id="exercice-polynomes-de-taylor">
+    <statement>
+      <p>Pour <m>f(x;y)=e^x\cos(y)</m>, calculez les polynômes de Taylor de degré 1 et 2 au point <m>(0;\pi/2)</m>.</p>
+    </statement>
+    <answer>
+      <p>
+        <me>L(x;y)=\frac{\pi}{2}-y</me>
+        <me>Q(x;y)=\frac{\pi}{2}-y+\frac{\pi}{2}x-xy</me></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-approximation-de-taylor">
+    <statement>
+      <p>Soit <m>f(x;y)=e^{xy}</m>.<ol>
+        <li>Donnez le polynôme de Taylor de degré 1 de <m>f(x;y)</m> en <m>(0;0)</m>.</li>
+        <li>Donnez une borne sur l'erreur d'approximation de <m>f(x;y)</m> par son polynôme de Taylor de degré 1 sur le disque <m>B_{0,5}(0;0)=\{(x;y)\,:\,x^2+y^2\leq 0,5^2\}</m>.</li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><m>L(x;y)=1</m></li>
+        <li><m>|E_L|\leq \frac{5e^{1/4}}{16}\leq 0,401</m></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="exercice-approximation-de-taylor-2">
+    <statement>
+      <p>Soit <m>f(x;y)=e^{xy}</m>.<ol>
+        <li>Donnez le polynôme de Taylor de degré 2 de <m>f(x;y)</m> en <m>(0;0)</m>.</li>
+        <li>Donnez une borne sur l'erreur d'approximation de <m>f(x;y)</m> par son polynôme de Taylor de degré 2 sur le disque <m>B_{0,1}(0;0)</m>.</li>
+      </ol></p>
+    </statement>
+    <answer>
+      <p><ol>
+        <li><m>Q(x;y)=1+xy</m></li>
+        <li><m>|E_Q|\leq \frac{\sqrt{2}}{3}\cdot 0,201\cdot e^{0,01}\cdot 0,1^3\leq 9,57\times 10^{-5}</m></li>
+      </ol></p>
+    </answer>
+  </exercise>
+
+  <p>Complétez <url href="https://drive.google.com/file/d/14e3FvA7JX5-UEWYmFrswhTi5Z_zHUIbf/view?usp=sharing">ce document</url>. En voici le <url href="https://drive.google.com/file/d/16vk3xpFWF-e4lGoCDG1pqbo9mZGWgFk3/view?usp=sharing">solutionnaire</url>.</p>
+  <p>Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 2, 4, 14 dont voici les <url href="https://drive.google.com/file/d/1quUNjigHxUKSl5K64O_zweLMbvrBHNDe/view?usp=sharing">solutions</url>.</p>
+  <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
+
+</section>
+
+</chapter>

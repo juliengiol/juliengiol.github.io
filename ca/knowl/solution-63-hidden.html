@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:57:03-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Commençons par chercher les zéros du gradient :</p>
+<div class="displaymath">
+\begin{align*}
+\nabla f=\vec{0}&amp;\quad\Leftrightarrow\quad\begin{cases}f_x=0\\f_y=0\end{cases}\\
+&amp;\quad\Leftrightarrow\quad\begin{cases}3x^2-3=0\\3y^2-3=0\end{cases}\\
+&amp;\quad\Leftrightarrow\quad\begin{cases}x^2-1=0\\y^2-1=0\end{cases}\\
+&amp;\quad\Leftrightarrow\quad\begin{cases}(x-1)(x+1)=0\\(y-1)(y+1)=0\end{cases}\\
+&amp;\quad\Leftrightarrow\quad\begin{cases}x=\pm 1\\y=\pm 1\end{cases}.
+\end{align*}
+</div>
+<p>Comme le gradient existe en tout point de \(\mathbb{R}^2\text{,}\) il n'y a pas d'autre point critique à ajouter aux quatre zéros du gradient trouvés :</p>
+<div class="displaymath">
+\begin{equation*}
+(1,1),\quad(1,-1),\quad(-1,1)\quad\text{et}\quad(-1,-1).
+\end{equation*}
+</div>
+<p>Préparons-nous à appliquer le test des dérivées secondes en calculant ces dernières :</p>
+<div class="displaymath">
+\begin{equation*}
+f_{xx}=6x,\quad f_{xy}=f_{yx}=0\quad\text{et}\quad f_{yy}=6y.
+\end{equation*}
+</div>
+<p>On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha_1=f_{xx}=6x
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha_2=\begin{vmatrix}f_{xx}&amp;f_{xy}\\f_{yx}&amp;f_{yy}\end{vmatrix}=\begin{vmatrix}6x&amp;0\\0&amp;6y\end{vmatrix}=36xy
+\end{equation*}
+</div>
+<p data-braille="continuation">en tout point \((x,y)\in\mathbb{R}^2\text{.}\)</p>
+<ul class="disc">
+<li>
+<p>Au point \((1,1)\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha_2=36\cdot 1\cdot 1=36&gt;0\quad\text{et}\quad\alpha_1=6\cdot 1=6&gt;0
+\end{equation*}
+</div>
+<p data-braille="continuation">donc \(f\) possède un minimum local.</p>
+</li>
+<li>
+<p>Au point \((-1,-1)\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha_2=36\cdot(-1)\cdot(-1)=36&gt;0\quad\text{et}\quad\alpha_1=6\cdot(-1)=-6&lt;0
+\end{equation*}
+</div>
+<p data-braille="continuation">donc \(f\) possède un maximum local.</p>
+</li>
+<li>
+<p>Au point \((1,-1)\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha_2=36\cdot 1\cdot(-1)=-36&lt;0
+\end{equation*}
+</div>
+<p data-braille="continuation">donc \(f\) possède un point de selle.</p>
+</li>
+<li>
+<p>Au point \((-1,1)\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha_2=36\cdot(-1)\cdot 1=-36&lt;0
+\end{equation*}
+</div>
+<p data-braille="continuation">donc \(f\) possède un point de selle.</p>
+</li>
+</ul>
+</div></body>
+</html>

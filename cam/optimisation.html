@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-07T07:23:08-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WebCAM Optimisation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Sauter</a><div class="hidden-content" style="display:none">\(\require{amsmath}\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\dropsign}[1]{\smash{\llap{\raisebox{-.5\normalbaselineskip}{$#1$\hspace{2\arraycolsep}}}}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.collegeahuntsic.qc.ca/" target="_blank"><img src="images/logocollege.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="cam.html"><span class="title">Mon p'tit WebCAM</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="etude.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="derivees.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="taux-lies.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="etude.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="derivees.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="taux-lies.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a></li>
+<li class="link part"><a href="coronavirus.html" data-scroll="coronavirus"><span class="codenumber">I</span> <span class="title">Coronavirus</span></a></li>
+<li class="link"><a href="ateliers_nyb_coronavirus.html" data-scroll="ateliers_nyb_coronavirus"><span class="codenumber">1</span> <span class="title">Ateliers de NYB</span></a></li>
+<li class="link"><a href="aide_individuelle_coronavirus.html" data-scroll="aide_individuelle_coronavirus"><span class="codenumber">2</span> <span class="title">Aide individuelle</span></a></li>
+<li class="link part"><a href="exercices_supplementaires.html" data-scroll="exercices_supplementaires"><span class="codenumber">II</span> <span class="title">Exercices supplémentaires</span></a></li>
+<li class="link">
+<a href="limites.html" data-scroll="limites"><span class="codenumber">1</span> <span class="title">Limites</span></a><ul>
+<li><a href="algebre.html" data-scroll="algebre">Détermination par l'algèbre</a></li>
+<li><a href="RH.html" data-scroll="RH">Règle de L'Hospital</a></li>
+<li><a href="continuite.html" data-scroll="continuite">Continuité</a></li>
+<li><a href="asymptotes.html" data-scroll="asymptotes">Asymptotes</a></li>
+<li><a href="lim_suites.html" data-scroll="lim_suites">Limites de suites</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="derivees.html" data-scroll="derivees"><span class="codenumber">2</span> <span class="title">Dérivées</span></a><ul>
+<li><a href="regles-derivation.html" data-scroll="regles-derivation">Règles de dérivation</a></li>
+<li><a href="tangentes.html" data-scroll="tangentes">Tangentes</a></li>
+<li><a href="differentielle.html" data-scroll="differentielle">Différentielle</a></li>
+<li><a href="etude.html" data-scroll="etude">Étude de fonctions</a></li>
+<li><a href="optimisation.html" data-scroll="optimisation" class="active">Optimisation</a></li>
+<li><a href="taux-lies.html" data-scroll="taux-lies">Taux liés</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="integrales.html" data-scroll="integrales"><span class="codenumber">3</span> <span class="title">Intégrales</span></a><ul>
+<li><a href="proprietes.html" data-scroll="proprietes">Primitives et propriétés de base</a></li>
+<li><a href="formules.html" data-scroll="formules">Formules d'intégration de base</a></li>
+<li><a href="CV.html" data-scroll="CV">Changement de variable</a></li>
+<li><a href="IPP.html" data-scroll="IPP">Intégration par parties</a></li>
+<li><a href="FT.html" data-scroll="FT">Fonctions trigonométriques</a></li>
+<li><a href="ST.html" data-scroll="ST">Substitutions trigonométriques</a></li>
+<li><a href="FR.html" data-scroll="FR">Fonctions rationnelles</a></li>
+<li><a href="aires-etc.html" data-scroll="aires-etc">Calculs de longueurs, d'aires et de volumes</a></li>
+<li><a href="impropres.html" data-scroll="impropres">Intégrales impropres</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="series.html" data-scroll="series"><span class="codenumber">4</span> <span class="title">Séries</span></a><ul>
+<li><a href="series-connues.html" data-scroll="series-connues">Séries connues</a></li>
+<li><a href="criteres.html" data-scroll="criteres">Critères de convergence et astuces</a></li>
+<li><a href="puissances.html" data-scroll="puissances">Séries de puissances</a></li>
+<li><a href="taylor.html" data-scroll="taylor">Séries de Taylor et de Maclaurin</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="varia.html" data-scroll="varia"><span class="codenumber">5</span> <span class="title">Varia</span></a><ul>
+<li><a href="SDR.html" data-scroll="SDR">Notation sigma et sommes de Riemann</a></li>
+<li><a href="edo.html" data-scroll="edo">Équations différentielles</a></li>
+<li><a href="suites.html" data-scroll="suites">Suites</a></li>
+<li><a href="finance.html" data-scroll="finance">Mathématiques financières</a></li>
+<li><a href="theoremes.html" data-scroll="theoremes">Théorèmes d'analyse</a></li>
+<li><a href="defis.html" data-scroll="defis">Défis</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="optimisation"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Optimisation</span>
+</h2>
+<a href="optimisation.html" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-21"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-21"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-21"><article class="exercise exercise-like"><p id="p-230">Une page de cahier de mathématiques a un périmètre de <span class="quantity">100 cm</span>. Si cette page comprend des marges de <span class="quantity">4 cm</span> en haut et en bas, de <span class="quantity">3 cm</span> à gauche et de <span class="quantity">1 cm</span> à droite, quelles dimensions doit-elle avoir pour que la surface imprimée soit maximale?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-21" id="answer-21"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-21"><div class="answer solution-like"><p id="p-231"><span class="quantity">23 cm</span> par <span class="quantity">27 cm</span></p></div></div>
+</div></article></div></section></div></main>
+</div>
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-9"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-9');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-07T20:49:48-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 class="heading">
+<span class="type">Outils</span><span class="period">.</span>
+</h6>
+<ul class="disc">
+<li><p><a class="external" href="https://tinyurl.com/wwddeou" target="_blank">Calculatrice</a> à règle de dérivation en chaîne pour une fonction \(z\) de deux variables \(x,y\) qui dépendent chacune de \(t\) : <div class="sagecell-sage" id="sage-3"><script type="text/x-sage">var('x, y, z, t')  # déclaration des variables
+x = function('x')(t)  # x dépend de t
+y = function('y')(t)  # y dépend de t
+
+z(t) = x^2 + (y/3)^2  # fonction composée
+derivee = derivative(z, t)  # dérivée
+
+pretty_print('Fonction composée :', z)
+pretty_print('Dérivée :', derivee)
+</script></div></p></li>
+<li><p><a class="external" href="https://www.geogebra.org/m/BzVfXX4S" target="_blank">Application</a> GeoGebra illustrant graphiquement la règle de dérivation en chaîne pour une fonction de deux variables qui dépendent chacune du temps.</p></li>
+</ul></article><span class="incontext"><a href="derivation-en-chaine.html#activity-3">??</a></span>
+</body>
+</html>

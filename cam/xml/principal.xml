@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="fr-FR">
+
+  <docinfo>
+
+      <brandlogo url="http://www.collegeahuntsic.qc.ca/" source="images/logocollege.png" />
+
+      <latex-preamble>
+          <package>amsmath</package>
+          <package>cancel</package>
+      </latex-preamble>
+
+      <macros>
+      \newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} % this comment will be stripped
+      \newcommand{\myequation}[2]{#1\amp =#2} % testing alignment override
+      % comments anywhere get stripped, with or without faux % comment \% characters
+      \newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+      \newcommand{\testingescapedpercent}{ \% } % just testing
+      \newcommand{\dropsign}[1]{\smash{\llap{\raisebox{-.5\normalbaselineskip}{$#1$\hspace{2\arraycolsep}}}}} % pour la division polynomiale
+      </macros>
+              -->
+      <cross-references text="global" />
+
+      <latex-image-preamble>
+      \usepackage{pgfplots}               % loads tikz package
+      \usepackage{smartdiagram}           % for a circular diagram
+      \pgfplotsset{axis x line = middle,
+                   axis y line = middle}
+      \usetikzlibrary{backgrounds}
+      \usetikzlibrary{arrows,matrix}
+      \usetikzlibrary{positioning}        % for Dave R's worksheet
+      \usepackage{circuitikz}             % for Virgil P's worksheet
+      </latex-image-preamble>
+
+      <initialism>WebCAM</initialism>
+
+      <rename element="frontmatter" xml:lang="fr-FR">Accueil</rename>
+      <rename element="incontext" xml:lang="fr-FR">Dans son contexte</rename>
+      <rename element="inlineexercise" xml:lang="fr-FR">Exercice</rename>
+      <rename element="chapter" xml:lang="fr-FR">Section</rename>
+
+  </docinfo>
+
+  <book xml:id="cam">
+    <title>Mon p'tit WebCAM</title>
+
+    <frontmatter xml:id="accueil">
+
+      <titlepage>
+
+        <author>
+            <personname>Julien Giol</personname>
+            <!-- department here is one line, so unstructured -->
+            <department>Département de mathématiques</department>
+            <!-- institution uses two lines, so structured as such -->
+            <institution>
+                <line>Collège Ahuntsic</line>
+                <line>Montréal, Québec</line>
+            </institution>
+            <email>julien.giol@collegeahuntsic.qc.ca</email>
+        </author>
+
+      </titlepage>
+
+      <abstract>
+        <p>
+          Bienvenue!
+        </p>
+        <p>
+          Voici ce que vous trouverez sur ces pages.
+          <ul>
+            <li>
+              <p>
+                <xref ref="coronavirus">Partie</xref> - Coronavirus : Les ressources que je mets en ligne afin de pouvoir poursuivre mes activités au sein du CAM à distance pendant la fermeture du Collège due à l'épidémie de Coronavirus.
+              </p>
+            </li>
+            <li>
+              <p>
+                <xref ref="exercices_supplementaires">Partie</xref> - Exercices supplémentaires : Des exercices de calcul différentiel et intégral semblables à ceux rencontrés dans les cours de mathématiques de niveau collégial.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </abstract>
+
+    </frontmatter>
+<!--
+    <part xml:id="concours" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>Concours</title>
+
+      <introduction>
+
+        <assemblage>
+          <title>Le problème à x dollars</title>
+          <p>Trouvez tous les triplets d'entiers positifs <m>(x;y;z)\in\mathbb{N}^*</m> qui vérifient l'équation
+            <me>x^{2019}+y^{2019}=z^{2019}.</me>
+          </p>
+        </assemblage>
+
+        <assemblage>
+          <title>Le problème à y dollars</title>
+          <p>
+            Les nombres pairs <m>4, 6, 8, 10</m> et <m>12</m> peuvent s'écrire comme somme de deux nombres premiers.
+            En effet, on a
+            <me>4=2+2,\quad 6=3+3,\quad 8=3+5,\quad 10=3+7\quad\text{et}\quad 12=5+7.</me>
+            Montrez que c'est vrai pour tout entier pair supérieur à <m>3</m>.
+          </p>
+        </assemblage>
+
+        <assemblage>
+          <title>Le problème à z dollars</title>
+          <p>
+            Montrez que les zéros non triviaux du prolongement analytique de la fonction
+            <me>\zeta(s)=\sum_{n=1}^{+\infty}\frac{1}{n^s}</me>
+            ont tous <m>\frac{1}{2}</m> pour partie réelle.
+          </p>
+        </assemblage>
+
+      </introduction>
+
+      <xi:include href="./reglement.xml" />
+
+      <xi:include href="./archives.xml" />
+    </part>
+
+-->
+    <xi:include href="./coronavirus.xml" />
+
+    <part xml:id="exercices_supplementaires" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>Exercices supplémentaires</title>
+
+      <xi:include href="./limites.xml" />
+
+      <xi:include href="./derivees.xml" />
+
+      <xi:include href="./integrales.xml" />
+
+      <xi:include href="./series.xml" />
+
+      <xi:include href="./varia.xml" />
+
+    </part>
+
+  </book>
+
+</pretext>

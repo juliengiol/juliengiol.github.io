@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:15:05-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>M&amp;A Exercices</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_green.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://juliengiol.github.io/" target="_blank"><img src="images/ossau.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="mea.html"><span class="title">Mathématiques et algorithmique</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="algorithmebezout.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="bezout.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="chinois.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="algorithmebezout.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="bezout.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="chinois.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
+<li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Droits d'auteur</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Remerciements</a></li>
+<li><a href="preface-3.html" data-scroll="preface-3">Témoignages</a></li>
+</ul>
+</li>
+<li class="link part"><a href="algodebase.html" data-scroll="algodebase"><span class="codenumber">I</span> <span class="title">Algorithmique de base</span></a></li>
+<li class="link">
+<a href="assignetc.html" data-scroll="assignetc"><span class="codenumber">1</span> <span class="title">Assignations, boucles et conditionnelles</span></a><ul>
+<li><a href="assignations.html" data-scroll="assignations">Assignations</a></li>
+<li><a href="boucles.html" data-scroll="boucles">Boucles</a></li>
+<li><a href="conditionnelles.html" data-scroll="conditionnelles">Conditionnelles</a></li>
+<li><a href="exercicesassignetc.html" data-scroll="exercicesassignetc">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fonctions.html" data-scroll="fonctions"><span class="codenumber">2</span> <span class="title">Fonctions</span></a><ul>
+<li><a href="syntaxefonctions.html" data-scroll="syntaxefonctions">Syntaxe : def / return</a></li>
+<li><a href="recursivite.html" data-scroll="recursivite">Récursivité</a></li>
+<li><a href="exercicesfonctions.html" data-scroll="exercicesfonctions">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="complexite.html" data-scroll="complexite"><span class="codenumber">3</span> <span class="title">Complexité</span></a><ul>
+<li><a href="sommeentiers.html" data-scroll="sommeentiers">Somme des premiers entiers</a></li>
+<li><a href="exponentiation.html" data-scroll="exponentiation">Exponentiation rapide</a></li>
+<li><a href="horner.html" data-scroll="horner">Méthode de Horner</a></li>
+<li><a href="fibonacci.html" data-scroll="fibonacci">Nombres de Fibonacci</a></li>
+<li><a href="exercicescomplexite.html" data-scroll="exercicescomplexite">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="rechzeros.html" data-scroll="rechzeros"><span class="codenumber">II</span> <span class="title">Recherche de zéros</span></a></li>
+<li class="link">
+<a href="bissection.html" data-scroll="bissection"><span class="codenumber">4</span> <span class="title">Méthode de la bissection</span></a><ul>
+<li><a href="presentationbissection.html" data-scroll="presentationbissection">Présentation</a></li>
+<li><a href="algorithmebissection.html" data-scroll="algorithmebissection">Algorithme</a></li>
+<li><a href="exercicesbissection.html" data-scroll="exercicesbissection">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="newton.html" data-scroll="newton"><span class="codenumber">5</span> <span class="title">Méthode de Newton-Raphson</span></a><ul>
+<li><a href="presentationnewton.html" data-scroll="presentationnewton">Présentation</a></li>
+<li><a href="algorithmenewton.html" data-scroll="algorithmenewton">Algorithme</a></li>
+<li><a href="exercicesnewton.html" data-scroll="exercicesnewton">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="interpolation.html" data-scroll="interpolation"><span class="codenumber">III</span> <span class="title">Interpolation polynomiale</span></a></li>
+<li class="link">
+<a href="lagrange.html" data-scroll="lagrange"><span class="codenumber">6</span> <span class="title">Forme de Lagrange</span></a><ul>
+<li><a href="presentationlagrange.html" data-scroll="presentationlagrange">Présentation</a></li>
+<li><a href="algorithmelagrange.html" data-scroll="algorithmelagrange">Algorithme</a></li>
+<li><a href="exerciceslagrange.html" data-scroll="exerciceslagrange">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="diffdivisees.html" data-scroll="diffdivisees"><span class="codenumber">7</span> <span class="title">Forme de Newton</span></a><ul>
+<li><a href="presentationdiffdiv.html" data-scroll="presentationdiffdiv">Présentation</a></li>
+<li><a href="algorithmediffdiv.html" data-scroll="algorithmediffdiv">Algorithme</a></li>
+<li><a href="exercicesdiffdiv.html" data-scroll="exercicesdiffdiv">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="integration.html" data-scroll="integration"><span class="codenumber">IV</span> <span class="title">Intégration numérique</span></a></li>
+<li class="link">
+<a href="rectangles.html" data-scroll="rectangles"><span class="codenumber">8</span> <span class="title">Méthode des rectangles</span></a><ul>
+<li><a href="presentationrectangles.html" data-scroll="presentationrectangles">Présentation</a></li>
+<li><a href="algorithmerectangles.html" data-scroll="algorithmerectangles">Algorithme</a></li>
+<li><a href="exercicesrectangles.html" data-scroll="exercicesrectangles">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="trapezes.html" data-scroll="trapezes"><span class="codenumber">9</span> <span class="title">Méthode des trapèzes</span></a><ul>
+<li><a href="presentationtrapezes.html" data-scroll="presentationtrapezes">Présentation</a></li>
+<li><a href="algorithmetrapezes.html" data-scroll="algorithmetrapezes">Algorithme</a></li>
+<li><a href="exercicestrapezes.html" data-scroll="exercicestrapezes">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="simpson.html" data-scroll="simpson"><span class="codenumber">10</span> <span class="title">Méthode de Simpson</span></a><ul>
+<li><a href="presentationsimpson.html" data-scroll="presentationsimpson">Présentation</a></li>
+<li><a href="algorithmesimpson.html" data-scroll="algorithmesimpson">Algorithme</a></li>
+<li><a href="exercicessimpson.html" data-scroll="exercicessimpson">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="thdesnombres.html" data-scroll="thdesnombres"><span class="codenumber">V</span> <span class="title">Théorie des nombres</span></a></li>
+<li class="link">
+<a href="euclide.html" data-scroll="euclide"><span class="codenumber">11</span> <span class="title">Algorithme d'Euclide</span></a><ul>
+<li><a href="presentationeuclide.html" data-scroll="presentationeuclide">Présentation</a></li>
+<li><a href="algorithmeeuclide.html" data-scroll="algorithmeeuclide">Algorithme</a></li>
+<li><a href="exerciceseuclide.html" data-scroll="exerciceseuclide">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="bezout.html" data-scroll="bezout"><span class="codenumber">12</span> <span class="title">Algorithme d'Euclide étendu</span></a><ul>
+<li><a href="presentationbezout.html" data-scroll="presentationbezout">Présentation</a></li>
+<li><a href="algorithmebezout.html" data-scroll="algorithmebezout">Algorithme</a></li>
+<li><a href="exercicesbezout.html" data-scroll="exercicesbezout" class="active">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chinois.html" data-scroll="chinois"><span class="codenumber">13</span> <span class="title">Théorème des restes chinois</span></a><ul>
+<li><a href="presentationchinois.html" data-scroll="presentationchinois">Présentation</a></li>
+<li><a href="algorithmechinois.html" data-scroll="algorithmechinois">Algorithme</a></li>
+<li><a href="exerciceschinois.html" data-scroll="exerciceschinois">Exercices</a></li>
+</ul>
+</li>
+<li class="link"><a href="appendices.html" data-scroll="appendices"><span class="title">Appendices</span></a></li>
+<li class="link">
+<a href="approximation.html" data-scroll="approximation"><span class="codenumber">A</span> <span class="title">Approximations et erreurs</span></a><ul>
+<li><a href="erreur_abs_et_rel.html" data-scroll="erreur_abs_et_rel">Erreur et erreur relative</a></li>
+<li><a href="intervalle_encadrement.html" data-scroll="intervalle_encadrement">Intervalle d'encadrement</a></li>
+<li><a href="decimales.html" data-scroll="decimales">Décimales exactes et arrondissements</a></li>
+<li><a href="exercicesapproximation.html" data-scroll="exercicesapproximation">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="sagemath.html" data-scroll="sagemath"><span class="codenumber">B</span> <span class="title">À propos de SageMath</span></a><ul>
+<li><a href="sage_mathcell.html" data-scroll="sage_mathcell">SageMathCell</a></li>
+<li><a href="sage_cocalc.html" data-scroll="sage_cocalc">CoCalc</a></li>
+<li><a href="exercicessagemath.html" data-scroll="exercicessagemath">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="aide-memoire-python.html" data-scroll="aide-memoire-python"><span class="codenumber">C</span> <span class="title">Aide-mémoire Python</span></a><ul>
+<li><a href="python_varia.html" data-scroll="python_varia">Affichage, commentaires et variables</a></li>
+<li><a href="python_operateurs.html" data-scroll="python_operateurs">Opérateurs et comparaisons</a></li>
+<li><a href="python_boucles_et_cond.html" data-scroll="python_boucles_et_cond">Boucles, conditionnelles et fonctions</a></li>
+<li><a href="python_types.html" data-scroll="python_types">Principaux types</a></li>
+</ul>
+</li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">Bibliographie</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="exercicesbezout"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">12.3</span> <span class="title">Exercices</span>
+</h2>
+<a href="exercicesbezout.html" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-113"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-113"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">12.3.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-113"><article class="exercise exercise-like"><p id="p-1784">Calculez \(\text{PGCD}(a;b)\) à l'aide de l'algorithme d'Euclide, puis exprimez-le comme combinaison linéaire de \(a\) et de \(b\) en remontant, comme à l'exemple <a class="xref" data-knowl="./knowl/exemplebachetbezout.html" title="Exemple 12.1.3">12.1.3</a>.</p>
+<ol class="decimal">
+<li id="li-932"><p id="p-1785">Pour \(a=772\) et \(b=44\text{.}\)</p></li>
+<li id="li-933"><p id="p-1786">Pour \(a=1975\) et \(b=225\text{.}\)</p></li>
+<li id="li-934"><p id="p-1787">Pour \(a=1981\) et \(b=222\text{.}\)</p></li>
+<li id="li-935"><p id="p-1788">Pour \(a=12003\) et \(b=999\text{.}\)</p></li>
+<li id="li-936"><p id="p-1789">Pour \(a=30\) et \(b=4\text{.}\)</p></li>
+<li id="li-937"><p id="p-1790">Pour \(a=30\) et \(b=5\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-104" id="solution-104"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-104"><div class="solution solution-like"><ol class="decimal">
+<li id="li-938">
+<p id="p-1791">Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclcrclr}
+772&amp;=&amp;44\cdot 17+24&amp;\quad\Rightarrow\quad&amp;24&amp;=&amp;772-44\cdot 17&amp;(\text{E}_1)\\
+44&amp;=&amp;24\cdot 1+20&amp;\quad\Rightarrow\quad&amp;20&amp;=&amp;44-24\cdot 1&amp;(\text{E}_2)\\
+24&amp;=&amp;20\cdot 1+4&amp;\quad\Rightarrow\quad&amp;4&amp;=&amp;24-20\cdot 1&amp;(\text{E}_3)\\
+20&amp;=&amp;4\cdot 5+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1792">On en déduit d'abord que</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(772;44)=4.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis on remonte :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclr}
+4&amp;=&amp;24-20\cdot 1&amp;(\text{E}_3)\\
+&amp;=&amp;24-(44-24\cdot 1)\cdot 1&amp;\text{grâce à }(\text{E}_2)\\
+&amp;=&amp;24-44+24&amp;\\
+&amp;=&amp;24\cdot 2-44&amp;\\
+&amp;=&amp;(772-44\cdot 17)\cdot 2-44&amp;\text{grâce à }(\text{E}_1)\\
+&amp;=&amp;772\cdot 2-44\cdot 34-44&amp;\\
+&amp;=&amp;772\cdot 2-44\cdot 35.&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1793">On obtient donc la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+4=772\cdot 2+44\cdot (-35)
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(772;44)=772u+44v\qquad\text{avec }u=2\;\text{et}\;v=-35.
+\end{equation*}
+</div>
+</li>
+<li id="li-939">
+<p id="p-1794">Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclcrclr}
+1975&amp;=&amp;225\cdot 8+175&amp;\quad\Rightarrow\quad&amp;175&amp;=&amp;1975-225\cdot 8&amp;(\text{E}_1)\\
+225&amp;=&amp;175\cdot 1+50&amp;\quad\Rightarrow\quad&amp;50&amp;=&amp;225-175\cdot 1&amp;(\text{E}_2)\\
+175&amp;=&amp;50\cdot 3+25&amp;\quad\Rightarrow\quad&amp;25&amp;=&amp;175-50\cdot 3&amp;(\text{E}_3)\\
+50&amp;=&amp;25\cdot 2+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1795">On en déduit d'abord que</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(1975;225)=25.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis on remonte :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclr}
+25&amp;=&amp;175-50\cdot 3&amp;(\text{E}_3)\\
+&amp;=&amp;175-(225-175\cdot 1)\cdot 3&amp;\text{grâce à }(\text{E}_2)\\
+&amp;=&amp;175-225\cdot 3+175\cdot 3&amp;\\
+&amp;=&amp;175\cdot 4-225\cdot 3&amp;\\
+&amp;=&amp;(1975-225\cdot 8)\cdot 4-225\cdot 3&amp;\text{grâce à }(\text{E}_1)\\
+&amp;=&amp;1975\cdot 4-225\cdot 32-225\cdot 3&amp;\\
+&amp;=&amp;1975\cdot 4-225\cdot 35.&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1796">On obtient donc la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+25=1975\cdot 4+225\cdot (-35)
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(1975;225)=1975u+225v\qquad\text{avec }u=4\;\text{et}\;v=-35.
+\end{equation*}
+</div>
+</li>
+<li id="li-940">
+<p id="p-1797">Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclcrclr}
+1981&amp;=&amp;222\cdot 8+205&amp;\quad\Rightarrow\quad&amp;205&amp;=&amp;1981-222\cdot 8&amp;(\text{E}_1)\\
+222&amp;=&amp;205\cdot 1+17&amp;\quad\Rightarrow\quad&amp;17&amp;=&amp;222-205\cdot 1&amp;(\text{E}_2)\\
+205&amp;=&amp;17\cdot 12+1&amp;\quad\Rightarrow\quad&amp;1&amp;=&amp;205-17\cdot 12&amp;(\text{E}_3)\\
+17&amp;=&amp;1\cdot 17+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1798">On en déduit d'abord que</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(1975;225)=25.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis on remonte :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclr}
+1&amp;=&amp;205-17\cdot 12&amp;(\text{E}_3)\\
+&amp;=&amp;205-(222-205\cdot 1)\cdot 12&amp;\text{grâce à }(\text{E}_2)\\
+&amp;=&amp;205-222\cdot 12+205\cdot 12&amp;\\
+&amp;=&amp;205\cdot 13-222\cdot 12&amp;\\
+&amp;=&amp;(1981-222\cdot 8)\cdot 13-222\cdot 12&amp;\text{grâce à }(\text{E}_1)\\
+&amp;=&amp;1981\cdot 13-222\cdot 104-222\cdot 12&amp;\\
+&amp;=&amp;1981\cdot 13-222\cdot 116.&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1799">On obtient donc la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+1=1981\cdot 13+222\cdot (-116)
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(1981;222)=1981u+222v\qquad\text{avec }u=13\;\text{et}\;v=-116.
+\end{equation*}
+</div>
+</li>
+<li id="li-941">
+<p id="p-1800">Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclcrclr}
+12003&amp;=&amp;999\cdot 12+15&amp;\quad\Rightarrow\quad&amp;15&amp;=&amp;12003-999\cdot 12&amp;(\text{E}_1)\\
+999&amp;=&amp;15\cdot 66+9&amp;\quad\Rightarrow\quad&amp;9&amp;=&amp;999-15\cdot 66&amp;(\text{E}_2)\\
+15&amp;=&amp;9\cdot 1+6&amp;\quad\Rightarrow\quad&amp;6&amp;=&amp;15-9\cdot 1&amp;(\text{E}_3)\\
+9&amp;=&amp;6\cdot 1+3&amp;\quad\Rightarrow\quad&amp;3&amp;=&amp;9-6\cdot 1&amp;(\text{E}_4)\\
+6&amp;=&amp;3\cdot 2+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1801">On en déduit d'abord que</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(12003;999)=3.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis on remonte :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclr}
+3&amp;=&amp;9-6\cdot 1&amp;(\text{E}_4)\\
+&amp;=&amp;9-(15-9\cdot 1)\cdot 1&amp;\text{grâce à }(\text{E}_3)\\
+&amp;=&amp;9-15+9&amp;\\
+&amp;=&amp;9\cdot 2-15&amp;\\
+&amp;=&amp;(999-15\cdot 66)\cdot 2-15&amp;\text{grâce à }(\text{E}_2)\\
+&amp;=&amp;999\cdot 2-15\cdot 132-15&amp;\\
+&amp;=&amp;999\cdot 2-15\cdot 133&amp;\\
+&amp;=&amp;999\cdot 2-(12003-999\cdot 12)\cdot 133&amp;\text{grâce à }(\text{E}_1)\\
+&amp;=&amp;999\cdot 2-12003\cdot 133+999\cdot 1596&amp;\\
+&amp;=&amp;999\cdot 1598-12003\cdot 133.&amp;\\
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1802">On obtient donc la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+3=12003\cdot (-133)+999\cdot 1598
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(12003;999)=12003u+999v\qquad\text{avec }u=-133\;\text{et}\;v=1598.
+\end{equation*}
+</div>
+</li>
+<li id="li-942">
+<p id="p-1803">Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclcrclr}
+30&amp;=&amp;4\cdot 7+2&amp;\quad\Rightarrow\quad&amp;2&amp;=&amp;30-4\cdot 7&amp;(\text{E}_1)\\
+4&amp;=&amp;2\cdot 2+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1804">On en déduit d'abord que</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(30;4)=2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Il n'y a rien à remonter ici. L'équation \((\text{E}_1)\) donne la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+2=30\cdot 1+4\cdot (-7)
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(30;4)=30u+4v\qquad\text{avec }u=1\;\text{et}\;v=-7.
+\end{equation*}
+</div>
+</li>
+<li id="li-943">
+<p id="p-1805">Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclcrclr}
+30&amp;=&amp;5\cdot 6+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1806">Dans ce cas particulier (\(5\vert 30\)), on déduit d'abord que</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(30;5)=5.
+\end{equation*}
+</div>
+<p data-braille="continuation">Il n'y a rien à remonter ici. On a la combinaison linéaire triviale</p>
+<div class="displaymath">
+\begin{equation*}
+5=30\cdot 0+5\cdot 1
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(30;5)=30u+5v\qquad\text{avec }u=0\;\text{et}\;v=1.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-114"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-114"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">12.3.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-114"><article class="exercise exercise-like"><p id="p-1807">À l'aide de l'algorithme d'Euclide étendu, calculez \(\text{PGCD}(a;b)\) et exprimez-le comme combinaison linéaire de \(a\) et de \(b\text{.}\)</p>
+<p id="p-1808">Présentez vos calculs comme à l'exemple <a class="xref" data-knowl="./knowl/exemplebachetbezoutalgo.html" title="Exemple 12.1.6">12.1.6</a>.</p>
+<ol class="decimal">
+<li id="li-944"><p id="p-1809">Pour \(a=772\) et \(b=44\text{.}\)</p></li>
+<li id="li-945"><p id="p-1810">Pour \(a=1975\) et \(b=225\text{.}\)</p></li>
+<li id="li-946"><p id="p-1811">Pour \(a=1981\) et \(b=222\text{.}\)</p></li>
+<li id="li-947"><p id="p-1812">Pour \(a=12003\) et \(b=999\text{.}\)</p></li>
+<li id="li-948"><p id="p-1813">Pour \(a=30\) et \(b=4\text{.}\)</p></li>
+<li id="li-949"><p id="p-1814">Pour \(a=30\) et \(b=5\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-105" id="solution-105"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-105"><div class="solution solution-like"><ol class="decimal">
+<li id="li-950">
+<p id="p-1815">On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+\hline
+772&amp;1&amp;0&amp;\\
+\hline
+44&amp;0&amp;1&amp;772=44\cdot 17+24&amp;17\\
+\hline
+24&amp;1-0\cdot 17&amp;0-1\cdot 17&amp;44=24\cdot 1+20&amp;1\\
+&amp;=1&amp;=-17&amp;&amp;\\
+\hline
+20&amp;0-1\cdot 1&amp;1-(-17)\cdot 1&amp;24=20\cdot 1+4&amp;1\\
+&amp;=-1&amp;=18&amp;&amp;\\
+\hline
+4&amp;1-(-1)\cdot 1&amp;-17-18\cdot 1&amp;20=4\cdot 5+0&amp;\\
+&amp;=2&amp;=-35&amp;\text{Stop}&amp;\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">On déduit de la dernière ligne la valeur du PGCD</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(772;44)=4
+\end{equation*}
+</div>
+<p data-braille="continuation">ainsi que la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+4=772\cdot 2+44\cdot (-35).
+\end{equation*}
+</div>
+</li>
+<li id="li-951">
+<p id="p-1816">On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+\hline
+1975&amp;1&amp;0&amp;\\
+\hline
+225&amp;0&amp;1&amp;1975=225\cdot 8+175&amp;8\\
+\hline
+175&amp;1-0\cdot 8&amp;0-1\cdot 8&amp;225=175\cdot 1+50&amp;1\\
+&amp;=1&amp;=-8&amp;&amp;\\
+\hline
+50&amp;0-1\cdot 1&amp;1-(-8)\cdot 1&amp;175=50\cdot 3+25&amp;3\\
+&amp;=-1&amp;=9&amp;&amp;\\
+\hline
+25&amp;1-(-1)\cdot 3&amp;-8-9\cdot 3&amp;50=25\cdot 2+0&amp;\\
+&amp;=4&amp;=-35&amp;\text{Stop}&amp;\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">On déduit de la dernière ligne la valeur du PGCD</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(1975;225)=25
+\end{equation*}
+</div>
+<p data-braille="continuation">ainsi que la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+25=1975\cdot 4+225\cdot (-35).
+\end{equation*}
+</div>
+</li>
+<li id="li-952">
+<p id="p-1817">On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+\hline
+1981&amp;1&amp;0&amp;\\
+\hline
+222&amp;0&amp;1&amp;1981=222\cdot 8+205&amp;8\\
+\hline
+205&amp;1-0\cdot 8&amp;0-1\cdot 8&amp;222=205\cdot 1+17&amp;1\\
+&amp;=1&amp;=-8&amp;&amp;\\
+\hline
+17&amp;0-1\cdot 1&amp;1-(-8)\cdot 1&amp;205=17\cdot 12+1&amp;12\\
+&amp;=-1&amp;=9&amp;&amp;\\
+\hline
+1&amp;1-(-1)\cdot 12&amp;-8-9\cdot 12&amp;17=1\cdot 17+0&amp;\\
+&amp;=13&amp;=-116&amp;\text{Stop}&amp;\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">On déduit de la dernière ligne la valeur du PGCD</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(1981;222)=1
+\end{equation*}
+</div>
+<p data-braille="continuation">ainsi que la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+1=1981\cdot 13+222\cdot (-116).
+\end{equation*}
+</div>
+</li>
+<li id="li-953">
+<p id="p-1818">On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+\hline
+12003&amp;1&amp;0&amp;\\
+\hline
+999&amp;0&amp;1&amp;12003=999\cdot 12+15&amp;12\\
+\hline
+15&amp;1-0\cdot 12&amp;0-1\cdot 12&amp;999=15\cdot 66+9&amp;66\\
+&amp;=1&amp;=-12&amp;&amp;\\
+\hline
+9&amp;0-1\cdot 66&amp;1-(-12)\cdot 66&amp;15=9\cdot 1+6&amp;1\\
+&amp;=-66&amp;=793&amp;&amp;\\
+\hline
+6&amp;1-(-66)\cdot 1&amp;-12-793\cdot 1&amp;9=6\cdot 1+3&amp;1\\
+&amp;=67&amp;=-805&amp;&amp;\\
+\hline
+3&amp;-66-67\cdot 1&amp;793-(-805)\cdot 1&amp;6=3\cdot 2+0&amp;\\
+&amp;=-133&amp;=1598&amp;\text{Stop}&amp;\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">On déduit de la dernière ligne la valeur du PGCD</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(12003;999)=3
+\end{equation*}
+</div>
+<p data-braille="continuation">ainsi que la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+3=12003\cdot (-133)+999\cdot 1598.
+\end{equation*}
+</div>
+</li>
+<li id="li-954">
+<p id="p-1819">On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+\hline
+30&amp;1&amp;0&amp;\\
+\hline
+4&amp;0&amp;1&amp;30=4\cdot 7+2&amp;7\\
+\hline
+2&amp;1-0\cdot 7&amp;0-1\cdot 7&amp;4=2\cdot 2+0&amp;\\
+&amp;=1&amp;=-7&amp;\text{Stop}&amp;\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">On déduit de la dernière ligne la valeur du PGCD</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(30;4)=2
+\end{equation*}
+</div>
+<p data-braille="continuation">ainsi que la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+2=30\cdot 1+4\cdot (-7).
+\end{equation*}
+</div>
+</li>
+<li id="li-955">
+<p id="p-1820">On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+\hline
+30&amp;1&amp;0&amp;\\
+\hline
+5&amp;0&amp;1&amp;30=5\cdot 6+0&amp;\\
+&amp;&amp;&amp;\text{Stop}&amp;\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">On déduit de la dernière ligne la valeur du PGCD</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(30;5)=5
+\end{equation*}
+</div>
+<p data-braille="continuation">ainsi que la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+5=30\cdot 0+5\cdot 1.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="bezoutinfinitesol"><a data-knowl="" class="id-ref original" data-refid="hk-bezoutinfinitesol"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">12.3.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-bezoutinfinitesol"><article class="exercise exercise-like"><p id="p-1821">Soit \(a, b\) deux entiers relatifs non nuls. Le but de cet exercice est d'observer que l'équation</p>
+<div class="displaymath">
+\begin{equation}
+au+bv=\text{PGCD}(a;b)\label{eqbezout}\tag{12.3.1}
+\end{equation}
+</div>
+<p data-braille="continuation">admet une infinité de solutions \((u;v)\in\mathbb{Z}^2\text{.}\)</p>
+<p id="p-1822">Notons \((u_0;v_0)\) la solution particulière fournie par l'algorithme d'Euclide étendu.</p>
+<p id="p-1823">Montrez que pour tout entier \(k\in\mathbb{Z}\text{,}\) le couple \((u;v)\in\mathbb{Z}^2\) défini par</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rcccc}
+u&amp;=&amp;u_0&amp;+&amp;k\cdot b\\
+v&amp;=&amp;v_0&amp;-&amp;k\cdot a
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">est solution de l'équation <a class="xref" data-knowl="./knowl/eqbezout.html" title="Équation 12.3.1">(12.3.1)</a>.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like">
+<p id="p-1824">Par hypothèses, on a</p>
+<div class="displaymath">
+\begin{equation}
+au_0+bv_0=\text{PGCD}(a;b)\label{eqbezout0}\tag{12.3.2}
+\end{equation}
+</div>
+<p id="p-1825">donc</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccc}
+au+bv&amp;=&amp;a\cdot (u_0+kb)+b\cdot (v_0-ka)&amp;\\
+&amp;=&amp;au_0+akb+bv_0-bka&amp;\\
+&amp;=&amp;\underbrace{au_0+bv_0}_{\text{PGCD}(a;b)}+\underbrace{kab-bka}_{0}&amp;\\
+&amp;=&amp;\text{PGCD}(a;b).
+\end{array}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-116"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-116"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">12.3.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-116"><article class="exercise exercise-like"><p id="p-1826">Utilisez l'algorithme fourni à la section <a href="algorithmebezout.html" class="internal" title="Section 12.2: Algorithme">12.2</a> pour exprimer \(\text{PGCD}(a;b)\) comme combinaison linéaire de \(a\) et de \(b\text{.}\)</p>
+<p id="p-1827">Puis inspirez-vous de l'exercice <a class="xref" data-knowl="./knowl/bezoutinfinitesol.html" title="Exercice 12.3.3">12.3.3</a> pour donner deux autres couples d'entiers relatifs \((u;v)\) tels que \(au+bv=\text{PGCD}(a;b)\text{.}\)</p>
+<ol class="decimal">
+<li id="li-956"><p id="p-1828">Pour \(a=377\) et \(b=233\text{.}\)</p></li>
+<li id="li-957"><p id="p-1829">Pour \(a=377\) et \(b=234\text{.}\)</p></li>
+<li id="li-958"><p id="p-1830">Pour \(a=356\,002\) et \(b=18\,954\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like"><ol class="decimal">
+<li id="li-959">
+<p id="p-1831">L'algorithme fourni donne</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(377;233)=1\quad\text{et}\quad 1=377\cdot 89+233\cdot (-144).
+\end{equation*}
+</div>
+<p id="p-1832">Notons \((u_0;v_0)=(89;-144)\) cette solution particulière de l'équation</p>
+<div class="displaymath">
+\begin{equation}
+au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 377\cdot u+233\cdot v=1.\label{eqbezout1}\tag{12.3.3}
+\end{equation}
+</div>
+<p id="p-1833">Si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;+&amp;b&amp;=&amp;89&amp;+&amp;233&amp;=&amp;322\\
+v&amp;=&amp;v_0&amp;-&amp;a&amp;=&amp;-144&amp;-&amp;377&amp;=&amp;-521
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(322;-521)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout1.html" title="Équation 12.3.3">(12.3.3)</a>.</p>
+<p id="p-1834">Et si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;+&amp;2b&amp;=&amp;89&amp;+&amp;2\cdot 233&amp;=&amp;555\\
+v&amp;=&amp;v_0&amp;-&amp;2a&amp;=&amp;-144&amp;-&amp;2\cdot 377&amp;=&amp;-898
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(555;-898)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout1.html" title="Équation 12.3.3">(12.3.3)</a>.</p>
+</li>
+<li id="li-960">
+<p id="p-1835">L'algorithme fourni donne</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(377;234)=13\quad\text{et}\quad 13=377\cdot 5+234\cdot (-8).
+\end{equation*}
+</div>
+<p id="p-1836">Notons \((u_0;v_0)=(13;-8)\) cette solution particulière de l'équation</p>
+<div class="displaymath">
+\begin{equation}
+au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 377\cdot u+234\cdot v=13.\label{eqbezout2}\tag{12.3.4}
+\end{equation}
+</div>
+<p id="p-1837">Si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;-&amp;b&amp;=&amp;13&amp;-&amp;234&amp;=&amp;-221\\
+v&amp;=&amp;v_0&amp;+&amp;a&amp;=&amp;-8&amp;+&amp;377&amp;=&amp;369
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(-221;369)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout2.html" title="Équation 12.3.4">(12.3.4)</a>.</p>
+<p id="p-1838">Et si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;+&amp;5b&amp;=&amp;13&amp;+&amp;5\cdot 234&amp;=&amp;1183\\
+v&amp;=&amp;v_0&amp;-&amp;5a&amp;=&amp;-8&amp;-&amp;5\cdot 377&amp;=&amp;-1893
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(1183;-1893)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout2.html" title="Équation 12.3.4">(12.3.4)</a>.</p>
+</li>
+<li id="li-961">
+<p id="p-1839">L'algorithme fourni donne</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(356002;18954)=2\quad\text{et}\quad 2=356002\cdot (-694)+18954\cdot 13035.
+\end{equation*}
+</div>
+<p id="p-1840">Notons \((u_0;v_0)=(-694;13035)\) cette solution particulière de l'équation</p>
+<div class="displaymath">
+\begin{equation}
+au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 356002\cdot u+18954\cdot v=2.\label{eqbezout3}\tag{12.3.5}
+\end{equation}
+</div>
+<p id="p-1841">Si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rccccc}
+u&amp;=&amp;u_0&amp;+&amp;7b&amp;=&amp;131984\\
+v&amp;=&amp;v_0&amp;-&amp;7a&amp;=&amp;-2478979
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(131\,984;-2\,278\,979)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout3.html" title="Équation 12.3.5">(12.3.5)</a>.</p>
+<p id="p-1842">Et si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rccccc}
+u&amp;=&amp;u_0&amp;-&amp;3b&amp;=&amp;-57556\\
+v&amp;=&amp;v_0&amp;+&amp;3a&amp;=&amp;1081041
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(-57\,556;1\,081\,041)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout3.html" title="Équation 12.3.5">(12.3.5)</a>.</p>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="lemmedegauss"><a data-knowl="" class="id-ref original" data-refid="hk-lemmedegauss"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">12.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Lemme de Gauss.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-lemmedegauss"><article class="exercise exercise-like"><p id="p-1843">Soit \(a, b, c\) trois entiers relatifs. Montrez que</p>
+<div class="displaymath">
+\begin{equation*}
+a\vert bc\quad\text{et}\quad\text{PGCD}(a;b)=1\quad\Rightarrow\quad a\vert c.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like">
+<p id="p-1844">Supposons que \(a\vert bc\) et que \(\text{PGCD}(a;b)=1\text{.}\)</p>
+<p id="p-1845">Comme \(a\vert bc\text{,}\) il existe \(d\in\mathbb{Z}\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+bc=ad.
+\end{equation*}
+</div>
+<p data-braille="continuation">Et comme \(\text{PGCD}(a;b)=1\text{,}\) il existe \((u;v)\in\mathbb{Z}^2\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+au+bv=1.
+\end{equation*}
+</div>
+<p id="p-1846">On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ccc}
+c&amp;=&amp;1\cdot c\\
+&amp;=&amp;(au+bv)\cdot c\\
+&amp;=&amp;auc+bvc\\
+&amp;=&amp;auc+(bc)v\\
+&amp;=&amp;auc+(ad)v\\
+&amp;=&amp;a(uc+dv)\\
+&amp;=&amp;ae
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">avec \(e=uc+dv\in\mathbb{Z}\text{,}\)d'où \(a\vert c\text{.}\)</p>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="lemmedeuclide"><a data-knowl="" class="id-ref original" data-refid="hk-lemmedeuclide"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">12.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Lemme d'Euclide.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-lemmedeuclide"><article class="exercise exercise-like"><p id="p-1847">Soit \(p\) un nombre premier et \(b, c\) deux entiers relatifs. Montrez que</p>
+<div class="displaymath">
+\begin{equation*}
+p\vert bc\quad\Rightarrow\quad p\vert b\quad\text{ou}\quad p\vert c.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-109" id="solution-109"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like">
+<p id="p-1848">Rappel : Comme \(p\) est premier, ses seuls diviseurs positifs sont \(1\) et \(p\text{.}\)</p>
+<p id="p-1849">Supposons que \(p\vert bc\text{.}\)</p>
+<ul class="disc">
+<li id="li-962"><p id="p-1850">Si \(p\) divise \(b\text{,}\) on a fini.</p></li>
+<li id="li-963">
+<p id="p-1851">Si \(p\) ne divise pas \(b\text{,}\) alors le plus grand diviseur commun à \(p\) et à \(b\) est forcément \(1\text{.}\) On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+p\vert bc\quad\text{et}\quad\text{PGCD}(p;b)=1
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+p\vert c
+\end{equation*}
+</div>
+<p data-braille="continuation">par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>.</p>
+</li>
+</ul>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="coroeuclide"><a data-knowl="" class="id-ref original" data-refid="hk-coroeuclide"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">12.3.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-coroeuclide"><article class="exercise exercise-like"><ol class="decimal">
+<li id="li-964">
+<p id="p-1852">Montrez que si \(a\) et \(b\) sont des entiers premiers entre eux, alors pour tout \(x\in\mathbb{Z}\text{,}\) on a :</p>
+<div class="displaymath">
+\begin{equation*}
+a\vert x\quad\text{et}\quad b\vert x\quad\Rightarrow\quad ab\vert x.
+\end{equation*}
+</div>
+</li>
+<li id="li-965">
+<p id="p-1853">Montrez que si \(m_1,\ldots,m_n\in\mathbb{Z}\) sont premiers entre eux deux à deux, alors pour tout \(x\in\mathbb{Z}\text{,}\) on a :</p>
+<div class="displaymath">
+\begin{equation*}
+m_i\vert x\quad\text{pour tout } i=1,\ldots,n\quad\Rightarrow\quad m_1\cdots m_n\vert x.
+\end{equation*}
+</div>
+</li>
+</ol>
+<p id="p-1854">Application : Si \(x\in\mathbb{Z}\) est divisible par \(2, 3\) et \(5\text{,}\) alors \(x\) est divisible \(2\cdot 3\cdot 5=30\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-110" id="solution-110"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like"><ol class="decimal">
+<li id="li-966">
+<p id="p-1855">Supposons que \(a\) et \(b\) sont premiers entre eux, et qu'ils divisent \(x\) tous les deux. Alors, d'une part, il existe \(k\in\mathbb{Z}\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+x=ka.
+\end{equation*}
+</div>
+<p data-braille="continuation">D'autre part, on a donc</p>
+<div class="displaymath">
+\begin{equation*}
+b\vert ka\quad\text{et}\quad\text{PGCD}(a;b)=1.
+\end{equation*}
+</div>
+<p data-braille="continuation">Par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>, on en déduit que \(b\) divise \(k\text{,}\) de sorte qu'il existe \(n\in\mathbb{Z}\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+k=mb.
+\end{equation*}
+</div>
+<p data-braille="continuation">Finalement, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+x=ka=(mb)\cdot a=m\cdot(ab)\quad\Rightarrow\quad ab\vert x.
+\end{equation*}
+</div>
+</li>
+<li id="li-967"><p id="p-1856">Ce résultat découle du précédent par récurrence sur \(n\text{.}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="fracirred"><a data-knowl="" class="id-ref original" data-refid="hk-fracirred"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">12.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Fractions irréductibles.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-fracirred"><article class="exercise exercise-like"><p id="p-1857">Soit \(r\) un nombre rationnel.</p>
+<ol class="decimal">
+<li id="li-968">
+<p id="p-1858">Montrez qu'il existe \((a;b)\in\mathbb{Z}\times\mathbb{N}^*\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+r=\frac{a}{b}\quad\text{et}\quad\text{PGCD}(a;b)=1.
+\end{equation*}
+</div>
+<p id="p-1859">Remarque : On appelle cela écrire \(r\) sous forme de fraction irréductible.</p>
+</li>
+<li id="li-969"><p id="p-1860">Montrez qu'une telle écriture est unique.</p></li>
+</ol>
+<p id="p-1861">Remarque :</p>
+<ul class="disc">
+<li id="li-970">
+<p id="p-1862">L'algorithme d'Euclide étendu permet de mettre une fraction \(\frac{a}{b}\) dans sa forme irréductible.</p>
+<p id="p-1863">Il faut pour cela se rendre jusqu'à la ligne qui permet d'écrire \(0\) comme combinaison linéaire \(a\) et de \(b\) :</p>
+<div class="displaymath">
+\begin{equation*}
+0=au+bv\quad\Rightarrow\quad\frac{a}{b}=-\frac{v}{u}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Et il se trouve que ces coefficients \(u\) et \(v\) sont forcément premiers entre eux (Sauriez-vous le montrer?).</p>
+</li>
+<li id="li-971">
+<p id="p-1864">Par exemple, l'algorithme d'Euclide étendu appliqué à <a class="external" href="https://juliengiol.github.io/algorithmique/bezout.html" target="_blank">\(2589\) et \(234\)</a> donne</p>
+<div class="displaymath">
+\begin{equation*}
+0=2589\cdot 78+234\cdot(-863)\quad\Rightarrow\quad\frac{2589}{234}=\frac{863}{78}.
+\end{equation*}
+</div>
+</li>
+</ul>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like"><ol class="decimal">
+<li id="li-972">
+<p id="p-1865">Par définition des nombres rationnels, il existe \((a;b)\in\mathbb{Z}\times\mathbb{N}^*\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+r=\frac{a}{b}.
+\end{equation*}
+</div>
+<p id="p-1866">Si \(\text{PGCD}(a;b)=1\text{,}\) on a fini.</p>
+<p id="p-1867">Sinon, notons \(\text{PGCD}(a;b)=d\text{.}\) Comme \(d\) divise \(a\) et \(b\text{,}\) il existe deux entiers relatifs \(a_0, b_0\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+a=da_0\quad\text{et}\quad b=db_0
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+r=\frac{a}{b}=\frac{da_0}{db_0}=\frac{a_0}{b_0}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Il ne reste plus qu'à montrer que \(\text{PGCD}(a_0;b_0)=1\text{.}\) On commence par appliquer Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a> :</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(a;b)=d\quad\Rightarrow\quad\exists(u;v)\in\mathbb{Z}^2,\;au+bv=d.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccr}
+au+bv=d&amp;\quad\Rightarrow\quad&amp;da_0u+db_0v=d&amp;\\
+&amp;\quad\Rightarrow\quad&amp;a_0u+b_0v=1&amp;\text{ par division par }d\\
+&amp;\quad\Rightarrow\quad&amp;\text{PGCD}(a_0;b_0)=1&amp;\text{ par Bézout.}\\
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li id="li-973">
+<p id="p-1868">Raisonnons par l'absurde et supposons qu'il existe \((a_1;a_2)\neq(b_1;b_2)\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+r=\frac{a_1}{b_1}=\frac{a_2}{b_2}\quad\text{avec}\quad(a_i;b_i)\in\mathbb{Z}\times\mathbb{N}^*\;\text{ et }\;\text{PGCD}(a_i;b_i)=1.
+\end{equation*}
+</div>
+<p id="p-1869">Notons que</p>
+<div class="displaymath">
+\begin{equation*}
+a_1b_2=b_1a_2.
+\end{equation*}
+</div>
+<p id="p-1870">Alors</p>
+<div class="displaymath">
+\begin{equation*}
+b_1\vert b_1a_2=a_1b_2\quad\text{et}\quad\text{PGCD}(a_1;b_1)
+\end{equation*}
+</div>
+<p data-braille="continuation">implique que</p>
+<div class="displaymath">
+\begin{equation*}
+b_1\vert b_2
+\end{equation*}
+</div>
+<p data-braille="continuation">par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a> et, par un raisonnement symétrique, on a aussi</p>
+<div class="displaymath">
+\begin{equation*}
+b_2\vert b_1.
+\end{equation*}
+</div>
+<p id="p-1871">Comme \(b_1\) et \(b_2\) sont tous deux positifs, on déduit de ce qui précède qu'il existe deux entiers positifs \(c, d\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+b_1=cb_2\quad\text{et}\quad b_2=db_1,
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccc}
+b_1=cb_2&amp;\quad\Rightarrow\quad&amp;b_1=cdb_1&amp;\\
+&amp;\quad\Rightarrow\quad&amp;1=cd&amp;\text{ par division par }b_1\\
+&amp;\quad\Rightarrow\quad&amp;c=d=1&amp;\text{ car }c, d\in\mathbb{N}^*\\
+&amp;\quad\Rightarrow\quad&amp;b_1=b_2&amp;\text{ car }b_1=cb_2\\
+&amp;\quad\Rightarrow\quad&amp;a_1=a_2&amp;\text{ car }a_1b_2=b_1a_2.\\
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1872">On a donc montré que \((a_1;a_2)=(b_1;b_2)\text{,}\) d'où la contradiction cherchée.</p>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-121"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-121"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">12.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Irrationalité de \(\sqrt{2}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-121"><article class="exercise exercise-like"><p id="p-1873">Montrez que le nombre \(\sqrt{2}\) est irrationnel.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-2" id="hint-2"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like">Utilisez une preuve par contradiction et l'exercice <a class="xref" data-knowl="./knowl/fracirred.html" title="Exercice 12.3.8: Fractions irréductibles">12.3.8</a>.</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-122"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-122"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">12.3.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-122"><article class="exercise exercise-like"><p id="p-1874">Le secret de Ricardo pour un oeuf à la coque cuit à la perfection? Trois minutes de cuisson dans une eau frémissante!</p>
+<p id="p-1875">Albert est parti randonner sans montre ni chronomètre, mais avec des oeufs, une casserole, un briquet, et deux sabliers : un de sept minutes, et un autre de neuf minutes.</p>
+<ol class="decimal">
+<li id="li-974"><p id="p-1876">Comment Albert doit-il procéder pour préparer ses oeufs en suivant à la lettre le secret de Ricardo?</p></li>
+<li id="li-975"><p id="p-1877">Expliquez comment faire pour chronométrer une durée de \(n\) minutes avec ces deux sabliers, quelque soit la valeur de \(n\in\mathbb{N}^*\text{.}\)</p></li>
+</ol>
+<p id="p-1878">Remarque : Cet exercice est inspiré des <a class="external" href="https://www.supinfo.com/cours/1ARI/chapitres/02-questions-divisibilite" target="_blank">excellentes notes de cours de Laurent Godefroy</a>, avec l'accord de leur auteur.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-3" id="hint-3"><span class="type">Indication</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><p id="p-1879">Utilisez des combinaisons linéaires appropriées.</p></div></div>
+</div></article></div></section></div></main>
+</div>
+<!--Start: StatCounter code--><script>
+var sc_project=12152300;
+var sc_invisible=1;
+var sc_security="5132c4de";
+var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "https://www.");
+document.write("<sc"+"ript src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
+</script><noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12152300/0/5132c4de/1/" alt="web analytics"></a></div></noscript>
+<!--End: StatCounter code-->
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-8"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-8');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-07T07:23:14-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Par exemple, voici comment obtenir</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\rightarrow 1}\frac{\ln x}{x-1}
+\end{equation*}
+</div>
+<p data-braille="continuation"><div class="sagecell-sage" id="sage-1"><script type="text/x-sage">f(x) = ln(x) / x
+L = limit(f(x), x = 1)
+show(L)
+</script></div> ou la limite à l'infini</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\rightarrow +\infty}\frac{e^x}{x^2}
+\end{equation*}
+</div>
+<p data-braille="continuation"><div class="sagecell-sage" id="sage-2"><script type="text/x-sage">g(x) = e^x / x^2
+L = limit(g(x), x = +Infinity)
+show(L)
+</script></div> ou encore la limite à droite</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\lim_{x\rightarrow 0^+}x\ln(x)
+\end{equation*}
+</div>
+<p data-braille="continuation"><div class="sagecell-sage" id="sage-3"><script type="text/x-sage">h(x) = x * ln(x)
+L = limit(h(x), x = 0, dir = 'plus')
+show(L)
+</script></div></p>
+<span class="incontext"><a href="limites.html#p-22">Dans son contexte</a></span>
+</body>
+</html>

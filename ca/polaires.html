@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:12-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>303 Coordonnées polaires (6.3)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://juliengiol.github.io/" target="_blank"><img src="images/yosemite.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="ca.html"><span class="title">Calcul avancé</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="serie-de-leibniz.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="complements.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="coniques.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="serie-de-leibniz.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="complements.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="coniques.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
+<li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Remerciements</a></li>
+</ul>
+</li>
+<li class="link part"><a href="coronavirus.html" data-scroll="coronavirus"><span class="codenumber">I</span> <span class="title">Coronavirus</span></a></li>
+<li class="link part"><a href="documents.html" data-scroll="documents"><span class="codenumber">II</span> <span class="title">Documents</span></a></li>
+<li class="link part"><a href="volume.html" data-scroll="volume"><span class="codenumber">III</span> <span class="title">Volume</span></a></li>
+<li class="link">
+<a href="chapitre1.html" data-scroll="chapitre1"><span class="codenumber">1</span> <span class="title">Les suites et les séries numériques</span></a><ul>
+<li><a href="suites.html" data-scroll="suites">Les suites</a></li>
+<li><a href="series.html" data-scroll="series">Les séries</a></li>
+<li><a href="seriesatermespositifs.html" data-scroll="seriesatermespositifs">Les séries à termes positifs</a></li>
+<li><a href="series-alternees.html" data-scroll="series-alternees">Les séries alternées</a></li>
+<li><a href="testdurapport.html" data-scroll="testdurapport">La convergence absolue, le test du rapport et le critère de Cauchy</a></li>
+<li><a href="strategieconvergence.html" data-scroll="strategieconvergence">Une stratégie pour tester la convergence d'une série</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre2.html" data-scroll="chapitre2"><span class="codenumber">2</span> <span class="title">Les séries de Taylor</span></a><ul>
+<li><a href="seriesentieres.html" data-scroll="seriesentieres">Les séries entières</a></li>
+<li><a href="devenserieentiere.html" data-scroll="devenserieentiere">Le développement des fonctions en séries entières</a></li>
+<li><a href="tayloretmaclaurin.html" data-scroll="tayloretmaclaurin">Les séries de Taylor et de Maclaurin</a></li>
+<li><a href="applicationstaylor.html" data-scroll="applicationstaylor">Des applications des polynômes de Taylor</a></li>
+<li><a href="nombrescomplexes.html" data-scroll="nombrescomplexes">Les nombres complexes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre3.html" data-scroll="chapitre3"><span class="codenumber">3</span> <span class="title">Les fonctions de plusieurs variables</span></a><ul>
+<li><a href="fonctionspv.html" data-scroll="fonctionspv">Les fonctions de plusieurs variables</a></li>
+<li><a href="limites-continuite.html" data-scroll="limites-continuite">Les limites et la continuité</a></li>
+<li><a href="quadriques.html" data-scroll="quadriques">Les cylindres et les surfaces quadriques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre4.html" data-scroll="chapitre4"><span class="codenumber">4</span> <span class="title">Les dérivées des fonctions de plusieurs variables</span></a><ul>
+<li><a href="derpartielles.html" data-scroll="derpartielles">Les dérivées partielles</a></li>
+<li><a href="plans-tangents-et-differentielle.html" data-scroll="plans-tangents-et-differentielle">Les plans tangents et les approximations linéaires</a></li>
+<li><a href="derivation-en-chaine.html" data-scroll="derivation-en-chaine">La règle de dérivation en chaîne</a></li>
+<li><a href="derivees-directionnelles.html" data-scroll="derivees-directionnelles">Les dérivées directionnelles et le vecteur gradient</a></li>
+<li><a href="approximationsdetaylor.html" data-scroll="approximationsdetaylor">Les approximations de Taylor en deux variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapitre5.html" data-scroll="chapitre5"><span class="codenumber">5</span> <span class="title">L'optimisation</span></a><ul>
+<li><a href="extremums.html" data-scroll="extremums">Extremums</a></li>
+<li><a href="gradient.html" data-scroll="gradient">Critère de Sylvester et méthode du gradient</a></li>
+<li><a href="lagrange.html" data-scroll="lagrange">Multiplicateurs de Lagrange</a></li>
+</ul>
+</li>
+<li class="link part"><a href="complements.html" data-scroll="complements"><span class="codenumber">IV</span> <span class="title">Compléments</span></a></li>
+<li class="link"><a href="sage.html" data-scroll="sage"><span class="codenumber">1</span> <span class="title">Sage</span></a></li>
+<li class="link"><a href="bornes.html" data-scroll="bornes"><span class="codenumber">2</span> <span class="title">Bornes d'erreur</span></a></li>
+<li class="link"><a href="serie-de-leibniz.html" data-scroll="serie-de-leibniz"><span class="codenumber">3</span> <span class="title">La série de Leibniz</span></a></li>
+<li class="link active"><a href="polaires.html" data-scroll="polaires"><span class="codenumber">4</span> <span class="title">Coordonnées polaires (6.3)</span></a></li>
+<li class="link"><a href="coniques.html" data-scroll="coniques"><span class="codenumber">5</span> <span class="title">Coniques</span></a></li>
+<li class="link"><a href="epsilon.html" data-scroll="epsilon"><span class="codenumber">6</span> <span class="title">Epsilon-Delta</span></a></li>
+<li class="link"><a href="vectorielles.html" data-scroll="vectorielles"><span class="codenumber">7</span> <span class="title">Fonctions vectorielles</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="polaires"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4</span> <span class="title">Coordonnées polaires (6.3)</span>
+</h2>
+<a href="polaires.html" class="permalink">¶</a><p id="p-1000">Essayez de résoudre les exercices qui suivent.</p>
+<article class="exercise exercise-like" id="exercice-polaires-representation"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-polaires-representation"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.0.20</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-polaires-representation"><article class="exercise exercise-like"><p id="p-1001">Les points ci-après sont donnés en coordonnées polaires \((r,\theta)\text{.}\) Représentez-les graphiquement.</p>
+<ol class="decimal">
+<li id="li-689">\(\displaystyle \displaystyle A=\left(2\,;\,\frac{\pi}{2}\right)\)</li>
+<li id="li-690">\(\displaystyle \displaystyle B=\left(2\,;\,\frac{2\pi}{3}\right)\)</li>
+<li id="li-691">\(\displaystyle \displaystyle C=\left(-2\,;\,\frac{2\pi}{3}\right)\)</li>
+<li id="li-692">\(\displaystyle \displaystyle D=\left(2\,;\,-5\pi\right)\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-125" id="answer-125"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-125"><div class="answer solution-like">
+<p id="p-1002">Les quatre points sont situés sur le cercle de rayon \(2\) centré à l'origine.</p>
+<p id="p-1003">Voici leur représentation avec Desmos : <a class="external" href="https://www.desmos.com/calculator/ydmxxp7ioe" target="_blank">Desmos</a>.</p>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-polaires-a-cartesiennes"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-polaires-a-cartesiennes"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.0.21</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-polaires-a-cartesiennes"><article class="exercise exercise-like"><p id="p-1004">Les points ci-après sont donnés en coordonnées polaires \((r,\theta)\text{.}\) Calculez leurs coordonnées cartésiennes en utilisant les formules de conversion suivantes :</p>
+<div class="displaymath">
+\begin{equation*}
+x=r\cos\theta\qquad\mbox{et}\qquad y=r\sin\theta
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-693">\(\displaystyle \displaystyle\left(2\,;\,\frac{5\pi}{4}\right)\)</li>
+<li id="li-694">\(\displaystyle \displaystyle\left(2\,;\,\frac{13\pi}{4}\right)\)</li>
+<li id="li-695">\(\displaystyle \displaystyle\left(2\,;\,-\frac{3\pi}{4}\right)\)</li>
+<li id="li-696">\(\displaystyle \displaystyle\left(-2\,;\,\frac{\pi}{4}\right)\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-126" id="answer-126"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-126"><div class="answer solution-like"><p id="p-1005">Les quatre points sont les mêmes et admettent \((-\sqrt{2}\,;\,-\sqrt{2})\) comme coordonnées cartésiennes.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-ambiguite-cartesiennes-a-polaires"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-ambiguite-cartesiennes-a-polaires"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.0.22</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-ambiguite-cartesiennes-a-polaires"><article class="exercise exercise-like"><p id="p-1006">Si un point admet \((x\,;\,y)\) comme coordonnées cartésiennes et que \(x\) est différent de zéro, alors tout couple de coordonnées polaires \((r,\theta)\) tel que \(r\) est positif vérifie :</p>
+<div class="displaymath">
+\begin{equation*}
+r=\sqrt{x^2+y^2}\qquad\mbox{et}\qquad\tan\theta=\frac{y}{x}
+\end{equation*}
+</div>
+<p id="p-1007">Ceci permet de calculer \(r\) directement. Malheureusement, la formule \(\arctan(y/x)\) ne donne pas toujours une valeur de \(\theta\) adéquate.</p>
+<p id="p-1008">Représentez graphiquement chacun des points ci-après, calculez \(\sqrt{x^2+y^2}\) et \(\arctan(y/x)\text{,}\) et indiquez si les valeurs obtenues fournissent un couple de coordonnées polaires valides.</p>
+<ol id="p-1009" class="decimal">
+<li id="li-697">\(\displaystyle (1\,;\,\sqrt{3})\)</li>
+<li id="li-698">\(\displaystyle (-1\,;\,\sqrt{3})\)</li>
+<li id="li-699">\(\displaystyle (1\,;\,-\sqrt{3})\)</li>
+<li id="li-700">\(\displaystyle (-1\,;\,-\sqrt{3})\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-127" id="answer-127"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-127"><div class="answer solution-like">
+<p id="p-1010">Voici comment représenter ces quatre points avec Desmos : <a class="external" href="https://www.desmos.com/calculator/3oak7h0ve2" target="_blank">Desmos</a>.</p>
+<ol id="p-1011" class="decimal">
+<li id="li-701">\(\sqrt{x^2+y^2}=2\) et \(\arctan(y/x)=\frac{\pi}{3}\) donnent des coordonnées polaires valides.</li>
+<li id="li-702">\(\sqrt{x^2+y^2}=2\) et \(\arctan(y/x)=-\frac{\pi}{3}\) donnent des coordonnées polaires non valides.</li>
+<li id="li-703">\(\sqrt{x^2+y^2}=2\) et \(\arctan(y/x)=-\frac{\pi}{3}\) donnent des coordonnées polaires valides.</li>
+<li id="li-704">\(\sqrt{x^2+y^2}=2\) et \(\arctan(y/x)=\frac{\pi}{3}\) donnent des coordonnées polaires non valides.</li>
+</ol>
+<p id="p-1012">On remarque que dans les deux cas où on n'obtient pas des coordonnées polaires valides, \(x\) est négatif et il suffit de prendre \(\pi+\arctan(y/x)\) pour obtenir le bon \(\theta\text{.}\)</p>
+</div></div>
+</div></article></div>
+<p id="p-1013">Avec ce qu'on vient de remarquer dans l'exercice précédent, on est en mesure de définir un <a class="external" href="https://goo.gl/SQbppZ" target="_blank">algorithme de conversion</a> des coordonnées cartésiennes aux coordonnées polaires. On en profite pour l'appliquer au point \((-1\,;\,\sqrt{3})\text{.}\)</p>
+<div class="sagecell-sage" id="sage-10"><script type="text/x-sage">def cartesiennes_a_polaires(x, y):
+  r = sqrt(x^2+y^2)
+  if x == 0:
+    if y == 0:
+      theta = 0
+    elif y > 0:
+      theta = pi/2
+    else:
+      theta = -pi/2
+  elif x > 0:
+    theta = arctan(y/x)
+  else:
+    theta = pi + arctan(y/x)
+  return r, theta
+
+p = cartesiennes_a_polaires(-1, sqrt(3))
+
+show(p)
+</script></div>
+<article class="exercise exercise-like" id="exercice-cartesiennes-a-polaires"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-cartesiennes-a-polaires"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.0.23</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-cartesiennes-a-polaires"><article class="exercise exercise-like"><p id="p-1014">Les points ci-après sont donnés en coordonnées cartésiennes. Représentez-les graphiquement, puis donnez l'unique couple de coordonnées polaires \((r\,;\,\theta)\) vérifiant \(r&gt;0\) et \(\theta\in]-\pi\,;\,\pi]\text{.}\)</p>
+<ol class="decimal">
+<li id="li-705">\(\displaystyle \displaystyle\left(1\,;\,1\right)\)</li>
+<li id="li-706">\(\displaystyle \displaystyle\left(1\,;\,-1\right)\)</li>
+<li id="li-707">\(\displaystyle \displaystyle\left(-3\,;\,3\right)\)</li>
+<li id="li-708">\(\displaystyle \displaystyle\left(-2\,;\,-3\right)\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-128" id="answer-128"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-128"><div class="answer solution-like"><ol id="p-1015" class="decimal">
+<li id="li-709">\(\displaystyle \displaystyle\left(\sqrt{2}\,;\,\frac{\pi}{4}\right)\)</li>
+<li id="li-710">\(\displaystyle \displaystyle\left(\sqrt{2}\,;\,-\frac{\pi}{4}\right)\)</li>
+<li id="li-711">\(\displaystyle \displaystyle\left(3\sqrt{2}\,;\,\frac{3\pi}{4}\right)\)</li>
+<li id="li-712">\(\displaystyle \displaystyle\left(\sqrt{13}\,;\,\arctan\left(\frac{3}{2}\right)-\pi\right)\)</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-courbe-polaire-1"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-courbe-polaire-1"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.0.24</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-courbe-polaire-1"><article class="exercise exercise-like"><p id="p-1016">L'équation polaire \(r=2\cos\theta\) définit une courbe du plan.</p>
+<ol class="decimal">
+<li id="li-713">Parmi les coordonnées polaires \((r\,;\,\theta)\) qui suivent, indiquez celles qui définissent des points appartenant à la courbe :<div class="displaymath">
+\begin{equation*}
+\left(1\,;\,\frac{\pi}{3}\right)\qquad\left(\sqrt{2}\,;\,\frac{3\pi}{4}\right)\qquad\left(-\sqrt{2}\,;\,\frac{3\pi}{4}\right)\qquad\left(0\,;\,\frac{\pi}{2}\right)
+\end{equation*}
+</div>
+</li>
+<li id="li-714">Construisez les points de la courbe correspondant aux valeurs de \(\theta\) suivantes :<div class="displaymath">
+\begin{equation*}
+0\qquad\frac{\pi}{6}\qquad\frac{\pi}{2}\qquad\frac{5\pi}{6}\qquad\pi
+\end{equation*}
+</div>
+</li>
+<li id="li-715">Pourquoi suffit-il de construire les points correspondant aux valeurs de \(\theta\) appartenant à \([0\,;\,\pi[\text{?}\)</li>
+<li id="li-716">Parmi les coordonnées cartésiennes \((x\,;\,y)\) qui suivent, indiquez celles qui définissent des points appartenant à la courbe :<div class="displaymath">
+\begin{equation*}
+\left(2\,;\,0\right)\qquad\left(-2\,;\,0\right)\qquad\left(0\,;\,1\right)\qquad\left(0\,;\,0\right)
+\end{equation*}
+</div>
+</li>
+<li id="li-717">Montrez que l'équation cartésienne de cette courbe peut s'écrire \((x-1)^2+y^2=1\text{.}\)</li>
+<li id="li-718">Décrivez cette courbe en mots.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-129" id="answer-129"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-129"><div class="answer solution-like"><ol id="p-1017" class="decimal">
+<li id="li-719"><div class="displaymath">
+\begin{equation*}
+\left(1\,;\,\frac{\pi}{3}\right)\qquad\left(-\sqrt{2}\,;\,\frac{3\pi}{4}\right)\qquad\left(0\,;\,\frac{\pi}{2}\right)
+\end{equation*}
+</div></li>
+<li id="li-720">Voici le résultat avec Desmos : <a class="external" href="https://www.desmos.com/calculator/mkacfntzu0" target="_blank">Desmos</a>.</li>
+<li id="li-721">
+<p id="p-1018">Essentiellement, c'est parce que \(\cos(\theta+\pi)=-\cos(\theta)\) pour tout \(\theta\text{.}\) En effet, cela entraîne que les points de la courbe obtenus pour \(\theta\) et \(\theta+\pi\) sont les mêmes.</p>
+<p id="p-1019">Par exemple, \(\theta=\frac{\pi}{6}\) donne \(r=2\cos(\pi/6)=\sqrt{3}\) alors que \(\theta=\frac{\pi}{6}+\pi\) donne \(r=2\cos(7\pi/6)=-\sqrt{3}\text{.}\) Et les coordonnées polaires \((\sqrt{3}\,;\,\pi/6)\) et  \((-\sqrt{3}\,;\,7\pi/6)\) correspondent au même point.</p>
+</li>
+<li id="li-722"><div class="displaymath">
+\begin{equation*}
+\left(2\,;\,0\right)\qquad\left(0\,;\,0\right)
+\end{equation*}
+</div></li>
+<li id="li-723">
+<p id="p-1020">On note que \(r=0\) si et seulement si \(x=y=0\text{,}\) et que le point correspondant appartient à la fois à la courbe polaire \(r=2\cos\theta\) et la courbe cartésienne \((x-1)^2+y^2=1\text{.}\)</p>
+<p id="p-1021">Pour \(r\neq 0\text{,}\) l'équation est équivalente à \(r^2=2r\cos\theta\) après multiplication par \(r\text{,}\) c'est-à-dire à \(x^2+y^2=2x\text{.}\)</p>
+<p id="p-1022">Après complétion du carré, on obtient bien \((x-1)^2+y^2=1\text{.}\)</p>
+<p id="p-1023">La courbe polaire \(r=2\cos\theta\) et la courbe cartésienne \((x-1)^2+y^2=1\) sont donc constituées des mêmes points.</p>
+</li>
+<li id="li-724">C'est le cercle de centre \((1\,;\,0)\) et de rayon \(1\text{.}\)</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-representation-courbe-polaire"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-representation-courbe-polaire"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.0.25</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-representation-courbe-polaire"><article class="exercise exercise-like">Esquissez la courbe polaire \(r=1+\sin\theta\text{.}\)<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-130" id="answer-130"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-130"><div class="answer solution-like">
+<p id="p-1024">Voici comment faire cela avec Desmos : <a class="external" href="https://www.desmos.com/calculator/fq6qm28oxe" target="_blank">courbe polaire avec Desmos</a>.</p>
+<p id="p-1025">Notez que la lettre grecque \(\theta\) s'obtient en tapant theta.</p>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercice-representation-courbes-polaire"><a data-knowl="" class="id-ref original" data-refid="hk-exercice-representation-courbes-polaire"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.0.26</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercice-representation-courbes-polaire"><article class="exercise exercise-like"><p id="p-1026">Utilisez un outil informatique pour représenter les courbes polaires qui suivent.</p>
+<ol class="decimal">
+<li id="li-725">\(\displaystyle r=\cos(2\theta)\)</li>
+<li id="li-726">\(\displaystyle r=\sin(8\theta/5)\)</li>
+<li id="li-727">\(r=1+c\sin\theta\) où \(c\in\mathbb{R}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-131" id="answer-131"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-131"><div class="answer solution-like"><p id="p-1027">Voici comment faire cela avec Desmos : <a class="external" href="https://www.desmos.com/calculator/lr8otditqy" target="_blank">courbes polaires avec Desmos</a>.</p></div></div>
+</div></article></div>
+<p id="p-1028">Si vous souhaitez en faire plus ou disposer de plus d'exemples, vous pouvez consulter les exercices 2, 4, 6, 8, 10, 12, 69, 70, 71 et 74 de la section 6.3 dont voici les <a class="external" href="https://drive.google.com/file/d/1rnKfo4cEdCiKGmnmwuKwQjri-eM2WaYd/view?usp=sharing" target="_blank">solutions</a>.</p>
+<p id="p-1029">Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p></section></div></main>
+</div>
+</body>
+</html>

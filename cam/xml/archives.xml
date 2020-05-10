@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="archives" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Archives</title>
+
+<section xml:id="annee1">
+  <title>2019 - 2020</title>
+
+<!--
+  <question>
+    <p>Calculez la valeur de <m>n^6</m> sachant que
+      <me>\log_{2n}(1944)=\log_n\left(486\sqrt{2}\right).</me>
+    </p>
+    <hint>
+      <p>On peut commencer par calculer <m>x:=\log_{2n}(1944)</m>.</p>
+    </hint>
+    <answer>
+      <p><m>223\,154\,201\,664</m></p>
+    </answer>
+    <solution>
+      <p>Posons
+        <me>x:=\log_{2n}(1944)=\log_n(486\sqrt{2})</me>
+        de sorte que
+        <men xml:id="eqdepart">(2n)^x=1944\quad\text{et}\quad n^x=486\sqrt{2}.</men>
+        On a alors
+        <me>2^x=\frac{(2n)^x}{n^x}=\frac{1944}{486\sqrt{2}}=\frac{486\cdot 2^2}{486\sqrt{2}}=2^{1{,}5},</me>
+        d'où
+        <me>x=1{,}5.</me>
+        Ainsi la seconde équation de <xref ref="eqdepart" /> s'écrit
+        <me>n^{1{,}5}=486\sqrt{2}.</me>
+        Finalement, on a
+        <me>n^6=\left(n^{1{,}5}\right)^4=\left(486\sqrt{2}\right)^4=223\,154\,201\,664.</me>
+      </p>
+    </solution>
+  </question>
+-->
+
+<!--
+<problem>
+<p>
+  Soit <m>N</m> un entier positif. Une <em>bonne division</em> de <m>N</m> est une partition de l'ensemble <m>\{1;2;\ldots;N\}</m>
+  en deux sous-ensembles disjoints et non vides <m>S_1</m> et <m>S_2</m> telle que la somme des éléments de <m>S_1</m>
+  soit égale au produit des éléments de <m>S_2</m>.
+  Par exemple,
+  <me>S_1=\{3;5\}\quad\text{et}\quad S_2=\{1;2;4\}</me>
+  forment une bonne division de <m>N=5</m>.
+  <ol>
+    <li><p>Trouvez une bonne division de <m>N=7</m>.</p></li>
+    <li><p>Trouvez un <m>N</m> qui admet deux bonnes divisions distinctes.</p></li>
+    <li><p>Montrez qu'il existe une bonne division de <m>N</m> pour tout <m>N\geq 5</m>.</p></li>
+  </ol>
+</p>
+</problem>
+-->
+
+  <problem>
+    <p>Les racines de l'équation
+      <me>x^2+4x-5=0</me>
+      sont aussi solutions de l'équation
+      <me>2x^3+9x^2-6x-5=0.</me>
+      Quelle est la troisième racine de la seconde équation?
+    </p>
+    <hint>
+      <p>Division.</p>
+    </hint>
+    <answer>
+      <p><m>-\frac{1}{2}</m></p>
+    </answer>
+    <solution>
+      <p>L'hypothèse se traduit par le fait que le polynôme <m>x^2+4x-5</m> divise <m>2x^3+9x^2-6x-5</m>.</p>
+      <p>Effectuons donc cette division :</p>
+      <table>
+        <tabular>
+          <row>
+            <cell>
+            </cell>
+            <cell>
+              <m>2x^3</m>
+            </cell>
+            <cell>
+              +
+            </cell>
+            <cell>
+              <m>9x^2</m>
+            </cell>
+            <cell>
+              -
+            </cell>
+            <cell>
+              <m>6x</m>
+            </cell>
+            <cell>
+              -
+            </cell>
+            <cell>
+              <m>5</m>
+            </cell>
+            <cell right="medium">
+            </cell>
+            <cell bottom="medium">
+              <m>x^2</m>
+            </cell>
+            <cell bottom="medium">
+              +
+            </cell>
+            <cell bottom="medium">
+              <m>4x</m>
+            </cell>
+            <cell bottom="medium">
+              -
+            </cell>
+            <cell bottom="medium">
+              <m>5</m>
+            </cell>
+          </row>
+          <row>
+            <cell bottom="medium">
+              - (
+            </cell>
+            <cell bottom="medium">
+              <m>2x^3</m>
+            </cell>
+            <cell bottom="medium">
+              +
+            </cell>
+            <cell bottom="medium">
+              <m>8x^2</m>
+            </cell>
+            <cell bottom="medium">
+              -
+            </cell>
+            <cell bottom="medium">
+              <m>10x</m>
+            </cell>
+            <cell bottom="medium">
+              )
+            </cell>
+            <cell bottom="medium">
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+              <m>2x</m>
+            </cell>
+            <cell>
+              +
+            </cell>
+            <cell>
+              <m>1</m>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+          </row>
+          <row>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+              <m>x^2</m>
+            </cell>
+            <cell>
+              +
+            </cell>
+            <cell>
+              <m>4x</m>
+            </cell>
+            <cell>
+              -
+            </cell>
+            <cell>
+              <m>5</m>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+          </row>
+          <row>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell bottom="medium">
+              - (
+            </cell>
+            <cell bottom="medium">
+              <m>x^2</m>
+            </cell>
+            <cell bottom="medium">
+              +
+            </cell>
+            <cell bottom="medium">
+              <m>4x</m>
+            </cell>
+            <cell bottom="medium">
+              -
+            </cell>
+            <cell bottom="medium">
+              <m>5</m>
+            </cell>
+            <cell bottom="medium">
+              )
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+          </row>
+          <row>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+              <m>0</m>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+            <cell>
+            </cell>
+          </row>
+        </tabular>
+      </table>
+      <p>On a donc
+        <me>2x^3+9x^2-6x-5=(x^2+4x-5)(2x+1)</me>
+        et la troisième racine du polynôme <m>2x^3+9x^2-6x-5</m> est celle du facteur <m>2x+1</m>, soit
+        <me>x=-\frac{1}{2}.</me>
+      </p>
+    </solution>
+  </problem>
+
+</section>
+
+</chapter>

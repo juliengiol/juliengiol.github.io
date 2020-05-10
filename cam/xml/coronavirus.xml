@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<part xml:id="coronavirus" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Coronavirus</title>
+
+  <xi:include href="./ateliers_nyb_coronavirus.xml" />
+
+  <xi:include href="./aide_individuelle_coronavirus.xml" />
+
+</part>

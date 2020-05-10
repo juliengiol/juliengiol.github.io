@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:42-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Les variables \(x,y,u,v\) sont liées comme suit :</p>
+<div class="displaymath">
+\begin{equation*}
+y=u^v\quad\text{avec}\quad u=\sin x\quad\text{et}\quad v=x^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Cela donne l'arbre de dépendance suivant : <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/exercice_4.3.3.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\mathrm{d}y}{\mathrm{d}x}&amp;=\frac{\partial y}{\partial u}\cdot\frac{\mathrm{d}u}{\mathrm{d}x}+\frac{\partial y}{\partial v}\cdot\frac{\mathrm{d}v}{\mathrm{d}x}\\
+&amp;=vu^{v-1}\cdot\cos x+u^v\ln u\cdot 2x\\
+&amp;=x^2(\sin x)^{x^2-1}\cdot\cos x+(\sin x)^{x^2}\ln(\sin x)\cdot 2x\\
+&amp;=(\sin x)^{x^2}(x^2\cot x+2x\ln(\sin x))
+\end{align*}
+</div>
+<p data-braille="continuation">conformément au calcul effectué plus haut par dérivation logarithmique.</p>
+<span class="incontext"><a href="derivation-en-chaine.html#p-613">??</a></span>
+</body>
+</html>

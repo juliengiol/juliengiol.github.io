@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="li"><h6 class="heading">
+<span class="type">Point</span><span class="period">.</span>
+</h6>
+<p><a class="external" href="https://tinyurl.com/ycneog34" target="_blank">Calculatrice</a> à zéros pour le gradient d'une fonction de deux variables : <div class="sagecell-sage" id="sage-8"><script type="text/x-sage">f(x, y) = (x + y) * (x * y + x * y^2)  # fonction dont on cherche les zéros du gradient
+
+fx = derivative(f, x)
+fy = derivative(f, y)
+zerosDuGradient = solve([fx == 0, fy == 0], x, y)
+
+pretty_print('Le gradient de la fonction ')
+pretty_print(f)
+pretty_print('est nul aux points suivants :')
+for p in zerosDuGradient:
+    pretty_print(p)
+</script></div></p></article><span class="incontext"><a href="extremums.html#li-534">??</a></span>
+</body>
+</html>

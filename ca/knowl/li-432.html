@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-10T02:56:43-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="li"><h6 class="heading">
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">4.3.4.3</span><span class="period">.</span>
+</h6>
+<p>Les variables sont liées de la façon suivante : <div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="images/exercice_4.3.4ter.png" style="width: 100%; height: auto;" alt=""></div> Par la règle de dérivation en chaîne, on a donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial t}&amp;=\frac{\partial z}{\partial v}\cdot\frac{\partial v}{\partial t}+\frac{\partial z}{\partial w}\cdot\frac{\partial w}{\partial t}\\
+&amp;=\frac{\partial}{\partial v}\left(w\arctan(uv)\right)\cdot\frac{\partial}{\partial t}(s+t)+\frac{\partial}{\partial w}\left(w\arctan(uv)\right)\cdot\frac{\partial}{\partial t}(t+r)\\
+&amp;=w\cdot\frac{1}{1+(uv)^2}\cdot u\cdot 1+\arctan(uv)\cdot 1\\
+&amp;=\frac{uw}{1+u^2v^2}+\arctan(uv).
+\end{align*}
+</div>
+<p>Lorsque \(r=1\text{,}\) \(s=0\) et \(t=1\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+u=1+0=1,\quad v=0+1=1\quad\text{et}\quad w=1+1=2
+\end{equation*}
+</div>
+<p data-braille="continuation">donc</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial z}{\partial t}\Bigg\rvert_{(r,s,t)=(1,0,1)}&amp;=\frac{1\cdot 2}{1+1^21^2}+\arctan(1\cdot 1)\\
+&amp;=\frac{2}{2}+\arctan(1)\\
+&amp;=1+\frac{\pi}{4}.
+\end{align*}
+</div></article><span class="incontext"><a href="derivation-en-chaine.html#li-432">??</a></span>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:14:31-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_green.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>sagecell.makeSagecell({
+    inputLocation: ".sage-interact",
+    autoeval: 'true',
+    hide: ["editor", "evalButton", "permalink"]
+});
+</script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+</head>
+<body class="pretext-content"><div style="width:600px; height:818px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div class="sage-interact"><script type="text/x-sage">@interact
+def _(x = input_box(label = html(r'Les \(x\)'), default = [1, 2, 3, 4], width = 30), y = input_box(label = html(r'Les \(y\)'), default = [-3, 7, 0, 5], width = 30)):
+    n = len(x) - 1
+    var('t')
+    diffDiv = [y]
+    for j in range(1,n+1):
+        nouvelleColonne = []
+        for i in range(0, n-j+1):
+            nouvelleDiffDiv = (diffDiv[j-1][i+1] - diffDiv[j-1][i]) / (x[i+j] - x[i])
+            nouvelleColonne.append(nouvelleDiffDiv)
+        diffDiv.append(nouvelleColonne)
+    N = diffDiv[0][0]
+    a = x[0]
+    b = x[0]
+    P = [(x[0], y[0])]
+    Nbase = [1]
+    for j in range(1, n+1):
+        if x[j-1] != 0:
+            Nj = Nbase[j-1] * (t - x[j-1])
+        else:
+            Nj = Nbase[j-1] * t
+        Nbase.append(Nj)
+        N = N + diffDiv[j][0] * Nj
+        P.append((x[j], y[j]))
+        a = min(a, x[j])
+        b = max(b, x[j])
+    N(t) = N
+    r = (b - a) / 20
+    G = plot(N(t), (t, a-r, b+r), color = 'red', thickness = 1)
+    G = G + points(P, color = 'green', pointsize = 50)
+    G.show(figsize = 5, aspect_ratio = 'automatic')
+    pretty_print(html(r'Forme de Newton du polynôme interpolateur :'))
+    pretty_print(diffDiv[0][0])
+    if diffDiv[1][0] < 0:
+        pretty_print(diffDiv[1][0], ' (', Nbase[1], ')')
+    else:
+        pretty_print('+ ', diffDiv[1][0], ' (', Nbase[1], ')')
+    for j in range(2, n+1):
+        if diffDiv[j][0] < 0:
+            pretty_print(diffDiv[j][0], Nbase[j])
+        else:
+            pretty_print('+ ', diffDiv[j][0], Nbase[j])
+</script></div></div></body>
+</html>

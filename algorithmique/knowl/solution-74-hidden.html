@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-12T18:17:02-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>En utilisant le code donné à la section <a href="algorithmediffdiv.html" class="internal" title="Section 7.2: Algorithme">7.2</a>, on obtient les différences divisées de ces quatre points, dont on déduit le polynôme interpolateur sous sa forme de Newton :</p>
+<div class="displaymath">
+\begin{align*}
+P(t)&amp;\approx 362\\
+&amp;\qquad+0{,}260857142857(t-1500)\\
+&amp;\qquad+2{,}22857142857\cdot 10^{-6}(t-1500)(t-5000)\\
+&amp;\qquad-1{,}71438966056\cdot 10^{-10}(t-1500)(t-5000)(t-10000).
+\end{align*}
+</div>
+<p>On calcule alors \(P(15000)\) et on trouve</p>
+<div class="displaymath">
+\begin{equation*}
+P(15000)\approx 4216.
+\end{equation*}
+</div>
+<p>On estime ainsi que Victor mettra \(4216\) secondes environ, soit</p>
+<div class="displaymath">
+\begin{equation*}
+1\,\text{heure}\;10\,\text{minutes}\;16\,\text{secondes}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour courir son prochain \(15\) kilomètres.</p>
+<p>Étant donné que la dernière différence divisée est vraiment petite, on est tenté d'éliminer le premier point correspondant au \(1500\) mètres. Le polynôme interpolateur des trois points qui restent est alors</p>
+<div class="displaymath">
+\begin{align*}
+Q(t)&amp;\approx 1275\\
+&amp;\qquad+0{,}2798(t-5000)\\
+&amp;\qquad-1{,}1312037087\cdot 10^{-6}(t-5000)(t-10000).
+\end{align*}
+</div>
+<p>Et on trouve</p>
+<div class="displaymath">
+\begin{equation*}
+Q(15000)\approx 4230.
+\end{equation*}
+</div>
+<p>De cette façon, on estime que Victor mettra \(4230\) secondes environ, soit</p>
+<div class="displaymath">
+\begin{equation*}
+1\,\text{heure}\;10\,\text{minutes}\;30\,\text{secondes}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour courir son prochain \(15\) kilomètres.</p>
+</div></body>
+</html>
