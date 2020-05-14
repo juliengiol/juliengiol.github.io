@@ -1025,7 +1025,7 @@
       </li>
       <li>
         <p>
-          Savoir appliquer la méthode des multiplicateurs de Lagrange pour la recherche des extremums d'une fonction <m>f(x,y)</m> :
+          Savoir appliquer la méthode des multiplicateurs de Lagrange pour la recherche des extremums d'une fonction de deux variables <m>f(x,y)</m> ou plus :
           <ul>
             <li>
               <p>
@@ -1039,7 +1039,7 @@
             <li>
               <p>
                 sous deux contraintes du type
-                <me>g_1(x,y)=k_1\quad\text{et}\quad g_2(x,y)=k_2</me>
+                <me>g(x,y)=k\quad\text{et}\quad h(x,y)=l</me>
                 (voir <xref ref="methode_lagrange2" />);
               </p>
             </li>
@@ -1189,7 +1189,7 @@
             <md alignment="alignat">
               <mrow>(E_1)\quad&amp;&amp; 1 &amp; {}={} 2\lambda x</mrow>
               <mrow>(E_2)\quad&amp;&amp; -1 &amp; {}={} 2\lambda y</mrow>
-              <mrow>(E_3)\quad&amp;&amp;x^2+ y^2 &amp; {}={} 9</mrow>
+              <mrow>(E_3)\quad&amp;&amp;x^2+y^2 &amp; {}={} 9</mrow>
             </md>
             d'où
             <me>x=-y=\frac{1}{2\lambda}</me>
