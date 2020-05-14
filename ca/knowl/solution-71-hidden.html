@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-13T15:45:43-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Soit les fonctions</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y)=2x^2+3y^2-4x-5\quad\text{et}\quad g(x,y)=x^2+y^2.
+\end{equation*}
+</div>
+<ol class="decimal">
+<li>
+<p>Commençons par la recherche des points critiques de \(f\) : on a</p>
+<div class="displaymath">
+\begin{align*}
+\nabla f=\vec{0}&amp;\quad\Leftrightarrow\quad\begin{cases}4x-4=0\\6y=0\end{cases}\\
+&amp;\quad\Leftrightarrow\quad\begin{cases}x=1\\y=0\end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">et comme \(\nabla f\) existe partout, il n'y a pas d'autre point critique.</p>
+<p>Par ailleurs, le point \((1,0)\) vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+g(1,0)=1^2+0^2=1&lt;16
+\end{equation*}
+</div>
+<p data-braille="continuation">donc on le retient pour l'étape 3.</p>
+</li>
+<li>
+<p>Calculons les gradients de \(f\) et de \(g\)</p>
+<div class="displaymath">
+\begin{equation*}
+\nabla f=\begin{bmatrix}4x-4\\6y\end{bmatrix}\quad\text{et}\quad\nabla g=\begin{bmatrix}2x\\2y\end{bmatrix}.
+\end{equation*}
+</div>
+<p>On résout alors le système</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}\nabla f=\lambda\nabla g\\g(x,y)=16\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">qui donne les trois équations suivantes</p>
+<div class="displaymath">
+\begin{alignat*}{1}
+4x-4 &amp; {}={} 2\lambda x\\
+6y &amp; {}={} 2\lambda y\\
+x^2+y^2 &amp; {}={} 16
+\end{alignat*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+(E_1)\quad&amp;&amp; 2x-2 &amp; {}={} \lambda x\\
+(E_2)\quad&amp;&amp; 3y &amp; {}={} \lambda y\\
+(E_3)\quad&amp;&amp;x^2+y^2 &amp; {}={} 16
+\end{alignat*}
+</div>
+<p data-braille="continuation">où \((E_2)\) est équivalente à</p>
+<div class="displaymath">
+\begin{equation*}
+(3-\lambda)y=0
+\end{equation*}
+</div>
+<p data-braille="continuation">et conduit à l'alternative qui suit.</p>
+<ul class="disc">
+<li>
+<p>Cas \(\lambda=3\) : Alors \((E_1)\) devient</p>
+<div class="displaymath">
+\begin{equation*}
+2x-2=3x\quad\text{d'où}\quad x=-2
+\end{equation*}
+</div>
+<p data-braille="continuation">puis \((E_3)\) donne</p>
+<div class="displaymath">
+\begin{equation*}
+(-2)^2+y^2=16\quad\text{d'où}\quad y^2=12\quad\text{soit}\quad y=\pm 2\sqrt{3}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Cas \(y=0\) : Alors \((E_3)\) donne</p>
+<div class="displaymath">
+\begin{equation*}
+x^2=16\quad\text{soit}\quad x=\pm 4.
+\end{equation*}
+</div>
+</li>
+</ul>
+<p>On retient donc les points</p>
+<div class="displaymath">
+\begin{equation*}
+(-2,\pm 2\sqrt{3})\quad\text{et}\quad (\pm 4,0)
+\end{equation*}
+</div>
+<p data-braille="continuation">pour l'étape 3.</p>
+</li>
+<li>
+<p>Évaluons maintenant \(f\) aux points trouvés précédemment :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c}
+(x,y)&amp;f(x,y)=2x^2+3y^2-4x-5\\
+\hline
+(1,0)&amp;2\cdot 1+3\cdot 0-4\cdot 1-5=-7\\
+(-2,\pm 2\sqrt{3})&amp;2\cdot 4+3\cdot 12-4\cdot(-2)-5=47\\
+(-4,0)&amp; 2\cdot 16+3\cdot 0-4\cdot(-4)-5=43\\
+(4,0)&amp; 2\cdot 16+3\cdot 0-4\cdot 4-5=11
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Le maximum cherché vaut donc</p>
+<div class="displaymath">
+\begin{equation*}
+47
+\end{equation*}
+</div>
+<p data-braille="continuation">et il est atteint aux points \((-2,\pm 2\sqrt{3})\text{.}\)</p>
+<p>Le minimum vaut quant à lui</p>
+<div class="displaymath">
+\begin{equation*}
+-7
+\end{equation*}
+</div>
+<p data-braille="continuation">et il est atteint au point \((1,0)\text{.}\)</p>
+</li>
+</ol>
+</div></body>
+</html>

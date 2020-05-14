@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-10T02:57:10-04:00    *-->
+<!--*    on 2020-05-13T15:45:42-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,71 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
-</h6>par \(S_{999}\) a six décimales correctes.</article><span class="incontext"><a href="bornes.html#li-654">??</a></span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.4.1</span><span class="period">.</span>
+</h6>
+<p>Commençons par calculer les gradients de</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y,z)=3x-y-3z,\; g(x,y,z)=x+y-z\;\text{et}\; h(x,y,z)=x^2+2z^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Cela donne</p>
+<div class="displaymath">
+\begin{equation*}
+\nabla f=\begin{bmatrix}3\\-1\\-3\end{bmatrix},\quad\quad\nabla g=\begin{bmatrix}1\\1\\-1\end{bmatrix}\quad\text{et}\quad\nabla h=\begin{bmatrix}2x\\0\\4z\end{bmatrix}.
+\end{equation*}
+</div>
+<p>On doit donc résoudre le système</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}\nabla f=\lambda\nabla g+\mu\nabla h\\g(x,y,z)=0\\h(x,y,z)=1\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">qui donne les cinq équations suivantes</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+(E_1)\quad &amp;&amp; 3&amp; {}={} \lambda+2\mu x\\
+(E_2)\quad &amp;&amp; -1&amp; {}={} \lambda\\
+(E_3)\quad &amp;&amp; -3&amp; {}={} -\lambda+4\mu z\\
+(E_4)\quad &amp;&amp;x+y-z &amp; {}={} 0\\
+(E_5)\quad &amp;&amp;x^2+2z^2 &amp; {}={} 1.
+\end{alignat*}
+</div>
+<p>En remplaçant \(\lambda\) par \(-1\text{,}\) grâce à \((E_2)\text{,}\) dans \((E_1)\) et \((E_3)\text{,}\) on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+4=2\mu x=-4\mu z
+\end{equation*}
+</div>
+<p data-braille="continuation">dont on déduit d'abord que \(\mu\neq 0\text{,}\) puis que</p>
+<div class="displaymath">
+\begin{equation*}
+2x=-4z\quad\text{d'où}\quad x=-2z.
+\end{equation*}
+</div>
+<p data-braille="continuation">Alors \((E_4)\) entraîne</p>
+<div class="displaymath">
+\begin{equation*}
+y=z-x=z-(-2z)=3z.
+\end{equation*}
+</div>
+<p data-braille="continuation">Enfin \((E_5)\) donne</p>
+<div class="displaymath">
+\begin{equation*}
+(-2z)^2+2z^2=1\quad\text{d'où}\quad z^2=\frac{1}{6}\quad\text{et}\quad z=\pm\frac{1}{\sqrt{6}}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On trouve donc deux points :</p>
+<div class="displaymath">
+\begin{equation*}
+\left(-\frac{2}{\sqrt{6}},\frac{3}{\sqrt{6}},\frac{1}{\sqrt{6}}\right)
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{2}{\sqrt{6}},-\frac{3}{\sqrt{6}},-\frac{1}{\sqrt{6}}\right).
+\end{equation*}
+</div></article><span class="incontext"><a href="lagrange.html#li-654">??</a></span>
 </body>
 </html>

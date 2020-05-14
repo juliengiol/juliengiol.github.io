@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-10T02:57:10-04:00    *-->
+<!--*    on 2020-05-13T15:45:40-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,8 +13,119 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.3.1</span><span class="period">.</span>
 </h6>
-<p>Une somme partielle (finie) donne une valeur approchée de la somme (infinie) d'une série convergente. Pour qu'une telle approximation soit utile, il est important de pouvoir contrôler l'erreur commise, c'est-à-dire la différence entre la valeur de la somme \(S\) et celle de la somme partielle \(S_n\) utilisée. Cette différence, notée \(R_n\text{,}\) s'appelle le reste.</p></article><span class="incontext"><a href="bornes.html#li-643">??</a></span>
+<p>Commençons par calculer les gradients de</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y,z)=x^4+y^4+z^4\quad\text{et}\quad g(x,y,z)=x^2+y^2+z^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Cela donne</p>
+<div class="displaymath">
+\begin{equation*}
+\nabla f=\begin{bmatrix}4x^3\\4y^3\\4z^3\end{bmatrix}\quad\text{et}\quad\nabla g=\begin{bmatrix}2x\\2y\\2z\end{bmatrix}.
+\end{equation*}
+</div>
+<p>On doit donc résoudre le système</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}\nabla f=\lambda\nabla g\\g(x,y,z)=1\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">qui donne les quatre équations suivantes</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+(E_1)\quad &amp;&amp; 2x^3 &amp; {}={} \lambda x\\
+(E_2)\quad &amp;&amp; 2y^3 &amp; {}={} \lambda y\\
+(E_3)\quad &amp;&amp; 2z^3 &amp; {}={} \lambda z\\
+(E_4)\quad &amp;&amp;x^2+y^2+z^2 &amp; {}={} 1.
+\end{alignat*}
+</div>
+<ul class="disc">
+<li>
+<p>Cas 1 : Aucun coordonnée nulle, càd \(xyz\neq 0\text{.}\)</p>
+<p>Alors \((E_1),(E_2),(E_3)\) entraînent</p>
+<div class="displaymath">
+\begin{equation*}
+x^2=y^2=z^2=\frac{\lambda}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">puis \((E_4)\) donne</p>
+<div class="displaymath">
+\begin{equation*}
+3x^2=1\quad\text{d'où}\quad x^2=\frac{1}{3}.
+\end{equation*}
+</div>
+<p>Ce cas conduit donc aux huit points suivants</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\pm\frac{1}{\sqrt{3}},\pm\frac{1}{\sqrt{3}},\pm\frac{1}{\sqrt{3}}\right).
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Cas 2 : Une coordonnée nulle.</p>
+<p>Commençons par le sous-cas où \(x=0\) et \(yz\neq 0\text{.}\)</p>
+<p>Alors \((E_2),(E_3)\) entraînent</p>
+<div class="displaymath">
+\begin{equation*}
+y^2=z^2=\frac{\lambda}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">puis \((E_4)\) donne</p>
+<div class="displaymath">
+\begin{equation*}
+2y^2=1\quad\text{d'où}\quad y^2=\frac{1}{2}.
+\end{equation*}
+</div>
+<p>Ce sous-cas conduit donc aux quatre points suivants</p>
+<div class="displaymath">
+\begin{equation*}
+\left(0,\pm\frac{1}{\sqrt{2}},\pm\frac{1}{\sqrt{2}}\right).
+\end{equation*}
+</div>
+<p>Et pour des raisons de symétrie, on ajoute aussi à ce cas les points</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\pm\frac{1}{\sqrt{2}},0,\pm\frac{1}{\sqrt{2}}\right)
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\pm\frac{1}{\sqrt{2}},\pm\frac{1}{\sqrt{2}},0\right).
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Cas 3 : Deux coordonnées nulles.</p>
+<p>Commençons par le sous-cas où \(x=y=0\) et \(z\neq 0\text{.}\)</p>
+<p>Alors \((E_4)\) entraîne donne</p>
+<div class="displaymath">
+\begin{equation*}
+z^2=1.
+\end{equation*}
+</div>
+<p>Ce sous-cas conduit donc aux deux points suivants</p>
+<div class="displaymath">
+\begin{equation*}
+\left(0,0,\pm 1\right).
+\end{equation*}
+</div>
+<p>Et pour des raisons de symétrie, on ajoute aussi à ce cas les points</p>
+<div class="displaymath">
+\begin{equation*}
+\left(0,\pm 1,0\right)
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\pm 1,0,0\right).
+\end{equation*}
+</div>
+</li>
+</ul></article><span class="incontext"><a href="lagrange.html#li-643">??</a></span>
 </body>
 </html>

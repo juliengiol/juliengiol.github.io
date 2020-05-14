@@ -782,7 +782,7 @@
         En isolant <m>x</m> dans l'équation du plan
         <me>x-2y+3z=6\quad\Leftrightarrow\quad x=6+2y-3z</me>
         on voit que tout point du plan peut s'écrire
-        <me>Q=(6+2y-3z,y,z)\quad\text{avec}\quad (x,y)\in\mathbb{R}^2.</me>
+        <me>Q=(6+2y-3z,y,z)\quad\text{avec}\quad (y,z)\in\mathbb{R}^2.</me>
       </p>
       <p>
         Considérons donc la fonction
@@ -1015,12 +1015,12 @@
     <ul>
       <li>
         <p>
-          Savoir déterminer les extremums d'une fonction <m>f(x,y)</m> sous une contrainte <m>g(x,y)=k</m> en lisant un diagramme de courbes de niveau de <m>f</m>.
+          Comprendre l'idée générale de la méthode des multiplicateurs de Lagrange telle qu'expliquée dans <url href="https://www.youtube.com/watch?v=y377VIUP39Y">cette vidéo</url> de la chaîne <url href="https://www.youtube.com/channel/UCZZTo-2xK39nW49EvGtNUTA">Mathématiques CSF</url>.
         </p>
       </li>
       <li>
         <p>
-          Comprendre l'idée générale de la méthode des multiplicateurs de Lagrange telle qu'expliquée dans la vidéo ci-dessous.
+          Savoir déterminer les extremums d'une fonction <m>f(x,y)</m> sous une contrainte <m>g(x,y)=k</m> en lisant un diagramme de courbes de niveau de <m>f</m>.
         </p>
       </li>
       <li>
@@ -1029,17 +1029,25 @@
           <ul>
             <li>
               <p>
-                sous une contrainte du type <m>g(x,y)=k</m>;
+                sous une contrainte du type
+                <me>g(x,y)=k</me>
+              </p>
+              <p>
+                (voir <xref ref="methode_lagrange" />);
               </p>
             </li>
             <li>
               <p>
-                sous deux contraintes du type <m>g_1(x,y)=k_1</m> et <m>g_2(x,y)=k_2</m>;
+                sous deux contraintes du type
+                <me>g_1(x,y)=k_1\quad\text{et}\quad g_2(x,y)=k_2</me>
+                (voir <xref ref="methode_lagrange2" />);
               </p>
             </li>
             <li>
               <p>
-                sous une contrainte du type <m>g(x,y)\leq k</m>.
+                sous une contrainte du type
+                <me>g(x,y)\leq k</me>
+                (voir <xref ref="methode_lagrange3" />).
               </p>
             </li>
           </ul>
@@ -1048,38 +1056,178 @@
     </ul>
   </objectives>
 
-  <p>
-    Pour commencer, voici une vidéo de la chaîne <url href="https://www.youtube.com/channel/UCZZTo-2xK39nW49EvGtNUTA">Mathématiques CSF</url> :
-    <figure>
-      <title>Principe de la méthode des multiplicateurs de Lagrange</title>
-      <caption>Principe de la méthode des multiplicateurs de Lagrange</caption>
-      <video youtube="y377VIUP39Y" width="80%" />
-    </figure>
-  </p>
+  <exercise>
+    <statement>
+      <p>
+        Tracez le cercle d'équation
+        <me>x^2+y^2=9</me>
+        et des courbes de niveau de la fonction
+        <me>f(x,y)=x-y</me>
+        pour trouver le maximum de <m>f</m> sous la contrainte <m>x^2+y^2=9</m>.
+      </p>
+    </statement>
+    <answer>
+      <p>
+        Le maximum est atteint au point
+        <me>\left(\frac{3\sqrt{2}}{2},-\frac{3\sqrt{2}}{2}\right)</me>
+        et il vaut
+        <me>3\sqrt{2}.</me>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Voici en rouge le cercle d'équation
+        <me>x^2+y^2=9</me>
+        et en bleu les lignes de niveau de <m>f(x,y)=x-y</m>
+        <me>x-y=k\quad\text{où}\quad k=-6, -4, -2, 0, 2, 4, 6</me>
+      </p>
+      <p>
+        <image source="images/exercice_5.3.1.png" width="65%"/>
+      </p>
+      <p>
+        On voit ainsi que le maximum de <m>f</m> sous la contrainte <m>x^2+y^2=9</m> est atteint dans le quatrième quadrant, au point du cercle qui vérifie <m>y=-x</m>.
+      </p>
+      <p>
+        On doit donc résoudre le système de deux équations
+        <me>\begin{cases}x^2+y^2=9\\y=-x\end{cases}</me>
+        qui donne
+        <md>
+          <mrow>x^2+(-x)^2=9&amp;\quad\Leftrightarrow\quad 2x^2=9</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad x^2=\frac{9}{2}</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad x=\pm\sqrt{\frac{9}{2}}</mrow>
+          <mrow>&amp;\quad\Leftrightarrow\quad x=\pm\frac{3\sqrt{2}}{2}.</mrow>
+        </md>
+      </p>
+      <p>
+        Le point où le maximum est obtenu est donc
+        <me>\left(\frac{3\sqrt{2}}{2},-\frac{3\sqrt{2}}{2}\right)</me>
+        et le maximum cherché vaut
+        <md>
+          <mrow>f(x,y)&amp;=x-y</mrow>
+          <mrow>&amp;=\frac{3\sqrt{2}}{2}-\left(-\frac{3\sqrt{2}}{2}\right)</mrow>
+          <mrow>&amp;=\frac{3\sqrt{2}}{2}+\frac{3\sqrt{2}}{2}</mrow>
+          <mrow>&amp;=3\sqrt{2}.</mrow>
+        </md>
+      </p>
+    </solution>
+  </exercise>
 
   <exercise xml:id="exercice-recherche-d-extremums-par-lagrange">
     <statement>
       <p>
         À l'aide de la méthode des multiplicateurs de Lagrange, trouvez les extremums de la fonction
-        <me>f(x,y)=x^2+2y^2</me>
+        <me>f(x,y)=x-y</me>
         sous la contrainte
-        <me>x^2+y^2=1.</me>
+        <me>x^2+y^2=9.</me>
       </p>
     </statement>
+    <hint xml:id="methode_lagrange">
+      <p>
+        Appliquez la méthode des multiplicateurs de Lagrange décrite ci-dessous.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Trouvez tous les points <m>(x,y)</m> solutions du système
+            <me>\begin{cases}\nabla f=\lambda\nabla g\\g(x,y)=9\end{cases}</me>
+            où
+            <me>f(x,y)=x-y\quad\text{et}\quad g(x,y)=x^2+y^2.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Évaluez <m>f</m> en chacun des points trouvés à l'étape 1.
+          </p>
+        </li>
+        <li>
+          <p>
+            Le maximum (resp. minimum) de <m>f(x,y)</m> sous la contrainte <m>g(x,y)=9</m> est la plus grande (resp. petite) des valeurs trouvées à l'étape 2.
+          </p>
+        </li>
+      </ol>
+      <p>
+        Remarques :
+        <ul>
+          <li>
+            <p>
+              Il n'est pas toujours nécessaire de trouver les valeurs de <m>\lambda</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Il peut y avoir plusieurs façons d'effectuer l'étape 1 et il n'existe pas de principe général pour la résolution d'un tel système.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </hint>
     <answer>
       <p>
-        Le maximum absolu vaut <m>2</m> et il est atteint aux points <m>(0,\pm 1)</m>.
+        Le maximum absolu vaut
+        <me>3\sqrt{2}</me>
+        et il est atteint au point <m>\displaystyle\left(\frac{3\sqrt{2}}{2},-\frac{3\sqrt{2}}{2}\right)</m>.
       </p>
       <p>
-        Le minimum absolu vaut <m>1</m> et il est atteint aux points <m>(\pm 1,0)</m>.
+        Le minimum absolu vaut
+        <me>-3\sqrt{2}</me>
+        et il est atteint au point <m>\displaystyle\left(-\frac{3\sqrt{2}}{2},\frac{3\sqrt{2}}{2}\right)</m>.
       </p>
     </answer>
     <solution>
-      <figure>
-        <title>Application de la méthode des multiplicateurs de Lagrange</title>
-        <caption>Application de la méthode des multiplicateurs de Lagrange</caption>
-        <video youtube="vfgIsCeinIw" width="95%" />
-      </figure>
+      <ol>
+        <li>
+          <p>
+            Commençons par calculer les gradients de
+            <me>f(x,y)=x-y\quad\text{et}\quad g(x,y)=x^2+y^2.</me>
+            Cela donne
+            <me>\nabla f=\begin{bmatrix}1\\-1\end{bmatrix}\quad\text{et}\quad\nabla g=\begin{bmatrix}2x\\2y\end{bmatrix}.</me>
+          </p>
+          <p>
+            On doit donc résoudre le système
+            <me>\begin{cases}\nabla f=\lambda\nabla g\\g(x,y)=9\end{cases}</me>
+            qui donne les trois équations suivantes
+            <md alignment="alignat">
+              <mrow>(E_1)\quad&amp;&amp; 1 &amp; {}={} 2\lambda x</mrow>
+              <mrow>(E_2)\quad&amp;&amp; -1 &amp; {}={} 2\lambda y</mrow>
+              <mrow>(E_3)\quad&amp;&amp;x^2+ y^2 &amp; {}={} 9</mrow>
+            </md>
+            d'où
+            <me>x=-y=\frac{1}{2\lambda}</me>
+            par <m>(E_1)</m> et <m>(E_2)</m>.
+          </p>
+          <p>
+            Par <m>(E_3)</m>, il en découle que
+            <md>
+              <mrow>x^2+(-x)^2=9&amp;\quad\Leftrightarrow\quad 2x^2=9</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad x^2=\frac{9}{2}</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad x=\pm\sqrt{\frac{9}{2}}</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad x=\pm\frac{3\sqrt{2}}{2}.</mrow>
+            </md>
+            On obtient ainsi les deux points
+            <me>\left(\frac{3\sqrt{2}}{2},-\frac{3\sqrt{2}}{2}\right)\quad\text{et}\quad\left(-\frac{3\sqrt{2}}{2},\frac{3\sqrt{2}}{2}\right).</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On évalue maintenant <m>f</m> en chacun de ces points :
+            <md>
+              <mrow>f\left(\frac{3\sqrt{2}}{2},-\frac{3\sqrt{2}}{2}\right)&amp;=\frac{3\sqrt{2}}{2}-\left(-\frac{3\sqrt{2}}{2}\right)</mrow>
+              <mrow>&amp;=\frac{3\sqrt{2}}{2}+\frac{3\sqrt{2}}{2}</mrow>
+              <mrow>&amp;=3\sqrt{2}</mrow>
+            </md>
+            et
+            <md>
+              <mrow>f\left(-\frac{3\sqrt{2}}{2},\frac{3\sqrt{2}}{2}\right)&amp;=-\frac{3\sqrt{2}}{2}-\frac{3\sqrt{2}}{2}</mrow>
+              <mrow>&amp;=-3\sqrt{2}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Le maximum cherché vaut donc <m>3\sqrt{2}</m>, et le minimum <m>-3\sqrt{2}</m>.
+          </p>
+        </li>
+      </ol>
     </solution>
   </exercise>
 
@@ -1092,14 +1240,133 @@
         <me>x^2+y^2+z^2=1.</me>
       </p>
     </statement>
+    <hint>
+      <p>
+        Appliquez la même procédure que celle adoptée à l'exercice précédent <xref ref="methode_lagrange" />.
+      </p>
+    </hint>
     <answer>
       <p>
-        Le maximum absolu vaut <m>1</m> et il est atteint aux points <m>(0,0,\pm 1)</m>, <m>(0,\pm 1,0)</m> et <m>(\pm 1,0,0)</m>.
+        Le maximum absolu vaut
+        <me>1</me>
+        et il est atteint aux points
+        <me>(0,0,\pm 1),\quad (0,\pm 1,0)\quad\text{et}\quad(\pm 1,0,0).</me>
       </p>
       <p>
-        Le minimum absolu vaut <m>1/3</m> et il est atteint aux points <m>(\pm 1/\sqrt{3},\pm 1/\sqrt{3},\pm 1/\sqrt{3})</m>.
+        Le minimum absolu vaut
+        <me>\frac{1}{3}</me>
+        et il est atteint aux points
+        <me>\left(\pm\frac{1}{\sqrt{3}},\pm\frac{1}{\sqrt{3}},\pm\frac{1}{\sqrt{3}}\right).</me>
       </p>
     </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Commençons par calculer les gradients de
+            <me>f(x,y,z)=x^4+y^4+z^4\quad\text{et}\quad g(x,y,z)=x^2+y^2+z^2.</me>
+            Cela donne
+            <me>\nabla f=\begin{bmatrix}4x^3\\4y^3\\4z^3\end{bmatrix}\quad\text{et}\quad\nabla g=\begin{bmatrix}2x\\2y\\2z\end{bmatrix}.</me>
+          </p>
+          <p>
+            On doit donc résoudre le système
+            <me>\begin{cases}\nabla f=\lambda\nabla g\\g(x,y,z)=1\end{cases}</me>
+            qui donne les quatre équations suivantes
+            <md alignment="alignat">
+              <mrow>(E_1)\quad &amp;&amp; 2x^3 &amp; {}={} \lambda x</mrow>
+              <mrow>(E_2)\quad &amp;&amp; 2y^3 &amp; {}={} \lambda y</mrow>
+              <mrow>(E_3)\quad &amp;&amp; 2z^3 &amp; {}={} \lambda z</mrow>
+              <mrow>(E_4)\quad &amp;&amp;x^2+y^2+z^2 &amp; {}={} 1.</mrow>
+            </md>
+          </p>
+          <ul>
+            <li>
+              <p>
+                Cas 1 : Aucun coordonnée nulle, càd <m>xyz\neq 0</m>.
+              </p>
+              <p>
+                Alors <m>(E_1),(E_2),(E_3)</m> entraînent
+                <me>x^2=y^2=z^2=\frac{\lambda}{2}</me>
+                puis <m>(E_4)</m> donne
+                <me>3x^2=1\quad\text{d'où}\quad x^2=\frac{1}{3}.</me>
+              </p>
+              <p>
+                Ce cas conduit donc aux huit points suivants
+                <me>\left(\pm\frac{1}{\sqrt{3}},\pm\frac{1}{\sqrt{3}},\pm\frac{1}{\sqrt{3}}\right).</me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Cas 2 : Une coordonnée nulle.
+              </p>
+              <p>
+                Commençons par le sous-cas où <m>x=0</m> et <m>yz\neq 0</m>.
+              </p>
+              <p>
+                Alors <m>(E_2),(E_3)</m> entraînent
+                <me>y^2=z^2=\frac{\lambda}{2}</me>
+                puis <m>(E_4)</m> donne
+                <me>2y^2=1\quad\text{d'où}\quad y^2=\frac{1}{2}.</me>
+              </p>
+              <p>
+                Ce sous-cas conduit donc aux quatre points suivants
+                <me>\left(0,\pm\frac{1}{\sqrt{2}},\pm\frac{1}{\sqrt{2}}\right).</me>
+              </p>
+              <p>
+                Et pour des raisons de symétrie, on ajoute aussi à ce cas les points
+                <me>\left(\pm\frac{1}{\sqrt{2}},0,\pm\frac{1}{\sqrt{2}}\right)</me>
+                et
+                <me>\left(\pm\frac{1}{\sqrt{2}},\pm\frac{1}{\sqrt{2}},0\right).</me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Cas 3 : Deux coordonnées nulles.
+              </p>
+              <p>
+                Commençons par le sous-cas où <m>x=y=0</m> et <m>z\neq 0</m>.
+              </p>
+              <p>
+                Alors <m>(E_4)</m> entraîne donne
+                <me>z^2=1.</me>
+              </p>
+              <p>
+                Ce sous-cas conduit donc aux deux points suivants
+                <me>\left(0,0,\pm 1\right).</me>
+              </p>
+              <p>
+                Et pour des raisons de symétrie, on ajoute aussi à ce cas les points
+                <me>\left(0,\pm 1,0\right)</me>
+                et
+                <me>\left(\pm 1,0,0\right).</me>
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            On évalue maintenant <m>f</m> en chacun de ces points :
+            <me>
+              \begin{array}{c|c}
+              &amp;x^4+y^4+z^4\\
+              \hline
+              \text{Cas 1}&amp;3\left(\pm\frac{1}{\sqrt{3}}\right)^4=\dfrac{1}{3}\\
+              \text{Cas 2}&amp;2\left(\pm\frac{1}{\sqrt{2}}\right)^4=\dfrac{1}{2}\\
+              \text{Cas 3}&amp;(\pm 1)^4=1\\
+              \end{array}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Le maximum cherché vaut donc
+            <me>1</me>
+            et le minimum
+            <me>\frac{1}{3}.</me>
+          </p>
+        </li>
+      </ol>
+    </solution>
   </exercise>
 
   <exercise xml:id="exercice-recherche-d-extremums-par-lagrange-3">
@@ -1108,17 +1375,115 @@
         À l'aide de la méthode des multiplicateurs de Lagrange, trouvez les extremums de la fonction
         <me>f(x,y,z)=3x-y-3z</me>
         sous les contraintes
-        <me>x+y-z=0=1\quad\text{et}\quad x^2+2z^2=1.</me>
+        <me>x+y-z=0\quad\text{et}\quad x^2+2z^2=1.</me>
       </p>
     </statement>
+    <hint xml:id="methode_lagrange2">
+      <p>
+        Appliquez la méthode des multiplicateurs de Lagrange décrite ci-dessous.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Trouvez tous les points <m>(x,y,z)</m> solutions du système
+            <me>\begin{cases}\nabla f=\lambda\nabla g+\mu\nabla h\\g(x,y,z)=0\\h(x,y,z)=1\end{cases}</me>
+            où
+            <me>f(x,y,z)=3x-y-3z,\; g(x,y,z)=x+y-z\;\text{et}\; h(x,y,z)=x^2+2z^2.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Évaluez <m>f</m> en chacun des points trouvés à l'étape 1.
+          </p>
+        </li>
+        <li>
+          <p>
+            Le maximum (resp. minimum) de <m>f(x,y,z)</m> sous les deux contraintes <m>g(x,y,z)=0</m> et <m>h(x,y,z)=1</m> est la plus grande (resp. petite) des valeurs trouvées à l'étape 2.
+          </p>
+        </li>
+      </ol>
+      <p>
+        Remarques :
+        <ul>
+          <li>
+            <p>
+              Il n'est pas toujours nécessaire de trouver les valeurs de <m>\lambda</m> et <m>\mu</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Il peut y avoir plusieurs façons d'effectuer l'étape 1 et il n'existe pas de principe général pour la résolution d'un tel système.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </hint>
     <answer>
       <p>
-        Le maximum absolu vaut <m>2\sqrt{6}</m> et il est atteint au point <m>(2/\sqrt{6},-3/\sqrt{6},-1/\sqrt{6})</m>.
+        Le maximum absolu vaut
+        <me>2\sqrt{6}</me>
+        et il est atteint au point <m>\left(\frac{2}{\sqrt{6}},-\frac{3}{\sqrt{6}},-\frac{1}{\sqrt{6}}\right)</m>.
       </p>
       <p>
-        Le minimum absolu vaut <m>-2\sqrt{6}</m> et il est atteint au point <m>(-2/\sqrt{6},3/\sqrt{6},1/\sqrt{6})</m>.
+        Le minimum absolu vaut
+        <me>-2\sqrt{6}</me>
+        et il est atteint au point <m>\left(-\frac{2}{\sqrt{6}},\frac{3}{\sqrt{6}},\frac{1}{\sqrt{6}}\right)</m>.
       </p>
     </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Commençons par calculer les gradients de
+            <me>f(x,y,z)=3x-y-3z,\; g(x,y,z)=x+y-z\;\text{et}\; h(x,y,z)=x^2+2z^2.</me>
+            Cela donne
+            <me>\nabla f=\begin{bmatrix}3\\-1\\-3\end{bmatrix},\quad\quad\nabla g=\begin{bmatrix}1\\1\\-1\end{bmatrix}\quad\text{et}\quad\nabla h=\begin{bmatrix}2x\\0\\4z\end{bmatrix}.</me>
+          </p>
+          <p>
+            On doit donc résoudre le système
+            <me>\begin{cases}\nabla f=\lambda\nabla g+\mu\nabla h\\g(x,y,z)=0\\h(x,y,z)=1\end{cases}</me>
+            qui donne les cinq équations suivantes
+            <md alignment="alignat">
+              <mrow>(E_1)\quad &amp;&amp; 3&amp; {}={} \lambda+2\mu x</mrow>
+              <mrow>(E_2)\quad &amp;&amp; -1&amp; {}={} \lambda</mrow>
+              <mrow>(E_3)\quad &amp;&amp; -3&amp; {}={} -\lambda+4\mu z</mrow>
+              <mrow>(E_4)\quad &amp;&amp;x+y-z &amp; {}={} 0</mrow>
+              <mrow>(E_5)\quad &amp;&amp;x^2+2z^2 &amp; {}={} 1.</mrow>
+            </md>
+          </p>
+          <p>
+            En remplaçant <m>\lambda</m> par <m>-1</m>, grâce à <m>(E_2)</m>, dans <m>(E_1)</m> et <m>(E_3)</m>, on obtient
+            <me>4=2\mu x=-4\mu z</me>
+            dont on déduit d'abord que <m>\mu\neq 0</m>, puis que
+            <me>2x=-4z\quad\text{d'où}\quad x=-2z.</me>
+            Alors <m>(E_4)</m> entraîne
+            <me>y=z-x=z-(-2z)=3z.</me>
+            Enfin <m>(E_5)</m> donne
+            <me>(-2z)^2+2z^2=1\quad\text{d'où}\quad z^2=\frac{1}{6}\quad\text{et}\quad z=\pm\frac{1}{\sqrt{6}}.</me>
+            On trouve donc deux points :
+            <me>\left(-\frac{2}{\sqrt{6}},\frac{3}{\sqrt{6}},\frac{1}{\sqrt{6}}\right)</me>
+            et
+            <me>\left(\frac{2}{\sqrt{6}},-\frac{3}{\sqrt{6}},-\frac{1}{\sqrt{6}}\right).</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On évalue maintenant <m>f(x,y,z)=3x-y-3z</m> en chacun de ces deux points : on trouve
+            <me>\left(-\frac{2}{\sqrt{6}},\frac{3}{\sqrt{6}},\frac{1}{\sqrt{6}}\right)=3\left(-\frac{2}{\sqrt{6}}\right)-\frac{3}{\sqrt{6}}-3\frac{1}{\sqrt{6}}=-\frac{12}{\sqrt{6}}</me>
+            et
+            <me>\left(\frac{2}{\sqrt{6}},-\frac{3}{\sqrt{6}},-\frac{1}{\sqrt{6}}\right)=3\frac{2}{\sqrt{6}}-\left(-\frac{3}{\sqrt{6}}\right)-3\left(-\frac{1}{\sqrt{6}}\right)=\frac{12}{\sqrt{6}}.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Le maximum cherché vaut donc
+            <me>\frac{12}{\sqrt{6}}=2\sqrt{6}</me>
+            et le minimum
+            <me>-\frac{12}{\sqrt{6}}=-2\sqrt{6}.</me>
+          </p>
+        </li>
+      </ol>
+    </solution>
   </exercise>
 
   <exercise xml:id="exercice-recherche-d-extremums-par-lagrange-4">
@@ -1130,14 +1495,160 @@
         <me>x^2+y^2\leq 16.</me>
       </p>
     </statement>
+    <hint xml:id="methode_lagrange3">
+      <p>
+        Appliquez la méthode des multiplicateurs de Lagrange décrite ci-dessous.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Trouvez tous les points critiques de <m>f</m> qui satisfont l'inégalité stricte
+            <me>x^2+y^2&lt;16.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Trouvez tous les points <m>(x,y)</m> solutions du système
+            <me>\begin{cases}\nabla f=\lambda\nabla g\\x^2+y^2=16\end{cases}</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Évaluez <m>f</m> en chacun des points trouvés aux étapes 1 et 2.
+          </p>
+        </li>
+        <li>
+          <p>
+            Le maximum (resp. minimum) de <m>f(x,y)</m> sous la contrainte
+            <me>x^2+y^2\leq 16</me>
+            est la plus grande (resp. petite) des valeurs trouvées à l'étape 3.
+          </p>
+        </li>
+      </ol>
+      <p>
+        Remarques :
+        <ul>
+          <li>
+            <p>
+              Il n'est pas toujours nécessaire de trouver les valeurs de <m>\lambda</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Il peut y avoir plusieurs façons d'effectuer l'étape 2 et il n'existe pas de principe général pour la résolution d'un tel système.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </hint>
     <answer>
       <p>
-        Le maximum absolu vaut <m>47</m> et il est atteint aux points <m>(-2,\pm 2\sqrt{3})</m>.
+        Le maximum cherché vaut donc
+        <me>47</me>
+        et il est atteint aux points <m>(-2,\pm 2\sqrt{3})</m>.
       </p>
       <p>
-        Le minimum absolu vaut <m>11</m> et il est atteint au point <m>(4,0)</m>.
+        Le minimum vaut quant à lui
+        <me>-7</me>
+        et il est atteint au point <m>(1,0)</m>.
       </p>
     </answer>
+    <solution>
+      <p>
+        Soit les fonctions
+        <me>f(x,y)=2x^2+3y^2-4x-5\quad\text{et}\quad g(x,y)=x^2+y^2.</me>
+      </p>
+      <ol>
+        <li>
+          <p>
+            Commençons par la recherche des points critiques de <m>f</m> : on a
+            <md>
+              <mrow>\nabla f=\vec{0}&amp;\quad\Leftrightarrow\quad\begin{cases}4x-4=0\\6y=0\end{cases}</mrow>
+              <mrow>&amp;\quad\Leftrightarrow\quad\begin{cases}x=1\\y=0\end{cases}</mrow>
+            </md>
+            et comme <m>\nabla f</m> existe partout, il n'y a pas d'autre point critique.
+          </p>
+          <p>
+            Par ailleurs, le point <m>(1,0)</m> vérifie
+            <me>g(1,0)=1^2+0^2=1&lt;16</me>
+            donc on le retient pour l'étape 3.
+          </p>
+        </li>
+        <li>
+          <p>
+            Calculons les gradients de <m>f</m> et de <m>g</m>
+            <me>\nabla f=\begin{bmatrix}4x-4\\6y\end{bmatrix}\quad\text{et}\quad\nabla g=\begin{bmatrix}2x\\2y\end{bmatrix}.</me>
+          </p>
+          <p>
+            On résout alors le système
+            <me>\begin{cases}\nabla f=\lambda\nabla g\\g(x,y)=16\end{cases}</me>
+            qui donne les trois équations suivantes
+            <md alignment="alignat">
+              <mrow>4x-4 &amp; {}={} 2\lambda x</mrow>
+              <mrow>6y &amp; {}={} 2\lambda y</mrow>
+              <mrow>x^2+y^2 &amp; {}={} 16</mrow>
+            </md>
+            soit
+            <md alignment="alignat">
+              <mrow>(E_1)\quad&amp;&amp; 2x-2 &amp; {}={} \lambda x</mrow>
+              <mrow>(E_2)\quad&amp;&amp; 3y &amp; {}={} \lambda y</mrow>
+              <mrow>(E_3)\quad&amp;&amp;x^2+y^2 &amp; {}={} 16</mrow>
+            </md>
+            où <m>(E_2)</m> est équivalente à
+            <me>(3-\lambda)y=0</me>
+            et conduit à l'alternative qui suit.
+            <ul>
+              <li>
+                <p>
+                  Cas <m>\lambda=3</m> : Alors <m>(E_1)</m> devient
+                  <me>2x-2=3x\quad\text{d'où}\quad x=-2</me>
+                  puis <m>(E_3)</m> donne
+                  <me>(-2)^2+y^2=16\quad\text{d'où}\quad y^2=12\quad\text{soit}\quad y=\pm 2\sqrt{3}.</me>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Cas <m>y=0</m> : Alors <m>(E_3)</m> donne
+                  <me>x^2=16\quad\text{soit}\quad x=\pm 4.</me>
+                </p>
+              </li>
+            </ul>
+          </p>
+          <p>
+            On retient donc les points
+            <me>(-2,\pm 2\sqrt{3})\quad\text{et}\quad (\pm 4,0)</me>
+            pour l'étape 3.
+          </p>
+        </li>
+        <li>
+          <p>
+            Évaluons maintenant <m>f</m> aux points trouvés précédemment :
+            <me>
+              \begin{array}{c|c}
+              (x,y)&amp;f(x,y)=2x^2+3y^2-4x-5\\
+              \hline
+              (1,0)&amp;2\cdot 1+3\cdot 0-4\cdot 1-5=-7\\
+              (-2,\pm 2\sqrt{3})&amp;2\cdot 4+3\cdot 12-4\cdot(-2)-5=47\\
+              (-4,0)&amp; 2\cdot 16+3\cdot 0-4\cdot(-4)-5=43\\
+              (4,0)&amp; 2\cdot 16+3\cdot 0-4\cdot 4-5=11
+              \end{array}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Le maximum cherché vaut donc
+            <me>47</me>
+            et il est atteint aux points <m>(-2,\pm 2\sqrt{3})</m>.
+          </p>
+          <p>
+            Le minimum vaut quant à lui
+            <me>-7</me>
+            et il est atteint au point <m>(1,0)</m>.
+          </p>
+        </li>
+      </ol>
+    </solution>
   </exercise>
 
   <p>
