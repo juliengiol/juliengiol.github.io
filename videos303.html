@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JG</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="jg.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-25018634-7');
+  </script>
+<!--script pour MathJax :-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [['\\(','\\)']]
+      },
+      asciimath2jax: {
+          ignoreClass: ".*",
+          processClass: "has_am"
+      },
+      jax: ["input/AsciiMath"],
+      extensions: ["asciimath2jax.js"],
+      TeX: {
+          extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+          // scrolling to fragment identifiers is controlled by other Javascript
+          positionToHash: false,
+          equationNumbers: { autoNumber: "none", useLabelIds: true, },
+          TagSide: "right",
+          TagIndent: ".8em",
+      },
+      // HTML-CSS output Jax to be dropped for MathJax 3.0
+      "HTML-CSS": {
+          scale: 88,
+          mtextFontInherit: true,
+      },
+      CommonHTML: {
+          scale: 88,
+          mtextFontInherit: true,
+      },
+  });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+<!--scripts pour SageMathCell :-->
+  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  'div.sagecell-interact',
+                           hide: ['editor', 'evalButton', 'permalink'],
+                           autoeval: true});
+    // Make *any* div with class 'compute' a Sage cell with Python
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           languages: ['python'],
+                           evalButtonText: 'Exécuter (Python)'});
+    });
+    </script>
+</head>
+
+<body>
+
+<div id="entete">
+  <h2>Calcul avancé : vidéos pour la session Hiver 2020.</h2>
+</div>
+<hr>
+<div>
+  <h3>Section 5.3 : Les multiplicateurs de Lagrange</h3>
+  <iframe src="https://player.vimeo.com/video/418958807" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<div>
+  <h3>Section 5.1 : Les extremums des fonctions de deux variables</h3>
+  <iframe src="https://player.vimeo.com/video/417361929" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<div>
+  <h3>Section 4.4 : Les dérivées directionnelles et le vecteur gradient</h3>
+  <iframe src="https://player.vimeo.com/video/414885008" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<div>
+  <h3>Section 4.3 : La règle de dérivation en chaîne</h3>
+  <iframe src="https://player.vimeo.com/video/414132442" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<div>
+  <h3>Section 4.2 : Les plans tangents et les approximations linéaires</h3>
+  <iframe src="https://player.vimeo.com/video/414133512" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<div>
+  <h3>Section 4.1 : Les dérivées partielles</h3>
+  <iframe src="https://player.vimeo.com/video/414133702" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-7');
+</script><!--End: Google Global Site Tag code-->
+</body>
+
+</html>
