@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JG</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="jg.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-25018634-7');
+  </script>
+<!--script pour MathJax :-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [['\\(','\\)']]
+      },
+      asciimath2jax: {
+          ignoreClass: ".*",
+          processClass: "has_am"
+      },
+      jax: ["input/AsciiMath"],
+      extensions: ["asciimath2jax.js"],
+      TeX: {
+          extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+          // scrolling to fragment identifiers is controlled by other Javascript
+          positionToHash: false,
+          equationNumbers: { autoNumber: "none", useLabelIds: true, },
+          TagSide: "right",
+          TagIndent: ".8em",
+      },
+      // HTML-CSS output Jax to be dropped for MathJax 3.0
+      "HTML-CSS": {
+          scale: 88,
+          mtextFontInherit: true,
+      },
+      CommonHTML: {
+          scale: 88,
+          mtextFontInherit: true,
+      },
+  });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+<!--scripts pour SageMathCell :-->
+  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  'div.sagecell-interact',
+                           hide: ['editor', 'evalButton', 'permalink'],
+                           autoeval: true});
+    // Make *any* div with class 'compute' a Sage cell with Python
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           languages: ['python'],
+                           evalButtonText: 'Exécuter (Python)'});
+    });
+    </script>
+</head>
+
+<body>
+
+<div id="entete">
+  <h2>Les ateliers NYB du P'tit WebCAM.</h2>
+  <p>Vous pouvez choisir la <em>vitesse de lecture</em> et activer le mode <em>plein écran</em> grâce aux contrôles situés en bas à droite du lecteur.</p>
+</div>
+<hr>
+<div>
+  <h3>Atelier 6 : Intégrales impropres</h3>
+  <iframe src="https://player.vimeo.com/video/416707474" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<div>
+  <h3>Atelier 5 : Règle de L'Hospital</h3>
+  <iframe src="https://player.vimeo.com/video/416676984" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<div>
+  <h3>Atelier 4 : Équations différentielles</h3>
+  <iframe src="https://player.vimeo.com/video/414140354" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<div>
+  <h3>Atelier 3 : Longueur d'arc et aire d'une surface de révolution</h3>
+  <iframe src="https://player.vimeo.com/video/414134440" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<div>
+  <h3>Atelier 2 : Volume d'un solide de révolution</h3>
+  <iframe src="https://player.vimeo.com/video/414134255" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<div>
+  <h3>Atelier 1 : Aire comprise entre deux courbes</h3>
+  <iframe src="https://player.vimeo.com/video/414134097" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<hr>
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-7');
+</script><!--End: Google Global Site Tag code-->
+</body>
+
+</html>
