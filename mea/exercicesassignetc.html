@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-08-17T12:25:33-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>M&amp;A Exercices</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_green.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://juliengiol.github.io/" target="_blank"><img src="images/ossau.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="mea.html"><span class="title">Mathématiques et algorithmique</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="conditionnelles.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="assignetc.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="fonctions.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="conditionnelles.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="assignetc.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="fonctions.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
+<li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Droits d'auteur</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Remerciements</a></li>
+<li><a href="preface-3.html" data-scroll="preface-3">Témoignages</a></li>
+</ul>
+</li>
+<li class="link part"><a href="algodebase.html" data-scroll="algodebase"><span class="codenumber">I</span> <span class="title">Algorithmique de base</span></a></li>
+<li class="link">
+<a href="assignetc.html" data-scroll="assignetc"><span class="codenumber">1</span> <span class="title">Assignations, boucles et conditionnelles</span></a><ul>
+<li><a href="assignations.html" data-scroll="assignations">Assignations</a></li>
+<li><a href="boucles.html" data-scroll="boucles">Boucles</a></li>
+<li><a href="conditionnelles.html" data-scroll="conditionnelles">Conditionnelles</a></li>
+<li><a href="exercicesassignetc.html" data-scroll="exercicesassignetc" class="active">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fonctions.html" data-scroll="fonctions"><span class="codenumber">2</span> <span class="title">Fonctions</span></a><ul>
+<li><a href="syntaxefonctions.html" data-scroll="syntaxefonctions">Syntaxe : def / return</a></li>
+<li><a href="recursivite.html" data-scroll="recursivite">Récursivité</a></li>
+<li><a href="exercicesfonctions.html" data-scroll="exercicesfonctions">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="complexite.html" data-scroll="complexite"><span class="codenumber">3</span> <span class="title">Complexité</span></a><ul>
+<li><a href="sommeentiers.html" data-scroll="sommeentiers">Somme des premiers entiers</a></li>
+<li><a href="exponentiation.html" data-scroll="exponentiation">Exponentiation rapide</a></li>
+<li><a href="horner.html" data-scroll="horner">Méthode de Horner</a></li>
+<li><a href="fibonacci.html" data-scroll="fibonacci">Nombres de Fibonacci</a></li>
+<li><a href="exercicescomplexite.html" data-scroll="exercicescomplexite">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="rechzeros.html" data-scroll="rechzeros"><span class="codenumber">II</span> <span class="title">Recherche de zéros</span></a></li>
+<li class="link">
+<a href="bissection.html" data-scroll="bissection"><span class="codenumber">4</span> <span class="title">Méthode de la bissection</span></a><ul>
+<li><a href="presentationbissection.html" data-scroll="presentationbissection">Présentation</a></li>
+<li><a href="algorithmebissection.html" data-scroll="algorithmebissection">Algorithme</a></li>
+<li><a href="exercicesbissection.html" data-scroll="exercicesbissection">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="newton.html" data-scroll="newton"><span class="codenumber">5</span> <span class="title">Méthode de Newton-Raphson</span></a><ul>
+<li><a href="presentationnewton.html" data-scroll="presentationnewton">Présentation</a></li>
+<li><a href="algorithmenewton.html" data-scroll="algorithmenewton">Algorithme</a></li>
+<li><a href="exercicesnewton.html" data-scroll="exercicesnewton">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="interpolation.html" data-scroll="interpolation"><span class="codenumber">III</span> <span class="title">Interpolation polynomiale</span></a></li>
+<li class="link">
+<a href="lagrange.html" data-scroll="lagrange"><span class="codenumber">6</span> <span class="title">Forme de Lagrange</span></a><ul>
+<li><a href="presentationlagrange.html" data-scroll="presentationlagrange">Présentation</a></li>
+<li><a href="algorithmelagrange.html" data-scroll="algorithmelagrange">Algorithme</a></li>
+<li><a href="exerciceslagrange.html" data-scroll="exerciceslagrange">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="diffdivisees.html" data-scroll="diffdivisees"><span class="codenumber">7</span> <span class="title">Forme de Newton</span></a><ul>
+<li><a href="presentationdiffdiv.html" data-scroll="presentationdiffdiv">Présentation</a></li>
+<li><a href="algorithmediffdiv.html" data-scroll="algorithmediffdiv">Algorithme</a></li>
+<li><a href="exercicesdiffdiv.html" data-scroll="exercicesdiffdiv">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="integration.html" data-scroll="integration"><span class="codenumber">IV</span> <span class="title">Intégration numérique</span></a></li>
+<li class="link">
+<a href="rectangles.html" data-scroll="rectangles"><span class="codenumber">8</span> <span class="title">Méthode des rectangles</span></a><ul>
+<li><a href="presentationrectangles.html" data-scroll="presentationrectangles">Présentation</a></li>
+<li><a href="algorithmerectangles.html" data-scroll="algorithmerectangles">Algorithme</a></li>
+<li><a href="exercicesrectangles.html" data-scroll="exercicesrectangles">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="trapezes.html" data-scroll="trapezes"><span class="codenumber">9</span> <span class="title">Méthode des trapèzes</span></a><ul>
+<li><a href="presentationtrapezes.html" data-scroll="presentationtrapezes">Présentation</a></li>
+<li><a href="algorithmetrapezes.html" data-scroll="algorithmetrapezes">Algorithme</a></li>
+<li><a href="exercicestrapezes.html" data-scroll="exercicestrapezes">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="simpson.html" data-scroll="simpson"><span class="codenumber">10</span> <span class="title">Méthode de Simpson</span></a><ul>
+<li><a href="presentationsimpson.html" data-scroll="presentationsimpson">Présentation</a></li>
+<li><a href="algorithmesimpson.html" data-scroll="algorithmesimpson">Algorithme</a></li>
+<li><a href="exercicessimpson.html" data-scroll="exercicessimpson">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="thdesnombres.html" data-scroll="thdesnombres"><span class="codenumber">V</span> <span class="title">Théorie des nombres</span></a></li>
+<li class="link">
+<a href="euclide.html" data-scroll="euclide"><span class="codenumber">11</span> <span class="title">Algorithme d'Euclide</span></a><ul>
+<li><a href="presentationeuclide.html" data-scroll="presentationeuclide">Présentation</a></li>
+<li><a href="algorithmeeuclide.html" data-scroll="algorithmeeuclide">Algorithme</a></li>
+<li><a href="exerciceseuclide.html" data-scroll="exerciceseuclide">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="bezout.html" data-scroll="bezout"><span class="codenumber">12</span> <span class="title">Algorithme d'Euclide étendu</span></a><ul>
+<li><a href="presentationbezout.html" data-scroll="presentationbezout">Présentation</a></li>
+<li><a href="algorithmebezout.html" data-scroll="algorithmebezout">Algorithme</a></li>
+<li><a href="exercicesbezout.html" data-scroll="exercicesbezout">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chinois.html" data-scroll="chinois"><span class="codenumber">13</span> <span class="title">Théorème des restes chinois</span></a><ul>
+<li><a href="presentationchinois.html" data-scroll="presentationchinois">Présentation</a></li>
+<li><a href="algorithmechinois.html" data-scroll="algorithmechinois">Algorithme</a></li>
+<li><a href="exerciceschinois.html" data-scroll="exerciceschinois">Exercices</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="appendices.html" data-scroll="appendices"><span class="title">Appendices</span></a></li>
+<li class="link">
+<a href="approximation.html" data-scroll="approximation"><span class="codenumber">A</span> <span class="title">Approximations et erreurs</span></a><ul>
+<li><a href="erreur_abs_et_rel.html" data-scroll="erreur_abs_et_rel">Erreur et erreur relative</a></li>
+<li><a href="intervalle_encadrement.html" data-scroll="intervalle_encadrement">Intervalle d'encadrement</a></li>
+<li><a href="decimales.html" data-scroll="decimales">Décimales exactes et arrondissements</a></li>
+<li><a href="exercicesapproximation.html" data-scroll="exercicesapproximation">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="sagemath.html" data-scroll="sagemath"><span class="codenumber">B</span> <span class="title">À propos de SageMath</span></a><ul>
+<li><a href="sage_mathcell.html" data-scroll="sage_mathcell">SageMathCell</a></li>
+<li><a href="sage_cocalc.html" data-scroll="sage_cocalc">CoCalc</a></li>
+<li><a href="exercicessagemath.html" data-scroll="exercicessagemath">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="aide-memoire-python.html" data-scroll="aide-memoire-python"><span class="codenumber">C</span> <span class="title">Aide-mémoire Python</span></a><ul>
+<li><a href="python_varia.html" data-scroll="python_varia">Affichage, commentaires et variables</a></li>
+<li><a href="python_operateurs.html" data-scroll="python_operateurs">Opérateurs et comparaisons</a></li>
+<li><a href="python_boucles_et_cond.html" data-scroll="python_boucles_et_cond">Boucles, conditionnelles et fonctions</a></li>
+<li><a href="python_types.html" data-scroll="python_types">Principaux types</a></li>
+</ul>
+</li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">Bibliographie</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="exercicesassignetc"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Exercices</span>
+</h2>
+<a href="exercicesassignetc.html" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-1"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-1"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-1"><article class="exercise exercise-like"><p id="p-57">Pour chacun des blocs de codes qui suivent, dites ce qu'il affiche.</p>
+<ol class="decimal">
+<li id="li-25"><pre class="code-block tex2jax_ignore">if 5 &gt; 10:
+    print('Gare')
+elif 8 != 9:
+    print('aux')
+else:
+    print('conditionnelles!')
+</pre></li>
+<li id="li-26"><pre class="code-block tex2jax_ignore">if 5 &gt; 10:
+    print('Gare')
+elif 8 == 9:
+    print('aux')
+else:
+    print('conditionnelles!')
+</pre></li>
+<li id="li-27"><pre class="code-block tex2jax_ignore">if 5 &gt; 10:
+    print('Gare')
+elif 8 == 9:
+    print('aux')
+</pre></li>
+<li id="li-28"><pre class="code-block tex2jax_ignore">x = 10
+y = 20
+z = 30
+print('Gare')
+if x == 10:
+    print('aux')
+    if y == 20:
+        print('conditionnelles!')
+    else:
+        print('gorilles!')
+elif y == 20:
+    print('Danger!')
+else:
+    print('Vive les')
+    if z == 30:
+        print('fraises!')
+    else:
+        print('bleuets!')
+print('Bye!')
+</pre></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-1" id="answer-1"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><ol id="p-58" class="decimal">
+<li id="li-29"><pre class="code-block tex2jax_ignore">aux
+</pre></li>
+<li id="li-30"><pre class="code-block tex2jax_ignore">conditionnelles!
+</pre></li>
+<li id="li-31"><pre class="code-block tex2jax_ignore">
+</pre></li>
+<li id="li-32"><pre class="code-block tex2jax_ignore">Gare
+aux
+conditionnelles!
+Bye!
+</pre></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-2"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-2"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-2"><article class="exercise exercise-like"><ol id="p-59" class="decimal">
+<li id="li-33"><p id="p-60">Exécutez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.<pre class="code-block tex2jax_ignore"># pour pouvoir utiliser la fonction racine carrée
+# sqrt du module math
+from math import sqrt
+
+a = 1.0
+b = -6.0
+c = 9.0
+delta = b ** 2 - 4 * a * c
+if delta &gt; 0:
+    x1 = (- b - sqrt(delta)) / (2 * a)
+    x2 = (- b + sqrt(delta)) / (2 * a)
+    print(x1, x2)
+elif delta == 0:
+    x0  = - b / (2 * a)
+    print(x0)
+else:
+    print('pas de racines')
+</pre></p></li>
+<li id="li-34"><p id="p-61">Même question avec <code class="code-inline tex2jax_ignore">c = 2.0</code>.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-2" id="answer-2"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><ol id="p-62" class="decimal">
+<li id="li-35"><pre class="code-block tex2jax_ignore">3.0
+</pre></li>
+<li id="li-36"><pre class="code-block tex2jax_ignore">(0.3542486889354093, 5.645751311064591)
+</pre></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-3"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-3"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-3"><article class="exercise exercise-like"><p id="p-63">Exécutez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.<pre class="code-block tex2jax_ignore">capital = 2500
+taux = 0.1
+n = 3
+for k in range(1, n+1):
+    capital = capital * (1 + taux)
+print(capital)
+</pre></p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-3" id="answer-3"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><pre class="code-block tex2jax_ignore">3327.5
+</pre></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><p id="p-64">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/yxt83ywg" target="_blank">Python Tutor</a>.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-4"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-4"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-4"><article class="exercise exercise-like"><p id="p-65">Exécutez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.<pre class="code-block tex2jax_ignore">a = 0.0
+b = 1.0
+n = 4
+deltaX = (b - a) / n
+xi = a
+while xi &lt; b:
+    print(xi)
+    xi = xi + deltaX
+</pre></p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-4" id="answer-4"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-4"><div class="answer solution-like"><pre class="code-block tex2jax_ignore">0.0
+0.25
+0.5
+0.75
+</pre></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><p id="p-66">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y25m7kwy" target="_blank">Python Tutor</a>.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-5"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-5"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-5"><article class="exercise exercise-like"><p id="p-67">Calculez la somme des entiers de 1 à 99.</p>
+<ol class="decimal">
+<li id="li-37"><p id="p-68">À l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>.</p></li>
+<li id="li-38"><p id="p-69">À l'aide d'une boucle <code class="code-inline tex2jax_ignore">while</code>.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><ol id="p-70" class="decimal">
+<li id="li-39"><pre class="code-block tex2jax_ignore">somme = 1
+for k in range(2, 99+1):
+    somme = somme + k
+print(somme)
+</pre></li>
+<li id="li-40"><pre class="code-block tex2jax_ignore">somme = 1
+k = 2
+while k &lt;= 99:
+    somme = somme + k
+    k = k + 1
+print(somme)
+</pre></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-6"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-6"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-6"><article class="exercise exercise-like"><p id="p-71">Affichez tous les nombres impairs compris entre 17 et 55 inclus.</p>
+<ol class="decimal">
+<li id="li-41"><p id="p-72">À l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>.</p></li>
+<li id="li-42"><p id="p-73">À l'aide d'une boucle <code class="code-inline tex2jax_ignore">while</code>.</p></li>
+</ol>
+<p id="p-74">Avez-vous une préférence?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
+<ol id="p-75" class="decimal">
+<li id="li-43"><pre class="code-block tex2jax_ignore">for k in range(8, 27+1):
+    print(2 * k + 1)
+</pre></li>
+<li id="li-44"><pre class="code-block tex2jax_ignore">k = 17
+while k &lt; 56:
+    print(k)
+    k = k + 2
+</pre></li>
+</ol>
+<p id="p-76">Je préfère la boucle <code class="code-inline tex2jax_ignore">while</code>, car elle évite d'avoir à déterminer les bornes <code class="code-inline tex2jax_ignore">8</code> et <code class="code-inline tex2jax_ignore">27</code>.</p>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-7"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-7"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-7"><article class="exercise exercise-like"><p id="p-77">Complétez le code suivant pour qu'il affiche tous les multiples de 4 compris entre 57 et 89.<pre class="code-block tex2jax_ignore">k = 60
+while
+    print(k)
+    k =
+</pre></p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">k = 60
+while k &lt; 89:
+    print(k)
+    k = k + 4
+</pre></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-8"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-8"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-8"><article class="exercise exercise-like"><p id="p-78">L'assignation simultanée est très pratique pour échanger le contenu de deux variables \(\text{a}\) et \(\text{b}\) : la ligne de code <code class="code-inline tex2jax_ignore">a, b = b, a</code> suffit.</p>
+<p id="p-79">Et si le langage utilisé ne permet pas les assignations simultanées?</p>
+<p id="p-80">Complétez le code suivant avec des \(\text{a}\) et des \(\text{b}\) seulement, afin qu'il échange le contenu de \(\text{a}\) et de \(\text{b}\text{.}\)<pre class="code-block tex2jax_ignore"># avant l'échange
+a = 'arbres'
+b = 'cinq'
+print(a + ' ' + b)
+
+# échange
+variableTemporaire =
+a =
+  = variableTemporaire
+
+# après l'échange
+print(a + ' ' + b)
+</pre></p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like">
+<pre class="code-block tex2jax_ignore"># avant l'échange
+a = 'arbres'
+b = 'cinq'
+print(a + ' ' + b)
+
+# échange
+variableTemporaire = a
+a = b
+b = variableTemporaire
+
+# après l'échange
+print(a + ' ' + b)
+</pre>
+<p id="p-81">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/yxh7vbmy" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-9"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-9"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-9"><article class="exercise exercise-like"><p id="p-82">On s'intéresse à la suite \(\{s_n\}\) définie par récurrence de la façon suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+s_0=14\quad\text{et}\quad s_{n+1}
+=
+\begin{cases}
+s_n/2&amp;\text{si}\;s_n\;\text{est pair,}\\
+3s_n+1&amp;\text{sinon,}
+\end{cases}
+\quad\text{pour tout}\;n\geq 0.
+\end{equation*}
+</div>
+<p id="p-83">Affichez les \(21\) premiers termes de cette suite à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">
+<pre class="code-block tex2jax_ignore">s = 14
+for n in range(1, 21+1):
+    print(s)
+    if s % 2 == 0:
+        s = s / 2
+    else:
+        s = 3 * s + 1
+</pre>
+<p id="p-84">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/yybkqoep" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="fibo_iterative"><a data-knowl="" class="id-ref original" data-refid="hk-fibo_iterative"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-fibo_iterative"><article class="exercise exercise-like"><p id="p-85">La suite de Fibonacci est définie par récurrence de la façon suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+F_1=F_2=1\quad\text{et}\quad F_n=F_{n-1}+F_{n-2}\quad\text{pour tout}\;n\geq 3.
+\end{equation*}
+</div>
+<p id="p-86">Calculez \(F_{100}\) à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-5" id="answer-5"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-5"><div class="answer solution-like"><pre class="code-block tex2jax_ignore">354224848179261915075
+</pre></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">
+<pre class="code-block tex2jax_ignore">a = 1
+b = 1
+for n in range(3, 100+1):
+    a, b = b, a + b
+print(b)
+</pre>
+<p id="p-87">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y6rszlxl" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-11"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-11"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.11</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-11"><article class="exercise exercise-like"><p id="p-88">On considère la suite \(\{x_n\}\) définie par récurrence de la façon suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+x_3=7\quad\text{et}\quad x_{n+1}=x_n\cdot\frac{n}{5n+2}\quad\text{pour tout}\;n\geq 3.
+\end{equation*}
+</div>
+<p id="p-89">On admet qu'elle converge vers \(0\) en décroissant strictement.</p>
+<ol id="p-90" class="decimal">
+<li id="li-45"><p id="p-91">Complétez le code suivant afin qu'il affiche les cinq premières valeurs de la suite.<pre class="code-block tex2jax_ignore">n = 3
+x = 7.0
+while n &lt;
+    print(x)
+    x =
+    n = n + 1
+</pre></p></li>
+<li id="li-46"><p id="p-92">Complétez le code suivant afin qu'il affiche la plus petite valeur de \(n\) pour laquelle on ait \(x_n\leq 10^{-9}\text{.}\)<pre class="code-block tex2jax_ignore">n =
+x = 7.0
+while
+    x = x * n / (5 * n + 2)
+    n =
+print(n)
+</pre></p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-6" id="answer-6"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-6"><div class="answer solution-like"><ol id="p-93" class="decimal">
+<li id="li-47"><pre class="code-block tex2jax_ignore">7.0
+1.23529411765
+0.224598930481
+0.0415923945336
+0.00779857397504
+</pre></li>
+<li id="li-48"><pre class="code-block tex2jax_ignore">17
+</pre></li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><ol id="p-94" class="decimal">
+<li id="li-49"><pre class="code-block tex2jax_ignore">n = 3
+x = 7.0
+while n &lt; 8:
+    print(x)
+    x = x * n / (5 * n + 2)
+    n = n + 1
+</pre></li>
+<li id="li-50"><pre class="code-block tex2jax_ignore">n = 3
+x = 7.0
+while x &gt; 10 ** (-9):
+    x = x * n / (5 * n + 2)
+    n = n + 1
+print(n)
+</pre></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-12"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-12"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.4.12</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-12"><article class="exercise exercise-like"><p id="p-95">On considère la suite \(\{a_n\}\) définie par récurrence de la façon suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+a_0=1\quad\text{et}\quad a_{n+1}=\sin(a_n)\quad\text{pour tout}\;n\geq 0.
+\end{equation*}
+</div>
+<p id="p-96">On admet qu'elle converge vers \(0\) en décroissant.</p>
+<p id="p-97">Complétez le code suivant afin qu'il affiche la plus petite valeur de \(n\) pour laquelle on ait \(a_n\leq 0{,}01\text{.}\)<pre class="code-block tex2jax_ignore"># pour pouvoir utiliser la fonction sin
+# du module math
+from math import sin
+
+n = 0
+a =
+while
+    n =
+    a = sin(a)
+print(n)
+</pre></p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-7" id="answer-7"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-7"><div class="answer solution-like"><pre class="code-block tex2jax_ignore">29992
+</pre></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># pour pouvoir utiliser la fonction sin
+# du module math
+from math import sin
+
+n = 0
+a = 1.0
+while a &gt; 0.01:
+    n = n + 1
+    a = sin(a)
+print(n)
+</pre></div></div>
+</div></article></div></section></div></main>
+</div>
+<!--Start: StatCounter code--><script>
+var sc_project=12152300;
+var sc_invisible=1;
+var sc_security="5132c4de";
+var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "https://www.");
+document.write("<sc"+"ript src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
+</script><noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12152300/0/5132c4de/1/" alt="web analytics"></a></div></noscript>
+<!--End: StatCounter code-->
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-8"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-8');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-08-17T12:29:07-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">10.1.4</span><span class="period">.</span>
+</h6>
+<p>Déterminons l'approximation obtenue pour l'intégrale définie</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^1e^{-x^2}\mathrm{d}x
+\end{equation*}
+</div>
+<p data-braille="continuation">si on applique la méthode de Simpson en subdivisant \([0;1]\) en quatre sous-intervalles de même longueur.</p>
+<ul class="disc">
+<li><p>Notons \(f(x)=e^{-x^2}\text{.}\)</p></li>
+<li><p>On a \(n=4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{4}=0{,}25\text{.}\)</p></li>
+<li>
+<p>Alors \(x_k=a+k\cdot\Delta x=k\cdot 0{,}25\) pour \(k=0,\ldots,4\) donne la subdivision régulière</p>
+<div class="displaymath">
+\begin{equation*}
+0&lt;0{,}25&lt;0{,}5&lt;0{,}75&lt;1
+\end{equation*}
+</div>
+<p data-braille="continuation">de l'intervalle d'intégration \([0;1]\text{.}\)</p>
+</li>
+<li>
+<p>La méthode de Simpson donne alors</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)\\
+&amp;=\frac{0{,}25}{6}\cdot(A_1+A_2+A_3+A_4)
+\end{align*}
+</div>
+<p data-braille="continuation">où</p>
+<ul class="circle">
+<li><p>\(A_1=f(0)+4f(0{,}125)+f(0{,}25)\)</p></li>
+<li><p>\(A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)\)</p></li>
+<li><p>\(A_3=f(0{,}5)+4f(0{,}625)+f(0{,}75)\)</p></li>
+<li><p>\(A_4=f(0{,}75)+4f(0{,}875)+f(1)\)</p></li>
+</ul>
+</li>
+<li>
+<p>Après des calculs fastidieux à la calculatrice ou <a class="external" href="https://juliengiol.github.io/algorithmique/algorithmesimpson.html" target="_blank">avec l'aide de notre application</a>, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Approximation}=0{,}746\,826\,120\,527\,46\ldots
+\end{equation*}
+</div>
+</li>
+</ul></article><span class="incontext"><a href="presentationsimpson.html#exemple_approx_simpson">Contexte</a></span>
+</body>
+</html>

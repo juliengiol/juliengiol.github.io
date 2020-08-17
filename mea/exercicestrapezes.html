@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-08-17T12:26:10-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="fr-FR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>M&amp;A Exercices</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_green.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://juliengiol.github.io/" target="_blank"><img src="images/ossau.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="mea.html"><span class="title">Mathématiques et algorithmique</span></a></h1>
+<p class="byline">Julien Giol</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="algorithmetrapezes.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="trapezes.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="simpson.html" title="Suivant">Suivant</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="algorithmetrapezes.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="trapezes.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="simpson.html" title="Suivant">Suivant</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
+<li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Droits d'auteur</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Remerciements</a></li>
+<li><a href="preface-3.html" data-scroll="preface-3">Témoignages</a></li>
+</ul>
+</li>
+<li class="link part"><a href="algodebase.html" data-scroll="algodebase"><span class="codenumber">I</span> <span class="title">Algorithmique de base</span></a></li>
+<li class="link">
+<a href="assignetc.html" data-scroll="assignetc"><span class="codenumber">1</span> <span class="title">Assignations, boucles et conditionnelles</span></a><ul>
+<li><a href="assignations.html" data-scroll="assignations">Assignations</a></li>
+<li><a href="boucles.html" data-scroll="boucles">Boucles</a></li>
+<li><a href="conditionnelles.html" data-scroll="conditionnelles">Conditionnelles</a></li>
+<li><a href="exercicesassignetc.html" data-scroll="exercicesassignetc">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fonctions.html" data-scroll="fonctions"><span class="codenumber">2</span> <span class="title">Fonctions</span></a><ul>
+<li><a href="syntaxefonctions.html" data-scroll="syntaxefonctions">Syntaxe : def / return</a></li>
+<li><a href="recursivite.html" data-scroll="recursivite">Récursivité</a></li>
+<li><a href="exercicesfonctions.html" data-scroll="exercicesfonctions">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="complexite.html" data-scroll="complexite"><span class="codenumber">3</span> <span class="title">Complexité</span></a><ul>
+<li><a href="sommeentiers.html" data-scroll="sommeentiers">Somme des premiers entiers</a></li>
+<li><a href="exponentiation.html" data-scroll="exponentiation">Exponentiation rapide</a></li>
+<li><a href="horner.html" data-scroll="horner">Méthode de Horner</a></li>
+<li><a href="fibonacci.html" data-scroll="fibonacci">Nombres de Fibonacci</a></li>
+<li><a href="exercicescomplexite.html" data-scroll="exercicescomplexite">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="rechzeros.html" data-scroll="rechzeros"><span class="codenumber">II</span> <span class="title">Recherche de zéros</span></a></li>
+<li class="link">
+<a href="bissection.html" data-scroll="bissection"><span class="codenumber">4</span> <span class="title">Méthode de la bissection</span></a><ul>
+<li><a href="presentationbissection.html" data-scroll="presentationbissection">Présentation</a></li>
+<li><a href="algorithmebissection.html" data-scroll="algorithmebissection">Algorithme</a></li>
+<li><a href="exercicesbissection.html" data-scroll="exercicesbissection">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="newton.html" data-scroll="newton"><span class="codenumber">5</span> <span class="title">Méthode de Newton-Raphson</span></a><ul>
+<li><a href="presentationnewton.html" data-scroll="presentationnewton">Présentation</a></li>
+<li><a href="algorithmenewton.html" data-scroll="algorithmenewton">Algorithme</a></li>
+<li><a href="exercicesnewton.html" data-scroll="exercicesnewton">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="interpolation.html" data-scroll="interpolation"><span class="codenumber">III</span> <span class="title">Interpolation polynomiale</span></a></li>
+<li class="link">
+<a href="lagrange.html" data-scroll="lagrange"><span class="codenumber">6</span> <span class="title">Forme de Lagrange</span></a><ul>
+<li><a href="presentationlagrange.html" data-scroll="presentationlagrange">Présentation</a></li>
+<li><a href="algorithmelagrange.html" data-scroll="algorithmelagrange">Algorithme</a></li>
+<li><a href="exerciceslagrange.html" data-scroll="exerciceslagrange">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="diffdivisees.html" data-scroll="diffdivisees"><span class="codenumber">7</span> <span class="title">Forme de Newton</span></a><ul>
+<li><a href="presentationdiffdiv.html" data-scroll="presentationdiffdiv">Présentation</a></li>
+<li><a href="algorithmediffdiv.html" data-scroll="algorithmediffdiv">Algorithme</a></li>
+<li><a href="exercicesdiffdiv.html" data-scroll="exercicesdiffdiv">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="integration.html" data-scroll="integration"><span class="codenumber">IV</span> <span class="title">Intégration numérique</span></a></li>
+<li class="link">
+<a href="rectangles.html" data-scroll="rectangles"><span class="codenumber">8</span> <span class="title">Méthode des rectangles</span></a><ul>
+<li><a href="presentationrectangles.html" data-scroll="presentationrectangles">Présentation</a></li>
+<li><a href="algorithmerectangles.html" data-scroll="algorithmerectangles">Algorithme</a></li>
+<li><a href="exercicesrectangles.html" data-scroll="exercicesrectangles">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="trapezes.html" data-scroll="trapezes"><span class="codenumber">9</span> <span class="title">Méthode des trapèzes</span></a><ul>
+<li><a href="presentationtrapezes.html" data-scroll="presentationtrapezes">Présentation</a></li>
+<li><a href="algorithmetrapezes.html" data-scroll="algorithmetrapezes">Algorithme</a></li>
+<li><a href="exercicestrapezes.html" data-scroll="exercicestrapezes" class="active">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="simpson.html" data-scroll="simpson"><span class="codenumber">10</span> <span class="title">Méthode de Simpson</span></a><ul>
+<li><a href="presentationsimpson.html" data-scroll="presentationsimpson">Présentation</a></li>
+<li><a href="algorithmesimpson.html" data-scroll="algorithmesimpson">Algorithme</a></li>
+<li><a href="exercicessimpson.html" data-scroll="exercicessimpson">Exercices</a></li>
+</ul>
+</li>
+<li class="link part"><a href="thdesnombres.html" data-scroll="thdesnombres"><span class="codenumber">V</span> <span class="title">Théorie des nombres</span></a></li>
+<li class="link">
+<a href="euclide.html" data-scroll="euclide"><span class="codenumber">11</span> <span class="title">Algorithme d'Euclide</span></a><ul>
+<li><a href="presentationeuclide.html" data-scroll="presentationeuclide">Présentation</a></li>
+<li><a href="algorithmeeuclide.html" data-scroll="algorithmeeuclide">Algorithme</a></li>
+<li><a href="exerciceseuclide.html" data-scroll="exerciceseuclide">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="bezout.html" data-scroll="bezout"><span class="codenumber">12</span> <span class="title">Algorithme d'Euclide étendu</span></a><ul>
+<li><a href="presentationbezout.html" data-scroll="presentationbezout">Présentation</a></li>
+<li><a href="algorithmebezout.html" data-scroll="algorithmebezout">Algorithme</a></li>
+<li><a href="exercicesbezout.html" data-scroll="exercicesbezout">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chinois.html" data-scroll="chinois"><span class="codenumber">13</span> <span class="title">Théorème des restes chinois</span></a><ul>
+<li><a href="presentationchinois.html" data-scroll="presentationchinois">Présentation</a></li>
+<li><a href="algorithmechinois.html" data-scroll="algorithmechinois">Algorithme</a></li>
+<li><a href="exerciceschinois.html" data-scroll="exerciceschinois">Exercices</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="appendices.html" data-scroll="appendices"><span class="title">Appendices</span></a></li>
+<li class="link">
+<a href="approximation.html" data-scroll="approximation"><span class="codenumber">A</span> <span class="title">Approximations et erreurs</span></a><ul>
+<li><a href="erreur_abs_et_rel.html" data-scroll="erreur_abs_et_rel">Erreur et erreur relative</a></li>
+<li><a href="intervalle_encadrement.html" data-scroll="intervalle_encadrement">Intervalle d'encadrement</a></li>
+<li><a href="decimales.html" data-scroll="decimales">Décimales exactes et arrondissements</a></li>
+<li><a href="exercicesapproximation.html" data-scroll="exercicesapproximation">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="sagemath.html" data-scroll="sagemath"><span class="codenumber">B</span> <span class="title">À propos de SageMath</span></a><ul>
+<li><a href="sage_mathcell.html" data-scroll="sage_mathcell">SageMathCell</a></li>
+<li><a href="sage_cocalc.html" data-scroll="sage_cocalc">CoCalc</a></li>
+<li><a href="exercicessagemath.html" data-scroll="exercicessagemath">Exercices</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="aide-memoire-python.html" data-scroll="aide-memoire-python"><span class="codenumber">C</span> <span class="title">Aide-mémoire Python</span></a><ul>
+<li><a href="python_varia.html" data-scroll="python_varia">Affichage, commentaires et variables</a></li>
+<li><a href="python_operateurs.html" data-scroll="python_operateurs">Opérateurs et comparaisons</a></li>
+<li><a href="python_boucles_et_cond.html" data-scroll="python_boucles_et_cond">Boucles, conditionnelles et fonctions</a></li>
+<li><a href="python_types.html" data-scroll="python_types">Principaux types</a></li>
+</ul>
+</li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">Bibliographie</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="exercicestrapezes"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">9.3</span> <span class="title">Exercices</span>
+</h2>
+<a href="exercicestrapezes.html" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-88"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-88"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">9.3.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-88"><article class="exercise exercise-like"><p id="p-1273">Soit \(f(x)=\frac{10}{x}\text{.}\)</p>
+<p id="p-1274">Vous allez appliquer la méthode des trapèzes à l'intégrale</p>
+<div class="displaymath">
+\begin{equation*}
+\int_2^4f(x)\mathrm{d}x
+\end{equation*}
+</div>
+<p data-braille="continuation">avec quatre trapèzes.</p>
+<ol class="decimal">
+<li id="li-665"><p id="p-1275">Donnez la subdivision régulière de l'intervalle \([2;4]\) en quatre sous-intervalles de même longueur.</p></li>
+<li id="li-666"><p id="p-1276">Représentez graphiquement \(f(x)\) sur \([2;4]\) en faisant apparaître les quatre trapèzes à considérer.</p></li>
+<li id="li-667"><p id="p-1277">Calculez l'aire de chacun des quatre trapèzes et arrondissez à trois décimales au besoin.</p></li>
+<li id="li-668"><p id="p-1278">Quelle est l'approximation fournie par la méthode des trapèzes?</p></li>
+<li id="li-669"><p id="p-1279">Comparez avec la valeur exacte de l'intégrale : quelle est l'erreur commise? Arrondissez à trois décimales.</p></li>
+<li id="li-670"><p id="p-1280">Pourquoi cette erreur est-elle négative?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-22" id="answer-22"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-22"><div class="answer solution-like"><ol class="decimal">
+<li id="li-671"><p id="p-1281">\(2&lt;2{,}5&lt;3&lt;3{,}5&lt;4\)</p></li>
+<li id="li-672"><p id="p-1282">À vous de jouer.</p></li>
+<li id="li-673"><div class="displaymath" id="p-1283">
+\begin{equation*}
+\begin{array}{ccc}
+\text{Aire du trapèze 1}&amp;=&amp;2{,}25\\
+\text{Aire du trapèze 2}&amp;\approx&amp;1{,}833\\
+\text{Aire du trapèze 3}&amp;\approx&amp;1{,}548\\
+\text{Aire du trapèze 4}&amp;\approx&amp;1{,}339
+\end{array}
+\end{equation*}
+</div></li>
+<li id="li-674"><div class="displaymath" id="p-1284">
+\begin{equation*}
+\text{Approximation}\approx 2{,}25+1{,}833+1{,}548+1{,}339=6{,}97
+\end{equation*}
+</div></li>
+<li id="li-675"><div class="displaymath" id="p-1285">
+\begin{align*}
+\text{Erreur}&amp;=\int_2^4f(x)\mathrm{d}x-\text{Approximation}\\
+&amp;\approx 10\ln(2)-6{,}97\\
+&amp;\approx -0{,}039
+\end{align*}
+</div></li>
+<li id="li-676">
+<p id="p-1286">Comme la fonction \(f(x)=\frac{10}{x}\) a une dérivée seconde \(f''(x)=\frac{20}{x^3}\) positive sur \([2;4]\text{,}\) elle est convexe (concave vers le haut) sur cet intervalle.</p>
+<p id="p-1287">C'est pour cela que sur chaque sous-intervalle \([x_{k-1};x_k]\text{,}\) la valeur de l'intégrale de \(f\) est inférieure à l'aire du trapèze correspondant.</p>
+<p id="p-1288">On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+\int_2^4f(x)\mathrm{d}x&lt;\text{Approximation}\quad\Rightarrow\quad\underbrace{\int_2^4f(x)\mathrm{d}x-\text{Approximation}}_{\text{Erreur}}&lt;0.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercices_approx_trapezes"><a data-knowl="" class="id-ref original" data-refid="hk-exercices_approx_trapezes"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">9.3.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercices_approx_trapezes"><article class="exercise exercise-like"><p id="p-1289">Appliquez la méthode des trapèzes pour calculer une approximation de l'intégrale donnée avec le nombre de trapèzes indiqué. Au besoin, arrondissez à trois décimales.</p>
+<ol class="decimal">
+<li id="li-677"><p id="p-1290">\(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec six trapèzes.</p></li>
+<li id="li-678"><p id="p-1291">\(\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x\) avec quatre trapèzes.</p></li>
+<li id="li-679"><p id="p-1292">\(\displaystyle\int_{-1}^2\ln(\ln(x^2+1)+1)\mathrm{d}x\) avec trois trapèzes.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-23" id="answer-23"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-23"><div class="answer solution-like"><ol id="p-1293" class="decimal">
+<li id="li-680"><p id="p-1294">\(\text{Approximation}\approx 1{,}475\)</p></li>
+<li id="li-681"><p id="p-1295">\(\text{Approximation}\approx -0{,}277\)</p></li>
+<li id="li-682"><p id="p-1296">\(\text{Approximation}\approx 1{,}269\)</p></li>
+</ol></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-85" id="solution-85"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-85"><div class="solution solution-like"><ol id="p-1297" class="decimal">
+<li id="li-683">
+<p id="p-1298">Notons \(f(x)=e^{x^2}\text{,}\) \(n=6\) et</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x=\frac{b-a}{n}=\frac{1-0}{6}=\frac{1}{6}.
+\end{equation*}
+</div>
+<p id="p-1299">Voici la subdivision régulière de l'intervalle \([0;1]\) en six sous-intervalles de même longueur :</p>
+<div class="displaymath">
+\begin{equation*}
+0&lt;\frac{1}{6}&lt;\frac{1}{3}&lt;\frac{1}{2}&lt;\frac{2}{3}&lt;\frac{5}{6}&lt;1.
+\end{equation*}
+</div>
+<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f\left(\frac{1}{6}\right)+2f\left(\frac{1}{3}\right)+2f\left(\frac{1}{2}\right)\right.\\
+&amp;\qquad\qquad\left.+2f\left(\frac{2}{3}\right)+2f\left(\frac{5}{6}\right)+f(1)\right)\\
+=\;&amp;\frac{1}{12}\cdot\left(e^{0^2}+2e^{\left(\frac{1}{6}\right)^2}+2e^{\left(\frac{1}{3}\right)^2}+2e^{\left(\frac{1}{2}\right)^2}+2e^{\left(\frac{2}{3}\right)^2}+2e^{\left(\frac{5}{6}\right)^2}+e^{1^2}\right)\\
+\approx\;&amp;1{,}475.
+\end{align*}
+</div>
+</li>
+<li id="li-684">
+<p id="p-1300">Notons \(g(x)=\cos\left(\frac{x^3}{5}\right)\text{,}\) \(n=4\) et</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x=\frac{b-a}{n}=\frac{4-2}{4}=0{,}5.
+\end{equation*}
+</div>
+<p id="p-1301">Voici la subdivision régulière de l'intervalle \([2;4]\) en quatre sous-intervalles de même longueur :</p>
+<div class="displaymath">
+\begin{equation*}
+2&lt;2{,}5&lt;3&lt;3{,}5&lt;4.
+\end{equation*}
+</div>
+<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(g(2)+2g(2{,}5)+2g(3)+2g(3{,}5)+g(4)\right)\\
+=\;&amp;0{,}25\cdot\left(\cos\left(\frac{2^3}{5}\right)+2\cos\left(\frac{2{,}5^3}{5}\right)+2\cos\left(\frac{3^3}{5}\right)\right.\\
+&amp;\qquad\qquad\left.+2\cos\left(\frac{3{,}5^3}{5}\right)+\cos\left(\frac{4^3}{5}\right)\right)\\
+\approx\;&amp;-0{,}277.
+\end{align*}
+</div>
+</li>
+<li id="li-685">
+<p id="p-1302">Notons \(h(x)=\ln(\ln(x^2+1)+1)\text{,}\) \(n=3\) et</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x=\frac{b-a}{n}=\frac{2+1}{3}=1.
+\end{equation*}
+</div>
+<p id="p-1303">Voici la subdivision régulière de l'intervalle \([-1;2]\) en trois sous-intervalles de même longueur :</p>
+<div class="displaymath">
+\begin{equation*}
+-1&lt;0&lt;1&lt;2.
+\end{equation*}
+</div>
+<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(h(-1)+2h(0)+2h(1)+h(2)\right)\\
+=\;&amp;0{,}5\cdot\left(\ln(\ln(2)+1)+2\cdot 0+2\ln(\ln(2)+1)+\ln(\ln(5)+1)\right)\\
+\approx\;&amp;1{,}269.
+\end{align*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-90"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-90"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">9.3.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-90"><article class="exercise exercise-like"><p id="p-1304">Quand c'est possible, estimez l'erreur commise pour chaque intégrale de l'exercice précédent <a class="xref" data-knowl="./knowl/exercices_approx_trapezes.html" title="Exercice 9.3.2">9.3.2</a>.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-86" id="solution-86"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-86"><div class="solution solution-like"><ol id="p-1305" class="decimal">
+<li id="li-686">
+<p id="p-1306">Pour \(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec six trapèzes, posons \(f(x)=e^{x^2}\text{.}\) Alors</p>
+<div class="displaymath">
+\begin{equation*}
+f'(x)=e^{x^2}\cdot 2x\quad\text{et}\quad f''(x)=e^{x^2}\cdot(4x^2+2).
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 4x^2+2\) sont croissantes sur \([0;1]\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|\\
+&amp;=e^{x^2}(4x^2+2)\\
+&amp;\leq e^{1^2}(4\cdot 1^2+2)\\
+&amp;=6e
+\end{align*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\) Donc on peut prendre \(M=6e\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
+&amp;=\frac{e}{72}\\
+&amp;=0{,}037\,7\ldots\\
+&amp;\leq 0{,}038.
+\end{align*}
+</div>
+</li>
+<li id="li-687">
+<p id="p-1307">Pour \(\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x\) avec quatre trapèzes, posons \(g(x)=\cos\left(\frac{x^3}{5}\right)\text{.}\) Alors</p>
+<div class="displaymath">
+\begin{equation*}
+g'(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{3x^2}{5}
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+g''(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ccl}
+|g''(x)|&amp;=&amp;\left|-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
+&amp;\leq&amp;\left|\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}\right|+\left|\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
+&amp;=&amp;\left|\sin\left(\frac{x^3}{5}\right)\right|\cdot\frac{6|x|}{5}+\left|\cos\left(\frac{x^3}{5}\right)\right|\cdot\frac{9x^4}{25}\\
+&amp;\leq&amp;1\cdot\frac{6|x|}{5}+1\cdot\frac{9x^4}{25}\\
+&amp;\leq&amp;1\cdot\frac{6\cdot 4}{5}+1\cdot\frac{9\cdot 4^4}{25}\\
+&amp;=&amp;\frac{2424}{25}\\
+&amp;=&amp;96{,}96
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[2;4]\text{.}\) Donc on peut prendre \(M=96{,}96\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{96{,}96\cdot(4-2)^3}{12\cdot 4^2}\\
+&amp;=4{,}04.
+\end{align*}
+</div>
+</li>
+<li id="li-688"><p id="p-1308">Trop difficile au niveau cégep selon moi.</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-91"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-91"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">9.3.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-91"><article class="exercise exercise-like"><p id="p-1309">Combien faudrait-il de trapèzes au minimum pour que la valeur absolue de l'erreur ne dépasse par \(10^{-5}\) lorsqu'on applique la méthode des trapèzes à l'intégrale définie</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^1e^{-x^2}\mathrm{d}x\;?
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-24" id="answer-24"><span class="type">Réponse</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-24"><div class="answer solution-like">
+<p id="p-1310">\(130\)</p>
+<p id="p-1311">Remarque : On a vu a l'exemple <a class="xref" data-knowl="./knowl/exemple_nombre_minimum_rectangles.html" title="Exemple 8.1.14">8.1.14</a> qu'il fallait au minimum \(10^5=100\,000\) rectangles pour obtenir une telle précision avec la méthode des rectangles.</p>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-87" id="solution-87"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-87"><div class="solution solution-like">
+<p id="p-1312">On a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_trapezes.html" title="Exemple 9.1.4">9.1.4</a> qu'on pouvait appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=2\text{.}\)</p>
+<p id="p-1313">Donc</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccc}
+&amp;|\text{Erreur}|&amp;\leq&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{M(b-a)^3}{12n^2}&amp;\leq&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{2\cdot (1-0)^3}{12n^2}&amp;\leq&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{1}{6n^2}&amp;\leq&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{10^5}{6}&amp;\leq&amp;n^2\\
+\Leftrightarrow&amp;\sqrt{\frac{10^5}{6}}&amp;\leq&amp;n\\
+\Leftrightarrow&amp;129{,}09\ldots&amp;\leq&amp;n
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1314">Il faut donc prendre \(130\) trapèzes au moins.</p>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-92"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-92"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">9.3.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-92"><article class="exercise exercise-like"><p id="p-1315">On s'intéresse à l'intégrale définie suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^1\sin(x^2)\mathrm{d}x.
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-689"><p id="p-1316">Appliquez la méthode des trapèzes avec cinq trapèzes. Utilisez trois décimales. Quel encadrement obtenez-vous pour la valeur exacte de l'intégrale? Quel est le meilleur arrondissement que vous pouvez en déduire?</p></li>
+<li id="li-690"><p id="p-1317">Appliquez la méthode des trapèzes avec dix mille trapèzes. Utilisez neuf décimales. Quel encadrement obtenez-vous pour la valeur exacte de l'intégrale? Quel est le meilleur arrondissement que vous pouvez en déduire?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-88" id="solution-88"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-88"><div class="solution solution-like">
+<p id="p-1318">Notons \(f(x)=\sin(x^2)\text{.}\) Alors</p>
+<div class="displaymath">
+\begin{equation*}
+f'(x)=\cos(x^2)\cdot 2x\quad\text{et}\quad f''(x)=-\sin(x^2)\cdot 4x^2+\cos(x^2)\cdot 2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Donc, pour tout \(x\in[0;1]\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ccl}
+|f''(x)|&amp;=&amp;\left|-\sin(x^2)\cdot 4x^2+\cos(x^2)\cdot 2\right|\\
+&amp;\leq&amp;\left|\sin(x^2)\cdot 4x^2\right|+\left|\cos(x^2)\cdot 2\right|\\
+&amp;=&amp;\left|\sin(x^2)\right|\cdot 4x^2+\left|\cos(x^2)\right|\cdot 2\\
+&amp;\leq&amp;1\cdot 4x^2+1\cdot 2\\
+&amp;\leq&amp;1\cdot 4\cdot 1^2+1\cdot 2\\
+&amp;=&amp;6.
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">On pourra donc prendre \(M=6\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> quand on estimera l'erreur commise.</p>
+<ol class="decimal">
+<li id="li-691"><ul id="p-1319" class="disc">
+<li id="li-692"><p id="p-1320">Ici \(n=5\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2\text{.}\)</p></li>
+<li id="li-693">
+<p id="p-1321">Subdivision régulière de \([0;1]\) en cinq sous-intervalles de même longueur :</p>
+<div class="displaymath">
+\begin{equation*}
+0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
+\end{equation*}
+</div>
+</li>
+<li id="li-694">
+<p id="p-1322">L'approximation fournie par la méthode des trapèzes est alors</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}2)+2f(0{,}4)+2f(0{,}6)+2f(0{,}8)+f(1)\right)\\
+=\;&amp;\text{ à vous de jouer avec votre calculatrice}\\
+=\;&amp;0{,}313\,902\ldots
+\end{align*}
+</div>
+<p data-braille="continuation">En gardant trois décimales, on a donc l'encadrement suivant :</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}313\leq\text{Approximation}\leq 0{,}314.
+\end{equation*}
+</div>
+</li>
+<li id="li-695">
+<p id="p-1323">D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=6\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6\cdot(1-0)^3}{12\cdot 5^2}\\
+&amp;=0{,}02
+\end{align*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+-0{,}020\leq\text{Erreur}\leq 0{,}020.
+\end{equation*}
+</div>
+</li>
+<li id="li-696">
+<p id="p-1324">On obtient donc l'encadrement</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}313-0{,}020\leq\text{Approximation}+\text{Erreur}\leq 0{,}314+0{,}020
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}293\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}334.
+\end{equation*}
+</div>
+</li>
+<li id="li-697">
+<p id="p-1325">Le meilleur arrondissement qu'on peut en déduire est donc</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^1\sin(x^2)\mathrm{d}x\approx 0{,}3.
+\end{equation*}
+</div>
+</li>
+</ul></li>
+<li id="li-698"><ul id="p-1326" class="disc">
+<li id="li-699"><p id="p-1327">Ici \(n=10\,000=10^4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{10^4}=0{,}000\,1\text{.}\)</p></li>
+<li id="li-700">
+<p id="p-1328">Subdivision régulière de \([0;1]\) en dix mille sous-intervalles de même longueur :</p>
+<div class="displaymath">
+\begin{equation*}
+0&lt;0{,}000\,1&lt;0{,}000\,2&lt;\ldots&lt;0,999\,9&lt;1.
+\end{equation*}
+</div>
+</li>
+<li id="li-701">
+<p id="p-1329">L'approximation fournie par la méthode des trapèzes est alors</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}000\,1)+\cdots+2f(0,999\,9)+f(1)\right)\\
+=\;&amp;\text{ à vous de jouer avec l'algorithme fourni}\\
+=\;&amp;0{,}310\,268\,302\,623\ldots
+\end{align*}
+</div>
+<p data-braille="continuation">En gardant neuf décimales, on a donc l'encadrement</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}310\,268\,302\leq\text{Approximation}\leq 0{,}310\,268\,303.
+\end{equation*}
+</div>
+</li>
+<li id="li-702">
+<p id="p-1330">D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=6\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6\cdot(1-0)^3}{12\cdot (10^4)^2}\\
+&amp;=0{,}5\cdot 10^{-8}\\
+&amp;=0{,}000\,000\,005
+\end{align*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+-0{,}000\,000\,005\leq\text{Erreur}\leq 0{,}000\,000\,005.
+\end{equation*}
+</div>
+</li>
+<li id="li-703">
+<p id="p-1331">On obtient donc l'encadrement</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cc}
+&amp;0{,}310\,268\,302-0{,}000\,000\,005\\
+\leq&amp;\text{Approximation}+\text{Erreur}\\
+\leq&amp;0{,}310\,268\,303+0{,}000\,000\,005
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}310\,268\,297\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}310\,268\,308.
+\end{equation*}
+</div>
+</li>
+<li id="li-704">
+<p id="p-1332">Le meilleur arrondissement qu'on peut en déduire est donc</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^1\sin(x^2)\mathrm{d}x\approx 0{,}310\,268\,3.
+\end{equation*}
+</div>
+</li>
+</ul></li>
+</ol>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-93"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-93"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">9.3.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-93"><article class="exercise exercise-like"><p id="p-1333">Créez une fonction <code class="code-inline tex2jax_ignore">trapezes(f, a, b, n)</code> qui donne la valeur approchée de l'intégrale \(\int_a^bf(x)\mathrm{d}x\) par la méthode des trapèzes pour \(n\) trapèzes.</p>
+<p id="p-1334">Testez votre code pour \(\int_0^1\frac{1}{1+x}\mathrm{d}x\) avec \(100\) trapèzes. Vous devez trouver \(\approx 0{,}693\,153\,430\,482\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-89" id="solution-89"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-89"><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># fonction
+def trapezes(f, a, b, n):
+    approximation = 0
+    deltaX = (b - a) / n
+    for k in range(1, n+1):
+        xi1 = a + (k - 1) * deltaX
+        xi2 = xi1 + deltaX
+        approximation = approximation + f(xi1) + f(xi2)
+    approximation = approximation * deltaX / 2
+    return approximation
+
+# test
+def f(x):
+    return 1 / (1 + x)
+print(trapezes(f, 0.0, 1.0, 100))
+</pre></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-94"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-94"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">9.3.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-94"><article class="exercise exercise-like"><p id="p-1335">Modifiez le code donné à la section <a href="algorithmetrapezes.html" class="internal" title="Section 9.2: Algorithme">9.2</a> afin de remplacer la boucle <code class="code-inline tex2jax_ignore">for</code> par une boucle <code class="code-inline tex2jax_ignore">while</code> semblable à celle utilisée à la section <a href="algorithmerectangles.html" class="internal" title="Section 8.2: Algorithme">8.2</a>.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-90" id="solution-90"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-90"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">import numpy as np
+def f(x):
+    return 4 * np.sqrt(1 - x ** 2)
+a = 0.0
+b = 1.0
+n = 32
+
+# instructions
+approximation = 0
+deltaX = (b - a) / n
+xi1 = a
+while xi1 &lt; b:
+    xi2 = xi1 + deltaX
+    approximation = approximation + f(xi1) + f(xi2)
+    xi1 = xi1 + deltaX
+approximation = approximation * deltaX / 2
+
+# sortie
+print(approximation)
+</pre></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-95"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-95"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">9.3.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-95"><article class="exercise exercise-like"><p id="p-1336">Soit \(f\) une fonction continue sur l'intervalle \([x_{k-1};x_k]\text{.}\)</p>
+<ol class="decimal">
+<li id="li-705">
+<p id="p-1337">Donnez la forme de Newton du polynôme interpolateur \(p\) des points</p>
+<div class="displaymath">
+\begin{equation*}
+A_0=(x_{k-1};f(x_{k-1}))\quad\text{et}\quad A_1=(x_k;f(x_k)).
+\end{equation*}
+</div>
+</li>
+<li id="li-706">
+<p id="p-1338">Montrez que</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{x_{k-1}}^{x_k}p(t)\mathrm{d}t=\frac{1}{2}(f(x_{k-1})+f(x_k))(x_k-x_{k-1}).
+\end{equation*}
+</div>
+</li>
+<li id="li-707"><p id="p-1339">Que venez-vous de démontrer?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-91" id="solution-91"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-91"><div class="solution solution-like"><ol class="decimal">
+<li id="li-708">
+<p id="p-1340">Les différences divisées sont</p>
+<div class="displaymath">
+\begin{equation*}
+[A_0]=f(x_{k-1})\;\text{et}\; [A_0,A_1]=\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}.
+\end{equation*}
+</div>
+<p id="p-1341">La forme de Newton du polynôme interpolateur est donc</p>
+<div class="displaymath">
+\begin{align*}
+p(t)&amp;=[A_0]+[A_0,A_1](t-x_{k-1})\\
+&amp;=f(x_{k-1})+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}(t-x_{k-1}).
+\end{align*}
+</div>
+</li>
+<li id="li-709">
+<p id="p-1342">On a donc</p>
+<div class="displaymath">
+\begin{align*}
+\int_{x_{k-1}}^{x_k}p(t)\mathrm{d}t&amp;=\int_{x_{k-1}}^{x_k}\left(f(x_{k-1})+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}(t-x_{k-1})\right)\mathrm{d}t\\
+&amp;=f(x_{k-1})t+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(t-x_{k-1})^2}{2}\Bigg\vert_{x_{k-1}}^{x_k}\\
+&amp;=f(x_{k-1})x_k+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(x_k-x_{k-1})^2}{2}\\
+&amp;\qquad -f(x_{k-1})x_{k-1}+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(x_{k-1}-x_{k-1})^2}{2}\\
+&amp;=f(x_{k-1})(x_k-x_{k-1})+(f(x_k)-f(x_{k-1}))\cdot\frac{(x_k-x_{k-1})}{2}\\
+&amp;=\frac{1}{2}\left(2f(x_{k-1})+f(x_k)-f(x_{k-1})\right)\cdot(x_k-x_{k-1})\\
+&amp;=\frac{1}{2}\left(f(x_{k-1})+f(x_k)\right)\cdot(x_k-x_{k-1}).
+\end{align*}
+</div>
+</li>
+<li id="li-710">
+<p id="p-1343">Nous venons de démontrer qu'en remplaçant la fonction \(f\text{,}\) sur l'intervalle \([x_{k-1};x_k]\text{,}\) par le polynôme de degré un au plus qui interpole les points \((x_{k-1};f(x_{k-1}))\) et \((x_k;f(x_k))\text{,}\) on remplace</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x
+\end{equation*}
+</div>
+<p data-braille="continuation">par</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{2}\left(f(x_{k-1})+f(x_k)\right)\cdot\underbrace{(x_k-x_{k-1})}_{\Delta x}=\frac{\Delta x}{2}\cdot\left(f(x_{k-1})+f(x_k))\right).
+\end{equation*}
+</div>
+<p id="p-1344">Ceci explique rigoureusement d'où sort la formule donnant l'approximation dans la méthode des trapèzes.</p>
+</li>
+</ol></div></div>
+</div></article></div></section></div></main>
+</div>
+<!--Start: StatCounter code--><script>
+var sc_project=12152300;
+var sc_invisible=1;
+var sc_security="5132c4de";
+var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "https://www.");
+document.write("<sc"+"ript src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
+</script><noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12152300/0/5132c4de/1/" alt="web analytics"></a></div></noscript>
+<!--End: StatCounter code-->
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-8"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-8');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

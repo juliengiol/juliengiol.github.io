@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-08-17T12:27:36-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>Partant de \(x_0=-2\text{,}\) effectuons trois itérations de la méthode de Newton-Raphson pour la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=x^2-3
+\end{equation*}
+</div>
+<p data-braille="continuation">qui satisfait les hypothèses vues à la remarque <a class="xref" data-knowl="./knowl/methodedenewtonbis.html" title="Remarque 5.1.8">5.1.8</a> avec \([a;b]=[-3;-\sqrt{3}]\text{,}\) car</p>
+<div class="displaymath">
+\begin{equation*}
+f'(x)=2x&lt;0\quad\text{et}\quad f''(x)=2&gt;0\quad\forall x\in]-3;-\sqrt{3}[.
+\end{equation*}
+</div>
+<p>Comme</p>
+<div class="displaymath">
+\begin{equation*}
+x-\frac{f(x)}{f'(x)}=x-\frac{x^2-3}{2x}=x-\frac{x}{2}+\frac{3}{2x}=\frac{x}{2}+\frac{3}{2x}
+\end{equation*}
+</div>
+<p>on trouve</p>
+<div class="displaymath">
+\begin{align*}
+x_0&amp;=-2\\
+x_1&amp;=\frac{x_0}{2}+\frac{3}{2x_0}=-1-\frac{3}{4}=-\frac{7}{4}=-1{,}75\\
+x_2&amp;=\frac{x_1}{2}+\frac{3}{2x_1}=-\frac{7}{8}-\frac{6}{7}=-\frac{97}{56}=-1{,}732\,142\,857\,142\,8\ldots\\
+x_3&amp;=\frac{x_2}{2}+\frac{3}{2x_2}=-\frac{97}{112}-\frac{84}{97}=-\frac{18817}{10864}=-1{,}732\,050\,810\,014\,7\ldots
+\end{align*}
+</div>
+<p>Puisque \(-\sqrt{3}=-1{,}732\,050\,807\,568\,8\ldots\text{,}\) trois itérations ont suffi pour obtenir sept décimales correctes du zéro \(c=-\sqrt{3}\) de \(f(x)=x^2-3\text{.}\)</p></article></body>
+</html>

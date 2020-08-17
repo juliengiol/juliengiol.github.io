@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-08-17T12:27:27-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># entrées
+def f(x):
+    return x ** 2 - 2
+a = 0.0
+b = 2.0
+longueurMax = 0.01
+
+# instructions
+while b - a &gt; longueurMax:
+    print(a, b)
+    m = (a + b) / 2
+    if f(m) == 0:
+        a = m
+        b = m
+        break
+    elif f(m) * f(a) &lt; 0:
+        b = m
+    else:
+        a = m
+
+# sortie
+if a == b:
+    print(a)
+else:
+    print(a, b)
+</pre></div></body>
+</html>

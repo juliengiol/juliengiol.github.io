@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-08-17T12:29:45-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">12.1.4</span><span class="period">.</span>
+</h6>
+<p>Reprenons l'exemple <a class="xref" data-knowl="./knowl/exemplebachetbezout.html" title="Exemple 12.1.3">12.1.3</a> et présentons nos calculs de façon à faire émerger une démarche algorithmique.</p>
+<p>La première étape consistait à effectuer la division euclidienne de \(2589\) par \(234\text{,}\) soit</p>
+<div class="displaymath">
+\begin{equation*}
+2589=234\cdot 11+15,
+\end{equation*}
+</div>
+<p data-braille="continuation">puis à isoler le reste, soit</p>
+<div class="displaymath">
+\begin{equation*}
+15=2589-234\cdot 11,
+\end{equation*}
+</div>
+<p data-braille="continuation">qui donne la combinaison linéaire de \(2589\) et \(234\) suivante :</p>
+<div class="displaymath">
+\begin{equation}
+\underbrace{15}_{r_2}=2589\cdot\underbrace{1}_{u_2}+234\cdot\underbrace{(-11)}_{v_2}.\tag{12.1.1}
+\end{equation}
+</div>
+<p>Quant à la dernière étape, il s'agissait de la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation}
+\underbrace{3}_{r_5}=2589\cdot\underbrace{(-31)}_{u_5}+234\cdot\underbrace{343}_{v_5}.\tag{12.1.2}
+\end{equation}
+</div>
+<p>Pour passer de <a class="xref" data-knowl="./knowl/deuxiemeCL.html" title="Équation 12.1.1">(12.1.1)</a> à <a class="xref" data-knowl="./knowl/derniereCL.html" title="Équation 12.1.2">(12.1.2)</a>, nous allons faire des combinaisons linéaires de combinaisons linéaires.</p>
+<p>Pour pouvoir commencer, on écrit la combinaison linéaire triviale</p>
+<div class="displaymath">
+\begin{equation}
+\underbrace{234}_{r_1}=2589\cdot\underbrace{0}_{u_1}+234\cdot\underbrace{1}_{v_1}.\tag{12.1.3}
+\end{equation}
+</div>
+<p>On effectue ensuite la division euclidienne de \(r_1=234\) par \(r_2=15\text{,}\) soit</p>
+<div class="displaymath">
+\begin{equation*}
+\underbrace{234}_{r_1}=\underbrace{15}_{r_2}\cdot\underbrace{15}_{q_2}+\underbrace{9}_{r_3},
+\end{equation*}
+</div>
+<p data-braille="continuation">dont le quotient</p>
+<div class="displaymath">
+\begin{equation*}
+q_2=r_1\,//\,r_2=234\,//\,15=15
+\end{equation*}
+</div>
+<p data-braille="continuation">va nous permettre de soustraire à <a class="xref" data-knowl="./knowl/premiereCL.html" title="Équation 12.1.3">(12.1.3)</a> le produit de <a class="xref" data-knowl="./knowl/deuxiemeCL.html" title="Équation 12.1.1">(12.1.1)</a> et de \(q_2=15\text{,}\) ce qui donne</p>
+<div class="displaymath">
+\begin{equation*}
+234-15\cdot 15=2589\cdot(0-1\cdot 15)+234\cdot(1-(-11)\cdot 15),
+\end{equation*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation}
+\underbrace{9}_{r_3}=2589\cdot\underbrace{(-15)}_{u_3}+234\cdot\underbrace{166}_{v_3}.\tag{12.1.4}
+\end{equation}
+</div>
+<p>On est donc parvenu à exprimer \(r_3=9\) comme combinaison linéaire de \(2589\) et \(234\text{.}\) Il ne reste plus qu'à itérer ce principe de calcul deux fois, pour se rendre à \(r_5=3=\text{PGCD}(2589;234)\text{.}\)</p></article><span class="incontext"><a href="presentationbezout.html#example-53">Contexte</a></span>
+</body>
+</html>

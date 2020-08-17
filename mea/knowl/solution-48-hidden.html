@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-08-17T12:27:54-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><ol class="decimal">
+<li>
+<p>Comme \(c\geq 1\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+f'(x)=3x^2\geq 3\cdot 1^2=3\quad\text{et}\quad f''(x)=6x\leq 6\cdot 2=12
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(x\in]c;x_0[\subset[1;2].\)</p>
+<p>Grâce à l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.7">5.3.7</a>, on sait que la convergence de \(\{x_n\}\) vers \(c\) est quadratique.</p>
+<p>On s'attend donc à ce que le nombre de décimales exactes de \(x_n\) double grosso modo à chaque itération.</p>
+</li>
+<li><div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c}
+n&amp;x_n&amp;x_n-c&amp;\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\\
+\hline
+0&amp;2{,}000\,000\,000\,0&amp;0{,}740\,078\,950\,10&amp;0{,}438\,326\,754\,1\\
+1&amp;1{,}500\,000\,000\,0&amp;0{,}240\,078\,950\,10&amp;0{,}631\,099\,414\,7\\
+2&amp;1{,}296\,296\,296\,2&amp;0{,}036\,375\,246\,40&amp;0{,}764\,212\,910\,3\\
+3&amp;1{,}260\,932\,224\,7&amp;0{,}001\,011\,174\,84&amp;0{,}792\,852\,043\,6\\
+4&amp;1{,}259\,921\,860\,5&amp;0{,}000\,000\,810\,67&amp;0{,}793\,448\,496\,3
+\end{array}
+\end{equation*}
+</div></li>
+<li>
+<p>Comme prévu, \(\displaystyle\lim_{n\rightarrow+\infty}x_n=c\) se traduit par le fait que \(x_n-c\) converge vers \(0\text{.}\)</p>
+<p>Pour la dernière colonne, elle semble indiquer que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\leq 0{,}8\qquad\text{pour tout}\;n\geq 0.
+\end{equation*}
+</div>
+<p data-braille="continuation">D'après l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.7">5.3.7</a>, on a</p>
+<div class="displaymath">
+\begin{equation*}
+|x_{n+1}-c|\leq K|x_n-c|^2\qquad\text{pour tout}\;n\geq 0
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\leq K=\frac{M}{2m}=\frac{12}{2\cdot 3}=2\qquad\text{pour tout}\;n\geq 0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Il n'est donc pas surprenant qu'on ait observé que les valeurs \(\displaystyle\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\) semblent majorées par \(0{,}8\text{.}\) En fait, pour être plus précis, on pourrait montrer que cette suite est croissante et majorée par</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}=\frac{f''(c)}{2f'(c)}=\frac{6c}{2\cdot 3c^2}=\frac{1}{c}=\frac{1}{\sqrt[3]{2}}\approx 0{,}794.
+\end{equation*}
+</div>
+</li>
+</ol></div></body>
+</html>
