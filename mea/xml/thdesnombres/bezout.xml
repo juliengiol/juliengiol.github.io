@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="bezout" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Algorithme d'Euclide étendu</title>
+
+<introduction>
+
+  <interactive xml:id="interactive_bezout" platform="sage" width="100%" aspect="10:11">
+    <slate surface="sage">
+      @interact
+      def _(a = input_box(label = html(r'\(a\)'), default = 2589, width = 10), b = input_box(label = html(r'\(b\)'), default = 234, width = 10)):
+
+          def pG(x):
+              if x &lt; 0:
+                  return '('
+              else:
+                  return ''
+
+          def pD(x):
+              if x &lt; 0:
+                  return ')'
+              else:
+                  return ''
+
+          r0, u0, v0, r1, u1, v1 = a, 1, 0, b, 0, 1
+          pretty_print(html(r'On a les combinaisons linéaires de \(%s\) et de \(%s\) suivantes :' %(a, b)))
+          pretty_print(html(r'\[%s = %s \cdot %s + %s \cdot %s\]'%(r0, a, u0, b, v0)))
+          pretty_print(html(r'\[%s = %s \cdot %s + %s \cdot %s\]'%(r1, a, u1, b, v1)))
+          while r1 != 0:
+              q = r0 // r1
+              r0, u0, v0, r1, u1, v1 = r1, u1, v1, r0 - q * r1, u0 - q * u1, v0 - q * v1
+              pretty_print(html(r'\[%s = %s \cdot %s%s%s + %s \cdot %s%s%s\]'%(r1, a, pG(u1), u1, pD(u1), b, pG(v1), v1, pD(v1))))
+          pretty_print(html(r'En particulier'))
+          pretty_print(html(r'\[PGCD(%s;%s)=%s\]'%(a, b, r0)))
+          pretty_print(html(r'vérifie la combinaison linéaire'))
+          pretty_print(html(r'\[%s = %s \cdot %s%s%s + %s \cdot %s%s%s.\]'%(r0, a, pG(u0), u0, pD(u0), b, pG(v0), v0, pD(v0))))
+    </slate>
+  </interactive>
+
+</introduction>
+
+<section xml:id="presentationbezout">
+<title>Présentation</title>
+
+<theorem xml:id="bachetbezout">
+  <title>Bachet-Bézout</title>
+  <statement>
+    <p>Soit <m>a, b\in\mathbb{Z}^*</m>.</p>
+    <p>Il existe <m>u, v\in\mathbb{Z}</m> tels que
+      <me>\text{PGCD}(a;b)=au+bv.</me>
+    </p>
+    <p>Terminologie : On dit que <m>\text{PGCD}(a;b)</m> peut s'exprimer comme combinaison linéaire de <m>a</m> et de <m>b</m>, et on appelle <m>(u;v)</m> un couple de coefficients de cette combinaison linéaire.</p>
+  </statement>
+  <proof>
+    <p>Une preuve classique, mais non constructive, consiste à montrer que <m>\text{PGCD}(a;b)</m> coïncide avec la plus petite combinaison linéaire positive de <m>a</m> et de <m>b</m>.</p>
+  </proof>
+</theorem>
+
+<p>Nous allons expliquer comment construire un couple de coefficients <m>(u;v)</m> qui fonctionne.</p>
+
+<principle>
+  <p>Pour exprimer <m>\text{PGCD}(a;b)</m> comme combinaison linéaire de <m>a</m> et de <m>b</m>, il suffit de remonter les étapes de l'algorithme d'Euclide menant au calcul de <m>\text{PGCD}(a;b)</m>.</p>
+</principle>
+
+<example xml:id="exemplebachetbezout">
+  <p>Reprenons l'exemple <xref ref="exemple4algoeuclide"/> dans lequel on calculait <m>\text{PGCD}(2589;234)</m> à l'aide de l'algorithme d'Euclide.</p>
+  <p>Commençons par réécrire toutes ces divisions euclidiennes en isolant les restes :
+    <me>
+      \begin{array}{rccccr}
+      15&amp;=&amp;2589&amp;-&amp;234\cdot 11&amp;(\text{E}_1)\\
+      9&amp;=&amp;234&amp;-&amp;15\cdot 15&amp;(\text{E}_2)\\
+      6&amp;=&amp;15&amp;-&amp;9\cdot 1&amp;(\text{E}_3)\\
+      3&amp;=&amp;9&amp;-&amp;6\cdot 1&amp;(\text{E}_4)
+      \end{array}
+    </me>
+  </p>
+  <p>Partons maintenant de l'équation <m>(\text{E}_4)</m>.</p>
+  <p>Remplaçons d'abord <m>6</m> par <m>15-9\cdot 1</m> grâce à <m>(\text{E}_3)</m> :
+    <md>
+      <mrow>3&amp;=9-6\cdot 1</mrow>
+      <mrow>&amp;=9-(15-9\cdot 1)\cdot 1</mrow>
+      <mrow>&amp;=9-15\cdot 1+9\cdot 1</mrow>
+      <mrow>&amp;=9\cdot 2-15\cdot 1.</mrow>
+    </md>
+  </p>
+  <p>Remplaçons ensuite <m>9</m> par <m>234-15\cdot 15</m> grâce à <m>(\text{E}_2)</m> :
+    <md>
+      <mrow>3&amp;=9\cdot 2-15\cdot 1</mrow>
+      <mrow>&amp;=(234-15\cdot 15)\cdot 2-15\cdot 1</mrow>
+      <mrow>&amp;=234\cdot 2-15\cdot 30-15\cdot 1</mrow>
+      <mrow>&amp;=234\cdot 2-15\cdot 31.</mrow>
+    </md>
+  </p>
+  <p>Remplaçons enfin <m>15</m> par <m>2589-234\cdot 11</m> grâce à <m>(\text{E}_1)</m> :
+    <md>
+      <mrow>3&amp;=234\cdot 2-15\cdot 31</mrow>
+      <mrow>&amp;=234\cdot 2-(2589-234\cdot 11)\cdot 31</mrow>
+      <mrow>&amp;=234\cdot 2-2589\cdot 31+234\cdot 341</mrow>
+      <mrow>&amp;=234\cdot 343-2589\cdot 31.</mrow>
+    </md>
+  </p>
+  <p>On obtient donc la combinaison linéaire
+    <me>3=2589\cdot (-31)+234\cdot 343</me>
+    c'est-à-dire
+    <me>\text{PGCD}(2589;234)=2589u+234v\qquad\text{avec }u=-31\;\text{et}\;v=343.</me>
+  </p>
+</example>
+
+<p>Même si elle s'exécute bien à la main, la séquence des calculs effectués dans l'exemple précédent n'est pas évidente à décrire de manière algorithmique. Nous allons donc nous y prendre autrement.</p>
+
+<example>
+  <p>Reprenons l'exemple <xref ref="exemplebachetbezout"/> et présentons nos calculs de façon à faire émerger une démarche algorithmique.</p>
+  <p>La première étape consistait à effectuer la division euclidienne de <m>2589</m> par <m>234</m>, soit
+    <me>2589=234\cdot 11+15,</me>
+    puis à isoler le reste, soit
+    <me>15=2589-234\cdot 11,</me>
+    qui donne la combinaison linéaire de <m>2589</m> et <m>234</m> suivante :
+    <men xml:id="deuxiemeCL">\underbrace{15}_{r_2}=2589\cdot\underbrace{1}_{u_2}+234\cdot\underbrace{(-11)}_{v_2}.</men>
+  </p>
+  <p>Quant à la dernière étape, il s'agissait de la combinaison linéaire
+    <men xml:id="derniereCL">\underbrace{3}_{r_5}=2589\cdot\underbrace{(-31)}_{u_5}+234\cdot\underbrace{343}_{v_5}.</men>
+  </p>
+  <p>Pour passer de <xref ref="deuxiemeCL"/> à <xref ref="derniereCL"/>, nous allons faire des combinaisons linéaires de combinaisons linéaires.</p>
+  <p>Pour pouvoir commencer, on écrit la combinaison linéaire triviale
+    <men xml:id="premiereCL">\underbrace{234}_{r_1}=2589\cdot\underbrace{0}_{u_1}+234\cdot\underbrace{1}_{v_1}.</men>
+  </p>
+  <p>On effectue ensuite la division euclidienne de <m>r_1=234</m> par <m>r_2=15</m>, soit
+    <me>\underbrace{234}_{r_1}=\underbrace{15}_{r_2}\cdot\underbrace{15}_{q_2}+\underbrace{9}_{r_3},</me>
+    dont le quotient
+    <me>q_2=r_1\,//\,r_2=234\,//\,15=15</me>
+    va nous permettre de soustraire à <xref ref="premiereCL"/> le produit de <xref ref="deuxiemeCL"/> et de <m>q_2=15</m>, ce qui donne
+    <me>234-15\cdot 15=2589\cdot(0-1\cdot 15)+234\cdot(1-(-11)\cdot 15),</me>
+    soit
+    <men xml:id="troisiemeCL">\underbrace{9}_{r_3}=2589\cdot\underbrace{(-15)}_{u_3}+234\cdot\underbrace{166}_{v_3}.</men>
+  </p>
+  <p>On est donc parvenu à exprimer <m>r_3=9</m> comme combinaison linéaire de <m>2589</m> et <m>234</m>. Il ne reste plus qu'à itérer ce principe de calcul deux fois, pour se rendre à <m>r_5=3=\text{PGCD}(2589;234)</m>.</p>
+</example>
+
+<principle xml:id="principealgoeuclideetendu">
+  <title>Algorithme d'Euclide étendu</title>
+  <p>Pour calculer <m>\text{PGCD}(a;b)</m> tout en l'exprimant comme combinaison linéaire de <m>a</m> et de <m>b</m>, on construit les suites finies
+    <me>\{r_n\},\;\{u_n\},\;\{v_n\},\;\{q_n\}</me>
+    définies par les valeurs initiales
+    <me>\left\{
+      \begin{array}{lll}
+      r_0=a,&amp;u_0=1,&amp;v_0=0,\\
+      r_1=b,&amp;u_1=0,&amp;v_1=1,
+      \end{array}\right.
+    </me>
+    et les relations de récurrence
+    <me>
+      \begin{cases}
+      q_n=r_{n-1}\,//\,r_n,\\
+      r_{n+1}=r_{n-1}-r_n\cdot q_n,\\
+      u_{n+1}=u_{n-1}-u_n\cdot q_n,\\
+      v_{n+1}=v_{n-1}-v_n\cdot q_n
+      \end{cases}
+    </me>
+    pour tout <m>n\geq 1</m> jusqu'à ce qu'on tombe sur <m>r_{k+1}=0</m>.
+  </p>
+  <p>Alors pour <m>n=0,\ldots,k+1,</m> on a
+    <me>r_n=au_n+bv_n.</me>
+    En particulier, le dernier reste non nul <m>r_k</m> fournit la combinaison linéaire
+    <me>\text{PGCD}(a;b)=au_k+bv_k.</me>
+  </p>
+  <p>Terminologie : Cet algorithme est appelé <url href="https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide_%C3%A9tendu">algorithme d'Euclide étendu</url>.</p>
+  <p>Remarque : Comme la suite <m>r_2,\,r_3,\,\ldots,\,r_k,\,0</m> est la même que la suite des restes obtenus par l'algorithme d'Euclide, la convergence de l'algorithme d'Euclide étendu découle de la convergence de ce dernier, ainsi que le fait que le dernier reste non nul <m>r_k</m> soit égal à <m>\text{PGCD}(a;b)</m>.</p>
+</principle>
+
+<example xml:id="exemplebachetbezoutalgo">
+  <p>Reprenons l'exemple <xref ref="exemplebachetbezout"/> et présentons nos calculs conformément au principe <xref ref="principealgoeuclideetendu"/>.</p>
+  <p>On a
+    <me>
+      \begin{array}{|c|c|c|c|c|}
+      \hline
+      r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+      \hline
+      2589&amp;1&amp;0&amp;\\
+      \hline
+      234&amp;0&amp;1&amp;2589=234\cdot 11+15&amp;11\\
+      \hline
+      15&amp;1-0\cdot 11&amp;0-1\cdot 11&amp;234=15\cdot 15+9&amp;15\\
+      &amp;=1&amp;=-11&amp;&amp;\\
+      \hline
+      9&amp;0-1\cdot 15&amp;1-(-11)\cdot 15&amp;15=9\cdot 1+6&amp;1\\
+      &amp;=-15&amp;=166&amp;&amp;\\
+      \hline
+      6&amp;1-(-15)\cdot 1&amp;-11-166\cdot 1&amp;9=6\cdot 1+3&amp;1\\
+      &amp;=16&amp;=-177&amp;&amp;\\
+      \hline
+      3&amp;-15-16\cdot 1&amp;166-(-177)\cdot 1&amp;6=3\cdot 2+0&amp;\\
+      &amp;=-31&amp;=343&amp;\text{Stop}&amp;\\
+      \hline
+      \end{array}
+    </me>
+    On déduit de la dernière ligne la valeur du PGCD
+    <me>\text{PGCD}(2589;234)=3</me>
+    ainsi que la combinaison linéaire
+    <me>3=2589\cdot(-31)+234\cdot 343.</me>
+  </p>
+</example>
+
+<remark>
+  <p>L'algorithme d'Euclide étendu constitue une preuve du théorème de Bachet-Bézout <xref ref="bachetbezout"/>.</p>
+</remark>
+
+<assemblage>
+  <title>Algorithme d'Euclide étendu : Calculer le PGCD de deux entiers par divisions euclidiennes successives, tout en l'exprimant comme combinaison linéaire de ces deux entiers</title>
+  <p>
+    <ul>
+      <li>
+        <p>Objectif : Calculer le PGCD de deux entiers relatifs non nuls <m>a, b</m> et l'exprimer comme combinaison linéaire de <m>a</m> et <m>b</m>, c'est-à-dire trouver un couple d'entiers relatifs <m>(u;v)</m> tels que
+          <men xml:id="eqbezoutassemblage">\text{PGCD}(a;b)=au+bv.</men>
+        </p>
+      </li>
+      <li>
+        <p>Principe : Faire les mêmes divisions euclidiennes successives que pour l'algorithme d'Euclide, tout en gardant la trace des combinaisons linéaires de <m>a</m> et de <m>b</m> qu'on peut en déduire à chaque étape. Plus précisément, suivre les instructions énoncées au principe <xref ref="principealgoeuclideetendu"/>.
+        </p>
+      </li>
+      <li>
+        <p>Remarque : L'algorithme d'Euclide étendu fournit une solution particulière <m>(u;v)\in\mathbb{Z}^2</m> de l'équation <xref ref="eqbezoutassemblage"/>. Mais il en existe en fait une infinité (voir l'exercice <xref ref="bezoutinfinitesol"/>).</p>
+      </li>
+      <li><p>Voir aussi : <url href="https://drive.google.com/file/d/1zlUu-sDyU97BgJKP_sKgsVrVABgvnW5u/view?usp=sharing">Notes de cours de Jérôme</url>.</p></li>
+    </ul>
+  </p>
+</assemblage>
+
+<remark>
+  <p>Le théorème de Bachet-Bézout <xref ref="bachetbezout"/> se résume ainsi :
+    <me>\text{PGCD}(a;b)=d\quad\Rightarrow\quad \exists(u;v)\in\mathbb{Z}^2,\quad au+bv=d.</me>
+  </p>
+  <p>La réciproque est fausse, comme le montre l'exemple suivant :
+    <me>5\cdot 3+4\cdot(-2)=7\quad\text{et}\quad\text{PGCD}(5;4)=1\neq 7.</me>
+  </p>
+  <p>Mais dans le cas particulier où <m>d=1</m>, la réciproque est vraie, comme nous allons le montrer avec le théorème qui suit.</p>
+</remark>
+
+<theorem xml:id="thmbezout">
+  <title>Bézout</title>
+  <statement>
+    <p>Soit <m>a, b\in\mathbb{Z}^*</m>.</p>
+    <p>On a
+      <me>\text{PGCD}(a;b)=1\quad\Leftrightarrow\quad\exists (u;v)\in\mathbb{Z}^2,\quad au+bv=1.</me>
+    </p>
+    <p>Terminologie : On dit alors que <m>a</m> et <m>b</m> sont premiers entre eux.</p>
+  </statement>
+  <proof>
+    <p>L'implication <m>\Rightarrow</m> découle immédiatement du théorème <xref ref="bachetbezout"/>.</p>
+    <p>Établissons maintenant la réciproque.</p>
+    <p>Supposons donc qu'il existe un couple <m>(u;v)\in\mathbb{Z}^2</m> tel que
+      <me>au+bv=1.</me>
+    </p>
+    <p>Soit <m>d</m> un diviseur commun à <m>a</m> et à <m>b</m>, de sorte qu'il existe deux entiers <m>a_0, b_0</m> tels que
+      <me>a=d\cdot a_0\quad\text{et}\quad b=d\cdot b_0.</me>
+    </p>
+    <p>Alors
+      <md>
+        <mrow>a\cdot u+b\cdot v=1&amp;\quad\Rightarrow\quad d\cdot a_0\cdot u+d\cdot b_0\cdot v=1</mrow>
+        <mrow>&amp;\quad\Rightarrow\quad d\cdot(a_0u+b_0v)=1</mrow>
+        <mrow>&amp;\quad\Rightarrow\quad d\vert 1</mrow>
+        <mrow>&amp;\quad\Rightarrow\quad d=\pm 1</mrow>
+      </md>
+      où la dernière implication repose sur le fait que les seuls diviseurs de <m>1</m> sont <m>-1</m> et <m>1</m>.
+    </p>
+    <p>Nous venons donc de montrer que les seuls diviseurs communs à <m>a</m> et à <m>b</m> sont <m>-1</m> et <m>1</m>. Par la définition <xref ref="defpgcd"/> du PGCD, on a donc
+      <me>\text{PGCD}(a;b)=1.</me>
+    </p>
+  </proof>
+</theorem>
+
+</section>
+
+<section xml:id="algorithmebezout">
+<title>Algorithme</title>
+
+<algorithm>
+  <title>Algorithme d'Euclide étendu</title>
+  <statement>
+    <ul>
+      <li><p>Entrées :
+        <ul>
+          <li><p>Assigner à <m>\text{a}</m> et <m>\text{b}</m> les deux entiers positifs dont on veut calculer le PGCD et un couple de coefficients de Bézout.</p></li>
+          <li><p>S'assurer qu'on a <m>\text{a}\geq\text{b}</m> si on ne veut pas faire une itération inutile.</p></li>
+        </ul></p>
+      </li>
+      <li><p>Instructions :
+        <ul>
+          <li>
+            <p>Assigner simultanément à <m>\text{r0}</m>, <m>\text{u0}</m>, <m>\text{v0}</m>, <m>\text{r1}</m>, <m>\text{u1}</m>, <m>\text{v1}</m> les valeurs <m>\text{a}</m>, <m>\text{1}</m>, <m>\text{0}</m>,
+              <m>\text{b}</m>, <m>\text{0}</m>, <m>\text{1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>Tant que <m>\text{r1}\neq 0</m>,
+              <ul>
+                <li><p>assigner à <m>\text{q}</m> le quotient de la division euclidienne de <m>\text{r0}</m> par <m>\text{r1}</m> ;</p></li>
+                <li>
+                  <p>assigner simultanément à <m>\text{r0}</m>, <m>\text{u0}</m>, <m>\text{v0}</m>, <m>\text{r1}</m>, <m>\text{u1}</m>, <m>\text{v1}</m> les valeurs <m>\text{r1}</m>, <m>\text{u1}</m>, <m>\text{v1}</m>,
+                    <m>\text{r0}-\text{q}\cdot\text{r1}</m>, <m>\text{u0}-\text{q}\cdot\text{u1}</m>, <m>\text{v0}-\text{q}\cdot\text{v1}</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+        </ul></p>
+      </li>
+      <li><p>Sortie : Afficher <m>\text{r0}</m>, <m>\text{u0}</m>, <m>\text{v0}</m>.</p></li>
+    </ul>
+  </statement>
+</algorithm>
+
+<p>Voici une implémentation de cet algorithme qui permet de traiter l'exemple <xref ref="exemplebachetbezout"/>.</p>
+
+<sage language='python'>
+  <input>
+    # entrées
+    a = 2589
+    b = 234
+
+    # instructions
+    r0, u0, v0, r1, u1, v1 = a, 1, 0, b, 0, 1
+    while r1 != 0:
+        q = r0 // r1
+        r0, u0, v0, r1, u1, v1 = r1, u1, v1, r0 - q * r1, u0 - q * u1, v0 - q * v1
+
+    # sortie
+    print(r0, u0, v0)
+  </input>
+</sage>
+
+</section>
+
+<section xml:id="exercicesbezout">
+<title>Exercices</title>
+
+<exercise>
+  <statement>
+    <p>Calculez <m>\text{PGCD}(a;b)</m> à l'aide de l'algorithme d'Euclide, puis exprimez-le comme combinaison linéaire de <m>a</m> et de <m>b</m> en remontant, comme à l'exemple <xref ref="exemplebachetbezout"/>.
+    <ol>
+      <li><p>Pour <m>a=772</m> et <m>b=44</m>.</p></li>
+      <li><p>Pour <m>a=1975</m> et <m>b=225</m>.</p></li>
+      <li><p>Pour <m>a=1981</m> et <m>b=222</m>.</p></li>
+      <li><p>Pour <m>a=12003</m> et <m>b=999</m>.</p></li>
+      <li><p>Pour <m>a=30</m> et <m>b=4</m>.</p></li>
+      <li><p>Pour <m>a=30</m> et <m>b=5</m>.</p></li>
+    </ol>
+    </p>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :
+          <me>
+            \begin{array}{rclcrclr}
+            772&amp;=&amp;44\cdot 17+24&amp;\quad\Rightarrow\quad&amp;24&amp;=&amp;772-44\cdot 17&amp;(\text{E}_1)\\
+            44&amp;=&amp;24\cdot 1+20&amp;\quad\Rightarrow\quad&amp;20&amp;=&amp;44-24\cdot 1&amp;(\text{E}_2)\\
+            24&amp;=&amp;20\cdot 1+4&amp;\quad\Rightarrow\quad&amp;4&amp;=&amp;24-20\cdot 1&amp;(\text{E}_3)\\
+            20&amp;=&amp;4\cdot 5+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+            \end{array}
+          </me>
+        </p>
+        <p>On en déduit d'abord que
+          <me>\text{PGCD}(772;44)=4.</me>
+          Puis on remonte :
+          <me>
+            \begin{array}{rclr}
+            4&amp;=&amp;24-20\cdot 1&amp;(\text{E}_3)\\
+            &amp;=&amp;24-(44-24\cdot 1)\cdot 1&amp;\text{grâce à }(\text{E}_2)\\
+            &amp;=&amp;24-44+24&amp;\\
+            &amp;=&amp;24\cdot 2-44&amp;\\
+            &amp;=&amp;(772-44\cdot 17)\cdot 2-44&amp;\text{grâce à }(\text{E}_1)\\
+            &amp;=&amp;772\cdot 2-44\cdot 34-44&amp;\\
+            &amp;=&amp;772\cdot 2-44\cdot 35.&amp;
+            \end{array}
+          </me>
+        </p>
+        <p>On obtient donc la combinaison linéaire
+          <me>4=772\cdot 2+44\cdot (-35)</me>
+          c'est-à-dire
+          <me>\text{PGCD}(772;44)=772u+44v\qquad\text{avec }u=2\;\text{et}\;v=-35.</me>
+        </p>
+      </li>
+      <li>
+        <p>Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :
+          <me>
+            \begin{array}{rclcrclr}
+            1975&amp;=&amp;225\cdot 8+175&amp;\quad\Rightarrow\quad&amp;175&amp;=&amp;1975-225\cdot 8&amp;(\text{E}_1)\\
+            225&amp;=&amp;175\cdot 1+50&amp;\quad\Rightarrow\quad&amp;50&amp;=&amp;225-175\cdot 1&amp;(\text{E}_2)\\
+            175&amp;=&amp;50\cdot 3+25&amp;\quad\Rightarrow\quad&amp;25&amp;=&amp;175-50\cdot 3&amp;(\text{E}_3)\\
+            50&amp;=&amp;25\cdot 2+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+            \end{array}
+          </me>
+        </p>
+        <p>On en déduit d'abord que
+          <me>\text{PGCD}(1975;225)=25.</me>
+          Puis on remonte :
+          <me>
+            \begin{array}{rclr}
+            25&amp;=&amp;175-50\cdot 3&amp;(\text{E}_3)\\
+            &amp;=&amp;175-(225-175\cdot 1)\cdot 3&amp;\text{grâce à }(\text{E}_2)\\
+            &amp;=&amp;175-225\cdot 3+175\cdot 3&amp;\\
+            &amp;=&amp;175\cdot 4-225\cdot 3&amp;\\
+            &amp;=&amp;(1975-225\cdot 8)\cdot 4-225\cdot 3&amp;\text{grâce à }(\text{E}_1)\\
+            &amp;=&amp;1975\cdot 4-225\cdot 32-225\cdot 3&amp;\\
+            &amp;=&amp;1975\cdot 4-225\cdot 35.&amp;
+            \end{array}
+          </me>
+        </p>
+        <p>On obtient donc la combinaison linéaire
+          <me>25=1975\cdot 4+225\cdot (-35)</me>
+          c'est-à-dire
+          <me>\text{PGCD}(1975;225)=1975u+225v\qquad\text{avec }u=4\;\text{et}\;v=-35.</me>
+        </p>
+      </li>
+      <li>
+        <p>Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :
+          <me>
+            \begin{array}{rclcrclr}
+            1981&amp;=&amp;222\cdot 8+205&amp;\quad\Rightarrow\quad&amp;205&amp;=&amp;1981-222\cdot 8&amp;(\text{E}_1)\\
+            222&amp;=&amp;205\cdot 1+17&amp;\quad\Rightarrow\quad&amp;17&amp;=&amp;222-205\cdot 1&amp;(\text{E}_2)\\
+            205&amp;=&amp;17\cdot 12+1&amp;\quad\Rightarrow\quad&amp;1&amp;=&amp;205-17\cdot 12&amp;(\text{E}_3)\\
+            17&amp;=&amp;1\cdot 17+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+            \end{array}
+          </me>
+        </p>
+        <p>On en déduit d'abord que
+          <me>\text{PGCD}(1975;225)=25.</me>
+          Puis on remonte :
+          <me>
+            \begin{array}{rclr}
+            1&amp;=&amp;205-17\cdot 12&amp;(\text{E}_3)\\
+            &amp;=&amp;205-(222-205\cdot 1)\cdot 12&amp;\text{grâce à }(\text{E}_2)\\
+            &amp;=&amp;205-222\cdot 12+205\cdot 12&amp;\\
+            &amp;=&amp;205\cdot 13-222\cdot 12&amp;\\
+            &amp;=&amp;(1981-222\cdot 8)\cdot 13-222\cdot 12&amp;\text{grâce à }(\text{E}_1)\\
+            &amp;=&amp;1981\cdot 13-222\cdot 104-222\cdot 12&amp;\\
+            &amp;=&amp;1981\cdot 13-222\cdot 116.&amp;
+            \end{array}
+          </me>
+        </p>
+        <p>On obtient donc la combinaison linéaire
+          <me>1=1981\cdot 13+222\cdot (-116)</me>
+          c'est-à-dire
+          <me>\text{PGCD}(1981;222)=1981u+222v\qquad\text{avec }u=13\;\text{et}\;v=-116.</me>
+        </p>
+      </li>
+      <li>
+        <p>Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :
+          <me>
+            \begin{array}{rclcrclr}
+            12003&amp;=&amp;999\cdot 12+15&amp;\quad\Rightarrow\quad&amp;15&amp;=&amp;12003-999\cdot 12&amp;(\text{E}_1)\\
+            999&amp;=&amp;15\cdot 66+9&amp;\quad\Rightarrow\quad&amp;9&amp;=&amp;999-15\cdot 66&amp;(\text{E}_2)\\
+            15&amp;=&amp;9\cdot 1+6&amp;\quad\Rightarrow\quad&amp;6&amp;=&amp;15-9\cdot 1&amp;(\text{E}_3)\\
+            9&amp;=&amp;6\cdot 1+3&amp;\quad\Rightarrow\quad&amp;3&amp;=&amp;9-6\cdot 1&amp;(\text{E}_4)\\
+            6&amp;=&amp;3\cdot 2+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+            \end{array}
+          </me>
+        </p>
+        <p>On en déduit d'abord que
+          <me>\text{PGCD}(12003;999)=3.</me>
+          Puis on remonte :
+          <me>
+            \begin{array}{rclr}
+            3&amp;=&amp;9-6\cdot 1&amp;(\text{E}_4)\\
+            &amp;=&amp;9-(15-9\cdot 1)\cdot 1&amp;\text{grâce à }(\text{E}_3)\\
+            &amp;=&amp;9-15+9&amp;\\
+            &amp;=&amp;9\cdot 2-15&amp;\\
+            &amp;=&amp;(999-15\cdot 66)\cdot 2-15&amp;\text{grâce à }(\text{E}_2)\\
+            &amp;=&amp;999\cdot 2-15\cdot 132-15&amp;\\
+            &amp;=&amp;999\cdot 2-15\cdot 133&amp;\\
+            &amp;=&amp;999\cdot 2-(12003-999\cdot 12)\cdot 133&amp;\text{grâce à }(\text{E}_1)\\
+            &amp;=&amp;999\cdot 2-12003\cdot 133+999\cdot 1596&amp;\\
+            &amp;=&amp;999\cdot 1598-12003\cdot 133.&amp;\\
+            \end{array}
+          </me>
+        </p>
+        <p>On obtient donc la combinaison linéaire
+          <me>3=12003\cdot (-133)+999\cdot 1598</me>
+          c'est-à-dire
+          <me>\text{PGCD}(12003;999)=12003u+999v\qquad\text{avec }u=-133\;\text{et}\;v=1598.</me>
+        </p>
+      </li>
+      <li>
+        <p>Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :
+          <me>
+            \begin{array}{rclcrclr}
+            30&amp;=&amp;4\cdot 7+2&amp;\quad\Rightarrow\quad&amp;2&amp;=&amp;30-4\cdot 7&amp;(\text{E}_1)\\
+            4&amp;=&amp;2\cdot 2+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+            \end{array}
+          </me>
+        </p>
+        <p>On en déduit d'abord que
+          <me>\text{PGCD}(30;4)=2.</me>
+          Il n'y a rien à remonter ici. L'équation <m>(\text{E}_1)</m> donne la combinaison linéaire
+          <me>2=30\cdot 1+4\cdot (-7)</me>
+          c'est-à-dire
+          <me>\text{PGCD}(30;4)=30u+4v\qquad\text{avec }u=1\;\text{et}\;v=-7.</me>
+        </p>
+      </li>
+      <li>
+        <p>Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :
+          <me>
+            \begin{array}{rclcrclr}
+            30&amp;=&amp;5\cdot 6+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+            \end{array}
+          </me>
+        </p>
+        <p>Dans ce cas particulier (<m>5\vert 30</m>), on déduit d'abord que
+          <me>\text{PGCD}(30;5)=5.</me>
+          Il n'y a rien à remonter ici. On a la combinaison linéaire triviale
+          <me>5=30\cdot 0+5\cdot 1</me>
+          c'est-à-dire
+          <me>\text{PGCD}(30;5)=30u+5v\qquad\text{avec }u=0\;\text{et}\;v=1.</me>
+        </p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>À l'aide de l'algorithme d'Euclide étendu, calculez <m>\text{PGCD}(a;b)</m> et exprimez-le comme combinaison linéaire de <m>a</m> et de <m>b</m>.</p>
+    <p>Présentez vos calculs comme à l'exemple <xref ref="exemplebachetbezoutalgo"/>.
+      <ol>
+        <li><p>Pour <m>a=772</m> et <m>b=44</m>.</p></li>
+        <li><p>Pour <m>a=1975</m> et <m>b=225</m>.</p></li>
+        <li><p>Pour <m>a=1981</m> et <m>b=222</m>.</p></li>
+        <li><p>Pour <m>a=12003</m> et <m>b=999</m>.</p></li>
+        <li><p>Pour <m>a=30</m> et <m>b=4</m>.</p></li>
+        <li><p>Pour <m>a=30</m> et <m>b=5</m>.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{|c|c|c|c|c|}
+            \hline
+            r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+            \hline
+            772&amp;1&amp;0&amp;\\
+            \hline
+            44&amp;0&amp;1&amp;772=44\cdot 17+24&amp;17\\
+            \hline
+            24&amp;1-0\cdot 17&amp;0-1\cdot 17&amp;44=24\cdot 1+20&amp;1\\
+            &amp;=1&amp;=-17&amp;&amp;\\
+            \hline
+            20&amp;0-1\cdot 1&amp;1-(-17)\cdot 1&amp;24=20\cdot 1+4&amp;1\\
+            &amp;=-1&amp;=18&amp;&amp;\\
+            \hline
+            4&amp;1-(-1)\cdot 1&amp;-17-18\cdot 1&amp;20=4\cdot 5+0&amp;\\
+            &amp;=2&amp;=-35&amp;\text{Stop}&amp;\\
+            \hline
+            \end{array}
+          </me>
+          On déduit de la dernière ligne la valeur du PGCD
+          <me>\text{PGCD}(772;44)=4</me>
+          ainsi que la combinaison linéaire
+          <me>4=772\cdot 2+44\cdot (-35).</me>
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{|c|c|c|c|c|}
+            \hline
+            r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+            \hline
+            1975&amp;1&amp;0&amp;\\
+            \hline
+            225&amp;0&amp;1&amp;1975=225\cdot 8+175&amp;8\\
+            \hline
+            175&amp;1-0\cdot 8&amp;0-1\cdot 8&amp;225=175\cdot 1+50&amp;1\\
+            &amp;=1&amp;=-8&amp;&amp;\\
+            \hline
+            50&amp;0-1\cdot 1&amp;1-(-8)\cdot 1&amp;175=50\cdot 3+25&amp;3\\
+            &amp;=-1&amp;=9&amp;&amp;\\
+            \hline
+            25&amp;1-(-1)\cdot 3&amp;-8-9\cdot 3&amp;50=25\cdot 2+0&amp;\\
+            &amp;=4&amp;=-35&amp;\text{Stop}&amp;\\
+            \hline
+            \end{array}
+          </me>
+          On déduit de la dernière ligne la valeur du PGCD
+          <me>\text{PGCD}(1975;225)=25</me>
+          ainsi que la combinaison linéaire
+          <me>25=1975\cdot 4+225\cdot (-35).</me>
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{|c|c|c|c|c|}
+            \hline
+            r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+            \hline
+            1981&amp;1&amp;0&amp;\\
+            \hline
+            222&amp;0&amp;1&amp;1981=222\cdot 8+205&amp;8\\
+            \hline
+            205&amp;1-0\cdot 8&amp;0-1\cdot 8&amp;222=205\cdot 1+17&amp;1\\
+            &amp;=1&amp;=-8&amp;&amp;\\
+            \hline
+            17&amp;0-1\cdot 1&amp;1-(-8)\cdot 1&amp;205=17\cdot 12+1&amp;12\\
+            &amp;=-1&amp;=9&amp;&amp;\\
+            \hline
+            1&amp;1-(-1)\cdot 12&amp;-8-9\cdot 12&amp;17=1\cdot 17+0&amp;\\
+            &amp;=13&amp;=-116&amp;\text{Stop}&amp;\\
+            \hline
+            \end{array}
+          </me>
+          On déduit de la dernière ligne la valeur du PGCD
+          <me>\text{PGCD}(1981;222)=1</me>
+          ainsi que la combinaison linéaire
+          <me>1=1981\cdot 13+222\cdot (-116).</me>
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{|c|c|c|c|c|}
+            \hline
+            r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+            \hline
+            12003&amp;1&amp;0&amp;\\
+            \hline
+            999&amp;0&amp;1&amp;12003=999\cdot 12+15&amp;12\\
+            \hline
+            15&amp;1-0\cdot 12&amp;0-1\cdot 12&amp;999=15\cdot 66+9&amp;66\\
+            &amp;=1&amp;=-12&amp;&amp;\\
+            \hline
+            9&amp;0-1\cdot 66&amp;1-(-12)\cdot 66&amp;15=9\cdot 1+6&amp;1\\
+            &amp;=-66&amp;=793&amp;&amp;\\
+            \hline
+            6&amp;1-(-66)\cdot 1&amp;-12-793\cdot 1&amp;9=6\cdot 1+3&amp;1\\
+            &amp;=67&amp;=-805&amp;&amp;\\
+            \hline
+            3&amp;-66-67\cdot 1&amp;793-(-805)\cdot 1&amp;6=3\cdot 2+0&amp;\\
+            &amp;=-133&amp;=1598&amp;\text{Stop}&amp;\\
+            \hline
+            \end{array}
+          </me>
+          On déduit de la dernière ligne la valeur du PGCD
+          <me>\text{PGCD}(12003;999)=3</me>
+          ainsi que la combinaison linéaire
+          <me>3=12003\cdot (-133)+999\cdot 1598.</me>
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{|c|c|c|c|c|}
+            \hline
+            r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+            \hline
+            30&amp;1&amp;0&amp;\\
+            \hline
+            4&amp;0&amp;1&amp;30=4\cdot 7+2&amp;7\\
+            \hline
+            2&amp;1-0\cdot 7&amp;0-1\cdot 7&amp;4=2\cdot 2+0&amp;\\
+            &amp;=1&amp;=-7&amp;\text{Stop}&amp;\\
+            \hline
+            \end{array}
+          </me>
+          On déduit de la dernière ligne la valeur du PGCD
+          <me>\text{PGCD}(30;4)=2</me>
+          ainsi que la combinaison linéaire
+          <me>2=30\cdot 1+4\cdot (-7).</me>
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{|c|c|c|c|c|}
+            \hline
+            r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+            \hline
+            30&amp;1&amp;0&amp;\\
+            \hline
+            5&amp;0&amp;1&amp;30=5\cdot 6+0&amp;\\
+            &amp;&amp;&amp;\text{Stop}&amp;\\
+            \hline
+            \end{array}
+          </me>
+          On déduit de la dernière ligne la valeur du PGCD
+          <me>\text{PGCD}(30;5)=5</me>
+          ainsi que la combinaison linéaire
+          <me>5=30\cdot 0+5\cdot 1.</me>
+        </p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise xml:id="bezoutinfinitesol">
+  <statement>
+    <p>Soit <m>a, b</m> deux entiers relatifs non nuls. Le but de cet exercice est d'observer que l'équation
+      <men xml:id="eqbezout">au+bv=\text{PGCD}(a;b)</men>
+      admet une infinité de solutions <m>(u;v)\in\mathbb{Z}^2</m>.
+    </p>
+    <p>Notons <m>(u_0;v_0)</m> la solution particulière fournie par l'algorithme d'Euclide étendu.</p>
+    <p>Montrez que pour tout entier <m>k\in\mathbb{Z}</m>, le couple <m>(u;v)\in\mathbb{Z}^2</m> défini par
+      <me>\left\{
+        \begin{array}{rcccc}
+        u&amp;=&amp;u_0&amp;+&amp;k\cdot b\\
+        v&amp;=&amp;v_0&amp;-&amp;k\cdot a
+        \end{array}\right.
+      </me>
+      est solution de l'équation <xref ref="eqbezout"/>.
+    </p>
+  </statement>
+  <solution>
+    <p>Par hypothèses, on a
+      <men xml:id="eqbezout0">au_0+bv_0=\text{PGCD}(a;b)</men>
+    </p>
+    <p>donc
+      <me>
+        \begin{array}{cccc}
+        au+bv&amp;=&amp;a\cdot (u_0+kb)+b\cdot (v_0-ka)&amp;\\
+        &amp;=&amp;au_0+akb+bv_0-bka&amp;\\
+        &amp;=&amp;\underbrace{au_0+bv_0}_{\text{PGCD}(a;b)}+\underbrace{kab-bka}_{0}&amp;\\
+        &amp;=&amp;\text{PGCD}(a;b).
+        \end{array}
+      </me>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Utilisez l'algorithme fourni à la section <xref ref="algorithmebezout"/> pour exprimer <m>\text{PGCD}(a;b)</m> comme combinaison linéaire de <m>a</m> et de <m>b</m>.</p>
+    <p>Puis inspirez-vous de l'exercice <xref ref="bezoutinfinitesol"/> pour donner deux autres couples d'entiers relatifs <m>(u;v)</m> tels que <m>au+bv=\text{PGCD}(a;b)</m>.
+      <ol>
+        <li><p>Pour <m>a=377</m> et <m>b=233</m>.</p></li>
+        <li><p>Pour <m>a=377</m> et <m>b=234</m>.</p></li>
+        <li><p>Pour <m>a=356\,002</m> et <m>b=18\,954</m>.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>L'algorithme fourni donne
+          <me>\text{PGCD}(377;233)=1\quad\text{et}\quad 1=377\cdot 89+233\cdot (-144).</me>
+        </p>
+        <p>Notons <m>(u_0;v_0)=(89;-144)</m> cette solution particulière de l'équation
+          <men xml:id="eqbezout1">au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 377\cdot u+233\cdot v=1.</men>
+        </p>
+        <p>Si on pose, par exemple,
+          <me>\left\{
+            \begin{array}{rcccccccccc}
+            u&amp;=&amp;u_0&amp;+&amp;b&amp;=&amp;89&amp;+&amp;233&amp;=&amp;322\\
+            v&amp;=&amp;v_0&amp;-&amp;a&amp;=&amp;-144&amp;-&amp;377&amp;=&amp;-521
+            \end{array}\right.
+          </me>
+          on obtient une autre solution <m>(u;v)=(322;-521)</m> de l'équation <xref ref="eqbezout1"/>.
+        </p>
+        <p>Et si on pose, par exemple,
+          <me>\left\{
+            \begin{array}{rcccccccccc}
+            u&amp;=&amp;u_0&amp;+&amp;2b&amp;=&amp;89&amp;+&amp;2\cdot 233&amp;=&amp;555\\
+            v&amp;=&amp;v_0&amp;-&amp;2a&amp;=&amp;-144&amp;-&amp;2\cdot 377&amp;=&amp;-898
+            \end{array}\right.
+          </me>
+          on obtient une autre solution <m>(u;v)=(555;-898)</m> de l'équation <xref ref="eqbezout1"/>.
+        </p>
+      </li>
+      <li>
+        <p>L'algorithme fourni donne
+          <me>\text{PGCD}(377;234)=13\quad\text{et}\quad 13=377\cdot 5+234\cdot (-8).</me>
+        </p>
+        <p>Notons <m>(u_0;v_0)=(13;-8)</m> cette solution particulière de l'équation
+          <men xml:id="eqbezout2">au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 377\cdot u+234\cdot v=13.</men>
+        </p>
+        <p>Si on pose, par exemple,
+          <me>\left\{
+            \begin{array}{rcccccccccc}
+            u&amp;=&amp;u_0&amp;-&amp;b&amp;=&amp;13&amp;-&amp;234&amp;=&amp;-221\\
+            v&amp;=&amp;v_0&amp;+&amp;a&amp;=&amp;-8&amp;+&amp;377&amp;=&amp;369
+            \end{array}\right.
+          </me>
+          on obtient une autre solution <m>(u;v)=(-221;369)</m> de l'équation <xref ref="eqbezout2"/>.
+        </p>
+        <p>Et si on pose, par exemple,
+          <me>\left\{
+            \begin{array}{rcccccccccc}
+            u&amp;=&amp;u_0&amp;+&amp;5b&amp;=&amp;13&amp;+&amp;5\cdot 234&amp;=&amp;1183\\
+            v&amp;=&amp;v_0&amp;-&amp;5a&amp;=&amp;-8&amp;-&amp;5\cdot 377&amp;=&amp;-1893
+            \end{array}\right.
+          </me>
+          on obtient une autre solution <m>(u;v)=(1183;-1893)</m> de l'équation <xref ref="eqbezout2"/>.
+        </p>
+      </li>
+      <li>
+        <p>L'algorithme fourni donne
+          <me>\text{PGCD}(356002;18954)=2\quad\text{et}\quad 2=356002\cdot (-694)+18954\cdot 13035.</me>
+        </p>
+        <p>Notons <m>(u_0;v_0)=(-694;13035)</m> cette solution particulière de l'équation
+          <men xml:id="eqbezout3">au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 356002\cdot u+18954\cdot v=2.</men>
+        </p>
+        <p>Si on pose, par exemple,
+          <me>\left\{
+            \begin{array}{rccccc}
+            u&amp;=&amp;u_0&amp;+&amp;7b&amp;=&amp;131984\\
+            v&amp;=&amp;v_0&amp;-&amp;7a&amp;=&amp;-2478979
+            \end{array}\right.
+          </me>
+          on obtient une autre solution <m>(u;v)=(131\,984;-2\,278\,979)</m> de l'équation <xref ref="eqbezout3"/>.
+        </p>
+        <p>Et si on pose, par exemple,
+          <me>\left\{
+            \begin{array}{rccccc}
+            u&amp;=&amp;u_0&amp;-&amp;3b&amp;=&amp;-57556\\
+            v&amp;=&amp;v_0&amp;+&amp;3a&amp;=&amp;1081041
+            \end{array}\right.
+          </me>
+          on obtient une autre solution <m>(u;v)=(-57\,556;1\,081\,041)</m> de l'équation <xref ref="eqbezout3"/>.
+        </p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise xml:id="lemmedegauss">
+  <title>Lemme de Gauss</title>
+  <statement>
+    <p>Soit <m>a, b, c</m> trois entiers relatifs. Montrez que
+      <me>a\vert bc\quad\text{et}\quad\text{PGCD}(a;b)=1\quad\Rightarrow\quad a\vert c.</me>
+    </p>
+  </statement>
+  <solution>
+    <p>Supposons que <m>a\vert bc</m> et que <m>\text{PGCD}(a;b)=1</m>.</p>
+    <p>Comme <m>a\vert bc</m>, il existe <m>d\in\mathbb{Z}</m> tel que
+      <me>bc=ad.</me>
+      Et comme <m>\text{PGCD}(a;b)=1</m>, il existe <m>(u;v)\in\mathbb{Z}^2</m> tel que
+      <me>au+bv=1.</me>
+    </p>
+    <p>On a donc
+      <me>
+        \begin{array}{ccc}
+        c&amp;=&amp;1\cdot c\\
+        &amp;=&amp;(au+bv)\cdot c\\
+        &amp;=&amp;auc+bvc\\
+        &amp;=&amp;auc+(bc)v\\
+        &amp;=&amp;auc+(ad)v\\
+        &amp;=&amp;a(uc+dv)\\
+        &amp;=&amp;ae
+        \end{array}
+      </me>
+      avec <m>e=uc+dv\in\mathbb{Z}</m>,d'où <m>a\vert c</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="lemmedeuclide">
+  <title>Lemme d'Euclide</title>
+  <statement>
+    <p>Soit <m>p</m> un nombre premier et <m>b, c</m> deux entiers relatifs. Montrez que
+      <me>p\vert bc\quad\Rightarrow\quad p\vert b\quad\text{ou}\quad p\vert c.</me>
+    </p>
+  </statement>
+  <solution>
+    <p>Rappel : Comme <m>p</m> est premier, ses seuls diviseurs positifs sont <m>1</m> et <m>p</m>.</p>
+    <p>Supposons que <m>p\vert bc</m>.
+      <ul>
+        <li><p>Si <m>p</m> divise <m>b</m>, on a fini.</p></li>
+        <li>
+          <p>Si <m>p</m> ne divise pas <m>b</m>, alors le plus grand diviseur commun à <m>p</m> et à <m>b</m> est forcément <m>1</m>. On a donc
+            <me>p\vert bc\quad\text{et}\quad\text{PGCD}(p;b)=1</me>
+            d'où
+            <me>p\vert c</me>
+            par le lemme de Gauss <xref ref="lemmedegauss"/>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="coroeuclide">
+  <statement>
+    <ol>
+      <li>
+        <p>Montrez que si <m>a</m> et <m>b</m> sont des entiers premiers entre eux, alors pour tout <m>x\in\mathbb{Z}</m>, on a :
+          <me>a\vert x\quad\text{et}\quad b\vert x\quad\Rightarrow\quad ab\vert x.</me>
+        </p>
+      </li>
+      <li>
+        <p>Montrez que si <m>m_1,\ldots,m_n\in\mathbb{Z}</m> sont premiers entre eux deux à deux, alors pour tout <m>x\in\mathbb{Z}</m>, on a :
+          <me>m_i\vert x\quad\text{pour tout } i=1,\ldots,n\quad\Rightarrow\quad m_1\cdots m_n\vert x.</me>
+        </p>
+      </li>
+    </ol>
+    <p>Application : Si <m>x\in\mathbb{Z}</m> est divisible par <m>2, 3</m> et <m>5</m>, alors <m>x</m> est divisible <m>2\cdot 3\cdot 5=30</m>.</p>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>
+          Supposons que <m>a</m> et <m>b</m> sont premiers entre eux, et qu'ils divisent <m>x</m> tous les deux.
+          Alors, d'une part, il existe <m>k\in\mathbb{Z}</m> tel que
+          <me>x=ka.</me>
+          D'autre part, on a donc
+          <me>b\vert ka\quad\text{et}\quad\text{PGCD}(a;b)=1.</me>
+          Par le lemme de Gauss <xref ref="lemmedegauss"/>, on en déduit que <m>b</m> divise <m>k</m>, de sorte qu'il existe <m>n\in\mathbb{Z}</m> tel que
+          <me>k=mb.</me>
+          Finalement, on obtient
+          <me>x=ka=(mb)\cdot a=m\cdot(ab)\quad\Rightarrow\quad ab\vert x.</me>
+        </p>
+      </li>
+      <li>
+        <p>Ce résultat découle du précédent par récurrence sur <m>n</m>.</p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise xml:id="fracirred">
+  <title>Fractions irréductibles</title>
+  <statement>
+    <p>Soit <m>r</m> un nombre rationnel.
+      <ol>
+        <li>
+          <p>Montrez qu'il existe <m>(a;b)\in\mathbb{Z}\times\mathbb{N}^*</m> tel que
+            <me>r=\frac{a}{b}\quad\text{et}\quad\text{PGCD}(a;b)=1.</me>
+          </p>
+          <p>Remarque : On appelle cela écrire <m>r</m> sous forme de fraction irréductible.</p>
+        </li>
+        <li><p>Montrez qu'une telle écriture est unique.</p></li>
+      </ol>
+    </p>
+    <p>Remarque :
+      <ul>
+        <li>
+          <p>L'algorithme d'Euclide étendu permet de mettre une fraction <m>\frac{a}{b}</m> dans sa forme irréductible.</p>
+          <p>Il faut pour cela se rendre jusqu'à la ligne qui permet d'écrire <m>0</m> comme combinaison linéaire <m>a</m> et de <m>b</m> :
+            <me>0=au+bv\quad\Rightarrow\quad\frac{a}{b}=-\frac{v}{u}.</me>
+            Et il se trouve que ces coefficients <m>u</m> et <m>v</m> sont forcément premiers entre eux (Sauriez-vous le montrer?).
+          </p>
+        </li>
+        <li>
+          <p>Par exemple, l'algorithme d'Euclide étendu appliqué à <url href="https://juliengiol.github.io/algorithmique/bezout.html"><m>2589</m> et <m>234</m></url> donne
+            <me>0=2589\cdot 78+234\cdot(-863)\quad\Rightarrow\quad\frac{2589}{234}=\frac{863}{78}.</me>
+          </p>
+        </li>
+      </ul>
+    </p>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>Par définition des nombres rationnels, il existe <m>(a;b)\in\mathbb{Z}\times\mathbb{N}^*</m> tel que
+          <me>r=\frac{a}{b}.</me>
+        </p>
+        <p>Si <m>\text{PGCD}(a;b)=1</m>, on a fini.</p>
+        <p>Sinon, notons <m>\text{PGCD}(a;b)=d</m>. Comme <m>d</m> divise <m>a</m> et <m>b</m>, il existe deux entiers relatifs <m>a_0, b_0</m> tels que
+          <me>a=da_0\quad\text{et}\quad b=db_0</me>
+          d'où
+          <me>r=\frac{a}{b}=\frac{da_0}{db_0}=\frac{a_0}{b_0}.</me>
+          Il ne reste plus qu'à montrer que <m>\text{PGCD}(a_0;b_0)=1</m>. On commence par appliquer Bachet-Bézout <xref ref="bachetbezout"/> :
+          <me>\text{PGCD}(a;b)=d\quad\Rightarrow\quad\exists(u;v)\in\mathbb{Z}^2,\;au+bv=d.</me>
+          Puis
+          <me>
+            \begin{array}{cccr}
+            au+bv=d&amp;\quad\Rightarrow\quad&amp;da_0u+db_0v=d&amp;\\
+            &amp;\quad\Rightarrow\quad&amp;a_0u+b_0v=1&amp;\text{ par division par }d\\
+            &amp;\quad\Rightarrow\quad&amp;\text{PGCD}(a_0;b_0)=1&amp;\text{ par Bézout.}\\
+            \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>Raisonnons par l'absurde et supposons qu'il existe <m>(a_1;a_2)\neq(b_1;b_2)</m> tels que
+          <me>r=\frac{a_1}{b_1}=\frac{a_2}{b_2}\quad\text{avec}\quad(a_i;b_i)\in\mathbb{Z}\times\mathbb{N}^*\;\text{ et }\;\text{PGCD}(a_i;b_i)=1.</me>
+        </p>
+        <p>Notons que
+          <me>a_1b_2=b_1a_2.</me>
+        </p>
+        <p>Alors
+          <me>b_1\vert b_1a_2=a_1b_2\quad\text{et}\quad\text{PGCD}(a_1;b_1)</me>
+          implique que
+          <me>b_1\vert b_2</me>
+          par le lemme de Gauss <xref ref="lemmedegauss"/> et, par un raisonnement symétrique, on a aussi
+          <me>b_2\vert b_1.</me>
+        </p>
+        <p>Comme <m>b_1</m> et <m>b_2</m> sont tous deux positifs, on déduit de ce qui précède qu'il existe deux entiers positifs <m>c, d</m> tels que
+          <me>b_1=cb_2\quad\text{et}\quad b_2=db_1,</me>
+          d'où
+          <me>
+            \begin{array}{cccc}
+            b_1=cb_2&amp;\quad\Rightarrow\quad&amp;b_1=cdb_1&amp;\\
+            &amp;\quad\Rightarrow\quad&amp;1=cd&amp;\text{ par division par }b_1\\
+            &amp;\quad\Rightarrow\quad&amp;c=d=1&amp;\text{ car }c, d\in\mathbb{N}^*\\
+            &amp;\quad\Rightarrow\quad&amp;b_1=b_2&amp;\text{ car }b_1=cb_2\\
+            &amp;\quad\Rightarrow\quad&amp;a_1=a_2&amp;\text{ car }a_1b_2=b_1a_2.\\
+            \end{array}
+          </me>
+        </p>
+        <p>On a donc montré que <m>(a_1;a_2)=(b_1;b_2)</m>, d'où la contradiction cherchée.</p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <title>Irrationalité de <m>\sqrt{2}</m></title>
+  <statement>
+    <p>Montrez que le nombre <m>\sqrt{2}</m> est irrationnel.</p>
+  </statement>
+  <hint>Utilisez une preuve par contradiction et l'exercice <xref ref="fracirred"/>.</hint>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Le secret de Ricardo pour un oeuf à la coque cuit à la perfection? Trois minutes de cuisson dans une eau frémissante!</p>
+    <p>Albert est parti randonner sans montre ni chronomètre, mais avec des oeufs, une casserole, un briquet, et deux sabliers : un de sept minutes, et un autre de neuf minutes.</p>
+    <ol>
+      <li><p>Comment Albert doit-il procéder pour préparer ses oeufs en suivant à la lettre le secret de Ricardo?</p></li>
+      <li><p>Expliquez comment faire pour chronométrer une durée de <m>n</m> minutes avec ces deux sabliers, quelque soit la valeur de <m>n\in\mathbb{N}^*</m>.</p></li>
+    </ol>
+    <p>Remarque : Cet exercice est inspiré des <url href="https://www.supinfo.com/cours/1ARI/chapitres/02-questions-divisibilite">excellentes notes de cours de Laurent Godefroy</url>, avec l'accord de leur auteur.</p>
+  </statement>
+  <hint>
+    <p>Utilisez des combinaisons linéaires appropriées.</p>
+  </hint>
+</exercise>
+
+</section>
+
+</chapter>

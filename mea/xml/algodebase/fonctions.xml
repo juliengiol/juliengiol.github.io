@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="fonctions" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Fonctions</title>
+
+<section xml:id="syntaxefonctions">
+<title>Syntaxe : def / return</title>
+
+<p>En algorithmique comme en mathématiques, une fonction peut être vue comme une boîte noire qui renvoie un ou plusieurs résultats en sortie, dépendant des éléments qui lui ont été donnés en entrée.</p>
+<p>En Python, les mots-clés qu'on utilise pour définir une fonction sont les suivants.
+  <ul>
+    <li><p><c>def ... :</c> : Pour annoncer le début de la définition.</p></li>
+    <li><p><c>return</c> : Pour annoncer la chose à renvoyer.</p></li>
+  </ul>
+</p>
+
+<remark>
+  <p>
+    Comme pour les boucles et les conditionnelles, les deux-points <c> :</c> annoncent une <url href="https://www.askpython.com/python/python-indentation">indentation</url> (4 espaces fortement recommandés).
+    Notez aussi que le <c>return</c> doit faire partie du bloc indenté.
+  </p>
+</remark>
+
+<p>
+  Voici un premier exemple permettant de définir la fonction quadratique
+  <me>f(x) = x^2-4x+2.</me>
+  <sage language='python'>
+    <input>
+      def f(x):  # début de la définition de la fonction
+          return x ** 2 - 4 * x + 2 # la chose à renvoyer
+    </input>
+  </sage>
+  Évaluez la cellule précédente et vérifiez que rien ne s'affiche.
+  Puis faites afficher la valeur de
+  <me>y = f(5)</me>
+  en évaluant la cellule suivante :
+  <sage language='python'>
+    <input>
+      y = f(5)
+      print(y)
+    </input>
+  </sage>
+</p>
+
+<remark>
+  <p>Une fonction Python sans <c>return</c> peut quand même afficher des choses quand on l'appelle, même si elle ne renvoie rien à proprement parler.</p>
+  <sage language='python'>
+    <input>
+      def f(x):
+          print(x ** 2 - 4 * x + 2)
+
+      y = f(5)
+      print(y)
+    </input>
+  </sage>
+  <p>Le code ci-dessus affiche
+    <ul>
+      <li><p><m>\text{7}</m> parce que la commande <c>y = f(2)</c> fait appel à la fonction <c>f(x)</c> et exécute donc <c>print(x ** 2 - 4 * x + 2)</c>;</p></li>
+      <li><p>et <m>\text{None}</m> parce que la fonction <c>f(x)</c> ne renvoie rien, donc la variable <c>y</c> reste vide, de sorte que <c>print(y)</c> <m>\text{None}</m>.</p></li>
+    </ul>
+  </p>
+</remark>
+
+<p>
+  Codons ensuite la fonction valeur absolue qui peut être définie comme suit :
+  <me>x\longmapsto
+  \begin{cases}
+  x&amp;\text{si}\;x\geq 0\\
+  -x&amp;\text{sinon.}
+  \end{cases}
+  </me>
+  Nous allons l'appeler <c>valeurAbsolue</c>, et la tester avec <c>print(valeurAbsolue(5))</c> et <c>print(valeurAbsolue(-7))</c> qui doivent afficher respectivement <m>\text{5}</m> et <m>\text{7}</m>.
+  <sage language='python'>
+    <input>
+      def valeurAbsolue(x):
+          if x &gt; 0:
+              return x
+          else:
+              return -x
+
+      print(valeurAbsolue(5))
+      print(valeurAbsolue(-7))
+    </input>
+  </sage>
+  Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y4dl5v7v">Python Tutor</url> si vous voulez suivre pas à pas l'exécution du code qui précède.
+</p>
+
+<p>
+  Terminons cette section avec la fonction factorielle. Pour <m>n\geq 1</m>, on rappelle que
+  <me>n!=1\cdot 2\cdot 3\cdots n.</me>
+  La fonction <c>factorielle(n)</c> ci-après calcule n! de manière itérative à l'aide d'une boucle <c>for</c>.
+  On la teste avec <c>print(factorielle(5))</c> qui doit afficher <m>\text{120}</m> puisque
+  <me>5!=1\cdot 2\cdot 3\cdot 4\cdot 5=120.</me>
+  <sage language='python'>
+    <input>
+      def factorielle(n):
+          produit = 1
+          for k in range(2, n+1):
+              produit = produit * k
+          return produit
+
+      print(factorielle(5))
+    </input>
+  </sage>
+  Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/yxl77o2s">Python Tutor</url> si vous voulez suivre pas à pas l'exécution du code qui précède.
+</p>
+
+</section>
+
+<section xml:id="recursivite">
+<title>Récursivité</title>
+
+<p>La <url href="https://fr.wikipedia.org/wiki/R%C3%A9cursivit%C3%A9">récursivité</url> est un concept qui intervient dans des domaines aussi variés que la linguistique, les arts et les mathématiques.</p>
+<p>Une fonction est dite récursive lorsqu'elle contient un appel à elle-même.</p>
+<p>Attention, une telle fonction doit prévoir au moins un cas de base sur lequel elle finisse par tomber.</p>
+<p>
+  La fonction factorielle <m>n!</m> est un bon exemple de fonction pouvant être définie de manière récursive :
+  <me>n!=
+    \begin{cases}
+    1&amp;\text{si}\;n=1,\\
+    n\cdot(n-1)!&amp;\text{si}\;n\ge 2.
+    \end{cases}
+  </me>
+  Par exemple, on a
+  <me>5!=5\cdot\underbrace{4\cdot 3\cdot 2\cdot 1}_{4!}=5\cdot 4!</me>
+  de sorte que <m>5!</m> s'obtient par la multiplication de <m>5</m> avec la valeur de la fonction factorielle pour l'entier précédent (4).
+</p>
+<p>
+  Le code qui suit définit une fonction <c>factorielle(n)</c> suivant le point de vue récursif adopté ci-dessus.
+  On le teste avec <c>print(factorielle(5))</c> qui doit afficher <m>\text{120}</m>.
+</p>
+
+<sage language='python'>
+  <input>
+    def factorielle(n):
+        if n == 1:  # si n = 1
+            return 1  # renvoie 1
+        else:  # sinon
+            return n * factorielle(n - 1)  # calcule factorielle(n - 1) et multiplie le résultat par n
+
+    print(factorielle(5))
+  </input>
+</sage>
+
+<p>
+  Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y235zy2h">Python Tutor</url> si vous voulez suivre pas à pas l'exécution du code qui précède.
+</p>
+<p>
+  Notez que pour le calcul de <c>factorielle(5)</c>, on est obligé de remonter jusqu'au cas de base <c>factorielle(1)</c> avant de redescendre pour calculer <c>factorielle(2)</c>, <c>factorielle(3)</c>, <c>factorielle(4)</c> et enfin <c>factorielle(5)</c> dans cet ordre.
+</p>
+
+</section>
+
+<section xml:id="exercicesfonctions">
+<title>Exercices</title>
+
+<exercise>
+  <statement>
+    <p>Codez une fonction <c>pairOuImpair(n)</c> qui renvoie <m>\text{pair}</m> si <m>\text{n}</m> est divisible par <m>2</m>, et <m>\text{impair}</m> si ce n'est pas le cas.</p>
+    <p>Testez votre code avec <c>print(pairOuImpair(347))</c> et <c>print(pairOuImpair(504))</c> qui doivent afficher <m>\text{impair}</m> et <m>\text{pair}</m> respectivement.</p>
+  </statement>
+  <solution>
+    <pre>
+      def pairOuImpair(n):
+          if n % 2 == 0:
+              return 'pair'
+          else:
+              return 'impair'
+
+      print(pairOuImpair(347))
+      print(pairOuImpair(504))
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Codez une fonction <c>aireTrapeze(base1, base2, hauteur)</c> qui renvoie l'aire d'un trapèze en fonction des longeurs de ses deux bases et de sa hauteur.</p>
+    <p>Testez votre code avec <c>print(aireTrapeze(4, 7, 3)</c> qui doit afficher <m>\text{16.5}</m>.</p>
+  </statement>
+  <solution>
+    <pre>
+      def aireTrapeze(base1, base2, hauteur):
+          return (base1 + base2) * hauteur * 0.5
+
+      print(aireTrapeze(4, 7, 3))
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Codez la fonction <c>f(x)</c> définie par
+      <me>f(x)=
+        \begin{cases}
+        3&amp;\text{si}&amp;x\leq -2,\\
+        x^2+3&amp;\text{si}&amp;-2&lt;x&lt;5,\\
+        4-5x&amp;\text{si}&amp;x&gt;=5.
+        \end{cases}
+      </me>
+    </p>
+    <p>Testez votre code avec les cas suivants.
+      <ul>
+        <li><p><c>print(f(-4))</c> doit afficher <m>\text{3}</m>.</p></li>
+        <li><p><c>print(f(2))</c> doit afficher <m>\text{7}</m>.</p></li>
+        <li><p><c>print(f(5))</c> doit afficher <m>\text{21}</m>.</p></li>
+      </ul>
+    </p>
+  </statement>
+  <solution>
+    <pre>
+      def f(x):
+          if x &lt;= - 2:
+              return 3
+          elif x &lt; 5:
+              return x ** 2 + 3
+          else:
+              return 4 - 5 * x
+
+      print(f(-4))
+      print(f(2))
+      print(f(5))
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Codez la fonction <c>f(x)</c> correspondant au graphique qui suit.</p>
+    <p><image width="65%" source="images/fonctions.png"/></p>
+    <p>Testez votre code avec les cas suivants.
+      <ul>
+        <li><p><c>print(f(-5))</c> doit afficher <m>\text{-5}</m>.</p></li>
+        <li><p><c>print(f(-1))</c> doit afficher <m>\text{3}</m>.</p></li>
+        <li><p><c>print(f(2.5))</c> doit afficher <m>\text{0.0}</m>.</p></li>
+        <li><p><c>print(f(5))</c> doit afficher <m>\text{non défini}</m>.</p></li>
+      </ul>
+    </p>
+  </statement>
+  <solution>
+    <pre>
+      def f(x):
+          if -5 &lt;= x &lt; -1:
+              return x
+          elif -1 &lt;= x &lt; 2:
+              return 3
+          elif 2 &lt;= x &lt; 5:
+              return - 2 * x + 5
+          else:
+              return 'non défini'
+
+      print(f(-5))
+      print(f(-1))
+      print(f(2.5))
+      print(f(5))
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>À l'aide d'une boucle <c>for</c>, construisez une fonction <c>sommeEntiers(n)</c> qui renvoie la somme des entiers de <m>\text{1}</m> jusqu'à <m>\text{n}</m>.</p>
+    <p>Testez votre code avec <c>print(sommeEntiers(1000))</c> qui doit afficher <m>\text{500500}</m>.</p>
+  </statement>
+  <solution>
+    <pre>
+      def sommeEntiers(n):
+          somme = 1
+          for k in range(2, n+1):
+              somme = somme + k
+          return somme
+
+      print(sommeEntiers(1000))
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Créez une fonction <c>conversion(mesure, echelle)</c> qui convertit
+      <ul>
+        <li><p><c>mesure</c> en Fahrenheit si <c>echelle</c> vaut <c>'C'</c>;</p></li>
+        <li><p><c>mesure</c> en Celsius si <c>echelle</c> vaut <c>'F'</c>.</p></li>
+      </ul>
+    </p>
+    <p>Testez votre code avec les cas suivants.
+      <ul>
+        <li><p><c>print(conversion(17, 'C'))</c> doit afficher <m>\text{62.6}</m>.</p></li>
+        <li><p><c>print(conversion(84, 'F'))</c> doit afficher <m>\text{28.8888888889}</m>.</p></li>
+      </ul>
+    </p>
+  </statement>
+  <solution>
+    <pre>
+      def conversion(mesure, echelle):
+          if echelle == 'C':
+              return mesure * 1.8 + 32
+          elif echelle == 'F':
+              return (mesure - 32.0) * 5 / 9
+
+      print(conversion(17, 'C'))
+      print(conversion(84, 'F'))
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Créez une fonction <c>natureTriangle(a, b, c)</c> qui renvoie
+      <ul>
+        <li><p><m>\text{impossible}</m>,</p></li>
+        <li><p><m>\text{équilatéral}</m>,</p></li>
+        <li><p><m>\text{isocèle}</m>,</p></li>
+        <li><p>ou <m>\text{scalène}</m></p></li>
+      </ul>
+      selon les valeurs des longueurs des côtés <m>\text{a, b, c}</m> d'un triangle.
+    </p>
+    <p>Testez votre code avec les cas suivants.
+      <ul>
+        <li><p><c>print(natureTriangle(1, 2, 4))</c> doit afficher <m>\text{impossible}</m>.</p></li>
+        <li><p><c>print(natureTriangle(2, 2, 2))</c> doit afficher <m>\text{équilatéral}</m>.</p></li>
+        <li><p><c>print(natureTriangle(2, 2, 3))</c> doit afficher <m>\text{isocèle}</m>.</p></li>
+        <li><p><c>print(natureTriangle(1, 2, 2.5))</c> doit afficher <m>\text{scalène}</m>.</p></li>
+      </ul>
+    </p>
+  </statement>
+  <solution>
+    <pre>
+      def natureTriangle(a, b, c):
+          if (a &gt; b + c) or (b &gt; a + c) or (c &gt; a + b):
+              return 'impossible'
+          elif (a == b) and (a == c):
+              return 'équilatéral'
+          elif (a == b) or (a == c) or (b == c):
+              return 'isocèle'
+          else:
+              return 'scalène'
+
+      print(natureTriangle(1, 2, 4))
+      print(natureTriangle(2, 2, 2))
+      print(natureTriangle(2, 2, 3))
+      print(natureTriangle(1, 2, 2.5))
+    </pre>
+  </solution>
+</exercise>
+
+<exercise xml:id="exercice_defsansreturn">
+  <statement>
+    <p>Soit <m>[a;b]</m> un intervalle et <m>n\geq 1</m> un entier.</p>
+    <p>On appelle subdivision régulière de <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+      <me>\Delta x=\frac{b-a}{n}</me>
+      la suite
+      <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_{n-1}&lt;x_n=b</me>
+      où
+      <me>x_k-x_{k-1}=\Delta x\qquad\text{pour tout}\;k=1,\ldots,n.</me>
+    </p>
+    <p>Par exemple, voici la subdivision régulière de <m>[1;3]</m> en quatre sous-intervalles de même longueur :
+      <me>x_0=1\;&lt; x_1=1{,}5\;&lt; x_2=2\;&lt; x_3=2{,}5\;&lt; x_4=3.</me>
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>À l'aide d'une boucle <c>for</c>, codez une fonction <c>subdivisionReguliere1(a, b, n)</c> qui affiche <m>x_k</m> pour <m>k=0,1,\ldots,n</m>.</p>
+          <p>Testez votre code avec <c>subdivisionReguliere1(1.0, 3.0, 4)</c> qui doit afficher
+            <pre>
+              1.0
+              1.5
+              2.0
+              2.5
+              3.0
+            </pre>
+          </p>
+        </li>
+        <li>
+          <p>À l'aide d'une boucle <c>while</c>, codez une fonction <c>subdivisionReguliere2(a, b, n)</c> qui renvoie la liste <m>\left[x_0,x_1,\ldots,x_n\right]</m>.</p>
+          <p>Testez votre code avec <c>print(subdivisionReguliere2(1.0, 3.0, 4))</c> qui doit afficher
+            <pre>
+              [1.0, 1.5, 2.0, 2.5, 3.0]
+            </pre>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <pre>
+            def subdivisionReguliere1(a, b, n):
+                deltaX = (b - a) / n
+                x = a
+                print(x)
+                for k in range(0, n):
+                    x = x + deltaX
+                    print(x)
+
+            subdivisionReguliere1(1.0, 3.0, 4)
+          </pre>
+        </li>
+        <li>
+          <pre>
+            def subdivisionReguliere2(a, b, n):
+                deltaX = (b - a) / n
+                x = a
+                liste = [a]
+                while x &lt; b:
+                    x = x + deltaX
+                    liste.append(x)
+                return liste
+
+            print(subdivisionReguliere2(1.0, 3.0, 4))
+          </pre>
+        </li>
+      </ol>
+    </p>
+  </solution>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <pre>
+            def subdivisionReguliere1(a, b, n):
+                deltaX = (b - a) / n
+                x = a
+                for k in range(0, n+1):
+                    print(x)
+                    x = x + deltaX
+
+            subdivisionReguliere1(1.0, 3.0, 4)
+          </pre>
+        </li>
+        <li>
+          <pre>
+            def subdivisionReguliere2(a, b, n):
+                deltaX = (b - a) / n
+                liste = []
+                x = a
+                while x &lt;= b:
+                    liste.append(x)
+                    x = x + deltaX
+                return liste
+
+            print(subdivisionReguliere2(1.0, 3.0, 4))
+          </pre>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Codez une fonction <c>sommeEntiers(n)</c> qui renvoie la somme des entiers de <m>\text{1}</m> à <m>\text{n}</m> de manière récursive.</p>
+    <p>Testez votre code avec les cas suivants.
+      <ul>
+        <li><p><c>print(sommeEntiers(3))</c> doit afficher <m>\text{6}</m>.</p></li>
+        <li><p><c>print(sommeEntiers(100))</c> doit afficher <m>\text{5050}</m>.</p></li>
+      </ul>
+    </p>
+  </statement>
+  <solution>
+    <pre>
+      def sommeEntiers(n):
+          if n == 1:
+              return 1
+          else:
+              return n + sommeEntiers(n - 1)
+
+      print(sommeEntiers(3))
+      print(sommeEntiers(100))
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Combien de fois le nombre <m>45</m> est-il divisible par <m>2</m>? La réponse est <m>0</m> car <m>45</m> est impair.</p>
+    <p>Combien de fois le nombre <m>24</m> est-il divisible par <m>2</m>? La réponse est <m>3</m> car la factorisation de <m>24</m> en produit de facteurs premiers donne
+      <me>24=2^3\cdot 3.</me>
+    </p>
+    <p>
+      <ol>
+        <li><p>En utilisant une variable <c>compteur</c> et une boucle <c>while</c>, codez une fonction <c>combienDeDeux1(n)</c> qui renvoie le nombre de fois que <m>\text{n}</m> est divisible par <m>2</m>.</p></li>
+        <li><p>Codez une fonction <c>combienDeDeux2(n)</c> qui renvoie de manière récursive le nombre de fois que <m>\text{n}</m> est divisible par <m>2</m>.</p></li>
+      </ol>
+    </p>
+    <p>Testez votre code avec <c>combienDeDeuxj(45)</c> et <c>combienDeDeuxj(24)</c> qui doivent afficher <m>\text{0}</m> et <m>\text{3}</m> respectivement.</p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <pre>
+            def combienDeDeux1(n):
+                compteur = 0
+                while n % 2 == 0:
+                    compteur = compteur + 1
+                    n = n / 2
+                return compteur
+
+            print(combienDeDeux1(45))
+            print(combienDeDeux1(24))
+          </pre>
+        </li>
+        <li>
+          <pre>
+            def combienDeDeux2(n):
+                if n % 2 != 0:
+                    return 0
+                else:
+                    return 1 + combienDeDeux2(n / 2)
+
+            print(combienDeDeux2(45))
+            print(combienDeDeux2(24))
+          </pre>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>On appelle suite de Syracuse toute suite d'entiers naturels <m>\{s_n\}</m> définie par la donnée d'un entier de départ <m>s_0\geq 1</m> et la relation de récurrence qui suit.
+      <me>\quad s_{n+1}
+        =
+        \begin{cases}
+        s_n/2&amp;\text{si}\;s_n\;\text{est pair,}\\
+        3s_n+1&amp;\text{sinon,}
+        \end{cases}
+        \quad\text{pour tout}\;n\geq 0.
+      </me>
+    </p>
+    <p>
+      <ol>
+        <li><p>Codez une fonction <c>syracuse1(s, n)</c> qui renvoie de manière itérative le terme <m>s_{\text{n}}</m> d'une suite de Syracuse commençant par <m>s_0=\text{s}</m>.</p></li>
+        <li><p>Codez une fonction <c>syracuse2(s, n)</c> qui renvoie de manière récursive le terme <m>s_{\text{n}}</m> d'une suite de Syracuse commençant par <m>s_0=\text{s}</m>.</p></li>
+      </ol>
+    </p>
+    <p>Testez votre code avec <c>print(syracusej(14, 20))</c> qui doit afficher <m>\text{1}</m>.</p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <pre>
+            def syracuse1(s, n):
+                for k in range(1, n+1):
+                    if s % 2 == 0:
+                          s = s / 2
+                    else:
+                        s = 3 * s + 1
+                return s
+
+            print(syracuse1(14, 20))
+          </pre>
+        </li>
+        <li>
+          <pre>
+            def syracuse2(s, n):
+                if n == 0:
+                    return s
+                elif s % 2 == 0:
+                    return syracuse2(s / 2, n-1)
+                else:
+                    return syracuse2(3 * s + 1, n-1)
+
+            print(syracuse2(14, 20))
+          </pre>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="fibo_recursive">
+  <statement>
+    <p>La suite de Fibonacci est définie par récurrence de la façon suivante :
+      <me>F_1=F_2=1\quad\text{et}\quad F_n=F_{n-1}+F_{n-2}\;\text{pour tout}\;n\geq 3.</me>
+    </p>
+    <ol>
+      <li><p>Calculez <m>F_{20}</m> à l'aide d'une fonction récursive.</p></li>
+      <li><p>Pouvez-vous calculer <m>F_{100}</m> de cette façon?</p></li>
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>Voici le code :
+          <pre>
+            def fibonacci(n):
+                if n == 1:
+                    return 1
+                elif n == 2:
+                    return 1
+                else:
+                    return fibonacci(n - 1) + fibonacci(n - 2)
+
+            print(fibonacci(20))
+          </pre>
+        </p>
+        <p>Voici ce qu'il affiche :
+          <pre>6765</pre>
+        </p>
+      </li>
+      <li><p>Non, cela prend trop de temps. Il vaut mieux s'en tenir à la méthode itérative de l'exercice <xref ref="fibo_iterative"/>.</p></li>
+    </ol>
+  </solution>
+</exercise>
+
+</section>
+
+</chapter>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:28:04-04:00    *-->
+<!--*    on 2020-09-02T14:12:58-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Soit \(n\geq 0\) un entier et</p>
+<p>Pour tout \(n\geq 0\text{,}\) on a donc</p>
 <div class="displaymath">
 \begin{equation*}
-x_0,\;x_1,\;\ldots,\;x_n\;\in\mathbb{R}
+x_{n+1}=x_n-\frac{f(x_n)}{\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}}
 \end{equation*}
 </div>
-<p data-braille="continuation">\(n+1\) nombres réels distincts deux à deux.</p>
-<span class="incontext"><a href="presentationlagrange.html#p-694">Contexte</a></span>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{f(x_n)(x_n-x_{n-1})}{f(x_n)-f(x_{n-1})}.
+\end{equation*}
+</div>
+<span class="incontext"><a href="exercicesnewton.html#p-694">Contexte</a></span>
 </body>
 </html>

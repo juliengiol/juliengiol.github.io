@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:26:57-04:00    *-->
+<!--*    on 2020-09-02T14:12:20-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,16 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">2.3.10.2</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">2.3.8.1</span><span class="period">.</span>
 </h6>
-<pre class="code-block tex2jax_ignore">def combienDeDeux2(n):
-    if n % 2 != 0:
-        return 0
-    else:
-        return 1 + combienDeDeux2(n / 2)
+<pre class="code-block tex2jax_ignore">def subdivisionReguliere1(a, b, n):
+    deltaX = (b - a) / n
+    x = a
+    for k in range(0, n+1):
+        print(x)
+        x = x + deltaX
 
-print(combienDeDeux2(45))
-print(combienDeDeux2(24))
+subdivisionReguliere1(1.0, 3.0, 4)
 </pre></article><span class="incontext"><a href="exercicesfonctions.html#li-85">Contexte</a></span>
 </body>
 </html>

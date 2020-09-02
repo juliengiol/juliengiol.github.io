@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="fr-FR">
+
+    <docinfo>
+
+      <brandlogo url="https://juliengiol.github.io/" source="images/ossau.jpg" />
+
+      <latex-preamble>
+          <package>cancel</package>
+      </latex-preamble>
+
+      <macros>
+      \newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} % this comment will be stripped
+      \newcommand{\myequation}[2]{#1\amp =#2} % testing alignment override
+      % comments anywhere get stripped, with or without faux % comment \% characters
+      \newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+      \newcommand{\testingescapedpercent}{ \% } % just testing
+      </macros>
+
+      <cross-references text="global" />
+
+      <latex-image-preamble>
+      \usepackage{pgfplots}               % loads tikz package
+      \usepackage{smartdiagram}           % for a circular diagram
+      \pgfplotsset{axis x line = middle,
+                   axis y line = middle}
+      \usetikzlibrary{backgrounds}
+      \usetikzlibrary{arrows,matrix}
+      \usetikzlibrary{positioning}        % for Dave R's worksheet
+      \usepackage{circuitikz}             % for Virgil P's worksheet
+      </latex-image-preamble>
+
+      <initialism>M&amp;A</initialism>
+
+      <html>
+          <baseurl href="https://juliengiol.github.io/algorithmique" />
+      </html>
+
+      <!--
+      <analytics google-gst="UA-25018634-8"/>
+      -->
+
+      <rename element="frontmatter" xml:lang="fr-FR">Accueil</rename>
+      <rename element="acknowledgement" xml:lang="fr-FR">Remerciements</rename>
+      <rename element="incontext" xml:lang="fr-FR">Contexte</rename>
+      <rename element="skip-to-content" xml:lang="fr-FR">Avancer</rename>
+      <rename element="activity" xml:lang="fr-FR">Digression</rename>
+      <rename element="exploration" xml:lang="fr-FR">Question ouverte</rename>
+      <rename element="inlineexercise" xml:lang="fr-FR">Exercice</rename>
+      <rename element="colophon" xml:lang="fr-FR">Droits d'auteur</rename>
+
+    </docinfo>
+
+    <book xml:id="mea">
+        <title>Mathématiques et algorithmique</title>
+
+        <frontmatter xml:id="accueil">
+          <title>Accueil</title>
+
+          <titlepage>
+
+            <author>
+              <personname>Julien Giol</personname>
+              <email>julien.giol@gmail.com</email>
+            </author>
+
+            <date>&#169; 2019-2020</date>
+
+          </titlepage>
+
+          <abstract>
+            <paragraphs>
+              <title>Mathématiques (nom féminin pluriel)</title>
+              <p>Science qui étudie, par le moyen du raisonnement déductif, les propriétés d'êtres abstraits (nombres, figures géométriques, fonctions, espaces, etc.) ainsi que les relations qui s'établissent entre eux.
+              </p>
+            </paragraphs>
+            <paragraphs>
+              <title>Algorithme (nom masculin singulier)</title>
+              <p>Ensemble de règles opératoires dont l'application permet de résoudre un problème donné au moyen d'un nombre fini d'opérations. Un algorithme peut être traduit, grâce à un langage de programmation, en un programme exécutable par un ordinateur.</p>
+            </paragraphs>
+          </abstract>
+
+          <preface>
+            <title>Introduction</title>
+              <p>
+                Ces pages constituent une initiation aux méthodes algorithmiques utilisées par les mathématiciens.
+                Loin d'être exhaustives, elles se concentrent sur des exemples et des propriétés accessibles à quiconque
+                <ul>
+                  <li><p>connaît le calcul différentiel et intégral de base,</p></li>
+                  <li><p>sait résoudre des systèmes d'équations linéaires par la méthode de Gauss</p></li>
+                  <li><p>et maîtrise l'arithmétique élémentaire.</p></li>
+                </ul>
+              </p>
+              <p>
+                Les algorithmes proposés ici sont rarement optimisés : en général, j'ai préféré du code simple à comprendre, quitte à en sacrifier la rapidité.
+                Le langage de programmation utilisé est <url href="https://www.python.org/">Python</url>.
+              </p>
+              <p>Pour accéder à la table des matières, cliquez sur le lien suivant : <url href="https://juliengiol.github.io/mea/mea.html">Table des matières</url>.</p>
+          </preface>
+
+          <preface>
+            <title>Droits d'auteur</title>
+            <p>Les idées présentées ici sont anciennes, voire antiques.
+              En voici quelques auteurs :
+              <sidebyside widths="22% 22% 22% 22%" margins="0%" valigns="bottom bottom bottom bottom">
+                  <image source="images/euclide.jpg"/>
+                  <image source="images/newton.jpg"/>
+                  <image source="images/lagrange.jpg"/>
+                  <image source="images/heron.png"/>
+              </sidebyside>
+            </p>
+            <p>
+              J'ai fait attention à éviter toute forme de plagiat, de manière à me sentir libre d'offrir gratuitement ce contenu numérique à mes élèves.
+              À de rares occasions, je me suis permis d'emprunter des énoncés et des exercices après avoir obtenu l'accord de leurs auteurs.
+            </p>
+            <p>
+              Je mets ces pages à la disposition de tous selon les termes de la <url href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons</url>
+              <image width="30%" source="images/byncsa.png"/>
+              Paternité - Pas d'Utilisation Commerciale - Partage des Conditions Initiales à l'Identique 4.0 International.
+            </p>
+          </preface>
+
+          <acknowledgement>
+            <p>Merci d'abord à Andréane, Victor et Albert de faire partie de ma vie.</p>
+            <p>Merci également à ma mère pour m'avoir transmis le goût des mathématiques.</p>
+            <p>
+              Merci ensuite aux collègues du <url href="https://www.collegeahuntsic.qc.ca/">Collège Ahuntsic</url> qui m'ont aidé d'une manière ou d'une autre dans la préparation de ce matériel.
+              Merci à Jérôme-Melville Giguêre, Hélène Robert, Daniel Bourbonnais, et Luc Poitras.
+              Et merci plus particulièrement à Christian Contant pour sa lecture attentive et ses conseils judicieux.
+            </p>
+            <p>Merci bien sûr à <url href="https://gvanrossum.github.io/">Guido van Rossum</url> pour <url href="https://www.python.org">Python</url>.</p>
+            <p>Merci aussi à <url href="https://wstein.org/">William Stein</url> et à ses collaborateurs pour <url href="http://www.sagemath.org/index.html">SageMath</url> et <url href="https://cocalc.com">CoCalc</url>.</p>
+            <p>Merci mille fois à <url href="http://buzzard.ups.edu/">Rob Beezer</url> pour <url href="https://pretextbook.org">PreTeXt</url>, grâce à quoi j'ai pu créer ces pages html.</p>
+            <p>Merci enfin à toutes celles et ceux qui m'ont aidé à corriger des coquilles et, plus généralement, à améliorer ces notes de cours :
+              <sidebyside>
+                <ul>
+                  <li><p>Mohammed Larbi Turki</p></li>
+                  <li><p>Raphaël Del Longo</p></li>
+                  <li><p>Justin Lachapelle</p></li>
+                  <li><p>Florence Houde-Gélinas</p></li>
+                  <li><p>Rayen Saifi</p></li>
+                  <li><p>Owais Mian</p></li>
+                </ul>
+                <ul>
+                  <li><p>Tommy Brasseur</p></li>
+                  <li><p>Frédérick Lanthier</p></li>
+                  <li><p>Samtou Bodjona</p></li>
+                  <li><p>Philippe Schoeb</p></li>
+                  <li><p>Nasser Jomaa</p></li>
+                </ul>
+              </sidebyside>
+            </p>
+          </acknowledgement>
+
+          <preface>
+            <title>Témoignages</title>
+              <p>
+                Papier ou numérique?
+                En tant qu'enseignant, je suis conquis par les innombrables possibilités offertes par <url href="https://pretextbook.org/">PreTeXt</url>.
+                Et les utilisateurs, dans tout ça?
+                J'ai demandé à mes étudiants si cela valait la peine de concevoir de telles notes de cours, en ligne, interactives et s'adaptant à tous les écrans.
+                Voici les témoignages que j'ai recueillis.
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    «J'ai franchement bien apprécié que les notes de cours soient en ligne et interactives.
+                    Avec des notes en ligne, je peux travailler n'importe où, du moment que j'ai accès à du réseau, sans être obligé de transporter un manuel constamment avec moi.
+                    J'ai trouvé aussi très utile d'avoir des notes de cours interactives, car cela m'a permis de renforcer les concepts vus en classe en les considérant d'une différente manière.» (Émile Roy, janvier 2020)
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    «Les notes de cours interactives en ligne constituent un moyen d'étude très efficace, car elles sont accessibles partout, ce qui favorise, selon moi, la réussite.
+                    Il m'arrive qu'au travail, lorsque je n'ai pas beaucoup de clients, j'ouvre mon cellulaire et je fais certains exercices pratiques grâce au site, ce qui me rajoute du temps d'étude pour le cours durant la semaine.
+                    Lorsque je prends le métro, je peux l'ouvrir et relire certains concepts ou regarder certains exemples au lieu d'avoir à sortir mes notes de mon sac.
+                    Le fait d'avoir les notes disponibles en ligne avant même d'avoir vu la matière en classe permet également de se familiariser avec ce que le prof va présenter au prochain cours, ça m'aide donc beaucoup à mieux assimiler la matière lorsqu'elle est présentée en classe.
+                    De plus, dans le cas où je suis obligé de manquer un cours, je peux quand même étudier par moi-même en consultant le site, comme ça je ne tombe pas en arrière par rapport à la classe.
+                    (...)
+                    Je recommande donc fortement l'usage d'un tel outil dans les cours, car il favorise la réussite des élèves et nous permet de pleinement profiter de la technologie.» (Nasser Jomaa, décembre 2019)
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    «L'existence de ces notes de cours en ligne m'a souvent aidé lors de ma session.
+                    Comme j'ai dû manquer deux trois cours à cause du sport, ça m'a aidé qu'elles soient en ligne, j'y avais accès même aux États-Unis, sans l'encombrement d'un manuel de notes de cours lourd dans mes bagages.
+                    Aussi, je crois que l'effort mis dans ces notes en vaut la peine, car elles sont interactives, avec exercices intégrés!
+                    L'autre bon côté de ces notes, c'est leur prix, comme elles sont gratuites, ça enlève un poids financier de sur les épaules des étudiants, et c'est très apprécié!» (Zachary Benoit, novembre 2019)
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    «La technologie utilisée pour le cours de Mathématiques et Algorithmique est utile pour plusieurs raisons.
+                    Elle offre des applications interactives qui nous permettent de visualiser un graphique ou les étapes d'un algorithme.
+                    Les codes d'algorithmes sont modifiables, l'étudiant peut essayer lui-même de coder avec ses propres valeurs.
+                    Les notes de cours en ligne permettent aussi aux étudiants d'acheter un manuel de moins.» (Justin Lachapelle, novembre 2019)
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    «Les notes de cours sont parfaites. On a une interface simple and très facile à utiliser. Parfait pour les étudiants du cours.» (Anonyme, novembre 2019)
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    «Oui ça vaut la peine!
+                    Ça permet d'avoir toutes les notes si on doit s'absenter.
+                    C'est bien organisé, on ne se perd pas dans les notes de cours.
+                    Aussi, c'est un cours d'algo donc ça me semble cohérent d'avoir un support numérique pour ce cours.» (Florence, novembre 2019)
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    «Je trouve que vos notes de cours en ligne en valent la peine parce qu'on peut y accéder beaucoup plus facilement que si elles étaient dans un livre.
+                    En plus, plusieurs raccourcis nous permettent de voir des anciens exemples et théorèmes utiles sans avoir à constamment changer de page.» (Philippe Schoeb, novembre 2019)
+                  </p>
+                </li>
+              </ul>
+          </preface>
+
+        </frontmatter>
+
+        <part xml:id="algodebase" xmlns:xi="http://www.w3.org/2001/XInclude">
+          <title>Algorithmique de base</title>
+
+          <xi:include href="./algodebase/assignetc.xml" />
+
+          <xi:include href="./algodebase/fonctions.xml" />
+
+          <xi:include href="./algodebase/complexite.xml" />
+
+        </part>
+
+        <part xml:id="rechzeros" xmlns:xi="http://www.w3.org/2001/XInclude">
+          <title>Recherche de zéros</title>
+
+          <xi:include href="./rechzeros/bissection.xml" />
+
+          <xi:include href="./rechzeros/newtonraphson.xml" />
+
+        </part>
+
+        <part xml:id="interpolation" xmlns:xi="http://www.w3.org/2001/XInclude">
+          <title>Interpolation polynomiale</title>
+
+          <xi:include href="./interpolation/lagrange.xml" />
+
+          <xi:include href="./interpolation/newton.xml" />
+
+        </part>
+
+        <part xml:id="integration" xmlns:xi="http://www.w3.org/2001/XInclude">
+          <title>Intégration numérique</title>
+
+          <xi:include href="./integration/rectangles.xml" />
+
+          <xi:include href="./integration/trapezes.xml" />
+
+          <xi:include href="./integration/simpson.xml" />
+
+        </part>
+
+        <part xml:id="thdesnombres" xmlns:xi="http://www.w3.org/2001/XInclude">
+          <title>Théorie des nombres</title>
+
+          <xi:include href="./thdesnombres/euclide.xml" />
+
+          <xi:include href="./thdesnombres/bezout.xml" />
+
+          <xi:include href="./thdesnombres/chinois.xml" />
+
+        </part>
+
+        <backmatter xml:id="appendices">
+          <title>Appendices</title>
+
+          <xi:include href="./appendices/approximation.xml" />
+
+          <xi:include href="./appendices/sagemath.xml" />
+
+          <xi:include href="./appendices/python.xml" />
+
+          <references xml:id="references-backmatter">
+            <title>Bibliographie</title>
+
+            <biblio type="raw" xml:id="biblio-casamayou-PEPPLM">Alexandre Casamayou-Boucau, Pascal Chauvin et Guillaume Connan, <title>Programmation en Python pour les mathématiques</title>.</biblio>
+
+            <biblio type="raw" xml:id="biblio-demailly-ANEED">Jean-Pierre Demailly, <title>Analyse numérique et équations différentielles</title>.</biblio>
+
+            <biblio type="raw" xml:id="biblio-fortin-ANPI">André Fortin, <title>Analyse numérique pour ingénieurs</title>.</biblio>
+
+            <biblio type="raw" xml:id="biblio-godefroy-ANPI">Laurent Godefroy, <title><url href="https://www.supinfo.com/cours/1ARI">Arithmétique et cryptographie</url></title>.</biblio>
+
+            <biblio type="raw" xml:id="biblio-zimmermann-CMAS">Paul Zimmermann et al., <title>Calcul mathématique avec Sage</title>.</biblio>
+
+          </references>
+
+        </backmatter>
+
+    </book>
+
+</pretext>

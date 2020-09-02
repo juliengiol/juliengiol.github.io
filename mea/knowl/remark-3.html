@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:27:32-04:00    *-->
+<!--*    on 2020-09-02T14:12:13-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,12 +10,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <article class="remark remark-like"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span>
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">De la droite vers la gauche.</span>
 </h6>
-<p>En d'autres termes, la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.3">5.1.3</a> dit qu'on s'est rapproché du zéro \(c\) en passant de \(x_0\) à \(x_1\text{.}\)</p>
-<p>C'est le principe itératif de la méthode de Newton-Raphson.</p></article><span class="incontext"><a href="presentationnewton.html#remark-3">Contexte</a></span>
+<p>Dans l'exemple précédent, la ligne <code class="code-inline tex2jax_ignore">x = x * 2</code> peut se lire</p>
+<div class="displaymath">
+\begin{equation*}
+\text{assigner à x le contenu de x * 2}
+\end{equation*}
+</div>
+<p data-braille="continuation">ou encore</p>
+<div class="displaymath">
+\begin{equation*}
+\text{x * 2 va dans x.}
+\end{equation*}
+</div>
+<p>Comme l'illustre l'exemple suivant, quand on a plusieurs <code class="code-inline tex2jax_ignore">=</code> sur la même ligne, il est pratique de les interpréter en les lisant de la droite vers la gauche.</p>
+<div class="sagecell-python" id="sage-8"><script type="text/x-sage">x = 2
+y = 5
+z = x = y  # le contenu de y va dans celui de x qui va dans celui de z
+print(x, y, z)
+</script></div></article><span class="incontext"><a href="assignations.html#remark-3">Contexte</a></span>
 </body>
 </html>

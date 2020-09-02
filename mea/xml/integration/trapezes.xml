@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="trapezes" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Méthode des trapèzes</title>
+
+<introduction>
+
+  <interactive xml:id="interactive_trapezes" platform="sage" width="100%" aspect="14:22">
+    <slate surface="sage">
+      @interact
+      def _(f = input_box(label = html(r'\(f(x)\)'), default = 3*sin(x)+5, width = 30), a = input_box(label = html(r'\(a\)'), default = 1, width = 10), b = input_box(label = html(r'\(b\)'), default = 7, width = 10), n = input_box(label = html(r'\(n\)'), default = 3, width = 10)):
+          f(x) = f
+          integrale = integral(f(x), x, a, b).n()
+          deltaX = (b-a)/n
+          x_i = a
+          approximation = 0
+          L = []
+          for i in range(0,n):
+              ygauche_i = f(x_i)
+              ydroite_i = f(x_i+deltaX)
+              approximation = approximation + (ygauche_i+ydroite_i)/2
+              L = L + [(x_i, 0)]
+              L = L + [(x_i, ygauche_i)]
+              x_i = x_i + deltaX
+              L = L + [(x_i, ydroite_i)]
+          approximation = (deltaX*approximation).n()
+          erreur = integrale - approximation
+          L = L + [(x_i,0)]
+          G = plot(f(x), (x, a-(b-a)/20, b+(b-a)/20), color = 'red', thickness = 1)
+          G = G + plot(f(x), (x, a, b), color = 'red', thickness = 1, fill = true, fillcolor = 'grey')
+          G = G + polygon(L, edgecolor = 'black', rgbcolor = (0,0.5,0.5))
+          G.show(aspect_ratio = 'automatic', figsize = 5)
+          pretty_print(html(r'Valeur exacte : \[\int_{%s}^{%s}f(x)\,\mathrm{d}x=%s\]' %(a, b, integrale)))
+          pretty_print(html(r'Approximation par la méthode des trapèzes :\[%s\]'%approximation))
+          pretty_print(html(r'Erreur :\[%s\]' %erreur))
+    </slate>
+  </interactive>
+
+</introduction>
+
+<section xml:id="presentationtrapezes">
+<title>Présentation</title>
+
+<p>Rappelons que la méthode des rectangles <xref ref="def_methode_rectangles"/>
+  consiste à approcher la valeur de l'intégrale définie
+    <me>\int_a^bf(x)\mathrm{d}x</me>
+  par
+  <md>
+    <mrow>\text{Approximation}&amp;=\Delta x\cdot\sum_{k=1}^nf(\xi_k)</mrow>
+    <mrow>&amp;=\sum_{k=1}^nf(\xi_k)\cdot\Delta x</mrow>
+  </md>
+  qui est la somme des aires des <m>n</m> rectangles de côtés <m>\Delta x=x_k-x_{k-1}</m> et <m>f(\xi_k)</m> dont l'aire (positive, négative, ou nulle, selon la valeur de <m>f(\xi_k)</m>) vaut
+  <me>\text{Aire rectangle}=f(\xi_k)\cdot\Delta x.</me>
+</p>
+<p>La méthode des trapèzes consiste à remplacer chacun de ces <m>n</m> rectangles par le trapèze de bases <m>f(x_{k-1})</m> et <m>f(x_k)</m>, et de hauteur <m>\Delta x</m>, ce qui donne
+  <md>
+    <mrow>\text{Aire trapèze}&amp;=\frac{(\text{Base 1 + Base 2})\cdot\text{Hauteur}}{2}</mrow>
+    <mrow>&amp; =\frac{(f(x_{k-1})+f(x_k))\cdot\Delta x}{2}</mrow>
+    <mrow>&amp; =\frac{\Delta x}{2}\cdot (f(x_{k-1})+f(x_k))</mrow>
+  </md>
+</p>
+
+<definition>
+  <title>Méthode des trapèzes</title>
+  <p>Soit une intégrale définie
+    <me>\int_a^bf(x)\mathrm{d}x</me>
+    et soit
+    <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+    la subdivision régulière de l'intervalle d'intégration <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+    <me>\Delta x=\frac{b-a}{n}.</me>
+  </p>
+  <p>Approcher la valeur de cette intégrale par la méthode des trapèzes à l'aide de cette subdivision revient à considérer l'approximation suivante :
+    <me>\text{Approximation}=\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right).</me>
+  </p>
+</definition>
+
+<theorem xml:id="erreur_trapezes">
+  <statement>
+    <p>Soit <m>f:[a;b]\longrightarrow\mathbb{R}</m> dérivable deux fois de sorte que <m>f''</m> soit continue sur <m>[a;b]</m>.</p>
+    <p>Soit <m>n\geq 1</m> un entier et soit
+      <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+      la subdivision régulière de l'intervalle d'intégration <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+      <me>\Delta x=\frac{b-a}{n}.</me>
+    </p>
+    <p>Alors l'erreur d'approximation par la méthode des trapèzes
+      <me>\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right)}_{\text{Approximation}}</me>
+      vérifie
+      <me>|\text{Erreur}|\leq\frac{M(b-a)^3}{12n^2}</me>
+      où <m>M</m> est n'importe quel nombre tel que
+      <me>|f''(x)|\leq M\quad\text{pour tout }x\in[a;b].</me>
+    </p>
+  </statement>
+  <proof>
+    <p>Faire comme pour les rectangles au début, puis utiliser des intégrations par parties judicieuses.</p>
+    <p>C'est trop dur au niveau cégep selon moi.</p>
+  </proof>
+</theorem>
+
+<assemblage>
+  <title>Méthode des trapèzes : Approcher la valeur de l'intégrale d'une fonction en la remplaçant par des morceaux affines</title>
+  <p>
+    <ul>
+      <li><p>Objectif : Obtenir des approximations de la valeur d'une intégrale définie <m>\displaystyle\int_a^bf(x)\mathrm{d}x</m>.</p></li>
+      <li>
+        <p>Principe : Prendre
+        <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+        la subdivision régulière de l'intervalle d'intégration <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+        <me>\Delta x=\frac{b-a}{n}.</me>
+        Puis effectuer le calcul suivant :
+          <me>\text{Approximation}=\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right).</me>
+        </p>
+      </li>
+      <li>
+        <p>Précision : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable deux fois avec une dérivée seconde continue sur <m>[a;b]</m>, de sorte qu'il existe <m>M</m> tel que
+          <me>|f''(x)|\leq M\quad\text{pour tout }x\in[a;b].</me>
+          On a alors
+          <me>\left|\text{Erreur}\right|\leq \frac{M(b-a)^3}{12n^2}.</me>
+        </p>
+      </li>
+      <li>
+        <p>Astuce de calcul : Notez que l'approximation s'obtient aussi par la formule
+          <me>\text{Approximation}=\frac{\Delta x}{2}\cdot\left(f(x_0)+2f(x_1)+\cdots+2f(x_{n-1})+f(x_n)\right).</me>
+        </p>
+      </li>
+      <li><p>Voir aussi : <url href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing">Notes de cours de Jérôme</url>.</p></li>
+    </ul>
+  </p>
+</assemblage>
+
+<example xml:id="exemple_approx_trapezes">
+  <p>Déterminons l'approximation obtenue pour l'intégrale définie
+    <me>\int_0^1e^{-x^2}\mathrm{d}x</me>
+    si on applique la méthode des trapèzes avec quatre trapèzes.
+    <ul>
+      <li><p>Notons <m>f(x)=e^{-x^2}</m>.</p></li>
+      <li><p>On a <m>n=4</m> et <m>\Delta x=\frac{b-a}{n}=\frac{1-0}{4}=0{,}25</m>.</p></li>
+      <li>
+        <p>Alors <m>x_k=a+k\cdot\Delta x=k\cdot 0{,}25</m> pour <m>k=0,\ldots,4</m> donne la subdivision régulière
+          <me>0&lt;0{,}25&lt;0{,}5&lt;0{,}75&lt;1</me>
+          de l'intervalle d'intégration <m>[0;1]</m>.
+        </p>
+      </li>
+      <li>
+        <p>La méthode des trapèzes donne alors
+          <md>
+            <mrow>\text{Approximation}&amp;=\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right)</mrow>
+            <mrow>&amp;=\frac{0{,}25}{2}\cdot((f(0)+f(0{,}25))+(f(0{,}25)+f(0{,}5))</mrow>
+            <mrow>&amp;\qquad\qquad+(f(0{,}5)+f(0{,}75))+(f(0{,}75)+f(1)))</mrow>
+            <mrow>&amp;=\frac{0{,}25}{2}\cdot(f(0)+2f(0{,}25)+2f(0{,}5)+2f(0{,}75)+f(1))</mrow>
+            <mrow>&amp;\approx 0{,}742\,984\,097\,800\,38.</mrow>
+          </md>
+        </p>
+      </li>
+    </ul>
+  </p>
+</example>
+
+<example xml:id="exemple_erreur_trapezes">
+  <p>Estimons l'erreur commise à l'exemple précédent <xref ref="exemple_approx_trapezes"/>.</p>
+  <p>
+    <ul>
+      <li><p>On a <m>f(x)=e^{-x^2}</m>.</p></li>
+      <li>
+        <p>Donc <m>f'(x)=e^{-x^2}\cdot(-2x)=-2x\cdot e^{-x^2}</m> et
+          <md>
+            <mrow>f''(x)&amp;=-2\cdot e^{-x^2}-2x\cdot\cdot e^{-x^2}\cdot(-2x)</mrow>
+            <mrow>&amp;=-2\cdot e^{-x^2}+4x^2\cdot e^{-x^2}</mrow>
+            <mrow>&amp;=2\cdot(2x^2-1)\cdot e^{-x^2}.</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>En passant à la valeur absolue, on obtient
+          <me>|f''(x)|=2\cdot|2x^2-1|\cdot e^{-x^2}.</me>
+        </p>
+      </li>
+      <li>
+        <p>Sur l'intervalle <m>[0;1]</m>, la fonction <m>g(x)=2x^2-1</m> est croissante, donc
+          <me>g(0)\leq g(x)\leq g(1)</me>
+          c'est-à-dire
+          <me>-1\leq 2x^2-1\leq 1</me>
+          d'où
+          <me>|2x^2-1|\leq 1\qquad\text{pour tout }x\in[0;1].</me>
+        </p>
+      </li>
+      <li>
+        <p>Comme par ailleurs <m>e^{-x^2}\leq e^0=1</m> pour tout <m>x\geq 0</m>, on a
+          <md>
+            <mrow>|f''(x)|&amp;=2\cdot|2x^2-1|\cdot e^{-x^2}</mrow>
+            <mrow>&amp;\leq 2\cdot 1\cdot 1</mrow>
+            <mrow>&amp;=2</mrow>
+          </md>
+          pour tout <m>x\in[0;1]</m>.
+        </p>
+      </li>
+      <li>
+        <p>Il en découle qu'on peut prendre <m>M=2</m> en appliquant le théorème <xref ref="erreur_trapezes"/> :
+          <md>
+            <mrow>\left|\text{Erreur}\right|&amp;\leq\frac{M(b-a)^3}{12n^2}</mrow>
+            <mrow>&amp;=\frac{2\cdot(1-0)^3}{12\cdot 4^2}</mrow>
+            <mrow>&amp;=\frac{1}{6\cdot 16}</mrow>
+            <mrow>&amp;=0{,}010\,4\ldots</mrow>
+            <mrow>&amp;\leq 0{,}011</mrow>
+          </md>
+          d'où
+          <me>-0{,}011\leq\text{Erreur}\leq 0{,}011.</me>
+        </p>
+      </li>
+    </ul>
+  </p>
+</example>
+
+<example>
+  <p>Déduisons des deux exemples précédents <xref ref="exemple_approx_trapezes"/> et <xref ref="exemple_erreur_trapezes"/> un encadrement de l'intégrale définie
+    <me>\int_0^1e^{-x^2}\mathrm{d}x</me>
+    avec trois décimales.
+  </p>
+  <p>D'une part
+    <me>0{,}742\leq\text{Approximation}\leq 0{,}743</me>
+    et d'autre part
+    <me>-0{,}011\leq\text{Erreur}\leq 0{,}011.</me>
+    Donc
+    <me>0{,}742-0{,}011\leq\text{Approximation}+\text{Erreur}\leq 0{,}743+0{,}011</me>
+    c'est-à-dire
+    <me>0{,}731\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 0{,}754.</me>
+  </p>
+  <p>On est donc sûrs de la première décimale (7) avec quatre trapèzes seulement, ce qui était loin d'être le cas avec quatre rectangles.</p>
+</example>
+
+</section>
+
+<section xml:id="algorithmetrapezes">
+<title>Algorithme</title>
+
+<algorithm>
+  <title>Méthode des trapèzes</title>
+  <statement>
+    <ul>
+      <li><p>Entrées :
+        <ul>
+          <li><p>Assigner à <m>\text{f}</m> la fonction dont on veut approcher l'intégrale.</p></li>
+          <li><p>Assigner à <m>\text{a}</m> et <m>\text{b}</m> les bornes de l'intervalle d'intégration.</p></li>
+          <li><p>Assigner à <m>\text{n}</m> le nombre de sous-intervalles de la subdivision.</p></li>
+        </ul></p>
+      </li>
+      <li><p>Instructions :
+        <ul>
+          <li><p>Initialiser <m>\text{approximation}</m>, la variable qui donnera l'approximation de l'intégrale : <m>\text{approximation}=0</m>.</p></li>
+          <li><p>Assigner à <m>\text{deltaX}</m> la valeur <m>(\text{b}-\text{a})/\text{n}</m>.</p></li>
+          <li><p>Pour <m>\text{k}</m> allant de <m>\text{1}</m> à <m>\text{n}</m>,</p>
+            <ul>
+              <li><p>assigner à <m>\text{xi1}</m> la valeur <m>\text{a}+(\text{k}-1)\cdot\text{deltaX}</m> ;</p></li>
+              <li><p>assigner à <m>\text{xi2}</m> la valeur <m>\text{xi1}+\text{deltaX}</m> ;</p></li>
+              <li><p>assigner à <m>\text{approximation}</m> la valeur de <m>\text{approximation}+\text{f}(\text{xi1})+\text{f}(\text{xi2})</m>.</p></li>
+            </ul>
+          </li>
+          <li><p>Assigner à <m>\text{approximation}</m> la valeur de <m>\text{approximation}\cdot\text{deltaX}/2</m>.</p></li>
+        </ul></p>
+      </li>
+      <li><p>Résultat : Afficher <m>\text{approximation}</m>.</p></li>
+    </ul>
+  </statement>
+</algorithm>
+
+<p>Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale
+  <me>\int_0^14\sqrt{1-x^2}\,\mathrm{d}x=\pi</me>
+  fournie par la méthode des trapèzes pour <m>32</m> trapèzes.
+</p>
+
+<sage language='python'>
+  <input>
+    # entrées
+    import numpy as np
+    def f(x):
+        return 4 * np.sqrt(1 - x ** 2)
+    a = 0.0
+    b = 1.0
+    n = 32
+
+    # instructions
+    approximation = 0
+    deltaX = (b - a) / n
+    for k in range(1, n+1):
+        xi1 = a + (k - 1) * deltaX
+        xi2 = xi1 + deltaX
+        approximation = approximation + f(xi1) + f(xi2)
+    approximation = approximation * deltaX / 2
+
+    # sortie
+    print(approximation)
+  </input>
+</sage>
+
+</section>
+
+<section xml:id="exercicestrapezes">
+<title>Exercices</title>
+
+<exercise>
+  <statement>
+    <p>Soit <m>f(x)=\frac{10}{x}</m>.</p>
+    <p>Vous allez appliquer la méthode des trapèzes à l'intégrale
+      <me>\int_2^4f(x)\mathrm{d}x</me>
+      avec quatre trapèzes.
+    </p>
+    <ol>
+      <li><p>Donnez la subdivision régulière de l'intervalle <m>[2;4]</m> en quatre sous-intervalles de même longueur.</p></li>
+      <li><p>Représentez graphiquement <m>f(x)</m> sur <m>[2;4]</m> en faisant apparaître les quatre trapèzes à considérer.</p></li>
+      <li><p>Calculez l'aire de chacun des quatre trapèzes et arrondissez à trois décimales au besoin.</p></li>
+      <li><p>Quelle est l'approximation fournie par la méthode des trapèzes?</p></li>
+      <li><p>Comparez avec la valeur exacte de l'intégrale : quelle est l'erreur commise? Arrondissez à trois décimales.</p></li>
+      <li><p>Pourquoi cette erreur est-elle négative?</p></li>
+    </ol>
+  </statement>
+  <answer>
+    <ol>
+      <li><p><m>2&lt;2{,}5&lt;3&lt;3{,}5&lt;4</m></p></li>
+      <li><p>À vous de jouer.</p></li>
+      <li>
+        <p>
+          <me>
+            \begin{array}{ccc}
+            \text{Aire du trapèze 1}&amp;=&amp;2{,}25\\
+            \text{Aire du trapèze 2}&amp;\approx&amp;1{,}833\\
+            \text{Aire du trapèze 3}&amp;\approx&amp;1{,}548\\
+            \text{Aire du trapèze 4}&amp;\approx&amp;1{,}339
+            \end{array}
+          </me>
+        </p>
+      </li>
+      <li><p><me>\text{Approximation}\approx 2{,}25+1{,}833+1{,}548+1{,}339=6{,}97</me></p></li>
+      <li>
+        <p>
+          <md>
+            <mrow>\text{Erreur}&amp;=\int_2^4f(x)\mathrm{d}x-\text{Approximation}</mrow>
+            <mrow>&amp;\approx 10\ln(2)-6{,}97</mrow>
+            <mrow>&amp;\approx -0{,}039</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>Comme la fonction <m>f(x)=\frac{10}{x}</m> a une dérivée seconde <m>f''(x)=\frac{20}{x^3}</m> positive sur <m>[2;4]</m>, elle est convexe (concave vers le haut) sur cet intervalle.</p>
+        <p>C'est pour cela que sur chaque sous-intervalle <m>[x_{k-1};x_k]</m>, la valeur de l'intégrale de <m>f</m> est inférieure à l'aire du trapèze correspondant.</p>
+        <p>On a donc
+          <me>\int_2^4f(x)\mathrm{d}x&lt;\text{Approximation}\quad\Rightarrow\quad\underbrace{\int_2^4f(x)\mathrm{d}x-\text{Approximation}}_{\text{Erreur}}&lt;0.</me>
+        </p>
+      </li>
+    </ol>
+  </answer>
+</exercise>
+
+<exercise xml:id="exercices_approx_trapezes">
+  <statement>
+    <p>Appliquez la méthode des trapèzes pour calculer une approximation de l'intégrale donnée avec le nombre de trapèzes indiqué. Au besoin, arrondissez à trois décimales.
+      <ol>
+        <li><p><m>\displaystyle\int_0^1e^{x^2}\mathrm{d}x</m> avec six trapèzes.</p></li>
+        <li><p><m>\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x</m> avec quatre trapèzes.</p></li>
+        <li><p><m>\displaystyle\int_{-1}^2\ln(\ln(x^2+1)+1)\mathrm{d}x</m> avec trois trapèzes.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li><p><m>\text{Approximation}\approx 1{,}475</m></p></li>
+        <li><p><m>\text{Approximation}\approx -0{,}277</m></p></li>
+        <li><p><m>\text{Approximation}\approx 1{,}269</m></p></li>
+      </ol>
+    </p>
+  </answer>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>Notons <m>f(x)=e^{x^2}</m>, <m>n=6</m> et
+            <me>\Delta x=\frac{b-a}{n}=\frac{1-0}{6}=\frac{1}{6}.</me>
+          </p>
+          <p>Voici la subdivision régulière de l'intervalle <m>[0;1]</m> en six sous-intervalles de même longueur :
+            <me>0&lt;\frac{1}{6}&lt;\frac{1}{3}&lt;\frac{1}{2}&lt;\frac{2}{3}&lt;\frac{5}{6}&lt;1.</me>
+            La méthode des trapèzes donne alors l'approximation suivante :
+            <md>
+              <mrow>&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f\left(\frac{1}{6}\right)+2f\left(\frac{1}{3}\right)+2f\left(\frac{1}{2}\right)\right.</mrow>
+              <mrow>&amp;\qquad\qquad\left.+2f\left(\frac{2}{3}\right)+2f\left(\frac{5}{6}\right)+f(1)\right)</mrow>
+              <mrow>=\;&amp;\frac{1}{12}\cdot\left(e^{0^2}+2e^{\left(\frac{1}{6}\right)^2}+2e^{\left(\frac{1}{3}\right)^2}+2e^{\left(\frac{1}{2}\right)^2}+2e^{\left(\frac{2}{3}\right)^2}+2e^{\left(\frac{5}{6}\right)^2}+e^{1^2}\right)</mrow>
+              <mrow>\approx\;&amp;1{,}475.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Notons <m>g(x)=\cos\left(\frac{x^3}{5}\right)</m>, <m>n=4</m> et
+            <me>\Delta x=\frac{b-a}{n}=\frac{4-2}{4}=0{,}5.</me>
+          </p>
+          <p>Voici la subdivision régulière de l'intervalle <m>[2;4]</m> en quatre sous-intervalles de même longueur :
+            <me>2&lt;2{,}5&lt;3&lt;3{,}5&lt;4.</me>
+            La méthode des trapèzes donne alors l'approximation suivante :
+            <md>
+              <mrow>&amp;\frac{\Delta x}{2}\cdot\left(g(2)+2g(2{,}5)+2g(3)+2g(3{,}5)+g(4)\right)</mrow>
+              <mrow>=\;&amp;0{,}25\cdot\left(\cos\left(\frac{2^3}{5}\right)+2\cos\left(\frac{2{,}5^3}{5}\right)+2\cos\left(\frac{3^3}{5}\right)\right.</mrow>
+              <mrow>&amp;\qquad\qquad\left.+2\cos\left(\frac{3{,}5^3}{5}\right)+\cos\left(\frac{4^3}{5}\right)\right)</mrow>
+              <mrow>\approx\;&amp;-0{,}277.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Notons <m>h(x)=\ln(\ln(x^2+1)+1)</m>, <m>n=3</m> et
+            <me>\Delta x=\frac{b-a}{n}=\frac{2+1}{3}=1.</me>
+          </p>
+          <p>Voici la subdivision régulière de l'intervalle <m>[-1;2]</m> en trois sous-intervalles de même longueur :
+            <me>-1&lt;0&lt;1&lt;2.</me>
+            La méthode des trapèzes donne alors l'approximation suivante :
+            <md>
+              <mrow>&amp;\frac{\Delta x}{2}\cdot\left(h(-1)+2h(0)+2h(1)+h(2)\right)</mrow>
+              <mrow>=\;&amp;0{,}5\cdot\left(\ln(\ln(2)+1)+2\cdot 0+2\ln(\ln(2)+1)+\ln(\ln(5)+1)\right)</mrow>
+              <mrow>\approx\;&amp;1{,}269.</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Quand c'est possible, estimez l'erreur commise pour chaque intégrale de l'exercice précédent <xref ref="exercices_approx_trapezes"/>.</p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>Pour <m>\displaystyle\int_0^1e^{x^2}\mathrm{d}x</m> avec six trapèzes, posons <m>f(x)=e^{x^2}</m>. Alors
+            <me>f'(x)=e^{x^2}\cdot 2x\quad\text{et}\quad f''(x)=e^{x^2}\cdot(4x^2+2).</me>
+            Comme les fonctions <m>x\mapsto e^{x^2}</m> et <m>x\mapsto 4x^2+2</m> sont croissantes sur <m>[0;1]</m>, on a
+            <md>
+              <mrow>|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|</mrow>
+              <mrow>&amp;=e^{x^2}(4x^2+2)</mrow>
+              <mrow>&amp;\leq e^{1^2}(4\cdot 1^2+2)</mrow>
+              <mrow>&amp;=6e</mrow>
+            </md>
+            pour tout <m>x\in[0;1]</m>. Donc on peut prendre <m>M=6e</m> dans le théorème <xref ref="erreur_trapezes"/> et on a
+            <md>
+              <mrow>|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}</mrow>
+              <mrow>&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}</mrow>
+              <mrow>&amp;=\frac{e}{72}</mrow>
+              <mrow>&amp;=0{,}037\,7\ldots</mrow>
+              <mrow>&amp;\leq 0{,}038.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Pour <m>\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x</m> avec quatre trapèzes, posons <m>g(x)=\cos\left(\frac{x^3}{5}\right)</m>. Alors
+            <me>g'(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{3x^2}{5}</me>
+            et
+            <me>g''(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}.</me>
+            On a
+            <me>
+              \begin{array}{ccl}
+              |g''(x)|&amp;=&amp;\left|-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
+              &amp;\leq&amp;\left|\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}\right|+\left|\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
+              &amp;=&amp;\left|\sin\left(\frac{x^3}{5}\right)\right|\cdot\frac{6|x|}{5}+\left|\cos\left(\frac{x^3}{5}\right)\right|\cdot\frac{9x^4}{25}\\
+              &amp;\leq&amp;1\cdot\frac{6|x|}{5}+1\cdot\frac{9x^4}{25}\\
+              &amp;\leq&amp;1\cdot\frac{6\cdot 4}{5}+1\cdot\frac{9\cdot 4^4}{25}\\
+              &amp;=&amp;\frac{2424}{25}\\
+              &amp;=&amp;96{,}96
+              \end{array}
+            </me>
+            pour tout <m>x\in[2;4]</m>. Donc on peut prendre <m>M=96{,}96</m> dans le théorème <xref ref="erreur_trapezes"/> et on a
+            <md>
+              <mrow>|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}</mrow>
+              <mrow>&amp;=\frac{96{,}96\cdot(4-2)^3}{12\cdot 4^2}</mrow>
+              <mrow>&amp;=4{,}04.</mrow>
+            </md>
+          </p>
+        </li>
+        <li><p>Trop difficile au niveau cégep selon moi.</p></li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Combien faudrait-il de trapèzes au minimum pour que la valeur absolue de l'erreur ne dépasse par <m>10^{-5}</m> lorsqu'on applique la méthode des trapèzes à l'intégrale définie
+      <me>\int_0^1e^{-x^2}\mathrm{d}x\;?</me>
+    </p>
+  </statement>
+  <answer>
+    <p><m>130</m></p>
+    <p>Remarque : On a vu a l'exemple <xref ref="exemple_nombre_minimum_rectangles"/> qu'il fallait au minimum <m>10^5=100\,000</m> rectangles pour obtenir une telle précision avec la méthode des rectangles.</p>
+  </answer>
+  <solution>
+    <p>On a vu à l'exemple <xref ref="exemple_erreur_trapezes"/> qu'on pouvait appliquer le théorème <xref ref="erreur_trapezes"/> avec <m>M=2</m>.</p>
+    <p>Donc
+      <me>
+        \begin{array}{cccc}
+        &amp;|\text{Erreur}|&amp;\leq&amp;10^{-5}\\
+        \Leftrightarrow&amp;\frac{M(b-a)^3}{12n^2}&amp;\leq&amp;10^{-5}\\
+        \Leftrightarrow&amp;\frac{2\cdot (1-0)^3}{12n^2}&amp;\leq&amp;10^{-5}\\
+        \Leftrightarrow&amp;\frac{1}{6n^2}&amp;\leq&amp;10^{-5}\\
+        \Leftrightarrow&amp;\frac{10^5}{6}&amp;\leq&amp;n^2\\
+        \Leftrightarrow&amp;\sqrt{\frac{10^5}{6}}&amp;\leq&amp;n\\
+        \Leftrightarrow&amp;129{,}09\ldots&amp;\leq&amp;n
+        \end{array}
+      </me>
+    </p>
+    <p>Il faut donc prendre <m>130</m> trapèzes au moins.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>On s'intéresse à l'intégrale définie suivante :
+      <me>\int_0^1\sin(x^2)\mathrm{d}x.</me>
+    </p>
+    <ol>
+      <li>
+        <p>Appliquez la méthode des trapèzes avec cinq trapèzes.
+          Utilisez trois décimales.
+          Quel encadrement obtenez-vous pour la valeur exacte de l'intégrale?
+          Quel est le meilleur arrondissement que vous pouvez en déduire?
+        </p>
+      </li>
+      <li>
+        <p>Appliquez la méthode des trapèzes avec dix mille trapèzes.
+          Utilisez neuf décimales.
+          Quel encadrement obtenez-vous pour la valeur exacte de l'intégrale?
+          Quel est le meilleur arrondissement que vous pouvez en déduire?
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>Notons <m>f(x)=\sin(x^2)</m>. Alors
+      <me>f'(x)=\cos(x^2)\cdot 2x\quad\text{et}\quad f''(x)=-\sin(x^2)\cdot 4x^2+\cos(x^2)\cdot 2.</me>
+      Donc, pour tout <m>x\in[0;1]</m>, on a
+      <me>
+        \begin{array}{ccl}
+        |f''(x)|&amp;=&amp;\left|-\sin(x^2)\cdot 4x^2+\cos(x^2)\cdot 2\right|\\
+        &amp;\leq&amp;\left|\sin(x^2)\cdot 4x^2\right|+\left|\cos(x^2)\cdot 2\right|\\
+        &amp;=&amp;\left|\sin(x^2)\right|\cdot 4x^2+\left|\cos(x^2)\right|\cdot 2\\
+        &amp;\leq&amp;1\cdot 4x^2+1\cdot 2\\
+        &amp;\leq&amp;1\cdot 4\cdot 1^2+1\cdot 2\\
+        &amp;=&amp;6.
+        \end{array}
+      </me>
+      On pourra donc prendre <m>M=6</m> dans le théorème <xref ref="erreur_trapezes"/> quand on estimera l'erreur commise.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <ul>
+            <li><p>Ici <m>n=5</m> et <m>\Delta x=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2</m>.</p></li>
+            <li>
+              <p>Subdivision régulière de <m>[0;1]</m> en cinq sous-intervalles de même longueur :
+                <me>0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.</me>
+              </p>
+            </li>
+            <li>
+              <p>L'approximation fournie par la méthode des trapèzes est alors
+                <md>
+                  <mrow>&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}2)+2f(0{,}4)+2f(0{,}6)+2f(0{,}8)+f(1)\right)</mrow>
+                  <mrow>=\;&amp;\text{ à vous de jouer avec votre calculatrice}</mrow>
+                  <mrow>=\;&amp;0{,}313\,902\ldots</mrow>
+                </md>
+                En gardant trois décimales, on a donc l'encadrement suivant :
+                <me>0{,}313\leq\text{Approximation}\leq 0{,}314.</me>
+              </p>
+            </li>
+            <li>
+              <p>D'après le théorème <xref ref="erreur_trapezes"/> avec <m>M=6</m>, on a
+                <md>
+                  <mrow>|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}</mrow>
+                  <mrow>&amp;=\frac{6\cdot(1-0)^3}{12\cdot 5^2}</mrow>
+                  <mrow>&amp;=0{,}02</mrow>
+                </md>
+                d'où
+                <me>-0{,}020\leq\text{Erreur}\leq 0{,}020.</me>
+              </p>
+            </li>
+            <li>
+              <p>On obtient donc l'encadrement
+                <me>0{,}313-0{,}020\leq\text{Approximation}+\text{Erreur}\leq 0{,}314+0{,}020</me>
+                c'est-à-dire
+                <me>0{,}293\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}334.</me>
+              </p>
+            </li>
+            <li>
+              <p>Le meilleur arrondissement qu'on peut en déduire est donc
+                <me>\int_0^1\sin(x^2)\mathrm{d}x\approx 0{,}3.</me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          <ul>
+            <li><p>Ici <m>n=10\,000=10^4</m> et <m>\Delta x=\frac{b-a}{n}=\frac{1-0}{10^4}=0{,}000\,1</m>.</p></li>
+            <li>
+              <p>Subdivision régulière de <m>[0;1]</m> en dix mille sous-intervalles de même longueur :
+                <me>0&lt;0{,}000\,1&lt;0{,}000\,2&lt;\ldots&lt;0,999\,9&lt;1.</me>
+              </p>
+            </li>
+            <li>
+              <p>L'approximation fournie par la méthode des trapèzes est alors
+                <md>
+                  <mrow>&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}000\,1)+\cdots+2f(0,999\,9)+f(1)\right)</mrow>
+                  <mrow>=\;&amp;\text{ à vous de jouer avec l'algorithme fourni}</mrow>
+                  <mrow>=\;&amp;0{,}310\,268\,302\,623\ldots</mrow>
+                </md>
+                En gardant neuf décimales, on a donc l'encadrement
+                <me>0{,}310\,268\,302\leq\text{Approximation}\leq 0{,}310\,268\,303.</me>
+              </p>
+            </li>
+            <li>
+              <p>D'après le théorème <xref ref="erreur_trapezes"/> avec <m>M=6</m>, on a
+                <md>
+                  <mrow>|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}</mrow>
+                  <mrow>&amp;=\frac{6\cdot(1-0)^3}{12\cdot (10^4)^2}</mrow>
+                  <mrow>&amp;=0{,}5\cdot 10^{-8}</mrow>
+                  <mrow>&amp;=0{,}000\,000\,005</mrow>
+                </md>
+                d'où
+                <me>-0{,}000\,000\,005\leq\text{Erreur}\leq 0{,}000\,000\,005.</me>
+              </p>
+            </li>
+            <li>
+              <p>On obtient donc l'encadrement
+                <me>
+                  \begin{array}{cc}
+                  &amp;0{,}310\,268\,302-0{,}000\,000\,005\\
+                  \leq&amp;\text{Approximation}+\text{Erreur}\\
+                  \leq&amp;0{,}310\,268\,303+0{,}000\,000\,005
+                  \end{array}
+                </me>
+                c'est-à-dire
+                <me>0{,}310\,268\,297\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}310\,268\,308.</me>
+              </p>
+            </li>
+            <li>
+              <p>Le meilleur arrondissement qu'on peut en déduire est donc
+                <me>\int_0^1\sin(x^2)\mathrm{d}x\approx 0{,}310\,268\,3.</me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Créez une fonction <c>trapezes(f, a, b, n)</c> qui donne la valeur approchée de l'intégrale <m>\int_a^bf(x)\mathrm{d}x</m> par la méthode des trapèzes pour <m>n</m> trapèzes.</p>
+    <p>Testez votre code pour <m>\int_0^1\frac{1}{1+x}\mathrm{d}x</m> avec <m>100</m> trapèzes. Vous devez trouver <m>\approx 0{,}693\,153\,430\,482</m>.</p>
+  </statement>
+  <solution>
+    <pre>
+      # fonction
+      def trapezes(f, a, b, n):
+          approximation = 0
+          deltaX = (b - a) / n
+          for k in range(1, n+1):
+              xi1 = a + (k - 1) * deltaX
+              xi2 = xi1 + deltaX
+              approximation = approximation + f(xi1) + f(xi2)
+          approximation = approximation * deltaX / 2
+          return approximation
+
+      # test
+      def f(x):
+          return 1 / (1 + x)
+      print(trapezes(f, 0.0, 1.0, 100))
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Modifiez le code donné à la section <xref ref="algorithmetrapezes"/> afin de remplacer la boucle <c>for</c> par une boucle <c>while</c> semblable à celle utilisée à la section <xref ref="algorithmerectangles"/>.</p>
+  </statement>
+  <solution>
+    <pre>
+      import numpy as np
+      def f(x):
+          return 4 * np.sqrt(1 - x ** 2)
+      a = 0.0
+      b = 1.0
+      n = 32
+
+      # instructions
+      approximation = 0
+      deltaX = (b - a) / n
+      xi1 = a
+      while xi1 &lt; b:
+          xi2 = xi1 + deltaX
+          approximation = approximation + f(xi1) + f(xi2)
+          xi1 = xi1 + deltaX
+      approximation = approximation * deltaX / 2
+
+      # sortie
+      print(approximation)
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Soit <m>f</m> une fonction continue sur l'intervalle <m>[x_{k-1};x_k]</m>.</p>
+    <ol>
+      <li>
+        <p>Donnez la forme de Newton du polynôme interpolateur <m>p</m> des points
+          <me>A_0=(x_{k-1};f(x_{k-1}))\quad\text{et}\quad A_1=(x_k;f(x_k)).</me>
+        </p>
+      </li>
+      <li>
+        <p>Montrez que
+          <me>\int_{x_{k-1}}^{x_k}p(t)\mathrm{d}t=\frac{1}{2}(f(x_{k-1})+f(x_k))(x_k-x_{k-1}).</me>
+        </p>
+      </li>
+      <li><p>Que venez-vous de démontrer?</p></li>
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>Les différences divisées sont
+          <me>[A_0]=f(x_{k-1})\;\text{et}\; [A_0,A_1]=\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}.</me>
+        </p>
+        <p>La forme de Newton du polynôme interpolateur est donc
+          <md>
+            <mrow>p(t)&amp;=[A_0]+[A_0,A_1](t-x_{k-1})</mrow>
+            <mrow>&amp;=f(x_{k-1})+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}(t-x_{k-1}).</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>On a donc
+          <md>
+            <mrow>\int_{x_{k-1}}^{x_k}p(t)\mathrm{d}t&amp;=\int_{x_{k-1}}^{x_k}\left(f(x_{k-1})+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}(t-x_{k-1})\right)\mathrm{d}t</mrow>
+            <mrow>&amp;=f(x_{k-1})t+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(t-x_{k-1})^2}{2}\Bigg\vert_{x_{k-1}}^{x_k}</mrow>
+            <mrow>&amp;=f(x_{k-1})x_k+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(x_k-x_{k-1})^2}{2}</mrow>
+            <mrow>&amp;\qquad -f(x_{k-1})x_{k-1}+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(x_{k-1}-x_{k-1})^2}{2}</mrow>
+            <mrow>&amp;=f(x_{k-1})(x_k-x_{k-1})+(f(x_k)-f(x_{k-1}))\cdot\frac{(x_k-x_{k-1})}{2}</mrow>
+            <mrow>&amp;=\frac{1}{2}\left(2f(x_{k-1})+f(x_k)-f(x_{k-1})\right)\cdot(x_k-x_{k-1})</mrow>
+            <mrow>&amp;=\frac{1}{2}\left(f(x_{k-1})+f(x_k)\right)\cdot(x_k-x_{k-1}).</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>Nous venons de démontrer qu'en remplaçant la fonction <m>f</m>, sur l'intervalle <m>[x_{k-1};x_k]</m>, par le polynôme de degré un au plus qui interpole les points <m>(x_{k-1};f(x_{k-1}))</m> et <m>(x_k;f(x_k))</m>, on remplace
+          <me>\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x</me>
+          par
+          <me>\frac{1}{2}\left(f(x_{k-1})+f(x_k)\right)\cdot\underbrace{(x_k-x_{k-1})}_{\Delta x}=\frac{\Delta x}{2}\cdot\left(f(x_{k-1})+f(x_k))\right).</me>
+        </p>
+        <p>Ceci explique rigoureusement d'où sort la formule donnant l'approximation dans la méthode des trapèzes.</p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+</section>
+
+</chapter>

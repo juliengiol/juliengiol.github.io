@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:27:38-04:00    *-->
+<!--*    on 2020-09-02T14:12:13-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,13 +10,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <article class="remark remark-like"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span>
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Indentations.</span>
 </h6>
-<p>Dans le cas de l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.7">5.3.7</a> ou du théorème <a class="xref" data-knowl="./knowl/convergence_quadratique_newton.html" title="Théorème 5.1.11">5.1.11</a>, on parle de convergence quadratique à cause de l'exposant \(2\) dans les inégalités qui en découlent.</p>
-<p>En pratique, cela entraîne que le nombre de décimales exactes double grosso modo à chaque itération.</p>
-<p>Pour simplifier, on se contentera des hypothèses indiquées dans l'encadré qui suit.</p></article><span class="incontext"><a href="presentationnewton.html#remark-6">Contexte</a></span>
+<p>Notez l'indentation de 4 espaces qui précède <code class="code-inline tex2jax_ignore">print(k)</code> dans les deux exemples précédents : elle signifie que l'instruction <code class="code-inline tex2jax_ignore">print(k)</code> fait partie de la boucle <code class="code-inline tex2jax_ignore">for</code>.</p>
+<p>Ce nombre de 4 espaces est typique avec <a class="external" href="https://www.python.org" target="_blank">Python</a> et je vous invite à le respecter scrupuleusement, même si cela semble fonctionner avec 3, 7, ou n'importe quel nombre positif d'espaces.</p>
+<p>Avant de passer à la suite, évaluez puis corrigez le code erroné suivant : <div class="sagecell-python" id="sage-18"><script type="text/x-sage">for k in range(3, 7+1):
+    print(k)
+      print(k ** 2)
+print(k // 2)
+</script></div></p></article><span class="incontext"><a href="boucles.html#remark-6">Contexte</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:26:09-04:00    *-->
+<!--*    on 2020-09-02T14:11:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,39 +235,39 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">9.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode des trapèzes.</span>
 </h6>
 <ul class="disc">
-<li id="li-652">
-<p id="p-1259">Entrées :</p>
-<ul class="circle">
-<li id="li-653"><p id="p-1260">Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
-<li id="li-654"><p id="p-1261">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
-<li id="li-655"><p id="p-1262">Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
-</ul>
-</li>
-<li id="li-656">
-<p id="p-1263">Instructions :</p>
-<ul class="circle">
-<li id="li-657"><p id="p-1264">Initialiser \(\text{approximation}\text{,}\) la variable qui donnera l'approximation de l'intégrale : \(\text{approximation}=0\text{.}\)</p></li>
-<li id="li-658"><p id="p-1265">Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
 <li id="li-659">
-<p id="p-1266">Pour \(\text{k}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
+<p id="p-1288">Entrées :</p>
+<ul class="circle">
+<li id="li-660"><p id="p-1289">Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
+<li id="li-661"><p id="p-1290">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
+<li id="li-662"><p id="p-1291">Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
+</ul>
+</li>
+<li id="li-663">
+<p id="p-1292">Instructions :</p>
+<ul class="circle">
+<li id="li-664"><p id="p-1293">Initialiser \(\text{approximation}\text{,}\) la variable qui donnera l'approximation de l'intégrale : \(\text{approximation}=0\text{.}\)</p></li>
+<li id="li-665"><p id="p-1294">Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
+<li id="li-666">
+<p id="p-1295">Pour \(\text{k}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
 <ul class="square">
-<li id="li-660"><p id="p-1267">assigner à \(\text{xi1}\) la valeur \(\text{a}+(\text{k}-1)\cdot\text{deltaX}\) ;</p></li>
-<li id="li-661"><p id="p-1268">assigner à \(\text{xi2}\) la valeur \(\text{xi1}+\text{deltaX}\) ;</p></li>
-<li id="li-662"><p id="p-1269">assigner à \(\text{approximation}\) la valeur de \(\text{approximation}+\text{f}(\text{xi1})+\text{f}(\text{xi2})\text{.}\)</p></li>
+<li id="li-667"><p id="p-1296">assigner à \(\text{xi1}\) la valeur \(\text{a}+(\text{k}-1)\cdot\text{deltaX}\) ;</p></li>
+<li id="li-668"><p id="p-1297">assigner à \(\text{xi2}\) la valeur \(\text{xi1}+\text{deltaX}\) ;</p></li>
+<li id="li-669"><p id="p-1298">assigner à \(\text{approximation}\) la valeur de \(\text{approximation}+\text{f}(\text{xi1})+\text{f}(\text{xi2})\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-663"><p id="p-1270">Assigner à \(\text{approximation}\) la valeur de \(\text{approximation}\cdot\text{deltaX}/2\text{.}\)</p></li>
+<li id="li-670"><p id="p-1299">Assigner à \(\text{approximation}\) la valeur de \(\text{approximation}\cdot\text{deltaX}/2\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-664"><p id="p-1271">Résultat : Afficher \(\text{approximation}\text{.}\)</p></li>
-</ul></article><p id="p-1272">Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
+<li id="li-671"><p id="p-1300">Résultat : Afficher \(\text{approximation}\text{.}\)</p></li>
+</ul></article><p id="p-1301">Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^14\sqrt{1-x^2}\,\mathrm{d}x=\pi
 \end{equation*}
 </div>
 <p data-braille="continuation">fournie par la méthode des trapèzes pour \(32\) trapèzes.</p>
-<div class="sagecell-python" id="sage-38"><script type="text/x-sage"># entrées
+<div class="sagecell-python" id="sage-50"><script type="text/x-sage"># entrées
 import numpy as np
 def f(x):
     return 4 * np.sqrt(1 - x ** 2)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:25:31-04:00    *-->
+<!--*    on 2020-09-02T14:11:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -231,50 +231,56 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="conditionnelles"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Conditionnelles</span>
 </h2>
-<a href="conditionnelles.html" class="permalink">¶</a><p id="p-50">Voici les mots-clés des structures conditionnelles en Python :</p>
+<a href="conditionnelles.html" class="permalink">¶</a><p id="p-75">Voici les mots-clés des structures conditionnelles en Python :</p>
 <ul class="disc">
-<li id="li-22"><p id="p-51"><code class="code-inline tex2jax_ignore">if</code> se lit "si";</p></li>
-<li id="li-23"><p id="p-52"><code class="code-inline tex2jax_ignore">elif</code> se lit "sinon si";</p></li>
-<li id="li-24"><p id="p-53"><code class="code-inline tex2jax_ignore">else</code> se lit "sinon".</p></li>
+<li id="li-29"><p id="p-76"><code class="code-inline tex2jax_ignore">if ... :</code> se lit "si ...";</p></li>
+<li id="li-30"><p id="p-77"><code class="code-inline tex2jax_ignore">elif ... :</code> se lit "sinon si ...";</p></li>
+<li id="li-31"><p id="p-78"><code class="code-inline tex2jax_ignore">else:</code> se lit "sinon".</p></li>
 </ul>
-<p id="p-54">Essayez de deviner ce qu'affichent les blocs de code qui suivent.</p>
-<div class="sagecell-python" id="sage-15"><script type="text/x-sage">x = -2
-if x > 0:
-    print('positif')
+<article class="remark remark-like" id="remark-7"><h6 class="heading">
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-79">Comme pour les boucles, attention à ne pas oublier les deux-points <code class="code-inline tex2jax_ignore"> :</code> et à respecter les indentations (4 espaces fortement recommandés).</p></article><p id="p-80">Essayez de deviner ce qu'affichent les blocs de code qui suivent avant de les évaluer. <div class="sagecell-python" id="sage-25"><script type="text/x-sage">x = -2
+if x > 0:  # si x est plus grand que 0
+    print('positif')  # affiche la chaîne de caractères 'positif'
 else:
-    print('négatif ou nul')
-</script></div>
-<div class="sagecell-python" id="sage-16"><script type="text/x-sage">x = -2
+    print('négatif ou nul')  # sinon affiche 'négatif ou nul'.
+</script></div> <div class="sagecell-python" id="sage-26"><script type="text/x-sage">x = -2
 if x > 0:
     print('positif')
-</script></div>
-<div class="sagecell-python" id="sage-17"><script type="text/x-sage">x = -2
-if x > 0:
-    print('positif')
-elif x == 0:
-    print('nul')
+</script></div> <div class="sagecell-python" id="sage-27"><script type="text/x-sage">x = -2
+if x > 0:  # si x est plus grand que 0
+    print('positif')  # affiche 'positif'
+elif x == 0:  # sinon si x est égal à 0
+    print('nul')  # affiche 'nul'
 else:
-      print('négatif')
-</script></div>
-<div class="sagecell-python" id="sage-18"><script type="text/x-sage">age = 8
+      print('négatif')  # sinon affiche 'négatif'
+</script></div> <div class="sagecell-python" id="sage-28"><script type="text/x-sage">age = 8
 if age < 3:
     print('entrée gratuite')
 elif age < 12:
     print('tarif réduit')
 else:
     print('plein tarif')
-</script></div>
-<p id="p-55">Terminons cette section en analysant le code suivant. Nous utilisons l'opérateur modulo qui se note <code class="code-inline tex2jax_ignore">a % b</code> en Python, et qui renvoie le reste de la division euclidienne de \(\text{a}\) par \(\text{b}\text{.}\) Ainsi</p>
+</script></div></p>
+<p id="p-81">Nous allons finir cette section en utilisant l'<a class="external" href="https://fr.wikipedia.org/wiki/Modulo_(op%C3%A9ration)" target="_blank">opérateur modulo</a> qui se note <code class="code-inline tex2jax_ignore">a % b</code> en Python, et qui renvoie le reste de la division euclidienne de \(\text{a}\) par \(\text{b}\text{.}\) Par exemple, <div class="sagecell-python" id="sage-29"><script type="text/x-sage">k = 14
+print(k % 7)
+</script></div> et <div class="sagecell-python" id="sage-30"><script type="text/x-sage">k = 25
+print(k % 7)
+</script></div> Ainsi</p>
 <div class="displaymath">
 \begin{equation*}
 \text{a est un multiple de b}\quad\Leftrightarrow\quad\text{a % b renvoie 0}.
 \end{equation*}
 </div>
-<p id="p-56">Le code suivant affiche tous les multiples de \(7\) compris entre \(1\) et \(59\) inclus.</p>
-<div class="sagecell-python" id="sage-19"><script type="text/x-sage">for k in range(1, 59+1):
-    if k % 7 == 0:
-        print(k)
-</script></div></section></div></main>
+<p id="p-82">Nous pouvons maintenant afficher les multiples de \(7\) compris entre \(7\) et \(60\) inclus, à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>, et sans déterminer au préalable le plus grand (56) de ces multiples. <div class="sagecell-python" id="bla"><script type="text/x-sage">for k in range(7, 60+1):  # pour k allant de 7 à 60
+    if k % 7 == 0:  # si k est un multiple de 7
+        print(k)  # affiche k
+</script></div></p>
+<article class="remark remark-like" id="remark-8"><h6 class="heading">
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-83">Notez la double indentation précédant <code class="code-inline tex2jax_ignore">print(k)</code> dans le code ci-dessus : elle est due au fait que cette instruction fait partie de la conditionnelle <code class="code-inline tex2jax_ignore">if ... :</code> (première indentation) qui elle-même fait partie de la boucle <code class="code-inline tex2jax_ignore">for ... :</code> (deuxième indentation).</p></article></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;

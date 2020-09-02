@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:28:35-04:00    *-->
+<!--*    on 2020-09-02T14:13:23-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,92 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On s'intéresse au polynôme interpolateur des quatre points suivants :</p>
+<ol class="decimal">
+<li>
+<p>La forme de Newton du polynôme interpolateur de ces trois points s'écrit</p>
+<div class="displaymath">
+\begin{align*}
+N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
+&amp;=d_0+d_1t+d_2t(t-2).
+\end{align*}
+</div>
+<p>On cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
-A_0=(-2;0),\; A_1=(-1;3),\; A_2=(2;-1)\;\text{et}\; A_3=(3;7).
+\begin{cases}
+N(0)=4\\
+N(2)=-1\\
+N(5)=12
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+d_0&amp;&amp;&amp;&amp;&amp;=&amp;4\\
+d_0&amp;+&amp;2d_1&amp;&amp;&amp;=&amp;-1\\
+d_0&amp;+&amp;5d_1&amp;+&amp;15d_2&amp;=&amp;12\\
+\end{cases}
 \end{equation*}
 </div>
+<p>Ce système linéaire est déjà triangulé.</p>
+<ul class="disc">
+<li>
+<p>La première équation donne</p>
+<div class="displaymath">
+\begin{equation*}
+d_0=4.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Alors la deuxième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+2d_1=-1&amp;\Rightarrow\quad 4+2d_1=-1\\
+&amp;\Rightarrow\quad 2d_1=-5\\
+&amp;\Rightarrow\quad d_1=-\frac{5}{2}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Enfin la troisième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+5d_1+5d_2=0&amp;\Rightarrow\quad 4-\frac{25}{2}+15d_2=12\\
+&amp;\Rightarrow\quad 15d_2=12-4+\frac{25}{2}=\frac{41}{2}\\
+&amp;\Rightarrow\quad d_2=\frac{41}{30}.
+\end{align*}
+</div>
+</li>
+</ul>
+<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Calculons les différences divisées des trois points :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|ccc}
+x_i&amp;y_i\\
+\hline\\
+0&amp;\left[A_0\right]=4&amp;&amp;\\
+&amp;&amp;\left[A_0,A_1\right]=-\frac{5}{2}&amp;\\
+2&amp;\left[A_1\right]=-1&amp;&amp;\left[A_0,A_1,A_2\right]=\frac{41}{30}\\
+&amp;&amp;\left[A_1,A_2\right]=\frac{13}{3}&amp;\\
+5&amp;\left[A_2\right]=12&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p>On trouve donc la même forme de Newton</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).
+\end{equation*}
+</div>
+</li>
+</ol>
 <span class="incontext"><a href="exercicesdiffdiv.html#p-1025">Contexte</a></span>
 </body>
 </html>

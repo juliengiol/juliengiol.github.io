@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="complexite" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Complexité</title>
+
+<introduction>
+
+  <p>
+    Voici un exemple d'algorithme :
+    <sage language='python'>
+      <input>
+        # entrée
+        n = 5
+
+        # instructions
+        somme = 1
+        for k in range(2, n+1):
+            somme = somme + k
+
+        # sortie
+        print(somme)
+      </input>
+    </sage>
+  </p>
+
+  <p>
+    Quand <c>n</c> tend vers l'infini, les instructions imposent d'effectuer de plus en plus d'opérations pour produire le résultat affiché en sortie.
+    L'exécution de l'algorithme prend donc de plus en plus de temps.
+  </p>
+  <p>
+    Après avoir exécuté le code ci-dessus une première fois, essayez par exemple les valeurs <c>n = 10</c>, puis <c>n = 10 ** 5</c>, et enfin <c>n = 10 ** 7</c>.
+  </p>
+  <p>
+    Analyser la complexité d'un algorithme, c'est se demander de quelle façon le temps d'exécution dépend de la taille des données fournies en entrée.
+  </p>
+
+</introduction>
+
+<section xml:id="sommeentiers">
+<title>Somme des premiers entiers</title>
+
+<problem xml:id="problemesommeentiers">
+<p>Comment utiliser efficacement l'ordinateur pour calculer la somme des <m>n</m> premiers entiers non nuls
+  <me>\sum_{k=1}^nk=1+2+\cdots+n\;?</me>
+</p>
+</problem>
+
+<paragraphs>
+  <title>Algorithme 1 : Approche naïve</title>
+
+  <p>Combien d'additions doit-on effectuer pour évaluer la somme
+    <me>\sum_{k=1}^{5}k=1+2+3+4+5\;?</me>
+  </p>
+  <p>Il en faut quatre. Plus généralement, on a besoin de <m>n-1</m> additions pour évaluer la somme des <m>n</m> premiers entiers naturels non nuls
+    <me>\sum_{k=1}^nk=1+2+3+\cdots+n.</me>
+  </p>
+  <p>Voici une implémentation de l'algorithme qui renvoie la valeur de cette somme en suivant cette approche naïve :
+    <sage language='python'>
+      <input>
+        # entrée
+        n = 5
+
+        # instructions
+        somme = 1
+        for k in range(2, n+1):
+            somme = somme + k
+
+        # sortie
+        print(somme)
+      </input>
+    </sage>
+  </p>
+  <p>Pour faire simple, on peut considérer que la vitesse d'exécution de cet algorithme dépend essentiellement du nombre d'additions qu'il doit effectuer.</p>
+  <p>Notons <m>T(n)</m> ce nombre qui dépend bien sûr de l'entier donné en entrée.</p>
+  <p>La fonction <m>T</m> ainsi définie est une estimation de la <url href="https://fr.wikipedia.org/wiki/Complexit%C3%A9_en_temps">complexité en temps</url> de cet algorithme, et on a
+    <me>T(n)=n-1.</me>
+  </p>
+  <p>Plus <m>n</m> est grand, plus le temps de calcul représenté par <m>T(n)</m> est grand.</p>
+  <p>Comme <m>T</m> dépend linéairement de <m>n</m>, on dit que la complexité de cet algorithme est linéaire.</p>
+
+</paragraphs>
+
+<paragraphs>
+  <title>Algorithme 2 : Formule de Faulhaber</title>
+
+  <p>En fait, il existe une formule bien connue qui permet de calculer directement la valeur de <m>\displaystyle\sum_{k=1}^nk</m>. La voici :
+    <me>\sum_{k=1}^nk=\frac{n(n+1)}{2}.</me>
+  </p>
+  <p>Quelle que soit la valeur de <m>n</m>, cette approche ne requiert que trois opérations : une multiplication, une addition et une division.</p>
+  <p>Autrement dit, l'algorithme suivant
+    <sage language='python'>
+      <input>
+        # entrée
+        n = 5
+
+        # instructions
+        somme = n * (n + 1) / 2
+
+        # sortie
+        print(somme)
+      </input>
+    </sage>
+    a une complexité en temps constante
+    <me>T(n)=3.</me>
+  </p>
+  <p>Il s'agit donc d'un algorithme beaucoup plus efficace que le précédent pour résoudre le problème <xref ref="problemesommeentiers"/>.</p>
+
+</paragraphs>
+
+</section>
+
+<section xml:id="exponentiation">
+<title>Exponentiation rapide</title>
+
+<problem xml:id="problemeexponentiation">
+<p>Comment utiliser efficacement l'ordinateur pour calculer la puissance <m>n</m>-ième d'un nombre réel <m>x</m>, c'est-à-dire <m>\displaystyle x^n</m>?</p>
+</problem>
+
+<paragraphs>
+  <title>Algorithme 1 : Approche naïve</title>
+
+  <p>Combien de multiplications doit-on effectuer pour évaluer <m>2^5</m>?</p>
+  <p>On a
+    <me>2^5=2\cdot 2\cdot 2\cdot 2\cdot 2.</me>
+  </p>
+  <p>Vu comme ça, il en faut quatre. Plus généralement, on a besoin de <m>n-1</m> multiplications pour évaluer <m>x^n</m>, puisque
+    <me>x^n=x\cdot x\cdot x\cdots x.</me>
+  </p>
+  <p>Voici une implémentation de l'algorithme qui renvoie la valeur de <m>x^n</m> en suivant cette approche naïve :
+    <sage language='python'>
+      <input>
+        # entrées
+        x = 2
+        n = 5
+
+        # instructions
+        produit = x
+        for k in range(1, n):
+            produit = produit * x
+
+        # sortie
+        print(produit)
+      </input>
+    </sage>
+  </p>
+  <p>Si on ne tient compte que des opérations mathématiques, la complexité en temps de cet algorithme ne dépend que de l'entrée <m>n</m> et vaut
+    <me>T(n)=n-1.</me>
+  </p>
+  <p>On parle donc de complexité linéaire.</p>
+
+</paragraphs>
+
+<paragraphs>
+    <title>Algorithme 2 : Exponentiation rapide</title>
+
+    <p>Revenons au calcul de <m>2^5</m> et notons que
+      <me>2^5=2\cdot (2^2)^2</me>
+      c'est-à-dire
+      <me>2^5=x\cdot y\cdot y\quad\text{avec}\quad x=2\quad\text{et}\quad y=x\cdot x.</me>
+    </p>
+    <p>Vu comme ça, le calcul de <m>2^5</m> ne requiert plus que trois multiplications.</p>
+    <p>Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :
+      <me>x^n=
+        \begin{cases}
+        x&amp;\text{ si }n=1,\\
+        \left(x^2\right)^{n/2}&amp;\text{ si }n\text{ est pair,}\\
+        x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
+        \end{cases}
+      </me>
+    </p>
+    <p>Voici une implémentation de cette approche, où la fonction <c>puissanceRecursive(x, n)</c> renvoie la valeur de <m>\text{x}^\text{n}</m> de manière récursive :
+      <sage language='python'>
+        <input>
+          def puissanceRecursive(x, n):
+              if n == 1:
+                  return x
+              elif n % 2 == 0:
+                  return puissanceRecursive(x * x, n / 2)
+              else:
+                  return x * puissanceRecursive(x * x, (n - 1) / 2)
+
+          print(puissanceRecursive(2, 5))
+        </input>
+      </sage>
+    </p>
+    <p>Si on ne tient compte que des multiplications, alors on peut montrer que la complexité <m>T(n)</m> de cet algorithme vérifie l'encadrement
+      <me>\log_2(n)\leq T(n)\leq 2\log_2(n).</me>
+    </p>
+    <p>On parle alors d'une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche itérative, comme le montrent les graphes ci-après.
+      <figure>
+          <caption>Linéaire vs logarithmique</caption>
+          <interactive xml:id="desmos-lineaire-log" desmos="yjztmlow1h" width="100%" aspect="5:4"/>
+      </figure>
+    </p>
+
+</paragraphs>
+
+</section>
+
+<section xml:id="horner">
+<title>Méthode de Horner</title>
+
+<problem xml:id="problemehorner">
+<p>Comment utiliser efficacement l'ordinateur pour évaluer un polynôme?</p>
+</problem>
+
+<paragraphs>
+  <title>Algorithme 1 : Approche naïve</title>
+
+  <p>Considérant le polynôme
+    <me>P(x)=10+7x+3x^2+5x^3</me>
+    combien d'opérations mathématiques sont-elles nécessaires pour évaluer <m>P(9)</m>?
+  </p>
+  <p>On a
+    <me>P(9)=10+7\cdot 9+3\cdot 9\cdot 9+5\cdot 9\cdot 9\cdot 9.</me>
+  </p>
+  <p>Vu comme ça, il faut trois (comme le degré) additions et six (<m>1+2+3</m>) multiplications, soit neuf opérations.</p>
+  <p>Plus généralement, pour un polynôme de degré <m>n</m>
+    <me>P(x)=a_0+a_1x+\ldots+a_nx^n</me>
+    défini par la liste de ses coefficients <m>\left[a_0,a_1,\ldots,a_n\right]</m>, le calcul de <m>P(x)</m> peut nécessiter jusqu'à <m>n</m> additions et
+    <me>1+2+\ldots+n=\frac{n(n+1)}{2}</me>
+    multiplications, soit
+    <me>n+\frac{n(n+1)}{2}=0{,}5n^2+1{,}5n</me>
+    opérations.
+  </p>
+  <p>Cette approche naïve conduit à l'implémentation algorithmique suivante :
+    <sage language='python'>
+      <input>
+        # entrées
+        n = 3
+        coefficients = [10, 7, 3, 5]
+        x = 9
+
+        # instructions
+        valeur = coefficients[0]
+        for j in range(1, n+1):
+            produit = coefficients[j]
+            for k in range(1, j+1):
+                produit = produit * x
+            valeur = valeur + produit
+
+        # sortie
+        print(valeur)
+      </input>
+    </sage>
+    dont la complexité
+    <me>T(n)=0{,}5n^2+1{,}5n</me>
+    est qualifiée de quadratique, c'est-à-dire qu'elle est polynomiale de degré deux.
+  </p>
+
+</paragraphs>
+
+<paragraphs>
+  <title>Algorithme 2 : Méthode de Horner</title>
+
+  <p>Pour améliorer l'algorithme précédent, on pourrait bien sûr utiliser l'exponentiation rapide vue à la section <xref ref="exponentiation"/>. Mais on peut faire encore mieux.</p>
+  <p>Reprenons l'exemple ci-dessus et notons que par factorisations successives de <m>x</m>, on obtient
+    <md>
+      <mrow>P(x)&amp;=10+7x+3x^2+5x^3</mrow>
+      <mrow>&amp;=10+x\cdot(7+3x+5x^2)</mrow>
+      <mrow>&amp;=10+x\cdot(7+x\cdot(3+x\cdot 5)).</mrow>
+    </md>
+    Vue comme ça, l'évaluation de <m>P(x)</m> ne requiert plus que trois additions et trois multiplications, soit six opérations.
+  </p>
+  <p>Plus généralement, on appelle forme de Horner du polynôme
+    <me>P(x)=a_0+a_1x+\ldots+a_nx^n</me>
+    la factorisation
+    <me>P(x)=a_0+x\cdot\left(a_1+x\cdot\left(a_2+x\cdot\left(\ldots +x\cdot\left(a_{n-1}+x\cdot a_n\right)\right)\right)\right)</me>
+    qui nécessite <m>n</m> additions et <m>n</m> multiplications, soit <m>2n</m> opérations.
+  </p>
+  <p>Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de <m>P(x)</m> une paire de parenthèses après l'autre.
+    <me>
+      \begin{array}{lcl}
+      \text{Étape 0 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_n.\\
+      \text{Étape 1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-1}+x\cdot valeur.\\
+      \text{Étape 2 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-2}+x\cdot valeur.\\
+      \ldots&amp;\ldots&amp;\\
+      \text{Étape n-1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_1+x\cdot valeur.\\
+      \text{Étape n :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_0+x\cdot valeur.\\
+      \end{array}
+    </me>
+  </p>
+  <p>Par exemple, pour le polynôme
+    <me>P(x)=10+7x+3x^2+5x^3,</me>
+    le calcul de
+    <md>
+      <mrow>P(9)&amp;=10+7\cdot 9+3\cdot 9^2+5\cdot 9^3</mrow>
+      <mrow>&amp;=10+9\cdot(7+3\cdot 9+5\cdot 9^2)</mrow>
+      <mrow>&amp;=10+9\cdot(7+9\cdot(3+9\cdot 5))</mrow>
+    </md>
+    par la méthode de Horner revient à suivre les étapes
+    <me>
+      \begin{array}{lcl}
+      \text{Étape 0 :}&amp;valeur&amp;=&amp;5\\
+      \text{Étape 1 :}&amp;valeur&amp;=&amp;3+9\cdot 5=48\\
+      \text{Étape 2 :}&amp;valeur&amp;=&amp;7+9\cdot 48=439\\
+      \text{Étape 3 :}&amp;valeur&amp;=&amp;10+9\cdot 439=3961
+      \end{array}
+    </me>
+    dont on déduit que
+    <me>P(9)=3961</me>
+    après trois additions et trois multiplications.
+  </p>
+  <p>Voici une implémentation itérative de la méthode de Horner :
+    <sage language='python'>
+      <input>
+        # entrées
+        n = 3
+        coefficients = [10, 7, 3, 5]
+        x = 9
+
+        # instructions
+        valeur = coefficients[n]
+        for j in range(1, n+1):
+            valeur = coefficients[n-j] + x * valeur
+
+        # sortie
+        print(valeur)
+      </input>
+    </sage>
+    La complexité de cet algorithme
+    <me>T(n)=2n</me>
+    est linéaire et bien meilleure que la complexité quadratique obtenue par l'approche naïve, comme le montrent les graphes ci-après.
+      <figure>
+          <caption>Linéaire vs quadratique</caption>
+          <interactive xml:id="desmos-lineaire-quadratique" desmos="qhvlpnvcmh" width="100%" aspect="5:4"/>
+      </figure>
+    </p>
+
+</paragraphs>
+
+</section>
+
+<section xml:id="fibonacci">
+<title>Nombres de Fibonacci</title>
+
+<problem xml:id="problemefibonacci">
+<p>Comment utiliser efficacement l'ordinateur pour calculer les nombres de Fibonacci?</p>
+</problem>
+
+<ul>
+  <li><p>L'algorithme récursif naïf implémenté à l'exercice <xref ref="fibo_recursive"/> a une complexité exponentielle, c'est pourquoi cela prend déjà un temps terriblement long pour calculer le centième nombre de Fibonacci de cette façon.</p></li>
+  <li><p>L'algorithme itératif implémenté à l'exercice <xref ref="fibo_iterative"/> est bien meilleur étant donné que sa complexité s'avère linéaire.</p></li>
+  <li>
+    <p>On peut faire encore mieux et obtenir une complexité logarithmique en utilisant certaines propriétés de la suite de Fibonacci.</p>
+    <p>Voir <url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithmes_de_calcul_des_nombres_de_Fibonacci">Algorithmes de calcul des nombres de Fibonacci</url> pour plus de détails.</p>
+  </li>
+</ul>
+
+</section>
+
+<section xml:id="exercicescomplexite">
+<title>Exercices</title>
+
+<exercise>
+  <statement>
+    <p>On s'intéresse à l'algorithme suivant :
+      <pre>
+        # entrée
+        n = 5
+
+        # instructions
+        k = 1
+        somme = 1
+        while k &lt; n:
+            k = k + 1
+            somme = somme + k
+
+        # sortie
+        print(somme)
+      </pre>
+    </p>
+    <ol>
+      <li><p>Qu'affiche-t-il?</p></li>
+      <li><p>Que fait cet algorithme pour chaque valeur de <m>n</m> donnée en entrée?</p></li>
+      <li><p>En utilisant une variable que vous appellerez <c>compteur</c>, modifiez l'algorithme de façon à ce qu'il affiche aussi <m>T(n)</m> le nombre de toutes les assignations, opérations et comparaisons effectuées (en excluant celles liées à <c>compteur</c>).</p></li>
+      <li><p>Combien vaut <m>T(5)</m>?</p></li>
+      <li><p>Combien vaut <m>T(n)</m>?</p></li>
+      <li><p>Comment qualifieriez-vous la complexité de cet algorithme?</p></li>
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li><pre>15</pre></li>
+      <li><p>Il calcule la somme des <m>n</m> premiers entiers naturels non nuls.</p></li>
+      <li>
+        <pre>
+          # entrée
+          n = 5
+
+          # instructions
+          k = 1
+          somme = 1
+          compteur = 3
+          while k &lt; n:
+              k = k + 1
+              somme = somme + k
+              compteur = compteur + 5
+
+          # sortie
+          print(somme)
+          print(compteur)
+        </pre>
+      </li>
+      <li><pre>23</pre></li>
+      <li><m>T(n)=3+5(n-1)=5n-2</m></li>
+      <li><p>Il s'agit d'une complexité linéaire.</p></li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>On s'intéresse à la fonction suivante :
+      <pre>
+        def maFonction(x, liste):
+            i = 0
+            n = len(liste)
+            while i &lt; n and liste[i] != x:
+                i = i + 1
+            return i
+      </pre>
+    </p>
+    <ol>
+      <li><p>Qu'est-ce qui est renvoyé par <c>maFonction(7, [5, 7, 2, 3, 9])</c>?</p></li>
+      <li><p>Qu'est-ce qui est renvoyé par <c>maFonction(4, [5, 7, 2, 3, 9])</c>?</p></li>
+      <li><p>Expliquez avec des mots ce que fait cette fonction.</p></li>
+      <li><p>Le nombre <m>T(n)</m> de toutes les assignations, opérations et comparaisons nécessaires pour exécuter <c>maFonction(x, liste)</c> dépend du nombre d'éléments <m>n</m> dans la liste. Combien vaut-il?</p></li>
+      <li><p>Comment qualifieriez-vous la complexité de cet algorithme?</p></li>
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li><p><c>1</c></p></li>
+      <li><p><c>5</c></p></li>
+      <li>
+        <p>Cette fonction renvoie la position de la première occurence de <c>x</c> dans <c>liste</c>.</p>
+        <p>Si <c>x</c> n'y figure pas, la fonction renvoie la longueur de la liste.</p>
+      </li>
+      <li><p><m>T(n)=2+n\cdot 4=4n+2</m></p></li>
+      <li><p>Il s'agit d'une complexité linéaire.</p></li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <ol>
+      <li><p>Modifiez le deuxième bloc de code donné à la section <xref ref="exponentiation"/> de façon à créer une fonction <c>complexitePuissanceRecursive(n)</c> qui renvoie <m>T(n)</m> le nombre de multiplications effectuées lors du calcul de <m>x^n</m> par la méthode d'exponentiation rapide.</p></li>
+      <li><p>Combien vaut <m>T(10\,000)</m>?</p></li>
+      <li><p>Vérifiez que <m>T(10\,000)</m> est compris entre <m>\log_2(10\,000)</m> et <m>2\log_2(10\,000)</m>.</p></li>
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <pre>
+          def complexitePuissanceRecursive(n):
+              if n == 1:
+                  return 0
+              elif n % 2 == 0:
+                  return 1 + complexitePuissanceRecursive(n / 2)
+              else:
+                  return 2 + complexitePuissanceRecursive((n - 1) / 2)
+        </pre>
+      </li>
+      <li><m>T(10\,000)=17</m></li>
+      <li><p>C'est bien vrai car <m>\log_2(10\,000)\approx 13{,}3</m> et <m>2\log_2(10\,000)\approx 26{,}6</m>.</p></li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Exécutez l'algorithme de Horner à la main pour calculer <m>P(3)</m>.
+      <ol>
+        <li><m>P(x)=2+7x+4x^2</m></li>
+        <li><m>P(x)=-2-7x+4x^2</m></li>
+        <li><m>P(x)=-1+2x-5x^3</m></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>Exécutez l'algorithme de Horner à la main pour calculer <m>P(3)</m>.
+      <ol>
+        <li>
+          <me>
+            \begin{array}{lcl}
+            \text{Étape 0 :}&amp;valeur&amp;=&amp;4\\
+            \text{Étape 1 :}&amp;valeur&amp;=&amp;7+3\cdot 4=19\\
+            \text{Étape 2 :}&amp;valeur&amp;=&amp;2+3\cdot 19=59
+            \end{array}
+          </me>
+          <p>Donc <m>P(3)=59</m>.</p>
+        </li>
+        <li>
+          <me>
+            \begin{array}{lcl}
+            \text{Étape 0 :}&amp;valeur&amp;=&amp;4\\
+            \text{Étape 1 :}&amp;valeur&amp;=&amp;-7+3\cdot 4=5\\
+            \text{Étape 2 :}&amp;valeur&amp;=&amp;-2+3\cdot 5=13
+            \end{array}
+          </me>
+          <p>Donc <m>P(3)=13</m>.</p>
+        </li>
+        <li>
+          <me>
+            \begin{array}{lcl}
+            \text{Étape 0 :}&amp;valeur&amp;=&amp;-5\\
+            \text{Étape 1 :}&amp;valeur&amp;=&amp;0+3\cdot(-5)=-15\\
+            \text{Étape 2 :}&amp;valeur&amp;=&amp;2+3\cdot(-15)=-43\\
+            \text{Étape 3 :}&amp;valeur&amp;=&amp;-1+3\cdot(-43)=-130
+            \end{array}
+          </me>
+          <p>Donc <m>P(3)=-130</m>.</p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Exécutez l'algorithme de Horner à la main pour calculer <m>P(-2)</m>.
+      <ol>
+        <li><m>P(x)=2+7x+4x^2</m></li>
+        <li><m>P(x)=-2-7x+4x^2</m></li>
+        <li><m>P(x)=-1+2x-5x^3</m></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <me>
+            \begin{array}{lcl}
+            \text{Étape 0 :}&amp;valeur&amp;=&amp;4\\
+            \text{Étape 1 :}&amp;valeur&amp;=&amp;7+(-2)\cdot 4=-1\\
+            \text{Étape 2 :}&amp;valeur&amp;=&amp;2+(-2)\cdot (-1)=4
+            \end{array}
+          </me>
+          <p>Donc <m>P(-2)=4</m>.</p>
+        </li>
+        <li>
+          <me>
+            \begin{array}{lcl}
+            \text{Étape 0 :}&amp;valeur&amp;=&amp;4\\
+            \text{Étape 1 :}&amp;valeur&amp;=&amp;-7+(-2)\cdot 4=-15\\
+            \text{Étape 2 :}&amp;valeur&amp;=&amp;-2+(-2)\cdot (-15)=28
+            \end{array}
+          </me>
+          <p>Donc <m>P(-2)=28</m>.</p>
+        </li>
+        <li>
+          <me>
+            \begin{array}{lcl}
+            \text{Étape 0 :}&amp;valeur&amp;=&amp;-5\\
+            \text{Étape 1 :}&amp;valeur&amp;=&amp;0+(-2)\cdot(-5)=10\\
+            \text{Étape 2 :}&amp;valeur&amp;=&amp;2+(-2)\cdot 10=-18\\
+            \text{Étape 3 :}&amp;valeur&amp;=&amp;-1+(-2)\cdot(-18)=35
+            \end{array}
+          </me>
+          <p>Donc <m>P(-2)=35</m>.</p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="horneretdivision">
+  <statement>
+    <p>On s'intéresse au polynôme <m>P(x)=9+5x+4x^2+2x^3+7x^4</m></p>
+    <ol>
+      <li><p>Exécutez l'algorithme de Horner à la main pour évaluer <m>P(x)</m> en <m>x=2</m>.</p></li>
+      <li><p>Effectuez la division euclidienne de <m>P(x)</m> par <m>x-2</m>.</p></li>
+      <li><p>Qu'observez-vous?</p></li>
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <me>
+          \begin{array}{lcl}
+          \text{Étape 0 :}&amp;valeur&amp;=&amp;7\\
+          \text{Étape 1 :}&amp;valeur&amp;=&amp;2+2\cdot 7=16\\
+          \text{Étape 2 :}&amp;valeur&amp;=&amp;4+2\cdot 16=36\\
+          \text{Étape 3 :}&amp;valeur&amp;=&amp;5+2\cdot 36=77\\
+          \text{Étape 4 :}&amp;valeur&amp;=&amp;9+2\cdot 77=163
+          \end{array}
+        </me>
+        <p>Donc <m>P(2)=163</m>.</p>
+      </li>
+      <li>
+        <p>Le quotient est
+          <me>Q(x)=7x^3+16x^2+36x+77</me>
+          et le reste vaut
+          <me>R(x)=163.</me>
+        </p>
+      </li>
+      <li>
+        <p>Les coefficients du quotient correspondent aux quatre premières valeurs calculées par l'algorithme de Horner.</p>
+        <p>Le reste est égal à la cinquième valeur, c'est-à-dire <m>P(2)</m>.</p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>La remarque faite à la troisième question de l'exercice <xref ref="horneretdivision"/> est vraie en général : lorsqu'on exécute l'algorithme de Horner pour évaluer <m>P(x_0)</m>
+      <ul>
+        <li><p>la dernière valeur calculée donne le reste de la division euclidienne de <m>P(x)</m> par <m>x-x_0</m></p></li>
+        <li><p>et les valeurs précédentes forment la liste des coefficients du quotient de cette division.</p></li>
+      </ul>
+    </p>
+    <p>Sachant cela, utilisez l'algorithme de Horner pour déterminer le quotient et le reste des divisions indiquées ci-dessous.
+      <ol>
+        <li><p><m>P(x)=x^2+7x-2</m> divisé par <m>x-3</m></p></li>
+        <li><p><m>P(x)=x^3-5x^2+6x</m> divisé par <m>x-2</m></p></li>
+        <li><p><m>P(x)=2x^3+x^2+7</m> divisé par <m>x+4</m></p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>L'algorithme de Horner pour évaluer <m>P(3)</m> donne
+          <me>
+            \begin{array}{lcl}
+            \text{Étape 0 :}&amp;valeur&amp;=&amp;1\\
+            \text{Étape 1 :}&amp;valeur&amp;=&amp;7+3\cdot 1=10\\
+            \text{Étape 2 :}&amp;valeur&amp;=&amp;-2+3\cdot 10=28
+            \end{array}
+          </me>
+        </p>
+        <p>Donc le quotient est <m>Q(x)=1\cdot x+10=x+10</m> et le reste vaut <m>R(x)=28</m>.</p>
+      </li>
+      <li>
+        <p>L'algorithme de Horner pour évaluer <m>P(2)</m> donne
+          <me>
+            \begin{array}{lcl}
+            \text{Étape 0 :}&amp;valeur&amp;=&amp;1\\
+            \text{Étape 1 :}&amp;valeur&amp;=&amp;-5+2\cdot 1=-3\\
+            \text{Étape 2 :}&amp;valeur&amp;=&amp;6+2\cdot(-3)=0\\
+            \text{Étape 3 :}&amp;valeur&amp;=&amp;0+2\cdot 0=0
+            \end{array}
+          </me>
+        </p>
+        <p>Donc le quotient est <m>Q(x)=1\cdot x^2+(-3)\cdot x+0=x^2-3x</m> et le reste vaut <m>R(x)=0</m>.</p>
+      </li>
+      <li>
+        <p>L'algorithme de Horner pour évaluer <m>P(-4)</m> donne
+          <me>
+            \begin{array}{lcl}
+            \text{Étape 0 :}&amp;valeur&amp;=&amp;2\\
+            \text{Étape 1 :}&amp;valeur&amp;=&amp;1+(-4)\cdot 2=-7\\
+            \text{Étape 2 :}&amp;valeur&amp;=&amp;0+(-4)\cdot(-7)=28\\
+            \text{Étape 3 :}&amp;valeur&amp;=&amp;7+(-4)\cdot 28=-105
+            \end{array}
+          </me>
+        </p>
+        <p>Donc le quotient est <m>Q(x)=2\cdot x^2+(-7)\cdot x+28=2x^2-7x+28</m> et le reste vaut <m>R(x)=-105</m>.</p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+</section>
+
+
+</chapter>

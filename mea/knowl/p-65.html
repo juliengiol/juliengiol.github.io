@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:26:46-04:00    *-->
+<!--*    on 2020-09-02T14:12:13-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,18 +10,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Exécutez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.<pre class="code-block tex2jax_ignore">a = 0.0
-b = 1.0
-n = 4
-deltaX = (b - a) / n
-xi = a
-while xi &lt; b:
-    print(xi)
-    xi = xi + deltaX
-</pre></p>
-<span class="incontext"><a href="exercicesassignetc.html#p-65">Contexte</a></span>
+<p>Avant de passer à la suite, évaluez puis corrigez le code erroné suivant : <div class="sagecell-python" id="sage-18"><script type="text/x-sage">for k in range(3, 7+1):
+    print(k)
+      print(k ** 2)
+print(k // 2)
+</script></div></p>
+<span class="incontext"><a href="boucles.html#p-65">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:26:48-04:00    *-->
+<!--*    on 2020-09-02T14:12:14-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Complétez le code suivant afin qu'il affiche la plus petite valeur de \(n\) pour laquelle on ait \(x_n\leq 10^{-9}\text{.}\)<pre class="code-block tex2jax_ignore">n =
-x = 7.0
-while
-    x = x * n / (5 * n + 2)
-    n =
-print(n)
+<p>Exécutez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.<pre class="code-block tex2jax_ignore">a = 0.0
+b = 1.0
+n = 4
+deltaX = (b - a) / n
+xi = a
+while xi &lt; b:
+    print(xi)
+    xi = xi + deltaX
 </pre></p>
 <span class="incontext"><a href="exercicesassignetc.html#p-92">Contexte</a></span>
 </body>

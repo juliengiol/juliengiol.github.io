@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-09-02T09:30:38-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 class="heading">
+<span class="type">Digression</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Échange du contenu de deux variables.</span>
+</h6>
+<p>L'assignation simultanée est très pratique quand on veut échanger le contenu de deux variables.</p>
+<div class="sagecell-python" id="sage-4"><script type="text/x-sage">x , y = 5, 3
+print(x, y)
+x, y = y, x # échange du contenu des variables et x et y
+print(x, y)
+</script></div>
+<p>Pour bien comprendre l'intérêt de l'exemple ci-dessus et de l'assignation simultanée, évaluez le code suivant :</p>
+<div class="sagecell-python" id="sage-5"><script type="text/x-sage">x = 5
+y = 3
+print(x, y)
+x = y
+y = x
+print(x, y)
+</script></div>
+<p>Ces deux exemples montrent notamment que le code s'exécute ligne après ligne. L'ordre des instructions est donc très important. L'application <a class="external" href="http://pythontutor.com/" target="_blank">Python Tutor</a> est une aide formidable quand il s'agit de comprendre pas à pas l'exécution d'un bloc de code.</p></article><span class="incontext"><a href="assignations.html#activity-1">Contexte</a></span>
+</body>
+</html>

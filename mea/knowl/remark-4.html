@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:22:33-04:00    *-->
+<!--*    on 2020-09-02T14:12:13-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,29 +10,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <article class="remark remark-like"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Exponentiation.</span>
 </h6>
-<ol class="decimal">
-<li>
-<p>Pour tout \(n\in\mathbb{Z}\text{,}\)</p>
-<ul class="disc">
-<li><p>\(1\vert n\) car \(n=1\cdot n\text{;}\)</p></li>
-<li><p>\(n\vert n\) car \(n=n\cdot 1\text{.}\)</p></li>
-</ul>
-<p>Tout entier relatif \(n\) admet donc au moins \(\pm 1\) et \(\pm n\) comme diviseurs.</p>
-</li>
-<li>
-<p>Pour tout \(n\in\mathbb{Z}^*\text{,}\) on a</p>
-<div class="displaymath">
-\begin{equation*}
-d\vert n\quad\Rightarrow\quad |d|\leq |n|.
-\end{equation*}
-</div>
-</li>
-</ol>
-<p>Tout entier relatif non nul \(n\) possède donc un nombre fini de diviseurs dont le plus petit et le plus grand, parmi ceux qui sont positifs, sont \(1\) et \(|n|\text{.}\)</p></article><span class="incontext"><a href="presentationeuclide.html#remark-4">Contexte</a></span>
+<p>Attention, Python ne comprend pas <code class="code-inline tex2jax_ignore">2^3</code>. À la place, on utilise <code class="code-inline tex2jax_ignore">2 ** 3</code>.</p>
+<div class="sagecell-python" id="sage-9"><script type="text/x-sage">x = 2
+y = 3
+z = 2 ** 3
+print(z)
+</script></div>
+<p>L'exponentiation est l'opération qui est la première dans l'ordre de priorité des <a class="xref" data-knowl="./knowl/python_priorite_operations.html" title="Table C.2.1: Opérations mathématiques dans l'ordre décroissant de leur priorité avec Python">opérations mathématiques C.2.1</a> utilisées par Python.</p>
+<div class="sagecell-python" id="sage-10"><script type="text/x-sage">x, y = 2, 3
+z = 16
+x = 2 ** 3 - z / 2
+print(x)
+</script></div></article><span class="incontext"><a href="assignations.html#remark-4">Contexte</a></span>
 </body>
 </html>

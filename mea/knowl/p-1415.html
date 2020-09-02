@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:29:13-04:00    *-->
+<!--*    on 2020-09-02T14:13:55-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Notons \(f(x)=e^{x^2}\text{,}\) \(n=6\) et</p>
+<p>Donc</p>
 <div class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}=\frac{1-0}{6}=\frac{1}{6}.
-\end{equation*}
+\begin{align*}
+|f^{(4)}(x)|&amp;=4e^{-x^2}\cdot \left|4x^4-12x^2+3\right|\\
+&amp;\leq 4e^{-x^2}\cdot\left(4x^4+12x^2+3\right)\\
+&amp;\leq 4\cdot\left(4+12+3\right)\\
+&amp;=76
+\end{align*}
 </div>
-<span class="incontext"><a href="exercicessimpson.html#p-1415">Contexte</a></span>
+<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\)</p>
+<span class="incontext"><a href="presentationsimpson.html#p-1415">Contexte</a></span>
 </body>
 </html>

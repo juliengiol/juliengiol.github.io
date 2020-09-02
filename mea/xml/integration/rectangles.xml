@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="rectangles" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Méthode des rectangles</title>
+
+<introduction>
+
+  <interactive xml:id="interactive_rectangles" platform="sage" width="100%" aspect="17:27">
+    <slate surface="sage">
+      @interact
+      def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 5, width = 30), a = input_box(label = html(r'\(a\)'), default = 1, width = 10), b = input_box(label = html(r'\(b\)'), default = 7, width = 10), n = input_box(label = html(r'\(n\)'), default = 3, width = 10), Rectangles = ['Gauche', 'Milieu', 'Droite']):
+          if Rectangles == 'Gauche':
+              t = 0
+              couleur = 'blue'
+          elif Rectangles == 'Droite':
+              t = 1
+              couleur = 'yellow'
+          else:
+              t = 0.5
+              couleur = 'green'
+          f(x) = f
+          integrale = integral(f(x), x, a, b).n()
+          deltaX = (b - a) / n
+          x_k = a
+          approximation = 0
+          L = []
+          for i in range(0, n):
+              xi_i = x_k + t * deltaX
+              y_i = f(xi_i)
+              approximation = approximation + y_i
+              L = L + [(x_k, 0)]
+              L = L + [(x_k, y_i)]
+              x_k = x_k + deltaX
+              L = L + [(x_k, y_i)]
+          approximation = (deltaX * approximation).n()
+          erreur = integrale - approximation
+          L = L + [(x_k,0)]
+          G = plot(f(x), (x, a-(b-a)/20, b+(b-a)/20), color = 'red', thickness = 1)
+          G = G + plot(f(x), (x, a, b), color = 'red', thickness = 1, fill = true, fillcolor = 'grey')
+          G = G + polygon(L, edgecolor = 'black', color = couleur)
+          G.show(aspect_ratio = 'automatic', figsize = 5)
+          pretty_print(html(r'Valeur exacte : \[\int_{%s}^{%s}f(x)\,\mathrm{d}x=%s\]' %(a, b, integrale)))
+          pretty_print(html(r'Approximation par la méthode des rectangles : \[%s\]'%approximation))
+          pretty_print(html(r'Erreur : \[%s\]' %erreur))
+    </slate>
+  </interactive>
+
+</introduction>
+
+<section xml:id="presentationrectangles">
+<title>Présentation</title>
+
+<definition>
+  <p>Soit <m>a&lt;b</m> deux nombres réels et soit <m>n\geq 1</m> un entier.</p>
+  <p>Posons
+    <me>\Delta x=\frac{b-a}{n}\quad\text{et}\quad x_k=a+k\cdot\Delta x\quad\text{pour }k=0,1,\ldots,n.</me>
+  </p>
+  <p>On appelle subdivision régulière de l'intervalle <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur <m>\Delta x</m> la suite
+    <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b.</me>
+  </p>
+</definition>
+
+<example xml:id="subdivision_01">
+  <p>Soit l'intervalle <m>[a;b]=[0;1]</m> et soit <m>n=4</m>.</p>
+  <p>Posons
+    <me>\Delta x=\frac{b-a}{n}=\frac{1-0}{4}=0{,}25</me>
+    et
+    <me>x_k=a+k\cdot\Delta x=k\cdot 0{,}25\quad\text{pour }k=0,1,2,3,4</me>
+  </p>
+  <p>c'est-à-dire
+    <me>
+      \begin{cases}
+        x_0=0\\
+        x_1=0{,}25\\
+        x_2=0{,}5\\
+        x_3=0{,}75\\
+        x_4=1
+      \end{cases}.
+    </me>
+  </p>
+  <p>La subdivision régulière de l'intervalle <m>[0;1]</m> en quatre sous-intervalles de même longueur est donc la suite
+    <me>0&lt;0{,}25&lt;0{,}5&lt;0{,}75&lt;1.</me>
+ </p>
+</example>
+
+<remark>
+  <p>La subdivision régulière de l'intervalle <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+    <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b.</me>
+    donne naissance à <m>n</m> sous-intervalles
+    <me>[x_{k-1};x_k]</me>
+    qui sont tous de longueur
+    <me>x_k-x_{k-1}=\Delta x=\frac{b-a}{n}\quad\text{pour }k=1,\ldots,n.</me>
+  </p>
+  <p>Dans chaque intervalle <m>[x_{k-1};x_k]</m>, on appellera
+    <ul>
+      <li><m>x_{k-1}</m> le point de gauche;</li>
+      <li><m>x_k</m> le point de droite;</li>
+      <li><m>\frac{x_{k-1}+x_k}{2}</m> le point du milieu.</li>
+    </ul>
+  </p>
+</remark>
+
+<example>
+  <p>L'exemple <xref ref="subdivision_01"/>, donne naissance aux quatre sous-intervalles de <m>[0;1]</m>  qui suivent :
+    <me>[0;0{,}25],\; [0{,}25;0{,}5],\; [0{,}5;0{,}75]\;\text{et}\;[0{,}75;1].</me>
+  </p>
+  <p>Pour <m>[0{,}5;0{,}75]</m> en particulier, on appelle
+    <ul>
+      <li><m>0{,}5</m> le point de gauche;</li>
+      <li><m>0{,}75</m> le point de droite;</li>
+      <li><m>\frac{0{,}5+0{,}75}{2}=0{,}625</m> le point du milieu.</li>
+    </ul>
+  </p>
+</example>
+
+<remark>
+  <p>Soit une intégrale définie
+    <me>\int_a^bf(x)\mathrm{d}x</me>
+    et soit
+    <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+    la subdivision régulière de l'intervalle d'intégration <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur.
+  </p>
+  <p>Alors la <url href="https://fr.wikipedia.org/wiki/Relation_de_Chasles#Int%C3%A9gration">relation de Chasles</url> pour l'intégration donne
+    <md>
+      <mrow>\int_a^bf(x)\mathrm{d}x&amp;=\int_{x_0}^{x_1}f(x)\mathrm{d}x+\int_{x_1}^{x_2}f(x)\mathrm{d}x+\cdots+\int_{x_{n-1}}^{x_n}f(x)\mathrm{d}x</mrow>
+      <mrow>&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x.</mrow>
+    </md>
+  </p>
+</remark>
+
+<example>
+  <p>Avec la subdivision de l'exemple <xref ref="subdivision_01"/>, on a
+    <me>\int_0^1f(x)\mathrm{d}x=\int_{0}^{0{,}25}f(x)\mathrm{d}x+\int_{0{,}25}^{0{,}5}f(x)\mathrm{d}x+\int_{0{,}5}^{0{,}75}f(x)\mathrm{d}x+\int_{0{,}75}^{1}f(x)\mathrm{d}x.</me>
+  </p>
+</example>
+
+<principle>
+  <p>Soit <m>f</m> une fonction intégrable sur un intervalle <m>[c;d]</m> de longueur <m>\Delta x=d-c</m>.</p>
+  <p>Soit <m>\xi\in[c;d]</m>.</p>
+  <p>Remplacer la fonction <m>x\mapsto f(x)</m> par la fonction constante <m>x\mapsto f(\xi)</m> conduit à remplacer l'intégrale définie
+    <me>\int_c^df(x)\mathrm{d}x</me>
+    par
+    <md>
+      <mrow>\int_c^df(\xi)\mathrm{d}x&amp;=f(\xi)\cdot x\,\Bigg\vert_c^d</mrow>
+      <mrow>&amp;=f(\xi)\cdot d-f(\xi)\cdot c</mrow>
+      <mrow>&amp;=f(\xi)\cdot (d-c)</mrow>
+      <mrow>&amp;=f(\xi)\cdot \Delta x</mrow>
+    </md>
+    qui est l'aire algébrique du rectangle de côtés <m>\Delta x</m> et <m>f(\xi)</m>.
+  </p>
+</principle>
+
+<definition xml:id="def_methode_rectangles">
+  <title>Méthode des rectangles</title>
+  <p>Soit une intégrale définie
+    <me>\int_a^bf(x)\mathrm{d}x</me>
+    et soit
+    <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+    la subdivision régulière de l'intervalle d'intégration <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+    <me>\Delta x=\frac{b-a}{n}.</me>
+  </p>
+  <p>Approcher la valeur de cette intégrale par la méthode des rectangles à l'aide de cette subdivision revient à choisir un point <m>\xi_k</m> dans chacun des sous-intervalles <m>[x_{k-1};x_k]</m> et à considérer l'approximation suivante :
+    <md>
+      <mrow>\text{Approximation}&amp;=\sum_{k=1}^nf(\xi_k)\cdot\Delta x</mrow>
+      <mrow>&amp;=\Delta x\cdot\sum_{k=1}^nf(\xi_k).</mrow>
+    </md>
+  </p>
+  <ul>
+    <li><p>Si on choisit <m>\xi_k=x_{k-1}</m> pour tout <m>k=1,\ldots,n</m>, on parle de méthode des rectangles à gauches.</p></li>
+    <li><p>Si on choisit <m>\xi_k=x_k</m> pour tout <m>k=1,\ldots,n</m>, on parle de méthode des rectangles à droite.</p></li>
+    <li><p>Si on choisit <m>\xi_k=\frac{x_{k-1}+x_k}{2}</m> pour tout <m>k=1,\ldots,n</m>, on parle de méthode des rectangles au milieu.</p></li>
+  </ul>
+</definition>
+
+<remark>
+  <p>Les approximations fournies par la méthode des rectangles ne sont rien d'autre que des sommes de Riemann.</p>
+</remark>
+
+<example xml:id="exemple_approximation_rectangles">
+  <p>Considérons l'intégrale définie
+    <me>\int_0^1e^{-x^2}\mathrm{d}x</me>
+    de la fonction <m>f(x)=e^{-x^2}</m>, et la subdivision régulière
+    <me>0&lt;0{,}25&lt;0{,}5&lt;0{,}75&lt;1</me>
+    de l'intervalle d'intégration <m>[0;1]</m> en quatre sous-intervalles de même longueur
+    <me>\Delta x=0{,}25.</me>
+  </p>
+  <ul>
+    <li>
+      <p>La méthode des rectangles à gauche donne
+        <md>
+          <mrow>\text{Approximation}&amp;=\Delta x\cdot\left(f(0)+f(0{,}25)+f(0{,}5)+f(0{,}75)\right)</mrow>
+          <mrow>&amp;=0{,}25\cdot\left(e^{-0^2}+e^{-0{,}25^2}+e^{-0{,}5^2}+e^{-0{,}75^2}\right)</mrow>
+          <mrow>&amp;\approx 0{,}821\,999\,167\,653\,951.</mrow>
+        </md>
+      </p>
+    </li>
+    <li>
+      <p>La méthode des rectangles à droite donne
+        <md>
+          <mrow>\text{Approximation}&amp;=\Delta x\cdot\left(f(0{,}25)+f(0{,}5)+f(0{,}75)+f(1)\right)</mrow>
+          <mrow>&amp;=0{,}25\cdot\left(e^{-0{,}25^2}+e^{-0{,}5^2}+e^{-0{,}75^2}+e^{-1^2}\right)</mrow>
+          <mrow>&amp;\approx 0{,}663\,969\,027\,946\,812.</mrow>
+        </md>
+      </p>
+    </li>
+    <li>
+      <p>La méthode des rectangles au milieu donne
+        <md>
+          <mrow>\text{Approximation}&amp;=\Delta x\cdot\left(f(0{,}125)+f(0{,}375)+f(0{,}625)+f(0{,}875)\right)</mrow>
+          <mrow>&amp;=0{,}25\cdot\left(e^{-0{,}125^2}+e^{-0{,}375^2}+e^{-0{,}625^2}+e^{-0{,}875^2}\right)</mrow>
+          <mrow>&amp;\approx 0{,}748\,747\,131\,891\,009.</mrow>
+        </md>
+      </p>
+    </li>
+  </ul>
+</example>
+
+<p>Maintenant qu'on a une méthode qui permet de calculer des approximations de la valeur exacte d'une intégrale définie, il reste à pouvoir estimer l'erreur commise.</p>
+
+<theorem xml:id="erreur_rectangles">
+  <statement>
+    <p>Soit <m>f:[a;b]\longrightarrow\mathbb{R}</m> dérivable telle que <m>f'</m> soit continue sur <m>[a;b]</m>.</p>
+    <p>Soit <m>n\geq 1</m> un entier et soit
+      <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+      la subdivision régulière de l'intervalle d'intégration <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+      <me>\Delta x=\frac{b-a}{n}.</me>
+    </p>
+    <p>Alors pour tout choix de points <m>\xi_k</m>, la méthode des rectangles conduit à l'erreur d'approximation
+      <me>\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\Delta x\cdot\sum_{k=1}^nf(\xi_k)}_{\text{Approximation}}</me>
+      qui vérifie
+      <me>|\text{Erreur}|\leq\frac{M(b-a)^2}{2n}</me>
+      où <m>M</m> est n'importe quel nombre tel que
+      <me>|f'(x)|\leq M\quad\text{pour tout }x\in[a;b].</me>
+    </p>
+  </statement>
+  <proof>
+    <p>Nous allons démontrer ce résultat pour la méthode des rectangles à gauche (<m>\xi_k=x_{k-1}</m>).</p>
+    <p>Commençons par établir le cas <m>n=1</m>, pour lequel <m>\Delta x=b-a</m> et il y a un seul rectangle d'aire <m>f(a)(b-a)</m>.</p>
+    <p>L'idée fondamentale de la preuve repose sur l'observation suivante :
+      <md>
+        <mrow>\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-f(a)(b-a)</mrow>
+        <mrow>&amp;=\int_a^bf(x)\mathrm{d}x-f(a)\int_a^b\mathrm{d}x</mrow>
+        <mrow>&amp;=\int_a^bf(x)\mathrm{d}x-\int_a^bf(a)\mathrm{d}x</mrow>
+        <mrow>&amp;=\int_a^b(f(x)-f(a))\mathrm{d}x.</mrow>
+      </md>
+       Ceci entraîne
+      <md>
+        <mrow>|\text{Erreur}|&amp;=\left|\int_a^b(f(x)-f(a))\mathrm{d}x\right|</mrow>
+        <mrow>&amp;\leq\int_a^b|f(x)-f(a)|\mathrm{d}x.</mrow>
+      </md>
+    </p>
+    <p>Par le théorème de Lagrange (ou théorème des accroissements finis), pour tout <m>x\in]a;b]</m>, il existe <m>c_x\in]a;x[</m> tel que
+      <me>f(x)-f(a)=f'(c_x)(x-a).</me>
+      Et cela reste vrai pour <m>x=a</m> car <m>f(a)-f(a)=f'(c)(a-a)\Leftrightarrow 0=f'(c)\cdot 0</m> pour n'importe quelle valeur de <m>c\in]a;b[</m>.
+    </p>
+    <p>Pour tout <m>x\in[a;b]</m>, on a donc
+      <md>
+        <mrow>|f(x)-f(a)|&amp;=|f'(c_x)|\cdot|x-a|</mrow>
+        <mrow>&amp;\leq M\cdot|x-a|</mrow>
+        <mrow>&amp;= M\cdot (x-a).</mrow>
+      </md>
+    </p>
+    <p>Par conséquent, on a
+      <md>
+        <mrow>\left|\int_a^b(f(x)-f(a))\mathrm{d}x\right|&amp;\leq\int_a^b|f(x)-f(a)|\mathrm{d}x</mrow>
+        <mrow>&amp;\leq\int_a^bM\cdot(x-a)\mathrm{d}x</mrow>
+        <mrow>&amp;=\frac{M(x-a)^2}{2}\bigg\rvert_a^b</mrow>
+        <mrow>&amp;=\frac{M(b-a)^2}{2}.</mrow>
+      </md>
+    </p>
+    <p>Pour traiter le cas général avec <m>n</m> rectangles, on commence par l'observation suivante :
+      <md>
+        <mrow>\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\Delta x</mrow>
+        <mrow>&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})(x_k-x_{k-1})</mrow>
+        <mrow>&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\int_{x_{k-1}}^{x_k}\mathrm{d}x</mrow>
+        <mrow>&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x_{k-1})\mathrm{d}x</mrow>
+        <mrow>&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x.</mrow>
+      </md>
+    </p>
+    <p>En procédant comme ci-dessus pour le cas <m>n=1</m> sur chaque sous-intervalle <m>[x_{k-1};x_k]</m>, on a
+      <me>\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\leq \frac{M(\Delta x)^2}{2}\quad\text{où }\Delta x=x_k-x_{k-1}=\frac{b-a}{n}.</me>
+    </p>
+    <p>Ainsi
+      <md>
+        <mrow>|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|</mrow>
+        <mrow>&amp;\leq\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|</mrow>
+        <mrow>&amp;=\sum_{k=1}^n\frac{M(\Delta x)^2}{2}</mrow>
+        <mrow>&amp;=\sum_{k=1}^n\frac{M(b-a)^2}{2n^2}</mrow>
+        <mrow>&amp;=n\cdot\frac{M(b-a)^2}{2n^2}</mrow>
+        <mrow>&amp;=\frac{M(b-a)^2}{2n}.</mrow>
+      </md>
+    </p>
+  </proof>
+</theorem>
+
+<example xml:id="exemple_erreur_rectangles">
+  <p>Revenons à l'exemple <xref ref="exemple_approximation_rectangles"/> concernant l'intégrale définie
+    <me>\int_0^1e^{-x^2}\mathrm{d}x</me>
+    à laquelle nous avons appliqué la méthode des rectangles pour <m>n=4</m> rectangles.
+  </p>
+  <p>Ici la fonction <m>f(x)=e^{-x^2}</m> est dérivable sur <m>\mathbb{R}</m> avec une dérivée
+    <me>f'(x)=-2xe^{-x^2}</me>
+    qui est continue sur <m>\mathbb{R}</m>. On peut donc appliquer le théorème <xref ref="erreur_rectangles"/>.
+  </p>
+  <p>Commençons par déterminer quel nombre <m>M</m> nous pouvons prendre.</p>
+  <p>Pour tout <m>x\in[0;1]</m>, on a
+    <me>
+      \begin{array}{ccl}
+      |f'(x)|&amp;=&amp;\left|-2xe^{-x^2}\right|\\
+      &amp;=&amp;2\cdot\left|x\right|\cdot\left|e^{-x^2}\right|\\
+      &amp;\leq&amp;2\cdot 1\cdot 1\\
+      &amp;=&amp;2.
+      \end{array}
+    </me>
+    On peut donc prendre <m>M=2</m>.</p>
+  <p>Alors
+    <md>
+      <mrow>|\text{Erreur}|&amp;\leq\frac{M(b-a)^2}{2n}</mrow>
+      <mrow>&amp;=\frac{2\cdot(1-0)^2}{2\cdot 4}</mrow>
+      <mrow>&amp;=0{,}25.</mrow>
+    </md>
+  </p>
+  <p>Pour chacune des trois approximations calculées à l'exemple <xref ref="exemple_approximation_rectangles"/>, on a donc
+    <me>|\text{Erreur}|\leq 0{,}25\quad\Leftrightarrow\quad -0{,}25\leq\text{Erreur}\leq 0{,}25.</me>
+  </p>
+</example>
+
+<p>Une fois qu'on dispose d'une approximation de la valeur exacte de l'intégrale et d'une estimation de l'erreur commise, on est en mesure d'encadrer cette valeur exacte.</p>
+
+<example>
+  <p>Poursuivons les exemples <xref ref="exemple_approximation_rectangles"/> et <xref ref="exemple_erreur_rectangles"/>. Comme
+    <me>-0{,}25\leq\text{Erreur}\leq 0{,}25</me>
+    on se contentera de deux décimales.
+    <ul>
+      <li>
+        <p>Par la méthode des rectangles à gauche, on a trouvé
+          <me>\text{Approximation}\approx 0{,}821\,999\,167\,653\,951</me>
+          d'où
+          <me>0{,}82\leq\text{Approximation}\leq 0{,}83.</me>
+          En ajoutant l'encadrement de l'erreur, on obtient
+          <me>0{,}82-0{,}25\leq\text{Approximation}+\text{Erreur}\leq 0{,}83+0{,}25</me>
+          c'est-à-dire
+          <me>0{,}57\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 1{,}08.</me>
+        </p>
+      </li>
+      <li>
+        <p>Par la méthode des rectangles à droite, on a trouvé
+          <me>\text{Approximation}\approx 0{,}663\,969\,027\,946\,812</me>
+          d'où
+          <me>0{,}66\leq\text{Approximation}\leq 0{,}67.</me>
+          En ajoutant l'encadrement de l'erreur, on obtient
+          <me>0{,}66-0{,}25\leq\text{Approximation}+\text{Erreur}\leq 0{,}67+0{,}25</me>
+          c'est-à-dire
+          <me>0{,}41\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 0{,}92.</me>
+        </p>
+      </li>
+      <li>
+        <p>Par la méthode des rectangles au milieu, on a trouvé
+          <me>\text{Approximation}\approx 0{,}748\,747\,131\,891\,009</me>
+          d'où
+          <me>0{,}74\leq\text{Approximation}\leq 0{,}75.</me>
+          En ajoutant l'encadrement de l'erreur, on obtient
+          <me>0{,}74-0{,}25\leq\text{Approximation}+\text{Erreur}\leq 0{,}75+0{,}25</me>
+          c'est-à-dire
+          <me>0{,}49\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 1{,}00.</me>
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>Remarque : En fait, comme la fonction <m>f(x)=e^{-x^2}</m> est décroissante sur <m>[0;1]</m>, on a
+    <me>\text{Aire des rectangles à droite}\leq\int_0^1e^{-x^2}\mathrm{d}x\leq\text{Aire des rectangles à gauche}</me>
+    et donc
+    <me>0{,}66\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 0{,}82.</me>
+    C'est mieux que tout ce qui précède, sans même avoir à estimer l'erreur.
+  </p>
+</example>
+
+<p>Grâce à l'estimation d'erreur du théorème <xref ref="erreur_rectangles"/>, on peut déterminer a priori le nombre de rectangles à considérer pour que la valeur absolue de l'erreur ne dépasse pas une valeur donnée.</p>
+
+<example xml:id="exemple_nombre_minimum_rectangles">
+  <p>Revenons à l'exemple <xref ref="exemple_erreur_rectangles"/> et cherchons combien de rectangles <m>n</m> il faudrait au minimum pour que la valeur absolue de l'erreur commise par la méthode des rectangles ne dépasse pas <m>10^{-5}</m>, c'est-à-dire
+    <me>|\text{Erreur}|\leq 10^{-5}.</me>
+    D'après le théorème <xref ref="erreur_rectangles"/>, il suffit pour cela que
+    <me>
+      \begin{array}{cccc}
+        &amp;\frac{M(b-a)^2}{2n}&amp;\leq&amp; 10^{-5}\\
+        \Leftrightarrow&amp;\frac{2\cdot(1-0)^2}{2\cdot n}&amp;\leq&amp; 10^{-5}\\
+        \Leftrightarrow&amp;\frac{1}{n}&amp;\leq&amp; 10^{-5}\\
+        \Leftrightarrow&amp;10^5&amp;\leq&amp; n
+      \end{array}
+    </me>
+  </p>
+  <p>Cela prendrait donc <m>n=10^5</m> rectangles au moins pour obtenir une telle précision.</p>
+</example>
+
+<assemblage>
+  <title>Méthode des rectangles : Approcher la valeur de l'intégrale d'une fonction en la remplaçant par des morceaux constants</title>
+  <p>
+    <ul>
+      <li><p>Objectif : Obtenir des approximations de la valeur d'une intégrale définie <m>\displaystyle\int_a^bf(x)\mathrm{d}x</m>.</p></li>
+      <li>
+        <p>Principe : Prendre
+        <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+        la subdivision régulière de l'intervalle d'intégration <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+        <me>\Delta x=\frac{b-a}{n}.</me>
+        Puis choisir <m>\xi_k\in[x_{k-1};x_k]</m> pour <m>k=1,\ldots,n</m>.
+        Et enfin calculer la somme de Riemann correspondante :
+          <me>\text{Approximation}=\Delta x\cdot\sum_{k=1}^nf(\xi_k).</me>
+        </p>
+      </li>
+      <li>
+        <p>Cas particuliers :
+          <ul>
+            <li>
+              <p>Pour les rectangles à gauche, prendre
+                <me>\xi_k=x_{k-1}=a+(k-1)\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.</me>
+              </p>
+            </li>
+            <li>
+              <p>Pour les rectangles à droite, prendre
+                <me>\xi_k=x_k=a+k\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.</me>
+              </p>
+            </li>
+            <li>
+              <p>Pour les rectangles au milieu, prendre
+                <me>\xi_k=\frac{x_{k-1}+x_k}{2}=a+(k-0{,}5)\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.</me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>Précision : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable avec une dérivée continue sur <m>[a;b]</m>, de sorte qu'il existe <m>M</m> tel que
+          <me>|f'(x)|\leq M\quad\text{pour tout }x\in[a;b].</me>
+          On a alors
+          <me>\left|\text{Erreur}\right|\leq \frac{M(b-a)^2}{2n}.</me>
+        </p>
+      </li>
+      <li><p>Voir aussi : <url href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing">Notes de cours de Jérôme</url>.</p></li>
+    </ul>
+  </p>
+</assemblage>
+
+<example xml:id="exemple_rectangles_recapitulatif">
+  <p>Appliquons la méthode des rectangles à gauche à l'intégrale
+    <me>\int_0^1e^{-x^2}\mathrm{d}x</me>
+    avec cent mille rectangles.
+    <ul>
+      <li><p>Notons <m>f(x)=e^{-x^2}</m>.</p></li>
+      <li><p>Soit <m>n=100\,000=10^5</m> et <m>\Delta x=\frac{b-a}{n}=\frac{1-0}{10^5}=10^{-5}</m>.</p></li>
+      <li><p>Alors <m>x_k=a+k\cdot\Delta x=k\cdot 10^{-5}</m> pour <m>k=0,\ldots,10^5</m>.</p></li>
+      <li>
+        <p>La subdivision régulière de l'intervalle <m>[0;1]</m> à considérer est donc la suivante :
+          <me>0&lt;10^{-5}&lt;2\cdot 10^{-5}&lt;3\cdot 10^{-5}&lt;\ldots&lt;99\,999\cdot 10^{-5}&lt;1</me>
+        </p>
+      </li>
+      <li>
+        <p>Par la méthode des rectangles à gauche, on obtient
+          <md>
+            <mrow>\text{Approximation}&amp;=10^{-5}\cdot\left(f(0)+f\left(10^{-5}\right)+\cdots+f\left(99\,999\cdot 10^{-5}\right)\right)</mrow>
+            <mrow>&amp;=0{,}746\,830\,972\,20\ldots</mrow>
+          </md>
+          en utilisant l'algorithme de la section <xref ref="algorithmerectangles"/>.
+        </p>
+        <p>On a donc
+          <me>0{,}746\,83\leq\text{Approximation}\leq 0{,}746\,84.</me>
+        </p>
+      </li>
+      <li>
+        <p>Comme on l'a vu à l'exemple <xref ref="exemple_erreur_rectangles"/>, on peut prendre <m>M=2</m> dans le théorème <xref ref="erreur_rectangles"/>.
+        </p>
+      </li>
+      <li>
+        <p>Comme on l'a vu à l'exemple <xref ref="exemple_nombre_minimum_rectangles"/>, on obtient alors l'estimation suivante :
+          <me>|\text{Erreur}|\leq 10^{-5}=0{,}000\,01\quad\Leftrightarrow\quad -0{,}000\,01\leq\text{Erreur}\leq 0{,}000\,01.</me>
+        </p>
+      </li>
+      <li>
+        <p>En additionnant les inéquations qui précèdent, on obtient
+          <me>0{,}746\,83-0{,}000\,01\leq\text{Approximation}+\text{Erreur}\leq 0{,}746\,84+0{,}000\,01</me>
+          c'est-à-dire
+          <me>0{,}746\,82\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 0{,}746\,84.</me>
+        </p>
+      </li>
+      <li>
+        <p>On en conclut que
+          <me>\int_0^1e^{-x^2}\mathrm{d}x=0{,}746\,8\ldots</me>
+          ainsi que
+          <me>\int_0^1e^{-x^2}\mathrm{d}x\approx 0{,}746\,8.</me>
+        </p>
+        <p>
+          Sachant que la valeur exacte est
+          <me>0{,}746\,824\,132\ldots</me>
+          les quatre décimales obtenues sont correctes.
+        </p>
+      </li>
+    </ul>
+  </p>
+</example>
+
+</section>
+
+<section xml:id="algorithmerectangles">
+<title>Algorithme</title>
+
+<algorithm>
+  <title>Méthode des rectangles à gauche</title>
+  <statement>
+    <ul>
+      <li><p>Entrées :
+        <ul>
+          <li><p>Assigner à <m>\text{f}</m> la fonction dont on veut approcher l'intégrale.</p></li>
+          <li><p>Assigner à <m>\text{a}</m> et <m>\text{b}</m> les bornes de l'intervalle d'intégration.</p></li>
+          <li><p>Assigner à <m>\text{n}</m> le nombre de sous-intervalles de la subdivision.</p></li>
+        </ul></p>
+      </li>
+      <li><p>Instructions :
+        <ul>
+          <li><p>Initialiser <m>\text{approximation}</m>, la variable qui donnera la somme des aires des rectangles : <m>\text{approximation}=0</m>.</p></li>
+          <li><p>Assigner à <m>\text{deltaX}</m> la valeur <m>(\text{b}-\text{a})/\text{n}</m>.</p></li>
+          <li><p>Assigner à <m>\text{x}</m> la valeur <m>\text{a}</m>.</p></li>
+          <li><p>Tant que <m>\text{x}&lt;\text{b}</m>,</p>
+            <ul>
+              <li><p>assigner à <m>\text{approximation}</m> la valeur de <m>\text{approximation}+\text{f}(\text{x})</m> ;</p></li>
+              <li><p>assigner à <m>\text{x}</m> la valeur de <m>\text{x}+\text{deltaX}</m>.</p></li>
+            </ul>
+          </li>
+          <li><p>Assigner à <m>\text{approximation}</m> la valeur de <m>\text{deltaX}\cdot\text{approximation}</m>.</p></li>
+        </ul></p>
+      </li>
+      <li><p>Sortie : Afficher <m>\text{approximation}</m>.</p></li>
+    </ul>
+  </statement>
+</algorithm>
+
+<p>Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale
+  <me>\int_0^14\sqrt{1-x^2}\,\mathrm{d}x=\pi</me>
+  fournie par la méthode des rectangles à gauche pour <m>32</m> rectangles.
+</p>
+
+<sage language='python'>
+  <input>
+    # entrées
+    import numpy as np
+    def f(x):
+        return 4 * np.sqrt(1 - x ** 2)
+    a = 0.0
+    b = 1.0
+    n = 32
+
+    # instructions
+    approximation = 0
+    deltaX = (b - a) / n
+    x = a
+    while x &lt; b:
+        approximation = approximation + f(x)
+        x = x + deltaX
+    approximation = deltaX * approximation
+
+    # sortie
+    print(approximation)
+  </input>
+</sage>
+
+</section>
+
+<section xml:id="exercicesrectangles">
+<title>Exercices</title>
+
+<exercise>
+  <statement>
+    <p>Appliquez la méthode des rectangles à l'intégrale
+      <me>\int_0^1\frac{1}{1+x^2}\mathrm{d}x</me>
+      avec cinq rectangles et donnez la valeur arrondie à trois décimales de l'approximation obtenue.
+      <ol>
+        <li><p>En prenant les rectangles à gauche.</p></li>
+        <li><p>En prenant les rectangles à droite.</p></li>
+        <li><p>En prenant les rectangles au milieu.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li><m>\approx 0{,}834</m></li>
+        <li><m>\approx 0{,}734</m></li>
+        <li><m>\approx 0{,}786</m></li>
+      </ol>
+    </p>
+  </answer>
+  <solution>
+    <p>Notons <m>f(x)=\frac{1}{1+x^2}</m>, <m>n=5</m> et
+      <me>\Delta x=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2.</me>
+      La subdivision régulière de l'intervalle d'intégration <m>[0;1]</m> en cinq sous-intervalles de même longueur est donnée par
+      <me>x_k=a+k\cdot\Delta x=k\cdot 0{,}2\quad\text{pour }k=0,1,\ldots,5,</me>
+      c'est-à-dire
+      <me>0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.</me>
+      <ol>
+        <li>
+          <p>Approximation par les rectangles à gauche :
+            <md>
+              <mrow>&amp;\Delta x\cdot\left(f(0)+f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)\right)</mrow>
+              <mrow>=\;&amp;0{,}2\cdot\left(\frac{1}{1+0^2}+\frac{1}{1+0{,}2^2}+\frac{1}{1+0{,}4^2}+\frac{1}{1+0{,}6^2}+\frac{1}{1+0{,}8^2}\right)</mrow>
+              <mrow>\approx\;&amp;0{,}834.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Approximation par les rectangles à droite :
+            <md>
+              <mrow>&amp;\Delta x\cdot\left(f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)+f(1)\right)</mrow>
+              <mrow>=\;&amp;0{,}2\cdot\left(\frac{1}{1+0{,}2^2}+\frac{1}{1+0{,}4^2}+\frac{1}{1+0{,}6^2}+\frac{1}{1+0{,}8^2}+\frac{1}{1+1^2}\right)</mrow>
+              <mrow>\approx\;&amp;0{,}734.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Approximation par les rectangles au milieu :
+            <md>
+              <mrow>&amp;\Delta x\cdot\left(f(0{,}1)+f(0{,}3)+f(0{,}5)+f(0{,}7)+f(0{,}9)\right)</mrow>
+              <mrow>=\;&amp;0{,}2\cdot\left(\frac{1}{1+0{,}1^2}+\frac{1}{1+0{,}3^2}+\frac{1}{1+0{,}5^2}+\frac{1}{1+0{,}7^2}+\frac{1}{1+0{,}9^2}\right)</mrow>
+              <mrow>\approx\;&amp;0{,}786.</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Appliquez la méthode des rectangles à l'intégrale
+      <me>\int_0^\pi\sin(x)\mathrm{d}x</me>
+      avec quatre rectangles et donnez la valeur arrondie à trois décimales de l'approximation obtenue.
+      <ol>
+        <li><p>En prenant les rectangles à gauche.</p></li>
+        <li><p>En prenant les rectangles à droite.</p></li>
+        <li><p>En prenant les rectangles au milieu.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li><m>\approx 1{,}896</m></li>
+        <li><m>\approx 1{,}896</m></li>
+        <li><m>\approx 2{,}052</m></li>
+      </ol>
+    </p>
+  </answer>
+  <solution>
+    <p>Notons <m>f(x)=\sin(x)</m>, <m>n=4</m> et
+      <me>\Delta x=\frac{b-a}{n}=\frac{\pi-0}{4}=\frac{\pi}{4}.</me>
+      La subdivision régulière de l'intervalle d'intégration <m>[0;\pi]</m> en quatre sous-intervalles de même longueur est donnée par
+      <me>x_k=a+k\cdot\Delta x=k\cdot\frac{\pi}{4}\quad\text{pour }k=0,1,\ldots,4,</me>
+      c'est-à-dire
+      <me>0&lt;\frac{\pi}{4}&lt;\frac{\pi}{2}&lt;\frac{3\pi}{4}&lt;\pi.</me>
+      <ol>
+        <li>
+          <p>Approximation par les rectangles à gauche :
+            <md>
+              <mrow>&amp;\Delta x\cdot\left(f(0)+f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)\right)</mrow>
+              <mrow>=\;&amp;\frac{\pi}{4}\cdot\left(\sin(0)+\sin\left(\frac{\pi}{4}\right)+\sin\left(\frac{\pi}{2}\right)+\sin\left(\frac{3\pi}{4}\right)\right)</mrow>
+              <mrow>\approx\;&amp;1{,}896.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Approximation par les rectangles à droite :
+            <md>
+              <mrow>&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)</mrow>
+              <mrow>=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{4}\right)+\sin\left(\frac{\pi}{2}\right)+\sin\left(\frac{3\pi}{4}\right)+\sin(\pi)\right)</mrow>
+              <mrow>\approx\;&amp;1{,}896.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Approximation par les rectangles au milieu :
+            <md>
+              <mrow>&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)</mrow>
+              <mrow>=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{8}\right)+\sin\left(\frac{3\pi}{8}\right)+\sin\left(\frac{5\pi}{8}\right)+\sin\left(\frac{7\pi}{8}\right)\right)</mrow>
+              <mrow>\approx\;&amp;2{,}052.</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Appliquez la méthode des rectangles à l'intégrale
+      <me>\int_2^3x\,\mathrm{d}x</me>
+      avec dix rectangles et donnez la valeur exacte de l'approximation obtenue.
+      <ol>
+        <li><p>En prenant les rectangles à gauche.</p></li>
+        <li><p>En prenant les rectangles à droite.</p></li>
+        <li><p>En prenant les rectangles au milieu.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li><m>2{,}45</m></li>
+        <li><m>2{,}55</m></li>
+        <li><m>2{,}5</m></li>
+      </ol>
+    </p>
+  </answer>
+  <solution>
+    <p>Notons <m>f(x)=x</m>, <m>n=10</m> et
+      <me>\Delta x=\frac{b-a}{n}=\frac{3-2}{10}=0{,}1.</me>
+    La subdivision régulière de l'intervalle d'intégration <m>[2;3]</m> en dix sous-intervalles de même longueur est donnée par
+      <me>x_k=a+k\cdot\Delta x=2+k\cdot 0{,}1\quad\text{pour }k=0,1,\ldots,10,</me>
+    c'est-à-dire
+      <me>2&lt;2{,}1&lt;2{,}2&lt;\ldots&lt;2{,}9&lt;3.</me>
+    Comme il y a beaucoup de valeurs, nous allons utiliser la notation sigma pour exprimer l'approximation cherchée :
+      <md>
+        <mrow>\text{Approximation}&amp;=\Delta x\cdot\sum_{k=1}^nf(\xi_k)</mrow>
+        <mrow>&amp;=0{,}1\cdot\sum_{k=1}^{10}\xi_k.</mrow>
+      </md>
+      <ol>
+        <li>
+          <p>Rectangles à gauche : On prend <m>\xi_k=x_{k-1}</m> donc
+            <md>
+              <mrow>\text{Approximation}&amp;= 0{,}1\cdot\sum_{k=1}^{10}(2+(k-1)\cdot 0{,}1)</mrow>
+              <mrow>&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}(k-1)\right)\cdot 0{,}1\right)</mrow>
+              <mrow>&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^9k\right)\cdot 0{,}1\right)</mrow>
+              <mrow>&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{9\cdot(9+1)}{2}\right)\cdot 0{,}1\right)</mrow>
+              <mrow>&amp;=0{,}1\cdot\left(20+45\cdot 0{,}1\right)</mrow>
+              <mrow>&amp;=2{,}45.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Rectangles à droite : On prend <m>\xi_k=x_k</m> donc
+            <md>
+              <mrow>\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+k\cdot 0{,}1)</mrow>
+              <mrow>&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k\right)\cdot 0{,}1\right)</mrow>
+              <mrow>&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}\right)\cdot 0{,}1\right)</mrow>
+              <mrow>&amp;=0{,}1\cdot\left(20+55\cdot 0{,}1\right)</mrow>
+              <mrow>&amp;=2{,}55.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Rectangles à droite : On prend <m>\xi_k=\frac{x_{k-1}+x_k}{2}=2+(k-0{,}5)\cdot 0{,1}</m> donc
+            <md>
+              <mrow>\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+(k-0{,}5)\cdot 0{,}1)</mrow>
+              <mrow>&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k-\sum_{k=1}^{10}0{,}5\right)\cdot 0{,}1\right)</mrow>
+              <mrow>&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}-10\cdot 0{,}5\right)\cdot 0{,}1\right)</mrow>
+              <mrow>&amp;=0{,}1\cdot\left(20+55-5\cdot 0{,}1\right)</mrow>
+              <mrow>&amp;=2{,}5.</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Encadrez la valeur de l'intégrale
+      <me>\int_0^1\frac{1}{1+x}\mathrm{d}x</me>
+      en appliquant la méthode des rectangles à gauche avec cinq rectangles et en utilisant trois décimales.
+    </p>
+  </statement>
+  <answer>
+    <p><me>0{,}645\leq\int_0^1\frac{1}{1+x}\mathrm{d}x\leq 0{,}846</me></p>
+  </answer>
+  <solution>
+    <p>
+      <ul>
+        <li><p>Notons <m>f(x)=\frac{1}{1+x}</m>.</p></li>
+        <li><p>Soit <m>n=5</m> et <m>\Delta x=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2</m>.</p></li>
+        <li><p>Alors <m>x_k=a+k\cdot\Delta x=k\cdot 0{,}2</m> pour <m>k=0,\ldots,5</m>.</p></li>
+        <li>
+          <p>La subdivision régulière de l'intervalle <m>[0;1]</m> à considérer est donc la suivante :
+            <me>0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.</me>
+          </p>
+        </li>
+        <li>
+          <p>Par la méthode des rectangles à gauche, on obtient
+            <md>
+              <mrow>\text{Approximation}&amp;=0{,}2\cdot\left(f(0)+f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)\right)</mrow>
+              <mrow>&amp;=0{,}2\cdot\left(1+\frac{1}{1{,}2}+\frac{1}{1{,}4}+\frac{1}{1{,}6}+\frac{1}{1{,}8}\right)</mrow>
+              <mrow>&amp;=0{,}745\ldots</mrow>
+            </md>
+            On a donc
+            <me>0{,}745\leq\text{Approximation}\leq 0{,}746.</me>
+          </p>
+        </li>
+        <li>
+          <p>Notons que <m>|f'(x)|=\frac{1}{(1+x)^2}</m>. Pour tout <m>x\in[0;1]</m>, on a
+            <md>
+              <mrow>&amp;&amp;1+x&amp;\geq 1</mrow>
+              <mrow>&amp;\Rightarrow&amp;(1+x)^2&amp;\geq 1</mrow>
+              <mrow>&amp;\Rightarrow&amp;\frac{1}{(1+x)^2}&amp;\leq 1.</mrow>
+            </md>
+          Donc <m>|f'(x)|\leq 1</m> pour tout <m>x\in[0;1]</m> et on peut prendre <m>M=1</m> dans le théorème <xref ref="erreur_rectangles"/>.
+          </p>
+        </li>
+        <li>
+          <p>On a donc
+            <md>
+              <mrow>|\text{Erreur}|&amp;\leq\frac{M(b-a)^2}{2n}</mrow>
+              <mrow>&amp;=\frac{1\cdot(1-0)^2}{2\cdot 5}</mrow>
+              <mrow>&amp;=0{,}1</mrow>
+            </md>
+            d'où
+            <me>-0{,}1\leq\text{Erreur}\leq 0{,}1.</me>
+          </p>
+        </li>
+        <li>
+          <p>En additionnant les inéquations qui précèdent, on obtient
+            <me>0{,}745-0{,}1\leq\text{Approximation}+\text{Erreur}\leq 0{,}746+0{,}1</me>
+            c'est-à-dire
+            <me>0{,}645\leq\int_0^1\frac{1}{1+x}\mathrm{d}x\leq 0{,}846.</me>
+          </p>
+        </li>
+      </ul>
+      Remarque : Sachant que cette intégrale vaut <m>\ln 2=0,693\ldots</m>, on comprend qu'il faudrait beaucoup plus de rectangles pour être capable d'en déterminer les premières décimales par cette méthode.
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>On souhaite approcher l'intégrale définie
+      <me>\int_0^1\frac{1}{1+x}\mathrm{d}x</me>
+      à l'aide de la méthode des rectangles.
+    </p>
+    <p>Combien faudrait-il utiliser de rectangles au minimum pour être certains que la valeur absolue de l'erreur d'approximation ne dépasse pas <m>10^{-6}</m>?
+    </p>
+  </statement>
+  <answer>
+    <p><m>500\,000</m></p>
+  </answer>
+  <solution>
+    <p>On a déjà vu à l'exercice précédent qu'on pouvait appliquer le théorème <xref ref="erreur_rectangles"/> avec <m>M=1</m>.</p>
+    <p>En d'autres termes, on cherche le plus petit <m>n</m> tel que
+      <me>
+        \begin{array}{cccc}
+        &amp;|\text{Erreur}|&amp;\leq&amp;10^{-6}\\
+        \Leftrightarrow&amp;\frac{M(b-a)^2}{2n}&amp;\leq&amp;10^{-6}\\
+        \Leftrightarrow&amp;\frac{1\cdot(1-0)^2}{2n}&amp;\leq&amp;10^{-6}\\
+        \Leftrightarrow&amp;\frac{1}{2n}&amp;\leq&amp;10^{-6}\\
+        \Leftrightarrow&amp;\frac{10^6}{2}&amp;\leq&amp;n\\
+        \Leftrightarrow&amp;500\,000&amp;\leq&amp;n
+        \end{array}
+      </me>
+    </p>
+    <p>Il faudrait donc <m>500\,000</m> rectangles au minimum.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Modifiez le code donné à la section <xref ref="algorithmerectangles" /> afin d'appliquer la méthode des rectangles à droite à l'intégrale
+      <me>\int_0^14\sqrt{1-x^2}\,\mathrm{d}x=\pi</me>
+    pour <m>1000</m> rectangles.</p>
+    <p>Vous devez trouver <m>\approx 3{,}139\,555\,466\,911\,027\,7</m>.</p>
+  </statement>
+  <solution>
+    <pre>
+      # entrées
+      import numpy as np
+      def f(x):
+          return 4 * np.sqrt(1 - x ** 2)
+      a = 0.0
+      b = 1.0
+      n = 1000
+
+      # instructions
+      approximation = 0
+      deltaX = (b - a) / n
+      x = b
+      while x &gt; a:
+          approximation = approximation + f(x)
+          x = x - deltaX
+      approximation = deltaX * approximation
+
+      # sortie
+      print(approximation)
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Modifiez le code donné à la section <xref ref="algorithmerectangles"/> afin de remplacer la boucle <c>while</c> par une boucle <c>for</c> semblable à celle utilisée à la section <xref ref="algorithmetrapezes"/>.</p>
+  </statement>
+  <solution>
+    <pre>
+      # entrées
+      import numpy as np
+      def f(x):
+          return 4 * np.sqrt(1 - x ** 2)
+      a = 0.0
+      b = 1.0
+      n = 32
+
+      # instructions
+      approximation = 0
+      deltaX = (b - a) / n
+      for k in range(1, n+1):
+          x = a + (k - 1) * deltaX
+          approximation = approximation + f(x)
+      approximation = deltaX * approximation
+
+      # sortie
+      print(approximation)
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Créez une fonction <c>rectanglesAuMilieu(f, a, b, n)</c> qui donne l'approximation de l'intégrale <m>\int_a^bf(x)\mathrm{d}x</m> par la méthode des rectangles au milieu pour <m>n</m> rectangles.</p>
+    <p>Testez votre code pour <m>\int_0^1\frac{1}{1+x}\mathrm{d}x</m> avec <m>1000</m> rectangles. Vous devez trouver <m>\approx 0{,}693\,147\,149\,31</m>.</p>
+  </statement>
+  <solution>
+    <pre>
+      # fonction
+      def rectanglesAuMilieu(f, a, b, n):
+          approximation = 0
+          deltaX = (b - a) / n
+          x = a + deltaX / 2
+          while x &lt; b:
+              approximation = approximation + f(x)
+              x = x + deltaX
+          approximation = deltaX * approximation
+          return approximation
+
+      # test
+      def f(x):
+          return 1 / (1 + x)
+      print(rectanglesAuMilieu(f, 0.0, 1.0, 1000))
+    </pre>
+  </solution>
+</exercise>
+
+</section>
+
+</chapter>

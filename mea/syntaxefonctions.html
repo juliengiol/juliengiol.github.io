@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:25:33-04:00    *-->
+<!--*    on 2020-09-02T14:11:17-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -231,52 +231,47 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="syntaxefonctions"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Syntaxe : def / return</span>
 </h2>
-<a href="syntaxefonctions.html" class="permalink">¶</a><p id="p-98">En algorithmique comme en mathématiques, une fonction peut être vue comme une boîte noire qui renvoie un ou plusieurs résultats en sortie, dépendant des éléments qui lui ont été donnés en entrée.</p>
-<p id="p-99">En Python, les deux mots qu'on utilise pour définir une fonction sont les suivants.</p>
+<a href="syntaxefonctions.html" class="permalink">¶</a><p id="p-128">En algorithmique comme en mathématiques, une fonction peut être vue comme une boîte noire qui renvoie un ou plusieurs résultats en sortie, dépendant des éléments qui lui ont été donnés en entrée.</p>
+<p id="p-129">En Python, les mots-clés qu'on utilise pour définir une fonction sont les suivants.</p>
 <ul class="disc">
-<li id="li-51"><p id="p-100"><code class="code-inline tex2jax_ignore">def</code> : Pour annoncer le début de la définition.</p></li>
-<li id="li-52"><p id="p-101"><code class="code-inline tex2jax_ignore">return</code> : Pour annoncer la chose à renvoyer.</p></li>
+<li id="li-58"><p id="p-130"><code class="code-inline tex2jax_ignore">def ... :</code> : Pour annoncer le début de la définition.</p></li>
+<li id="li-59"><p id="p-131"><code class="code-inline tex2jax_ignore">return</code> : Pour annoncer la chose à renvoyer.</p></li>
 </ul>
-<p id="p-102">Voici un premier exemple. <div class="sagecell-python" id="sage-20"><script type="text/x-sage">def f(x):  # début de la définition de la fonction
-    return 3 * x # la chose à renvoyer
-
-y = f(2)
-print(y)
-</script></div></p>
-<article class="remark remark-like" id="remark-1"><h6 class="heading">
+<article class="remark remark-like" id="remark-9"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-103">Une fonction Python sans <code class="code-inline tex2jax_ignore">return</code> peut quand même afficher des choses quand on l'appelle, même si elle ne renvoie rien à proprement parler.</p>
-<div class="sagecell-python" id="sage-21"><script type="text/x-sage">def f(x):
-    print(3 * x)
+<p id="p-132">Comme pour les boucles et les conditionnelles, les deux-points <code class="code-inline tex2jax_ignore"> :</code> annoncent une <a class="external" href="https://www.askpython.com/python/python-indentation" target="_blank">indentation</a> (4 espaces fortement recommandés). Notez aussi que le <code class="code-inline tex2jax_ignore">return</code> doit faire partie du bloc indenté.</p></article><p id="p-133">Voici un premier exemple permettant de définir la fonction quadratique</p>
+<div class="displaymath">
+\begin{equation*}
+f(x) = x^2-4x+2.
+\end{equation*}
+</div>
+<p data-braille="continuation"><div class="sagecell-python" id="sage-32"><script type="text/x-sage">def f(x):  # début de la définition de la fonction
+    return x ** 2 - 4 * x + 2 # la chose à renvoyer
+</script></div> Évaluez la cellule précédente et vérifiez que rien ne s'affiche. Puis faites afficher la valeur de</p>
+<div class="displaymath">
+\begin{equation*}
+y = f(5)
+\end{equation*}
+</div>
+<p data-braille="continuation">en évaluant la cellule suivante : <div class="sagecell-python" id="sage-33"><script type="text/x-sage">y = f(5)
+print(y)
+</script></div></p>
+<article class="remark remark-like" id="remark-10"><h6 class="heading">
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-134">Une fonction Python sans <code class="code-inline tex2jax_ignore">return</code> peut quand même afficher des choses quand on l'appelle, même si elle ne renvoie rien à proprement parler.</p>
+<div class="sagecell-python" id="sage-34"><script type="text/x-sage">def f(x):
+    print(x ** 2 - 4 * x + 2)
 
-y = f(2)
+y = f(5)
 print(y)
 </script></div>
-<p id="p-104">Le code ci-dessus affiche</p>
+<p id="p-135">Le code ci-dessus affiche</p>
 <ul class="disc">
-<li id="li-53"><p id="p-105">\(\text{6}\) parce que la commande <code class="code-inline tex2jax_ignore">y = f(2)</code> fait appel à la fonction <code class="code-inline tex2jax_ignore">f(x)</code> et exécute donc <code class="code-inline tex2jax_ignore">print(3 * x)</code>;</p></li>
-<li id="li-54"><p id="p-106">et \(\text{None}\) parce que la fonction <code class="code-inline tex2jax_ignore">f(x)</code> ne renvoie rien, donc la variable <code class="code-inline tex2jax_ignore">y</code> reste vide et <code class="code-inline tex2jax_ignore">print(y)</code> donne donc \(\text{None}\text{.}\)</p></li>
-</ul></article><p id="p-107">Codons maintenant la fonction polynomiale suivante :</p>
-<div class="displaymath">
-\begin{equation*}
-x\longmapsto 1+2x+3x^2+4x^3.
-\end{equation*}
-</div>
-<p data-braille="continuation">Nous allons l'appeler <code class="code-inline tex2jax_ignore">monPolynome</code> et la tester avec le cas <code class="code-inline tex2jax_ignore">print(monPolynome(-1))</code> qui doit afficher \(\text{-2}\) puisque</p>
-<div class="displaymath">
-\begin{equation*}
-1+2\cdot(-1)+3\cdot(-1)^2+4\cdot(-1)^3=1-2+3-4=-2.
-\end{equation*}
-</div>
-<p data-braille="continuation"><div class="sagecell-python" id="sage-22"><script type="text/x-sage"># définition de la fonction
-def monPolynome(x):
-    return 1 + 2 * x  + 3 * x ** 2 + 4 * x ** 3
-
-# test
-print(monPolynome(-1))
-</script></div></p>
-<p id="p-108">Codons ensuite la fonction valeur absolue qui peut être définie comme suit :</p>
+<li id="li-60"><p id="p-136">\(\text{7}\) parce que la commande <code class="code-inline tex2jax_ignore">y = f(2)</code> fait appel à la fonction <code class="code-inline tex2jax_ignore">f(x)</code> et exécute donc <code class="code-inline tex2jax_ignore">print(x ** 2 - 4 * x + 2)</code>;</p></li>
+<li id="li-61"><p id="p-137">et \(\text{None}\) parce que la fonction <code class="code-inline tex2jax_ignore">f(x)</code> ne renvoie rien, donc la variable <code class="code-inline tex2jax_ignore">y</code> reste vide, de sorte que <code class="code-inline tex2jax_ignore">print(y)</code> \(\text{None}\text{.}\)</p></li>
+</ul></article><p id="p-138">Codons ensuite la fonction valeur absolue qui peut être définie comme suit :</p>
 <div class="displaymath">
 \begin{equation*}
 x\longmapsto
@@ -286,8 +281,7 @@ x&amp;\text{si}\;x\geq 0\\
 \end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">Nous allons l'appeler <code class="code-inline tex2jax_ignore">valeurAbsolue</code>, et la tester avec <code class="code-inline tex2jax_ignore">print(valeurAbsolue(5))</code> et <code class="code-inline tex2jax_ignore">print(valeurAbsolue(-7))</code> qui doivent afficher respectivement \(\text{5}\) et \(\text{7}\text{.}\)</p>
-<div class="sagecell-python" id="sage-23"><script type="text/x-sage">def valeurAbsolue(x):
+<p data-braille="continuation">Nous allons l'appeler <code class="code-inline tex2jax_ignore">valeurAbsolue</code>, et la tester avec <code class="code-inline tex2jax_ignore">print(valeurAbsolue(5))</code> et <code class="code-inline tex2jax_ignore">print(valeurAbsolue(-7))</code> qui doivent afficher respectivement \(\text{5}\) et \(\text{7}\text{.}\) <div class="sagecell-python" id="sage-35"><script type="text/x-sage">def valeurAbsolue(x):
     if x > 0:
         return x
     else:
@@ -295,8 +289,8 @@ x&amp;\text{si}\;x\geq 0\\
 
 print(valeurAbsolue(5))
 print(valeurAbsolue(-7))
-</script></div>
-<p id="p-109">Terminons cette section avec la fonction factorielle. Pour \(n\geq 1\text{,}\) on rappelle que</p>
+</script></div> Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y4dl5v7v" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+<p id="p-139">Terminons cette section avec la fonction factorielle. Pour \(n\geq 1\text{,}\) on rappelle que</p>
 <div class="displaymath">
 \begin{equation*}
 n!=1\cdot 2\cdot 3\cdots n.
@@ -308,15 +302,14 @@ n!=1\cdot 2\cdot 3\cdots n.
 5!=1\cdot 2\cdot 3\cdot 4\cdot 5=120.
 \end{equation*}
 </div>
-<div class="sagecell-python" id="sage-24"><script type="text/x-sage">def factorielle(n):
+<p data-braille="continuation"><div class="sagecell-python" id="sage-36"><script type="text/x-sage">def factorielle(n):
     produit = 1
     for k in range(2, n+1):
         produit = produit * k
     return produit
 
 print(factorielle(5))
-</script></div>
-<p id="p-110">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/yxl77o2s" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p></section></div></main>
+</script></div> Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/yxl77o2s" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;

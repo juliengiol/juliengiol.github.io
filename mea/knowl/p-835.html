@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:28:18-04:00    *-->
+<!--*    on 2020-09-02T14:13:08-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Deuxième approximation de \(\displaystyle\cos\left(\frac{\pi}{12}\right)=f\left(\frac{\pi}{12}\right)\) :</p>
+<p>Résolvons ce système par la méthode de Gauss. Commençons donc par le trianguler :</p>
 <div class="displaymath">
 \begin{align*}
-L\left(\frac{\pi}{12}\right)&amp;=\frac{18}{\pi^2}\left(\frac{\pi}{12}-\frac{\pi}{6}\right)\left(\frac{\pi}{12}-\frac{\pi}{3}\right)-\frac{18\sqrt{3}}{\pi^2}\frac{\pi}{12}\left(\frac{\pi}{12}-\frac{\pi}{3}\right)\\
-&amp;\qquad +\frac{9}{\pi^2}\frac{\pi}{12}\left(\frac{\pi}{12}-\frac{\pi}{6}\right)\\
-&amp;=\frac{18}{\pi^2}\left(-\frac{\pi}{12}\right)\left(-\frac{\pi}{4}\right)-\frac{18\sqrt{3}}{\pi^2}\frac{\pi}{12}\left(-\frac{\pi}{4}\right)+\frac{9}{\pi^2}\frac{\pi}{12}\left(-\frac{\pi}{12}\right)\\
-&amp;=\frac{3}{8}+\frac{3\sqrt{3}}{8}-\frac{1}{16}\\
-&amp;=\frac{5}{16}+\frac{3\sqrt{3}}{8}\\
-&amp;\approx 0{,}962\,019.
+\begin{bmatrix}
+1&amp;-1&amp;1&amp;4\\
+1&amp;2&amp;4&amp;0\\
+1&amp;5&amp;25&amp;-1
+\end{bmatrix}
+&amp;\sim
+\begin{bmatrix}
+1&amp;-1&amp;1&amp;4\\
+0&amp;3&amp;3&amp;-4\\
+0&amp;6&amp;24&amp;-5
+\end{bmatrix}\\
+&amp;\sim
+\begin{bmatrix}
+1&amp;-1&amp;1&amp;4\\
+0&amp;3&amp;3&amp;-4\\
+0&amp;0&amp;18&amp;3
+\end{bmatrix}.
 \end{align*}
 </div>
 <span class="incontext"><a href="exerciceslagrange.html#p-835">Contexte</a></span>

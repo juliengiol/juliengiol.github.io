@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:29:07-04:00    *-->
+<!--*    on 2020-09-02T14:13:52-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Hypothèses : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable quatre fois avec une dérivée quatrième continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
+<p>On a donc</p>
 <div class="displaymath">
-\begin{equation*}
-|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
-\end{equation*}
+\begin{align*}
+\int_{x_{k-1}}^{x_k}p(t)\mathrm{d}t&amp;=\int_{x_{k-1}}^{x_k}\left(f(x_{k-1})+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}(t-x_{k-1})\right)\mathrm{d}t\\
+&amp;=f(x_{k-1})t+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(t-x_{k-1})^2}{2}\Bigg\vert_{x_{k-1}}^{x_k}\\
+&amp;=f(x_{k-1})x_k+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(x_k-x_{k-1})^2}{2}\\
+&amp;\qquad -f(x_{k-1})x_{k-1}+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(x_{k-1}-x_{k-1})^2}{2}\\
+&amp;=f(x_{k-1})(x_k-x_{k-1})+(f(x_k)-f(x_{k-1}))\cdot\frac{(x_k-x_{k-1})}{2}\\
+&amp;=\frac{1}{2}\left(2f(x_{k-1})+f(x_k)-f(x_{k-1})\right)\cdot(x_k-x_{k-1})\\
+&amp;=\frac{1}{2}\left(f(x_{k-1})+f(x_k)\right)\cdot(x_k-x_{k-1}).
+\end{align*}
 </div>
-<p data-braille="continuation">On a alors</p>
-<div class="displaymath">
-\begin{equation*}
-\left|\text{Erreur}\right|\leq \frac{M(b-a)^5}{2880n^4}.
-\end{equation*}
-</div>
-<span class="incontext"><a href="presentationsimpson.html#p-1371">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#p-1371">Contexte</a></span>
 </body>
 </html>

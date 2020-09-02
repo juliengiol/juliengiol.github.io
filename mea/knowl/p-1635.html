@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:29:31-04:00    *-->
+<!--*    on 2020-09-02T14:14:11-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Instructions :</p>
-<ul class="circle"><li>
-<p>Tant que \(\text{a mod b}\neq 0\text{,}\)</p>
-<ul class="square">
-<li><p>assigner simulanément à \(\text{a}\) et \(\text{b}\) les valeurs de \(\text{b}\) et de \(\text{a mod b}\neq 0\) dans cet ordre.</p></li>
-<li><p>Attention : S'assurer que \(\text{a mod b}\neq 0\) fasse référence aux valeurs de \(\text{a}\) et \(\text{b}\) issues de l'itération précédente. Si disponible, une double assignation est la meilleure façon d'y parvenir.</p></li>
+<ul class="disc">
+<li><p>Objectif : Calculer le PGCD de deux entiers \(a\in\mathbb{N}\) et \(b\in\mathbb{N}^*\text{.}\)</p></li>
+<li>
+<p>Principe :</p>
+<ul class="circle">
+<li>
+<p>Effectuer la division euclidienne de \(a\) par \(b\)</p>
+<div class="displaymath">
+\begin{equation*}
+a=b\cdot q+r\qquad\text{où}\qquad 0\leq r&lt;b
+\end{equation*}
+</div>
+<p data-braille="continuation">et remplacer \((a;b)\) par \((b;r)\text{.}\)</p>
+</li>
+<li><p>Recommencer jusqu'à ce que \(r=0\text{.}\)</p></li>
+<li><p>Le PGCD est alors le dernier \(r\neq 0\text{,}\) ou le dernier \(b\text{.}\)</p></li>
 </ul>
-</li></ul>
-<span class="incontext"><a href="algorithmeeuclide.html#p-1635">Contexte</a></span>
+</li>
+<li><p>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1-oddA6TfPzbuQC_NWGMQ_xXDgamjriQm/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
+</ul>
+<span class="incontext"><a href="presentationeuclide.html#p-1635">Contexte</a></span>
 </body>
 </html>

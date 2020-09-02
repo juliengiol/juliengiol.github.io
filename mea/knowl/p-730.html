@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:28:07-04:00    *-->
+<!--*    on 2020-09-02T14:12:59-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Terminologie : On appelle \(L(t)\) le polynôme interpolateur des points \(A_0,\ldots,A_n\text{.}\) Et on dit que \(y_0\,L_0(t)+\cdots+y_n\,L_n(t)\) est sa forme de Lagrange.</p>
+<p>Si \(k\neq i\text{,}\) alors \(t-x_k\) est l'un de facteurs du numérateur de \(L_i(t)\text{.}\) Donc</p>
+<div class="displaymath">
+\begin{align*}
+L_i(x_k)&amp;=\frac{(x_k-x_0)\cdots (x_k-x_k)\cdots(x_k-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=\frac{0}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=0.
+\end{align*}
+</div>
 <span class="incontext"><a href="presentationlagrange.html#p-730">Contexte</a></span>
 </body>
 </html>

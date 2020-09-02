@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:27:36-04:00    *-->
+<!--*    on 2020-09-02T14:12:39-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La méthode de Newton-Raphson semble donc fournir de bonnes approximations lorsqu'on cherche les zéros d'une fonction. Il reste à trouver des hypothèses qui permettent d'en estimer la précision.</p>
-<ul class="disc">
-<li><p>Voir l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.7">5.3.7</a> pour un résultat pas trop difficile à démontrer, sous les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> ou de n'importe laquelle de ses versions symétriques.</p></li>
-<li><p>Voir le théorème <a class="xref" data-knowl="./knowl/convergence_quadratique_newton.html" title="Théorème 5.1.11">5.1.11</a> ci-après pour un résultat plus général, mais plus difficile à démontrer.</p></li>
-</ul>
+<p>Il reste à montrer que \(c&lt;x_1\text{.}\) Par positivité de \(f''\text{,}\) la fonction \(f'\) est strictement croissante sur \(]c;b[\text{.}\) En utilisant cela et <a class="xref" data-knowl="./knowl/application_taylor_lagrange.html" title="Équation 5.1.1">(5.1.1)</a>, on a</p>
+<div class="displaymath">
+\begin{align*}
+\xi&lt;x_0&amp;\quad\Rightarrow\quad f'(\xi)&lt;f'(x_0)\\
+&amp;\quad\Rightarrow\quad\underbrace{f'(\xi)(x_0-c)}_{f(x_0)}&lt;f'(x_0)(x_0-c)\\
+&amp;\quad\Rightarrow\quad \frac{f(x_0)}{f'(x_0)}&lt;x_0-c\\
+&amp;\quad\Rightarrow\quad c&lt;\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}.
+\end{align*}
+</div>
 <span class="incontext"><a href="presentationnewton.html#p-483">Contexte</a></span>
 </body>
 </html>

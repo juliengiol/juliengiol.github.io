@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="assignetc" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Assignations, boucles et conditionnelles</title>
+
+<section xml:id="assignations">
+<title>Assignations</title>
+
+<p>Une <url href="https://fr.wikipedia.org/wiki/Affectation_(informatique)">assignation</url>, c'est le fait d'attribuer une valeur à une variable.</p>
+
+<p>
+  Par exemple, le code <c>x = 2</c> a pour effet d'assigner la valeur <m>\text{2}</m> à la variable <m>\text{x}</m>.
+  Si ensuite on fait afficher le contenu de <m>\text{x}</m> à l'aide de la commande <c>print(x)</c>, on obtient <m>\text{2}</m> à la sortie.
+</p>
+
+<sage language='python'>
+  <input>
+    x = 2
+    # ligne de commentaire sans effet sur l'exécution du code
+    print(x)
+  </input>
+</sage>
+
+<p>
+  Pour afficher simultanément de contenu de deux variables <m>\text{x}</m> et <m>\text{y}</m>, il suffit d'entrer <c>print(x, y)</c>.
+</p>
+
+<sage language='python'>
+  <input>
+    x = 5
+    y = 3
+    print(x, y)  # pour afficher x puis y sur la même ligne
+  </input>
+</sage>
+
+<p>
+  Voici maintenant comment effectuer les deux assignations <c>x = 5</c> et <c>y = 3</c> de manière simultanée :
+</p>
+
+<sage language='python'>
+  <input>
+    x , y = 5, 3  # assignation simultanée
+    print(x, y)
+  </input>
+</sage>
+
+<remark xml:id="echange">
+  <title>Échange du contenu de deux variables</title>
+
+  <p>
+    L'assignation simultanée est très pratique quand on veut échanger le contenu de deux variables.
+  </p>
+
+  <sage language='python'>
+    <input>
+      x, y = 5, 3
+      print(x, y)
+      x, y = y, x  # échange du contenu des variables et x et y
+      print(x, y)
+    </input>
+  </sage>
+  <p>
+    Pour bien comprendre l'intérêt de l'exemple ci-dessus et de l'assignation simultanée, évaluez le code qui suit.
+  </p>
+  <sage language='python'>
+    <input>
+      x = 5
+      y = 3
+      print(x, y)
+      x = y  # le contenu de y devient celui de x
+      y = x  # le contenu de x devient celui de y
+      print(x, y)
+    </input>
+  </sage>
+  <p>
+    Ces deux exemples montrent notamment que le code s'exécute ligne après ligne : l'ordre des instructions est donc très important.
+  </p>
+</remark>
+
+<remark>
+  <title>Python Tutor</title>
+  <p>
+    L'application <url href="http://pythontutor.com/">Python Tutor</url> est une aide formidable quand il s'agit de comprendre pas à pas l'exécution d'un bloc de code.
+  </p>
+  <p>
+    Étudiez soigneusement ce qui se passe quand on exécute pas à pas les deux blocs de la remarque <xref ref="echange"/>  qui précède en cliquant sur <c>Next</c> autant de fois que nécessaire.
+    <ul>
+      <li>
+        <p><url href="https://tinyurl.com/y5o448w3">Bloc 1</url></p>
+      </li>
+      <li>
+        <p><url href="https://tinyurl.com/y374bt2o">Bloc 2</url></p>
+      </li>
+    </ul>
+  </p>
+</remark>
+
+<p>
+  Pour terminer cette section, essayez de prédire ce que les blocs de code qui suivent affichent en sortie avant de les évaluer.
+</p>
+
+<sage language='python'>
+  <input>
+    x = 1
+    y = x - 5
+    x = y
+    print(x)
+  </input>
+</sage>
+
+<sage language='python'>
+  <input>
+    x = 4
+    x = x * 2
+    print(x)
+  </input>
+</sage>
+
+<remark>
+  <title>De la droite vers la gauche</title>
+  <p>
+    Dans l'exemple précédent, la ligne <c>x = x * 2</c> peut se lire
+    <me>\text{assigner à x le contenu de x * 2}</me>
+    ou encore
+    <me>\text{x * 2 va dans x.}</me>
+  </p>
+  <p>
+    Comme l'illustre l'exemple suivant, quand on a plusieurs <c>=</c> sur la même ligne, il est pratique de les interpréter en les lisant de la droite vers la gauche.
+  </p>
+  <sage language='python'>
+    <input>
+      x = 2
+      y = 5
+      z = x = y  # le contenu de y va dans celui de x qui va dans celui de z
+      print(x, y, z)
+    </input>
+  </sage>
+</remark>
+
+<remark>
+  <title>Exponentiation</title>
+  <p>
+    Attention, Python ne comprend pas <c>2^3</c>.
+    À la place, on utilise <c>2 ** 3</c>.
+  </p>
+  <sage language='python'>
+    <input>
+      x = 2
+      y = 3
+      z = 2 ** 3
+      print(z)
+    </input>
+  </sage>
+  <p>
+    L'exponentiation est l'opération qui est la première dans l'ordre de priorité des <xref ref="python_priorite_operations">opérations mathématiques</xref> utilisées par Python.
+  </p>
+  <sage language='python'>
+    <input>
+      x, y = 2, 3
+      z = 16
+      x = 2 ** 3 - z / 2
+      print(x)
+    </input>
+  </sage>
+</remark>
+
+<p>
+  Avant de passer à la suite, consultez les <xref ref="python_comparaisons">comparaisons</xref> utilisées par Python.
+</p>
+
+<sage language='python'>
+  <input>
+    x, y = 2, 3
+    plusGrand = x > y  # la variable plusGrand contient True si x > y est vrai, False si c'est faux.
+    print(plusGrand)
+  </input>
+</sage>
+
+<sage language='python'>
+  <input>
+    x, y = 2, 3
+    egaux = x == y  # la variable egaux contient True si les contenus de x et y sont égaux, False s'ils sont différents.
+    print(egaux)
+  </input>
+</sage>
+
+<sage language='python'>
+  <input>
+    x, y = 2, 3
+    differents = x != y  # la variable differents contient True si les contenus de x et y sont différents, False s'ils sont égaux.
+    print(differents)
+  </input>
+</sage>
+
+<remark>
+  <title>Comparaison vs assignation</title>
+  <p>Attention à ne pas prendre une comparaison <c>==</c> pour une assignation <c>=</c>.</p>
+  <sage language='python'>
+    <input>
+      x = 2
+      y = 6
+      z = y / x
+      t = z == 4  # le contenu de t est la valeur de la comparaison z == 4
+      print(z, t)
+    </input>
+  </sage>
+  <sage language='python'>
+    <input>
+      x = 2
+      y = 6
+      z = y / x
+      t = z = 4  # le contenu de t est le contenu de z dont le contenu est 4
+      print(z, t)
+    </input>
+  </sage>
+</remark>
+
+</section>
+
+<section xml:id="boucles">
+<title>Boucles</title>
+
+<p>Voici les mots-clés des boucles en Python :
+  <ul>
+    <li><p><c>for ... in ... :</c> se lit "pour ... dans ... ";</p></li>
+    <li><p><c>while ... :</c> se lit "tant que ...".</p></li>
+  </ul>
+</p>
+<p>
+  Attention à ne pas oublier les deux-points <c> :</c>.
+</p>
+
+<subsection xml:id="bouclespour">
+<title>Boucles <c>for</c></title>
+
+<p>
+  Une boucle <c>for</c> correspond typiquement à une itération indexée par une variable prenant toutes les valeurs entières comprises entre deux bornes.
+</p>
+<p>
+  Pour faire cela, vous allez très souvent utiliser la commande <c>range(a, b)</c>, qui a l'inconvénient de comporter un gros piège.
+</p>
+
+<sage language='python'>
+  <input>
+    for k in range(3, 8):  # pour k allant de 3 à 7 (ATTENTION!)
+        print(k)  # affiche k
+  </input>
+</sage>
+
+<p>
+  Bien sûr, le code suivant fait exactement la même chose.
+  Mais il permet de mettre en évidence la vraie borne supérieure de l'ensemble
+  <me>\left\{3, 4, 5, 6, 7\right\}</me>
+  auquel correspond le code <c>range(3, 8)</c>.
+</p>
+
+<sage language='python'>
+  <input>
+    for k in range(3, 7+1):
+        print(k)
+  </input>
+</sage>
+
+<remark>
+  <title>Indentations</title>
+  <p>
+    Notez l'indentation de 4 espaces qui précède <c>print(k)</c> dans les deux exemples précédents : elle signifie que l'instruction <c>print(k)</c> fait partie de la boucle <c>for</c>.
+  </p>
+  <p>
+    Ce nombre de 4 espaces est typique avec <url href="https://www.python.org">Python</url> et je vous invite à le respecter scrupuleusement, même si cela semble fonctionner avec 3, 7, ou n'importe quel nombre positif d'espaces.
+  </p>
+  <p>
+    Avant de passer à la suite, évaluez puis corrigez le code erroné suivant :
+    <sage language='python'>
+      <input>
+        for k in range(3, 7+1):
+            print(k)
+              print(k ** 2)
+        print(k // 2)
+      </input>
+    </sage>
+  </p>
+</remark>
+
+<p>
+  Les trois exemples qui suivent sont là pour illustrer l'importance des <url href="https://fr.wikipedia.org/wiki/Style_d%27indentation">indentations</url> et de l'ordre dans lequel les instructions sont données.
+  Dans tous les cas, il s'agit d'utiliser une boucle <c>for</c> pour calculer la somme
+  <me>\sum_{k=1}^5k=1+2+3+4+5.</me>
+  Nous allons simplement déplacer l'instruction <c>print(somme)</c> pour voir l'effet que sa position dans la séquence d'instructions a sur le résultat.
+</p>
+
+<ul>
+  <li>
+    <sage language='python'>
+      <input>
+        somme = 1
+        for k in range(2, 5+1):
+            somme = somme + k
+        print(somme)  # pas dans la boule for
+      </input>
+    </sage>
+    <p>Pour suivre pas à pas l'exécution du code précédent, cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y4e3ctpp">Python Tutor</url>.</p>
+    </li>
+  <li>
+    <sage language='python'>
+      <input>
+        somme = 1
+        for k in range(2, 5+1):
+            somme = somme + k
+            print(somme)  # dans la boucle for
+      </input>
+    </sage>
+    <p>Pour suivre pas à pas l'exécution du code précédent, cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y4xefy4a">Python Tutor</url>.</p>
+    </li>
+  <li>
+    <sage language='python'>
+      <input>
+        somme = 1
+        for k in range(2, 5+1):
+            print(somme)  # dans la boucle for
+            somme = somme + k
+      </input>
+    </sage>
+    <p>Pour suivre pas à pas l'exécution du code précédent, cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y44tm6js">Python Tutor</url>.</p>
+  </li>
+</ul>
+
+</subsection>
+
+<subsection xml:id="tantque">
+<title>Boucles <c>while</c></title>
+
+<p>
+  À la différence d'une boucle <c>for</c>, une boucle <c>while</c> ne nécessite pas de connaître au préalable le nombre d'itérations à effectuer.
+</p>
+<p>
+  Voici comment faire la même chose que le premier code de la section <xref ref="bouclespour"/> sur les boucles <c>for</c>, mais avec une boucle <c>while</c> :
+  <sage language='python'>
+    <input>
+      k = 3  # partons de k = 3
+      while k &lt; 8:  # et tant que k est inférieur à 8
+          print(k)  # affichons k
+          k = k + 1  # puis ajoutons 1 à k
+    </input>
+  </sage>
+</p>
+<p>
+  Essayez maintenant de deviner ce que le code suivant affiche avant de l'évaluer :
+  <sage language='python'>
+    <input>
+      k = 3
+      while k &lt; 8:
+          k = k + 1
+      print(k)
+    </input>
+  </sage>
+</p>
+<p>
+  Dans l'exemple qui suit, nous allons afficher tous les multiples de <m>7</m> compris entre <m>7</m> et <m>60</m> inclus.
+  <sage language='python'>
+    <input>
+      k = 7
+      while k &lt;= 60:
+          print(k)
+          k = k + 7
+    </input>
+  </sage>
+</p>
+<p>
+  Pour finir, essayez de faire la même chose avec une boucle <c>for</c>.
+  Voyez-vous quel peut-être l'avantage d'utiliser une boucle <c>while</c>?
+</p>
+
+</subsection>
+
+</section>
+
+<section xml:id="conditionnelles">
+<title>Conditionnelles</title>
+
+<p>Voici les mots-clés des structures conditionnelles en Python :
+  <ul>
+    <li><p><c>if ... :</c> se lit "si ...";</p></li>
+    <li><p><c>elif ... :</c> se lit "sinon si ...";</p></li>
+    <li><p><c>else:</c> se lit "sinon".</p></li>
+  </ul>
+</p>
+
+<remark>
+  <p>
+    Comme pour les boucles, attention à ne pas oublier les deux-points <c> :</c> et à respecter les indentations (4 espaces fortement recommandés).
+  </p>
+</remark>
+
+<p>
+  Essayez de deviner ce qu'affichent les blocs de code qui suivent avant de les évaluer.
+  <sage language='python'>
+    <input>
+      x = -2
+      if x &gt; 0:  # si x est plus grand que 0
+          print('positif')  # affiche la chaîne de caractères 'positif'
+      else:
+          print('négatif ou nul')  # sinon affiche 'négatif ou nul'.
+    </input>
+  </sage>
+  <sage language='python'>
+    <input>
+      x = -2
+      if x &gt; 0:
+          print('positif')
+    </input>
+  </sage>
+  <sage language='python'>
+    <input>
+      x = -2
+      if x &gt; 0:  # si x est plus grand que 0
+          print('positif')  # affiche 'positif'
+      elif x == 0:  # sinon si x est égal à 0
+          print('nul')  # affiche 'nul'
+      else:
+            print('négatif')  # sinon affiche 'négatif'
+    </input>
+  </sage>
+  <sage language='python'>
+    <input>
+      age = 8
+      if age &lt; 3:
+          print('entrée gratuite')
+      elif age &lt; 12:
+          print('tarif réduit')
+      else:
+          print('plein tarif')
+    </input>
+  </sage>
+</p>
+
+<p>
+  Nous allons finir cette section en utilisant l'<url href="https://fr.wikipedia.org/wiki/Modulo_(op%C3%A9ration)">opérateur modulo</url> qui se note <c>a % b</c> en Python, et qui renvoie le reste de la division euclidienne de <m>\text{a}</m> par <m>\text{b}</m>.
+  Par exemple,
+  <sage language='python'>
+    <input>
+      k = 14
+      print(k % 7)
+    </input>
+  </sage>
+  et
+  <sage language='python'>
+    <input>
+      k = 25
+      print(k % 7)
+    </input>
+  </sage>
+Ainsi
+<me>\text{a est un multiple de b}\quad\Leftrightarrow\quad\text{a % b renvoie 0}.</me>
+</p>
+<p>
+  Nous pouvons maintenant afficher les multiples de <m>7</m> compris entre <m>7</m> et <m>60</m> inclus, à l'aide d'une boucle <c>for</c>, et sans déterminer au préalable le plus grand (56) de ces multiples.
+  <sage language='python' xml:id="bla">
+    <input>
+      for k in range(7, 60+1):  # pour k allant de 7 à 60
+          if k % 7 == 0:  # si k est un multiple de 7
+              print(k)  # affiche k
+    </input>
+  </sage>
+</p>
+
+<remark>
+  <p>
+  Notez la double indentation précédant <c>print(k)</c> dans le code ci-dessus : elle est due au fait que cette instruction fait partie de la conditionnelle <c>if ... :</c> (première indentation) qui elle-même fait partie de la boucle <c>for ... :</c> (deuxième indentation).
+  </p>
+</remark>
+
+</section>
+
+<section xml:id="exercicesassignetc">
+<title>Exercices</title>
+
+<exercise>
+  <statement>
+    <p>Pour chacun des blocs de codes qui suivent, dites ce qu'il affiche.
+      <ol>
+        <li>
+          <pre>
+            if 5 > 10:
+                print('Gare')
+            elif 8 != 9:
+                print('aux')
+            else:
+                print('conditionnelles!')
+          </pre>
+        </li>
+        <li>
+          <pre>
+            if 5 > 10:
+                print('Gare')
+            elif 8 == 9:
+                print('aux')
+            else:
+                print('conditionnelles!')
+          </pre>
+        </li>
+        <li>
+          <pre>
+            if 5 > 10:
+                print('Gare')
+            elif 8 == 9:
+                print('aux')
+          </pre>
+        </li>
+        <li>
+          <pre>
+            x = 10
+            y = 20
+            z = 30
+            print('Gare')
+            if x == 10:
+                print('aux')
+                if y == 20:
+                    print('conditionnelles!')
+                else:
+                    print('gorilles!')
+            elif y == 20:
+                print('Danger!')
+            else:
+                print('Vive les')
+                if z == 30:
+                    print('fraises!')
+                else:
+                    print('bleuets!')
+            print('Bye!')
+          </pre>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <pre>
+            aux
+          </pre>
+        </li>
+        <li>
+          <pre>
+            conditionnelles!
+          </pre>
+        </li>
+        <li>
+          <me></me>
+        </li>
+        <li>
+          <pre>
+            Gare
+            aux
+            conditionnelles!
+            Bye!
+          </pre>
+        </li>
+      </ol>
+    </p>
+  </answer>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      <ol>
+        <li>
+          <p>Suivez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.
+            <pre>
+              from math import sqrt  # charge la fonction racine carrée sqrt
+              a = 1.0
+              b = -6.0
+              c = 9.0
+              delta = b ** 2 - 4 * a * c
+              if delta > 0:
+                  x1 = (- b - sqrt(delta)) / (2 * a)
+                  x2 = (- b + sqrt(delta)) / (2 * a)
+                  print(x1, x2)
+              elif delta == 0:
+                  x0  = - b / (2 * a)
+                  print(x0)
+              else:
+                  print('pas de racines')
+            </pre>
+          </p>
+        </li>
+        <li>
+          <p>Même question avec <c>c = 2.0</c>.</p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li><pre>3.0</pre></li>
+        <li><pre>(0.3542486889354093, 5.645751311064591)</pre></li>
+      </ol>
+    </p>
+  </answer>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Exécutez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.
+      <pre>
+        capital = 2500
+        taux = 0.1
+        n = 3
+        for k in range(1, n+1):
+            capital = capital * (1 + taux)
+        print(capital)
+      </pre>
+    </p>
+  </statement>
+  <answer>
+    <pre>3327.5</pre>
+  </answer>
+  <solution>
+    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/yxt83ywg">Python Tutor</url>.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Exécutez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.
+      <pre>
+        a = 0.0
+        b = 1.0
+        n = 4
+        deltaX = (b - a) / n
+        xi = a
+        while xi &lt; b:
+            print(xi)
+            xi = xi + deltaX
+      </pre>
+    </p>
+  </statement>
+  <answer>
+    <pre>
+      0.0
+      0.25
+      0.5
+      0.75
+    </pre>
+  </answer>
+  <solution>
+    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y25m7kwy">Python Tutor</url>.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Calculez la somme des entiers de 1 à 99 inclus.
+      <ol>
+        <li><p>À l'aide d'une boucle <c>for</c>.</p></li>
+        <li><p>À l'aide d'une boucle <c>while</c>.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <answer>
+    <m>3327{,}5</m>
+  </answer>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <pre>
+            somme = 1
+            for k in range(2, 99+1):
+                somme = somme + k
+            print(somme)
+          </pre>
+        </li>
+        <li>
+          <pre>
+            somme = 1
+            k = 2
+            while k &lt;= 99:
+                somme = somme + k
+                k = k + 1
+            print(somme)
+          </pre>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Affichez tous les nombres impairs compris entre 17 et 55 inclus.
+      <ol>
+        <li><p>À l'aide d'une boucle <c>for</c>.</p></li>
+        <li><p>À l'aide d'une boucle <c>while</c>.</p></li>
+      </ol>
+    </p>
+    <p>Avez-vous une préférence?</p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <pre>
+            for k in range(8, 27+1):
+                print(2 * k + 1)
+          </pre>
+        </li>
+        <li>
+          <pre>
+            k = 17
+            while k &lt; 56:
+                print(k)
+                k = k + 2
+          </pre>
+        </li>
+      </ol>
+    </p>
+    <p>Je préfère la boucle <c>while</c>, car elle évite d'avoir à déterminer les bornes <c>8</c> et <c>27</c>.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Complétez le code suivant pour qu'il affiche tous les multiples de 4 compris strictement entre 57 et 89.
+      <pre>
+        k = 60
+        while
+            print(k)
+            k =
+      </pre>
+    </p>
+  </statement>
+  <solution>
+    <pre>
+    k = 60
+    while k &lt; 89:
+        print(k)
+        k = k + 4
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      L'assignation simultanée est très pratique pour échanger le contenu de deux variables <m>\text{x}</m> et <m>\text{y}</m> : la ligne de code <c>x, y = y, x</c> suffit.
+      Voir <xref ref="echange"></xref>.
+    </p>
+    <p>Et si le langage utilisé ne permet pas les assignations simultanées?</p>
+    <p>Complétez le code suivant avec des <m>\text{x}</m> et des <m>\text{y}</m> seulement, afin qu'il échange le contenu de <m>\text{x}</m> et de <m>\text{y}</m>.
+      <pre>
+        # avant l'échange
+        x = 5
+        y = 3
+        print(x, y)
+
+        # échange
+        variableTemporaire =
+        x =
+          = variableTemporaire
+
+        # après l'échange
+        print(x, y)
+      </pre>
+    </p>
+  </statement>
+  <solution>
+    <pre>
+      # avant l'échange :
+      x = 5
+      y = 3
+      print(x, y)
+
+      # échange :
+      variableTemporaire = x
+      x = y
+      y = variableTemporaire
+
+      # après l'échange :
+      print(x, y)
+    </pre>
+    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y5numxma">Python Tutor</url> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>On s'intéresse à la suite <m>\{s_n\}</m> définie par récurrence de la façon suivante :
+      <me>s_0=14\quad\text{et}\quad s_{n+1}
+        =
+        \begin{cases}
+        s_n/2&amp;\text{si}\;s_n\;\text{est pair,}\\
+        3s_n+1&amp;\text{sinon,}
+        \end{cases}
+        \quad\text{pour tout}\;n\geq 0.
+      </me>
+    </p>
+    <p>Calculez les <m>21</m> premiers termes de cette suite à l'aide d'une boucle <c>for</c>.</p>
+  </statement>
+  <answer>
+    <p>
+      En partant de <m>14</m>, les 21 premiers termes de cette suite sont
+      <me>14, 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1.</me>
+    </p>
+    <p>
+      Notez qu'une fois qu'on est tombé sur <m>1</m>, le comportement devient périodique.
+    </p>
+    <p>
+      La célèbre <url href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">conjecture de Syracuse</url> (ou Collatz, ou Ulam, ou 3x+1, ...) prédit qu'une telle suite finit toujours par tomber sur <m>1</m>, quel que soit l'entier positif dont on parte.
+      Mais personne n'a encore réussi à le démontrer.
+    </p>
+  </answer>
+  <solution>
+    <pre>
+      s = 14
+      for n in range(1, 21+1):
+          print(s)
+          if s % 2 == 0:
+              s = s / 2
+          else:
+              s = 3 * s + 1
+    </pre>
+    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/yybkqoep">Python Tutor</url> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+  </solution>
+</exercise>
+
+<exercise xml:id="fibo_iterative">
+  <statement>
+    <p>La suite de Fibonacci est définie par récurrence de la façon suivante :
+      <me>F_1=F_2=1\quad\text{et}\quad F_n=F_{n-1}+F_{n-2}\quad\text{pour tout}\;n\geq 3.</me>
+    </p>
+    <p>Calculez <m>F_{100}</m> à l'aide d'une boucle <c>for</c>.</p>
+  </statement>
+  <answer>
+    <pre>354224848179261915075</pre>
+  </answer>
+  <solution>
+    <pre>
+      a = 1
+      b = 1
+      for n in range(3, 100+1):
+          a, b = b, a + b
+      print(b)
+    </pre>
+    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y6rszlxl">Python Tutor</url> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>On considère la suite <m>\{x_n\}</m> définie par récurrence de la façon suivante :
+      <me>x_3=7\quad\text{et}\quad x_{n+1}=x_n\cdot\frac{n}{5n+2}\quad\text{pour tout}\;n\geq 3.</me>
+    </p>
+    <p>On admet qu'elle converge vers <m>0</m> en décroissant strictement.</p>
+    <p>
+      <ol>
+        <li>
+          <p>Complétez le code suivant afin qu'il affiche les cinq premières valeurs de la suite.
+            <pre>
+              n = 3
+              x = 7.0
+              while n &lt;
+                  print(x)
+                  x =
+                  n = n + 1
+            </pre>
+          </p>
+        </li>
+        <li>
+          <p>Complétez le code suivant afin qu'il affiche la plus petite valeur de <m>n</m> pour laquelle on ait <m>x_n\leq 10^{-9}</m>.
+            <pre>
+              n =
+              x = 7.0
+              while
+                  x = x * n / (5 * n + 2)
+                  n =
+              print(n)
+            </pre>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <pre>
+            7.0
+            1.23529411765
+            0.224598930481
+            0.0415923945336
+            0.00779857397504
+          </pre>
+        </li>
+        <li><pre>17</pre></li>
+      </ol>
+    </p>
+  </answer>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <pre>
+            n = 3
+            x = 7.0
+            while n &lt; 8:
+                print(x)
+                x = x * n / (5 * n + 2)
+                n = n + 1
+          </pre>
+        </li>
+        <li>
+          <pre>
+            n = 3
+            x = 7.0
+            while x &gt; 10 ** (-9):
+                x = x * n / (5 * n + 2)
+                n = n + 1
+            print(n)
+          </pre>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>On considère la suite <m>\{a_n\}</m> définie par récurrence de la façon suivante :
+      <me>a_0=1\quad\text{et}\quad a_{n+1}=\sin(a_n)\quad\text{pour tout}\;n\geq 0.</me>
+    </p>
+    <p>On admet qu'elle converge vers <m>0</m> en décroissant.</p>
+    <p>Complétez et exécutez le code suivant afin de déterminer la plus petite valeur de <m>n</m> pour laquelle on ait <m>a_n\leq 0{,}01</m>.
+      <pre>
+        from math import sin  # charge la fonction sin
+        n = 0
+        a =
+        while
+            n =
+            a = sin(a)
+        print(n)
+      </pre>
+    </p>
+  </statement>
+  <answer>
+    <m>29\,992</m>
+  </answer>
+  <solution>
+    <pre>
+      from math import sin  # charge la fonction sin
+      n = 0  # pars de n = 0
+      a = 1.0  $ et de a = 1.0
+      while a &gt; 0.01:  # tant que a est plus grand que 0.01
+          n = n + 1  # ajoute 1 à n
+          a = sin(a)  # et remplace a par le terme suivant dans la suite
+      print(n)
+    </pre>
+  </solution>
+</exercise>
+
+</section>
+
+</chapter>

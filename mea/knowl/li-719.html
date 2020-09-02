@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:29:07-04:00    *-->
+<!--*    on 2020-09-02T14:13:52-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,16 +15,11 @@
 <article class="li"><h6 class="heading">
 <span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>Hypothèses : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable quatre fois avec une dérivée quatrième continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
+<p>Avec la méthode des trapèzes, on remplace la fonction \(f\) par les morceaux affines (polynômes de degré un au plus) qui interpolent les points \((x_{k-1};f(x_{k-1}))\) et \((x_k;f(x_k))\text{.}\)</p>
+<p>Cela revient à remplacer</p>
 <div class="displaymath">
 \begin{equation*}
-|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
-\end{equation*}
-</div>
-<p data-braille="continuation">On a alors</p>
-<div class="displaymath">
-\begin{equation*}
-\left|\text{Erreur}\right|\leq \frac{M(b-a)^5}{2880n^4}.
+\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad\frac{\Delta x}{2}\cdot (f(x_{k-1}+f(x_k)).
 \end{equation*}
 </div></article><span class="incontext"><a href="presentationsimpson.html#li-719">Contexte</a></span>
 </body>

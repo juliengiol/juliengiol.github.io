@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:26:49-04:00    *-->
+<!--*    on 2020-09-02T14:12:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Terminons cette section avec la fonction factorielle. Pour \(n\geq 1\text{,}\) on rappelle que</p>
+<p>On s'intéresse à la suite \(\{s_n\}\) définie par récurrence de la façon suivante :</p>
 <div class="displaymath">
 \begin{equation*}
-n!=1\cdot 2\cdot 3\cdots n.
+s_0=14\quad\text{et}\quad s_{n+1}
+=
+\begin{cases}
+s_n/2&amp;\text{si}\;s_n\;\text{est pair,}\\
+3s_n+1&amp;\text{sinon,}
+\end{cases}
+\quad\text{pour tout}\;n\geq 0.
 \end{equation*}
 </div>
-<p data-braille="continuation">La fonction <code class="code-inline tex2jax_ignore">factorielle(n)</code> ci-après calcule n! de manière itérative à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>. On la teste avec <code class="code-inline tex2jax_ignore">print(factorielle(5))</code> qui doit afficher \(\text{120}\) puisque</p>
-<div class="displaymath">
-\begin{equation*}
-5!=1\cdot 2\cdot 3\cdot 4\cdot 5=120.
-\end{equation*}
-</div>
-<span class="incontext"><a href="syntaxefonctions.html#p-109">Contexte</a></span>
+<span class="incontext"><a href="exercicesassignetc.html#p-109">Contexte</a></span>
 </body>
 </html>

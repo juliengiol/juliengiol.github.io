@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:27:01-04:00    *-->
+<!--*    on 2020-09-02T14:12:22-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,10 +10,37 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On parle alors d'une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche itérative, comme le montrent les graphes ci-après. <figure class="figure figure-like"><iframe src="https://www.desmos.com/calculator/yjztmlow1h" id="desmos-lineaire-log" width="600" height="480"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs logarithmique</figcaption></figure></p>
-<span class="incontext"><a href="exponentiation.html#p-214">Contexte</a></span>
+<p>Voici un exemple d'algorithme : <div class="sagecell-python" id="sage-38"><script type="text/x-sage"># entrée
+n = 5
+
+# instructions
+somme = 1
+for k in range(2, n+1):
+    somme = somme + k
+
+# sortie
+print(somme)
+</script></div></p>
+<span class="incontext"><a href="complexite.html#p-214">Contexte</a></span>
 </body>
 </html>

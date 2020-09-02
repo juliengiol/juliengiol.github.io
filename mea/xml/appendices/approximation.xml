@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<appendix xml:id="approximation" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Approximations et erreurs</title>
+
+  <introduction>
+
+  <p>Une méthode de calcul numérique permet souvent d'obtenir des approximations.</p>
+
+  <example xml:id="exemple_approx_rectangles">
+    <p>La fonction <m>f(x)=e^{-x^2}</m> n'admet aucune primitive qui puisse s'exprimer à l'aide des fonctions usuelles.</p>
+    <p>On a donc besoin de méthodes numériques pour estimer la valeur d'intégrales telles que
+      <me>\int_0^1e^{-x^2}\,\mathrm{d}x.</me>
+    </p>
+    <p>Par exemple, lorsqu'on subdivise l'intervalle d'intégration <m>[0;1]</m> en quatre sous-intervalles de même longueur, la méthode des rectangles à gauche fournit l'approximation qui suit.
+      <md>
+        <mrow>\text{Approximation}&amp;=e^{-0^2}\cdot 0{,}25+e^{-0{,}25^2}\cdot 0{,}25+e^{-0{,}5^2}\cdot 0{,}25+e^{-0{,}75^2}\cdot 0{,}25</mrow>
+        <mrow>&amp;=0{,}821\,999\,167\ldots</mrow>
+      </md>
+    </p>
+    <p>Qu'avons-nous appris sur la valeur exacte de cette intégrale?</p>
+  </example>
+
+  <example xml:id="exemple_approx_somme_serie">
+    <p>Grâce au critère des séries alternées, on sait que la série suivante est convergente.
+      <me>\sum_{n=0}^{+\infty}(-1)^n\frac{4}{2n+1}=4-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}-\frac{4}{11}+\cdots</me>
+    </p>
+    <p>Ses sommes partielles fournissent donc des approximations de la valeur de sa somme.</p>
+    <p>Par exemple, en sommant les cinq premiers termes, on obtient l'approximation qui suit.
+      <md>
+        <mrow>\text{Approximation}&amp;=\sum_{n=0}^4(-1)^n\frac{4}{2n+1}</mrow>
+        <mrow>&amp;=4-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}</mrow>
+        <mrow>&amp;=3{,}339\,682\,539\ldots</mrow>
+      </md>
+    </p>
+    <p>Qu'avons-nous appris sur la valeur exacte de la somme de cette série?</p>
+  </example>
+
+  <p>La réponse à la question soulevée dans chacun des exemples ci-dessus est la même : RIEN.</p>
+  <p>Quand on effectue une approximation, on commet une erreur :
+    <me>\text{Erreur}=\text{Valeur exacte}-\text{Approximation}.</me>
+    Autrement dit, on a
+    <me>\text{Valeur exacte}=\text{Approximation}+\text{Erreur}.</me>
+  </p>
+  <p>Une approximation toute seule ne veut rien dire tant qu'on ne dispose pas d'une estimation de l'erreur commise.</p>
+
+  </introduction>
+
+  <section xml:id="erreur_abs_et_rel">
+  <title>Erreur et erreur relative</title>
+
+  <p>Rappelons notre convention :
+    <me>\text{Erreur}=\text{Valeur exacte}-\text{Approximation}.</me>
+    Dans ce contexte, on définit l'erreur relative comme suit :
+    <me>\text{Erreur relative}=\frac{\text{Erreur}}{\left|\text{Valeur exacte}\right|}\times 100\;\%.</me>
+  </p>
+
+  <example>
+    <p>Supposons qu'on s'intéresse à une intégrale dont la valeur exacte est
+      <me>\text{Valeur exacte}=12{,}5</me>
+      et qu'à l'aide d'une méthode numérique, on obtienne l'approximation suivante :
+      <me>\text{Approximation}=12{,}4.</me>
+    </p>
+    <p>Alors l'erreur vaut
+      <md>
+        <mrow>\text{Erreur}&amp;=\text{Valeur exacte}-\text{Approximation}</mrow>
+        <mrow>&amp;=12{,}5-12{,}4</mrow>
+        <mrow>&amp;=0{,}1</mrow>
+      </md>
+      tandis que l'erreur relative représente
+      <md>
+        <mrow>\text{Erreur relative}&amp;=\frac{\text{Erreur}}{\left|\text{Valeur exacte}\right|}\times 100\;\%</mrow>
+        <mrow>&amp;=\frac{0{,}1}{12{,}5}\times 100\;\%</mrow>
+        <mrow>&amp;=0{,}8\;\%</mrow>
+      </md>
+      de la valeur exacte.
+    </p>
+  </example>
+
+  <example>
+    <p>Supposons qu'on s'intéresse à une intégrale dont la valeur exacte est
+      <me>\text{Valeur exacte}=0{,}5</me>
+      et qu'à l'aide d'une méthode numérique, on obtienne l'approximation suivante :
+      <me>\text{Approximation}=0{,}4.</me>
+    </p>
+    <p>Alors l'erreur vaut
+      <md>
+        <mrow>\text{Erreur}&amp;=\text{Valeur exacte}-\text{Approximation}</mrow>
+        <mrow>&amp;=0{,}5-0{,}4</mrow>
+        <mrow>&amp;=0{,}1</mrow>
+      </md>
+      tandis que l'erreur relative représente
+      <md>
+        <mrow>\text{Erreur relative}&amp;=\frac{\text{Erreur}}{\left|\text{Valeur exacte}\right|}\times 100\;\%</mrow>
+        <mrow>&amp;=\frac{0{,}1}{0{,}5}\times 100\;\%</mrow>
+        <mrow>&amp;=20\;\%</mrow>
+      </md>
+      de la valeur exacte.
+    </p>
+  </example>
+
+  <p>Comme le montrent les deux exemples qui précèdent, seule l'erreur relative nous informe vraiment de la gravité de l'erreur commise.</p>
+
+  </section>
+
+  <section xml:id="intervalle_encadrement">
+  <title>Intervalle d'encadrement</title>
+
+  <p>Quand on applique une méthode numérique, c'est qu'on ignore la valeur exacte de la quantité qui nous intéresse.</p>
+  <p>Il est alors essentiel de pouvoir estimer l'erreur.</p>
+  <p>En général, la théorie nous permet d'obtenir une estimation du genre suivant :
+    <me>\left|\text{Erreur}\right|\leq M\qquad\Leftrightarrow\qquad -M\leq\text{Erreur}\leq M.</me>
+  </p>
+  <p>En additionnant l'approximation à ce qui précède, on obtient les inéquations
+    <me>\text{Approximation}-M\;\leq\;\underbrace{\text{Approximation}+\text{Erreur}}_{\text{Valeur exacte}}\;\leq\;\text{Approximation}+M</me>
+  </p>
+  <p>Le plus souvent, il reste alors à effectuer des arrondissements pertinents de façon à obtenir les bornes de l'encadrement
+    <me>a\leq\text{Valeur exacte}\leq b.</me>
+  </p>
+
+  <example xml:id="exemple1_encadrement">
+    <p>Supposons qu'on s'intéresse à la valeur exacte d'une intégrale pour laquelle une méthode numérique donne l'approximation
+      <me>\text{Approximation}=17{,}315\,207</me>
+      avec l'estimation de l'erreur suivante :
+      <me>\left|\text{Erreur}\right|\leq 0{,}000\,004\qquad\Leftrightarrow\qquad -0{,}000\,004\leq\text{Erreur}\leq 0{,}000\,004.</me>
+    </p>
+    <p>On en déduit alors l'encadrement
+      <me>17{,}315\,207-0{,}000\,004\leq\text{Approximation}+\text{Erreur}\leq 17{,}315\,207+0{,}000\,004</me>
+      c'est-à-dire
+      <me>17{,}315\,203\leq \text{Valeur exacte}\leq 17{,}315\,211.</me>
+    </p>
+  </example>
+
+  <example xml:id="exemple2_encadrement">
+    <p>Supposons qu'on s'intéresse à la valeur exacte d'une intégrale pour laquelle une méthode numérique donne l'approximation
+      <me>\text{Approximation}=17{,}315\,207\ldots</me>
+      avec l'estimation de l'erreur suivante :
+      <me>\left|\text{Erreur}\right|\leq 0{,}000\,357\ldots</me>
+    </p>
+    <p>Alors on commence par arrondir par excès l'estimation de l'erreur :
+      <me>\left|\text{Erreur}\right|\leq 0{,}000\,358\qquad\Leftrightarrow\qquad -0{,}000\,358\leq\text{Erreur}\leq 0{,}000\,358</me>
+      Puis on encadre l'approximation
+      <me>17{,}315\,207\leq\text{Approximation}\leq 17{,}315\,208.</me>
+    </p>
+    <p>Et on en déduit finalement l'encadrement suivant :
+      <me>17{,}315\,207-0{,}000\,358\leq\text{Approximation}+\text{Erreur}\leq 17{,}315\,208+0{,}000\,358</me>
+      c'est-à-dire
+      <me>17{,}314\,849\leq \text{Valeur exacte}\leq 17{,}315\,566.</me>
+    </p>
+  </example>
+
+  </section>
+
+  <section xml:id="decimales">
+  <title>Décimales exactes et arrondissements</title>
+
+  <p>À partir d'un intervalle d'encadrement, on est en mesure de déterminer un certain nombre de décimales de la valeur qui nous intéresse.</p>
+
+  <remark>
+    <p>Le symbole <m>\approx</m> sera réservé aux arrondissements, et les points de suspension aux troncatures.</p>
+    <p>Par exemple, si une première calculatrice affiche
+      <me>3{,}141\,592\,653\,59</me>
+      comme valeur pour <m>\pi</m>, on en conclut que
+      <me>\pi\approx 3{,}141\,592\,653\,59\quad\text{et}\quad \pi=3{,}141\,592\,653\,5\ldots</me>
+    </p>
+    <p>Et si une deuxième calculatrice affiche
+      <me>3{,}141\,592\,653\,589\,7</me>
+      comme valeur pour <m>\pi</m>, on en conclut que
+      <me>\pi\approx 3{,}141\,592\,653\,589\,7\quad\text{et}\quad \pi=3{,}141\,592\,653\,589\ldots</me>
+    </p>
+    <p>Notez en particulier que la dernière décimale (9) fournie par la première calculatrice n'est pas exacte, mais provient d'un arrondissement par excès dû au fait que la vraie décimale correspondante (8) est suivie d'une décimale supérieure à 4.</p>
+  </remark>
+
+  <example>
+    <p>À l'exemple <xref ref="exemple1_encadrement"/>, on a obtenu l'encadrement
+      <me>17{,}315\,203\leq \text{Valeur exacte}\leq 17{,}315\,211.</me>
+    </p>
+    <p>On en déduit que les décimales suivantes sont exactes
+      <me>\text{Valeur exacte}=17{,}315\,2\ldots</me>
+      ainsi que l'arrondissement
+      <me>\text{Valeur exacte}\approx 17{,}315\,2.</me>
+    </p>
+  </example>
+
+  <example>
+    <p>À l'exemple <xref ref="exemple2_encadrement"/>, on a obtenu l'encadrement
+      <me>17{,}314\,849\leq \text{Valeur exacte}\leq 17{,}315\,566.</me>
+    </p>
+    <p>On en déduit que les décimales suivantes sont exactes
+      <me>\text{Valeur exacte}=17{,}31\ldots</me>
+      ainsi que l'arrondissement
+      <me>\text{Valeur exacte}\approx 17{,}3.</me>
+    </p>
+  </example>
+
+  </section>
+
+  <section xml:id="exercicesapproximation">
+  <title>Exercices</title>
+
+  <exercise>
+    <statement>
+      <p>Calculez l'erreur et l'erreur relative. Au besoin, arrondissez l'erreur relative à deux décimales.
+        <ol>
+          <li><p><m>\text{Valeur exacte}=7{,}5\quad</m> et <m>\quad\text{Approximation}=7{,}2</m>.</p></li>
+          <li><p><m>\text{Valeur exacte}=124{,}05\quad</m> et <m>\quad\text{Approximation}=123{,}84</m>.</p></li>
+          <li><p><m>\text{Valeur exacte}=123{,}84\quad</m> et <m>\quad\text{Approximation}=124{,}05</m>.</p></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li><p><m>\text{Erreur}=0{,}3\quad</m> et <m>\quad\text{Erreur relative}=4\;\%</m>.</p></li>
+          <li><p><m>\text{Erreur}=0{,}21\quad</m> et <m>\quad\text{Erreur relative}\approx 0{,}17\;\%</m>.</p></li>
+          <li><p><m>\text{Erreur}=-0{,}21\quad</m> et <m>\quad\text{Erreur relative}\approx -0{,}17\;\%</m>.</p></li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Étant donné les informations fournies sur l'approximation et l'erreur, encadrez la valeur exacte de la façon la plus précise possible.
+        <ol>
+          <li><p><m>\text{Approximation}=8{,}3\quad</m> et <m>\quad\left|\text{Erreur}\right|\leq 0{,}01</m>.</p></li>
+          <li><p><m>\text{Approximation}=8{,}312\,407\ldots\quad</m> et <m>\quad\left|\text{Erreur}\right|\leq 10^{-5}</m>.</p></li>
+          <li><p><m>\text{Approximation}=8{,}312\,407\ldots\quad</m> et <m>\quad\left|\text{Erreur}\right|\leq 0{,}008\,2\ldots</m>.</p></li>
+          <li><p><m>\text{Approximation}\approx 8{,}312\,407\quad</m> et <m>\quad\left|\text{Erreur}\right|\leq 10^{-5}</m>.</p></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li><p><m>8{,}29\leq\text{Valeur exacte}\leq 8{,}31</m></p></li>
+          <li><p><m>8{,}312\,397\leq\text{Valeur exacte}\leq 8{,}312\,418</m></p></li>
+          <li><p><m>8{,}304\,107\leq\text{Valeur exacte}\leq 8{,}320\,708</m></p></li>
+          <li><p><m>8{,}312\,396\leq\text{Valeur exacte}\leq 8{,}312\,418</m></p></li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Pour chacun des encadrements suivants, déterminez l'arrondissement le plus précis que vous pouvez en déduire.
+        <ol>
+          <li><p><m>137{,}809\,435\leq a\leq 137{,}809\,449</m></p></li>
+          <li><p><m>137{,}809\,435\leq b\leq 137{,}809\,442</m></p></li>
+          <li><p><m>137{,}809\,453\leq c\leq 137{,}809\,494</m></p></li>
+          <li><p><m>137{,}809\,435\leq d\leq 137{,}809\,494</m></p></li>
+          <li><p><m>137{,}809\,123\leq e\leq 137{,}809\,527</m></p></li>
+          <li><p><m>137{,}709\,453\leq f\leq 137{,}809\,479</m></p></li>
+          <li><p><m>-137{,}709\,453\leq g\leq -137{,}709\,452</m></p></li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li><p><m>a\approx 137{,}809\,4</m></p></li>
+          <li><p><m>b\approx 137{,}809\,44</m></p></li>
+          <li><p><m>c\approx 137{,}809\,5</m></p></li>
+          <li><p><m>d\approx 137{,}809</m></p></li>
+          <li><p><m>e\approx 137{,}81</m></p></li>
+          <li><p><m>f\approx 138</m></p></li>
+          <li><p><m>g\approx -137{,}709\,45</m></p></li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Reprenez l'exemple <xref ref="exemple_approx_somme_serie"/> concernant la série
+        <me>\sum_{n=0}^{+\infty}(-1)^n\frac{4}{2n+1}=4-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}-\frac{4}{11}+\ldots</me>
+      et l'approximation par la somme partielle
+        <me>4-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}=3{,}339\,682\,539\ldots</me>
+      </p>
+      <p>Dans ce contexte, on sait en fait que l'erreur est comprise entre <m>0</m> et le premier terme négligé <m>\left(-\frac{4}{11}\right)</m>, c'est-à-dire :
+        <me>-\frac{4}{11}\leq\text{Erreur}\leq 0.</me>
+        <ol>
+          <li><p>Encadrez la valeur exacte de la somme de cette série en utilisant six décimales.</p></li>
+          <li><p>Déduisez-en l'arrondissement le plus précis possible.</p></li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>Commençons par encadrer l'approximation.
+              <me>3{,}339\,682\leq\text{Approximation}\leq 3{,}339\,683.</me>
+            </p>
+            <p>Encadrons ensuite l'erreur, sachant que <m>\frac{4}{11}=0{,}363\,636\,363\ldots</m>,
+              <me>-0{,}363\,637\leq\text{Erreur}\leq 0.</me>
+            </p>
+            <p>On a donc
+              <me>3{,}339\,682-0{,}363\,637\leq\text{Approximation}+\text{Erreur}\leq 3{,}339\,683+0</me>
+               c'est-à-dire
+              <me>2{,}976\,045\leq\text{Valeur exacte}\leq 3{,}339\,683.</me>
+            </p>
+          </li>
+          <li>
+            <p>L'arrondissement le plus précis qu'on puisse en déduire est le suivant :
+              <me>\text{Valeur exacte}\approx 3.</me>
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>La somme de cette série bien connue vaut <m>\pi</m>. Mais il faut prendre beaucoup plus de termes dans la somme partielle pour obtenir un nombre intéressant de décimales de <m>\pi</m>.</p>
+    </solution>
+  </exercise>
+
+  </section>
+
+  <conclusion>
+
+    <p></p>
+
+  </conclusion>
+
+</appendix>

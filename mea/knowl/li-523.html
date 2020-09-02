@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:28:34-04:00    *-->
+<!--*    on 2020-09-02T14:13:23-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,28 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">7.3.4.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">7.3.3.1</span><span class="period">.</span>
 </h6>
 <p>La forme de Newton du polynôme interpolateur de ces trois points s'écrit</p>
 <div class="displaymath">
 \begin{align*}
 N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
-&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2).
+&amp;=d_0+d_1t+d_2t(t-2).
 \end{align*}
 </div>
 <p>On cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{cases}
-N(1)=3\\
-N(2)=6\\
-N(3)=9
+N(0)=4\\
+N(2)=-1\\
+N(5)=12
 \end{cases}
 \Leftrightarrow
 \begin{cases}
-d_0&amp;&amp;&amp;&amp;&amp;=&amp;3\\
-d_0&amp;+&amp;d_1&amp;&amp;&amp;=&amp;6\\
-d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;9\\
+d_0&amp;&amp;&amp;&amp;&amp;=&amp;4\\
+d_0&amp;+&amp;2d_1&amp;&amp;&amp;=&amp;-1\\
+d_0&amp;+&amp;5d_1&amp;+&amp;15d_2&amp;=&amp;12\\
 \end{cases}
 \end{equation*}
 </div>
@@ -44,7 +44,7 @@ d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;9\\
 <p>La première équation donne</p>
 <div class="displaymath">
 \begin{equation*}
-d_0=3.
+d_0=4.
 \end{equation*}
 </div>
 </li>
@@ -52,8 +52,9 @@ d_0=3.
 <p>Alors la deuxième équation donne</p>
 <div class="displaymath">
 \begin{align*}
-d_0+d_1=6&amp;\Rightarrow\quad 3+d_1=6\\
-&amp;\Rightarrow\quad d_1=3.
+d_0+2d_1=-1&amp;\Rightarrow\quad 4+2d_1=-1\\
+&amp;\Rightarrow\quad 2d_1=-5\\
+&amp;\Rightarrow\quad d_1=-\frac{5}{2}.
 \end{align*}
 </div>
 </li>
@@ -61,9 +62,9 @@ d_0+d_1=6&amp;\Rightarrow\quad 3+d_1=6\\
 <p>Enfin la troisième équation donne</p>
 <div class="displaymath">
 \begin{align*}
-d_0+2d_1+2d_2=0&amp;\Rightarrow\quad 3+6+2d_2=9\\
-&amp;\Rightarrow\quad 2d_2=0\\
-&amp;\Rightarrow\quad d_2=0.
+d_0+5d_1+5d_2=0&amp;\Rightarrow\quad 4-\frac{25}{2}+15d_2=12\\
+&amp;\Rightarrow\quad 15d_2=12-4+\frac{25}{2}=\frac{41}{2}\\
+&amp;\Rightarrow\quad d_2=\frac{41}{30}.
 \end{align*}
 </div>
 </li>
@@ -71,7 +72,7 @@ d_0+2d_1+2d_2=0&amp;\Rightarrow\quad 3+6+2d_2=9\\
 <p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
 <div class="displaymath">
 \begin{equation*}
-N(t)=3+3(t-1)+0(t-1)(t-2)=3+3(t-1).
+N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).
 \end{equation*}
 </div></article><span class="incontext"><a href="exercicesdiffdiv.html#li-523">Contexte</a></span>
 </body>

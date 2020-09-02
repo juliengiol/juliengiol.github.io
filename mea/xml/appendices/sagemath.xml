@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<appendix xml:id="sagemath" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>À propos de SageMath</title>
+
+  <introduction>
+
+  <p><url href="http://www.sagemath.org/index.html">SageMath</url> est un logiciel gratuit semblable à Maple et Mathematica, pour ne citer que ces derniers.</p>
+  <p>Il est dû à William Stein et à de nombreux collaborateurs bénévoles à travers le monde. Sa première version remonte à 2005.</p>
+
+  <p>Ressources :
+    <ul>
+      <li><p><url href="https://wiki.sagemath.org/quickref">Quick Reference Cards</url></p></li>
+      <li><p><url href="http://sagebook.gforge.inria.fr/">Calcul mathématique avec Sage</url></p></li>
+      <li><p><url href="https://ask.sagemath.org/questions/">Forum</url></p></li>
+    </ul>
+  </p>
+
+  </introduction>
+
+  <section xml:id="sage_mathcell">
+  <title>SageMathCell</title>
+
+  <p>L'interface web <url href="https://sagecell.sagemath.org/">SageMathCell</url> permet notamment d'effectuer les tâches suivantes.
+    <ul>
+      <li><p>Exécuter du code SageMath, Python, Maxima, R, etc. directement dans le fureteur, sans installation d'aucune sorte.</p></li>
+      <li><p>Partager son code sous la forme d'un bref lien temporaire, ou d'un lien plus long mais permanent.</p></li>
+    </ul>
+  </p>
+
+  <p>Voici un premier exemple montrant comment utiliser <url href="https://sagecell.sagemath.org/">SageMathCell</url> comme une super calculatrice.</p>
+
+  <example xml:id="exemple_sage_systeme">
+    <p>Résolvons le système linéaire suivant avec SageMath.
+      <me>
+        \begin{cases}
+        a_0&amp;+&amp;a_1&amp;+&amp;a_2&amp;=&amp;-3\\
+        a_0&amp;+&amp;2a_1&amp;+&amp;4a_2&amp;=&amp;7\\
+        a_0&amp;+&amp;3a_1&amp;+&amp;9a_2&amp;=&amp;0\\
+        \end{cases}
+      </me>
+    </p>
+    <p>Pour cela, il suffit d'appliquer la méthode de Gauss-Jordan à la matrice augmentée du système.
+      <me>\text{M} =
+        \begin{bmatrix}
+        1&amp;1&amp;1&amp;-3\\
+        1&amp;2&amp;4&amp;7\\
+        1&amp;3&amp;9&amp;0
+        \end{bmatrix}
+      </me>
+    </p>
+    <p>Voici le code SageMath à exécuter :
+      <pre>
+        M = matrix(3, 4, [1,1,1,-3,1,2,4,7,1,3,9,0])
+        show(M)
+        GJ = M.rref()
+        show(GJ)
+      </pre>
+    </p>
+    <p><url href="https://tinyurl.com/y58gkw26">Cliquez sur ce lien</url> pour voir ce code en action dans SageMathCell.</p>
+    <p>À la sortie de ce bloc de code, on obtient <m>\text{GJ}</m>, la forme échelonnée réduite de <m>\text{M}</m>.
+      <me>\text{GJ} =
+        \begin{bmatrix}
+        1&amp;0&amp;0&amp;-30\\
+        0&amp;1&amp;0&amp;71/2\\
+        0&amp;0&amp;1&amp;-17/2
+        \end{bmatrix}
+      </me>
+    </p>
+    <p>On en déduit qu'il y a une unique solution :
+      <me>
+        \begin{cases}
+        a_0&amp;=&amp;-30\\
+        a_1&amp;=&amp;71/2\\
+        a_2&amp;=&amp;-17/2\\
+        \end{cases}
+      </me>
+    </p>
+  </example>
+
+  <p>Voici maintenant un exemple montrant comment utiliser <url href="https://sagecell.sagemath.org/">SageMathCell</url> pour tester et partager du code Python.</p>
+
+  <example xml:id="exemple_sage_euclide">
+    <p>Calculons le PGCD de <m>57</m> et <m>42</m> à l'aide de l'algorithme d'Euclide.</p>
+    <p>Voici le code Python à exécuter :
+      <pre>
+        a = 57
+        b = 42
+        while a % b != 0:
+            a, b = b, a % b
+        print(b)
+      </pre>
+    </p>
+    <p><url href="https://tinyurl.com/y5hlqk6q">Cliquez sur ce lien</url> pour voir ce code en action dans SageMathCell.
+      <ul>
+        <li><p>Vérifiez que le langage sélectionné est bien <c>Python</c>.</p></li>
+        <li><p>Sélectionnez le langage <c>Sage</c> puis cliquez sur <c>Evaluate</c> afin d'observer qu'on obtient le même résultat à la sortie de l'algorithme.</p></li>
+        <li><p>Notez aussi le bouton <c>Share</c> grâce auquel le lien de partage a été obtenu.</p></li>
+      </ul>
+    </p>
+    <p>À la sortie de cet algorithme, on obtient la valeur du PGCD de <m>57</m> et <m>42</m> : c'est <m>3</m>.</p>
+  </example>
+
+  </section>
+
+  <section xml:id="sage_cocalc">
+  <title>CoCalc</title>
+
+  <p><url href="https://cocalc.com">CoCalc</url> se définit comme un environnement infonuagique (cloud computing environment).</p>
+  <p>La première chose à faire pour pouvoir l'utiliser consiste à se créer un compte. C'est gratuit, mais l'option payante est recommandée si on souhaite plus de fiabilité, d'options, de vitesse et d'espace de stockage.</p>
+  <p>CoCalc permet notamment d'effectuer les tâches suivantes.
+    <ul>
+      <li>
+        <p>Travailler en ligne sur des feuilles de travail SageMath (fichiers .sagews) analogues à celles de Maple, dans lesquelles on peut alterner code SageMath et texte en <url href="https://fr.wikipedia.org/wiki/Markdown">Markdown</url>.</p>
+        <p>Partager ces feuilles de travail à l'aide d'un lien internet, ou les imprimer.</p>
+        <example>
+          <p>Voici un lien vers une <url href="https://share.cocalc.com/share/c372faf6-6106-4c15-866e-69928fb8a79e/201-131-AH/Exemples%20appendice%20SageMath/Exemples_appendice.sagews?viewer=share">feuille de travail SageMath</url> reprenant les deux exemples de la section <xref ref="sage_mathcell"/>.</p>
+        </example>
+      </li>
+      <li>
+        <p>Travailler en ligne sur des feuilles de travail Jupyter (fichiers .ipynb) permettant d'alterner code Python et texte en Markdown.</p>
+        <example>
+          <p>Voici un lien vers une <url href="https://share.cocalc.com/share/c372faf6-6106-4c15-866e-69928fb8a79e/201-131-AH/Exemples%20appendice%20SageMath/Exemples_appendice.ipynb?viewer=share">feuille de travail Jupyter</url> reprenant les deux exemples de la section <xref ref="sage_mathcell"/>.</p>
+          <p>Partager ces feuilles de travail à l'aide d'un lien internet, ou les imprimer.</p>
+        </example>
+      </li>
+    </ul>
+  </p>
+
+  <p>Pour finir, voici un lien vers un <url href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">aide-mémoire Markdown</url> en anglais pour peaufiner les cellules de texte de vos feuilles de travail SageMath et Jupyter.</p>
+
+  </section>
+
+  <section xml:id="exercicessagemath">
+  <title>Exercices</title>
+
+  <exercise>
+    <statement>
+      <p>
+        <ol>
+          <li><p>Copiez le code donné à l'exemple <xref ref="exemple_sage_systeme"/>, puis collez-le dans la fenêtre de <url href="https://sagecell.sagemath.org/">SageMathCell</url>.</p></li>
+          <li><p>Cliquez sur le bouton <c>Evaluate</c> pour faire afficher le résultat.</p></li>
+          <li><p>Sélectionnez le langage <c>R</c> puis cliquez sur <c>Evaluate</c> afin de voir de quoi un message d'erreur à l'air... et de vérifier que tous les langages ne se comprennent pas forcément les uns les autres.</p></li>
+          <li><p>Profitez-en pour cliquer sur le bouton <c>Share</c> afin de comprendre comment partager votre code.</p></li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        <ol>
+          <li><p>Copiez le code donné à l'exemple <xref ref="exemple_sage_euclide"/>, puis collez-le dans la fenêtre de <url href="https://sagecell.sagemath.org/">SageMathCell</url>.</p></li>
+          <li><p>Sélectionnez le langage <c>Python</c> puis cliquez sur <c>Evaluate</c>.</p></li>
+          <li><p>Sélectionnez ensuite le langage <c>Sage</c> puis cliquez sur <c>Evaluate</c>.</p></li>
+        </ol>
+      </p>
+      <p>Comme vous pouvez le constater, SageMath comprend Python.</p>
+      <p><url href="https://tinyurl.com/yxkcwano">Attention</url>, la réciproque n'est pas toujours vraie.</p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Voici un guide de démarrage relativement rapide pour <url href="https://cocalc.com">CoCalc</url>.
+        <ol>
+          <li><p>Créez un compte gratuit et connectez-vous.</p></li>
+          <li><p>Créez un projet "Exemples" à l'aide du bouton <c>+ Create New Project</c>.</p></li>
+          <li><p>Dans ce projet, créez un fichier "Premiers_Pas.sagews" (Sage Worksheet) à l'aide du bouton <c>+ New</c>.</p></li>
+          <li>
+            <p>Dans ce fichier :
+              <ol>
+                <li>
+                  <p>Commencez par écrire les lignes suivantes :
+                    <pre>
+                      %md
+                      # Mon premier titre avec Markdown
+                      Bonjour!
+                      Voici ma *première* feuille de travail SageMath.
+
+                      **Ceci est une cellule de type Markdown**,
+                      parce qu'elle commence par `%md`.
+
+                      Comme je ne la commencerai pas par `%md`,
+                      la cellule qui suit sera une cellule de code SageMath.
+                    </pre>
+                  </p>
+                </li>
+                <li><p>Évaluez cette cellule en utilisant la combinaison de touches <c>Majuscule + Entrée</c>.</p></li>
+                <li>
+                  <p>Écrivez maintenant les lignes de code suivantes en respectant soigneusement l'indentation de quatre espaces.
+                    <pre>
+                      a = 57
+                      b = 42
+                      while a % b != 0:
+                          a, b = b, a % b
+                      print(b)
+                    </pre>
+                  </p>
+                </li>
+                <li><p>Évaluez cette deuxième cellule en utilisant la combinaison de touches <c>Majuscule + Entrée</c>.</p></li>
+                <li>
+                  <p>Créez une troisième cellule en Markdown, de façon à ce qu'elle affiche la phrase
+                    <me>\text{Le PGCD de 57 et 42 vaut donc 3.}</me>
+                    et que PGCD soit en caractères gras.
+                  </p>
+                </li>
+                <li><p>Voici à quoi votre fichier doit ressembler à ce stade : <url href="https://share.cocalc.com/share/c372faf6-6106-4c15-866e-69928fb8a79e/201-131-AH/Premiers%20pas/Premiers_pas.sagews?viewer=share">Premiers_Pas.sagews</url>.</p></li>
+                <li><p>Cliquez maintenant sur les petits triangles à droite des numéros de lignes 1 et 20 afin de faire disparaître le code Markdown et qu'il n'en reste que le résultat.</p></li>
+                <li><p>Cherchez l'icône qui vous permet de créer une version .pdf de ce fichier : cliquez et faites ce qu'il faut pour sauvegarder ce pdf sur votre bureau.</p></li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <ol>
+              <li><p>Créez maintenant un fichier "Premiers_Pas.ipynb" (Jupyter notebook) à l'aide du bouton <c>+ New</c>.</p></li>
+              <li>
+                <p>Suivez les mêmes étapes qu'au point précédent pour "Premiers_Pas.sagews".</p>
+                <p>Attention! Pour les cellules Markdown, on n'utilise pas la ligne de code <c>%md</c>. À la place, on utilise le menu déroulant qui permet de basculer de <c>Code</c> à <c>Markdown</c>.</p>
+                <p>Modifiez aussi légèrement le texte comme il se doit.</p>
+                <p>Il n'y a pas d'icône permettant de créer un pdf, alors sautez cette étape.</p>
+              </li>
+              <li><p>Voici à quoi votre fichier doit ressembler à ce stade : <url href="https://share.cocalc.com/share/c372faf6-6106-4c15-866e-69928fb8a79e/201-131-AH/Premiers%20pas/Premiers_pas.ipynb?viewer=share">Premiers_Pas.ipynb</url>.</p></li>
+              <li><p>Cherchez l'icône qui vous permet d'imprimer ce fichier : cliquez pour obtenir la version html.</p></li>
+              <li><p>À partir de là, vous pouvez utiliser votre fureteur pour imprimer ce document ou l'enregistrer au format pdf.</p></li>
+            </ol>
+          </li>
+          <li><p>À l'aide du bouton <c>+ New</c> créez un dossier "Premiers pas" dans votre projet.</p></li>
+          <li><p>Revenez à la racine de votre projet, sélectionnez tous les fichiers "Premiers_Pas", et déplacez-les dans le dossier "Premiers pas" à l'aide du bouton <c>Move</c>.</p></li>
+          <li><p>C'est tout. Bravo.</p></li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <figure>
+            <title>Démarrer avec CoCalc</title>
+            <caption>Démarrer avec CoCalc</caption>
+            <video xml:id="demarrer_cocalc" youtube="D88BwU2jeEM" />
+        </figure>
+      </p>
+    </solution>
+  </exercise>
+
+  </section>
+
+</appendix>

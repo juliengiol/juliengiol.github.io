@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:26:59-04:00    *-->
+<!--*    on 2020-09-02T14:12:20-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,29 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Comment utiliser efficacement l'ordinateur pour calculer la somme des \(n\) premiers entiers non nuls</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^nk=1+2+\cdots+n\;?
-\end{equation*}
-</div>
-<span class="incontext"><a href="sommeentiers.html#p-189">Contexte</a></span>
+<ol class="decimal">
+<li><pre class="code-block tex2jax_ignore">def subdivisionReguliere1(a, b, n):
+    deltaX = (b - a) / n
+    x = a
+    print(x)
+    for k in range(0, n):
+        x = x + deltaX
+        print(x)
+
+subdivisionReguliere1(1.0, 3.0, 4)
+</pre></li>
+<li><pre class="code-block tex2jax_ignore">def subdivisionReguliere2(a, b, n):
+    deltaX = (b - a) / n
+    x = a
+    liste = [a]
+    while x &lt; b:
+        x = x + deltaX
+        liste.append(x)
+    return liste
+
+print(subdivisionReguliere2(1.0, 3.0, 4))
+</pre></li>
+</ol>
+<span class="incontext"><a href="exercicesfonctions.html#p-189">Contexte</a></span>
 </body>
 </html>

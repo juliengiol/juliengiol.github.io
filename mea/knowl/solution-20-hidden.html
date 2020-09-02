@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:26:56-04:00    *-->
+<!--*    on 2020-09-02T14:12:21-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,10 +12,10 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like"><pre class="code-block tex2jax_ignore">def sommeEntiers(n):
-    if n == 0:
-        return 0
+    if n == 1:
+        return 1
     else:
-        return n + sommeEntiers(n-1)
+        return n + sommeEntiers(n - 1)
 
 print(sommeEntiers(3))
 print(sommeEntiers(100))

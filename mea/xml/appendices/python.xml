@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<appendix xml:id="aide-memoire-python" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Aide-mémoire Python</title>
+
+  <introduction>
+
+    <p><url href="https://www.python.org/">Python</url> est un langage de programmation dû à Guido van Rossum. Sa première version remonte à 1991.</p>
+    <p>Sa popularité ne cesse de croître depuis 2012, comme en témoignent <url href="https://www.edgica.com/the-rise-of-python/">cet article</url> et <url href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">cet autre article</url>.</p>
+
+    <p>Ressources :
+      <ul>
+        <li><p><url href="https://colab.research.google.com/notebooks/welcome.ipynb">Google Colaboratory</url> : Environnement de travail pour Jupyter notebook qui ne nécessite aucune configuration, s'exécute entièrement dans le cloud et permet d'effectuer des sauvegardes directement dans Google Disque.</p></li>
+        <li><p><url href="https://www.anaconda.com/distribution/">Anaconda</url> : Pour installer, entre autres, Python, Jupyter et RStudio sur votre ordinateur.</p></li>
+        <li><p><url href="http://www.pythontutor.com/visualize.html#mode=edit">Python Tutor</url> : Pour comprendre comment du code Python agit pas à pas.</p></li>
+        <li><p><url href="https://www.courspython.com/">Cours Python 3 pour la programmation scientifique</url>.</p></li>
+        <li><p><url href="https://python-django.dev/">Apprendre le langage de programmation Python</url>.</p></li>
+      </ul>
+    </p>
+
+  </introduction>
+
+  <section xml:id="python_varia">
+  <title>Affichage, commentaires et variables</title>
+
+    <paragraphs>
+    <title>Affichage avec <c>print()</c></title>
+      <ul>
+        <li>
+          <p>Afficher un nombre :</p>
+          <sage language='python'>
+            <input>
+              print(55)
+            </input>
+          </sage>
+        </li>
+        <li>
+          <p>Afficher une chaîne de caractères :</p>
+          <sage language='python'>
+            <input>
+              print('Bonjour !')
+            </input>
+          </sage>
+        </li>
+      </ul>
+    </paragraphs>
+
+    <paragraphs>
+    <title>Commenter du code avec <c>#</c></title>
+      <ul>
+        <li>
+          <p>Ajouter une ligne de commentaires :</p>
+          <sage language='python'>
+            <input>
+              # commentaire sans aucune influence sur la sortie
+              print(55)
+            </input>
+          </sage>
+        </li>
+        <li>
+          <p>Commenter à droite d'une ligne de code :</p>
+          <sage language='python'>
+            <input>
+              print('Bonjour !') # commande pour afficher Bonjour !
+            </input>
+          </sage>
+        </li>
+      </ul>
+    </paragraphs>
+
+    <paragraphs>
+    <title>Variables</title>
+      <ul>
+        <li>
+          <p>Assigner une valeur à une variable et l'afficher  :</p>
+          <sage language='python'>
+            <input>
+              x = 5 # assigne la valeur 5 à la variable x
+              print(x) # affiche x
+            </input>
+          </sage>
+        </li>
+        <li>
+          <p>Modifier des variables :</p>
+          <sage language='python'>
+            <input>
+              x, y = 5, 3 # assignation simultanée de 5 à x et de 3 à y
+              somme = x + y # la variable somme contient 8
+              print(somme)
+              somme =  somme + 7 # maintenant la variable somme contient 15
+              print(somme)
+            </input>
+          </sage>
+        </li>
+        <li>
+          <p>Échanger les contenus de deux variables :</p>
+          <sage language='python'>
+            <input>
+              x, y = 5, 3
+              print(x, y) # affichage simultané de x et de y
+              x, y = y, x # échange simultané des contenus de x et de y
+              print(x, y)
+            </input>
+          </sage>
+        </li>
+      </ul>
+    </paragraphs>
+
+  </section>
+
+  <section xml:id="python_operateurs">
+  <title>Opérateurs et comparaisons</title>
+
+    <subsection>
+    <title>Mathématiques</title>
+
+      <table xml:id="python_priorite_operations">
+        <title>Opérations mathématiques dans l'ordre décroissant de leur priorité avec Python</title>
+        <tabular top="major" bottom="major" left="major" right="major" halign="center">
+            <row bottom="major">
+                <cell right="major">Opérateur</cell><cell right="major">Nom de l'opération</cell><cell>Exemple</cell>
+            </row>
+            <row bottom="minor">
+                <cell>**</cell><cell>Exponentiation</cell><cell><c>7 ** 2</c> donne <c>49</c></cell>
+            </row>
+            <row bottom="minor">
+                <cell>%</cell><cell>Modulo / Reste de la division euclidienne</cell><cell><c>7 % 2</c> donne <c>1</c></cell>
+            </row>
+            <row bottom="minor">
+                <cell>//</cell><cell>Quotient de la division euclidienne</cell><cell><c>7.0 // 2.0</c> donne <c>3.0</c></cell>
+            </row>
+            <row bottom="minor">
+                <cell>/</cell><cell>Division</cell><cell><c>7.0 / 2.0</c> donne <c>3.5</c></cell>
+            </row>
+            <row bottom="minor">
+                <cell>*</cell><cell>Multiplication</cell><cell><c>7 * 2</c> donne <c>14</c></cell>
+            </row>
+            <row bottom="minor">
+                <cell>-</cell><cell>Soustraction</cell><cell><c>7 - 2</c> donne <c>5</c></cell>
+            </row>
+            <row>
+                <cell>+</cell><cell>Addition</cell><cell><c>7 + 2</c> donne <c>9</c></cell>
+            </row>
+        </tabular>
+      </table>
+
+    </subsection>
+
+    <subsection>
+    <title>Comparaison</title>
+
+      <table xml:id="python_comparaisons">
+        <title>Opérateurs de comparaison avec Python</title>
+        <tabular top="major" bottom="major" left="major" right="major" halign="center">
+            <row bottom="major">
+                <cell right="major">Opérateur</cell><cell right="major">Se lit</cell><cell>Exemple</cell>
+            </row>
+            <row bottom="minor">
+                <cell>==</cell><cell>est égal à</cell><cell><c>7 == 2</c> donne <c>False</c></cell>
+            </row>
+            <row bottom="minor">
+                <cell>!=</cell><cell>n'est pas égal à</cell><cell><c>7 != 2</c> donne <c>True</c></cell>
+            </row>
+            <row bottom="minor">
+                <cell>&lt;</cell><cell>est inférieur à</cell><cell><c>7 &lt; 2</c> donne <c>False</c></cell>
+            </row>
+            <row bottom="minor">
+                <cell>&gt;</cell><cell>est supérieur à</cell><cell><c>7 &gt; 2</c> donne <c>True</c></cell>
+            </row>
+            <row bottom="minor">
+                <cell>&lt;=</cell><cell>est inférieur ou égal à</cell><cell><c>7 &lt;= 2</c> donne <c>False</c></cell>
+            </row>
+            <row>
+                <cell>&gt;=</cell><cell>est supérieur ou égal à</cell><cell><c>7 &gt;= 2</c> donne <c>True</c></cell>
+            </row>
+        </tabular>
+      </table>
+
+    </subsection>
+
+    <subsection>
+    <title>Logique</title>
+
+      <table>
+        <title>Opérateurs booléens avec Python</title>
+        <tabular top="major" bottom="major" left="major" right="major" halign="center">
+            <row bottom="major">
+                <cell right="major">Opérateur</cell><cell right="major">Se lit</cell><cell>Exemple</cell>
+            </row>
+            <row bottom="minor">
+                <cell>and</cell><cell>et</cell><cell><c>(7 == 2) and (2 ** 3 == 8)</c> donne <c>False</c></cell>
+            </row>
+            <row bottom="minor">
+                <cell>or</cell><cell>ou</cell><cell><c>(7 == 2) or (2 ** 3 == 8)</c> donne <c>True</c></cell>
+            </row>
+            <row>
+                <cell>not</cell><cell>non</cell><cell><c>not 7 == 2</c> donne <c>True</c></cell>
+            </row>
+        </tabular>
+      </table>
+
+    </subsection>
+
+  </section>
+
+  <section xml:id="python_boucles_et_cond">
+  <title>Boucles, conditionnelles et fonctions</title>
+
+    <paragraphs>
+    <title>Boucles</title>
+      <ul>
+        <li>
+          <p>Exemple de boucle <c>for</c> (pour) :</p>
+          <sage language='python'>
+            <input>
+              for k in range(1, 6):
+                  print(k)
+            </input>
+          </sage>
+        </li>
+        <li>
+          <p>Exemple de boucle <c>while</c> (tant que) :</p>
+          <sage language='python'>
+            <input>
+              k = 1
+              while k &lt; 6:
+                  print(k),
+                  k = k + 1
+            </input>
+          </sage>
+        </li>
+      </ul>
+    </paragraphs>
+
+    <paragraphs>
+    <title>Conditionnelles</title>
+      <ul>
+        <li>
+          <p>Exemple 1 :</p>
+          <sage language='python'>
+            <input>
+              note = 59.5
+              if note &lt; 60:
+                  print('échec')
+              else:
+                  print('réussite')
+            </input>
+          </sage>
+        </li>
+        <li>
+          <p>Exemple 2 :</p>
+          <sage language='python'>
+            <input>
+              age = 8
+              if age &lt; 3:
+                  print('entrée gratuite')
+              elif age &lt; 12:
+                  print('tarif réduit')
+              else:
+                  print('plein tarif')
+            </input>
+          </sage>
+        </li>
+      </ul>
+    </paragraphs>
+
+    <paragraphs>
+    <title>Fonctions</title>
+      <ul>
+        <li>
+          <p>Exemple 1 :</p>
+          <sage language='python'>
+            <input>
+              def factorielleIterative(n):
+                  produit = 1
+                  for k in range(2, n+1):
+                      produit = produit * k
+                  return produit
+
+              print(factorielleIterative(5))
+            </input>
+          </sage>
+        </li>
+        <li>
+          <p>Exemple 2 :</p>
+          <sage language='python'>
+            <input>
+              def factorielleRecursive(n):
+                  if n == 0:
+                      return 1
+                  else:
+                      return n * factorielleRecursive(n-1)
+
+              print(factorielleRecursive(5))
+            </input>
+          </sage>
+        </li>
+      </ul>
+    </paragraphs>
+
+  </section>
+
+  <section xml:id="python_types">
+  <title>Principaux types</title>
+
+  <paragraphs>
+  <title>Chaînes de caractères <c>str</c></title>
+
+  Par exemple : <c>'aHuntSic'</c>, <c>'14426'</c>.
+
+  </paragraphs>
+
+  <paragraphs>
+  <title>Booléens <c>bool</c></title>
+
+  Il y en a deux : <c>True</c> et <c>False</c>.
+
+  </paragraphs>
+
+  <paragraphs>
+  <title>Entiers <c>int</c></title>
+
+  Par exemple : <c>2</c>, <c>0</c>, <c>-5</c>, <c>1234567890</c>.
+
+  </paragraphs>
+
+  <paragraphs>
+  <title>Nombres à virgule flottante <c>float</c></title>
+
+  <p>Par exemple : <c>2.0</c>, <c>-3.507</c>, <c>9.0001</c>.</p>
+  <p>
+    <ul>
+      <li>
+        <p>Troncature de la partie décimale avec <c>int()</c> :
+          <sage language='python'>
+            <input>
+              x = int(-3.7825089)
+              print(x)
+            </input>
+          </sage>
+        </p>
+      </li>
+      <li>
+        <p>Valeur absolue avec <c>abs()</c> :
+          <sage language='python'>
+            <input>
+              y = abs(-3.7825089)
+              print(y)
+            </input>
+          </sage>
+        </p>
+      </li>
+      <li>
+        <p>Arrondis avec <c>round()</c> :
+          <sage language='python'>
+            <input>
+              z = round(-3.7825089, 3)
+              print(z)
+            </input>
+          </sage>
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  </paragraphs>
+
+  <paragraphs>
+  <title>Listes <c>list</c></title>
+
+  <p>Par exemple : <c>[3, -7, 'chat', True, 3.14]</c>.</p>
+  <p>
+    <ul>
+      <li>
+        <p>Ajouter un élément à une liste avec <c>.append()</c> :
+          <sage language='python'>
+            <input>
+              maListe = [3, -7, 'chat', True, 3.14]
+              maListe.append('oubli')
+              print(maListe)
+            </input>
+          </sage>
+        </p>
+      </li>
+      <li>
+        <p>Accéder à un élément d'une liste avec <c>[j]</c> :
+          <sage language='python'>
+            <input>
+              maListe = [3, -7, 'chat', True, 3.14]
+              troisiemeElement = maListe[2] # oui, c'est [2] et pas [3]...
+              print(troisiemeElement)
+            </input>
+          </sage>
+        </p>
+      </li>
+      <li>
+        <p>Parcourir les éléments d'une liste avec <c>for</c> ... <c>in</c> :
+          <sage language='python'>
+            <input>
+              maListe = [3, -7, 'chat', True, 3.14]
+              for element in maListe:
+                  print(element)
+            </input>
+          </sage>
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  </paragraphs>
+
+  </section>
+
+</appendix>

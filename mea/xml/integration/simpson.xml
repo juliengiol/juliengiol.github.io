@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="simpson" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Méthode de Simpson</title>
+
+<introduction>
+
+  <interactive xml:id="interactive_simpson" platform="sage" width="100%" aspect="14:22">
+    <slate surface="sage">
+      @interact
+      def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 5, width = 30), a = input_box(label = html(r'\(a\)'), default = 1, width = 10), b = input_box(label = html(r'\(b\)'), default = 7, width = 10), n = input_box(label = html(r'\(n\)'), default = 3, width = 10)):
+          f(x) = f
+          integrale = integral(f(x), x, a, b).n()
+          deltaX = (b-a)/n
+          xgauche_i = a
+          approximation = 0
+          G = plot(f(x), (x, a-(b-a)/20, b+(b-a)/20), color = 'red', thickness = 1)
+          G = G + plot(f(x), (x, a, b), color = 'red', thickness = 1, fill = true, fillcolor = 'grey')
+          P = [(xgauche_i,f(xgauche_i))]
+          for i in range(0,n):
+              xmilieu_i = xgauche_i + deltaX/2
+              xdroite_i = xgauche_i + deltaX
+              ygauche_i = f(xgauche_i)
+              ymilieu_i = f(xmilieu_i)
+              ydroite_i = f(xdroite_i)
+              approximation = approximation + (ygauche_i + 4*ymilieu_i + ydroite_i)/6
+              g_i(x) = (2*ygauche_i*(x-xmilieu_i)*(x-xdroite_i)-4*ymilieu_i*(x-xgauche_i)*(x-xdroite_i)+2*ydroite_i*(x-xgauche_i)*(x-xmilieu_i))/deltaX^2
+              G = G + plot(g_i(x), (x, xgauche_i, xdroite_i), color = 'black', thickness = 1, fill = true, fillcolor = 'yellow')
+              G = G + line([(xgauche_i,0),(xgauche_i,ygauche_i)], color = 'black')
+              xgauche_i = xdroite_i
+              P.append((xmilieu_i,ymilieu_i))
+              P.append((xdroite_i,ydroite_i))
+          approximation = (deltaX*approximation).n()
+          erreur = integrale - approximation
+          G = G + line([(xdroite_i,0),(xdroite_i,ydroite_i)], color = 'black')
+          G = G + points(P, pointsize = 50, color = 'black')
+          G.show(aspect_ratio = 'automatic', figsize = 5)
+          pretty_print(html(r'Valeur exacte : \[\int_{%s}^{%s}f(x)\,\mathrm{d}x=%s\]' %(a, b, integrale)))
+          pretty_print(html(r'Approximation par la méthode de Simpson :\[%s\]'%approximation))
+          pretty_print(html(r'Erreur :\[%s\]' %erreur))
+    </slate>
+  </interactive>
+
+</introduction>
+
+<section xml:id="presentationsimpson">
+<title>Présentation</title>
+
+<p>Nous voulons toujours approcher la valeur d'une intégrale
+  <me>\displaystyle\int_a^bf(x)\mathrm{d}x</me>
+  à l'aide de subdivisions régulières
+  <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+  de l'intervalle <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+  <me>\Delta x=\frac{b-a}{n}.</me>
+</p>
+<p>
+  <ul>
+    <li>
+      <p>Avec la méthode des rectangles, on remplace la fonction <m>f</m> par des fonctions constantes (polynômes de degré zéro) sur chaque sous-intervalle <m>[x_{k-1};x_k]</m>.</p>
+      <p>Cela revient à remplacer
+        <me>\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad\Delta x\cdot f(\xi_k).</me>
+      </p>
+    </li>
+    <li>
+      <p>Avec la méthode des trapèzes, on remplace la fonction <m>f</m> par les morceaux affines (polynômes de degré un au plus) qui interpolent les points <m>(x_{k-1};f(x_{k-1}))</m> et <m>(x_k;f(x_k))</m>.</p>
+      <p>Cela revient à remplacer
+        <me>\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad\frac{\Delta x}{2}\cdot (f(x_{k-1}+f(x_k)).</me>
+      </p>
+    </li>
+    <li><p>Avec la méthode de Simpson, on remplace la fonction <m>f</m> par les morceaux polynomiaux de degré deux au plus qui interpolent les points
+      <me>(x_{k-1};f(x_{k-1})),\; (m_k;f(m_k))\;\text{et}\; (x_k;f(x_k))</me>
+      où <m>m_k</m> est le milieu de l'intervalle <m>[x_{k-1};x_k]</m>, c'est-à-dire
+      <me>m_k=\frac{x_{k-1}+x_k}{2}.</me>
+      </p>
+      <p>Cela revient à remplacer
+        <me>\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad ?</me>
+      </p>
+    </li>
+  </ul>
+</p>
+
+<proposition xml:id="theorieSimpson">
+  <statement>
+    <p>Soit <m>\displaystyle m=\frac{c+d}{2}</m> le milieu de l'intervalle <m>[c;d]</m> et soit <m>\Delta x=d-c</m> sa longueur.</p>
+    <p>La forme de Newton du polynôme interpolateur des points
+      <me>(c;f(c)),\;(m;f(m))\;\text{et}\;(d;f(d))</me>
+      est donnée par
+      <me>N(t)=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}(t-c)(t-m)</me>
+      et
+      <me>\int_c^dN(t)\mathrm{d}t=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).</me>
+    </p>
+  </statement>
+  <proof>
+    <p>Commençons par vérifier que le polynôme interpolateur est bien celui annoncé.</p>
+    <p>D'après la remarque <xref ref="lagrangeEtNewtonTroisPoints"/>, on a
+      <md>
+        <mrow>N(t)&amp;=f(c)+\frac{f(m)-f(c)}{m-c}(t-c)+\frac{\frac{f(d)-f(m)}{d-m}-\frac{f(m)-f(c)}{m-c}}{d-c}(t-c)(t-m)</mrow>
+        <mrow>&amp;=f(c)+\frac{f(m)-f(c)}{\frac{\Delta x}{2}}(t-c)+\frac{\frac{f(d)-f(m)}{\frac{\Delta x}{2}}-\frac{f(m)-f(c)}{\frac{\Delta x}{2}}}{\Delta x}(t-c)(t-m)</mrow>
+        <mrow>&amp;=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}(t-c)(t-m).</mrow>
+      </md>
+    </p>
+    <p>Notons ensuite que par linéarité de l'intégrale, on a
+      <me>\int_c^dN(t)\mathrm{d}t=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3</me>
+      où
+      <ul>
+        <li>
+          <p>la première intégrale vaut
+            <md>
+              <mrow>I_1&amp;=\int_c^d1\mathrm{d}t</mrow>
+              <mrow>&amp;=t\,\Bigg\vert_c^d</mrow>
+              <mrow>&amp;d-c</mrow>
+              <mrow>&amp;=\Delta x\;,</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>la deuxième intégrale vaut
+            <md>
+              <mrow>I_2&amp;=\int_c^d(t-c)\mathrm{d}t</mrow>
+              <mrow>&amp;=\frac{(t-c)^2}{2}\Bigg\vert_c^d</mrow>
+              <mrow>&amp;=\frac{(d-c)^2}{2}-0</mrow>
+              <mrow>&amp;=\frac{(\Delta x)^2}{2}</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>et la troisième intégrale vaut
+            <md>
+              <mrow>I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t</mrow>
+              <mrow>&amp;=\int_c^d(t-c)\left(t-c-\frac{\Delta x}{2}\right)\mathrm{d}t</mrow>
+              <mrow>&amp;=\int_c^d\left((t-c)^2-\frac{\Delta x}{2}\cdot(t-c)\right)\mathrm{d}t</mrow>
+              <mrow>&amp;=\frac{(t-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d</mrow>
+              <mrow>&amp;=\frac{(d-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(d-c)^2}{2}-0</mrow>
+              <mrow>&amp;=\frac{(\Delta x)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(\Delta x)^2}{2}</mrow>
+              <mrow>&amp;=\frac{(\Delta x)^3}{12}.</mrow>
+            </md>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>On a donc
+      <md>
+        <mrow>\int_c^dN(t)\mathrm{d}t&amp;=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3</mrow>
+        <mrow>&amp;=f(c)\cdot\Delta x+\frac{2(f(m)-f(c))}{\Delta x}\cdot\frac{(\Delta x)^2}{2}</mrow>
+        <mrow>&amp;\qquad+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot\frac{(\Delta x)^3}{12}</mrow>
+        <mrow>&amp;=f(c)\cdot\Delta x+(f(m)-f(c))\cdot\Delta x+(f(c)-2f(m)+f(d))\cdot\frac{\Delta x}{6}</mrow>
+        <mrow>&amp;=\frac{\Delta x}{6}\cdot\left(6f(c)+6(f(m)-f(c))+f(c)-2f(m)+f(d)\right)</mrow>
+        <mrow>&amp;=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).</mrow>
+      </md>
+    </p>
+  </proof>
+</proposition>
+
+<definition>
+  <title>Méthode de Simpson</title>
+  <p>Soit une intégrale définie
+    <me>\int_a^bf(x)\mathrm{d}x</me>
+    et soit
+    <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+    la subdivision régulière de l'intervalle d'intégration <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+    <me>\Delta x=\frac{b-a}{n}.</me>
+  </p>
+  <p>Approcher la valeur de cette intégrale par la méthode des trapèzes à l'aide de cette subdivision revient à considérer l'approximation suivante :
+    <me>\text{Approximation}=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)</me>
+    où
+    <me>m_k=\frac{x_{k-1}+x_k}{2}</me>
+    est le milieu de l'intervalle <m>[x_{k-1};x_k]</m>.
+  </p>
+</definition>
+
+<theorem xml:id="erreur_simpson">
+  <statement>
+    <p>Soit <m>f:[a;b]\longrightarrow\mathbb{R}</m> dérivable quatre fois de sorte que <m>f^{(4)}</m> soit continue sur <m>[a;b]</m>.</p>
+    <p>Soit <m>n\geq 1</m> un entier et soit
+      <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+      la subdivision régulière de l'intervalle d'intégration <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+      <me>\Delta x=\frac{b-a}{n}.</me>
+    </p>
+    <p>Alors l'erreur d'approximation par la méthode des trapèzes
+      <me>\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)}_{\text{Approximation}}</me>
+      vérifie
+      <me>|\text{Erreur}|\leq\frac{M(b-a)^5}{2880n^4}</me>
+      où <m>M</m> est n'importe quel nombre tel que
+      <me>|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].</me>
+    </p>
+  </statement>
+  <proof>
+    <p>À venir.</p>
+  </proof>
+</theorem>
+
+<assemblage>
+  <title>Méthode de Simpson : Approcher l'intégrale d'une fonction en la remplaçant par des morceaux polynomiaux de degré deux</title>
+  <p>
+    <ul>
+      <li><p>Objectif : Obtenir des approximations de la valeur d'une intégrale <m>\displaystyle\int_a^bf(x)\mathrm{d}x</m>.</p></li>
+      <li>
+        <p>Principe : Prendre
+        <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b</me>
+        la subdivision régulière de l'intervalle d'intégration <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
+        <me>\Delta x=\frac{b-a}{n}.</me>
+        Puis effectuer le calcul suivant :
+          <me>\text{Approximation}=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)</me>
+        où <m>m_k=\frac{x_{k-1}+x_k}{2}</m> désigne le milieu de l'intervalle <m>[x_{k-1};x_k]</m> pour tout <m>k=1,\ldots,n</m>.
+        </p>
+      </li>
+      <li><p>Hypothèses : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable quatre fois avec une dérivée quatrième continue sur <m>[a;b]</m>, de sorte qu'il existe <m>M</m> tel que
+        <me>|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].</me>
+        On a alors
+          <me>\left|\text{Erreur}\right|\leq \frac{M(b-a)^5}{2880n^4}.</me>
+        </p>
+      </li>
+      <li><p>Voir aussi : <url href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing">Notes de cours de Jérôme</url>.</p></li>
+    </ul>
+  </p>
+</assemblage>
+
+<example xml:id="exemple_approx_simpson">
+  <p>Déterminons l'approximation obtenue pour l'intégrale définie
+    <me>\int_0^1e^{-x^2}\mathrm{d}x</me>
+    si on applique la méthode de Simpson en subdivisant <m>[0;1]</m> en quatre sous-intervalles de même longueur.
+    <ul>
+      <li><p>Notons <m>f(x)=e^{-x^2}</m>.</p></li>
+      <li><p>On a <m>n=4</m> et <m>\Delta x=\frac{b-a}{n}=\frac{1-0}{4}=0{,}25</m>.</p></li>
+      <li>
+        <p>Alors <m>x_k=a+k\cdot\Delta x=k\cdot 0{,}25</m> pour <m>k=0,\ldots,4</m> donne la subdivision régulière
+          <me>0&lt;0{,}25&lt;0{,}5&lt;0{,}75&lt;1</me>
+          de l'intervalle d'intégration <m>[0;1]</m>.
+        </p>
+      </li>
+      <li>
+        <p>La méthode de Simpson donne alors
+          <md>
+            <mrow>\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)</mrow>
+            <mrow>&amp;=\frac{0{,}25}{6}\cdot(A_1+A_2+A_3+A_4)</mrow>
+          </md>
+          où
+          <ul>
+            <li>
+              <p><m>A_1=f(0)+4f(0{,}125)+f(0{,}25)</m></p>
+            </li>
+            <li>
+              <p><m>A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)</m></p>
+            </li>
+            <li>
+              <p><m>A_3=f(0{,}5)+4f(0{,}625)+f(0{,}75)</m></p>
+            </li>
+            <li>
+              <p><m>A_4=f(0{,}75)+4f(0{,}875)+f(1)</m></p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>Après des calculs fastidieux à la calculatrice ou <url href="https://juliengiol.github.io/algorithmique/algorithmesimpson.html">avec l'aide de notre application</url>, on obtient
+          <me>\text{Approximation}=0{,}746\,826\,120\,527\,46\ldots</me>
+        </p>
+      </li>
+    </ul>
+  </p>
+</example>
+
+<example xml:id="exemple_erreur_simpson">
+  <p>Estimons l'erreur commise à l'exemple précédent <xref ref="exemple_approx_simpson"/>.</p>
+  <p>
+    <ul>
+      <li>
+        <p>On a <m>f(x)=e^{-x^2}</m> et, après des calculs fastidieux ou <url href="https://tinyurl.com/y6dbszyo">avec l'aide d'un logiciel de calcul formel</url>,
+          <me>f^{(4)}(x)=4e^{-x^2}\left(4x^4-12x^2+3\right).</me>
+        </p>
+      </li>
+      <li>
+        <p>Donc
+          <md>
+            <mrow>|f^{(4)}(x)|&amp;=4e^{-x^2}\cdot \left|4x^4-12x^2+3\right|</mrow>
+            <mrow>&amp;\leq 4e^{-x^2}\cdot\left(4x^4+12x^2+3\right)</mrow>
+            <mrow>&amp;\leq 4\cdot\left(4+12+3\right)</mrow>
+            <mrow>&amp;=76</mrow>
+          </md>
+          pour tout <m>x\in[0;1]</m>.
+        </p>
+      </li>
+      <li>
+        <p>Il en découle qu'on peut prendre <m>M=76</m> en appliquant le théorème <xref ref="erreur_simpson"/> :
+          <md>
+            <mrow>\left|\text{Erreur}\right|&amp;\leq\frac{M(b-a)^5}{2880n^4}</mrow>
+            <mrow>&amp;=\frac{76\cdot(1-0)^5}{2880\cdot 4^4}</mrow>
+            <mrow>&amp;=\frac{76}{2880\cdot 4^4}</mrow>
+            <mrow>&amp;=0{,}000\,103\ldots</mrow>
+            <mrow>&amp;\leq 0{,}000\,11</mrow>
+          </md>
+          d'où
+          <me>-0{,}000\,11\leq\text{Erreur}\leq 0{,}000\,11.</me>
+        </p>
+      </li>
+    </ul>
+  </p>
+</example>
+
+<example>
+  <p>Déduisons des deux exemples précédents <xref ref="exemple_approx_trapezes"/> et <xref ref="exemple_erreur_trapezes"/> un encadrement de l'intégrale définie
+    <me>\int_0^1e^{-x^2}\mathrm{d}x</me>
+    avec cinq décimales.
+  </p>
+  <p>D'une part
+    <me>0{,}746\,82\leq\text{Approximation}\leq 0{,}746\,83</me>
+    et d'autre part
+    <me>-0{,}000\,11\leq\text{Erreur}\leq 0{,}000\,11.</me>
+    Donc
+    <me>0{,}746\,82-0{,}000\,11\leq\text{Approximation}+\text{Erreur}\leq 0{,}746\,83+0{,}000\,11</me>
+    c'est-à-dire
+    <me>0{,}746\,71\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 0{,}746\,94.</me>
+  </p>
+  <p>On est donc sûrs des trois premières décimales (746) alors qu'on n'en avait qu'une (7) avec quatre trapèzes.</p>
+</example>
+
+</section>
+
+<section xml:id="algorithmesimpson">
+<title>Algorithme</title>
+
+<algorithm>
+  <title>Méthode de Simpson</title>
+  <statement>
+    <ul>
+      <li><p>Entrées :
+        <ul>
+          <li><p>Assigner à <m>\text{f}</m> la fonction dont on veut approcher l'intégrale.</p></li>
+          <li><p>Assigner à <m>\text{a}</m> et <m>\text{b}</m> les bornes de l'intervalle d'intégration.</p></li>
+          <li><p>Assigner à <m>\text{n}</m> le nombre de sous-intervalles de la subdivision.</p></li>
+        </ul></p>
+      </li>
+      <li><p>Instructions :
+        <ul>
+          <li><p>Initialiser <m>\text{approximation}</m>, la variable qui donnera la somme des aires des rectangles : <m>\text{approximation}=0</m>.</p></li>
+          <li><p>Assigner à <m>\text{deltaX}</m> la valeur <m>(\text{b}-\text{a})/\text{n}</m>.</p></li>
+          <li><p>Pour <m>\text{k}</m> allant de <m>\text{1}</m> à <m>\text{n}</m>,</p>
+            <ul>
+              <li><p>assigner à <m>\text{xi1}</m> la valeur <m>\text{a}+(\text{k-1})\cdot\text{deltaX}</m> ;</p></li>
+              <li><p>assigner à <m>\text{xi2}</m> la valeur <m>\text{xi1}+\text{deltaX}/\text{2}</m> ;</p></li>
+              <li><p>assigner à <m>\text{xi3}</m> la valeur <m>\text{xi1}+\text{deltaX}</m> ;</p></li>
+              <li><p>assigner à <m>\text{approximation}</m> la valeur de <m>\text{f}(\text{xi1})+\text{4}\text{f}(\text{xi2})+\text{f}(\text{xi3})</m>.</p></li>
+            </ul>
+          </li>
+          <li><p>Assigner à <m>\text{approximation}</m> la valeur de <m>\text{approximation}\cdot\text{deltaX}/6</m>.</p></li>
+        </ul></p>
+      </li>
+      <li><p>Résultat : Afficher <m>\text{approximation}</m>.</p></li>
+    </ul>
+  </statement>
+</algorithm>
+
+<p>Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale
+  <me>\int_0^14\sqrt{1-x^2}\,\mathrm{d}x=\pi</me>
+  fournie par la méthode de Simpson pour <m>32</m> sous-intervalles.
+</p>
+
+<sage language='python'>
+  <input>
+    # entrées
+    import numpy as np
+    def f(x):
+        return 4 * np.sqrt(1 - x ** 2)
+    a = 0.0
+    b = 1.0
+    n = 32
+
+    # instructions
+    approximation = 0
+    deltaX = (b - a) / n
+    for k in range(1, n+1):
+        xi1 = a + (k - 1) * deltaX
+        xi2 = xi1 + deltaX / 2
+        xi3 = xi1 + deltaX
+        approximation = approximation + f(xi1) + 4 * f(xi2) + f(xi3)
+    approximation = approximation * deltaX / 6
+
+    # sortie
+    print(approximation)
+  </input>
+</sage>
+
+</section>
+
+<section xml:id="exercicessimpson">
+<title>Exercices</title>
+
+<exercise xml:id="exercices_approx_simpson">
+  <statement>
+    <p>Appliquez la méthode de Simpson pour calculer une approximation de l'intégrale donnée avec le nombre de sous-intervalles indiqué. Au besoin, arrondissez à trois décimales.
+      <ol>
+        <li><p><m>\displaystyle\int_0^1e^{x^2}\mathrm{d}x</m> avec <m>n=6</m>.</p></li>
+        <li><p><m>\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x</m> avec <m>n=4</m>.</p></li>
+        <li><p><m>\displaystyle\int_{-1}^2\ln(\ln(x^2+1)+1)\mathrm{d}x</m> avec <m>n=3</m>.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li><p><m>\text{Approximation}\approx 1{,}463</m></p></li>
+        <li><p><m>\text{Approximation}\approx -0{,}350</m></p></li>
+        <li><p><m>\text{Approximation}\approx 1{,}211</m></p></li>
+      </ol>
+    </p>
+  </answer>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>Notons <m>f(x)=e^{x^2}</m>, <m>n=6</m> et
+            <me>\Delta x=\frac{b-a}{n}=\frac{1-0}{6}=\frac{1}{6}.</me>
+          </p>
+          <p>Voici la subdivision régulière de l'intervalle <m>[0;1]</m> en six sous-intervalles de même longueur :
+            <me>0&lt;\frac{1}{6}&lt;\frac{1}{3}&lt;\frac{1}{2}&lt;\frac{2}{3}&lt;\frac{5}{6}&lt;1.</me>
+            La méthode de Simpson donne alors l'approximation suivante :
+            <md>
+              <mrow>&amp;\frac{\Delta x}{6}\cdot\sum_{k=1}^6\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)</mrow>
+              <mrow>=\;&amp;\frac{1}{36}\cdot\left(A_1+A_2+A_3+A_4+A_5+A_6\right)</mrow>
+            </md>
+            où
+            <ul>
+              <li><p><m>A_1=f(0)+4f(1/12)+f(1/6)</m></p></li>
+              <li><p><m>A_2=f(1/6)+4f(3/12)+f(1/3)</m></p></li>
+              <li><p><m>A_3=f(1/3)+4f(5/12)+f(1/2)</m></p></li>
+              <li><p><m>A_4=f(1/2)+4f(7/12)+f(2/3)</m></p></li>
+              <li><p><m>A_5=f(2/3)+4f(9/12)+f(5/6)</m></p></li>
+              <li><p><m>A_6=f(5/6)+4f(11/12)+f(1)</m></p></li>
+            </ul>
+          </p>
+          <p>Après des calculs fastidieux à la calculatrice ou avec l'aide de notre application, on obtient
+            <me>\text{Approximation}=1{,}4626661264184\ldots\approx 1{,}463.</me>
+          </p>
+        </li>
+        <li>
+          <p>Notons <m>g(x)=\cos\left(\frac{x^3}{5}\right)</m>, <m>n=4</m> et
+            <me>\Delta x=\frac{b-a}{n}=\frac{4-2}{4}=0{,}5.</me>
+          </p>
+          <p>Voici la subdivision régulière de l'intervalle <m>[2;4]</m> en quatre sous-intervalles de même longueur :
+            <me>2&lt;2{,}5&lt;3&lt;3{,}5&lt;4.</me>
+            La méthode de Simpson donne alors l'approximation suivante :
+            <md>
+              <mrow>&amp;\frac{\Delta x}{6}\cdot\sum_{k=1}^4\left(g(x_{k-1})+4g(m_k)+g(x_k)\right)</mrow>
+              <mrow>=\;&amp;\frac{0{,}5}{6}\cdot\left(A_1+A_2+A_3+A_4\right)</mrow>
+            </md>
+            où
+            <ul>
+              <li><p><m>A_1=g(2)+4g(2{,}25)+g(2{,}5)</m></p></li>
+              <li><p><m>A_2=g(2{,}5)+4g(2{,}75)+g(3)</m></p></li>
+              <li><p><m>A_3=g(3)+4g(3{,}25)+g(3{,}5)</m></p></li>
+              <li><p><m>A_4=g(3{,}5)+4g(3{,}75)+g(4)</m></p></li>
+            </ul>
+          </p>
+          <p>Après des calculs fastidieux à la calculatrice ou avec l'aide de notre application, on obtient
+            <me>\text{Approximation}=−0{,}35016073192408\ldots\approx -0{,}350.</me>
+          </p>
+        </li>
+        <li>
+          <p>Notons <m>h(x)=\ln(\ln(x^2+1)+1)</m>, <m>n=3</m> et
+            <me>\Delta x=\frac{b-a}{n}=\frac{2+1}{3}=1.</me>
+          </p>
+          <p>Voici la subdivision régulière de l'intervalle <m>[-1;2]</m> en trois sous-intervalles de même longueur :
+            <me>-1&lt;0&lt;1&lt;2.</me>
+            La méthode de Simpson donne alors l'approximation suivante :
+            <md>
+              <mrow>&amp;\frac{\Delta x}{6}\cdot\sum_{k=1}^3\left(h(x_{k-1})+4h(m_k)+h(x_k)\right)</mrow>
+              <mrow>=\;&amp;\frac{1}{6}\cdot\left(A_1+A_2+A_3\right)</mrow>
+            </md>
+            où
+            <ul>
+              <li><p><m>A_1=h(-1)+4h(-0{,}5)+h(0)</m></p></li>
+              <li><p><m>A_2=h(0)+4h(0{,}5)+h(1)</m></p></li>
+              <li><p><m>A_3=h(1)+4h(1{,}5)+h(2)</m></p></li>
+            </ul>
+          </p>
+          <p>Après des calculs fastidieux à la calculatrice ou avec l'aide de notre application, on obtient
+            <me>\text{Approximation}=1{,}2108544333131\ldots\approx 1{,}211.</me>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Quand c'est possible, estimez l'erreur commise pour chaque intégrale de l'exercice précédent <xref ref="exercices_approx_simpson"/>.</p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>Pour <m>\displaystyle\int_0^1e^{x^2}\mathrm{d}x</m> avec <m>n=6</m>, posons <m>f(x)=e^{x^2}</m>. Alors, avec un peu de patience ou <url href="https://tinyurl.com/y2boog2m">l'aide de SageMathCell</url>, on obtient
+            <me>f^{(4)}(x)=(16x^4+48x^2+12)e^{x^2}.</me>
+            Donc
+            <md>
+              <mrow>|f^{(4)}(x)|&amp;=\left|(16x^4+48x^2+12)e^{x^2}\right|</mrow>
+              <mrow>&amp;=\left|16x^4+48x^2+12\right|\cdot e^{x^2}</mrow>
+              <mrow>&amp;\leq (16x^4+48x^2+12)\cdot e^{x^2}</mrow>
+              <mrow>&amp;\leq (16+48+12)e</mrow>
+              <mrow>&amp;=76e</mrow>
+            </md>
+            pour tout <m>x\in[0;1]</m>. Donc on peut prendre <m>M=76e</m> dans le théorème <xref ref="erreur_simpson"/> et on a
+            <md>
+              <mrow>|\text{Erreur}|&amp;\leq\frac{M(b-a)^5}{2880n^4}</mrow>
+              <mrow>&amp;=\frac{76e(1-0)^5}{2880\cdot 6^4}</mrow>
+              <mrow>&amp;=\frac{76e}{2880\cdot 6^4}</mrow>
+              <mrow>&amp;=0{,}000\,055\,349\ldots</mrow>
+              <mrow>&amp;\leq 0{,}000\,06.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Pour <m>\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x</m> avec <m>n=4</m>, posons <m>g(x)=\cos\left(\frac{x^3}{5}\right)</m>. Alors, avec un peu de patience ou <url href="https://tinyurl.com/yyf6fvp8">l'aide de SageMathCell</url>, on obtient
+            <me>g^{(4)}(x)=\frac{81}{625}x^8\cos\left(\frac{x^3}{5}\right)+\frac{324}{125}x^5\sin\left(\frac{x^3}{5}\right)-\frac{36}{5}x^2\cos\left(\frac{x^3}{5}\right).</me>
+            Donc
+            <md>
+              <mrow>|g^{(4)}(x)|&amp;=\left|\frac{81}{625}x^8\cos\left(\frac{x^3}{5}\right)+\frac{324}{125}x^5\sin\left(\frac{x^3}{5}\right)-\frac{36}{5}x^2\cos\left(\frac{x^3}{5}\right)\right|</mrow>
+              <mrow>&amp;\leq\frac{81}{625}x^8\left|\cos\left(\frac{x^3}{5}\right)\right|+\frac{324}{125}x^5\left|\sin\left(\frac{x^3}{5}\right)\right|+\frac{36}{5}x^2\left|\cos\left(\frac{x^3}{5}\right)\right|</mrow>
+              <mrow>&amp;\leq\frac{81}{625}x^8+\frac{324}{125}x^5+\frac{36}{5}x^2</mrow>
+              <mrow>&amp;\leq\frac{81}{625}4^8+\frac{324}{125}4^5+\frac{36}{5}4^2</mrow>
+              <mrow>&amp;=11\,262{,}8\ldots</mrow>
+              <mrow>&amp;\leq 11\,263</mrow>
+            </md>
+            pour tout <m>x\in[2;4]</m>. Donc on peut prendre <m>M=11\,263</m> dans le théorème <xref ref="erreur_simpson"/> et on a
+            <md>
+              <mrow>|\text{Erreur}|&amp;\leq\frac{M(b-a)^5}{2880n^4}</mrow>
+              <mrow>&amp;=\frac{11\,263(4-2)^5}{2880\cdot 4^4}</mrow>
+              <mrow>&amp;=\frac{11\,263\cdot 2^5}{2880\cdot 4^4}</mrow>
+              <mrow>&amp;\leq 0{,}488\ldots</mrow>
+              <mrow>&amp;\leq 0{,}5.</mrow>
+            </md>
+          </p>
+        </li>
+        <li><p>Trop difficile au niveau cégep selon moi.</p></li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>En quelle année et où l'auteur de la méthode de Simpson est-il né?</p>
+  </statement>
+  <answer>
+    <p><url href="https://fr.wikipedia.org/wiki/Thomas_Simpson">En 1710 en Angleterre</url>.</p>
+  </answer>
+  <answer>
+    <p><url href="https://fr.wikipedia.org/wiki/Johannes_Kepler">En 1571 en Allemagne</url>.</p>
+  </answer>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Étudier et comprendre la démonstration de la proposition <xref ref="theorieSimpson"/>.</p>
+  </statement>
+  <solution>
+    <p>Y aller un pas à la fois, comme pour grimper une montagne.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Créez une fonction <c>simpson(f, a, b, n)</c> qui donne la valeur approchée de l'intégrale <m>\int_a^bf(x)\mathrm{d}x</m> par la méthode de Simpson pour <m>n</m> sous-intervalles.</p>
+    <p>Testez votre code pour <m>\int_0^1\frac{1}{1+x}\mathrm{d}x</m> avec <m>n=100</m>. Vous devez trouver <m>\approx 0{,}693\,147\,180\,579</m>.</p>
+  </statement>
+  <solution>
+    <pre>
+      # fonction
+      def simpson(f, a, b, n):
+          approximation = 0
+          deltaX = (b - a) / n
+          for k in range(1, n+1):
+              xi1 = a + (k - 1) * deltaX
+              xi2 = xi1 + deltaX / 2
+              xi3 = xi1 + deltaX
+              approximation = approximation + f(xi1) + 4 * f(xi2) + f(xi3)
+          approximation = approximation * deltaX / 6
+          return(approximation)
+
+      # test
+      def f(x):
+          return 1 / (1 + x)
+      print(simpson(f, 0.0, 1.0, 100))
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Modifiez le code donné à la section <xref ref="algorithmesimpson"/> afin de remplacer la boucle <c>for</c> par une boucle <c>while</c> semblable à celle utilisée à la section <xref ref="algorithmerectangles"/>.</p>
+  </statement>
+  <solution>
+    <pre>
+      # entrées
+      import numpy as np
+      def f(x):
+          return 4 * np.sqrt(1 - x ** 2)
+      a = 0.0
+      b = 1.0
+      n = 32
+
+      # instructions
+      approximation = 0
+      deltaX = (b - a) / n
+      xi1 = a
+      while xi1 &lt; b:
+          xi2 = xi1 + deltaX / 2
+          xi3 = xi1 + deltaX
+          approximation = approximation + f(xi1) + 4 * f(xi2) + f(xi3)
+          xi1 = xi1 + deltaX
+      approximation = approximation * deltaX / 6
+
+      # sortie
+      print(approximation)
+    </pre>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Les primitives de la fonction <url href="https://fr.wikipedia.org/wiki/Sinus_cardinal">sinus cardinal</url>
+      <me>f(x)=\frac{\sin(x)}{x}</me>
+      ne peuvent pas être exprimées à l'aide des fonctions élémentaires.</p>
+    <p>On veut utiliser la méthode de Simpson pour obtenir les premières décimales de l'intégrale
+      <me>\int_1^6f(x)\mathrm{d}x.</me>
+    </p>
+    <ol>
+      <li><p>Calculez <m>f^{(4)}(x)</m>.</p></li>
+      <li><p>Vérifiez que vous pouvez prendre <m>M=65</m> pour appliquer le théorème <xref ref="erreur_simpson"/>.</p></li>
+      <li><p>En combien de sous-intervalles de longueur égale, au minimum, doit-on subdiviser l'intervalle <m>[1;6]</m> pour que l'erreur de dépasse pas <m>10^{-9}</m>?</p></li>
+      <li><p>Utilisez l'ordinateur pour calculer l'approximation correspondante?</p></li>
+      <li><p>Quel encadrement pouvez-vous déduire de vos calculs?</p></li>
+      <li><p>Combien de décimales exactes êtes-vous capable de donner?</p></li>
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>Après des calculs fastidieux ou <url href="https://tinyurl.com/yy7ktvrz">avec l'aide d'un logiciel de calcul formel</url>, on obtient
+          <me>f^{(4)}(x)=\frac{\sin(x)}{x}+\frac{4\cos(x)}{x^2}-\frac{12\sin(x)}{x^3}-\frac{24\cos(x)}{x^4}+\frac{24\sin(x)}{x^5}.</me>
+        </p>
+      </li>
+      <li>
+        <p>Pour tout <m>x\in[1;6]</m>, on a
+          <md>
+            <mrow>|f^{(4)}(x)|&amp;=\left|\frac{\sin(x)}{x}+\frac{4\cos(x)}{x^2}-\frac{12\sin(x)}{x^3}-\frac{24\cos(x)}{x^4}+\frac{24\sin(x)}{x^5}\right|</mrow>
+            <mrow>&amp;\leq\frac{|\sin(x)|}{x}+\frac{4|\cos(x)|}{x^2}+\frac{12|\sin(x)|}{x^3}+\frac{24|\cos(x)|}{x^4}+\frac{24|\sin(x)|}{x^5}</mrow>
+            <mrow>&amp;\leq\frac{1}{x}+\frac{4\cdot 1}{x^2}+\frac{12\cdot 1}{x^3}+\frac{24\cdot 1}{x^4}+\frac{24\cdot 1}{x^5}</mrow>
+            <mrow>&amp;\leq 1+4+12+24+24</mrow>
+            <mrow>&amp;=65.</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>On cherche le plus petit <m>n</m> tel que
+          <me>
+            \begin{array}{cccc}
+            &amp;|\text{Erreur}|&amp;\leq&amp;10^{-9}\\
+            \Leftrightarrow&amp;\frac{M(b-a)^5}{2880n^4}&amp;\leq&amp;10^{-9}\\
+            \Leftrightarrow&amp;\frac{65\cdot (6-1)^5}{2880n^4}&amp;\leq&amp;10^{-9}\\
+            \Leftrightarrow&amp;\frac{65\cdot 5^5}{2880n^4}&amp;\leq&amp;\frac{1}{10^9}\\
+            \Leftrightarrow&amp;\frac{65\cdot 5^5\cdot 10^9}{2880}&amp;\leq&amp;n^4\\
+            \Leftrightarrow&amp;\sqrt[4]{\frac{65\cdot 5^5\cdot 10^9}{2880}}&amp;\leq&amp;n\\
+            \Leftrightarrow&amp;515{,}3\ldots&amp;\leq&amp;n.
+            \end{array}
+          </me>
+        </p>
+        <p>Il s'agit donc de <m>n=516</m>.</p>
+      </li>
+      <li>
+        <p><url href="https://tinyurl.com/y47m7zud">Avec l'algorithme</url> de la section <xref ref="algorithmesimpson"/>, on trouve
+          <me>\text{Approximation}=0{,}478\,604\,480\,912\,304\ldots</me>
+        </p>
+      </li>
+      <li>
+        <p>D'une part, on a
+          <me>|\text{Erreur}|\leq 10^{-9}</me>
+          c'est-à-dire
+          <me>-0{,}000\,000\,001=-10^{-9}\leq\text{Erreur}\leq 10^{-9}=0{,}000\,000\,001.</me>
+          D'autre part, on a
+          <me>0{,}478\,604\,480\leq\text{Approximation}\leq 0{,}478\,604\,481.</me>
+          Donc
+          <me>0{,}478\,604\,480-10^{-9}\leq\text{Approximation}+\text{Erreur}\leq 0{,}478\,604\,481+10^{-9}</me>
+          c'est-à-dire
+          <me>0{,}478\,604\,479\leq\int_1^6f(x)\mathrm{d}x\leq 0{,}478\,604\,482.</me>
+        </p>
+      </li>
+      <li><p>Avec cet encadrement, on est sûrs de sept décimales (<m>478\,604\,4</m>).</p></li>
+    </ol>
+  </solution>
+</exercise>
+
+</section>
+
+</chapter>

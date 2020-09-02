@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="newton" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Méthode de Newton-Raphson</title>
+
+<introduction>
+
+  <interactive xml:id="interactive_newton_raphson" platform="sage" width="100%" aspect="10:13">
+    <slate surface="sage">
+      @interact
+      def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 2, width = 30), x0 = input_box(label = html(r'\(x_0\)'), default = 1, width = 10), n = slider(1, 8, 1, 3, label = html(r'\(n\)'))):
+          f(x) = f
+          g(x) = derivative(f(x), x)
+          xi = x0
+          a = b = x0
+          G = point((x0, 0), pointsize = 50)
+          pretty_print(html(r'Approximations du zéro :'))
+          for i in range(1, n+1):
+              yi = f(xi)
+              G = G + line([(xi, 0), (xi, yi)], color = 'black', linestyle = 'dashed')
+              ci = xi - f(xi) / g(xi)
+              G = G + line([(xi, yi), (ci, 0)], color = 'green', linestyle = 'dashed')
+              xi = ci
+              G = G + point((xi, 0), pointsize = 50)
+              a = min(xi, a)
+              b = max(xi, b)
+              pretty_print(html(r'\[x_{%s} = %s\]'% (i, xi.n())))
+          r = (b-a)/20
+          G = G + plot(f(x), (x, a-r, b+r), color = 'red', thickness = 1)
+          G.show(figsize = 5, aspect_ratio = 'automatic')
+    </slate>
+  </interactive>
+
+</introduction>
+
+<section xml:id="presentationnewton">
+<title>Présentation</title>
+
+<lemma xml:id="basedenewton">
+  <statement>
+    <p>Soit <m>f</m> une fonction réelle de la variable réelle et <m>x_0</m> tels que
+      <me>f'(x_0)\neq 0.</me>
+    </p>
+    <p>Alors l'abscisse <m>x_1</m> du point d'intersection de l'axe des <m>x</m> avec la tangente au graphe de <m>f</m> au point <m>(x_0;f(x_0))</m> vaut
+      <me>x_1=x_0-\frac{f(x_0)}{f'(x_0)}.</me>
+    </p>
+  </statement>
+  <proof>
+    <p>L'équation de la tangente au point <m>(x_0;f(x_0))</m> est donnée par
+      <me>y=\text{polynôme de Taylor de degré un au plus en }x_0</me>
+      c'est-à-dire
+      <me>y=f(x_0)+f'(x_0)(x-x_0).</me>
+    </p>
+    <p>Comme l'axe des <m>x</m> a pour équation <m>y=0</m>, on obtient l'abscisse de son intersection avec la tangente ci-dessus en résolvant l'équation suivante :
+      <me>
+        \begin{array}{cccc}
+        &amp;f(x_0)+f'(x_0)(x-x_0)&amp;=&amp;0\\
+        \Leftrightarrow&amp;f'(x_0)(x-x_0)&amp;=&amp;-f(x_0)\\
+        \Leftrightarrow&amp;x-x_0&amp;=&amp;-\frac{f(x_0)}{f'(x_0)}\\
+        \Leftrightarrow&amp;x&amp;=&amp;x_0-\frac{f(x_0)}{f'(x_0)}
+        \end{array}
+      </me>
+    </p>
+  </proof>
+</lemma>
+
+<example xml:id="exempleiterationnewton">
+  <p>Soit <m>f(x)=x^2-2</m> et <m>x_0=2</m>.</p>
+  <p>On a <m>f'(x)=2x</m>, donc <m>f'(2)=4\neq 0</m> et on peut appliquer le lemme <xref ref="basedenewton"/> : l'abscisse <m>x_1</m> du point d'intersection de l'axe des <m>x</m> avec la tangente au graphe de <m>f</m> au point <m>(2;f(2))=(2;2)</m> vaut
+    <md>
+      <mrow>x_1&amp;=2-\frac{f(2)}{f'(2)}</mrow>
+      <mrow>&amp;=2-\frac{2}{4}</mrow>
+      <mrow>&amp;=\frac{3}{2}.</mrow>
+    </md>
+  </p>
+  <p><url href="https://www.desmos.com/calculator/6l4xvj0f6p">Cliquez ici</url> pour vérifier cela graphiquement avec Desmos.</p>
+</example>
+
+<proposition xml:id="criterepournewton">
+  <statement>
+    <p>Soit <m>f:[c;b]\longrightarrow\mathbb{R}</m> une fonction continue sur <m>[c;b]</m> et deux fois dérivable sur <m>]c;b[</m>, telle que
+      <ul>
+        <li><p><m>f(c)=0\;</m>;</p></li>
+        <li><p><m>f'(x)&gt;0</m> et <m>f''(x)&gt;0</m> pour tout <m>x\in ]c;b[\;</m>.</p></li>
+      </ul>
+    </p>
+    <p>Si <m>x_0\in ]c;b[</m>, alors l'abscisse <m>\displaystyle x_1=x_0-\frac{f(x_0)}{f'(x_0)}</m> donnée par le lemme <xref ref="basedenewton"/> vérifie
+      <me>c&lt;x_1&lt;x_0.</me>
+    </p>
+  </statement>
+  <proof>
+    <p>Par le <url href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_des_accroissements_finis#%C3%89nonc%C3%A9">théorème des accroissements finis</url> (le cas <m>n=0</m> de la <url href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Taylor#Formule_de_Taylor-Lagrange">formule de Taylor-Lagrange</url>, parfois aussi appelé théorème de Lagrange) appliqué à l'intervalle <m>[c;x_0]</m>, il existe <m>\xi\in\;]c;x_0[</m> tel que
+      <me>\frac{f(x_0)-f(c)}{x_0-c}=f'(\xi).</me>
+      On en déduit que
+      <me>f(x_0)-f(c)=f'(\xi)(x_0-c)</me>
+      c'est-à-dire
+      <men xml:id="application_taylor_lagrange">f(x_0)=f'(\xi)(x_0-c)</men>
+      puisque <m>f(c)=0</m>.
+    </p>
+    <p>On va maintenant établir les inégalités <m>c&lt;x_1</m> et <m>x_1&lt;x_0</m>.</p>
+    <p>Commençons par la seconde. Comme <m>f'(\xi)&gt;0</m> et <m>x_0&gt;c</m> par hypothèses, on déduit de <xref ref="application_taylor_lagrange"/> que  <m>f(x_0)&gt;0</m>. D'autre part, on a <m>f'(x_0)&gt;0</m> par hypothèse. Donc
+      <me>-\frac{f(x_0)}{f'(x_0)}&lt;0\quad\Rightarrow\quad\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}&lt;x_0.</me>
+    </p>
+    <p>Il reste à montrer que <m>c&lt;x_1</m>. Par positivité de <m>f''</m>, la fonction <m>f'</m> est strictement croissante sur <m>]c;b[</m>. En utilisant cela et <xref ref="application_taylor_lagrange"/>, on a
+      <md>
+        <mrow>\xi&lt;x_0&amp;\quad\Rightarrow\quad f'(\xi)&lt;f'(x_0)</mrow>
+        <mrow>&amp;\quad\Rightarrow\quad\underbrace{f'(\xi)(x_0-c)}_{f(x_0)}&lt;f'(x_0)(x_0-c)</mrow>
+        <mrow>&amp;\quad\Rightarrow\quad \frac{f(x_0)}{f'(x_0)}&lt;x_0-c</mrow>
+        <mrow>&amp;\quad\Rightarrow\quad c&lt;\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}.</mrow>
+      </md>
+    </p>
+  </proof>
+</proposition>
+
+<example xml:id="exempledecroissanceiteration">
+  <p>Reprenons la fonction <m>f(x)=x^2-2</m> et <m>x_0=2</m>.</p>
+  <p>Comme <m>f'(x)=2x</m> et <m>f''(x)=2</m>, les hypothèses de la proposition <xref ref="criterepournewton"/> sont satisfaites avec <m>[c;b]=[\sqrt{2};3]</m>.</p>
+  <p>Comme on l'a calculé à l'exemple <xref ref="exempleiterationnewton"/>, on a
+    <me>x_1=x_0-\frac{f(x_0)}{f'(x_0)}=\frac{3}{2}=1{,}5</me>
+    et, comme prévu par la proposition <xref ref="criterepournewton"/>, on a bien
+    <me>c&lt;x_1&lt;x_0</me>
+    car
+    <me>\sqrt{2}=1{,}414\ldots&lt;1{,}5&lt;2.</me>
+  </p>
+  </example>
+
+<remark>
+  <p>En d'autres termes, la proposition <xref ref="criterepournewton"/> dit qu'on s'est rapproché du zéro <m>c</m> en passant de <m>x_0</m> à <m>x_1</m>.</p>
+  <p>C'est le principe itératif de la méthode de Newton-Raphson.</p>
+</remark>
+
+<theorem xml:id="methodedenewton">
+  <title>Méthode de Newton-Raphson</title>
+  <statement>
+    <p>Soit <m>f:[c;b]\longrightarrow\mathbb{R}</m> une fonction continue sur <m>[c;b]</m> et deux fois dérivable sur <m>]c;b[</m>, telle que
+      <ul>
+        <li><p><m>f(c)=0\;</m>;</p></li>
+        <li><p><m>f'(x)&gt;0</m> et <m>f''(x)&gt;0</m> pour tout <m>x\in ]c;b[\;</m>.</p></li>
+      </ul>
+    </p>
+    <p>Si <m>x_0\in ]c;b[</m>, alors la formule de récurrence
+      <me>x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0</me>
+      définit une suite strictement décroissante <m>\{x_n\}</m> telle que
+      <me>c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0&lt;b\qquad\text{pour tout}\;n\geq 0</me>
+      et
+      <me>\lim_{n\rightarrow+\infty}x_n=c.</me>
+    </p>
+  </statement>
+  <proof>
+    <p>En itérant la proposition <xref ref="criterepournewton"/>, on voit que la suite <m>\{x_n\}</m> est bien définie et qu'elle vérifie
+      <me>c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0&lt;b\qquad\text{pour tout}\;n\geq 0.</me>
+    </p>
+    <p>En particulier, <m>\{x_n\}</m> est décroissante et minorée par <m>c</m>. Par le <url href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_la_limite_monotone#%C3%89nonc%C3%A9_pour_les_suites">théorème de la limite monotone</url>, on en déduit que
+      <me>\ell=\lim_{n\rightarrow+\infty}x_n\quad\text{existe et vérifie}\quad c\leq\ell&lt;b.</me>
+      Il ne reste plus qu'à montrer que <m>\ell=c</m>.
+    </p>
+    <p>Raisonnons par l'absurde et supposons que <m>c&lt;\ell</m>. Notons alors que
+      <me>\lim_{n\rightarrow+\infty}x_{n+1}=\lim_{n\rightarrow+\infty}x_n=\ell</me>
+      puis que
+      <me>\lim_{n\rightarrow+\infty}f(x_n)=f(\ell)</me>
+      par la continuité de <m>f</m> en <m>\ell</m> (qui découle de sa dérivabilité en ce point), et enfin que
+      <me>\lim_{n\rightarrow+\infty}f'(x_n)=f'(\ell)&gt;0</me>
+      par la continuité de <m>f'</m> en <m>\ell</m> (qui découle de sa dérivabilité en ce point). En faisant tendre <m>n</m> vers l'infini, la relation de récurrence
+      <me>x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0</me>
+      entraîne
+      <md>
+        <mrow>\ell=\ell-\frac{f(\ell)}{f'(\ell)}&amp;\quad\Rightarrow\quad\frac{f(\ell)}{f'(\ell)}=0</mrow>
+        <mrow>&amp;\quad\Rightarrow\quad f(\ell)=0.</mrow>
+      </md>
+      Mais comme <m>f</m> est strictement croissante sur <m>[c;b]</m> par positivité de <m>f'</m>,
+        <me>c&lt;\ell\qquad\Rightarrow\qquad f(c)=0&lt;f(\ell)</me>
+      d'où la contradiction.
+    </p>
+  </proof>
+</theorem>
+
+<example xml:id="x2moins2newton">
+  <p>Partant de <m>x_0=2</m>, effectuons trois itérations de la méthode de Newton-Raphson pour la fonction <m>f(x)=x^2-2</m>, dont on a déjà observé à l'exemple <xref ref="exempledecroissanceiteration"/> qu'elle vérifie les conditions du théorème <xref ref="methodedenewton"/> <m>[c;b]=[\sqrt{2};3]</m>.</p>
+  <p>Notons que
+    <me>x-\frac{f(x)}{f'(x)}=x-\frac{x^2-2}{2x}=x-\frac{x}{2}+\frac{1}{x}=\frac{x}{2}+\frac{1}{x}</me>
+  </p>
+  <p>On trouve donc
+    <md>
+      <mrow>x_0&amp;=2</mrow>
+      <mrow>x_1&amp;=\frac{x_0}{2}+\frac{1}{x_0}=\frac{2}{2}+\frac{1}{2}=\frac{3}{2}=1{,}5</mrow>
+      <mrow>x_2&amp;=\frac{x_1}{2}+\frac{1}{x_1}=\frac{3}{4}+\frac{2}{3}=\frac{17}{12}=1{,}41\overline{6}</mrow>
+      <mrow>x_3&amp;=\frac{x_2}{2}+\frac{1}{x_2}=\frac{17}{24}+\frac{12}{17}=\frac{577}{408}=1{,}414\,215\,686\ldots</mrow>
+    </md>
+  </p>
+  <p>Comme <m>\sqrt{2}=1{,}414\,213\,562\ldots</m>, trois itérations ont suffi pour obtenir cinq décimales correctes du zéro <m>c=\sqrt{2}</m> de <m>f(x)=x^2-2</m>.</p>
+</example>
+
+<remark xml:id="methodedenewtonbis">
+  <p>On déduit du théorème <xref ref="methodedenewton"/> la version symétrique suivante.</p>
+  <p>Soit <m>f:[a;c]\longrightarrow\mathbb{R}</m> une fonction continue sur <m>[a;c]</m> et deux fois dérivable sur <m>]a;c[</m>, telle que
+    <ul>
+      <li><p><m>f(c)=0\;</m>;</p></li>
+      <li><p><m>f'(x)&lt;0</m> et <m>f''(x)&gt;0</m> pour tout <m>x\in ]a;c[\;</m>.</p></li>
+    </ul>
+  </p>
+  <p>Si <m>x_0\in ]a;c[</m>, alors la formule de récurrence
+    <me>x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0</me>
+    définit une suite strictement croissante <m>\{x_n\}</m> telle que
+    <me>a&lt;x_0&lt;x_1&lt;\ldots&lt;x_n&lt;x_{n+1}&lt;\ldots&lt;c\qquad\text{pour tout}\;n\geq 0</me>
+    et
+    <me>\lim_{n\rightarrow+\infty}x_n=c.</me>
+  </p>
+</remark>
+
+<example>
+  <p>Partant de <m>x_0=-2</m>, effectuons trois itérations de la méthode de Newton-Raphson pour la fonction
+    <me>f(x)=x^2-3</me>
+    qui satisfait les hypothèses vues à la remarque <xref ref="methodedenewtonbis"/> avec <m>[a;b]=[-3;-\sqrt{3}]</m>, car
+    <me>f'(x)=2x&lt;0\quad\text{et}\quad f''(x)=2&gt;0\quad\forall x\in]-3;-\sqrt{3}[.</me>
+  </p>
+  <p>Comme
+    <me>x-\frac{f(x)}{f'(x)}=x-\frac{x^2-3}{2x}=x-\frac{x}{2}+\frac{3}{2x}=\frac{x}{2}+\frac{3}{2x}</me>
+  </p>
+  <p>on trouve
+    <md>
+      <mrow>x_0&amp;=-2</mrow>
+      <mrow>x_1&amp;=\frac{x_0}{2}+\frac{3}{2x_0}=-1-\frac{3}{4}=-\frac{7}{4}=-1{,}75</mrow>
+      <mrow>x_2&amp;=\frac{x_1}{2}+\frac{3}{2x_1}=-\frac{7}{8}-\frac{6}{7}=-\frac{97}{56}=-1{,}732\,142\,857\,142\,8\ldots</mrow>
+      <mrow>x_3&amp;=\frac{x_2}{2}+\frac{3}{2x_2}=-\frac{97}{112}-\frac{84}{97}=-\frac{18817}{10864}=-1{,}732\,050\,810\,014\,7\ldots</mrow>
+    </md>
+  </p>
+  <p>Puisque <m>-\sqrt{3}=-1{,}732\,050\,807\,568\,8\ldots</m>, trois itérations ont suffi pour obtenir sept décimales correctes du zéro <m>c=-\sqrt{3}</m> de <m>f(x)=x^2-3</m>.</p>
+</example>
+
+<remark>
+  <p>Quitte à changer <m>f</m> pour <m>-f</m> qui a les mêmes zéros, on peut inclure aussi les deux cas suivants.
+    <ul>
+      <li><p>Si <m>f'&lt;0</m> et <m>f''&lt;0</m> sur <m>]c;b[</m>, alors <m>x_0\in ]c;b[</m> engendre une suite strictement décroissante qui converge vers <m>c</m>.</p></li>
+      <li><p>Si <m>f'&lt;0</m> et <m>f''&gt;0</m> sur <m>]a;c[</m>, alors <m>x_0\in ]a;c[</m> engendre une suite strictement croissante qui converge vers <m>c</m>.</p></li>
+    </ul>
+  </p>
+</remark>
+
+<p>La méthode de Newton-Raphson semble donc fournir de bonnes approximations lorsqu'on cherche les zéros d'une fonction. Il reste à trouver des hypothèses qui permettent d'en estimer la précision.
+  <ul>
+    <li><p>Voir l'exercice <xref ref="newtonestquadratique"/> pour un résultat pas trop difficile à démontrer, sous les hypothèses du théorème <xref ref="methodedenewton"/> ou de n'importe laquelle de ses versions symétriques.</p></li>
+    <li><p>Voir le théorème <xref ref="convergence_quadratique_newton"/> ci-après pour un résultat plus général, mais plus difficile à démontrer.</p></li>
+  </ul>
+</p>
+
+<theorem xml:id="convergence_quadratique_newton">
+  <statement>
+    <p>Soit <m>f</m> une fonction deux fois dérivable autour d'un zéro <m>c</m> de sorte qu'il existe <m>r&gt;0</m> tel que
+      <ul>
+        <li><p><m>f'(x)\neq 0</m> pour tout <m>x\in[c-r;c+r]</m>;</p></li>
+        <li><p><m>f''</m> est continue sur <m>x\in[c-r;c+r]</m>.</p></li>
+      </ul>
+    </p>
+    <p>Soit <m>M&gt;0</m> tel que
+      <me>\frac{|f''(x)|}{|f'(x)|}\leq M\qquad\text{pour tout }x\in[c-r;c+r].</me>
+    </p>
+    <p>Alors pour tout point de départ <m>x_0</m> tel que
+      <me>|x_0-c|&lt;\min\left\{r;\frac{1}{M}\right\}</me>
+      la suite définie par la formule de récurrence
+      <me>x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0</me>
+      converge vers <m>c</m> et vérifie
+      <me>|x_{n+1}-c|\leq M|x_n-c|^2\qquad\text{pour tout }n\geq 0</me>
+      ainsi que
+      <me>|x_n-c|\leq\frac{1}{M}\left(M|x_0-c|\right)^{2^n}\qquad\text{pour tout }n\geq 1.</me>
+    </p>
+    <p>Remarque : Cet énoncé est très fortement inspiré d'un théorème de l'excellent livre <url href="https://www.grenoble-sciences.fr/pap-ebook/demailly/accueil">Analyse numérique et équations différentielles</url> de Jean-Pierre Demailly, avec l'accord de son auteur.</p>
+  </statement>
+  <proof>
+    <p>Il me semble que c'est trop difficile au niveau cégep.</p>
+  </proof>
+</theorem>
+
+<remark>
+  <p>Dans le cas de l'exercice <xref ref="newtonestquadratique"/> ou du théorème <xref ref="convergence_quadratique_newton"/>, on parle de convergence quadratique à cause de l'exposant <m>2</m> dans les inégalités qui en découlent.</p>
+  <p>En pratique, cela entraîne que le nombre de décimales exactes double grosso modo à chaque itération.</p>
+  <p>Pour simplifier, on se contentera des hypothèses indiquées dans l'encadré qui suit.</p>
+</remark>
+
+<assemblage>
+  <title>Méthode de Newton-Raphson : Approcher un zéro en calculant successivement les zéros des tangentes</title>
+  <p>
+    <ul>
+      <li><p>Objectif : Obtenir des approximations d'un zéro <m>c</m> de la fonction <m>f</m>.</p></li>
+      <li>
+        <p>Hypothèses : On suppose que la fonction <m>f</m> est deux fois dérivable et que <m>f''</m> est continue autour de <m>c</m>, ainsi que
+          <me>f'(c)\neq 0.</me>
+        </p>
+      </li>
+      <li>
+        <p>Principe : Choisir une valeur initiale <m>x_0</m> assez proche de <m>c</m>, et appliquer la formule de récurrence
+        <me>x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}</me>
+        autant de fois que désiré.
+        </p>
+      </li>
+      <li><p>Précision : Le nombre de décimales exactes obtenues via l'approximation de <m>c</m> par <m>x_n</m> double grosso modo à chaque itération, car la convergence est quadratique sous les hypothèses précédentes.</p></li>
+      <li><p>Voir aussi : <url href="https://drive.google.com/file/d/1rn77nSLrjoZnc63BLKJmpv4pwiL2fYJc/view?usp=sharing">Notes de cours de Jérôme</url>.</p></li>
+    </ul>
+  </p>
+</assemblage>
+
+</section>
+
+<section xml:id="algorithmenewton">
+<title>Algorithme</title>
+
+<algorithm>
+  <title>Méthode de Newton-Raphson</title>
+  <statement>
+    <ul>
+      <li>
+        <p>Entrées :
+          <ul>
+            <li>Assigner à <m>\text{f}</m> la fonction dont on cherche à approcher le zéro.</li>
+            <li>Assigner à <m>\text{fPrime}</m> sa dérivée.</li>
+            <li>Assigner à <m>\text{x0}</m> la valeur de départ.</li>
+            <li>Assigner à <m>\text{n}</m> le nombre d'itérations à effectuer.</li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>Instructions :
+          <ul>
+            <li>
+              <p>Pour <m>\text{i}</m> allant de <m>\text{1}</m> à <m>\text{n}</m>,
+                <ul>
+                  <li><p>assigner à <m>\text{x0}</m> la valeur de <m>\displaystyle \text{x0}-\frac{\text{f}(\text{x0})}{\text{fPrime}(\text{x0})}</m>.</p></li>
+                </ul>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>Sortie : Afficher <m>\text{x0}</m>.</p>
+      </li>
+    </ul>
+  </statement>
+</algorithm>
+
+<p>Voici une implémentation de cet algorithme qui permet de traiter l'exemple <xref ref="x2moins2newton"/>.</p>
+
+<sage language='python'>
+  <input>
+    # entrées
+    def f(x):
+        return x ** 2 - 2
+    def fPrime(x):
+        return 2 * x
+    x0 = 2.0
+    n = 3
+
+    # instructions
+    for i in range(1, n+1):
+        x0 = x0 - f(x0) / fPrime(x0)
+
+    # sortie
+    print(x0)
+  </input>
+</sage>
+
+</section>
+
+<section xml:id="exercicesnewton">
+<title>Exercices</title>
+
+<exercise>
+  <statement>
+    <p>Pour chacune des fonctions <m>f</m> et chacun des points <m>(x_0;f(x_0))</m> qui suivent, déterminez l'équation de la tangente au graphe de <m>f</m> au point <m>(x_0;f(x_0))</m> comme vous avez l'habitude de le faire.</p>
+    <p>Vérifiez ensuite que cette équation s'obtient directement avec le polynôme de Taylor de degré un au plus de <m>f</m> en <m>x_0</m> de la façon suivante :
+      <me>y=f(x_0)+f'(x_0)(x-x_0).</me>
+    </p>
+    <p>
+      <ol>
+        <li><p><m>f(x)=x^2-2</m> et <m>(2;2)</m>.</p></li>
+        <li><p><m>f(x)=\sqrt{x}</m> et <m>(9;3)</m>.</p></li>
+        <li><p><m>f(x)=\sin(x)</m> et <m>\left(\frac{\pi}{3};\frac{\sqrt{3}}{2}\right)</m>.</p></li>
+        <li><p><m>f(x)=\ln(x)</m> et <m>(e;1)</m>.</p></li>
+        <li><p><m>f(x)=\arctan(x)</m> et <m>\left(1;\frac{\pi}{4}\right)</m>.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li><p><m>y=4x-6\quad\Leftrightarrow\quad y=2+4(x-2)</m>.</p></li>
+        <li><p><m>y=\frac{1}{6}x+\frac{3}{2}\quad\Leftrightarrow\quad y=3+\frac{1}{6}(x-9)</m>.</p></li>
+        <li><p><m>y=\frac{1}{2}x+\frac{\sqrt{3}}{2}-\frac{\pi}{6}\quad\Leftrightarrow\quad y=\frac{\sqrt{3}}{2}+\frac{1}{2}\left(x-\frac{\pi}{3}\right)</m>.</p></li>
+        <li><p><m>y=\frac{1}{e}x\quad\Leftrightarrow\quad y=1+\frac{1}{e}(x-e)</m>.</p></li>
+        <li><p><m>y=\frac{1}{2}x+\frac{\pi}{4}-\frac{1}{2}\quad\Leftrightarrow\quad y=\frac{\pi}{4}+\frac{1}{2}(x-1)</m>.</p></li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Pour chacune des fonctions suivantes, effectuez trois itérations de la méthode de Newton-Raphson en partant de la valeur <m>x_0</m> donnée.</p>
+    <p>À chaque itération, arrondissez la valeur <m>x_n</m> calculée à la sixième décimale.</p>
+    <p>Comparez ensuite avec la valeur du zéro <m>c</m> attendu.
+      <ol>
+        <li><p><m>f(x)=\cos(x)</m> et <m>x_0=2</m>.</p></li>
+        <li><p><m>f(x)=x^3-5</m> et <m>x_0=9</m>.</p></li>
+        <li><p><m>f(x)=\ln(x)</m> et <m>x_0=2</m>.</p></li>
+        <li><p><m>f(x)=e^x-1</m> et <m>x_0=5</m>.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>La relation de récurrence donne ici
+            <me>x_{n+1}=x_n+\frac{\cos(x_n)}{\sin(x_n)}.</me>
+            Donc
+            <md>
+              <mrow>x_0&amp;=2</mrow>
+              <mrow>x_1&amp;=x_0+\frac{\cos(x_0)}{\sin(x_0)}\approx 1{,}542\,342</mrow>
+              <mrow>x_2&amp;=x_1+\frac{\cos(x_1)}{\sin(x_1)}\approx 1{,}570\,804</mrow>
+              <mrow>x_3&amp;=x_2+\frac{\cos(x_2)}{\sin(x_2)}\approx 1{,}570\,796</mrow>
+            </md>
+          </p>
+          <p>Comme <m>c=\frac{\pi}{2}\approx 1{,}570\,796\,327</m>, les six décimales de <m>x_3</m> sont correctes.</p>
+        </li>
+        <li>
+          <p>La relation de récurrence donne ici
+            <me>x_{n+1}=x_n-\frac{x_n^3-5}{3x_n^2}.</me>
+            Donc
+            <md>
+              <mrow>x_0&amp;=9</mrow>
+              <mrow>x_1&amp;=x_0-\frac{x_0^3-5}{3x_0^2}\approx 6{,}020\,576</mrow>
+              <mrow>x_2&amp;=x_1-\frac{x_1^3-5}{3x_1^2}\approx 4{,}059\,698</mrow>
+              <mrow>x_3&amp;=x_2-\frac{x_2^3-5}{3x_2^2}\approx 2{,}807\,591</mrow>
+            </md>
+          </p>
+          <p>Comme <m>c=\sqrt[3]{5}\approx 1{,}709\,975\,947</m>, l'approximation <m>c\approx x_3</m> est très mauvaise : on est parti d'une valeur trop éloignée.</p>
+        </li>
+        <li>
+          <p>La relation de récurrence donne ici
+            <me>x_{n+1}=x_n-x_n\cdot\ln(x_n).</me>
+            Donc
+            <md>
+              <mrow>x_0&amp;=2</mrow>
+              <mrow>x_1&amp;=x_0-x_0\cdot\ln(x_0)\approx 0{,}613\,706</mrow>
+              <mrow>x_2&amp;=x_1-x_1\cdot\ln(x_1)\approx 0{,}913\,341</mrow>
+              <mrow>x_3&amp;=x_2-x_2\cdot\ln(x_2)\approx 0{,}996\,132</mrow>
+            </md>
+          </p>
+          <p>Comme <m>c=1</m>, l'approximation <m>c\approx x_3</m> est déjà assez bonne.</p>
+        </li>
+        <li>
+          <p>La relation de récurrence donne ici
+            <me>x_{n+1}=x_n-\frac{e^{x_n}-1}{e^{x_n}}=x_n-1+e^{-x_n}.</me>
+            Donc
+            <md>
+              <mrow>x_0&amp;=5</mrow>
+              <mrow>x_1&amp;=x_0-1+e^{-x_0}\approx 4{,}006\,738</mrow>
+              <mrow>x_2&amp;=x_1-1+e^{-x_1}\approx 3{,}024\,931</mrow>
+              <mrow>x_3&amp;=x_2-1+e^{-x_2}\approx 2{,}073\,492</mrow>
+            </md>
+          </p>
+          <p>Comme <m>c=0</m>, l'approximation <m>c\approx x_3</m> est très mauvaise : on est parti d'une valeur trop éloignée.</p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="newtonaffichetout">
+  <statement>
+    <p>Modifiez le code donné à la section <xref ref="algorithmenewton"/> pour qu'il affiche chacune des valeurs <m>x_n</m> calculées, et pas seulement la dernière.</p>
+  </statement>
+  <solution>
+    <p>Il suffit de déplacer <c>print(x0)</c> à l'intérieur de la boucle <c>for</c> :
+      <pre>
+        # entrées
+        def f(x):
+            return x ** 2 - 2
+        def fPrime(x):
+            return 2 * x
+        x0 = 2.0
+        n = 3
+
+        # instructions / sorties
+        for i in range(1, n+1):
+            x0 = x0 - f(x0) / fPrime(x0)
+            print(x0)
+      </pre>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Soit <m>f(x)=x^4+x^3-23x^2+3x+90</m>.</p>
+    <p>Utilisez le code de l'exercice <xref ref="newtonaffichetout"/> pour effectuer cinq itérations de la méthode de Newton-Raphson en partant de la valeur indiquée.
+      <ol>
+        <li><p><m>x_0=-7</m>.</p></li>
+        <li><p><m>x_0=-4</m>.</p></li>
+        <li><p><m>x_0=-3{,}7</m>.</p></li>
+        <li><p><m>x_0=-3{,}4</m>.</p></li>
+        <li><p><m>x_0=1{,}5</m>.</p></li>
+      </ol>
+    </p>
+    <p>Qu'en concluez-vous?</p>
+  </statement>
+  <solution>
+    <p>Voici le <url href="https://tinyurl.com/yytzsrg2">code à utiliser</url> pour la première question.
+      <ol>
+        <li>
+          <md>
+            <mrow>x_1&amp;\approx -5{,}888\,888\,888\,89</mrow>
+            <mrow>x_2&amp;\approx -5{,}266\,666\,666\,67</mrow>
+            <mrow>x_3&amp;\approx -5{,}034\,003\,446\,3</mrow>
+            <mrow>x_4&amp;\approx -5{,}000\,656\,021\,66</mrow>
+            <mrow>x_5&amp;\approx -5{,}000\,000\,250\,91</mrow>
+          </md>
+        </li>
+        <li>
+          <md>
+            <mrow>x_1&amp;\approx -8{,}666\,666\,666\,67</mrow>
+            <mrow>x_2&amp;\approx -6{,}983\,606\,557\,38</mrow>
+            <mrow>x_3&amp;\approx -5{,}878\,778\,887\,7</mrow>
+            <mrow>x_4&amp;\approx -5{,}261\,880\,298\,96</mrow>
+            <mrow>x_5&amp;\approx -5{,}032\,899\,886\,34</mrow>
+          </md>
+        </li>
+        <li>
+          <md>
+            <mrow>x_1&amp;\approx 4{,}809\,770\,114\,94</mrow>
+            <mrow>x_2&amp;\approx 4{,}071\,162\,995\,41</mrow>
+            <mrow>x_3&amp;\approx 3{,}604\,327\,460\,71</mrow>
+            <mrow>x_4&amp;\approx 3{,}326\,867\,079\,97</mrow>
+            <mrow>x_5&amp;\approx 3{,}171\,261\,769\,54</mrow>
+          </md>
+        </li>
+        <li>
+          <md>
+            <mrow>x_1&amp;\approx -0{,}911\,111\,111\,111</mrow>
+            <mrow>x_2&amp;\approx -2{,}445\,868\,152\,27</mrow>
+            <mrow>x_3&amp;\approx -1{,}995\,122\,063\,35</mrow>
+            <mrow>x_4&amp;\approx -2{,}000\,001\,608\,98</mrow>
+            <mrow>x_5&amp;\approx -2{,}0</mrow>
+          </md>
+        </li>
+        <li>
+          <md>
+            <mrow>x_1&amp;\approx 2{,}618\,852\,459\,02</mrow>
+            <mrow>x_2&amp;\approx 2{,}822\,952\,649\,25</mrow>
+            <mrow>x_3&amp;\approx 2{,}914\,183\,185\,21</mrow>
+            <mrow>x_4&amp;\approx 2{,}957\,707\,604\,78</mrow>
+            <mrow>x_5&amp;\approx 2{,}979\,001\,210\,37</mrow>
+          </md>
+        </li>
+      </ol>
+    </p>
+    <p>D'après ces calculs, il semble que le polynôme <m>f(x)</m> ait des zéros en <m>-5</m>, <m>-2</m> et en <m>3</m>.</p>
+    <p>Effectivement, on peut vérifier que
+      <me>x^4+x^3-23x^2+3x+90=(x+5)(x+2)(x-3)^2.</me>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Soit <m>f(x)=x^3+2x-10</m>.
+      <ol>
+        <li><p>Dressez le tableau de variations de <m>f</m> sur <m>\mathbb{R}</m> en incluant le signe de <m>f'</m>, ainsi que celui de <m>f''</m>.</p></li>
+        <li><p>Expliquez pourquoi <m>f</m> admet un unique zéro <m>c</m> dans l'intervalle <m>]1;2[</m>.</p></li>
+        <li><p>Les hypothèses du théorème <xref ref="methodedenewton"/> sont-elles vérifiées?</p></li>
+        <li><p>Utilisez le code de l'exercice <xref ref="newtonaffichetout"/> pour effectuer cinq itérations de la méthode de Newton-Raphson en partant de <m>x_0=2</m>.</p></li>
+        <li><p>Combien de décimales de <m>c</m> connait-on à la quatrième itération?</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>On a
+            <md>
+              <mrow>f(x)&amp;=x^3+2x-10</mrow>
+              <mrow>f'(x)&amp;=3x^2+2</mrow>
+              <mrow>f''(x)&amp;=6x</mrow>
+            </md>
+          </p>
+          <p>Donc <m>f'</m> ne s'annule pas, et <m>f''</m> s'annule en <m>0</m>.</p>
+          <p>
+            <me>
+              \begin{array}{c|ccccc}
+              x&amp;-\infty&amp;&amp;&amp;&amp;0&amp;&amp;&amp;&amp;+\infty&amp;\\
+              \hline
+              f''(x)&amp;-\infty&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+\infty&amp;\\
+              \hline
+              f'(x)&amp;+\infty&amp;&amp;+&amp;&amp;+&amp;&amp;+&amp;&amp;+\infty&amp;\\
+              \hline
+              f(x)&amp;-\infty&amp;&amp;\nearrow&amp;&amp;-10&amp;&amp;\nearrow&amp;&amp;+\infty&amp;
+              \end{array}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>Comme c'est un polynôme, la fonction <m>f</m> est continue sur l'intervalle <m>[1;2]</m>. Comme
+            <me>f(1)\cdot f(2)=(-7)\cdot 2&lt;0\;,</me>
+            le théorème des valeurs intermédiaires implique qu'il existe un zéro <m>c</m> pour <m>f</m> dans <m>]1;2[</m>.</p>
+          <p>Et comme <m>f</m> est strictement croissante sur <m>]1;2[</m>, il n'y a pas d'autre zéro dans cet intervalle.</p>
+        </li>
+        <li>
+          <p>Grâce au tableau de variations qui précède, on voit que
+            <me>f'(x)&gt;0\qquad\text{et}\qquad f''(x)&gt;0\qquad\text{pour tout }x\in\;]0;3[.</me>
+          </p>
+          <p>Comme <m>c\in ]1;2[\subset]0;3[</m>, les hypothèses du théorème <xref ref="methodedenewton"/> sont donc bien vérifiées avec <m>b=3</m>.</p>
+          <p>Remarque : Les hypothèses de l'encadré sont vérifiées aussi, donc non seulement <m>\{x_n\}</m> converge vers <m>c</m> en décroissant strictement, mais on peut s'attendre à ce que le nombre de décimales exactes double grosso modo à chaque itération.</p>
+        </li>
+        <li>
+          <p>Voici le <url href="https://tinyurl.com/y6hrszru">code à utiliser</url>.
+            <md>
+              <mrow>x_1&amp;\approx 1{,}857\,142\,857\,14</mrow>
+              <mrow>x_2&amp;\approx 1{,}847\,461\,629\,28</mrow>
+              <mrow>x_3&amp;\approx 1{,}847\,419\,038\,65</mrow>
+              <mrow>x_4&amp;\approx 1{,}847\,419\,037\,83</mrow>
+              <mrow>x_5&amp;\approx 1{,}847\,419\,037\,83</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>À partir de la quatrième itération, les onze décimales affichées sont identiques. On peut donc être certains que les dix premières sont exactes. D'où
+            <me>c=1{,}847\,419\,037\,8\ldots</me>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+
+<exercise>
+  <statement>
+    <p>Soit <m>f(x)=3x^5-x^4-1</m>.
+      <ol>
+        <li><p>Dressez le tableau de variations de <m>f</m> sur l'intervalle <m>[0;+\infty[</m> en incluant le signe de <m>f'</m>, ainsi que celui de <m>f''</m>.</p></li>
+        <li><p>Expliquez pourquoi <m>f</m> admet un unique zéro <m>c</m> dans l'intervalle <m>]0{,}3;1[</m>.</p></li>
+        <li><p>Les hypothèses du théorème <xref ref="methodedenewton"/> sont-elles vérifiées?</p></li>
+        <li><p>Utilisez le code de l'exercice <xref ref="newtonaffichetout"/> pour effectuer sept itérations de la méthode de Newton-Raphson en partant de <m>x_0=1</m>.</p></li>
+        <li><p>Combien de décimales de <m>c</m> connait-on à la cinquième itération?</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>On a
+            <md>
+              <mrow>f(x)&amp;=3x^5-x^4-1</mrow>
+              <mrow>f'(x)&amp;=15x^4-4x^3=x^3(15x-4)</mrow>
+              <mrow>f''(x)&amp;=60x^3-12x^2=12x^2(5x-1)</mrow>
+            </md>
+          </p>
+          <p>Donc <m>f'</m> s'annule en <m>0</m> et <m>\frac{4}{15}</m>, et <m>f''</m> s'annule en <m>0</m> et <m>\frac{1}{5}</m>.</p>
+          <p>
+            <me>
+              \begin{array}{c|ccccccc}
+              x&amp;0&amp;&amp;&amp;&amp;1/5&amp;&amp;&amp;&amp;4/15&amp;&amp;&amp;&amp;+\infty&amp;\\
+              \hline
+              f''(x)&amp;0&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+&amp;&amp;+&amp;&amp;+\infty&amp;\\
+              \hline
+              f'(x)&amp;0&amp;&amp;-&amp;&amp;-&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+\infty&amp;\\
+              \hline
+              f(x)&amp;-1&amp;&amp;\searrow&amp;&amp;&amp;&amp;\searrow&amp;&amp;&amp;&amp;\nearrow&amp;&amp;+\infty&amp;
+              \end{array}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>Comme c'est un polynôme, la fonction <m>f</m> est continue sur l'intervalle <m>[4/15;1]</m>. Comme
+            <m>f(0{,}3)\cdot f(1)\approx(-1)\cdot 1&lt;0\;,</m>
+            le théorème des valeurs intermédiaires implique qu'il existe un zéro <m>c</m> pour <m>f</m> dans <m>]0{,}3;1[</m>.</p>
+          <p>Et comme <m>f</m> est strictement croissante sur <m>]0{,}3;1[</m>, il n'y a pas d'autre zéro dans cet intervalle.</p>
+        </li>
+        <li>
+          <p>Grâce au tableau de variations qui précède, on voit que
+            <me>f'(x)&gt;0\qquad\text{et}\qquad f''(x)&gt;0\qquad\text{pour tout }\;x\in\;]4/15;2[.</me>
+          </p>
+          <p>Comme <m>c\in ]0{,}3;1[\subset]4/15;2[</m>, les hypothèses du théorème <xref ref="methodedenewton"/> sont donc bien vérifiées avec <m>b=2</m>.</p>
+          <p>Remarque : Les hypothèses de l'encadré sont vérifiées aussi, donc non seulement <m>\{x_n\}</m> converge vers <m>c</m> en décroissant strictement, mais on peut s'attendre à ce que le nombre de décimales exactes double grosso modo à chaque itération.</p>
+        </li>
+        <li>
+          <p>Voici le <url href="https://tinyurl.com/y6mmam6y">code à utiliser</url>, et voici le résultat :
+            <md>
+              <mrow>x_1&amp;\approx 0{,}909\,090\,909\,091</mrow>
+              <mrow>x_2&amp;\approx 0{,}884\,263\,293\,31</mrow>
+              <mrow>x_3&amp;\approx 0{,}882\,621\,228\,331</mrow>
+              <mrow>x_4&amp;\approx 0{,}882\,614\,429\,406</mrow>
+              <mrow>x_5&amp;\approx 0{,}882\,614\,429\,289</mrow>
+              <mrow>x_6&amp;\approx 0{,}882\,614\,429\,289</mrow>
+              <mrow>x_7&amp;\approx 0{,}882\,614\,429\,289</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>À partir de la cinquième itération, les douze décimales affichées sont identiques. On peut donc être certains que les onze premières sont exactes :
+            <me>c=0{,}882\,614\,429\,28\ldots</me>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="newtonestquadratique">
+  <statement>
+    <p>Supposons les hypothèses du théorème <xref ref="methodedenewton"/> vérifiées.</p>
+    <p>Soit <m>M</m> et <m>m</m> des nombres positifs tels que
+      <me>|f''(x)|\leq M\quad\text{et}\quad|f'(x)|\geq m\quad\text{pour tout }x\in]c;x_0[.</me>
+    </p>
+    <p>Montrez qu'on a
+      <me>|x_{n+1}-c|\leq K|x_n-c|^2\qquad\text{pour tout}\;n\geq 0</me>
+      avec
+      <me>K=\frac{M}{2m}.</me>
+    </p>
+    <p>Remarques :
+      <ul>
+        <li><p>Pour être sûrs que de telles constantes <m>M</m> et <m>m</m> existent, il faut supposer que <m>f''</m> est continue sur <m>[c;x_0]</m> et que <m>f'(c)\neq 0</m>.</p></li>
+        <li><p>On dit alors que la convergence est quadratique à cause de l'exposant <m>2</m> au-dessus de <m>|x_n-c|</m>. Cela entraîne que le nombre de décimales exactes double grosso modo à chaque itération dans l'approximation de <m>c</m> par <m>x_n</m>.</p></li>
+        <li><p>Le même résultat est vrai dans l'une ou l'autre des versions symétriques du théorème <xref ref="methodedenewton"/>, quitte à remplacer <m>]c;x_0[</m> par <m>]x_0;c[</m>.</p></li>
+      </ul>
+    </p>
+  </statement>
+  <solution>
+    <p>Fixons un indice <m>n\geq 0</m>. D'après la <url href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Taylor#Formule_de_Taylor-Lagrange">formule de Taylor-Lagrange</url> à l'ordre <m>2</m> en <m>x_n</m>, il existe <m>\xi\in\;]c;x_n[</m> tel que
+      <md>
+        <mrow>&amp;f(c)=f(x_n)+f'(x_n)(c-x_n)+\frac{f''(\xi)}{2}(c-x_n)^2</mrow>
+        <mrow>\Rightarrow\quad&amp;0=f(x_n)+f'(x_n)(c-x_n)+\frac{f''(\xi)}{2}(c-x_n)^2</mrow>
+        <mrow>\Rightarrow\quad&amp;0=\frac{f(x_n)}{f'(x_n)}+c-x_n+\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2</mrow>
+        <mrow>\Rightarrow\quad&amp;x_n-\frac{f(x_n)}{f'(x_n)}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2</mrow>
+        <mrow>\Rightarrow\quad&amp;x_{n+1}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2</mrow>
+        <mrow>\Rightarrow\quad&amp;|x_{n+1}-c|=\frac{|f''(\xi)|}{2|f'(x_n)|}|x_n-c|^2.</mrow>
+      </md>
+    </p>
+    <p>Finalement, on a
+      <me>|f''(\xi)|\leq M\;\text{et}\;|f'(x_n)|\geq m\quad\Rightarrow\quad\frac{|f''(\xi)|}{2|f'(x_n)|}\leq\frac{M}{2m}.</me>
+    </p>
+    <p>En posant <m>\displaystyle K=\frac{M}{2m}</m> on obtient bien
+      <me>|x_{n+1}-c|=\frac{|f''(\xi)|}{2|f'(x_n)|}|x_n-c|^2\leq K|x_n-c|^2.</me>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>On considère la fonction
+      <me>f(x)=x^3-2.</me>
+      Si on part de <m>x_0=2</m>, le théorème <xref ref="methodedenewton"/> s'applique et la suite <m>\{x_n\}</m> définie par la méthode de Newton-Raphson converge vers
+      <me>c=\sqrt[3]{2}=1{,}259\ldots</me>
+    </p>
+    <ol>
+      <li><p>Montrez qu'on peut prendre <m>M=12</m> et <m>m=3</m> et appliquer le résultat de l'exercice <xref ref="newtonestquadratique"/>.</p></li>
+      <li>
+        <p>Pour tout <m>n</m> allant de <m>0</m> à <m>4</m>, calculez dix décimales de chacune des quantités suivantes :
+          <me>x_n\qquad\qquad x_n-c\qquad\qquad\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}</me>
+        </p>
+      </li>
+      <li><p>Qu'observez-vous? Quel lien faites-vous avec l'exercice <xref ref="newtonestquadratique"/>?</p></li>
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>Comme <m>c\geq 1</m>, on a
+          <me>f'(x)=3x^2\geq 3\cdot 1^2=3\quad\text{et}\quad f''(x)=6x\leq 6\cdot 2=12</me>
+          pour tout <m>x\in]c;x_0[\subset[1;2].</m>
+        </p>
+        <p>Grâce à l'exercice <xref ref="newtonestquadratique"/>, on sait que la convergence de <m>\{x_n\}</m> vers <m>c</m> est quadratique.</p>
+        <p>On s'attend donc à ce que le nombre de décimales exactes de <m>x_n</m> double grosso modo à chaque itération.</p>
+      </li>
+      <li>
+        <p>
+          <me>
+            \begin{array}{c|c|c|c}
+            n&amp;x_n&amp;x_n-c&amp;\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\\
+            \hline
+            0&amp;2{,}000\,000\,000\,0&amp;0{,}740\,078\,950\,10&amp;0{,}438\,326\,754\,1\\
+            1&amp;1{,}500\,000\,000\,0&amp;0{,}240\,078\,950\,10&amp;0{,}631\,099\,414\,7\\
+            2&amp;1{,}296\,296\,296\,2&amp;0{,}036\,375\,246\,40&amp;0{,}764\,212\,910\,3\\
+            3&amp;1{,}260\,932\,224\,7&amp;0{,}001\,011\,174\,84&amp;0{,}792\,852\,043\,6\\
+            4&amp;1{,}259\,921\,860\,5&amp;0{,}000\,000\,810\,67&amp;0{,}793\,448\,496\,3
+            \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>Comme prévu, <m>\displaystyle\lim_{n\rightarrow+\infty}x_n=c</m> se traduit par le fait que <m>x_n-c</m> converge vers <m>0</m>.
+        </p>
+        <p>Pour la dernière colonne, elle semble indiquer que
+          <me>\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\leq 0{,}8\qquad\text{pour tout}\;n\geq 0.</me>
+          D'après l'exercice <xref ref="newtonestquadratique"/>, on a
+          <me>|x_{n+1}-c|\leq K|x_n-c|^2\qquad\text{pour tout}\;n\geq 0</me>
+          d'où
+          <me>\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\leq K=\frac{M}{2m}=\frac{12}{2\cdot 3}=2\qquad\text{pour tout}\;n\geq 0.</me>
+          Il n'est donc pas surprenant qu'on ait observé que les valeurs <m>\displaystyle\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}</m> semblent majorées par <m>0{,}8</m>.
+          En fait, pour être plus précis, on pourrait montrer que cette suite est croissante et majorée par
+          <me>\lim_{n\rightarrow+\infty}\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}=\frac{f''(c)}{2f'(c)}=\frac{6c}{2\cdot 3c^2}=\frac{1}{c}=\frac{1}{\sqrt[3]{2}}\approx 0{,}794.</me>
+        </p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>À l'aide de la méthode de Newton-Raphson, donnez des valeurs arrondies à trois décimales des solutions de l'équation qui suit :
+      <me>e^x-2=x.</me>
+    </p>
+  </statement>
+  <solution>
+    <p>Résoudre cette équation revient à résoudre
+      <me>e^x-2-x=0.</me>
+      Autrement dit, nous cherchons les zéros de la fonction
+      <me>f(x)=e^x-2-x.</me>
+    </p>
+    <p>Comme <m>f'(x)=e^x-1</m> et <m>f''(x)=e^x</m>, on peut dresser le tableau de variations suivant :
+      <me>
+        \begin{array}{c|ccccccc}
+        x&amp;-\infty&amp;&amp;&amp;&amp;0&amp;&amp;&amp;&amp;+\infty&amp;\\
+        \hline
+        f''(x)&amp;0&amp;&amp;+&amp;&amp;+&amp;&amp;+&amp;&amp;+\infty&amp;\\
+        \hline
+        f'(x)&amp;-1&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+\infty&amp;\\
+        \hline
+        f(x)&amp;+\infty&amp;&amp;\searrow&amp;&amp;-1&amp;&amp;\nearrow&amp;&amp;+\infty&amp;
+        \end{array}
+      </me>
+    </p>
+    <p>On en déduit que <m>f</m> possède un zéro positif <m>c_+</m> et un zéro négatif <m>c_-</m>. Pour le premier, le théorème <xref ref="methodedenewton"/> s'applique. Pour le second, c'est sa version symétrique de la remarque <xref ref="methodedenewtonbis"/>.</p>
+    <p>Pour approcher <m>c_+</m>, comme <m>f(2)&gt;0</m>, on part de <m>x_0=2</m>. En arrondissant à six décimales à chaque étape, on trouve
+      <md>
+        <mrow>x_0&amp;=2</mrow>
+        <mrow>x_1&amp;=x_0-\frac{f(x_0)}{f'(x_0)}\approx 1{,}469\,553</mrow>
+        <mrow>x_2&amp;=x_1-\frac{f(x_1)}{f'(x_1)}\approx 1{,}207\,330</mrow>
+        <mrow>x_3&amp;=x_2-\frac{f(x_2)}{f'(x_2)}\approx 1{,}148\,806</mrow>
+        <mrow>x_4&amp;=x_3-\frac{f(x_3)}{f'(x_3)}\approx 1{,}146\,198</mrow>
+        <mrow>x_5&amp;=x_4-\frac{f(x_4)}{f'(x_4)}\approx 1{,}146\,193</mrow>
+      </md>
+      Donc
+        <me>c_+\approx 1{,}146.</me>
+    </p>
+    <p>Et pour approcher <m>c_-</m>, comme <m>f(-2)&gt;0</m>, on part de <m>x_0=-2</m>.
+      <md>
+        <mrow>x_0&amp;=-2</mrow>
+        <mrow>x_1&amp;=x_0-\frac{f(x_0)}{f'(x_0)}\approx -1{,}843\,482</mrow>
+        <mrow>x_2&amp;=x_1-\frac{f(x_1)}{f'(x_1)}\approx -1{,}841\,406</mrow>
+        <mrow>x_3&amp;=x_2-\frac{f(x_2)}{f'(x_2)}\approx -1{,}841\,406</mrow>
+      </md>
+      Donc
+        <me>c_-\approx -1{,}841.</me>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Soit <m>k\geq 2</m> un nombre entier. L'<url href="https://fr.wikipedia.org/wiki/Extraction_de_racine_carr%C3%A9e">extraction de la racine carrée de <m>k</m></url> revient à déterminer le zéro positif <m>c=\sqrt{k}</m> de la fonction
+      <me>f(x)=x^2-k.</me>
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>Prenez n'importe quelle valeur de départ <m>x_0&gt;\sqrt{k}</m> et vérifiez que les hypothèses du théorème <xref ref="methodedenewton"/> sont vérifiées.</p>
+        </li>
+        <li>
+          <p>Montrez que la relation de récurrence de la méthode de Newton-Raphson donne, dans ce cas,
+            <me>x_{n+1}=\frac{x_n+\frac{k}{x_n}}{2}</me>
+            qui n'est autre que la formule de la <url href="https://fr.wikipedia.org/wiki/Extraction_de_racine_carr%C3%A9e#La_m%C3%A9thode_de_H%C3%A9ron">méthode de Héron.</url>
+          </p>
+        </li>
+        <li>
+          <p>Montrez que
+            <me>x_{n+1}-\sqrt{k}=\frac{1}{2x_n}(x_n-\sqrt{k})^2\qquad\text{pour tout}\;n\geq 0.</me>
+          </p>
+        </li>
+        <li>
+          <p>Déduisez-en que
+            <me>\left|x_{n+1}-\sqrt{k}\right|\leq \frac{1}{2}\left|x_n-\sqrt{k}\right|^2\qquad\text{pour tout}\;n\geq 0.</me>
+          </p>
+          <p>Terminologie : On dit que la convergence de la suite <m>\{x_n\}</m> est quadratique à cause du <m>2</m> en exposant.</p>
+        </li>
+        <li>
+          <p>Montrez que
+            <me>\left|x_3-\sqrt{k}\right|\leq \frac{1}{2^7}\left|x_0-\sqrt{k}\right|^8</me>
+            après trois itérations.
+          </p>
+        </li>
+        <li><p>Déduisez de ce qui précède un majorant de la valeur absolue de l'erreur <m>\left|x_3-\sqrt{k}\right|</m> commise lorsqu'on effectue l'approximation de <m>\sqrt{k}</m> par <m>x_3</m> et qu'on part d'une valeur <m>x_0</m> telle que <m>\left|x_0-\sqrt{k}\right|\leq 0{,}5</m>.</p></li>
+        <li>
+          <p>Effectuez trois itérations de la méthode de Newton-Raphson / Héron dans chacun des cas suivants :
+            <ol>
+              <li><p><m>k=3</m> et <m>x_0=2</m>;</p></li>
+              <li><p><m>k=5</m> et <m>x_0=2{,}5</m>.</p></li>
+            </ol>
+          </p>
+        </li>
+        <li>
+          <p>Déduisez de ce qui précède une valeur arrondie à trois décimales pour
+            <ol>
+              <li><p><m>\sqrt{3}</m>;</p></li>
+              <li><p><m>\sqrt{5}</m>.</p></li>
+            </ol>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>Comme <m>f'(x)=2x</m> et <m>f''(x)=2</m> sont positives sur <m>]0;+\infty[</m> et que <m>f''</m> est continue, les hypothèses du théorème <xref ref="methodedenewton"/> sont vérifiées. On a donc
+            <me>c=\sqrt{k}&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0\qquad\text{pour tout}\;n\geq 0</me>
+            et
+            <me>\lim_{n\rightarrow+\infty}x_n=\sqrt{k}.</me>
+          </p>
+        </li>
+        <li>
+          <p>Pour tout <m>n\geq 0</m>, on a
+            <md>
+              <mrow>x_{n+1}&amp;=x_n-\frac{f(x_n)}{f'(x_n)}</mrow>
+              <mrow>&amp;=x_n-\frac{x_n^2-k}{2x_n}</mrow>
+              <mrow>&amp;=x_n-\frac{x_n^2}{2x_n}+\frac{k}{2x_n}</mrow>
+              <mrow>&amp;=x_n-\frac{x_n}{2}+\frac{k}{2x_n}</mrow>
+              <mrow>&amp;=\frac{x_n}{2}+\frac{k}{2x_n}</mrow>
+              <mrow>&amp;=\frac{x_n+\frac{k}{x_n}}{2}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Pour tout <m>n\geq 0</m>, on a
+            <md>
+              <mrow>\frac{1}{2x_n}\left(x_n-\sqrt{k}\right)^2&amp;=\frac{1}{2x_n}\left(x_n^2-2x_n\sqrt{k}+k\right)</mrow>
+              <mrow>&amp;=\frac{x_n^2}{2x_n}-\frac{2x_n\sqrt{k}}{2x_n}+\frac{k}{2x_n}</mrow>
+              <mrow>&amp;=\frac{x_n}{2}-\sqrt{k}+\frac{k}{2x_n}</mrow>
+              <mrow>&amp;=\frac{x_n+\frac{k}{x_n}}{2}-\sqrt{k}</mrow>
+              <mrow>&amp;=x_{n+1}-\sqrt{k}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>La valeur absolue a la propriété suivante :
+            <men xml:id="propvaleurabsolue">\left|A\cdot B\right|=\left|A\right|\cdot\left|B\right|\qquad\text{pour tous}\;A,B\in\mathbb{R}.</men>
+          </p>
+          <p>Par ailleurs, on a <m>k\geq 2</m> par hypothèse et, comme on l'a vu à la première question, <m>\sqrt{k}&lt;x_n</m> pour tout <m>n\geq 0</m>. Donc
+            <me>2x_n&gt;2\sqrt{k}\geq 2\sqrt{2}&gt;2\quad\Rightarrow\quad 2x_n\geq 2</me>
+            d'où
+            <men xml:id="minorxn">0&lt;\frac{1}{2x_n}\leq\frac{1}{2}\qquad\text{pour tout}\;n\geq 0.</men>
+          </p>
+          <p>Pour tout <m>n\geq 0</m>, on a donc
+            <md>
+              <mrow>\left|x_{n+1}-\sqrt{k}\right|&amp;=\left|\frac{1}{2x_n}\left(x_n-\sqrt{k}\right)^2\right|</mrow>
+              <mrow>&amp;=\left|\frac{1}{2x_n}\cdot\left(x_n-\sqrt{k}\right)\cdot\left(x_n-\sqrt{k}\right)\right|</mrow>
+              <mrow>&amp;=\left|\frac{1}{2x_n}\right|\cdot\left|x_n-\sqrt{k}\right|\cdot\left|x_n-\sqrt{k}\right|\qquad\text{par}\;<xref ref="propvaleurabsolue"/></mrow>
+              <mrow>&amp;=\frac{1}{2x_n}\left|x_n-\sqrt{k}\right|^2</mrow>
+              <mrow>&amp;\leq \frac{1}{2}\left|x_n-\sqrt{k}\right|^2\qquad\text{par}\;<xref ref="minorxn"/>.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>En appliquant successivement la majoration de la question précédente pour <m>n=3</m>, puis <m>n=2</m> et enfin <m>n=1</m>, on obtient
+            <md>
+              <mrow>\left|x_3-\sqrt{k}\right|&amp;\leq\frac{1}{2}\cdot\left|x_2-\sqrt{k}\right|^2</mrow>
+              <mrow>&amp;\leq\frac{1}{2}\cdot\left|\frac{1}{2}\cdot\left|x_1-\sqrt{k}\right|^2\right|^2</mrow>
+              <mrow>&amp;=\frac{1}{2}\cdot\frac{1}{2^2}\cdot\left|x_1-\sqrt{k}\right|^4</mrow>
+              <mrow>&amp;\leq\frac{1}{2}\cdot\frac{1}{2^2}\cdot\left|\frac{1}{2}\cdot\left|x_0-\sqrt{k}\right|^2\right|^4</mrow>
+              <mrow>&amp;=\frac{1}{2}\cdot\frac{1}{2^2}\cdot\frac{1}{2^4}\cdot\left|x_0-\sqrt{k}\right|^8</mrow>
+              <mrow>&amp;=\frac{1}{2^7}\left|x_0-\sqrt{k}\right|^8.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>On a
+            <md>
+              <mrow>\left|x_3-\sqrt{k}\right|&amp;\leq\frac{1}{2^7}\left|x_0-\sqrt{k}\right|^8</mrow>
+              <mrow>&amp;\leq\frac{1}{2^7}\cdot 0{,}5^8</mrow>
+              <mrow>&amp;=\frac{1}{2^7}\cdot \frac{1}{2^8}</mrow>
+              <mrow>&amp;=\frac{1}{2^{15}}</mrow>
+              <mrow>&amp;=0{,}000\,030\,517\ldots</mrow>
+            </md>
+          </p>
+          <p>Donc
+            <me>\left|x_3-\sqrt{k}\right|\leq 0{,}000\,031.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <ol>
+              <li>
+                <md>
+                  <mrow>x_0&amp;=2</mrow>
+                  <mrow>x_1&amp;=\frac{x_0+\frac{3}{x_0}}{2}=\frac{2+\frac{3}{2}}{2}=\frac{7}{4}=1{,}75</mrow>
+                  <mrow>x_2&amp;=\frac{x_1+\frac{3}{x_1}}{2}=\frac{\frac{7}{4}+\frac{3\cdot 4}{7}}{2}=\frac{97}{56}=1{,}732\,142\,857\ldots</mrow>
+                  <mrow>x_3&amp;=\frac{x_2+\frac{3}{x_2}}{2}=\frac{\frac{97}{56}+\frac{3\cdot 56}{97}}{2}=\frac{18817}{10864}=1{,}732\,050\,810\ldots</mrow>
+                </md>
+              </li>
+              <li>
+                <md>
+                  <mrow>x_0&amp;=\frac{5}{2}=2{,}5</mrow>
+                  <mrow>x_1&amp;=\frac{x_0+\frac{5}{x_0}}{2}=\frac{\frac{5}{2}+\frac{5\cdot 2}{5}}{2}=\frac{9}{4}=2{,}25</mrow>
+                  <mrow>x_2&amp;=\frac{x_1+\frac{5}{x_1}}{2}=\frac{\frac{9}{4}+\frac{5\cdot 4}{9}}{2}=\frac{161}{72}=2{,}236\,\overline{1}</mrow>
+                  <mrow>x_3&amp;=\frac{x_2+\frac{5}{x_2}}{2}=\frac{\frac{161}{72}+\frac{5\cdot 72}{161}}{2}=\frac{51841}{23184}=2{,}236\,067\,977\ldots</mrow>
+                </md>
+              </li>
+            </ol>
+          </p>
+        </li>
+        <li>
+          <p>Comme <m>x_n&gt;\sqrt{k}</m>, on a <m>\left|x_n-\sqrt{k}\right|=x_n-\sqrt{k}</m> pour tout <m>n\geq 0</m>. La question 6 entraîne donc
+            <me>0\leq x_3-\sqrt{k}\leq 0{,}000\,031</me>
+            d'où
+            <men xml:id="erreurx3">-0{,}000\,031\leq\sqrt{k}-x_3\leq 0.</men>
+            <ol>
+              <li>
+                <p>En utlisant les calculs de la question 7, on obtient l'encadrement
+                  <me>1{,}732\,050\leq x_3\leq 1{,}732\,051.</me>
+                  En additionnant <xref ref="erreurx3"/>, on a alors
+                  <me>1{,}732\,050-0{,}000\,031\leq x_3+\left(\sqrt{3}-x_3\right)\leq 1{,}732\,051+0</me>
+                  c'est-à-dire
+                  <me>1{,}732\,019\leq\sqrt{3}\leq 1{,}732\,051.</me>
+                  On en déduit la valeur arrondie
+                  <me>\sqrt{3}\approx 1{,}732.</me>
+                </p>
+              </li>
+              <li>
+                <p>En utlisant les calculs de la question 7, on obtient l'encadrement
+                  <me>2{,}236\,067\leq x_3\leq 2{,}236\,068.</me>
+                  En additionnant <xref ref="erreurx3"/>, on a alors
+                  <me>2{,}236\,067-0{,}000\,031\leq x_3+\left(\sqrt{5}-x_3\right)\leq 2{,}236\,068+0</me>
+                  c'est-à-dire
+                  <me>2{,}236\,036\leq \sqrt{5}\leq 2{,}236\,068.</me>
+                  On en déduit la valeur arrondie
+                  <me>\sqrt{5}\approx 2{,}236.</me>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Soit <m>f(x)=x^4+2x^2-1</m>.
+      <ol>
+        <li><p>Montrez que la fonction <m>f</m> admet un unique zéro dans l'intervalle <m>]0;1[</m>.</p></li>
+        <li>
+          <p>Utilisez la méthode de la bissection pour montrer que
+            <me>c\in\;]0{,}5;0{,}75[.</me>
+          </p>
+        </li>
+        <li>
+          <p>À partir de cet encadrement, on souhaite affiner l'approximation de <m>c</m> en utlisant la méthode de Newton-Raphson. Quelle valeur de départ faut-il choisir :
+            <me>x_0=0{,}5\qquad\text{ou}\qquad x_0=0{,}75\;?</me>
+          </p>
+        </li>
+        <li><p>Utilisez le code de l'exercice <xref ref="newtonaffichetout"/> pour effectuer trois itérations de la méthode de Newton-Raphson en partant de la valeur <m>x_0</m> choisie à la question précédente.</p></li>
+        <li><p>Quelles sont les deux premières décimales de <m>c</m>?</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>La fonction <m>f</m> est continue sur l'intervalle <m>[0;1]</m> car c'est un polynôme. Comme
+            <me>f(0)\cdot f(1)=(-1)\cdot 2&lt;0</me>
+            le théorème des valeurs intermédiaires implique que <m>f</m> admet un zéro <m>c</m> dans l'intervalle <m>]0;1[</m>.</p>
+          <p>Par ailleurs, on a
+            <me>f'(x)=4x^3+4x=4x(x^2+1).</me>
+            Comme <m>x&gt;0</m> et <m>x^2+1&gt;0</m> pour tout <m>x\in\;]0;1[</m>, on voit que <m>f'(x)&gt;0</m> dans cet intervalle.
+            Donc <m>f</m> est strictement croissante sur <m>]0;1[</m>, et elle ne peut pas s'y annuler plus qu'une fois.
+          </p>
+        </li>
+        <li>
+          <p>
+            <ul>
+              <li>
+                <p>Itération 1 :
+                  <me>
+                    \begin{array}{ c&lt;{{}} c &gt;{{}}c }
+                          a=0 &amp; m=0{,}5 &amp; b=1\\
+                        f(a)=-1 &amp; f(m)=-0{,}4375 &amp; f(b)=2
+                    \end{array}
+                  </me>
+                  <me>\Rightarrow\quad c\in\;]0{,}5;1[</me>
+                </p>
+              </li>
+              <li>
+                <p>Itération 2 :
+                  <me>
+                    \begin{array}{ c&lt;{{}} c &gt;{{}}c }
+                          a=0{,}5 &amp; m=0{,}75 &amp; b=1 \\
+                        f(a)=-0{,}4375 &amp; f(m)=0{,}441\,406\,25 &amp; f(b)=2
+                    \end{array}
+                  </me>
+                  <me>\Rightarrow\quad c\in\;]0{,}5;0{,}75[</me>
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>On a <m>f''(x)=12x^2+4&gt;0</m> pour tout <m>x\in\mathbb{R}</m> et on a déjà vu que <m>f'(x)&gt;0</m> pour tout <m>x\in\;]0;1[</m>.</p>
+          <p>Les hypothèses du théorème <xref ref="methodedenewton"/> sont donc vérifiées avec <m>b=1</m> et c'est <m>x_0=0{,}75</m>, la valeur à droite du zéro, qu'il faut choisir.</p>
+        </li>
+        <li>
+          <p>Voici le <url href="https://tinyurl.com/yxkac9oe">code à utiliser</url>.
+            <md>
+              <mrow>x_1&amp;\approx 0{,}655\,833\,333\,333</mrow>
+              <mrow>x_2&amp;\approx 0{,}643\,775\,873\,119</mrow>
+              <mrow>x_3&amp;\approx 0{,}643\,594\,293\,534</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>Comme on s'attend à ce que le nombre de décimales exactes de <m>c</m> double grosso modo à chaque itération, on déduit des calculs précédents que les deux premières décimales de <m>c</m> sont <m>64</m>.</p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>La méthode de Newton-Raphson est très efficace, mais elle a un gros défaut : elle requiert le calcul de la dérivée <m>f'(x)</m>, ce qui peut parfois donner lieu à des calculs très lourds.</p>
+    <p>Dans ce cas, on peut toujours se rabattre sur la méthode de la sécante, qui consiste à partir de deux valeurs <m>x_0\neq x_1</m> proches du zéro <m>c</m> et à remplacer, à chaque itération, la tangente au point <m>(x_n;f(x_n))</m> par la sécante passant joignant les points <m>(x_{n-1};f(x_{n-1}))</m> et <m>(x_n;f(x_n))</m>.</p>
+    <p>
+      <ol>
+        <li><p>Donnez la relation de récurrence permettant d'exprimer <m>x_{n+1}</m> à l'aide de <m>x_{n-1}</m> et de <m>x_n</m>.</p></li>
+        <li><p>Soit <m>f(x)=e^{-x}-x</m>. Montrez que <m>f</m> est strictement décroissante sur <m>\mathbb{R}</m>.</p></li>
+        <li><p>Montrez que <m>f</m> possède un unique zéro <m>c</m> dans l'intervalle <m>]0;1[</m>.</p></li>
+        <li><p>Partez de <m>x_0=0</m> et <m>x_1=1</m>, puis calculez <m>x_2,x_3,x_4,x_5</m> à l'aide de la méthode de la sécante. Tronquez tous vos résultats à six décimales.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>Prendre cette sécante à la place de la tangente revient à remplacer <m>f'(x_n)</m> par <m>\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}</m> dans la relation de récurrence de la méthode de Newton-Raphson.</p>
+          <p>Pour tout <m>n\geq 0</m>, on a donc
+            <me>x_{n+1}=x_n-\frac{f(x_n)}{\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}}</me>
+            c'est-à-dire
+            <me>x_{n+1}=x_n-\frac{f(x_n)(x_n-x_{n-1})}{f(x_n)-f(x_{n-1})}.</me>
+          </p>
+        </li>
+        <li>
+          <p>On a <m>f'(x)=-e^{-x}-1</m> pour tout <m>x\in\mathbb{R}</m>.</p>
+          <p>Comme <m>e^{-x}&gt;0</m> pour tout <m>x\in\mathbb{R}</m>, il est clair que
+          <me>f'(x)&lt;0\qquad\text{pour tout}\;x\in\mathbb{R}.</me>
+          </p>
+          <p>Par conséquent, <m>f</m> est strictement décroissante sur <m>\mathbb{R}</m>.</p>
+        </li>
+        <li>
+          <p>La fonction <m>f</m> est continue sur <m>\mathbb{R}</m>.</p>
+          <p>On a <m>f(0)=1&gt;0</m> et <m>f(1)=e^{-1}-1&lt;0</m>.</p>
+          <p>Par le théorème des valeurs intermédiaires, la fonction <m>f</m> possède donc un zéro dans l'intervalle <m>]0;1[</m>.</p>
+          <p>Et comme <m>f</m> est strictement décroissante, ce zéro est unique.</p>
+        </li>
+        <li>
+          <p>On trouve
+            <md>
+              <mrow>x_0&amp;=0</mrow>
+              <mrow>x_1&amp;=1</mrow>
+              <mrow>x_2&amp;=x_1-\frac{f(x_1)(x_1-x_0)}{f(x_1)-f(x_0)}=0{,}612\,699\ldots</mrow>
+              <mrow>x_3&amp;=x_2-\frac{f(x_2)(x_2-x_1)}{f(x_2)-f(x_1)}=0{,}563\,838\ldots</mrow>
+              <mrow>x_4&amp;=x_3-\frac{f(x_3)(x_3-x_2)}{f(x_3)-f(x_2)}=0{,}567\,170\ldots</mrow>
+              <mrow>x_5&amp;=x_4-\frac{f(x_4)(x_4-x_3)}{f(x_4)-f(x_3)}=0{,}567\,143\ldots</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+</section>
+
+</chapter>

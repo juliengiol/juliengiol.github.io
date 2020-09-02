@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="chinois" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Théorème des restes chinois</title>
+
+<introduction>
+
+  <interactive xml:id="interactive_chinois" platform="sage" width="100%" aspect="10:7">
+    <slate surface="sage">
+      @interact
+      def _(lesA = input_box(label = html(r'Les \(a_i\)'), default = [3, 4, 5], width = 30), lesM = input_box(label = html(r'Les \(m_i\)'), default = [17, 11, 6], width = 30)):
+
+          def euclideEtendu(m, n):
+              r0, u0, v0, r1, u1, v1 = m, 1, 0, n, 0, 1
+              while r1 != 0:
+                  q = r0 // r1
+                  r0, u0, v0, r1, u1, v1 = r1, u1, v1, r0 - q * r1, u0 - q * u1, v0 - q * v1
+              return (r0, u0, v0)
+
+          pretty_print(html(r'Les solutions du système de %s congruences'%(len(lesM))))
+
+          M = 1
+          for m in lesM:
+              M = M * m
+
+          somme = 0
+          for i in range(0, len(lesM)):
+              ai = lesA[i]
+              mi = lesM[i]
+              pretty_print(html(r'\[x\equiv %s\;\mathrm{mod}\;%s\]'%(ai, mi)))
+              Mi = M // mi
+              ui = euclideEtendu(Mi, mi)[1]
+              somme = somme + ai * Mi * ui
+          pretty_print(html(r'sont caractérisées par la congruence'))
+          pretty_print(html(r'\[x\equiv %s\;\mathrm{mod}\;%s.\]'%(somme, M)))
+    </slate>
+  </interactive>
+
+</introduction>
+
+<section xml:id="presentationchinois">
+<title>Présentation</title>
+
+<problem xml:id="pirates">
+  <p>Une bande de dix-sept pirates possède un trésor constitué de pièces d'or d'égale valeur.
+    Ils projettent de les partager également entre eux, et de donner le reste au cuisinier qui recevrait alors trois pièces.
+    Mais les pirates se querellent, et six d'entre eux sont tués.
+    Désormais, le partage des pirates laisserait quatre pièces au cuisinier.
+    Oui mais voilà, ils font naufrage et seuls le trésor, six pirates et le cuisinier sont sauvés.
+    Le partage donnerait alors cinq pièces d'or à ce dernier.
+    Finalement, le cuisinier décide d'empoisonner le reste des pirates et de garder le trésor pour lui.
+    Sur combien de pièces d'or au minimum peut-il espérer mettre la main?
+  </p>
+</problem>
+
+<p>Si on note <m>x</m> le nombre de pièces d'or de ce trésor, l'énigme précédente se traduit mathématiquement de la façon suivante.</p>
+
+<problem xml:id="pirates2">
+  <p>Trouvez le plus petit entier positif <m>x</m> tel que
+    <ul>
+      <li><p>le reste de la division euclidienne de <m>x</m> par <m>17</m> vaut <m>3</m>,</p></li>
+      <li><p>le reste de la division euclidienne de <m>x</m> par <m>11</m> vaut <m>4</m>,</p></li>
+      <li><p>le reste de la division euclidienne de <m>x</m> par <m>6</m> vaut <m>5</m>.</p></li>
+    </ul>
+  </p>
+</problem>
+
+<p>Pour résoudre ce problème de façon moderne, il faut un minimum de connaissances en <url href="https://fr.wikipedia.org/wiki/Arithm%C3%A9tique_modulaire">arithmétique modulaire</url>. Commençons par introduire le concept de congruence.</p>
+
+<definition xml:id="defcongruence">
+  <title>Congruence dans <m>\mathbb{Z}</m></title>
+  <p>Soit <m>a, b\in\mathbb{Z}</m> et <m>m\in\mathbb{N}^*</m>.</p>
+  <p>Alors les assertions suivantes sont équivalentes :
+    <ol>
+      <li><p><m>a</m> et <m>b</m> donnent le même reste quand on les divise par <m>m</m>;</p></li>
+      <li><p><m>a-b</m> est un multiple de <m>m</m>;</p></li>
+      <li><p><m>m\vert (a-b)</m>;</p></li>
+      <li><p><m>\exists k\in\mathbb{Z},\; a=b+mk</m>.</p></li>
+    </ol>
+    Dans ce cas, on dit que <url href="https://fr.wikipedia.org/wiki/Congruence_sur_les_entiers"><m>a</m> et <m>b</m> sont congrus modulo <m>m</m></url> et on note
+    <me>a\equiv b\;\mathrm{mod}\;m.</me>
+  </p>
+</definition>
+
+<example>
+  <ol>
+    <li>
+      <p>Les divisions euclidiennes de <m>38</m> et <m>-107</m> par <m>5</m> donnent respectivement
+        <me>38=5\cdot 7+3\quad\text{et}\quad -107=5\cdot(-22)+3.</me>
+        On a donc <m>38\equiv -107\;\mathrm{mod}\;5</m>.
+      </p>
+    </li>
+    <li><p>On a <m>8\equiv 2\;\mathrm{mod}\;3</m> car <m>(8-2)=6=2\cdot 3</m> est un multiple de <m>3</m>.</p></li>
+    <li><p>Comme <m>12\vert (84-36)=48=12\cdot 4</m>, on a <m>84\equiv 36\;\mathrm{mod}\;12</m>.</p></li>
+    <li><p>Puisque <m>55=-17+9\cdot 8</m>, on a <m>55\equiv -17\;\mathrm{mod}\;8</m> ainsi que <m>55\equiv -17\;\mathrm{mod}\;9</m>.</p></li>
+  </ol>
+</example>
+
+<p>On peut maintenant reformuler les problèmes <xref ref="pirates"/> et <xref ref="pirates2"/> comme suit.</p>
+
+<problem xml:id="pirates3">
+  <p>Trouvez le plus petit entier positif <m>x</m> tel que
+    <me>\left\{
+      \begin{array}{cccl}
+      x&amp;\equiv&amp;3&amp;\text{mod}\; 17,\\
+      x&amp;\equiv&amp;4&amp;\text{mod}\; 11,\\
+      x&amp;\equiv&amp;5&amp;\text{mod}\; 6.
+      \end{array}
+      \right.
+    </me>
+  </p>
+</problem>
+
+<remark>
+  <ul>
+    <li>
+      <p>Les solutions de l'équation
+        <me>x\equiv 3\;\mathrm{mod}\;17</me>
+        sont les entiers de la <url href="https://fr.wikipedia.org/wiki/Suite_arithm%C3%A9tique">progression arithmétique</url> <m>\left\{3+17k\,|\,k\in\mathbb{Z}\right\}</m>, soit
+        <me>\ldots,\;-48,\;-31,\;-14,\;3,\;20,\;37,\;54,\;71,\;\ldots</me>
+      </p>
+    </li>
+    <li>
+      <p>Les solutions de l'équation
+        <me>x\equiv 4\;\mathrm{mod}\;11</me>
+        sont les entiers de la <url href="https://fr.wikipedia.org/wiki/Suite_arithm%C3%A9tique">progression arithmétique</url> <m>\left\{4+11k\,|\,k\in\mathbb{Z}\right\}</m>, soit
+        <me>\ldots,\;-29,\;-18,\;-7,\;4,\;15,\;26,\;37,\;48,\;\ldots</me>
+      </p>
+    </li>
+    <li>
+      <p>Les solutions de l'équation
+        <me>x\equiv 5\;\mathrm{mod}\;6</me>
+        sont les entiers de la <url href="https://fr.wikipedia.org/wiki/Suite_arithm%C3%A9tique">progression arithmétique</url> <m>\left\{5+6k\,|\,k\in\mathbb{Z}\right\}</m>, soit
+        <me>\ldots,\;-13,\;-7,\;-1,\;5,\;11,\;17,\;23,\;29,\;\ldots</me>
+      </p>
+    </li>
+  </ul>
+  <p>Le problème étudié consiste donc à trouver le plus petit entier positif qui appartienne à chacune de ces trois progressions arithmétiques.</p>
+  <p>Il est loin d'être évident qu'un tel nombre existe! Nous avons besoin d'aller plus loin dans notre compréhension de l'arithmétique modulaire pour le trouver de manière efficace.</p>
+</remark>
+
+<theorem xml:id="theoproparithmodulaire">
+  <statement>
+    <p>Soit <m>m\in\mathbb{N}^*</m> et <m>a, b, c, d\in\mathbb{Z}</m>.</p>
+    <p>Alors on a les propriétés suivantes.
+      <ol>
+        <li>
+          <p>Réflexivité :
+            <me>a\equiv a\;\mathrm{mod}\;m.</me>
+          </p>
+        </li>
+        <li>
+          <p>Symétrie :
+            <me>a\equiv b\;\mathrm{mod}\;m\quad\Leftrightarrow\quad b\equiv a\;\mathrm{mod}\;m.</me>
+          </p>
+        </li>
+        <li>
+          <p>Transitivité :
+            <me>a\equiv b\;\mathrm{mod}\;m\quad\text{et}\quad b\equiv c\;\mathrm{mod}\;m\quad\Rightarrow\quad a\equiv c\;\mathrm{mod}\;m.</me>
+          </p>
+        </li>
+        <li>
+          <p>Addition / Soustraction :
+            <me>a\equiv b\;\mathrm{mod}\;m\quad\text{et}\quad c\equiv d\;\mathrm{mod}\;m\quad\Rightarrow\quad a\pm c\equiv b\pm d\;\mathrm{mod}\;m.</me>
+          </p>
+        </li>
+        <li>
+          <p>Multiplication :
+            <me>a\equiv b\;\mathrm{mod}\;m\quad\text{et}\quad c\equiv d\;\mathrm{mod}\;m\quad\Rightarrow\quad a\cdot c\equiv b\cdot d\;\mathrm{mod}\;m.</me>
+          </p>
+        </li>
+        <li>
+          <p>Exponentiation :
+            <me>a\equiv b\;\mathrm{mod}\;m\quad\Rightarrow\quad a^k\equiv b^k\;\mathrm{mod}\;m</me>
+            pour tout entier positif <m>k</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>C'est un bon exercice de démontrer ces propriétés et c'est l'objet de l'exercice <xref ref="exoproparithmodulaire"/>.</p>
+  </proof>
+</theorem>
+
+<example>
+  <p>Mettons en application les six propriétés ci-dessus.
+    <ol>
+      <li><p>On a
+        <me>154\equiv 154\;\mathrm{mod}\;28.</me>
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>417\equiv 17\;\mathrm{mod}\;10</me>
+          car <m>417-17=400</m> est divisible par <m>10</m>.
+        </p>
+        <p>Donc
+          <me>17\equiv 417\;\mathrm{mod}\;10.</me>
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>3\equiv -1\;\mathrm{mod}\;4</me>
+          car <m>4\vert (3-(-1))=4</m> et
+          <me>-1\equiv 7\;\mathrm{mod}\;4</me>
+          car <m>4\vert (-1-7)=-8</m>.</p>
+        <p>Donc
+          <me>3\equiv 7\;\mathrm{mod}\;4.</me>
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>-12\equiv 8\;\mathrm{mod}\;5</me>
+          car <m>5\vert (-12-8)=-20</m> et
+          <me>33\equiv 23\;\mathrm{mod}\;5</me>
+          car <m>5\vert (33-23)=10</m>.
+        </p>
+        <p>Donc
+          <me>-12+33\equiv 8+23\;\mathrm{mod}\;5,</me>
+          c'est-à-dire
+          <me>21\equiv 31\;\mathrm{mod}\;5.</me>
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>-12\equiv 8\;\mathrm{mod}\;5</me>
+          car <m>5\vert (-12-8)=-20</m> et
+          <me>33\equiv 23\;\mathrm{mod}\;5</me>
+          car <m>5\vert (33-23)=10</m>.</p>
+        <p>Donc
+          <me>(-12)\cdot 33\equiv 8\cdot 23\;\mathrm{mod}\;5,</me>
+          c'est-à-dire
+          <me>-396\equiv 184\;\mathrm{mod}\;5.</me></p>
+      </li>
+      <li>
+        <p>On a
+          <me>417\equiv 7\;\mathrm{mod}\;10</me>
+          car <m>10\vert(417-17)=400</m>.</p>
+        <p>Donc
+          <me>417^2\equiv 7^2\;\mathrm{mod}\;10,</me>
+          <me>417^3\equiv 7^3\;\mathrm{mod}\;10,</me>
+          etc.
+        </p>
+      </li>
+    </ol>
+  </p>
+</example>
+
+<remark>
+  <p>Comme pour les matrices, il y a une multiplication mais (pas vraiment) de division.</p>
+  <p>Avec les matrices, on définit néammoins le concept d'inverse à l'aide du théorème qui suit.</p>
+  <p>Diviser revient alors à multiplier par la matrice inverse, quand elle existe, de même que diviser un nombre réel par <m>5</m> revient à le multiplier par <m>0{,}2</m>.</p>
+</remark>
+
+<theorem>
+  <title>Inverse d'une matrice</title>
+  <statement>
+    <p>Soit <m>A\in M_n(\mathbb{R})</m> une matrice carrée <m>n\times n</m> à coefficients réels. Alors les propriétés suivantes sont équivalentes :
+      <ol>
+        <li><p><m>\exists B\in M_n(\mathbb{R}),\;AB=I_n;</m></p></li>
+        <li><p><m>\exists B\in M_n(\mathbb{R}),\;BA=I_n;</m></p></li>
+        <li><p><m>\det(A)\neq 0</m>.</p></li>
+      </ol>
+    </p>
+    <p>Dans ce cas, une telle matrice <m>B</m> est unique et on l'appelle l'inverse de <m>A</m>.</p>
+  </statement>
+  <proof>
+    <p>Voir votre cours d'algèbre linéaire favori.</p>
+  </proof>
+</theorem>
+
+<p>Avec les congruences, on va utiliser le résultat suivant.</p>
+
+<theorem>
+  <title>Inverse d'un entier modulo un entier positif</title>
+  <statement>
+    <p>Soit <m>a\in\mathbb{Z}</m> et <m>m\in\mathbb{N}^*</m>. Alors les assertions suivantes sont équivalentes :
+      <ol>
+        <li><p><m>\exists u\in\mathbb{Z},\;au\equiv 1\;\mathrm{mod}\;m</m>;</p></li>
+        <li><p><m>\exists(u;v)\in\mathbb{Z}^2,\;au+mv=1</m>;</p></li>
+        <li><p><m>\text{PGCD}(a;m)=1</m>.</p></li>
+      </ol>
+    </p>
+    <p>Dans ce cas, on dit que <m>a</m> est inversible modulo <m>m</m>, on appelle <m>u</m> un inverse de <m>a</m> modulo <m>m</m>, et il en existe une infinité.</p>
+    <p>Quand on dispose d'un inverse particulier <m>u_0</m>, les autres s'obtiennent comme suit :
+      <me>u\text{ est un inverse de }a \text{ modulo }m \quad\Leftrightarrow\quad u\equiv u_0\;\mathrm{mod}\;m.</me>
+    </p>
+  </statement>
+  <proof>
+    <p>Commençons par établir l'équivalence des trois propriétés indiquées en montrant que
+      <me>1\;\Rightarrow\;2\;\Rightarrow\;3\;\Rightarrow\;1.</me>
+      <ul>
+        <li>
+          <p>1 <m>\Rightarrow</m> 2 :</p>
+            <p>Soit <m>u\in\mathbb{Z}</m> tel que <m>au\equiv 1\;\mathrm{mod}\;m</m>.
+            Par la définition <xref ref="defcongruence"/> de la congruence, il existe <m>k\in\mathbb{Z}</m> tel que
+            <me>au=1+km\quad\Rightarrow\quad au+(-k)m=1.</me>
+            La propriété 2 est donc vérifiée, avec <m>v=-k</m>.
+          </p>
+        </li>
+        <li>
+          <p>2 <m>\Rightarrow</m> 3 :</p>
+          <p>Soit <m>(u;v)\in\mathbb{Z}^2</m> tel que <m>au+mv=1</m>. Par le théorème de Bézout <xref ref="thmbezout"/>, on en déduit que <m>\text{PGCD}(a;m)=1</m>.
+          </p>
+        </li>
+        <li>
+          <p>3 <m>\Rightarrow</m> 1 :</p>
+          <p>Supposons que  <m>\text{PGCD}(a;m)=1</m>. Par le théorème de Bachet-Bézout <xref ref="bachetbezout"/>, on en déduit qu'il existe <m>(u;v)\in\mathbb{Z}^2</m> tel que
+            <me>au+mv=1\quad\Rightarrow\quad au=1+(-v)m</me>
+            donc <m>au\equiv 1\;\mathrm{mod}\;m</m> par la définition <xref ref="defcongruence"/> de la congruence.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>Supposons maintenant que ces propriétés sont vérifiées et fixons <m>u_0\in\mathbb{Z}</m> un inverse de <m>a</m> modulo <m>m</m>, c'est-à-dire tel que
+     <me>au_0\equiv 1\;\mathrm{mod}\;m.</me>
+     Il ne nous reste plus qu'à établir l'équivalence suivante, pour tout <m>u\in\mathbb{Z}</m> :
+     <me>au\equiv 1\;\mathrm{mod}\;m\quad\Leftrightarrow\quad u\equiv u_0\;\mathrm{mod}\;m.</me>
+     D'une part, on a
+     <me>
+       \begin{array}{ccc}
+       au\equiv 1\;\mathrm{mod}\;m&amp;\Rightarrow&amp;u_0\cdot (au)\equiv u_0\cdot 1\;\mathrm{mod}\;m\\
+       &amp;\Rightarrow&amp;(u_0a)\cdot u\equiv u_0\;\mathrm{mod}\;m\\
+       &amp;\Rightarrow&amp;1\cdot u\equiv u_0\;\mathrm{mod}\;m\\
+       &amp;\Rightarrow&amp;u\equiv u_0\;\mathrm{mod}\;m.
+       \end{array}
+     </me>
+     Et réciproquement, on a
+     <me>
+       \begin{array}{ccc}
+       u\equiv u_0\;\mathrm{mod}\;m&amp;\Rightarrow&amp;au\equiv au_0\;\mathrm{mod}\;m\\
+       &amp;\Rightarrow&amp;au\equiv 1\;\mathrm{mod}\;m.
+       \end{array}
+     </me>
+    </p>
+  </proof>
+</theorem>
+
+<example xml:id="exempleinversemodulo1">
+  <p>L'entier <m>453</m> est-il inversible modulo <m>222</m>?</p>
+  <p>Non, car l'algorithme d'Euclide montre que <m>\text{PGCD}(453;222)=3\neq 1</m>.</p>
+</example>
+
+<remark>
+  <p>Supposons que <m>a</m> soit inversible modulo <m>m</m>.</p>
+  <p>Pour trouver un inverse particulier, il suffit d'appliquer l'algorithme d'Euclide étendu.</p>
+  <p>En effet, comme <m>\text{PGCD}(a;m)=1</m>, ce dernier fournit un couple de coefficients <m>(u;v)\in\mathbb{Z}^2</m> tels que
+    <me>au+mv=1\quad\Rightarrow\quad au=1+(-v)m\quad\Rightarrow\quad au\equiv 1\;\mathrm{mod}\;m</me>
+    donc le coefficient <m>u</m> est un inverse de <m>a</m> modulo <m>m</m>.
+  </p>
+</remark>
+
+<example xml:id="exempleinversemodulo2">
+  <p>L'entier <m>453</m> est-il inversible modulo <m>221</m>?</p>
+  <p>En appliquant l'algorithme d'Euclide étendu, on obtient
+    <me>\text{PGCD}(453;221)=1\quad\text{et}\quad 1=453\cdot(-20)+221\cdot 41.</me>
+  </p>
+  <p>Donc <m>453</m> est inversible modulo <m>221</m> et <m>-20</m> est un inverse car
+    <me>453\cdot (-20)=1+221\cdot(-41)\equiv 1\;\mathrm{mod}\;221.</me>
+  </p>
+  <p>L'ensemble des inverses <m>u</m> de <m>453</m> modulo <m>221</m> est caractérisé par
+    <me>u\equiv -20\;\mathrm{mod}\;221.</me>
+    Il s'agit donc de la progression arithmétique
+    <me>\ldots,\;\underbrace{-20-221\cdot 2}_{-662},\;\underbrace{-20-221}_{-241},\;-20,\;\underbrace{-20+221}_{201},\;\underbrace{-20+221\cdot 2}_{422},\;\underbrace{-20+221\cdot 3}_{643},\;\ldots</me>
+  </p>
+</example>
+
+<p>Nous sommes maintenant en mesure d'énoncer le théorème qui va nous permettre de résoudre le problème <xref ref="pirates3"/>.</p>
+
+<theorem xml:id="theochinois">
+  <title>Restes chinois</title>
+  <statement>
+    <p>Soit <m>a_1,\ldots,a_n\in\mathbb{Z}</m> et <m>m_1,\ldots,m_n\in\mathbb{N}^*</m> tels que
+      <me>\text{PGCD}(m_i;m_j)=1\quad\text{pour tous } 1\leq i\neq j\leq n.</me>
+    </p>
+    <p>Alors le système de congruences
+      <me>\left\{
+        \begin{array}{cccc}
+        x&amp;\equiv&amp;a_1&amp;\mathrm{mod}\;m_1,\\
+        x&amp;\equiv&amp;a_2&amp;\mathrm{mod}\;m_2,\\
+        \vdots&amp;&amp;\vdots&amp;\vdots\\
+        x&amp;\equiv&amp;a_n&amp;\mathrm{mod}\;m_n,
+        \end{array}\right.
+      </me>
+      admet une infinité de solutions en progression arithmétique, caractérisées par
+      <me>x\equiv x_0\;\mathrm{mod}\;M\quad\Leftrightarrow\quad \exists k\in\mathbb{Z}, x=x_0+Mk.</me>
+      où
+      <me>M=m_1\cdot m_2\cdots m_n</me>
+      et où la solution particulière <m>x_0</m> peut s'obtenir par la combinaison linéaire
+      <me>x_0=a_1M_1u_1+a_2M_2u_2+\cdots+a_nM_nu_n</me>
+      en prenant pour tout <m>i</m> un inverse <m>u_i</m> de <m>M_i=M/m_i</m> modulo <m>m_i</m>, c'est-à-dire
+      <me>M_i=\frac{M}{m_i}=\prod_{j\neq i}m_j\quad\text{et}\quad M_iu_i\equiv 1\;\mathrm{mod}\;m_i.</me>
+    </p>
+  </statement>
+  <proof>
+    <p>À venir.</p>
+  </proof>
+</theorem>
+
+<example>
+  <p>Résolvons le problème <xref ref="pirates3"/> à l'aide du théorème <xref ref="theochinois"/>.</p>
+  <ul>
+    <li>
+      <p>On a
+        <me>a_1=3,\;a_2=4\text{ et }a_3=5.</me>
+      </p>
+    </li>
+    <li>
+      <p>On note que
+        <me>m_1=17,\;m_2=11\text{ et }m_3=6</me>
+        sont premiers entre eux deux à deux, donc on peut appliquer le théorème <xref ref="theochinois"/>.
+      </p>
+    </li>
+    <li>
+      <p>Puis on calcule
+        <me>M=m_1\cdot m_2\cdot m_3=17\cdot 11\cdot 6=1122,</me>
+        et
+        <md>
+          <mrow>M_1&amp;=m_2m_3=11\cdot 6=66,</mrow>
+          <mrow>M_2&amp;=m_1m_3=17\cdot 6=102,</mrow>
+          <mrow>M_3&amp;=m_1m_2=17\cdot 11=187.</mrow>
+        </md>
+      </p>
+    </li>
+    <li>
+      <p>Grâce à l'algorithme d'Euclide étendu, on trouve que
+        <ul>
+          <li>
+            <p><m>1=66\cdot 8+17\cdot (-31)</m> donc
+              <me>\underbrace{66}_{M_1}\cdot\underbrace{8}_{u_1}\equiv 1\;\mathrm{mod}\;\underbrace{17}_{m_1};</me>
+            </p>
+          </li>
+          <li>
+            <p><m>1=102\cdot 4+11\cdot (-37)</m> donc
+              <me>\underbrace{102}_{M_2}\cdot\underbrace{4}_{u_2}\equiv 1\;\mathrm{mod}\;\underbrace{11}_{m_2};</me>
+            </p>
+          </li>
+          <li>
+            <p><m>1=187\cdot 1+6\cdot (-31)</m> donc
+              <me>\underbrace{187}_{M_3}\cdot\underbrace{1}_{u_3}\equiv 1\;\mathrm{mod}\;\underbrace{6}_{m_3}.</me>
+            </p>
+          </li>
+        </ul>
+      </p>
+    </li>
+    <li>
+      <p>On calcule maintenant la solution particulière
+        <me>
+          \begin{array}{ccccccc}
+          x_0&amp;=&amp;a_1M_1u_1&amp;+&amp;a_2M_2u_2&amp;+&amp;a_3M_3u_3\\
+          &amp;=&amp;3\cdot 66\cdot 8&amp;+&amp;4\cdot 102\cdot 4&amp;+&amp;5\cdot 187\cdot 1\\
+          &amp;=&amp;4151.\\
+          \end{array}
+        </me>
+      </p>
+    </li>
+    <li>
+      <p>L'ensemble des solutions est alors caractérisé par l'équation
+        <me>x\equiv x_0\;\mathrm{mod}\;M</me>
+        c'est-à-dire
+        <me>x\equiv 4151\;\mathrm{mod}\;1122.</me>
+        Il s'agit donc de la progression arithmétique
+        <me>\left\{4151+1122k\;|\;k\in\mathbb{Z}\right\}.</me>
+      </p>
+    </li>
+    <li>
+      <p>Il ne reste plus qu'à trouver la plus petite solution positive en soustrayant le bon nombre de multiples de <m>1122</m> à <m>4151</m>, ce qui revient à effectuer la division euclidienne de <m>4151</m> par <m>1122</m> :
+        <me>4151=1122\cdot 3+785.</me>
+      </p>
+    </li>
+  </ul>
+  <p>Nous avons finalement résolu le problème <xref ref="pirates"/>: s'il empoisonne les six pirates qui restent, le cuisinier peut espérer s'emparer de <m>785</m> pièces d'or au minimum.</p>
+</example>
+
+<p>Nous allons maintenant présenter de manière plus synthétique les calculs qui permettent d'appliquer le théorème des restes chinois.</p>
+
+<example xml:id="exemplechinoistableau">
+  <p>Les calculs nécessaires pour résoudre le système
+    <me>\left\{
+      \begin{array}{cccl}
+      x&amp;\equiv&amp;3&amp;\text{mod}\; 17,\\
+      x&amp;\equiv&amp;4&amp;\text{mod}\; 11,\\
+      x&amp;\equiv&amp;5&amp;\text{mod}\; 6
+      \end{array}
+      \right.
+    </me>
+    sont les suivants :
+    <me>
+      \begin{array}{|c|c|c|c|c|c|}
+      \hline
+      a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
+      \hline
+      3&amp;17&amp;66&amp;1=66\cdot 8+17\cdot(-31)&amp;8&amp;1584\\
+      \hline
+      4&amp;11&amp;102&amp;1=102\cdot 4+11\cdot(-37)&amp;4&amp;1632\\
+      \hline
+      5&amp;6&amp;187&amp;1=187\cdot 1+6\cdot(-31)&amp;1&amp;935\\
+      \hline
+      M=&amp;1122&amp;&amp;&amp;x_0=&amp;4151\\
+      \hline
+      \end{array}
+    </me>
+  </p>
+  <p>Et les solutions sont caractérisées par
+    <me>x\equiv 4151\;\mathrm{mod}\;1122.</me>
+  </p>
+</example>
+
+<assemblage>
+  <title>Théorème des restes chinois : Résoudre un système de congruences à l'aide de l'algorithme d'Euclide étendu</title>
+  <p>
+    <ul>
+      <li>
+        <p>Objectif : Résoudre un système de congruences du type
+          <me>\left\{
+            \begin{array}{cccc}
+            x&amp;\equiv&amp;a_1&amp;\mathrm{mod}\;m_1,\\
+            x&amp;\equiv&amp;a_2&amp;\mathrm{mod}\;m_2,\\
+            \vdots&amp;&amp;\vdots&amp;\vdots\\
+            x&amp;\equiv&amp;a_n&amp;\mathrm{mod}\;m_n.
+            \end{array}\right.
+          </me>
+        </p>
+      </li>
+      <li><p>Hypothèse : Il faut que les entiers <m>m_i</m> soient premiers entre eux deux à deux.</p></li>
+      <li>
+        <p>Principe : Remplir le tableau suivant
+          <me>
+            \begin{array}{|c|c|c|c|c|c|}
+            \hline
+            a_1&amp;m_1&amp;M_1=M/m_1&amp;1=M_1u_1+m_1v_1&amp;u_1&amp;a_1M_1u_1\\
+            \hline
+            a_2&amp;m_2&amp;M_2=M/m_2&amp;1=M_2u_2+m_2v_2&amp;u_2&amp;a_2M_2u_2\\
+            \hline
+            \vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+            \hline
+            a_n&amp;m_n&amp;M_n=M/m_n&amp;1=M_nu_n+m_nv_n&amp;u_n&amp;a_nM_nu_n\\
+            \hline
+            M=&amp;\prod m_i&amp;&amp;&amp;x_0=&amp;\sum a_iM_iu_i\\
+            \hline
+            \end{array}
+          </me>
+        </p>
+        <p>Les solutions constituent alors la progression arithmétique caractérisée par
+          <me>x\equiv x_0\;\mathrm{mod}\;M\quad\Leftrightarrow\quad \exists k\in\mathbb{Z}, x=x_0+Mk.</me>
+        </p>
+      </li>
+      <li><p>Voir aussi : <url href="https://drive.google.com/file/d/1XWykGbip4SFK4R56YgqRahgaxohTo-bp/view?usp=sharing">Notes de cours de Jérôme</url>.</p></li>
+      <li><p>Pour aller plus loin : <url href="http://accromath.uqam.ca/2014/10/les-entiers-ces-fonctions-qui-signorent/">Les entiers, ces fonctions qui s'ignorent</url> ou comment tisser des liens entre le théorème des restes chinois et l'interpolation de Lagrange - un excellent article de Jimmy Dillies, dans la revue de vulgarisation mathématique québécoise <url href="http://accromath.uqam.ca/">Accromath</url>.</p></li>
+    </ul>
+  </p>
+</assemblage>
+
+</section>
+
+<section xml:id="algorithmechinois">
+<title>Algorithme</title>
+
+<algorithm>
+  <title>Théorème des restes chinois</title>
+  <statement>
+    <ul>
+      <li><p>Entrées :
+        <ul>
+          <li><p>Assigner à <m>\text{lesA}</m> la liste des <m>a_i</m>.</p></li>
+          <li><p>Assigner à <m>\text{lesM}</m> la liste des <m>m_i</m>.</p></li>
+        </ul></p>
+      </li>
+      <li>
+        <p>Prérequis : Définir une fonction <m>\text{euclideEtendu(a, b)}</m> qui renvoie <m>\text{(r, u, v)}</m> où
+          <ul>
+            <li><p><m>\text{r}</m> est le PGCD de <m>\text{a}</m> et de <m>\text{b}</m>;</p></li>
+            <li><p><m>\text{u}</m> et <m>\text{v}</m> sont les coefficients de la combinaison linéaire donnée par l'algorithme d'Euclide étendu.</p></li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>Instructions :
+          <ul>
+            <li><p>Assigner à <m>\text{M}</m> la valeur <m>1</m>.</p></li>
+            <li>
+              <p>Pour <m>\text{m}</m> parcourant la liste <m>\text{lesM}</m>,
+                <ul>
+                  <li><p>assigner à <m>\text{M}</m> la valeur <m>\text{M}\cdot\text{m}</m>.</p></li>
+                </ul>
+              </p>
+            </li>
+            <li><p>Assigner à <m>\text{x0}</m> la valeur <m>0</m>.</p></li>
+            <li>
+              <p>Pour <m>\text{i}</m> allant de <m>0</m> au nombre d'élements dans la liste <m>\text{lesM}</m> moins <m>1</m>,
+                <ul>
+                  <li><p>assigner à <m>\text{ai}</m> la <m>\text{i}</m>-ème valeur de la liste <m>\text{lesA}</m> ;</p></li>
+                  <li><p>assigner à <m>\text{mi}</m> la <m>\text{i}</m>-ème valeur de la liste <m>\text{lesM}</m> ;</p></li>
+                  <li><p>assigner à <m>\text{Mi}</m> la valeur de <m>\text{M}/\text{mi}</m> ;</p></li>
+                  <li><p>assigner à <m>\text{ui}</m> la deuxième composante de <m>\text{euclideEtendu(Mi, mi)}</m> ;</p></li>
+                  <li><p>assigner à <m>\text{x0}</m> la valeur de <m>\text{x0}+\text{ai}\cdot\text{Mi}\cdot\text{ui}</m>.</p></li>
+                </ul>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li><p>Sortie : Afficher <m>\text{x0}</m> et <m>\text{M}</m>.</p></li>
+    </ul>
+  </statement>
+</algorithm>
+
+<p>Voici une implémentation de cet algorithme qui permet de résoudre le problème <xref ref="pirates3"/>.</p>
+
+<sage language='python'>
+  <input>
+    # entrées
+    lesA = [3, 4, 5]
+    lesM = [17, 11, 6]
+
+    # prérequis
+    def euclideEtendu(a, b):
+        r0, u0, v0, r1, u1, v1 = a, 1, 0, b, 0, 1
+        while r1 != 0:
+            q = r0 // r1
+            r0, u0, v0, r1, u1, v1 = r1, u1, v1, r0 - q * r1, u0 - q * u1, v0 - q * v1
+        return (r0, u0, v0)
+
+    # instructions
+    M = 1
+    for m in lesM:
+        M = M * m
+
+    x0 = 0
+    for i in range(0, len(lesM)):
+        ai = lesA[i]
+        mi = lesM[i]
+        Mi = M / mi
+        ui = euclideEtendu(Mi, mi)[1]
+        x0 = x0 + ai * Mi * ui
+
+    # sortie
+    print(x0, M)
+  </input>
+</sage>
+
+</section>
+
+<section xml:id="exerciceschinois">
+<title>Exercices</title>
+
+<exercise>
+  <statement>
+    <p>Vrai ou faux?
+      <ol>
+        <li><p><m>14\equiv 2\;\mathrm{mod}\;6</m>.</p></li>
+        <li><p><m>14\equiv 0\;\mathrm{mod}\;7</m>.</p></li>
+        <li><p><m>14\equiv -22\;\mathrm{mod}\;8</m>.</p></li>
+        <li><p><m>14\equiv -13\;\mathrm{mod}\;9</m>.</p></li>
+        <li><p><m>25040432829023\equiv 13907346592457\;\mathrm{mod}\;10</m>.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li><p>Vrai car <m>14-2=12=6\cdot 2</m> est divisible par <m>6</m>.</p></li>
+        <li><p>Vrai car <m>14-0=14=7\cdot 2</m> est divisible par <m>7</m>.</p></li>
+        <li><p>Faux car <m>14-(-22)=36=8\cdot 4+4</m> n'est pas divisible par <m>8</m>.</p></li>
+        <li><p>Vrai car <m>14-(-13)=27=9\cdot 3</m> est divisible par <m>9</m>.</p></li>
+        <li><p>Faux car <m>25040432829023\equiv 3\;\mathrm{mod}\;10</m> tandis que <m>13907346592457\equiv 7\;\mathrm{mod}\;10</m>.</p></li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Donnez toutes les valeurs de <m>x\in[-100;150]</m> qui vérifient la congruence indiquée.
+      <ol>
+        <li><p><m>x\equiv 17\;\mathrm{mod}\;42</m>.</p></li>
+        <li><p><m>x\equiv -17\;\mathrm{mod}\;42</m>.</p></li>
+        <li><p><m>x\equiv 17\;\mathrm{mod}\;420</m>.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li><p><m>-67,\;-25,\;17,\;59,\;101,\;143</m>.</p></li>
+        <li><p><m>-59,\;-17,\;25,\;67,\;109</m>.</p></li>
+        <li><p><m>17</m>.</p></li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Quelle heure indique votre montre à aiguilles deux cent huit heures après avoir indiqué cinq heures? On suppose que la montre a un cadran de douze heures, comme la plupart des montres à aiguilles.</p>
+    <p>Remarque : Cet exercice est tiré des <url href="https://www.supinfo.com/cours/1ARI/chapitres/02-questions-divisibilite">excellentes notes de cours de Laurent Godefroy</url>, avec l'accord de leur auteur.</p>
+  </statement>
+  <solution>
+    <p>La réponse est donnée par le reste de la division euclidienne de <m>5+208=213</m> par <m>12</m>, soit <m>9</m> heures, car
+      <me>213=12\cdot 17+9.</me>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Le nombre <m>u</m> est-il un inverse de <m>a</m> modulo <m>m</m>?
+      <ol>
+        <li><p><m>u=7</m>, <m>a=4</m> et <m>m=26</m>.</p></li>
+        <li><p><m>u=69</m>, <m>a=4</m> et <m>m=25</m>.</p></li>
+        <li><p><m>u=3</m>, <m>a=-34</m> et <m>m=9</m>.</p></li>
+        <li><p><m>u=-536</m>, <m>a=1954</m> et <m>m=205</m>.</p></li>
+        <li><p><m>u=3</m>, <m>a=0</m> et <m>m=5</m>.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>Principe : Calculer le reste <m>r</m> de la division euclidienne de <m>ua</m> par <m>m</m>. Alors <m>u</m> est un inverse de <m>a</m> modulo <m>m</m> si et seulement si <m>r=1</m>.</p>
+    <ol>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{cccr}
+            ua&amp;=&amp;7\cdot 4\\
+            &amp;=&amp;28\\
+            &amp;\equiv&amp;2\;\mathrm{mod}\;26&amp;\text{ car }28=26\cdot 1+2.
+            \end{array}
+          </me>
+          Donc <m>u=7</m> n'est pas un inverse de <m>a=4</m> modulo <m>m=26</m>.
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{cccr}
+            ua&amp;=&amp;69\cdot 4\\
+            &amp;=&amp;276\\
+            &amp;\equiv&amp;1\;\mathrm{mod}\;25&amp;\text{ car }276=25\cdot 11+1.\\
+            \end{array}
+          </me>
+          Donc <m>u=69</m> est un inverse de <m>a=4</m> modulo <m>m=25</m>.
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{cccr}
+            ua&amp;=&amp;3\cdot(-34)\\
+            &amp;=&amp;-102\\
+            &amp;\equiv&amp;6\;\mathrm{mod}\;9&amp;\text{ car }-102=9\cdot(-12)+6.\\
+            \end{array}
+          </me>
+          Donc <m>u=3</m> n'est pas un inverse de <m>a=-34</m> modulo <m>m=9</m>.
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{cccr}
+            ua&amp;=&amp;(-536)\cdot 1954\\
+            &amp;=&amp;-1047344\\
+            &amp;\equiv&amp;1\;\mathrm{mod}\;205&amp;\text{ car }-1047344=205\cdot(-5109)+1.\\
+            \end{array}
+          </me>
+          Donc <m>u=-536</m> est un inverse de <m>a=1954</m> modulo <m>m=205</m>.
+        </p>
+      </li>
+      <li>
+        <p>On a
+          <me>
+            \begin{array}{cccr}
+            ua&amp;=&amp;3\cdot 0\\
+            &amp;=&amp;0\\
+            &amp;\equiv&amp;0\;\mathrm{mod}\;5&amp;\text{ car }0=5\cdot 0+0.\\
+            \end{array}
+          </me>
+          Donc <m>u=3</m> n'est pas un inverse de <m>a=0</m> modulo <m>m=5</m>.
+        </p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>L'entier <m>a</m> est-il inversible modulo <m>m</m>? Si oui, explicitez l'ensemble de ses inverses et trouvez le plus petit positif parmi eux.
+      <ol>
+        <li><p><m>a=4</m> et <m>m=26</m>.</p></li>
+        <li><p><m>a=4</m> et <m>m=25</m>.</p></li>
+        <li><p><m>a=-34</m> et <m>m=9</m>.</p></li>
+        <li><p><m>a=1954</m> et <m>m=205</m>.</p></li>
+        <li><p><m>a=0</m> et <m>m=5</m>.</p></li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <ol>
+      <li><p>Non, car <m>\text{PGCD}(4;26)=2\neq 1</m>.</p></li>
+      <li>
+        <p>Oui, car <m>\text{PGCD}(4;25)=1</m>.</p>
+        <p>Grâce à l'algorithme d'Euclide étendu, on obtient la combinaison linéaire
+          <me>1=4\cdot (-6)+25\cdot 1.</me>
+          Donc <m>u_0=-6</m> est un inverse de <m>4</m> modulo <m>25</m>.
+        </p>
+        <p>De plus, l'ensemble des inverses de <m>4</m> modulo <m>25</m> correspond à la progression arithmétique
+          <me>\left\{-6+25k\,|\,k\in\mathbb{Z}\right\}</me>
+          soit
+          <me>\left\{\ldots,\;-6-25,\;-6,\;-6+25,\;-6+25\cdot 2,\;\ldots\right\}.</me>
+        </p>
+        <p>Le plus petit inverse positif de <m>4</m> modulo <m>25</m> est donc
+          <me>-6+25=19.</me>
+        </p>
+      </li>
+      <li>
+        <p>Oui, car <m>\text{PGCD}(-34;9)=1</m>.</p>
+        <p>Grâce à l'algorithme d'Euclide étendu, on obtient la combinaison linéaire
+          <me>1=(-34)\cdot(-4)+9\cdot(-15).</me>
+          Donc <m>u_0=-4</m> est un inverse de <m>-34</m> modulo <m>9</m>.
+        </p>
+        <p>De plus, l'ensemble des inverses de <m>-34</m> modulo <m>9</m> correspond à la progression arithmétique
+          <me>\left\{-4+9k\,|\,k\in\mathbb{Z}\right\}</me>
+          soit
+          <me>\left\{\ldots,\;-4-9,\;-4,\;-4+9,\;-4+9\cdot 2,\;\ldots\right\}.</me>
+        </p>
+        <p>Le plus petit inverse positif de <m>4</m> modulo <m>25</m> est donc
+          <me>-4+9=5.</me>
+        </p>
+      </li>
+      <li>
+        <p>Oui, car <m>\text{PGCD}(1954;205)=1</m>.</p>
+        <p>Grâce à l'algorithme d'Euclide étendu, on obtient la combinaison linéaire
+          <me>1=1954\cdot 79+205\cdot(-753).</me>
+          Donc <m>u_0=79</m> est un inverse de <m>1954</m> modulo <m>205</m>.
+        </p>
+        <p>De plus, l'ensemble des inverses de <m>1954</m> modulo <m>205</m> correspond à la progression arithmétique
+          <me>\left\{79+205k\,|\,k\in\mathbb{Z}\right\}</me>
+          soit
+          <me>\left\{\ldots,\;79-205,\;79,\;79+205,\;79+205\cdot 2,\;\ldots\right\}.</me>
+        </p>
+        <p>Le plus petit inverse positif de <m>1954</m> modulo <m>205</m> est donc
+          <me>79.</me>
+        </p>
+      </li>
+      <li><p>Non, car <m>\text{PGCD}(0;5)=5\neq 1</m>.</p></li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise xml:id="expepetitfermat">
+  <statement>
+    <p>Pour chaque entier <m>a</m> et chaque nombre premier <m>p</m> donnés, calculez le reste de la division euclidienne de <m>a^k</m> par <m>p</m> pour <m>k=1,\,2,\ldots,\,p</m>.</p>
+      <ol>
+        <li><p><m>a=2</m> et <m>p=5</m>.</p></li>
+        <li><p><m>a=2</m> et <m>p=11</m>.</p></li>
+        <li><p><m>a=3</m> et <m>p=11</m>.</p></li>
+        <li><p><m>a=-1</m> et <m>p=11</m>.</p></li>
+        <li><p><m>a=38</m> et <m>p=37</m>.</p></li>
+        <li><p><m>a=260</m> et <m>p=13</m>.</p></li>
+        <li><p><m>a=-23</m> et <m>p=5</m>.</p></li>
+      </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>
+          <me>
+            \begin{array}{|c|*{5}{c}|}
+            \hline
+            k&amp;1&amp;2&amp;3&amp;4&amp;5\\
+            \hline
+            \text{reste de }2^k/5&amp;2&amp;4&amp;3&amp;1&amp;2\\
+            \hline
+            \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          <me>
+            \begin{array}{|c|*{11}{c}|}
+            \hline
+            k&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11\\
+            \hline
+            \text{reste de }2^k/11&amp;2&amp;4&amp;8&amp;5&amp;10&amp;9&amp;7&amp;3&amp;6&amp;1&amp;2\\
+            \hline
+            \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          <me>
+            \begin{array}{|c|*{11}{c}|}
+            \hline
+            k&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11\\
+            \hline
+            \text{reste de }3^k/11&amp;3&amp;9&amp;5&amp;4&amp;1&amp;3&amp;9&amp;5&amp;4&amp;1&amp;3\\
+            \hline
+            \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          <me>
+            \begin{array}{|c|*{11}{c}|}
+            \hline
+            k&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11\\
+            \hline
+            \text{reste de }(-1)^k/11&amp;10&amp;1&amp;10&amp;1&amp;10&amp;1&amp;10&amp;1&amp;10&amp;1&amp;10\\
+            \hline
+            \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>Comme <m>a=38\equiv 1\;\mathrm{mod}\;37</m>, on a <m> a^k\equiv 1^k=1\;\mathrm{mod}\;37</m> pour tout entier <m>k\geq 1</m>.</p>
+      </li>
+      <li>
+        <p>Comme <m>a=260\equiv 0\;\mathrm{mod}\;13</m>, on a <m> a^k\equiv 0^k=0\;\mathrm{mod}\;13</m> pour tout entier <m>k\geq 1</m>.</p>
+      </li>
+      <li>
+        <p>Comme <m>a=-23\equiv 2\;\mathrm{mod}\;5</m>, on a la même liste de restes que pour <m>a=2</m> à la première question ci-dessus.</p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Un grand général chinois nommé Han Xin, mort en 196 avant J.-C., avait une grande armée de mille hommes.</p>
+    <p>Après un rude combat, il perdit environ le tiers de ses troupes et voulut savoir combien de ses soldats étaient encore vivants.</p>
+    <p>À l’exception de son fidèle conseiller Paul, la plupart ne savaient compter que jusqu’à vingt tout au plus.</p>
+    <p>Paul suggéra alors de demander aux soldats de se grouper par cinq et de compter le nombre de soldats restant seuls. Il recommença l’opération avec des groupes de six puis de onze personnes. Voici les résultats de ces décomptes.
+      <ul>
+        <li><p>Par groupes de cinq, il resta deux soldats seuls.</p></li>
+        <li><p>Par groupes de six, il resta quatre soldats seuls.</p></li>
+        <li><p>Par groupes de onze, il resta trois soldats seuls.</p></li>
+      </ul>
+    </p>
+    <p>Combien de soldats le général Han Xin avait-il encore dans son armée?</p>
+    <p>Remarque : Cette énigme est bien connue. Je l'ai trouvée dans les <url href="https://drive.google.com/file/d/1XWykGbip4SFK4R56YgqRahgaxohTo-bp/view?usp=sharing">excellentes notes de cours de Jérôme-Melville Giguêre</url>, avec l'accord de leur auteur.</p>
+  </statement>
+  <solution>
+    <p>Il s'agit de trouver un entier <m>x</m> égal environ à <m>667</m> et tel que
+      <me>\left\{
+        \begin{array}{cccl}
+        x&amp;\equiv&amp;2&amp;\text{mod}\; 5,\\
+        x&amp;\equiv&amp;4&amp;\text{mod}\; 6,\\
+        x&amp;\equiv&amp;3&amp;\text{mod}\; 11.
+        \end{array}
+        \right.
+      </me>
+      Comme les entiers <m>5, 6</m> et <m>11</m> sont premiers entre eux deux à deux, on peut appliquer le théorème des restes chinois :
+      <me>
+        \begin{array}{|c|c|c|c|c|c|}
+        \hline
+        a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
+        \hline
+        2&amp;5&amp;66&amp;1=66\cdot 1+5\cdot(-13)&amp;1&amp;132\\
+        \hline
+        4&amp;6&amp;55&amp;1=55\cdot 1+6\cdot(-9)&amp;1&amp;220\\
+        \hline
+        3&amp;11&amp;30&amp;1=30\cdot (-4)+11\cdot 11&amp;-4&amp;-360\\
+        \hline
+        M=&amp;330&amp;&amp;&amp;x_0=&amp;-8\\
+        \hline
+        \end{array}
+      </me>
+    </p>
+    <p>Les solutions sont donc caractérisées par
+      <me>x\equiv -8\;\mathrm{mod}\;330.</me>
+    </p>
+    <p>La solution qui se rapproche le plus de <m>667</m> est donc
+      <me>-8+2\cdot 330=652.</me>
+    </p>
+    <p>Réponse : Il restait six cent cinquante-deux soldats dans l'armée du général.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Victor possède environ sept cents billes et il aimerait en connaître le nombre exact.</p>
+    <p>Comme il est encore très jeune, il ne sait compter que jusqu'à vingt.</p>
+    <p>Son père lui suggère alors de grouper ses billes par cinq et de lui dire combien il en reste, puis de répéter l'opération en les groupant par sept, et enfin par onze.
+      <ul>
+        <li><p>Par groupes de cinq, il ne reste aucune bille seule.</p></li>
+        <li><p>Par groupes de sept, il reste trois billes seules.</p></li>
+        <li><p>Par groupes de onze, il reste quatre billes seules.</p></li>
+      </ul>
+    </p>
+    <p>Combien de billes Victor a-t-il exatement?</p>
+    <p>Remarque : Cet exercice est tiré des <url href="https://drive.google.com/file/d/1XWykGbip4SFK4R56YgqRahgaxohTo-bp/view?usp=sharing">excellentes notes de cours de Jérôme-Melville Giguêre</url>, avec l'accord de leur auteur.</p>
+  </statement>
+  <solution>
+    <p>Il s'agit de trouver un entier <m>x</m> égal environ à <m>700</m> et tel que
+      <me>\left\{
+        \begin{array}{cccl}
+        x&amp;\equiv&amp;0&amp;\text{mod}\; 5,\\
+        x&amp;\equiv&amp;3&amp;\text{mod}\; 7,\\
+        x&amp;\equiv&amp;4&amp;\text{mod}\; 11.
+        \end{array}
+        \right.
+      </me>
+      Comme les entiers <m>5, 7, 11</m> sont premiers entre eux deux à deux, on peut appliquer le théorème des restes chinois :
+      <me>
+        \begin{array}{|c|c|c|c|c|c|}
+        \hline
+        a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
+        \hline
+        0&amp;5&amp;77&amp;&amp;&amp;0\\
+        \hline
+        3&amp;7&amp;55&amp;1=55\cdot(-1)+7\cdot 8&amp;-1&amp;-165\\
+        \hline
+        4&amp;11&amp;35&amp;1=35\cdot (-5)+11\cdot 16&amp;-5&amp;-700\\
+        \hline
+        M=&amp;385&amp;&amp;&amp;x_0=&amp;-865\\
+        \hline
+        \end{array}
+      </me>
+    </p>
+    <p>Les solutions sont donc caractérisées par
+      <me>x\equiv -865\;\mathrm{mod}\;385.</me>
+    </p>
+    <p>La solution qui se rapproche le plus de <m>700</m> est donc
+      <me>-865+385\cdot 4=675.</me>
+    </p>
+    <p>Réponse : Victor a six cent soixante-quinze billes exactement.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>Pour chaque système de congruences, déterminer si on peut appliquer le théorème des restes chinois. Si oui, résoudre le système.
+      <ol>
+        <li>
+          <p>
+            <me>\left\{
+              \begin{array}{cccl}
+              x&amp;\equiv&amp;3&amp;\text{mod}\; 4,\\
+              x&amp;\equiv&amp;7&amp;\text{mod}\; 9.
+              \end{array}
+              \right.
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>\left\{
+              \begin{array}{cccl}
+              x&amp;\equiv&amp;1&amp;\text{mod}\; 2,\\
+              x&amp;\equiv&amp;2&amp;\text{mod}\; 5,\\
+              x&amp;\equiv&amp;6&amp;\text{mod}\; 7.
+              \end{array}
+              \right.
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>\left\{
+              \begin{array}{cccl}
+              x&amp;\equiv&amp;1&amp;\text{mod}\; 2,\\
+              x&amp;\equiv&amp;2&amp;\text{mod}\; 5,\\
+              x&amp;\equiv&amp;6&amp;\text{mod}\; 8.
+              \end{array}
+              \right.
+            </me>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>Comme les entiers <m>4</m> et <m>9</m> sont premiers entre eux, on peut appliquer le théorème des restes chinois :
+          <me>
+            \begin{array}{|c|c|c|c|c|c|}
+            \hline
+            a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
+            \hline
+            3&amp;4&amp;9&amp;1=9\cdot 1+4\cdot(-2)&amp;1&amp;27\\
+            \hline
+            7&amp;9&amp;4&amp;1=4\cdot(-2)+9\cdot 1&amp;-2&amp;-56\\
+            \hline
+            M=&amp;36&amp;&amp;&amp;x_0=&amp;-29\\
+            \hline
+            \end{array}
+          </me>
+        </p>
+        <p>Les solutions sont donc caractérisées par
+          <me>x\equiv -29\;\mathrm{mod}\;36</me>
+          ou encore, si on préfère,
+          <me>x\equiv 7\;\mathrm{mod}\;36.</me>
+        </p>
+      </li>
+      <li>
+        <p>Comme les entiers <m>2, 5</m> et <m>7</m> sont premiers entre eux, on peut appliquer le théorème des restes chinois :
+          <me>
+            \begin{array}{|c|c|c|c|c|c|}
+            \hline
+            a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
+            \hline
+            1&amp;2&amp;35&amp;1=35\cdot 1+2\cdot(-17)&amp;1&amp;35\\
+            \hline
+            2&amp;5&amp;14&amp;1=14\cdot(-1)+5\cdot 3&amp;-1&amp;-28\\
+            \hline
+            6&amp;7&amp;10&amp;1=10\cdot(-2)+7\cdot 3&amp;-2&amp;-120\\
+            \hline
+            M=&amp;70&amp;&amp;&amp;x_0=&amp;-113\\
+            \hline
+            \end{array}
+          </me>
+        </p>
+        <p>Les solutions sont donc caractérisées par
+          <me>x\equiv -113\;\mathrm{mod}\;70</me>
+          ou encore, si on préfère,
+          <me>x\equiv 27\;\mathrm{mod}\;70.</me>
+        </p>
+      </li>
+      <li><p>Comme les entiers <m>2</m> et <m>8</m> ne sont pas premiers entre eux, on ne peut pas appliquer le théorème des restes chinois.</p></li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise xml:id="exoproparithmodulaire">
+  <statement>
+    <p>Démontrez les propriétés du théorème <xref ref="theoproparithmodulaire"/>.</p>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>On a <m>a=a+m\cdot 0</m>, donc <m> a\equiv a\:\mathrm{mod}\;m</m>.</p>
+      </li>
+      <li>
+        <p>Supposons que <m>a\equiv b\;\mathrm{mod}\;m</m>, de sorte qu'il existe un entier relatif <m>k</m> tel que
+          <me>a=b+mk.</me>
+        </p>
+        <p>Alors on a
+          <me>b=a-mk=a+m(-k)=a+mk'</me>
+          en posant <m>k':=-k\in\mathbb{Z}</m>.
+        </p>
+        <p>Donc <m>b\equiv a\;\mathrm{mod}\;m</m>.</p>
+        <p>La réciproque s'obtient par symétrie en échangeant les lettres <m>a</m> et <m>b</m>.</p>
+      </li>
+      <li>
+        <p>Supposons que <m>a\equiv b\;\mathrm{mod}\;m</m> et <m>b\equiv c\;\mathrm{mod}\;m</m>, de sorte qu'il existe deux entiers relatifs <m>k_1,k_2</m> tels que
+          <me>a=b+mk_1\quad\text{et}\quad b=c+mk_2.</me>
+        </p>
+        <p>Alors on a
+          <me>a=b+mk_1=(c+mk_2)+mk_1=c+m(\underbrace{k_2+k_1}_{=k_3\in\mathbb{Z}}).</me>
+        </p>
+        <p>Donc <m>a\equiv c\;\mathrm{mod}\;m</m>.</p>
+      </li>
+      <li>
+        <p>Supposons que <m>a\equiv b\;\mathrm{mod}\;m</m> et <m>c\equiv d\;\mathrm{mod}\;m</m>, de sorte qu'il existe deux entiers relatifs <m>k_1,k_2</m> tels que
+          <me>a=b+mk_1\quad\text{et}\quad c=d+mk_2.</me>
+        </p>
+        <p>Alors on a
+          <me>a+c=(b+mk_1)+(d+mk_2)=b+d+m(\underbrace{k_1+k_2}_{=k_3\in\mathbb{Z}}).</me>
+        </p>
+        <p>Donc <m>a+c\equiv b+d\;\mathrm{mod}\;m</m>.</p>
+        <p>Le cas de la soustraction se démontre de manière semblable.</p>
+      </li>
+      <li>
+        <p>Supposons que <m>a\equiv b\;\mathrm{mod}\;m</m> et <m>c\equiv d\;\mathrm{mod}\;m</m>, de sorte qu'il existe deux entiers relatifs <m>k_1,k_2</m> tels que
+          <me>a=b+mk_1\quad\text{et}\quad c=d+mk_2.</me>
+        </p>
+        <p>Alors on a
+          <md>
+            <mrow>ac&amp;=(b+mk_1)\cdot(d+mk_2)</mrow>
+            <mrow>&amp;=bd+bmk_2+mk_1d+mk_1mk_2</mrow>
+            <mrow>&amp;=bd+m(\underbrace{bk_2+k_1d+k_1mk_2}_{=k_3\in\mathbb{Z}}).</mrow>
+          </md>
+        </p>
+        <p>Donc <m>ac\equiv bd\;\mathrm{mod}\;m</m>.</p>
+      </li>
+      <li>
+        <p>Pour <m>k=2</m>, cette propriété découle de la précédente dans le cas particulier où <m>b=a</m>.</p>
+        <p>
+          Établissons le cas général <m>k\geq 2</m> par récurrence.
+          Le passage de <m>k-1</m> à <m>k</m> s'obtient à nouveau grâce à la propriété précédente.
+          En effet, on a
+          <me>a\equiv b\;\mathrm{mod}\;m\text{ et }a^{k-1}\equiv b^{k-1}\;\mathrm{mod}\;m\quad\Rightarrow\quad \underbrace{a\cdot a^{k-1}}_{a^k}\equiv\underbrace{b\cdot b^{k-1}}_{b^k}\;\mathrm{mod}\;m.</me>
+        </p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <title>Petit théorème de Fermat</title>
+  <statement>
+    <p>Comme l'exercice <xref ref="expepetitfermat"/> le laisse deviner, on a
+      <me>a^p\equiv a\;\mathrm{mod}\;p</me>
+      pour tout entier <m>a\in\mathbb{Z}</m> et tout nombre premier <m>p</m>.
+    </p>
+    <p>Ce résultat porte le nom de <url href="https://fr.wikipedia.org/wiki/Petit_th%C3%A9or%C3%A8me_de_Fermat">petit théorème de Fermat</url> et il est la clef de voûte de l'algorithme de chiffrement RSA.</p>
+    <p>Démontrez-le.</p>
+    <p>Remarque : Si vous voulez une présentation claire et concise du chiffrement RSA, je vous recommande <url href="https://www.supinfo.com/cours/1ARI/chapitres/06-systemes-rsa-el-gamal">les excellentes notes de cours de Laurent Godefroy</url>.</p>
+  </statement>
+</exercise>
+
+</section>
+
+</chapter>

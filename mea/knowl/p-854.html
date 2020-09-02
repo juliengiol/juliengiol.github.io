@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:28:20-04:00    *-->
+<!--*    on 2020-09-02T14:13:09-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,61 +14,38 @@
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
 <ol class="decimal">
-<li>
-<p>On choisit d'interpoler les points suivants :</p>
-<div class="displaymath">
-\begin{equation*}
-A_0=(52;4186)\;\text{et}\; A_1(82;4199).
-\end{equation*}
-</div>
-<p>La forme de Lagrange du polynôme interpolateur est alors</p>
-<div class="displaymath">
+<li><div class="displaymath">
 \begin{align*}
-L(T)&amp;=4186\,L_0(T)+4199\,L_1(T)\\
-&amp;=4186\frac{T-82}{52-82}+4199\frac{T-52}{82-52}\\
-&amp;=-\frac{4186}{30}(T-82)+\frac{4199}{30}(T-52).
+L(t)&amp;=3\,\frac{t-2}{1-2}+3\,\frac{t-1}{2-1}\\
+&amp;=-3(t-2)+3(t-1).
 \end{align*}
-</div>
-<p>On a</p>
-<div class="displaymath">
+</div></li>
+<li><div class="displaymath">
 \begin{align*}
-L(61)&amp;=-\frac{4186}{30}(61-82)+\frac{4199}{30}(61-52)\\
-&amp;=\frac{4186\cdot 21}{30}+\frac{4199\cdot 9}{30}\\
-&amp;=\frac{41899}{10}\\
-&amp;=4189{,}9.
+L(t)&amp;=0\,\frac{t-5}{-1-5}-3\,\frac{t+1}{5+1}\\
+&amp;=-\frac{1}{2}(t+1).
 \end{align*}
-</div>
-<p data-braille="continuation">On estime ainsi que \(C\) vaut environ <span class="quantity">4189,9 <sup>J</sup>⁄<sub>kg·°C</sub></span> à <span class="quantity">61 °C</span>.</p>
-</li>
-<li>
-<p>On choisit d'interpoler les points suivants :</p>
-<div class="displaymath">
-\begin{equation*}
-A_0=(42;4179),\;A_1=(52;4186)\;\text{et}\; A_2(82;4199).
-\end{equation*}
-</div>
-<p>La forme de Lagrange du polynôme interpolateur est alors</p>
-<div class="displaymath">
+</div></li>
+<li><div class="displaymath">
 \begin{align*}
-L(T)&amp;=4179\,L_0(T)+4186\,L_1(T)+4199\,L_2(T)\\
-&amp;=4179\frac{(T-52)(T-82)}{(42-52)(42-82)}+4186\frac{(T-42)(T-82)}{(52-42)(52-82)}\\
-&amp;\qquad +4199\frac{(T-42)(T-52)}{(82-42)(82-52)}\\
-&amp;=\frac{4179}{400}(T-52)(T-82)-\frac{4186}{300}(T-42)(T-82)\\
-&amp;\qquad +\frac{4199}{1200}(T-42)(T-52).
+L(t)&amp;=5\,\frac{(t-3)(t-6)}{(2-3)(2-6)}+7\,\frac{(t-2)(t-6)}{(3-2)(3-6)}+7\,\frac{(t-2)(t-3)}{(6-2)(6-3)}\\
+&amp;=\frac{5}{4}(t-3)(t-6)-\frac{7}{3}(t-2)(t-6)+\frac{7}{12}(t-2)(t-3).
 \end{align*}
-</div>
-<p>On a</p>
-<div class="displaymath">
+</div></li>
+<li><div class="displaymath">
 \begin{align*}
-L(61)&amp;=\frac{4179}{400}(61-52)(61-82)-\frac{4186}{300}(61-42)(61-82)\\
-&amp;\qquad +\frac{4199}{1200}(61-42)(61-52)\\
-&amp;=-\frac{4179\cdot 9\cdot 21}{400}+\frac{4186\cdot 19\cdot 21}{300}+\frac{4199\cdot 19\cdot 9}{1200}\\
-&amp;=\frac{104779}{25}\\
-&amp;=4191{,}16.
+L(t)&amp;=-\frac{(t-4)(t-6)}{(-2-4)(-2-6)}-\frac{(t+2)(t-6)}{(4+2)(4-6)}-\frac{(t+2)(t-4)}{(6+2)(6-4)}\\
+&amp;=-\frac{1}{48}(t-4)(t-6)+\frac{1}{12}(t+2)(t-6)-\frac{1}{16}(t+2)(t-4).
 \end{align*}
-</div>
-<p data-braille="continuation">On estime ainsi que \(C\) vaut environ <span class="quantity">4191,16 <sup>J</sup>⁄<sub>kg·°C</sub></span> à <span class="quantity">61 °C</span>.</p>
-</li>
+</div></li>
+<li><div class="displaymath">
+\begin{align*}
+L(t)&amp;=10\frac{(t+1)(t-0)(t-2)}{(-4+1)(-4-0)(-4-2)}+2\frac{(t+4)(t-0)(t-2)}{(-1+4)(-1-0)(-1-2)}\\
+&amp;\qquad +7\frac{(t+4)(t+1)(t-2)}{(0+4)(0+1)(0-2)}+3\frac{(t+4)(t+1)(t-0)}{(2+4)(2+1)(2-0)}\\
+&amp;=-\frac{5}{36}(t+1)t(t-2)+\frac{2}{9}(t+4)t(t-2)\\
+&amp;\qquad -\frac{7}{8}(t+4)(t+1)(t-2)+\frac{1}{12}(t+4)(t+1)(t-0).
+\end{align*}
+</div></li>
 </ol>
 <span class="incontext"><a href="exerciceslagrange.html#p-854">Contexte</a></span>
 </body>

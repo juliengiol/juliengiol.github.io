@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:29:16-04:00    *-->
+<!--*    on 2020-09-02T14:13:59-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>En combien de sous-intervalles de longueur égale, au minimum, doit-on subdiviser l'intervalle \([1;6]\) pour que l'erreur de dépasse pas \(10^{-9}\text{?}\)</p>
+<p>Voici la subdivision régulière de l'intervalle \([2;4]\) en quatre sous-intervalles de même longueur :</p>
+<div class="displaymath">
+\begin{equation*}
+2&lt;2{,}5&lt;3&lt;3{,}5&lt;4.
+\end{equation*}
+</div>
+<p data-braille="continuation">La méthode de Simpson donne alors l'approximation suivante :</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{6}\cdot\sum_{k=1}^4\left(g(x_{k-1})+4g(m_k)+g(x_k)\right)\\
+=\;&amp;\frac{0{,}5}{6}\cdot\left(A_1+A_2+A_3+A_4\right)
+\end{align*}
+</div>
+<p data-braille="continuation">où</p>
+<ul class="disc">
+<li><p>\(A_1=g(2)+4g(2{,}25)+g(2{,}5)\)</p></li>
+<li><p>\(A_2=g(2{,}5)+4g(2{,}75)+g(3)\)</p></li>
+<li><p>\(A_3=g(3)+4g(3{,}25)+g(3{,}5)\)</p></li>
+<li><p>\(A_4=g(3{,}5)+4g(3{,}75)+g(4)\)</p></li>
+</ul>
 <span class="incontext"><a href="exercicessimpson.html#p-1454">Contexte</a></span>
 </body>
 </html>

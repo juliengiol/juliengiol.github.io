@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-17T12:25:46-04:00    *-->
+<!--*    on 2020-09-02T14:11:27-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,25 +235,25 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode de Newton-Raphson.</span>
 </h6>
 <ul class="disc">
-<li id="li-244">
-<p id="p-502">Entrées :</p>
+<li id="li-251">
+<p id="p-531">Entrées :</p>
 <ul class="circle">
-<li id="li-245">Assigner à \(\text{f}\) la fonction dont on cherche à approcher le zéro.</li>
-<li id="li-246">Assigner à \(\text{fPrime}\) sa dérivée.</li>
-<li id="li-247">Assigner à \(\text{x0}\) la valeur de départ.</li>
-<li id="li-248">Assigner à \(\text{n}\) le nombre d'itérations à effectuer.</li>
+<li id="li-252">Assigner à \(\text{f}\) la fonction dont on cherche à approcher le zéro.</li>
+<li id="li-253">Assigner à \(\text{fPrime}\) sa dérivée.</li>
+<li id="li-254">Assigner à \(\text{x0}\) la valeur de départ.</li>
+<li id="li-255">Assigner à \(\text{n}\) le nombre d'itérations à effectuer.</li>
 </ul>
 </li>
-<li id="li-249">
-<p id="p-503">Instructions :</p>
-<ul class="circle"><li id="li-250">
-<p id="p-504">Pour \(\text{i}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
-<ul class="square"><li id="li-251"><p id="p-505">assigner à \(\text{x0}\) la valeur de \(\displaystyle \text{x0}-\frac{\text{f}(\text{x0})}{\text{fPrime}(\text{x0})}\text{.}\)</p></li></ul>
+<li id="li-256">
+<p id="p-532">Instructions :</p>
+<ul class="circle"><li id="li-257">
+<p id="p-533">Pour \(\text{i}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
+<ul class="square"><li id="li-258"><p id="p-534">assigner à \(\text{x0}\) la valeur de \(\displaystyle \text{x0}-\frac{\text{f}(\text{x0})}{\text{fPrime}(\text{x0})}\text{.}\)</p></li></ul>
 </li></ul>
 </li>
-<li id="li-252"><p id="p-506">Sortie : Afficher \(\text{x0}\text{.}\)</p></li>
-</ul></article><p id="p-507">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/x2moins2newton.html" title="Exemple 5.1.7">5.1.7</a>.</p>
-<div class="sagecell-python" id="sage-34"><script type="text/x-sage"># entrées
+<li id="li-259"><p id="p-535">Sortie : Afficher \(\text{x0}\text{.}\)</p></li>
+</ul></article><p id="p-536">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/x2moins2newton.html" title="Exemple 5.1.7">5.1.7</a>.</p>
+<div class="sagecell-python" id="sage-46"><script type="text/x-sage"># entrées
 def f(x):
     return x ** 2 - 2
 def fPrime(x):
