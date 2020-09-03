@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JG</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="jg.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-25018634-7');
+  </script>
+<!--script pour MathJax :-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [['\\(','\\)']]
+      },
+      asciimath2jax: {
+          ignoreClass: ".*",
+          processClass: "has_am"
+      },
+      jax: ["input/AsciiMath"],
+      extensions: ["asciimath2jax.js"],
+      TeX: {
+          extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+          // scrolling to fragment identifiers is controlled by other Javascript
+          positionToHash: false,
+          equationNumbers: { autoNumber: "none", useLabelIds: true, },
+          TagSide: "right",
+          TagIndent: ".8em",
+      },
+      // HTML-CSS output Jax to be dropped for MathJax 3.0
+      "HTML-CSS": {
+          scale: 88,
+          mtextFontInherit: true,
+      },
+      CommonHTML: {
+          scale: 88,
+          mtextFontInherit: true,
+      },
+  });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+<!--scripts pour SageMathCell :-->
+  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  'div.sagecell-interact',
+                           hide: ['editor', 'evalButton', 'permalink'],
+                           autoeval: true});
+    // Make *any* div with class 'compute' a Sage cell with Sage
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                            evalButtonText: 'Exécuter (Sage)'});
+    // Make *any* div with class 'compute' a Sage cell with Python
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           languages: ['python'],
+                           evalButtonText: 'Exécuter (Python)'});
+    });
+    </script>
+</head>
+
+<body>
+
+<div id="entete">
+  <h1>Calculatrices <a href="https://juliengiol.github.io/mea/sagemath.html" target="_blank">Sage</a></h1>
+  <p>Attention : pour Sage, \(\log =\log_e=\ln\).
+</div>
+
+
+<hr>
+<h2>Limites :</h2>
+<div class="sagecell-sage"><script type="text/x-sage">
+f(x) = sin( ln(x) / x )  # fonction dont on veut la limite quand x tend vers ...
+
+a = oo  # ... a
+
+# code Sage pour afficher la valeur de la limite désirée :
+L = limit(f(x), x = a)
+show(L)
+</script></div>
+<hr>
+<h2>Dérivées :</h2>
+<div class="sagecell-sage"><script type="text/x-sage">
+f(x) = sin( ln(x) / x )  # fonction dont on veut calculer la dérivée par rapport à x
+
+# code Sage pour afficher la dérivée :
+g(x) = derivative(f(x), x)
+show(g(x))
+</script></div>
+<hr>
+<h2>Intégrales indéfinies :</h2>
+<div class="sagecell-sage"><script type="text/x-sage">
+f(x) = sec(x) * (cos(x) + 1)  # fonction dont on veut calculer l'intégrale indéfinie
+
+# code Sage pour afficher l'intégrale indéfinie :
+g(x) = integral(f(x), x)
+show(g(x))
+</script></div>
+<p>Attention! Ne pas oublier d'ajouter le + C à la fonction ci-dessus.
+<hr>
+<h2>Intégrales définies :</h2>
+<div class="sagecell-sage"><script type="text/x-sage">
+f(x) = ( sin(x) )^2  # fonction dont on veut calculer l'intégrale définie entre les bornes ...
+
+a = - pi / 4  # ... a ...
+
+b = pi / 4  # ... et b
+
+# code Sage pour afficher la valeur de l'intégrale définie :
+I = integral(f(x), x, a, b)
+show(I)
+</script></div>
+<hr>
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-7');
+</script><!--End: Google Global Site Tag code-->
+</body>
+
+</html>
