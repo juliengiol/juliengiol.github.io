@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:11:18-04:00    *-->
+<!--*    on 2020-09-07T08:44:00-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -231,10 +231,10 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="recursivite"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Récursivité</span>
 </h2>
-<a href="recursivite.html" class="permalink">¶</a><p id="p-140">La <a class="external" href="https://fr.wikipedia.org/wiki/R%C3%A9cursivit%C3%A9" target="_blank">récursivité</a> est un concept qui intervient dans des domaines aussi variés que la linguistique, les arts et les mathématiques.</p>
-<p id="p-141">Une fonction est dite récursive lorsqu'elle contient un appel à elle-même.</p>
-<p id="p-142">Attention, une telle fonction doit prévoir au moins un cas de base sur lequel elle finisse par tomber.</p>
-<p id="p-143">La fonction factorielle \(n!\) est un bon exemple de fonction pouvant être définie de manière récursive :</p>
+<a href="recursivite.html" class="permalink">¶</a><p id="p-151">La <a class="external" href="https://fr.wikipedia.org/wiki/R%C3%A9cursivit%C3%A9" target="_blank">récursivité</a> est un concept qui intervient dans des domaines aussi variés que la linguistique, les arts et les mathématiques.</p>
+<p id="p-152">Une fonction est dite récursive lorsqu'elle contient un appel à elle-même.</p>
+<p id="p-153">Attention, une telle fonction doit prévoir au moins un cas de base sur lequel elle finisse par tomber.</p>
+<p id="p-154">La fonction factorielle \(n!\) est un bon exemple de fonction pouvant être définie de manière récursive :</p>
 <div class="displaymath">
 \begin{equation*}
 n!=
@@ -251,8 +251,8 @@ n\cdot(n-1)!&amp;\text{si}\;n\ge 2.
 \end{equation*}
 </div>
 <p data-braille="continuation">de sorte que \(5!\) s'obtient par la multiplication de \(5\) avec la valeur de la fonction factorielle pour l'entier précédent (4).</p>
-<p id="p-144">Le code qui suit définit une fonction <code class="code-inline tex2jax_ignore">factorielle(n)</code> suivant le point de vue récursif adopté ci-dessus. On le teste avec <code class="code-inline tex2jax_ignore">print(factorielle(5))</code> qui doit afficher \(\text{120}\text{.}\)</p>
-<div class="sagecell-python" id="sage-37"><script type="text/x-sage">def factorielle(n):
+<p id="p-155">Le code qui suit définit une fonction <code class="code-inline tex2jax_ignore">factorielle(n)</code> suivant le point de vue récursif adopté ci-dessus. On le teste avec <code class="code-inline tex2jax_ignore">print(factorielle(5))</code> qui doit afficher \(\text{120}\text{.}\)</p>
+<div class="sagecell-python" id="sage-40"><script type="text/x-sage">def factorielle(n):
     if n == 1:  # si n = 1
         return 1  # renvoie 1
     else:  # sinon
@@ -260,8 +260,11 @@ n\cdot(n-1)!&amp;\text{si}\;n\ge 2.
 
 print(factorielle(5))
 </script></div>
-<p id="p-145">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y235zy2h" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
-<p id="p-146">Notez que pour le calcul de <code class="code-inline tex2jax_ignore">factorielle(5)</code>, on est obligé de remonter jusqu'au cas de base <code class="code-inline tex2jax_ignore">factorielle(1)</code> avant de redescendre pour calculer <code class="code-inline tex2jax_ignore">factorielle(2)</code>, <code class="code-inline tex2jax_ignore">factorielle(3)</code>, <code class="code-inline tex2jax_ignore">factorielle(4)</code> et enfin <code class="code-inline tex2jax_ignore">factorielle(5)</code> dans cet ordre.</p></section></div></main>
+<p id="p-156">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y235zy2h" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+<article class="remark remark-like" id="remark-12"><h6 class="heading">
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-157">Notez que pour le calcul de <code class="code-inline tex2jax_ignore">factorielle(5)</code> avec la fonction récursive ci-dessus, on est obligé de remonter jusqu'au cas de base <code class="code-inline tex2jax_ignore">factorielle(1)</code> avant de redescendre pour calculer <code class="code-inline tex2jax_ignore">factorielle(2)</code>, <code class="code-inline tex2jax_ignore">factorielle(3)</code>, <code class="code-inline tex2jax_ignore">factorielle(4)</code> et enfin <code class="code-inline tex2jax_ignore">factorielle(5)</code> dans cet ordre.</p></article></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;

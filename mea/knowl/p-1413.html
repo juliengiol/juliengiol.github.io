@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:55-04:00    *-->
+<!--*    on 2020-09-07T08:47:56-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,42 +13,46 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li>
-<p>On a \(f(x)=e^{-x^2}\) et, après des calculs fastidieux ou <a class="external" href="https://tinyurl.com/y6dbszyo" target="_blank">avec l'aide d'un logiciel de calcul formel</a>,</p>
+<p>Déterminons l'approximation obtenue pour l'intégrale définie</p>
 <div class="displaymath">
 \begin{equation*}
-f^{(4)}(x)=4e^{-x^2}\left(4x^4-12x^2+3\right).
+\int_0^1e^{-x^2}\mathrm{d}x
 \end{equation*}
 </div>
-</li>
+<p data-braille="continuation">si on applique la méthode de Simpson en subdivisant \([0;1]\) en quatre sous-intervalles de même longueur.</p>
+<ul class="disc">
+<li><p>Notons \(f(x)=e^{-x^2}\text{.}\)</p></li>
+<li><p>On a \(n=4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{4}=0{,}25\text{.}\)</p></li>
 <li>
-<p>Donc</p>
-<div class="displaymath">
-\begin{align*}
-|f^{(4)}(x)|&amp;=4e^{-x^2}\cdot \left|4x^4-12x^2+3\right|\\
-&amp;\leq 4e^{-x^2}\cdot\left(4x^4+12x^2+3\right)\\
-&amp;\leq 4\cdot\left(4+12+3\right)\\
-&amp;=76
-\end{align*}
-</div>
-<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\)</p>
-</li>
-<li>
-<p>Il en découle qu'on peut prendre \(M=76\) en appliquant le théorème <a class="xref" data-knowl="./knowl/erreur_simpson.html" title="Théorème 10.1.3">10.1.3</a> :</p>
-<div class="displaymath">
-\begin{align*}
-\left|\text{Erreur}\right|&amp;\leq\frac{M(b-a)^5}{2880n^4}\\
-&amp;=\frac{76\cdot(1-0)^5}{2880\cdot 4^4}\\
-&amp;=\frac{76}{2880\cdot 4^4}\\
-&amp;=0{,}000\,103\ldots\\
-&amp;\leq 0{,}000\,11
-\end{align*}
-</div>
-<p data-braille="continuation">d'où</p>
+<p>Alors \(x_k=a+k\cdot\Delta x=k\cdot 0{,}25\) pour \(k=0,\ldots,4\) donne la subdivision régulière</p>
 <div class="displaymath">
 \begin{equation*}
--0{,}000\,11\leq\text{Erreur}\leq 0{,}000\,11.
+0&lt;0{,}25&lt;0{,}5&lt;0{,}75&lt;1
+\end{equation*}
+</div>
+<p data-braille="continuation">de l'intervalle d'intégration \([0;1]\text{.}\)</p>
+</li>
+<li>
+<p>La méthode de Simpson donne alors</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)\\
+&amp;=\frac{0{,}25}{6}\cdot(A_1+A_2+A_3+A_4)
+\end{align*}
+</div>
+<p data-braille="continuation">où</p>
+<ul class="circle">
+<li><p>\(A_1=f(0)+4f(0{,}125)+f(0{,}25)\)</p></li>
+<li><p>\(A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)\)</p></li>
+<li><p>\(A_3=f(0{,}5)+4f(0{,}625)+f(0{,}75)\)</p></li>
+<li><p>\(A_4=f(0{,}75)+4f(0{,}875)+f(1)\)</p></li>
+</ul>
+</li>
+<li>
+<p>Après des calculs fastidieux à la calculatrice ou <a class="external" href="https://juliengiol.github.io/algorithmique/algorithmesimpson.html" target="_blank">avec l'aide de notre application</a>, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Approximation}=0{,}746\,826\,120\,527\,46\ldots
 \end{equation*}
 </div>
 </li>

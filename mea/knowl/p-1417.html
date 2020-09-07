@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:55-04:00    *-->
+<!--*    on 2020-09-07T08:47:57-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Déduisons des deux exemples précédents <a class="xref" data-knowl="./knowl/exemple_approx_trapezes.html" title="Exemple 9.1.3">9.1.3</a> et <a class="xref" data-knowl="./knowl/exemple_erreur_trapezes.html" title="Exemple 9.1.4">9.1.4</a> un encadrement de l'intégrale définie</p>
+<p>La méthode de Simpson donne alors</p>
 <div class="displaymath">
-\begin{equation*}
-\int_0^1e^{-x^2}\mathrm{d}x
-\end{equation*}
+\begin{align*}
+\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)\\
+&amp;=\frac{0{,}25}{6}\cdot(A_1+A_2+A_3+A_4)
+\end{align*}
 </div>
-<p data-braille="continuation">avec cinq décimales.</p>
+<p data-braille="continuation">où</p>
+<ul class="circle">
+<li><p>\(A_1=f(0)+4f(0{,}125)+f(0{,}25)\)</p></li>
+<li><p>\(A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)\)</p></li>
+<li><p>\(A_3=f(0{,}5)+4f(0{,}625)+f(0{,}75)\)</p></li>
+<li><p>\(A_4=f(0{,}75)+4f(0{,}875)+f(1)\)</p></li>
+</ul>
 <span class="incontext"><a href="presentationsimpson.html#p-1417">Contexte</a></span>
 </body>
 </html>

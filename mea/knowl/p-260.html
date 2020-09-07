@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:12:23-04:00    *-->
+<!--*    on 2020-09-07T08:45:37-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,10 +10,48 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voir <a class="external" href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithmes_de_calcul_des_nombres_de_Fibonacci" target="_blank">Algorithmes de calcul des nombres de Fibonacci</a> pour plus de détails.</p>
-<span class="incontext"><a href="fibonacci.html#p-260">Contexte</a></span>
+<p>Cette approche naïve conduit à l'implémentation algorithmique suivante : <div class="sagecell-python" id="sage-46"><script type="text/x-sage"># entrées
+n = 3
+coefficients = [10, 7, 3, 5]
+x = 9
+
+# instructions
+valeur = coefficients[0]
+for j in range(1, n+1):
+    produit = coefficients[j]
+    for k in range(1, j+1):
+        produit = produit * x
+    valeur = valeur + produit
+
+# sortie
+print(valeur)
+</script></div> dont la complexité</p>
+<div class="displaymath">
+\begin{equation*}
+T(n)=0{,}5n^2+1{,}5n
+\end{equation*}
+</div>
+<p data-braille="continuation">est qualifiée de quadratique, c'est-à-dire qu'elle est polynomiale de degré deux.</p>
+<span class="incontext"><a href="horner.html#p-260">Contexte</a></span>
 </body>
 </html>

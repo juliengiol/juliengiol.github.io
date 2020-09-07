@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:52-04:00    *-->
+<!--*    on 2020-09-07T08:47:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La forme de Newton du polynôme interpolateur des points</p>
+<p>Nous venons de démontrer qu'en remplaçant la fonction \(f\text{,}\) sur l'intervalle \([x_{k-1};x_k]\text{,}\) par le polynôme de degré un au plus qui interpole les points \((x_{k-1};f(x_{k-1}))\) et \((x_k;f(x_k))\text{,}\) on remplace</p>
 <div class="displaymath">
 \begin{equation*}
-(c;f(c)),\;(m;f(m))\;\text{et}\;(d;f(d))
+\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x
 \end{equation*}
 </div>
-<p data-braille="continuation">est donnée par</p>
+<p data-braille="continuation">par</p>
 <div class="displaymath">
 \begin{equation*}
-N(t)=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}(t-c)(t-m)
+\frac{1}{2}\left(f(x_{k-1})+f(x_k)\right)\cdot\underbrace{(x_k-x_{k-1})}_{\Delta x}=\frac{\Delta x}{2}\cdot\left(f(x_{k-1})+f(x_k))\right).
 \end{equation*}
 </div>
-<p data-braille="continuation">et</p>
-<div class="displaymath">
-\begin{equation*}
-\int_c^dN(t)\mathrm{d}t=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).
-\end{equation*}
-</div>
-<span class="incontext"><a href="presentationsimpson.html#p-1383">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#p-1383">Contexte</a></span>
 </body>
 </html>

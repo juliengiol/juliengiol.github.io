@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:16-04:00    *-->
+<!--*    on 2020-09-07T08:46:48-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Dans ce chapitre, nous nous intéressons à la forme de Newton du polynôme interpolateur</p>
+<p>En continuant à appliquer le théorème de Rolle, on en conclut que \(\phi^{(n+1)}\) s'annule au moins une fois dans cet intervalle. Autrement dit, il existe \(\xi_t\in\;]\min\{t,x_0\};\max\{t,x_0\}[\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-N(t)=d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)
+\phi^{(n+1)}(\xi_t)=0
 \end{equation*}
 </div>
-<p data-braille="continuation">où</p>
+<p data-braille="continuation">c'est-à-dire</p>
 <div class="displaymath">
 \begin{equation*}
-N_i(t)=(t-x_0)(t-x_1)\cdots(t-x_{i-1})
+f^{(n+1)}(\xi_t)-P^{(n+1)}(\xi_t)-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}\cdot\frac{d^{n+1}}{ds^{n+1}}\left[\prod_{i=0}^n(s-x_i)\right]\Bigg\vert_{s=\xi_t}=0.
 \end{equation*}
 </div>
-<p data-braille="continuation">est un polynôme de degré \(i\) pour \(i=1,2,\ldots,n\text{.}\)</p>
-<span class="incontext"><a href="presentationdiffdiv.html#p-932">Contexte</a></span>
+<p data-braille="continuation">Comme \(P\) est de degré \(n\) au plus, on a \(P^{(n+1)}=0\text{.}\) Par ailleurs, on voit que \(\displaystyle\frac{d^{n+1}}{ds^{n+1}}\prod_{i=0}^n(s-x_i)=(n+1)!\text{.}\) On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+f^{(n+1)}(\xi_t)-0-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}(n+1)!=0
+\end{equation*}
+</div>
+<p data-braille="continuation">et il ne reste qu'à isoler \(f(t)-P(t)\) pour conclure.</p>
+<span class="incontext"><a href="exerciceslagrange.html#p-932">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:41-04:00    *-->
+<!--*    on 2020-09-07T08:47:33-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,18 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">8.3.3.1</span><span class="period">.</span>
 </h6>
-<p>La subdivision régulière de l'intervalle \([0;1]\) à considérer est donc la suivante :</p>
+<p>Rectangles à gauche : On prend \(\xi_k=x_{k-1}\) donc</p>
 <div class="displaymath">
-\begin{equation*}
-0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
-\end{equation*}
+\begin{align*}
+\text{Approximation}&amp;= 0{,}1\cdot\sum_{k=1}^{10}(2+(k-1)\cdot 0{,}1)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}(k-1)\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^9k\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{9\cdot(9+1)}{2}\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(20+45\cdot 0{,}1\right)\\
+&amp;=2{,}45.
+\end{align*}
 </div></article><span class="incontext"><a href="exercicesrectangles.html#li-639">Contexte</a></span>
 </body>
 </html>

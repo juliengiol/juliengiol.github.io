@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:12:23-04:00    *-->
+<!--*    on 2020-09-07T08:45:37-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de \(P(x)\) une paire de parenthèses après l'autre.</p>
+<p>Si on ne tient compte que des multiplications, alors on peut montrer que la complexité \(T(n)\) de cet algorithme vérifie l'encadrement</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{lcl}
-\text{Étape 0 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_n.\\
-\text{Étape 1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-1}+x\cdot valeur.\\
-\text{Étape 2 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-2}+x\cdot valeur.\\
-\ldots&amp;\ldots&amp;\\
-\text{Étape n-1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_1+x\cdot valeur.\\
-\text{Étape n :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_0+x\cdot valeur.\\
-\end{array}
+\log_2(n)\leq T(n)\leq 2\log_2(n).
 \end{equation*}
 </div>
-<span class="incontext"><a href="horner.html#p-253">Contexte</a></span>
+<span class="incontext"><a href="exponentiation.html#p-253">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:12:14-04:00    *-->
+<!--*    on 2020-09-07T08:45:24-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,51 +10,49 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour chacun des blocs de codes qui suivent, dites ce qu'il affiche.</p>
-<ol class="decimal">
-<li><pre class="code-block tex2jax_ignore">if 5 &gt; 10:
-    print('Gare')
-elif 8 != 9:
-    print('aux')
+<p>Essayez de deviner ce qu'affichent les blocs de code qui suivent avant de les évaluer. <div class="sagecell-python" id="sage-26"><script type="text/x-sage">x = -2
+if x > 0:  # si x est plus grand que 0
+    print('positif')  # affiche la chaîne de caractères 'positif'
 else:
-    print('conditionnelles!')
-</pre></li>
-<li><pre class="code-block tex2jax_ignore">if 5 &gt; 10:
-    print('Gare')
-elif 8 == 9:
-    print('aux')
+    print('négatif ou nul')  # sinon affiche 'négatif ou nul'
+</script></div> <div class="sagecell-python" id="sage-27"><script type="text/x-sage">x = -2
+if x > 0:
+    print('positif')
+</script></div> <div class="sagecell-python" id="sage-28"><script type="text/x-sage">x = -2
+if x > 0:  # si x est plus grand que 0
+    print('positif')  # affiche 'positif'
+elif x == 0:  # sinon si x est égal à 0
+    print('nul')  # affiche 'nul'
 else:
-    print('conditionnelles!')
-</pre></li>
-<li><pre class="code-block tex2jax_ignore">if 5 &gt; 10:
-    print('Gare')
-elif 8 == 9:
-    print('aux')
-</pre></li>
-<li><pre class="code-block tex2jax_ignore">x = 10
-y = 20
-z = 30
-print('Gare')
-if x == 10:
-    print('aux')
-    if y == 20:
-        print('conditionnelles!')
-    else:
-        print('gorilles!')
-elif y == 20:
-    print('Danger!')
+    print('négatif')  # sinon affiche 'négatif'
+</script></div> <div class="sagecell-python" id="sage-29"><script type="text/x-sage">age = 8
+if age < 3:
+    print('entrée gratuite')
+elif age < 12:
+    print('tarif réduit')
 else:
-    print('Vive les')
-    if z == 30:
-        print('fraises!')
-    else:
-        print('bleuets!')
-print('Bye!')
-</pre></li>
-</ol>
-<span class="incontext"><a href="exercicesassignetc.html#p-84">Contexte</a></span>
+    print('plein tarif')
+</script></div></p>
+<span class="incontext"><a href="conditionnelles.html#p-84">Contexte</a></span>
 </body>
 </html>

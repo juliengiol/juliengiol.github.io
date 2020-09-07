@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:19-04:00    *-->
+<!--*    on 2020-09-07T08:47:00-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,22 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Principe : Construire \(N(t)\) comme combinaison linéaire des polynômes</p>
+<p>Présentons nos calculs dans un tableau :</p>
 <div class="displaymath">
 \begin{equation*}
-N_i(t)=(t-x_0)(t-x_1)\cdots(t-x_{i-1})
-\end{equation*}
-</div>
-<p data-braille="continuation">en posant</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)
-\end{equation*}
-</div>
-<p data-braille="continuation">où le coefficient \(d_i\) est la différence divisée associée aux points \(A_0=(x_0;y_0),\ldots,A_i=(x_i;y_i)\text{,}\) c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-d_i=\left[A_0,\ldots,A_i\right]
+\begin{array}{c|cccc}
+x_i&amp;y_i&amp;&amp;&amp;\\
+\hline\\
+1&amp;\left[A_0\right]=-3&amp;&amp;&amp;\\
+&amp;&amp;\left[A_0,A_1\right]=10&amp;&amp;\\
+2&amp;\left[A_1\right]=7&amp;&amp;\left[A_0,A_1,A_2\right]=-\frac{17}{2}&amp;\\
+&amp;&amp;\left[A_1,A_2\right]=-7&amp;&amp;\left[A_0,A_1,A_2,A_3\right]=\frac{29}{6}\\
+3&amp;\left[A_2\right]=0&amp;&amp;\left[A_1,A_2,A_3\right]=6&amp;\\
+&amp;&amp;\left[A_2,A_3\right]=5&amp;&amp;\\
+4&amp;\left[A_3\right]=5&amp;&amp;&amp;\\
+\end{array}
 \end{equation*}
 </div>
 <span class="incontext"><a href="presentationdiffdiv.html#p-985">Contexte</a></span>

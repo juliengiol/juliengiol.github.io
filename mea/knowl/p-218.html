@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:12:22-04:00    *-->
+<!--*    on 2020-09-07T08:45:35-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Comment utiliser efficacement l'ordinateur pour calculer la somme des \(n\) premiers entiers non nuls</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^nk=1+2+\cdots+n\;?
-\end{equation*}
-</div>
-<span class="incontext"><a href="sommeentiers.html#p-218">Contexte</a></span>
+<ol class="decimal">
+<li><pre class="code-block tex2jax_ignore">def syracuse1(s, n):
+    for k in range(1, n+1):
+        if s % 2 == 0:
+              s = s / 2
+        else:
+            s = 3 * s + 1
+    return s
+
+print(syracuse1(14, 20))
+</pre></li>
+<li><pre class="code-block tex2jax_ignore">def syracuse2(s, n):
+    if n == 0:
+        return s
+    elif s % 2 == 0:
+        return syracuse2(s / 2, n-1)
+    else:
+        return syracuse2(3 * s + 1, n-1)
+
+print(syracuse2(14, 20))
+</pre></li>
+</ol>
+<span class="incontext"><a href="exercicesfonctions.html#p-218">Contexte</a></span>
 </body>
 </html>

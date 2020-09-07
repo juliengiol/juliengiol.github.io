@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:33-04:00    *-->
+<!--*    on 2020-09-07T08:47:23-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Alors</p>
+<p>L'idée fondamentale de la preuve repose sur l'observation suivante :</p>
 <div class="displaymath">
 \begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^2}{2n}\\
-&amp;=\frac{2\cdot(1-0)^2}{2\cdot 4}\\
-&amp;=0{,}25.
+\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-f(a)(b-a)\\
+&amp;=\int_a^bf(x)\mathrm{d}x-f(a)\int_a^b\mathrm{d}x\\
+&amp;=\int_a^bf(x)\mathrm{d}x-\int_a^bf(a)\mathrm{d}x\\
+&amp;=\int_a^b(f(x)-f(a))\mathrm{d}x.
+\end{align*}
+</div>
+<p data-braille="continuation">Ceci entraîne</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\int_a^b(f(x)-f(a))\mathrm{d}x\right|\\
+&amp;\leq\int_a^b|f(x)-f(a)|\mathrm{d}x.
 \end{align*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#p-1162">Contexte</a></span>

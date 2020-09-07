@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:12:15-04:00    *-->
+<!--*    on 2020-09-07T08:45:27-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Et si le langage utilisé ne permet pas les assignations simultanées?</p>
+<ol class="decimal">
+<li><pre class="code-block tex2jax_ignore">somme = 1
+for k in range(2, 99+1):
+    somme = somme + k
+print(somme)
+</pre></li>
+<li><pre class="code-block tex2jax_ignore">somme = 1
+k = 2
+while k &lt;= 99:
+    somme = somme + k
+    k = k + 1
+print(somme)
+</pre></li>
+</ol>
 <span class="incontext"><a href="exercicesassignetc.html#p-106">Contexte</a></span>
 </body>
 </html>

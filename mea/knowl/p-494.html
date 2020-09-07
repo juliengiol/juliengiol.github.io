@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:12:40-04:00    *-->
+<!--*    on 2020-09-07T08:45:57-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>En particulier, \(\{x_n\}\) est décroissante et minorée par \(c\text{.}\) Par le <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_la_limite_monotone#%C3%89nonc%C3%A9_pour_les_suites" target="_blank">théorème de la limite monotone</a>, on en déduit que</p>
+<p>Il reste à montrer que \(c&lt;x_1\text{.}\) Par positivité de \(f''\text{,}\) la fonction \(f'\) est strictement croissante sur \(]c;b[\text{.}\) En utilisant cela et <a class="xref" data-knowl="./knowl/application_taylor_lagrange.html" title="Équation 5.1.1">(5.1.1)</a>, on a</p>
 <div class="displaymath">
-\begin{equation*}
-\ell=\lim_{n\rightarrow+\infty}x_n\quad\text{existe et vérifie}\quad c\leq\ell&lt;b.
-\end{equation*}
+\begin{align*}
+\xi&lt;x_0&amp;\quad\Rightarrow\quad f'(\xi)&lt;f'(x_0)\\
+&amp;\quad\Rightarrow\quad\underbrace{f'(\xi)(x_0-c)}_{f(x_0)}&lt;f'(x_0)(x_0-c)\\
+&amp;\quad\Rightarrow\quad \frac{f(x_0)}{f'(x_0)}&lt;x_0-c\\
+&amp;\quad\Rightarrow\quad c&lt;\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}.
+\end{align*}
 </div>
-<p data-braille="continuation">Il ne reste plus qu'à montrer que \(\ell=c\text{.}\)</p>
 <span class="incontext"><a href="presentationnewton.html#p-494">Contexte</a></span>
 </body>
 </html>

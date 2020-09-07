@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:12:22-04:00    *-->
+<!--*    on 2020-09-07T08:45:34-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,8 +13,16 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">2.3.12.2</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">2.3.10.2</span><span class="period">.</span>
 </h6>
-<p>Pouvez-vous calculer \(F_{100}\) de cette façon?</p></article><span class="incontext"><a href="exercicesfonctions.html#li-98">Contexte</a></span>
+<pre class="code-block tex2jax_ignore">def combienDeDeux2(n):
+    if n % 2 != 0:
+        return 0
+    else:
+        return 1 + combienDeDeux2(n / 2)
+
+print(combienDeDeux2(45))
+print(combienDeDeux2(24))
+</pre></article><span class="incontext"><a href="exercicesfonctions.html#li-98">Contexte</a></span>
 </body>
 </html>

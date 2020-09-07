@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:12:21-04:00    *-->
+<!--*    on 2020-09-07T08:45:34-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,24 +14,25 @@
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
 <ol class="decimal">
-<li><pre class="code-block tex2jax_ignore">def combienDeDeux1(n):
-    compteur = 0
-    while n % 2 == 0:
-        compteur = compteur + 1
-        n = n / 2
-    return compteur
+<li><pre class="code-block tex2jax_ignore">def subdivisionReguliere1(a, b, n):
+    deltaX = (b - a) / n
+    x = a
+    for k in range(0, n+1):
+        print(x)
+        x = x + deltaX
 
-print(combienDeDeux1(45))
-print(combienDeDeux1(24))
+subdivisionReguliere1(1.0, 3.0, 4)
 </pre></li>
-<li><pre class="code-block tex2jax_ignore">def combienDeDeux2(n):
-    if n % 2 != 0:
-        return 0
-    else:
-        return 1 + combienDeDeux2(n / 2)
+<li><pre class="code-block tex2jax_ignore">def subdivisionReguliere2(a, b, n):
+    deltaX = (b - a) / n
+    liste = []
+    x = a
+    while x &lt;= b:
+        liste.append(x)
+        x = x + deltaX
+    return liste
 
-print(combienDeDeux2(45))
-print(combienDeDeux2(24))
+print(subdivisionReguliere2(1.0, 3.0, 4))
 </pre></li>
 </ol>
 <span class="incontext"><a href="exercicesfonctions.html#p-201">Contexte</a></span>

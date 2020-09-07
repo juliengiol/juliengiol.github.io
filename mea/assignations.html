@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:11:16-04:00    *-->
+<!--*    on 2020-09-07T08:43:58-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -231,60 +231,60 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="assignations"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Assignations</span>
 </h2>
-<a href="assignations.html" class="permalink">¶</a><p id="p-38">Une <a class="external" href="https://fr.wikipedia.org/wiki/Affectation_(informatique)" target="_blank">assignation</a>, c'est le fait d'attribuer une valeur à une variable.</p>
-<p id="p-39">Par exemple, le code <code class="code-inline tex2jax_ignore">x = 2</code> a pour effet d'assigner la valeur \(\text{2}\) à la variable \(\text{x}\text{.}\) Si ensuite on fait afficher le contenu de \(\text{x}\) à l'aide de la commande <code class="code-inline tex2jax_ignore">print(x)</code>, on obtient \(\text{2}\) à la sortie.</p>
-<div class="sagecell-python" id="sage-1"><script type="text/x-sage">x = 2
+<a href="assignations.html" class="permalink">¶</a><p id="p-42">Une <a class="external" href="https://fr.wikipedia.org/wiki/Affectation_(informatique)" target="_blank">assignation</a>, c'est le fait d'attribuer une valeur à une variable.</p>
+<p id="p-43">Par exemple, le code <code class="code-inline tex2jax_ignore">x = 2</code> a pour effet d'assigner la valeur \(\text{2}\) à la variable \(\text{x}\text{.}\) Si ensuite on fait afficher le contenu de \(\text{x}\) à l'aide de la commande <code class="code-inline tex2jax_ignore">print(x)</code>, on obtient \(\text{2}\) à la sortie.</p>
+<div class="sagecell-python" id="sage-2"><script type="text/x-sage">x = 2
 # ligne de commentaire sans effet sur l'exécution du code
 print(x)
 </script></div>
-<p id="p-40">Pour afficher simultanément de contenu de deux variables \(\text{x}\) et \(\text{y}\text{,}\) il suffit d'entrer <code class="code-inline tex2jax_ignore">print(x, y)</code>.</p>
-<div class="sagecell-python" id="sage-2"><script type="text/x-sage">x = 5
+<p id="p-44">Pour afficher simultanément de contenu de deux variables \(\text{x}\) et \(\text{y}\text{,}\) il suffit d'entrer <code class="code-inline tex2jax_ignore">print(x, y)</code>.</p>
+<div class="sagecell-python" id="sage-3"><script type="text/x-sage">x = 5
 y = 3
 print(x, y)  # pour afficher x puis y sur la même ligne
 </script></div>
-<p id="p-41">Voici maintenant comment effectuer les deux assignations <code class="code-inline tex2jax_ignore">x = 5</code> et <code class="code-inline tex2jax_ignore">y = 3</code> de manière simultanée :</p>
-<div class="sagecell-python" id="sage-3"><script type="text/x-sage">x , y = 5, 3  # assignation simultanée
+<p id="p-45">Voici maintenant comment effectuer les deux assignations <code class="code-inline tex2jax_ignore">x = 5</code> et <code class="code-inline tex2jax_ignore">y = 3</code> de manière simultanée :</p>
+<div class="sagecell-python" id="sage-4"><script type="text/x-sage">x, y = 5, 3  # assignation simultanée
 print(x, y)
 </script></div>
 <article class="remark remark-like" id="echange"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Échange du contenu de deux variables.</span>
 </h6>
-<p id="p-42">L'assignation simultanée est très pratique quand on veut échanger le contenu de deux variables.</p>
-<div class="sagecell-python" id="sage-4"><script type="text/x-sage">x, y = 5, 3
+<p id="p-46">L'assignation simultanée est très pratique quand on veut échanger le contenu de deux variables.</p>
+<div class="sagecell-python" id="sage-5"><script type="text/x-sage">x, y = 5, 3
 print(x, y)
 x, y = y, x  # échange du contenu des variables et x et y
 print(x, y)
 </script></div>
-<p id="p-43">Pour bien comprendre l'intérêt de l'exemple ci-dessus et de l'assignation simultanée, évaluez le code qui suit.</p>
-<div class="sagecell-python" id="sage-5"><script type="text/x-sage">x = 5
+<p id="p-47">Pour bien comprendre l'intérêt de l'exemple ci-dessus et de l'assignation simultanée, évaluez le code qui suit.</p>
+<div class="sagecell-python" id="sage-6"><script type="text/x-sage">x = 5
 y = 3
 print(x, y)
 x = y  # le contenu de y devient celui de x
 y = x  # le contenu de x devient celui de y
 print(x, y)
 </script></div>
-<p id="p-44">Ces deux exemples montrent notamment que le code s'exécute ligne après ligne : l'ordre des instructions est donc très important.</p></article><article class="remark remark-like" id="remark-2"><h6 class="heading">
+<p id="p-48">Ces deux exemples montrent notamment que le code s'exécute ligne après ligne : l'ordre des instructions est donc très important.</p></article><article class="remark remark-like" id="remark-2"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Python Tutor.</span>
 </h6>
-<p id="p-45">L'application <a class="external" href="http://pythontutor.com/" target="_blank">Python Tutor</a> est une aide formidable quand il s'agit de comprendre pas à pas l'exécution d'un bloc de code.</p>
-<p id="p-46">Étudiez soigneusement ce qui se passe quand on exécute pas à pas les deux blocs de la remarque <a class="xref" data-knowl="./knowl/echange.html" title="Remarque 1.1.1: Échange du contenu de deux variables">1.1.1</a>  qui précède en cliquant sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire.</p>
+<p id="p-49">L'application <a class="external" href="http://pythontutor.com/" target="_blank">Python Tutor</a> est une aide formidable quand il s'agit de comprendre pas à pas l'exécution d'un bloc de code.</p>
+<p id="p-50">Étudiez soigneusement ce qui se passe quand on exécute pas à pas les deux blocs de la remarque <a class="xref" data-knowl="./knowl/echange.html" title="Remarque 1.1.1: Échange du contenu de deux variables">1.1.1</a>  qui précède en cliquant sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire.</p>
 <ul class="disc">
-<li id="li-22"><p id="p-47"><a class="external" href="https://tinyurl.com/y5o448w3" target="_blank">Bloc 1</a></p></li>
-<li id="li-23"><p id="p-48"><a class="external" href="https://tinyurl.com/y374bt2o" target="_blank">Bloc 2</a></p></li>
-</ul></article><p id="p-49">Pour terminer cette section, essayez de prédire ce que les blocs de code qui suivent affichent en sortie avant de les évaluer.</p>
-<div class="sagecell-python" id="sage-6"><script type="text/x-sage">x = 1
+<li id="li-25"><p id="p-51"><a class="external" href="https://tinyurl.com/y5o448w3" target="_blank">Bloc 1</a>.</p></li>
+<li id="li-26"><p id="p-52"><a class="external" href="https://tinyurl.com/y374bt2o" target="_blank">Bloc 2</a>.</p></li>
+</ul></article><p id="p-53">Essayez de prédire le résultat des blocs de code qui suivent.</p>
+<div class="sagecell-python" id="sage-7"><script type="text/x-sage">x = 1
 y = x - 5
 x = y
 print(x)
 </script></div>
-<div class="sagecell-python" id="sage-7"><script type="text/x-sage">x = 4
+<div class="sagecell-python" id="sage-8"><script type="text/x-sage">x = 4
 x = x * 2
 print(x)
 </script></div>
 <article class="remark remark-like" id="remark-3"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">De la droite vers la gauche.</span>
 </h6>
-<p id="p-50">Dans l'exemple précédent, la ligne <code class="code-inline tex2jax_ignore">x = x * 2</code> peut se lire</p>
+<p id="p-54">Dans l'exemple précédent, la ligne <code class="code-inline tex2jax_ignore">x = x * 2</code> peut se lire</p>
 <div class="displaymath">
 \begin{equation*}
 \text{assigner à x le contenu de x * 2}
@@ -296,49 +296,48 @@ print(x)
 \text{x * 2 va dans x.}
 \end{equation*}
 </div>
-<p id="p-51">Comme l'illustre l'exemple suivant, quand on a plusieurs <code class="code-inline tex2jax_ignore">=</code> sur la même ligne, il est pratique de les interpréter en les lisant de la droite vers la gauche.</p>
-<div class="sagecell-python" id="sage-8"><script type="text/x-sage">x = 2
+<p id="p-55">Comme l'illustre l'exemple suivant, quand on a plusieurs <code class="code-inline tex2jax_ignore">=</code> sur la même ligne, il est pratique de les interpréter en les lisant de la droite vers la gauche. <div class="sagecell-python" id="sage-9"><script type="text/x-sage">x = 2
 y = 5
 z = x = y  # le contenu de y va dans celui de x qui va dans celui de z
 print(x, y, z)
-</script></div></article><article class="remark remark-like" id="remark-4"><h6 class="heading">
+</script></div></p></article><article class="remark remark-like" id="remark-4"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Exponentiation.</span>
 </h6>
-<p id="p-52">Attention, Python ne comprend pas <code class="code-inline tex2jax_ignore">2^3</code>. À la place, on utilise <code class="code-inline tex2jax_ignore">2 ** 3</code>.</p>
-<div class="sagecell-python" id="sage-9"><script type="text/x-sage">x = 2
+<p id="p-56">Attention, Python ne comprend pas <code class="code-inline tex2jax_ignore">2^3</code>. À la place, on utilise <code class="code-inline tex2jax_ignore">2 ** 3</code>.</p>
+<div class="sagecell-python" id="sage-10"><script type="text/x-sage">x = 2
 y = 3
 z = 2 ** 3
 print(z)
 </script></div>
-<p id="p-53">L'exponentiation est l'opération qui est la première dans l'ordre de priorité des <a class="xref" data-knowl="./knowl/python_priorite_operations.html" title="Table C.2.1: Opérations mathématiques dans l'ordre décroissant de leur priorité avec Python">opérations mathématiques C.2.1</a> utilisées par Python.</p>
-<div class="sagecell-python" id="sage-10"><script type="text/x-sage">x, y = 2, 3
+<p id="p-57">L'exponentiation est l'opération qui est la première dans l'ordre de priorité des <a class="xref" data-knowl="./knowl/python_priorite_operations.html" title="Table C.2.1: Opérations mathématiques dans l'ordre décroissant de leur priorité avec Python">opérations mathématiques C.2.1</a> utilisées par Python.</p>
+<div class="sagecell-python" id="sage-11"><script type="text/x-sage">x, y = 2, 3
 z = 16
 x = 2 ** 3 - z / 2
 print(x)
-</script></div></article><p id="p-54">Avant de passer à la suite, consultez les <a class="xref" data-knowl="./knowl/python_comparaisons.html" title="Table C.2.2: Opérateurs de comparaison avec Python">comparaisons C.2.2</a> utilisées par Python.</p>
-<div class="sagecell-python" id="sage-11"><script type="text/x-sage">x, y = 2, 3
+</script></div></article><p id="p-58">Consultez les <a class="xref" data-knowl="./knowl/python_comparaisons.html" title="Table C.2.2: Opérateurs de comparaison avec Python">comparaisons C.2.2</a> utilisées par Python, puis essayez de prédire le résultat des blocs de code qui suivent.</p>
+<div class="sagecell-python" id="sage-12"><script type="text/x-sage">x, y = 2, 3
 plusGrand = x > y  # la variable plusGrand contient True si x > y est vrai, False si c'est faux.
 print(plusGrand)
 </script></div>
-<div class="sagecell-python" id="sage-12"><script type="text/x-sage">x, y = 2, 3
+<div class="sagecell-python" id="sage-13"><script type="text/x-sage">x, y = 2, 3
 egaux = x == y  # la variable egaux contient True si les contenus de x et y sont égaux, False s'ils sont différents.
 print(egaux)
 </script></div>
-<div class="sagecell-python" id="sage-13"><script type="text/x-sage">x, y = 2, 3
+<div class="sagecell-python" id="sage-14"><script type="text/x-sage">x, y = 2, 3
 differents = x != y  # la variable differents contient True si les contenus de x et y sont différents, False s'ils sont égaux.
 print(differents)
 </script></div>
 <article class="remark remark-like" id="remark-5"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Comparaison vs assignation.</span>
 </h6>
-<p id="p-55">Attention à ne pas prendre une comparaison <code class="code-inline tex2jax_ignore">==</code> pour une assignation <code class="code-inline tex2jax_ignore">=</code>.</p>
-<div class="sagecell-python" id="sage-14"><script type="text/x-sage">x = 2
+<p id="p-59">Attention à ne pas prendre une comparaison <code class="code-inline tex2jax_ignore">==</code> pour une assignation <code class="code-inline tex2jax_ignore">=</code>.</p>
+<div class="sagecell-python" id="sage-15"><script type="text/x-sage">x = 2
 y = 6
 z = y / x
 t = z == 4  # le contenu de t est la valeur de la comparaison z == 4
 print(z, t)
 </script></div>
-<div class="sagecell-python" id="sage-15"><script type="text/x-sage">x = 2
+<div class="sagecell-python" id="sage-16"><script type="text/x-sage">x = 2
 y = 6
 z = y / x
 t = z = 4  # le contenu de t est le contenu de z dont le contenu est 4

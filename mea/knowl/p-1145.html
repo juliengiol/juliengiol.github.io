@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:32-04:00    *-->
+<!--*    on 2020-09-07T08:47:21-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Maintenant qu'on a une méthode qui permet de calculer des approximations de la valeur exacte d'une intégrale définie, il reste à pouvoir estimer l'erreur commise.</p>
+<p>Remplacer la fonction \(x\mapsto f(x)\) par la fonction constante \(x\mapsto f(\xi)\) conduit à remplacer l'intégrale définie</p>
+<div class="displaymath">
+\begin{equation*}
+\int_c^df(x)\mathrm{d}x
+\end{equation*}
+</div>
+<p data-braille="continuation">par</p>
+<div class="displaymath">
+\begin{align*}
+\int_c^df(\xi)\mathrm{d}x&amp;=f(\xi)\cdot x\,\Bigg\vert_c^d\\
+&amp;=f(\xi)\cdot d-f(\xi)\cdot c\\
+&amp;=f(\xi)\cdot (d-c)\\
+&amp;=f(\xi)\cdot \Delta x
+\end{align*}
+</div>
+<p data-braille="continuation">qui est l'aire algébrique du rectangle de côtés \(\Delta x\) et \(f(\xi)\text{.}\)</p>
 <span class="incontext"><a href="presentationrectangles.html#p-1145">Contexte</a></span>
 </body>
 </html>

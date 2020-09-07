@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:02-04:00    *-->
+<!--*    on 2020-09-07T08:46:25-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Initialiser \(\text{L}\) la variable contenant la valeur du polynôme interpolateur : \(L=0\text{.}\)</p>
-<span class="incontext"><a href="algorithmelagrange.html#p-769">Contexte</a></span>
+<p>Principe : Construire ce polynôme comme combinaison linéaire des polynômes</p>
+<div class="displaymath">
+\begin{equation*}
+L_i(t)=\prod_{j\neq i}\frac{t-x_j}{x_i-x_j}
+\end{equation*}
+</div>
+<p data-braille="continuation">en posant</p>
+<div class="displaymath">
+\begin{equation*}
+L(t)=y_0\,L_0(t)+\cdots+y_n\,L_n(t).
+\end{equation*}
+</div>
+<span class="incontext"><a href="presentationlagrange.html#p-769">Contexte</a></span>
 </body>
 </html>

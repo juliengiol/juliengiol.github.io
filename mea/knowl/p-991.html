@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:20-04:00    *-->
+<!--*    on 2020-09-07T08:47:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Entrées :</p>
-<ul class="circle">
-<li><p>Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</p></li>
-<li><p>Assigner à \(\text{x0},\text{x1},\ldots,\text{xn}\) les abscisses des points à interpoler.</p></li>
-<li><p>Assigner à \(\text{y0},\text{y1},\ldots,\text{yn}\) les ordonnées des points à interpoler.</p></li>
-</ul>
-<span class="incontext"><a href="algorithmediffdiv.html#p-991">Contexte</a></span>
+<p>Voici sa forme de Lagrange :</p>
+<div class="displaymath">
+\begin{align*}
+L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
+&amp;=y_0\frac{(t-x_1)(t-x_2)}{(x_0-x_1)(x_0-x_2)}+y_1\frac{(t-x_0)(t-x_2)}{(x_1-x_0)(x_1-x_2)}+y_2\frac{(t-x_0)(t-x_1)}{(x_2-x_0)(x_2-x_1)}.
+\end{align*}
+</div>
+<span class="incontext"><a href="presentationdiffdiv.html#p-991">Contexte</a></span>
 </body>
 </html>

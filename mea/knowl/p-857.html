@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:10-04:00    *-->
+<!--*    on 2020-09-07T08:46:35-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,50 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Déterminez \(T(t)\) le polynôme de Taylor de degré deux au plus de \(f(t)\) centré en \(0\text{.}\)</p>
+<p>La forme de Lagrange du polynôme interpolateur est donnée par</p>
+<div class="displaymath">
+\begin{align*}
+L(t)&amp;=y_0\cdot L_0(t)+y_1\cdot L_1(t)+y_2\cdot L_2(t)+y_3\cdot L_3(t)+y_4\cdot L_4(t)\\
+&amp;=1\cdot L_0(t)+(-1)\cdot L_1(t)+1\cdot L_2(t)+(-1)\cdot L_3(t)+1\cdot L_4(t)\\
+&amp;=L_0(t)-L_1(t)+L_2(t)-L_3(t)+L_4(t)
+\end{align*}
+</div>
+<p data-braille="continuation">où</p>
+<div class="displaymath">
+\begin{align*}
+L_0(t)&amp;=\frac{(t-x_1)(t-x_2)(t-x_3)(t-x_4)}{(x_0-x_1)(x_0-x_2)(x_0-x_3)(x_0-x_4)}\\
+&amp;=\frac{(t-1)(t-2)(t-3)(t-4)}{(0-1)(0-2)(0-3)(0-4)}\\
+&amp;=\frac{1}{24}(t-1)(t-2)(t-3)(t-4),
+\end{align*}
+</div>
+<div class="displaymath">
+\begin{align*}
+L_1(t)&amp;=\frac{(t-x_0)(t-x_2)(t-x_3)(t-x_4)}{(x_1-x_0)(x_1-x_2)(x_1-x_3)(x_1-x_4)}\\
+&amp;=\frac{(t-0)(t-2)(t-3)(t-4)}{(1-0)(1-2)(1-3)(1-4)}\\
+&amp;=-\frac{1}{6}t(t-2)(t-3)(t-4),
+\end{align*}
+</div>
+<div class="displaymath">
+\begin{align*}
+L_2(t)&amp;=\frac{(t-x_0)(t-x_1)(t-x_3)(t-x_4)}{(x_2-x_0)(x_2-x_1)(x_2-x_3)(x_2-x_4)}\\
+&amp;=\frac{(t-0)(t-1)(t-3)(t-4)}{(2-0)(2-1)(2-3)(2-4)}\\
+&amp;=\frac{1}{4}t(t-1)(t-3)(t-4),
+\end{align*}
+</div>
+<div class="displaymath">
+\begin{align*}
+L_3(t)&amp;=\frac{(t-x_0)(t-x_1)(t-x_2)(t-x_4)}{(x_3-x_0)(x_3-x_1)(x_3-x_2)(x_3-x_4)}\\
+&amp;=\frac{(t-0)(t-1)(t-2)(t-4)}{(3-0)(3-1)(3-2)(3-4)}\\
+&amp;=-\frac{1}{6}t(t-1)(t-2)(t-4),
+\end{align*}
+</div>
+<div class="displaymath">
+\begin{align*}
+L_4(t)&amp;=\frac{(t-x_0)(t-x_1)(t-x_2)(t-x_3)}{(x_4-x_0)(x_4-x_1)(x_4-x_2)(x_4-x_3)}\\
+&amp;=\frac{(t-0)(t-1)(t-2)(t-3)}{(4-0)(4-1)(4-2)(4-3)}\\
+&amp;=\frac{1}{24}t(t-1)(t-2)(t-3).
+\end{align*}
+</div>
 <span class="incontext"><a href="exerciceslagrange.html#p-857">Contexte</a></span>
 </body>
 </html>

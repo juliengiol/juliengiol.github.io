@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:12:24-04:00    *-->
+<!--*    on 2020-09-07T08:45:38-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>En utilisant une variable que vous appellerez <code class="code-inline tex2jax_ignore">compteur</code>, modifiez l'algorithme de façon à ce qu'il affiche aussi \(T(n)\) le nombre de toutes les assignations, opérations et comparaisons effectuées (en excluant celles liées à <code class="code-inline tex2jax_ignore">compteur</code>).</p>
-<span class="incontext"><a href="exercicescomplexite.html#p-264">Contexte</a></span>
+<p>Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de \(P(x)\) une paire de parenthèses après l'autre.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{lcl}
+\text{Étape 0 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_n.\\
+\text{Étape 1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-1}+x\cdot valeur.\\
+\text{Étape 2 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-2}+x\cdot valeur.\\
+\ldots&amp;\ldots&amp;\\
+\text{Étape n-1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_1+x\cdot valeur.\\
+\text{Étape n :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_0+x\cdot valeur.\\
+\end{array}
+\end{equation*}
+</div>
+<span class="incontext"><a href="horner.html#p-264">Contexte</a></span>
 </body>
 </html>

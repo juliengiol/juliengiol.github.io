@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:11:22-04:00    *-->
+<!--*    on 2020-09-07T08:44:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -217,7 +217,7 @@ MathJax.Hub.Config({
 </h2>
 <a href="exercicescomplexite.html" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-25"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-25"><h6 class="heading">
 <span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-25"><article class="exercise exercise-like"><p id="p-261">On s'intéresse à l'algorithme suivant :<pre class="code-block tex2jax_ignore"># entrée
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-25"><article class="exercise exercise-like"><p id="p-272">On s'intéresse à l'algorithme suivant :<pre class="code-block tex2jax_ignore"># entrée
 n = 5
 
 # instructions
@@ -231,19 +231,19 @@ while k &lt; n:
 print(somme)
 </pre></p>
 <ol class="decimal">
-<li id="li-104"><p id="p-262">Qu'affiche-t-il?</p></li>
-<li id="li-105"><p id="p-263">Que fait cet algorithme pour chaque valeur de \(n\) donnée en entrée?</p></li>
-<li id="li-106"><p id="p-264">En utilisant une variable que vous appellerez <code class="code-inline tex2jax_ignore">compteur</code>, modifiez l'algorithme de façon à ce qu'il affiche aussi \(T(n)\) le nombre de toutes les assignations, opérations et comparaisons effectuées (en excluant celles liées à <code class="code-inline tex2jax_ignore">compteur</code>).</p></li>
-<li id="li-107"><p id="p-265">Combien vaut \(T(5)\text{?}\)</p></li>
-<li id="li-108"><p id="p-266">Combien vaut \(T(n)\text{?}\)</p></li>
-<li id="li-109"><p id="p-267">Comment qualifieriez-vous la complexité de cet algorithme?</p></li>
+<li id="li-110"><p id="p-273">Qu'affiche-t-il?</p></li>
+<li id="li-111"><p id="p-274">Que fait cet algorithme pour chaque valeur de \(n\) donnée en entrée?</p></li>
+<li id="li-112"><p id="p-275">En utilisant une variable que vous appellerez <code class="code-inline tex2jax_ignore">compteur</code>, modifiez l'algorithme de façon à ce qu'il affiche aussi \(T(n)\) le nombre de toutes les assignations, opérations et comparaisons effectuées (en excluant celles liées à <code class="code-inline tex2jax_ignore">compteur</code>).</p></li>
+<li id="li-113"><p id="p-276">Combien vaut \(T(5)\text{?}\)</p></li>
+<li id="li-114"><p id="p-277">Combien vaut \(T(n)\text{?}\)</p></li>
+<li id="li-115"><p id="p-278">Comment qualifieriez-vous la complexité de cet algorithme?</p></li>
 </ol>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like"><ol class="decimal">
-<li id="li-110"><pre class="code-block tex2jax_ignore">15
+<li id="li-116"><pre class="code-block tex2jax_ignore">15
 </pre></li>
-<li id="li-111"><p id="p-268">Il calcule la somme des \(n\) premiers entiers naturels non nuls.</p></li>
-<li id="li-112"><pre class="code-block tex2jax_ignore"># entrée
+<li id="li-117"><p id="p-279">Il calcule la somme des \(n\) premiers entiers naturels non nuls.</p></li>
+<li id="li-118"><pre class="code-block tex2jax_ignore"># entrée
 n = 5
 
 # instructions
@@ -259,15 +259,15 @@ while k &lt; n:
 print(somme)
 print(compteur)
 </pre></li>
-<li id="li-113"><pre class="code-block tex2jax_ignore">23
+<li id="li-119"><pre class="code-block tex2jax_ignore">23
 </pre></li>
-<li id="li-114">\(\displaystyle T(n)=3+5(n-1)=5n-2\)</li>
-<li id="li-115"><p id="p-269">Il s'agit d'une complexité linéaire.</p></li>
+<li id="li-120">\(\displaystyle T(n)=3+5(n-1)=5n-2\)</li>
+<li id="li-121"><p id="p-280">Il s'agit d'une complexité linéaire.</p></li>
 </ol></div></div>
 </div></article></div>
 <article class="exercise exercise-like" id="exercise-26"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-26"><h6 class="heading">
 <span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-26"><article class="exercise exercise-like"><p id="p-270">On s'intéresse à la fonction suivante :<pre class="code-block tex2jax_ignore">def maFonction(x, liste):
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-26"><article class="exercise exercise-like"><p id="p-281">On s'intéresse à la fonction suivante :<pre class="code-block tex2jax_ignore">def maFonction(x, liste):
     i = 0
     n = len(liste)
     while i &lt; n and liste[i] != x:
@@ -275,34 +275,34 @@ print(compteur)
     return i
 </pre></p>
 <ol class="decimal">
-<li id="li-116"><p id="p-271">Qu'est-ce qui est renvoyé par <code class="code-inline tex2jax_ignore">maFonction(7, [5, 7, 2, 3, 9])</code>?</p></li>
-<li id="li-117"><p id="p-272">Qu'est-ce qui est renvoyé par <code class="code-inline tex2jax_ignore">maFonction(4, [5, 7, 2, 3, 9])</code>?</p></li>
-<li id="li-118"><p id="p-273">Expliquez avec des mots ce que fait cette fonction.</p></li>
-<li id="li-119"><p id="p-274">Le nombre \(T(n)\) de toutes les assignations, opérations et comparaisons nécessaires pour exécuter <code class="code-inline tex2jax_ignore">maFonction(x, liste)</code> dépend du nombre d'éléments \(n\) dans la liste. Combien vaut-il?</p></li>
-<li id="li-120"><p id="p-275">Comment qualifieriez-vous la complexité de cet algorithme?</p></li>
+<li id="li-122"><p id="p-282">Qu'est-ce qui est renvoyé par <code class="code-inline tex2jax_ignore">maFonction(7, [5, 7, 2, 3, 9])</code>?</p></li>
+<li id="li-123"><p id="p-283">Qu'est-ce qui est renvoyé par <code class="code-inline tex2jax_ignore">maFonction(4, [5, 7, 2, 3, 9])</code>?</p></li>
+<li id="li-124"><p id="p-284">Expliquez avec des mots ce que fait cette fonction.</p></li>
+<li id="li-125"><p id="p-285">Le nombre \(T(n)\) de toutes les assignations, opérations et comparaisons nécessaires pour exécuter <code class="code-inline tex2jax_ignore">maFonction(x, liste)</code> dépend du nombre d'éléments \(n\) dans la liste. Combien vaut-il?</p></li>
+<li id="li-126"><p id="p-286">Comment qualifieriez-vous la complexité de cet algorithme?</p></li>
 </ol>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like"><ol class="decimal">
-<li id="li-121"><p id="p-276"><code class="code-inline tex2jax_ignore">1</code></p></li>
-<li id="li-122"><p id="p-277"><code class="code-inline tex2jax_ignore">5</code></p></li>
-<li id="li-123">
-<p id="p-278">Cette fonction renvoie la position de la première occurence de <code class="code-inline tex2jax_ignore">x</code> dans <code class="code-inline tex2jax_ignore">liste</code>.</p>
-<p id="p-279">Si <code class="code-inline tex2jax_ignore">x</code> n'y figure pas, la fonction renvoie la longueur de la liste.</p>
+<li id="li-127"><p id="p-287"><code class="code-inline tex2jax_ignore">1</code></p></li>
+<li id="li-128"><p id="p-288"><code class="code-inline tex2jax_ignore">5</code></p></li>
+<li id="li-129">
+<p id="p-289">Cette fonction renvoie la position de la première occurence de <code class="code-inline tex2jax_ignore">x</code> dans <code class="code-inline tex2jax_ignore">liste</code>.</p>
+<p id="p-290">Si <code class="code-inline tex2jax_ignore">x</code> n'y figure pas, la fonction renvoie la longueur de la liste.</p>
 </li>
-<li id="li-124"><p id="p-280">\(T(n)=2+n\cdot 4=4n+2\)</p></li>
-<li id="li-125"><p id="p-281">Il s'agit d'une complexité linéaire.</p></li>
+<li id="li-130"><p id="p-291">\(T(n)=2+n\cdot 4=4n+2\)</p></li>
+<li id="li-131"><p id="p-292">Il s'agit d'une complexité linéaire.</p></li>
 </ol></div></div>
 </div></article></div>
 <article class="exercise exercise-like" id="exercise-27"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-27"><h6 class="heading">
 <span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-27"><article class="exercise exercise-like"><ol class="decimal">
-<li id="li-126"><p id="p-282">Modifiez le deuxième bloc de code donné à la section <a href="exponentiation.html" class="internal" title="Section 3.2: Exponentiation rapide">3.2</a> de façon à créer une fonction <code class="code-inline tex2jax_ignore">complexitePuissanceRecursive(n)</code> qui renvoie \(T(n)\) le nombre de multiplications effectuées lors du calcul de \(x^n\) par la méthode d'exponentiation rapide.</p></li>
-<li id="li-127"><p id="p-283">Combien vaut \(T(10\,000)\text{?}\)</p></li>
-<li id="li-128"><p id="p-284">Vérifiez que \(T(10\,000)\) est compris entre \(\log_2(10\,000)\) et \(2\log_2(10\,000)\text{.}\)</p></li>
+<li id="li-132"><p id="p-293">Modifiez le deuxième bloc de code donné à la section <a href="exponentiation.html" class="internal" title="Section 3.2: Exponentiation rapide">3.2</a> de façon à créer une fonction <code class="code-inline tex2jax_ignore">complexitePuissanceRecursive(n)</code> qui renvoie \(T(n)\) le nombre de multiplications effectuées lors du calcul de \(x^n\) par la méthode d'exponentiation rapide.</p></li>
+<li id="li-133"><p id="p-294">Combien vaut \(T(10\,000)\text{?}\)</p></li>
+<li id="li-134"><p id="p-295">Vérifiez que \(T(10\,000)\) est compris entre \(\log_2(10\,000)\) et \(2\log_2(10\,000)\text{.}\)</p></li>
 </ol>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like"><ol class="decimal">
-<li id="li-129"><pre class="code-block tex2jax_ignore">def complexitePuissanceRecursive(n):
+<li id="li-135"><pre class="code-block tex2jax_ignore">def complexitePuissanceRecursive(n):
     if n == 1:
         return 0
     elif n % 2 == 0:
@@ -310,23 +310,23 @@ print(compteur)
     else:
         return 2 + complexitePuissanceRecursive((n - 1) / 2)
 </pre></li>
-<li id="li-130">\(\displaystyle T(10\,000)=17\)</li>
-<li id="li-131"><p id="p-285">C'est bien vrai car \(\log_2(10\,000)\approx 13{,}3\) et \(2\log_2(10\,000)\approx 26{,}6\text{.}\)</p></li>
+<li id="li-136">\(\displaystyle T(10\,000)=17\)</li>
+<li id="li-137"><p id="p-296">C'est bien vrai car \(\log_2(10\,000)\approx 13{,}3\) et \(2\log_2(10\,000)\approx 26{,}6\text{.}\)</p></li>
 </ol></div></div>
 </div></article></div>
 <article class="exercise exercise-like" id="exercise-28"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-28"><h6 class="heading">
 <span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-28"><article class="exercise exercise-like"><p id="p-286">Exécutez l'algorithme de Horner à la main pour calculer \(P(3)\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-28"><article class="exercise exercise-like"><p id="p-297">Exécutez l'algorithme de Horner à la main pour calculer \(P(3)\text{.}\)</p>
 <ol class="decimal">
-<li id="li-132">\(\displaystyle P(x)=2+7x+4x^2\)</li>
-<li id="li-133">\(\displaystyle P(x)=-2-7x+4x^2\)</li>
-<li id="li-134">\(\displaystyle P(x)=-1+2x-5x^3\)</li>
+<li id="li-138">\(\displaystyle P(x)=2+7x+4x^2\)</li>
+<li id="li-139">\(\displaystyle P(x)=-2-7x+4x^2\)</li>
+<li id="li-140">\(\displaystyle P(x)=-1+2x-5x^3\)</li>
 </ol>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like">
-<p id="p-287">Exécutez l'algorithme de Horner à la main pour calculer \(P(3)\text{.}\)</p>
+<p id="p-298">Exécutez l'algorithme de Horner à la main pour calculer \(P(3)\text{.}\)</p>
 <ol class="decimal">
-<li id="li-135">
+<li id="li-141">
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -336,9 +336,9 @@ print(compteur)
 \end{array}
 \end{equation*}
 </div>
-<p id="p-288">Donc \(P(3)=59\text{.}\)</p>
+<p id="p-299">Donc \(P(3)=59\text{.}\)</p>
 </li>
-<li id="li-136">
+<li id="li-142">
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -348,9 +348,9 @@ print(compteur)
 \end{array}
 \end{equation*}
 </div>
-<p id="p-289">Donc \(P(3)=13\text{.}\)</p>
+<p id="p-300">Donc \(P(3)=13\text{.}\)</p>
 </li>
-<li id="li-137">
+<li id="li-143">
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -361,22 +361,22 @@ print(compteur)
 \end{array}
 \end{equation*}
 </div>
-<p id="p-290">Donc \(P(3)=-130\text{.}\)</p>
+<p id="p-301">Donc \(P(3)=-130\text{.}\)</p>
 </li>
 </ol>
 </div></div>
 </div></article></div>
 <article class="exercise exercise-like" id="exercise-29"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-29"><h6 class="heading">
 <span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-29"><article class="exercise exercise-like"><p id="p-291">Exécutez l'algorithme de Horner à la main pour calculer \(P(-2)\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-29"><article class="exercise exercise-like"><p id="p-302">Exécutez l'algorithme de Horner à la main pour calculer \(P(-2)\text{.}\)</p>
 <ol class="decimal">
-<li id="li-138">\(\displaystyle P(x)=2+7x+4x^2\)</li>
-<li id="li-139">\(\displaystyle P(x)=-2-7x+4x^2\)</li>
-<li id="li-140">\(\displaystyle P(x)=-1+2x-5x^3\)</li>
+<li id="li-144">\(\displaystyle P(x)=2+7x+4x^2\)</li>
+<li id="li-145">\(\displaystyle P(x)=-2-7x+4x^2\)</li>
+<li id="li-146">\(\displaystyle P(x)=-1+2x-5x^3\)</li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like"><ol id="p-292" class="decimal">
-<li id="li-141">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like"><ol id="p-303" class="decimal">
+<li id="li-147">
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -386,9 +386,9 @@ print(compteur)
 \end{array}
 \end{equation*}
 </div>
-<p id="p-293">Donc \(P(-2)=4\text{.}\)</p>
+<p id="p-304">Donc \(P(-2)=4\text{.}\)</p>
 </li>
-<li id="li-142">
+<li id="li-148">
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -398,9 +398,9 @@ print(compteur)
 \end{array}
 \end{equation*}
 </div>
-<p id="p-294">Donc \(P(-2)=28\text{.}\)</p>
+<p id="p-305">Donc \(P(-2)=28\text{.}\)</p>
 </li>
-<li id="li-143">
+<li id="li-149">
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -411,21 +411,21 @@ print(compteur)
 \end{array}
 \end{equation*}
 </div>
-<p id="p-295">Donc \(P(-2)=35\text{.}\)</p>
+<p id="p-306">Donc \(P(-2)=35\text{.}\)</p>
 </li>
 </ol></div></div>
 </div></article></div>
 <article class="exercise exercise-like" id="horneretdivision"><a data-knowl="" class="id-ref original" data-refid="hk-horneretdivision"><h6 class="heading">
 <span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.5.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-horneretdivision"><article class="exercise exercise-like"><p id="p-296">On s'intéresse au polynôme \(P(x)=9+5x+4x^2+2x^3+7x^4\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-horneretdivision"><article class="exercise exercise-like"><p id="p-307">On s'intéresse au polynôme \(P(x)=9+5x+4x^2+2x^3+7x^4\)</p>
 <ol class="decimal">
-<li id="li-144"><p id="p-297">Exécutez l'algorithme de Horner à la main pour évaluer \(P(x)\) en \(x=2\text{.}\)</p></li>
-<li id="li-145"><p id="p-298">Effectuez la division euclidienne de \(P(x)\) par \(x-2\text{.}\)</p></li>
-<li id="li-146"><p id="p-299">Qu'observez-vous?</p></li>
+<li id="li-150"><p id="p-308">Exécutez l'algorithme de Horner à la main pour évaluer \(P(x)\) en \(x=2\text{.}\)</p></li>
+<li id="li-151"><p id="p-309">Effectuez la division euclidienne de \(P(x)\) par \(x-2\text{.}\)</p></li>
+<li id="li-152"><p id="p-310">Qu'observez-vous?</p></li>
 </ol>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><ol class="decimal">
-<li id="li-147">
+<li id="li-153">
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -437,10 +437,10 @@ print(compteur)
 \end{array}
 \end{equation*}
 </div>
-<p id="p-300">Donc \(P(2)=163\text{.}\)</p>
+<p id="p-311">Donc \(P(2)=163\text{.}\)</p>
 </li>
-<li id="li-148">
-<p id="p-301">Le quotient est</p>
+<li id="li-154">
+<p id="p-312">Le quotient est</p>
 <div class="displaymath">
 \begin{equation*}
 Q(x)=7x^3+16x^2+36x+77
@@ -453,29 +453,29 @@ R(x)=163.
 \end{equation*}
 </div>
 </li>
-<li id="li-149">
-<p id="p-302">Les coefficients du quotient correspondent aux quatre premières valeurs calculées par l'algorithme de Horner.</p>
-<p id="p-303">Le reste est égal à la cinquième valeur, c'est-à-dire \(P(2)\text{.}\)</p>
+<li id="li-155">
+<p id="p-313">Les coefficients du quotient correspondent aux quatre premières valeurs calculées par l'algorithme de Horner.</p>
+<p id="p-314">Le reste est égal à la cinquième valeur, c'est-à-dire \(P(2)\text{.}\)</p>
 </li>
 </ol></div></div>
 </div></article></div>
 <article class="exercise exercise-like" id="exercise-31"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-31"><h6 class="heading">
 <span class="type">Exercice</span><span class="space"> </span><span class="codenumber">3.5.7</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-31"><article class="exercise exercise-like"><p id="p-304">La remarque faite à la troisième question de l'exercice <a class="xref" data-knowl="./knowl/horneretdivision.html" title="Exercice 3.5.6">3.5.6</a> est vraie en général : lorsqu'on exécute l'algorithme de Horner pour évaluer \(P(x_0)\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-31"><article class="exercise exercise-like"><p id="p-315">La remarque faite à la troisième question de l'exercice <a class="xref" data-knowl="./knowl/horneretdivision.html" title="Exercice 3.5.6">3.5.6</a> est vraie en général : lorsqu'on exécute l'algorithme de Horner pour évaluer \(P(x_0)\)</p>
 <ul class="disc">
-<li id="li-150"><p id="p-305">la dernière valeur calculée donne le reste de la division euclidienne de \(P(x)\) par \(x-x_0\)</p></li>
-<li id="li-151"><p id="p-306">et les valeurs précédentes forment la liste des coefficients du quotient de cette division.</p></li>
+<li id="li-156"><p id="p-316">la dernière valeur calculée donne le reste de la division euclidienne de \(P(x)\) par \(x-x_0\)</p></li>
+<li id="li-157"><p id="p-317">et les valeurs précédentes forment la liste des coefficients du quotient de cette division.</p></li>
 </ul>
-<p id="p-307">Sachant cela, utilisez l'algorithme de Horner pour déterminer le quotient et le reste des divisions indiquées ci-dessous.</p>
+<p id="p-318">Sachant cela, utilisez l'algorithme de Horner pour déterminer le quotient et le reste des divisions indiquées ci-dessous.</p>
 <ol class="decimal">
-<li id="li-152"><p id="p-308">\(P(x)=x^2+7x-2\) divisé par \(x-3\)</p></li>
-<li id="li-153"><p id="p-309">\(P(x)=x^3-5x^2+6x\) divisé par \(x-2\)</p></li>
-<li id="li-154"><p id="p-310">\(P(x)=2x^3+x^2+7\) divisé par \(x+4\)</p></li>
+<li id="li-158"><p id="p-319">\(P(x)=x^2+7x-2\) divisé par \(x-3\)</p></li>
+<li id="li-159"><p id="p-320">\(P(x)=x^3-5x^2+6x\) divisé par \(x-2\)</p></li>
+<li id="li-160"><p id="p-321">\(P(x)=2x^3+x^2+7\) divisé par \(x+4\)</p></li>
 </ol>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like"><ol class="decimal">
-<li id="li-155">
-<p id="p-311">L'algorithme de Horner pour évaluer \(P(3)\) donne</p>
+<li id="li-161">
+<p id="p-322">L'algorithme de Horner pour évaluer \(P(3)\) donne</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -485,10 +485,10 @@ R(x)=163.
 \end{array}
 \end{equation*}
 </div>
-<p id="p-312">Donc le quotient est \(Q(x)=1\cdot x+10=x+10\) et le reste vaut \(R(x)=28\text{.}\)</p>
+<p id="p-323">Donc le quotient est \(Q(x)=1\cdot x+10=x+10\) et le reste vaut \(R(x)=28\text{.}\)</p>
 </li>
-<li id="li-156">
-<p id="p-313">L'algorithme de Horner pour évaluer \(P(2)\) donne</p>
+<li id="li-162">
+<p id="p-324">L'algorithme de Horner pour évaluer \(P(2)\) donne</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -499,10 +499,10 @@ R(x)=163.
 \end{array}
 \end{equation*}
 </div>
-<p id="p-314">Donc le quotient est \(Q(x)=1\cdot x^2+(-3)\cdot x+0=x^2-3x\) et le reste vaut \(R(x)=0\text{.}\)</p>
+<p id="p-325">Donc le quotient est \(Q(x)=1\cdot x^2+(-3)\cdot x+0=x^2-3x\) et le reste vaut \(R(x)=0\text{.}\)</p>
 </li>
-<li id="li-157">
-<p id="p-315">L'algorithme de Horner pour évaluer \(P(-4)\) donne</p>
+<li id="li-163">
+<p id="p-326">L'algorithme de Horner pour évaluer \(P(-4)\) donne</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -513,7 +513,7 @@ R(x)=163.
 \end{array}
 \end{equation*}
 </div>
-<p id="p-316">Donc le quotient est \(Q(x)=2\cdot x^2+(-7)\cdot x+28=2x^2-7x+28\) et le reste vaut \(R(x)=-105\text{.}\)</p>
+<p id="p-327">Donc le quotient est \(Q(x)=2\cdot x^2+(-7)\cdot x+28=2x^2-7x+28\) et le reste vaut \(R(x)=-105\text{.}\)</p>
 </li>
 </ol></div></div>
 </div></article></div></section></div></main>

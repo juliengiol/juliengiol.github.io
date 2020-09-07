@@ -10,9 +10,9 @@
 
     <p>Ressources :
       <ul>
-        <li><p><url href="https://colab.research.google.com/notebooks/welcome.ipynb">Google Colaboratory</url> : Environnement de travail pour Jupyter notebook qui ne nécessite aucune configuration, s'exécute entièrement dans le cloud et permet d'effectuer des sauvegardes directement dans Google Disque.</p></li>
-        <li><p><url href="https://www.anaconda.com/distribution/">Anaconda</url> : Pour installer, entre autres, Python, Jupyter et RStudio sur votre ordinateur.</p></li>
-        <li><p><url href="http://www.pythontutor.com/visualize.html#mode=edit">Python Tutor</url> : Pour comprendre comment du code Python agit pas à pas.</p></li>
+        <li><p><url href="https://colab.research.google.com/notebooks/welcome.ipynb">Google Colaboratory</url> : environnement de travail pour Jupyter notebook qui ne nécessite aucune configuration, s'exécute entièrement dans le cloud et permet d'effectuer des sauvegardes directement dans Google Disque.</p></li>
+        <li><p><url href="https://www.anaconda.com/distribution/">Anaconda</url> : pour installer, entre autres, Python, Jupyter et RStudio sur votre ordinateur.</p></li>
+        <li><p><url href="http://www.pythontutor.com/visualize.html#mode=edit">Python Tutor</url> : pour comprendre comment du code Python agit pas à pas.</p></li>
         <li><p><url href="https://www.courspython.com/">Cours Python 3 pour la programmation scientifique</url>.</p></li>
         <li><p><url href="https://python-django.dev/">Apprendre le langage de programmation Python</url>.</p></li>
       </ul>
@@ -224,7 +224,7 @@
             <input>
               k = 1
               while k &lt; 6:
-                  print(k),
+                  print(k)
                   k = k + 1
             </input>
           </sage>
@@ -286,10 +286,10 @@
           <sage language='python'>
             <input>
               def factorielleRecursive(n):
-                  if n == 0:
+                  if n == 1:
                       return 1
                   else:
-                      return n * factorielleRecursive(n-1)
+                      return n * factorielleRecursive(n - 1)
 
               print(factorielleRecursive(5))
             </input>

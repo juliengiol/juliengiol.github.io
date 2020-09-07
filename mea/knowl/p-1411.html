@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:55-04:00    *-->
+<!--*    on 2020-09-07T08:47:56-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,10 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Après des calculs fastidieux à la calculatrice ou <a class="external" href="https://juliengiol.github.io/algorithmique/algorithmesimpson.html" target="_blank">avec l'aide de notre application</a>, on obtient</p>
+<p>Hypothèses : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable quatre fois avec une dérivée quatrième continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-\text{Approximation}=0{,}746\,826\,120\,527\,46\ldots
+|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\end{equation*}
+</div>
+<p data-braille="continuation">On a alors</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\text{Erreur}\right|\leq \frac{M(b-a)^5}{2880n^4}.
 \end{equation*}
 </div>
 <span class="incontext"><a href="presentationsimpson.html#p-1411">Contexte</a></span>

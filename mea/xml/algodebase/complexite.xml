@@ -4,9 +4,8 @@
 <title>Complexité</title>
 
 <introduction>
-
   <p>
-    Voici un exemple d'algorithme :
+    Voici un exemple d'algorithme.
     <sage language='python'>
       <input>
         # entrée
@@ -22,7 +21,6 @@
       </input>
     </sage>
   </p>
-
   <p>
     Quand <c>n</c> tend vers l'infini, les instructions imposent d'effectuer de plus en plus d'opérations pour produire le résultat affiché en sortie.
     L'exécution de l'algorithme prend donc de plus en plus de temps.

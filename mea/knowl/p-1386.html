@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:13:52-04:00    *-->
+<!--*    on 2020-09-07T08:47:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,48 +13,43 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Notons ensuite que par linéarité de l'intégrale, on a</p>
-<div class="displaymath">
-\begin{equation*}
-\int_c^dN(t)\mathrm{d}t=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3
-\end{equation*}
-</div>
-<p data-braille="continuation">où</p>
 <ul class="disc">
 <li>
-<p>la première intégrale vaut</p>
+<p>Avec la méthode des rectangles, on remplace la fonction \(f\) par des fonctions constantes (polynômes de degré zéro) sur chaque sous-intervalle \([x_{k-1};x_k]\text{.}\)</p>
+<p>Cela revient à remplacer</p>
 <div class="displaymath">
-\begin{align*}
-I_1&amp;=\int_c^d1\mathrm{d}t\\
-&amp;=t\,\Bigg\vert_c^d\\
-&amp;d-c\\
-&amp;=\Delta x\;,
-\end{align*}
+\begin{equation*}
+\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad\Delta x\cdot f(\xi_k).
+\end{equation*}
 </div>
 </li>
 <li>
-<p>la deuxième intégrale vaut</p>
+<p>Avec la méthode des trapèzes, on remplace la fonction \(f\) par les morceaux affines (polynômes de degré un au plus) qui interpolent les points \((x_{k-1};f(x_{k-1}))\) et \((x_k;f(x_k))\text{.}\)</p>
+<p>Cela revient à remplacer</p>
 <div class="displaymath">
-\begin{align*}
-I_2&amp;=\int_c^d(t-c)\mathrm{d}t\\
-&amp;=\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
-&amp;=\frac{(d-c)^2}{2}-0\\
-&amp;=\frac{(\Delta x)^2}{2}
-\end{align*}
+\begin{equation*}
+\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad\frac{\Delta x}{2}\cdot (f(x_{k-1}+f(x_k)).
+\end{equation*}
 </div>
 </li>
 <li>
-<p>et la troisième intégrale vaut</p>
+<p>Avec la méthode de Simpson, on remplace la fonction \(f\) par les morceaux polynomiaux de degré deux au plus qui interpolent les points</p>
 <div class="displaymath">
-\begin{align*}
-I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
-&amp;=\int_c^d(t-c)\left(t-c-\frac{\Delta x}{2}\right)\mathrm{d}t\\
-&amp;=\int_c^d\left((t-c)^2-\frac{\Delta x}{2}\cdot(t-c)\right)\mathrm{d}t\\
-&amp;=\frac{(t-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
-&amp;=\frac{(d-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(d-c)^2}{2}-0\\
-&amp;=\frac{(\Delta x)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(\Delta x)^2}{2}\\
-&amp;=\frac{(\Delta x)^3}{12}.
-\end{align*}
+\begin{equation*}
+(x_{k-1};f(x_{k-1})),\; (m_k;f(m_k))\;\text{et}\; (x_k;f(x_k))
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(m_k\) est le milieu de l'intervalle \([x_{k-1};x_k]\text{,}\) c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+m_k=\frac{x_{k-1}+x_k}{2}.
+\end{equation*}
+</div>
+<p>Cela revient à remplacer</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad ?
+\end{equation*}
 </div>
 </li>
 </ul>

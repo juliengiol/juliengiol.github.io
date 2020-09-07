@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:11:17-04:00    *-->
+<!--*    on 2020-09-07T08:44:00-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -231,7 +231,24 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="chapter" id="fonctions"><h2 class="heading">
 <span class="type">Chapitre</span> <span class="codenumber">2</span> <span class="title">Fonctions</span>
 </h2>
-<a href="fonctions.html" class="permalink">¶</a><nav class="summary-links"><ul>
+<a href="fonctions.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-137">Voici une fonction <em class="emphasis">non récursive</em> dont on affiche la valeur en 14. <div class="sagecell-python" id="sage-33"><script type="text/x-sage">def collatz(x):
+    if x % 2 == 0:
+        return x // 2
+    else:
+        return 3 * x + 1
+
+print(collatz(14))
+</script></div></p>
+<p id="p-138">Et voilà une fonction <em class="emphasis">récursive</em> dont on affiche la valeur en 14. <div class="sagecell-python" id="sage-34"><script type="text/x-sage">def syracuse(x):
+    if x == 1:
+        return 'OK'
+    elif x % 2 == 0:
+        return syracuse(x / 2)
+    else:
+        return syracuse(3 * x + 1)
+
+print(syracuse(14))
+</script></div></p></section><nav class="summary-links"><ul>
 <li><a href="syntaxefonctions.html"><span class="codenumber">2.1</span> <span class="title">Syntaxe : def / return</span></a></li>
 <li><a href="recursivite.html"><span class="codenumber">2.2</span> <span class="title">Récursivité</span></a></li>
 <li><a href="exercicesfonctions.html"><span class="codenumber">2.3</span> <span class="title">Exercices</span></a></li>

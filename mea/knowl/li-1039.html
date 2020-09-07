@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:14:42-04:00    *-->
+<!--*    on 2020-09-07T08:48:59-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,10 +15,29 @@
 <article class="li"><h6 class="heading">
 <span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>Prérequis : Définir une fonction \(\text{euclideEtendu(a, b)}\) qui renvoie \(\text{(r, u, v)}\) où</p>
-<ul class="circle">
-<li><p>\(\text{r}\) est le PGCD de \(\text{a}\) et de \(\text{b}\text{;}\)</p></li>
-<li><p>\(\text{u}\) et \(\text{v}\) sont les coefficients de la combinaison linéaire donnée par l'algorithme d'Euclide étendu.</p></li>
-</ul></article><span class="incontext"><a href="algorithmechinois.html#li-1039">Contexte</a></span>
+<p>Principe : Remplir le tableau suivant</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+a_1&amp;m_1&amp;M_1=M/m_1&amp;1=M_1u_1+m_1v_1&amp;u_1&amp;a_1M_1u_1\\
+\hline
+a_2&amp;m_2&amp;M_2=M/m_2&amp;1=M_2u_2+m_2v_2&amp;u_2&amp;a_2M_2u_2\\
+\hline
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+\hline
+a_n&amp;m_n&amp;M_n=M/m_n&amp;1=M_nu_n+m_nv_n&amp;u_n&amp;a_nM_nu_n\\
+\hline
+M=&amp;\prod m_i&amp;&amp;&amp;x_0=&amp;\sum a_iM_iu_i\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p>Les solutions constituent alors la progression arithmétique caractérisée par</p>
+<div class="displaymath">
+\begin{equation*}
+x\equiv x_0\;\mathrm{mod}\;M\quad\Leftrightarrow\quad \exists k\in\mathbb{Z}, x=x_0+Mk.
+\end{equation*}
+</div></article><span class="incontext"><a href="presentationchinois.html#li-1039">Contexte</a></span>
 </body>
 </html>

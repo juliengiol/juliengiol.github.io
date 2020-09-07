@@ -3,6 +3,39 @@
 <chapter xml:id="fonctions" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Fonctions</title>
 
+<introduction>
+  <p>
+    Voici une fonction <em>non récursive</em> dont on affiche la valeur en 14.
+    <sage language='python'>
+      <input>
+        def collatz(x):
+            if x % 2 == 0:
+                return x // 2
+            else:
+                return 3 * x + 1
+
+        print(collatz(14))
+      </input>
+    </sage>
+  </p>
+  <p>
+    Et voilà une fonction <em>récursive</em> dont on affiche la valeur en 14.
+    <sage language='python'>
+      <input>
+        def syracuse(x):
+            if x == 1:
+                return 'OK'
+            elif x % 2 == 0:
+                return syracuse(x / 2)
+            else:
+                return syracuse(3 * x + 1)
+
+        print(syracuse(14))
+      </input>
+    </sage>
+  </p>
+</introduction>
+
 <section xml:id="syntaxefonctions">
 <title>Syntaxe : def / return</title>
 
@@ -33,7 +66,7 @@
   Évaluez la cellule précédente et vérifiez que rien ne s'affiche.
   Puis faites afficher la valeur de
   <me>y = f(5)</me>
-  en évaluant la cellule suivante :
+  en évaluant la cellule suivante.
   <sage language='python'>
     <input>
       y = f(5)
@@ -65,7 +98,7 @@
   Codons ensuite la fonction valeur absolue qui peut être définie comme suit :
   <me>x\longmapsto
   \begin{cases}
-  x&amp;\text{si}\;x\geq 0\\
+  x&amp;\text{si}\;x\geq 0,\\
   -x&amp;\text{sinon.}
   \end{cases}
   </me>
@@ -145,9 +178,11 @@
 <p>
   Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y235zy2h">Python Tutor</url> si vous voulez suivre pas à pas l'exécution du code qui précède.
 </p>
-<p>
-  Notez que pour le calcul de <c>factorielle(5)</c>, on est obligé de remonter jusqu'au cas de base <c>factorielle(1)</c> avant de redescendre pour calculer <c>factorielle(2)</c>, <c>factorielle(3)</c>, <c>factorielle(4)</c> et enfin <c>factorielle(5)</c> dans cet ordre.
-</p>
+<remark>
+  <p>
+    Notez que pour le calcul de <c>factorielle(5)</c> avec la fonction récursive ci-dessus, on est obligé de remonter jusqu'au cas de base <c>factorielle(1)</c> avant de redescendre pour calculer <c>factorielle(2)</c>, <c>factorielle(3)</c>, <c>factorielle(4)</c> et enfin <c>factorielle(5)</c> dans cet ordre.
+  </p>
+</remark>
 
 </section>
 

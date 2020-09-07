@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-02T14:12:23-04:00    *-->
+<!--*    on 2020-09-07T08:45:37-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,22 +10,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Plus généralement, on appelle forme de Horner du polynôme</p>
-<div class="displaymath">
-\begin{equation*}
-P(x)=a_0+a_1x+\ldots+a_nx^n
-\end{equation*}
-</div>
-<p data-braille="continuation">la factorisation</p>
-<div class="displaymath">
-\begin{equation*}
-P(x)=a_0+x\cdot\left(a_1+x\cdot\left(a_2+x\cdot\left(\ldots +x\cdot\left(a_{n-1}+x\cdot a_n\right)\right)\right)\right)
-\end{equation*}
-</div>
-<p data-braille="continuation">qui nécessite \(n\) additions et \(n\) multiplications, soit \(2n\) opérations.</p>
-<span class="incontext"><a href="horner.html#p-252">Contexte</a></span>
+<p>Voici une implémentation de cette approche, où la fonction <code class="code-inline tex2jax_ignore">puissanceRecursive(x, n)</code> renvoie la valeur de \(\text{x}^\text{n}\) de manière récursive : <div class="sagecell-python" id="sage-45"><script type="text/x-sage">def puissanceRecursive(x, n):
+    if n == 1:
+        return x
+    elif n % 2 == 0:
+        return puissanceRecursive(x * x, n / 2)
+    else:
+        return x * puissanceRecursive(x * x, (n - 1) / 2)
+
+print(puissanceRecursive(2, 5))
+</script></div></p>
+<span class="incontext"><a href="exponentiation.html#p-252">Contexte</a></span>
 </body>
 </html>
