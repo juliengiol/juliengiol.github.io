@@ -88,18 +88,31 @@
     </ul>
   </p>
 </div>
-
-
 <hr>
 <h2>Limites :</h2>
 <div class="sagecell-sage"><script type="text/x-sage"># Entrées :
-f(x) = sin( ln(x) / x )  # fonction dont on veut calculer la limite quand x tend vers ...
-x0 = oo  # ... x0
+f(x) = sin(x) / x  # fonction dont on veut calculer la limite quand x tend vers ...
+x0 = 0  # ... x0
 
 # Instructions Sage :
 show('Fonction :', f(x))
 show('x0 :', x0)
 L = limit(f(x), x = x0)
+show('Limite :', L, ' = ', L.n())
+</script></div>
+<hr>
+<hr>
+<h2>Limites à droite ou à gauche:</h2>
+<div class="sagecell-sage"><script type="text/x-sage"># Entrées :
+f(x) = (2 - x) / (x - 1)  # fonction dont on veut calculer la limite quand x tend vers ...
+x0 = 1  # ... x0
+pm = 'plus'  # ... à droite
+
+# Instructions Sage :
+show('Fonction :', f(x))
+show('x0 :', x0)
+show('Droite (plus) ou gauche (minus) :', pm)
+L = limit(f(x), x = x0, dir = pm)
 show('Limite :', L, ' = ', L.n())
 </script></div>
 <hr>
