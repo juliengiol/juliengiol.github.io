@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:47:25-04:00    *-->
+<!--*    on 2020-09-12T08:06:51-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,73 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li><p>Objectif : Obtenir des approximations de la valeur d'une intégrale définie \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</p></li>
-<li>
-<p>Principe : Prendre</p>
+<p>Revenons à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_rectangles.html" title="Exemple 8.1.12">8.1.12</a> et cherchons combien de rectangles \(n\) il faudrait au minimum pour que la valeur absolue de l'erreur commise par la méthode des rectangles ne dépasse pas \(10^{-5}\text{,}\) c'est-à-dire</p>
 <div class="displaymath">
 \begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
+|\text{Erreur}|\leq 10^{-5}.
 \end{equation*}
 </div>
-<p data-braille="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
+<p data-braille="continuation">D'après le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>, il suffit pour cela que</p>
 <div class="displaymath">
 \begin{equation*}
-\Delta x=\frac{b-a}{n}.
+\begin{array}{cccc}
+&amp;\frac{M(b-a)^2}{2n}&amp;\leq&amp; 10^{-5}\\
+\Leftrightarrow&amp;\frac{2\cdot(1-0)^2}{2\cdot n}&amp;\leq&amp; 10^{-5}\\
+\Leftrightarrow&amp;\frac{1}{n}&amp;\leq&amp; 10^{-5}\\
+\Leftrightarrow&amp;10^5&amp;\leq&amp; n
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">Puis choisir \(\xi_k\in[x_{k-1};x_k]\) pour \(k=1,\ldots,n\text{.}\) Et enfin calculer la somme de Riemann correspondante :</p>
-<div class="displaymath">
-\begin{equation*}
-\text{Approximation}=\Delta x\cdot\sum_{k=1}^nf(\xi_k).
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Cas particuliers :</p>
-<ul class="circle">
-<li>
-<p>Pour les rectangles à gauche, prendre</p>
-<div class="displaymath">
-\begin{equation*}
-\xi_k=x_{k-1}=a+(k-1)\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Pour les rectangles à droite, prendre</p>
-<div class="displaymath">
-\begin{equation*}
-\xi_k=x_k=a+k\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Pour les rectangles au milieu, prendre</p>
-<div class="displaymath">
-\begin{equation*}
-\xi_k=\frac{x_{k-1}+x_k}{2}=a+(k-0{,}5)\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.
-\end{equation*}
-</div>
-</li>
-</ul>
-</li>
-<li>
-<p>Précision : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable avec une dérivée continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
-<div class="displaymath">
-\begin{equation*}
-|f'(x)|\leq M\quad\text{pour tout }x\in[a;b].
-\end{equation*}
-</div>
-<p data-braille="continuation">On a alors</p>
-<div class="displaymath">
-\begin{equation*}
-\left|\text{Erreur}\right|\leq \frac{M(b-a)^2}{2n}.
-\end{equation*}
-</div>
-</li>
-<li><p>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
-</ul>
 <span class="incontext"><a href="presentationrectangles.html#p-1184">Contexte</a></span>
 </body>
 </html>

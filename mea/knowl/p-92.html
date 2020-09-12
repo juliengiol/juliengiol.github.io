@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:45:25-04:00    *-->
+<!--*    on 2020-09-12T08:04:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,10 +10,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Notez la double indentation précédant <code class="code-inline tex2jax_ignore">print(k)</code> dans le code ci-dessus : elle est due au fait que cette instruction fait partie de la conditionnelle <code class="code-inline tex2jax_ignore">if ... :</code> (première indentation) qui elle-même fait partie de la boucle <code class="code-inline tex2jax_ignore">for ... :</code> (deuxième indentation).</p>
+<p>Nous pouvons maintenant afficher les multiples de \(7\) compris entre \(7\) et \(60\) inclus, à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>, et sans déterminer au préalable le plus grand (56) de ces multiples. <div class="sagecell-python" id="bla"><script type="text/x-sage">for k in range(7, 60+1):  # pour k allant de 7 à 60
+    if k % 7 == 0:  # si k est un multiple de 7
+        print(k)  # affiche k
+</script></div></p>
 <span class="incontext"><a href="conditionnelles.html#p-92">Contexte</a></span>
 </body>
 </html>

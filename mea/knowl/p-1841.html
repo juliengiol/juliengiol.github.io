@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:48:42-04:00    *-->
+<!--*    on 2020-09-12T08:08:03-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :</p>
+<p>On en déduit d'abord que</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{rclcrclr}
-1975&amp;=&amp;225\cdot 8+175&amp;\quad\Rightarrow\quad&amp;175&amp;=&amp;1975-225\cdot 8&amp;(\text{E}_1)\\
-225&amp;=&amp;175\cdot 1+50&amp;\quad\Rightarrow\quad&amp;50&amp;=&amp;225-175\cdot 1&amp;(\text{E}_2)\\
-175&amp;=&amp;50\cdot 3+25&amp;\quad\Rightarrow\quad&amp;25&amp;=&amp;175-50\cdot 3&amp;(\text{E}_3)\\
-50&amp;=&amp;25\cdot 2+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+\text{PGCD}(772;44)=4.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis on remonte :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclr}
+4&amp;=&amp;24-20\cdot 1&amp;(\text{E}_3)\\
+&amp;=&amp;24-(44-24\cdot 1)\cdot 1&amp;\text{grâce à }(\text{E}_2)\\
+&amp;=&amp;24-44+24&amp;\\
+&amp;=&amp;24\cdot 2-44&amp;\\
+&amp;=&amp;(772-44\cdot 17)\cdot 2-44&amp;\text{grâce à }(\text{E}_1)\\
+&amp;=&amp;772\cdot 2-44\cdot 34-44&amp;\\
+&amp;=&amp;772\cdot 2-44\cdot 35.&amp;
 \end{array}
 \end{equation*}
 </div>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:47:12-04:00    *-->
+<!--*    on 2020-09-12T08:06:33-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,66 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">7.3.3.1</span><span class="period">.</span>
 </h6>
+<p>La forme de Newton du polynôme interpolateur de ces trois points s'écrit</p>
+<div class="displaymath">
+\begin{align*}
+N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
+&amp;=d_0+d_1t+d_2t(t-2).
+\end{align*}
+</div>
+<p>On cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+N(0)=4\\
+N(2)=-1\\
+N(5)=12
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+d_0&amp;&amp;&amp;&amp;&amp;=&amp;4\\
+d_0&amp;+&amp;2d_1&amp;&amp;&amp;=&amp;-1\\
+d_0&amp;+&amp;5d_1&amp;+&amp;15d_2&amp;=&amp;12\\
+\end{cases}
+\end{equation*}
+</div>
+<p>Ce système linéaire est déjà triangulé.</p>
+<ul class="disc">
+<li>
 <p>La première équation donne</p>
 <div class="displaymath">
 \begin{equation*}
 d_0=4.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Alors la deuxième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+2d_1=-1&amp;\Rightarrow\quad 4+2d_1=-1\\
+&amp;\Rightarrow\quad 2d_1=-5\\
+&amp;\Rightarrow\quad d_1=-\frac{5}{2}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Enfin la troisième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+5d_1+5d_2=0&amp;\Rightarrow\quad 4-\frac{25}{2}+15d_2=12\\
+&amp;\Rightarrow\quad 15d_2=12-4+\frac{25}{2}=\frac{41}{2}\\
+&amp;\Rightarrow\quad d_2=\frac{41}{30}.
+\end{align*}
+</div>
+</li>
+</ul>
+<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).
 \end{equation*}
 </div></article><span class="incontext"><a href="exercicesdiffdiv.html#li-530">Contexte</a></span>
 </body>

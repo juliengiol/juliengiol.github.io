@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:47:55-04:00    *-->
+<!--*    on 2020-09-12T08:07:13-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,23 +13,17 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Soit une intégrale définie</p>
+<p>et la troisième intégrale vaut</p>
 <div class="displaymath">
-\begin{equation*}
-\int_a^bf(x)\mathrm{d}x
-\end{equation*}
-</div>
-<p data-braille="continuation">et soit</p>
-<div class="displaymath">
-\begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
-\end{equation*}
-</div>
-<p data-braille="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
-<div class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}.
-\end{equation*}
+\begin{align*}
+I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
+&amp;=\int_c^d(t-c)\left(t-c-\frac{\Delta x}{2}\right)\mathrm{d}t\\
+&amp;=\int_c^d\left((t-c)^2-\frac{\Delta x}{2}\cdot(t-c)\right)\mathrm{d}t\\
+&amp;=\frac{(t-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
+&amp;=\frac{(d-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(d-c)^2}{2}-0\\
+&amp;=\frac{(\Delta x)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(\Delta x)^2}{2}\\
+&amp;=\frac{(\Delta x)^3}{12}.
+\end{align*}
 </div>
 <span class="incontext"><a href="presentationsimpson.html#p-1402">Contexte</a></span>
 </body>

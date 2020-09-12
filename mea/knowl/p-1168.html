@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:47:23-04:00    *-->
+<!--*    on 2020-09-12T08:06:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Ainsi</p>
+<p>Pour traiter le cas général avec \(n\) rectangles, on commence par l'observation suivante :</p>
 <div class="displaymath">
 \begin{align*}
-|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
-&amp;\leq\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
-&amp;=\sum_{k=1}^n\frac{M(\Delta x)^2}{2}\\
-&amp;=\sum_{k=1}^n\frac{M(b-a)^2}{2n^2}\\
-&amp;=n\cdot\frac{M(b-a)^2}{2n^2}\\
-&amp;=\frac{M(b-a)^2}{2n}.
+\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\Delta x\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})(x_k-x_{k-1})\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\int_{x_{k-1}}^{x_k}\mathrm{d}x\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x_{k-1})\mathrm{d}x\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x.
 \end{align*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#p-1168">Contexte</a></span>

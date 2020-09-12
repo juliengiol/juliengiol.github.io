@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:47:34-04:00    *-->
+<!--*    on 2020-09-12T08:06:58-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,6 +13,46 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Notons \(f(x)=x\text{,}\) \(n=10\) et</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x=\frac{b-a}{n}=\frac{3-2}{10}=0{,}1.
+\end{equation*}
+</div>
+<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([2;3]\) en dix sous-intervalles de même longueur est donnée par</p>
+<div class="displaymath">
+\begin{equation*}
+x_k=a+k\cdot\Delta x=2+k\cdot 0{,}1\quad\text{pour }k=0,1,\ldots,10,
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+2&lt;2{,}1&lt;2{,}2&lt;\ldots&lt;2{,}9&lt;3.
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme il y a beaucoup de valeurs, nous allons utiliser la notation sigma pour exprimer l'approximation cherchée :</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;=\Delta x\cdot\sum_{k=1}^nf(\xi_k)\\
+&amp;=0{,}1\cdot\sum_{k=1}^{10}\xi_k.
+\end{align*}
+</div>
+<ol class="decimal">
+<li>
+<p>Rectangles à gauche : On prend \(\xi_k=x_{k-1}\) donc</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;= 0{,}1\cdot\sum_{k=1}^{10}(2+(k-1)\cdot 0{,}1)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}(k-1)\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^9k\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{9\cdot(9+1)}{2}\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(20+45\cdot 0{,}1\right)\\
+&amp;=2{,}45.
+\end{align*}
+</div>
+</li>
+<li>
 <p>Rectangles à droite : On prend \(\xi_k=x_k\) donc</p>
 <div class="displaymath">
 \begin{align*}
@@ -23,6 +63,20 @@
 &amp;=2{,}55.
 \end{align*}
 </div>
+</li>
+<li>
+<p>Rectangles à droite : On prend \(\xi_k=\frac{x_{k-1}+x_k}{2}=2+(k-0{,}5)\cdot 0{,1}\) donc</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+(k-0{,}5)\cdot 0{,}1)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k-\sum_{k=1}^{10}0{,}5\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}-10\cdot 0{,}5\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(20+55-5\cdot 0{,}1\right)\\
+&amp;=2{,}5.
+\end{align*}
+</div>
+</li>
+</ol>
 <span class="incontext"><a href="exercicesrectangles.html#p-1244">Contexte</a></span>
 </body>
 </html>

@@ -65,7 +65,7 @@
 </sage>
 
 <p>
-  Pour afficher simultanément de contenu de deux variables <m>\text{x}</m> et <m>\text{y}</m>, il suffit d'entrer <c>print(x, y)</c>.
+  Pour afficher simultanément le contenu de deux variables <m>\text{x}</m> et <m>\text{y}</m>, il suffit d'entrer <c>print(x, y)</c>.
 </p>
 
 <sage language='python'>
@@ -188,7 +188,7 @@
     <input>
       x = 2
       y = 3
-      z = 2 ** 3
+      z = x ** y
       print(z)
     </input>
   </sage>
@@ -666,7 +666,7 @@
     </p>
   </statement>
   <answer>
-    <pre>3327.5</pre>
+    <p><m>3327{,}5</m></p>
   </answer>
   <solution>
     <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/yxt83ywg">Python Tutor</url>.</p>
@@ -711,7 +711,7 @@
     </p>
   </statement>
   <answer>
-    <m>3327{,}5</m>
+    <p><m>4950</m></p>
   </answer>
   <solution>
     <p>

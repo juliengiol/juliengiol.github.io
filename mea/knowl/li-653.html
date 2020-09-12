@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:47:39-04:00    *-->
+<!--*    on 2020-09-12T08:07:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,10 +15,16 @@
 <article class="li"><h6 class="heading">
 <span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>Astuce de calcul : Notez que l'approximation s'obtient aussi par la formule</p>
+<p>Précision : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable deux fois avec une dérivée seconde continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-\text{Approximation}=\frac{\Delta x}{2}\cdot\left(f(x_0)+2f(x_1)+\cdots+2f(x_{n-1})+f(x_n)\right).
+|f''(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\end{equation*}
+</div>
+<p data-braille="continuation">On a alors</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\text{Erreur}\right|\leq \frac{M(b-a)^3}{12n^2}.
 \end{equation*}
 </div></article><span class="incontext"><a href="presentationtrapezes.html#li-653">Contexte</a></span>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:45:02-04:00    *-->
+<!--*    on 2020-09-12T08:04:22-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -218,22 +218,22 @@ MathJax.Hub.Config({
 <a href="presentationbezout.html" class="permalink">¶</a><article class="theorem theorem-like" id="bachetbezout"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">12.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Bachet-Bézout.</span>
 </h6>
-<p id="p-1776">Soit \(a, b\in\mathbb{Z}^*\text{.}\)</p>
-<p id="p-1777">Il existe \(u, v\in\mathbb{Z}\) tels que</p>
+<p id="p-1778">Soit \(a, b\in\mathbb{Z}^*\text{.}\)</p>
+<p id="p-1779">Il existe \(u, v\in\mathbb{Z}\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
 \text{PGCD}(a;b)=au+bv.
 \end{equation*}
 </div>
-<p id="p-1778">Terminologie : On dit que \(\text{PGCD}(a;b)\) peut s'exprimer comme combinaison linéaire de \(a\) et de \(b\text{,}\) et on appelle \((u;v)\) un couple de coefficients de cette combinaison linéaire.</p></article><article class="hiddenproof" id="proof-18"><a data-knowl="" class="id-ref original" data-refid="hk-proof-18"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-18"><article class="hiddenproof"><p id="p-1779">Une preuve classique, mais non constructive, consiste à montrer que \(\text{PGCD}(a;b)\) coïncide avec la plus petite combinaison linéaire positive de \(a\) et de \(b\text{.}\)</p></article></div>
-<p id="p-1780">Nous allons expliquer comment construire un couple de coefficients \((u;v)\) qui fonctionne.</p>
+<p id="p-1780">Terminologie : On dit que \(\text{PGCD}(a;b)\) peut s'exprimer comme combinaison linéaire de \(a\) et de \(b\text{,}\) et on appelle \((u;v)\) un couple de coefficients de cette combinaison linéaire.</p></article><article class="hiddenproof" id="proof-18"><a data-knowl="" class="id-ref original" data-refid="hk-proof-18"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-18"><article class="hiddenproof"><p id="p-1781">Une preuve classique, mais non constructive, consiste à montrer que \(\text{PGCD}(a;b)\) coïncide avec la plus petite combinaison linéaire positive de \(a\) et de \(b\text{.}\)</p></article></div>
+<p id="p-1782">Nous allons expliquer comment construire un couple de coefficients \((u;v)\) qui fonctionne.</p>
 <article class="principle theorem-like" id="principle-2"><h6 class="heading">
 <span class="type">Principe</span><span class="space"> </span><span class="codenumber">12.1.2</span><span class="period">.</span>
 </h6>
-<p id="p-1781">Pour exprimer \(\text{PGCD}(a;b)\) comme combinaison linéaire de \(a\) et de \(b\text{,}\) il suffit de remonter les étapes de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(a;b)\text{.}\)</p></article><article class="example example-like" id="exemplebachetbezout"><a data-knowl="" class="id-ref original" data-refid="hk-exemplebachetbezout"><h6 class="heading">
+<p id="p-1783">Pour exprimer \(\text{PGCD}(a;b)\) comme combinaison linéaire de \(a\) et de \(b\text{,}\) il suffit de remonter les étapes de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(a;b)\text{.}\)</p></article><article class="example example-like" id="exemplebachetbezout"><a data-knowl="" class="id-ref original" data-refid="hk-exemplebachetbezout"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">12.1.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemplebachetbezout"><article class="example example-like"><p id="p-1782">Reprenons l'exemple <a class="xref" data-knowl="./knowl/exemple4algoeuclide.html" title="Exemple 11.1.32">11.1.32</a> dans lequel on calculait \(\text{PGCD}(2589;234)\) à l'aide de l'algorithme d'Euclide.</p>
-<p id="p-1783">Commençons par réécrire toutes ces divisions euclidiennes en isolant les restes :</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemplebachetbezout"><article class="example example-like"><p id="p-1784">Reprenons l'exemple <a class="xref" data-knowl="./knowl/exemple4algoeuclide.html" title="Exemple 11.1.32">11.1.32</a> dans lequel on calculait \(\text{PGCD}(2589;234)\) à l'aide de l'algorithme d'Euclide.</p>
+<p id="p-1785">Commençons par réécrire toutes ces divisions euclidiennes en isolant les restes :</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rccccr}
@@ -244,8 +244,8 @@ MathJax.Hub.Config({
 \end{array}
 \end{equation*}
 </div>
-<p id="p-1784">Partons maintenant de l'équation \((\text{E}_4)\text{.}\)</p>
-<p id="p-1785">Remplaçons d'abord \(6\) par \(15-9\cdot 1\) grâce à \((\text{E}_3)\) :</p>
+<p id="p-1786">Partons maintenant de l'équation \((\text{E}_4)\text{.}\)</p>
+<p id="p-1787">Remplaçons d'abord \(6\) par \(15-9\cdot 1\) grâce à \((\text{E}_3)\) :</p>
 <div class="displaymath">
 \begin{align*}
 3&amp;=9-6\cdot 1\\
@@ -254,7 +254,7 @@ MathJax.Hub.Config({
 &amp;=9\cdot 2-15\cdot 1.
 \end{align*}
 </div>
-<p id="p-1786">Remplaçons ensuite \(9\) par \(234-15\cdot 15\) grâce à \((\text{E}_2)\) :</p>
+<p id="p-1788">Remplaçons ensuite \(9\) par \(234-15\cdot 15\) grâce à \((\text{E}_2)\) :</p>
 <div class="displaymath">
 \begin{align*}
 3&amp;=9\cdot 2-15\cdot 1\\
@@ -263,7 +263,7 @@ MathJax.Hub.Config({
 &amp;=234\cdot 2-15\cdot 31.
 \end{align*}
 </div>
-<p id="p-1787">Remplaçons enfin \(15\) par \(2589-234\cdot 11\) grâce à \((\text{E}_1)\) :</p>
+<p id="p-1789">Remplaçons enfin \(15\) par \(2589-234\cdot 11\) grâce à \((\text{E}_1)\) :</p>
 <div class="displaymath">
 \begin{align*}
 3&amp;=234\cdot 2-15\cdot 31\\
@@ -272,7 +272,7 @@ MathJax.Hub.Config({
 &amp;=234\cdot 343-2589\cdot 31.
 \end{align*}
 </div>
-<p id="p-1788">On obtient donc la combinaison linéaire</p>
+<p id="p-1790">On obtient donc la combinaison linéaire</p>
 <div class="displaymath">
 \begin{equation*}
 3=2589\cdot (-31)+234\cdot 343
@@ -284,11 +284,11 @@ MathJax.Hub.Config({
 \text{PGCD}(2589;234)=2589u+234v\qquad\text{avec }u=-31\;\text{et}\;v=343.
 \end{equation*}
 </div></article></div>
-<p id="p-1789">Même si elle s'exécute bien à la main, la séquence des calculs effectués dans l'exemple précédent n'est pas évidente à décrire de manière algorithmique. Nous allons donc nous y prendre autrement.</p>
+<p id="p-1791">Même si elle s'exécute bien à la main, la séquence des calculs effectués dans l'exemple précédent n'est pas évidente à décrire de manière algorithmique. Nous allons donc nous y prendre autrement.</p>
 <article class="example example-like" id="example-53"><a data-knowl="" class="id-ref original" data-refid="hk-example-53"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">12.1.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-53"><article class="example example-like"><p id="p-1790">Reprenons l'exemple <a class="xref" data-knowl="./knowl/exemplebachetbezout.html" title="Exemple 12.1.3">12.1.3</a> et présentons nos calculs de façon à faire émerger une démarche algorithmique.</p>
-<p id="p-1791">La première étape consistait à effectuer la division euclidienne de \(2589\) par \(234\text{,}\) soit</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-53"><article class="example example-like"><p id="p-1792">Reprenons l'exemple <a class="xref" data-knowl="./knowl/exemplebachetbezout.html" title="Exemple 12.1.3">12.1.3</a> et présentons nos calculs de façon à faire émerger une démarche algorithmique.</p>
+<p id="p-1793">La première étape consistait à effectuer la division euclidienne de \(2589\) par \(234\text{,}\) soit</p>
 <div class="displaymath">
 \begin{equation*}
 2589=234\cdot 11+15,
@@ -306,20 +306,20 @@ MathJax.Hub.Config({
 \underbrace{15}_{r_2}=2589\cdot\underbrace{1}_{u_2}+234\cdot\underbrace{(-11)}_{v_2}.\label{deuxiemeCL}\tag{12.1.1}
 \end{equation}
 </div>
-<p id="p-1792">Quant à la dernière étape, il s'agissait de la combinaison linéaire</p>
+<p id="p-1794">Quant à la dernière étape, il s'agissait de la combinaison linéaire</p>
 <div class="displaymath">
 \begin{equation}
 \underbrace{3}_{r_5}=2589\cdot\underbrace{(-31)}_{u_5}+234\cdot\underbrace{343}_{v_5}.\label{derniereCL}\tag{12.1.2}
 \end{equation}
 </div>
-<p id="p-1793">Pour passer de <a class="xref" data-knowl="./knowl/deuxiemeCL.html" title="Équation 12.1.1">(12.1.1)</a> à <a class="xref" data-knowl="./knowl/derniereCL.html" title="Équation 12.1.2">(12.1.2)</a>, nous allons faire des combinaisons linéaires de combinaisons linéaires.</p>
-<p id="p-1794">Pour pouvoir commencer, on écrit la combinaison linéaire triviale</p>
+<p id="p-1795">Pour passer de <a class="xref" data-knowl="./knowl/deuxiemeCL.html" title="Équation 12.1.1">(12.1.1)</a> à <a class="xref" data-knowl="./knowl/derniereCL.html" title="Équation 12.1.2">(12.1.2)</a>, nous allons faire des combinaisons linéaires de combinaisons linéaires.</p>
+<p id="p-1796">Pour pouvoir commencer, on écrit la combinaison linéaire triviale</p>
 <div class="displaymath">
 \begin{equation}
 \underbrace{234}_{r_1}=2589\cdot\underbrace{0}_{u_1}+234\cdot\underbrace{1}_{v_1}.\label{premiereCL}\tag{12.1.3}
 \end{equation}
 </div>
-<p id="p-1795">On effectue ensuite la division euclidienne de \(r_1=234\) par \(r_2=15\text{,}\) soit</p>
+<p id="p-1797">On effectue ensuite la division euclidienne de \(r_1=234\) par \(r_2=15\text{,}\) soit</p>
 <div class="displaymath">
 \begin{equation*}
 \underbrace{234}_{r_1}=\underbrace{15}_{r_2}\cdot\underbrace{15}_{q_2}+\underbrace{9}_{r_3},
@@ -343,11 +343,11 @@ q_2=r_1\,//\,r_2=234\,//\,15=15
 \underbrace{9}_{r_3}=2589\cdot\underbrace{(-15)}_{u_3}+234\cdot\underbrace{166}_{v_3}.\label{troisiemeCL}\tag{12.1.4}
 \end{equation}
 </div>
-<p id="p-1796">On est donc parvenu à exprimer \(r_3=9\) comme combinaison linéaire de \(2589\) et \(234\text{.}\) Il ne reste plus qu'à itérer ce principe de calcul deux fois, pour se rendre à \(r_5=3=\text{PGCD}(2589;234)\text{.}\)</p></article></div>
+<p id="p-1798">On est donc parvenu à exprimer \(r_3=9\) comme combinaison linéaire de \(2589\) et \(234\text{.}\) Il ne reste plus qu'à itérer ce principe de calcul deux fois, pour se rendre à \(r_5=3=\text{PGCD}(2589;234)\text{.}\)</p></article></div>
 <article class="principle theorem-like" id="principealgoeuclideetendu"><h6 class="heading">
 <span class="type">Principe</span><span class="space"> </span><span class="codenumber">12.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Algorithme d'Euclide étendu.</span>
 </h6>
-<p id="p-1797">Pour calculer \(\text{PGCD}(a;b)\) tout en l'exprimant comme combinaison linéaire de \(a\) et de \(b\text{,}\) on construit les suites finies</p>
+<p id="p-1799">Pour calculer \(\text{PGCD}(a;b)\) tout en l'exprimant comme combinaison linéaire de \(a\) et de \(b\text{,}\) on construit les suites finies</p>
 <div class="displaymath">
 \begin{equation*}
 \{r_n\},\;\{u_n\},\;\{v_n\},\;\{q_n\}
@@ -375,7 +375,7 @@ v_{n+1}=v_{n-1}-v_n\cdot q_n
 \end{equation*}
 </div>
 <p data-braille="continuation">pour tout \(n\geq 1\) jusqu'à ce qu'on tombe sur \(r_{k+1}=0\text{.}\)</p>
-<p id="p-1798">Alors pour \(n=0,\ldots,k+1,\) on a</p>
+<p id="p-1800">Alors pour \(n=0,\ldots,k+1,\) on a</p>
 <div class="displaymath">
 \begin{equation*}
 r_n=au_n+bv_n.
@@ -387,11 +387,11 @@ r_n=au_n+bv_n.
 \text{PGCD}(a;b)=au_k+bv_k.
 \end{equation*}
 </div>
-<p id="p-1799">Terminologie : Cet algorithme est appelé <a class="external" href="https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide_%C3%A9tendu" target="_blank">algorithme d'Euclide étendu</a>.</p>
-<p id="p-1800">Remarque : Comme la suite \(r_2,\,r_3,\,\ldots,\,r_k,\,0\) est la même que la suite des restes obtenus par l'algorithme d'Euclide, la convergence de l'algorithme d'Euclide étendu découle de la convergence de ce dernier, ainsi que le fait que le dernier reste non nul \(r_k\) soit égal à \(\text{PGCD}(a;b)\text{.}\)</p></article><article class="example example-like" id="exemplebachetbezoutalgo"><a data-knowl="" class="id-ref original" data-refid="hk-exemplebachetbezoutalgo"><h6 class="heading">
+<p id="p-1801">Terminologie : Cet algorithme est appelé <a class="external" href="https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide_%C3%A9tendu" target="_blank">algorithme d'Euclide étendu</a>.</p>
+<p id="p-1802">Remarque : Comme la suite \(r_2,\,r_3,\,\ldots,\,r_k,\,0\) est la même que la suite des restes obtenus par l'algorithme d'Euclide, la convergence de l'algorithme d'Euclide étendu découle de la convergence de ce dernier, ainsi que le fait que le dernier reste non nul \(r_k\) soit égal à \(\text{PGCD}(a;b)\text{.}\)</p></article><article class="example example-like" id="exemplebachetbezoutalgo"><a data-knowl="" class="id-ref original" data-refid="hk-exemplebachetbezoutalgo"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">12.1.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemplebachetbezoutalgo"><article class="example example-like"><p id="p-1801">Reprenons l'exemple <a class="xref" data-knowl="./knowl/exemplebachetbezout.html" title="Exemple 12.1.3">12.1.3</a> et présentons nos calculs conformément au principe <a class="xref" data-knowl="./knowl/principealgoeuclideetendu.html" title="Principe 12.1.5: Algorithme d'Euclide étendu">12.1.5</a>.</p>
-<p id="p-1802">On a</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemplebachetbezoutalgo"><article class="example example-like"><p id="p-1803">Reprenons l'exemple <a class="xref" data-knowl="./knowl/exemplebachetbezout.html" title="Exemple 12.1.3">12.1.3</a> et présentons nos calculs conformément au principe <a class="xref" data-knowl="./knowl/principealgoeuclideetendu.html" title="Principe 12.1.5: Algorithme d'Euclide étendu">12.1.5</a>.</p>
+<p id="p-1804">On a</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{|c|c|c|c|c|}
@@ -432,59 +432,59 @@ r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
 <article class="remark remark-like" id="remark-33"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">12.1.7</span><span class="period">.</span>
 </h6>
-<p id="p-1803">L'algorithme d'Euclide étendu constitue une preuve du théorème de Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a>.</p></article><article class="assemblage assemblage-like" id="assemblage-9"><h6 class="heading"><span class="title">Algorithme d'Euclide étendu : Calculer le PGCD de deux entiers par divisions euclidiennes successives, tout en l'exprimant comme combinaison linéaire de ces deux entiers.</span></h6>
-<ul id="p-1804" class="disc">
-<li id="li-935">
-<p id="p-1805">Objectif : Calculer le PGCD de deux entiers relatifs non nuls \(a, b\) et l'exprimer comme combinaison linéaire de \(a\) et \(b\text{,}\) c'est-à-dire trouver un couple d'entiers relatifs \((u;v)\) tels que</p>
+<p id="p-1805">L'algorithme d'Euclide étendu constitue une preuve du théorème de Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a>.</p></article><article class="assemblage assemblage-like" id="assemblage-9"><h6 class="heading"><span class="title">Algorithme d'Euclide étendu : Calculer le PGCD de deux entiers par divisions euclidiennes successives, tout en l'exprimant comme combinaison linéaire de ces deux entiers.</span></h6>
+<ul id="p-1806" class="disc">
+<li id="li-936">
+<p id="p-1807">Objectif : Calculer le PGCD de deux entiers relatifs non nuls \(a, b\) et l'exprimer comme combinaison linéaire de \(a\) et \(b\text{,}\) c'est-à-dire trouver un couple d'entiers relatifs \((u;v)\) tels que</p>
 <div class="displaymath">
 \begin{equation}
 \text{PGCD}(a;b)=au+bv.\label{eqbezoutassemblage}\tag{12.1.5}
 \end{equation}
 </div>
 </li>
-<li id="li-936"><p id="p-1806">Principe : Faire les mêmes divisions euclidiennes successives que pour l'algorithme d'Euclide, tout en gardant la trace des combinaisons linéaires de \(a\) et de \(b\) qu'on peut en déduire à chaque étape. Plus précisément, suivre les instructions énoncées au principe <a class="xref" data-knowl="./knowl/principealgoeuclideetendu.html" title="Principe 12.1.5: Algorithme d'Euclide étendu">12.1.5</a>.</p></li>
-<li id="li-937"><p id="p-1807">Remarque : L'algorithme d'Euclide étendu fournit une solution particulière \((u;v)\in\mathbb{Z}^2\) de l'équation <a class="xref" data-knowl="./knowl/eqbezoutassemblage.html" title="Équation 12.1.5">(12.1.5)</a>. Mais il en existe en fait une infinité (voir l'exercice <a class="xref" data-knowl="./knowl/bezoutinfinitesol.html" title="Exercice 12.3.3">12.3.3</a>).</p></li>
-<li id="li-938"><p id="p-1808">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1zlUu-sDyU97BgJKP_sKgsVrVABgvnW5u/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
+<li id="li-937"><p id="p-1808">Principe : Faire les mêmes divisions euclidiennes successives que pour l'algorithme d'Euclide, tout en gardant la trace des combinaisons linéaires de \(a\) et de \(b\) qu'on peut en déduire à chaque étape. Plus précisément, suivre les instructions énoncées au principe <a class="xref" data-knowl="./knowl/principealgoeuclideetendu.html" title="Principe 12.1.5: Algorithme d'Euclide étendu">12.1.5</a>.</p></li>
+<li id="li-938"><p id="p-1809">Remarque : L'algorithme d'Euclide étendu fournit une solution particulière \((u;v)\in\mathbb{Z}^2\) de l'équation <a class="xref" data-knowl="./knowl/eqbezoutassemblage.html" title="Équation 12.1.5">(12.1.5)</a>. Mais il en existe en fait une infinité (voir l'exercice <a class="xref" data-knowl="./knowl/bezoutinfinitesol.html" title="Exercice 12.3.3">12.3.3</a>).</p></li>
+<li id="li-939"><p id="p-1810">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1zlUu-sDyU97BgJKP_sKgsVrVABgvnW5u/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
 </ul></article><article class="remark remark-like" id="remark-34"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">12.1.8</span><span class="period">.</span>
 </h6>
-<p id="p-1809">Le théorème de Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a> se résume ainsi :</p>
+<p id="p-1811">Le théorème de Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a> se résume ainsi :</p>
 <div class="displaymath">
 \begin{equation*}
 \text{PGCD}(a;b)=d\quad\Rightarrow\quad \exists(u;v)\in\mathbb{Z}^2,\quad au+bv=d.
 \end{equation*}
 </div>
-<p id="p-1810">La réciproque est fausse, comme le montre l'exemple suivant :</p>
+<p id="p-1812">La réciproque est fausse, comme le montre l'exemple suivant :</p>
 <div class="displaymath">
 \begin{equation*}
 5\cdot 3+4\cdot(-2)=7\quad\text{et}\quad\text{PGCD}(5;4)=1\neq 7.
 \end{equation*}
 </div>
-<p id="p-1811">Mais dans le cas particulier où \(d=1\text{,}\) la réciproque est vraie, comme nous allons le montrer avec le théorème qui suit.</p></article><article class="theorem theorem-like" id="thmbezout"><h6 class="heading">
+<p id="p-1813">Mais dans le cas particulier où \(d=1\text{,}\) la réciproque est vraie, comme nous allons le montrer avec le théorème qui suit.</p></article><article class="theorem theorem-like" id="thmbezout"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">12.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Bézout.</span>
 </h6>
-<p id="p-1812">Soit \(a, b\in\mathbb{Z}^*\text{.}\)</p>
-<p id="p-1813">On a</p>
+<p id="p-1814">Soit \(a, b\in\mathbb{Z}^*\text{.}\)</p>
+<p id="p-1815">On a</p>
 <div class="displaymath">
 \begin{equation*}
 \text{PGCD}(a;b)=1\quad\Leftrightarrow\quad\exists (u;v)\in\mathbb{Z}^2,\quad au+bv=1.
 \end{equation*}
 </div>
-<p id="p-1814">Terminologie : On dit alors que \(a\) et \(b\) sont premiers entre eux.</p></article><article class="hiddenproof" id="proof-19"><a data-knowl="" class="id-ref original" data-refid="hk-proof-19"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-19"><article class="hiddenproof"><p id="p-1815">L'implication \(\Rightarrow\) découle immédiatement du théorème <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a>.</p>
-<p id="p-1816">Établissons maintenant la réciproque.</p>
-<p id="p-1817">Supposons donc qu'il existe un couple \((u;v)\in\mathbb{Z}^2\) tel que</p>
+<p id="p-1816">Terminologie : On dit alors que \(a\) et \(b\) sont premiers entre eux.</p></article><article class="hiddenproof" id="proof-19"><a data-knowl="" class="id-ref original" data-refid="hk-proof-19"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-19"><article class="hiddenproof"><p id="p-1817">L'implication \(\Rightarrow\) découle immédiatement du théorème <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a>.</p>
+<p id="p-1818">Établissons maintenant la réciproque.</p>
+<p id="p-1819">Supposons donc qu'il existe un couple \((u;v)\in\mathbb{Z}^2\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
 au+bv=1.
 \end{equation*}
 </div>
-<p id="p-1818">Soit \(d\) un diviseur commun à \(a\) et à \(b\text{,}\) de sorte qu'il existe deux entiers \(a_0, b_0\) tels que</p>
+<p id="p-1820">Soit \(d\) un diviseur commun à \(a\) et à \(b\text{,}\) de sorte qu'il existe deux entiers \(a_0, b_0\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
 a=d\cdot a_0\quad\text{et}\quad b=d\cdot b_0.
 \end{equation*}
 </div>
-<p id="p-1819">Alors</p>
+<p id="p-1821">Alors</p>
 <div class="displaymath">
 \begin{align*}
 a\cdot u+b\cdot v=1&amp;\quad\Rightarrow\quad d\cdot a_0\cdot u+d\cdot b_0\cdot v=1\\
@@ -494,7 +494,7 @@ a\cdot u+b\cdot v=1&amp;\quad\Rightarrow\quad d\cdot a_0\cdot u+d\cdot b_0\cdot 
 \end{align*}
 </div>
 <p data-braille="continuation">où la dernière implication repose sur le fait que les seuls diviseurs de \(1\) sont \(-1\) et \(1\text{.}\)</p>
-<p id="p-1820">Nous venons donc de montrer que les seuls diviseurs communs à \(a\) et à \(b\) sont \(-1\) et \(1\text{.}\) Par la définition <a class="xref" data-knowl="./knowl/defpgcd.html" title="Définition 11.1.23">11.1.23</a> du PGCD, on a donc</p>
+<p id="p-1822">Nous venons donc de montrer que les seuls diviseurs communs à \(a\) et à \(b\) sont \(-1\) et \(1\text{.}\) Par la définition <a class="xref" data-knowl="./knowl/defpgcd.html" title="Définition 11.1.23">11.1.23</a> du PGCD, on a donc</p>
 <div class="displaymath">
 \begin{equation*}
 \text{PGCD}(a;b)=1.

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:45:38-04:00    *-->
+<!--*    on 2020-09-12T08:05:09-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de \(P(x)\) une paire de parenthèses après l'autre.</p>
+<p>Reprenons l'exemple ci-dessus et notons que par factorisations successives de \(x\text{,}\) on obtient</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{array}{lcl}
-\text{Étape 0 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_n.\\
-\text{Étape 1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-1}+x\cdot valeur.\\
-\text{Étape 2 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-2}+x\cdot valeur.\\
-\ldots&amp;\ldots&amp;\\
-\text{Étape n-1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_1+x\cdot valeur.\\
-\text{Étape n :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_0+x\cdot valeur.\\
-\end{array}
-\end{equation*}
+\begin{align*}
+P(x)&amp;=10+7x+3x^2+5x^3\\
+&amp;=10+x\cdot(7+3x+5x^2)\\
+&amp;=10+x\cdot(7+x\cdot(3+x\cdot 5)).
+\end{align*}
 </div>
+<p data-braille="continuation">Vue comme ça, l'évaluation de \(P(x)\) ne requiert plus que trois additions et trois multiplications, soit six opérations.</p>
 <span class="incontext"><a href="horner.html#p-264">Contexte</a></span>
 </body>
 </html>

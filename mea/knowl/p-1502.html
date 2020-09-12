@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:48:10-04:00    *-->
+<!--*    on 2020-09-12T08:07:25-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,10 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p><a class="external" href="https://tinyurl.com/y47m7zud" target="_blank">Avec l'algorithme</a> de la section <a href="algorithmesimpson.html" class="internal" title="Section 10.2: Algorithme">10.2</a>, on trouve</p>
+<p>On cherche le plus petit \(n\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-\text{Approximation}=0{,}478\,604\,480\,912\,304\ldots
+\begin{array}{cccc}
+&amp;|\text{Erreur}|&amp;\leq&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{M(b-a)^5}{2880n^4}&amp;\leq&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{65\cdot (6-1)^5}{2880n^4}&amp;\leq&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{65\cdot 5^5}{2880n^4}&amp;\leq&amp;\frac{1}{10^9}\\
+\Leftrightarrow&amp;\frac{65\cdot 5^5\cdot 10^9}{2880}&amp;\leq&amp;n^4\\
+\Leftrightarrow&amp;\sqrt[4]{\frac{65\cdot 5^5\cdot 10^9}{2880}}&amp;\leq&amp;n\\
+\Leftrightarrow&amp;515{,}3\ldots&amp;\leq&amp;n.
+\end{array}
 \end{equation*}
 </div>
 <span class="incontext"><a href="exercicessimpson.html#p-1502">Contexte</a></span>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:47:56-04:00    *-->
+<!--*    on 2020-09-12T08:07:14-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,50 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Déterminons l'approximation obtenue pour l'intégrale définie</p>
+<p>Hypothèses : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable quatre fois avec une dérivée quatrième continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-\int_0^1e^{-x^2}\mathrm{d}x
+|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
 \end{equation*}
 </div>
-<p data-braille="continuation">si on applique la méthode de Simpson en subdivisant \([0;1]\) en quatre sous-intervalles de même longueur.</p>
-<ul class="disc">
-<li><p>Notons \(f(x)=e^{-x^2}\text{.}\)</p></li>
-<li><p>On a \(n=4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{4}=0{,}25\text{.}\)</p></li>
-<li>
-<p>Alors \(x_k=a+k\cdot\Delta x=k\cdot 0{,}25\) pour \(k=0,\ldots,4\) donne la subdivision régulière</p>
+<p data-braille="continuation">On a alors</p>
 <div class="displaymath">
 \begin{equation*}
-0&lt;0{,}25&lt;0{,}5&lt;0{,}75&lt;1
+\left|\text{Erreur}\right|\leq \frac{M(b-a)^5}{2880n^4}.
 \end{equation*}
 </div>
-<p data-braille="continuation">de l'intervalle d'intégration \([0;1]\text{.}\)</p>
-</li>
-<li>
-<p>La méthode de Simpson donne alors</p>
-<div class="displaymath">
-\begin{align*}
-\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)\\
-&amp;=\frac{0{,}25}{6}\cdot(A_1+A_2+A_3+A_4)
-\end{align*}
-</div>
-<p data-braille="continuation">où</p>
-<ul class="circle">
-<li><p>\(A_1=f(0)+4f(0{,}125)+f(0{,}25)\)</p></li>
-<li><p>\(A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)\)</p></li>
-<li><p>\(A_3=f(0{,}5)+4f(0{,}625)+f(0{,}75)\)</p></li>
-<li><p>\(A_4=f(0{,}75)+4f(0{,}875)+f(1)\)</p></li>
-</ul>
-</li>
-<li>
-<p>Après des calculs fastidieux à la calculatrice ou <a class="external" href="https://juliengiol.github.io/algorithmique/algorithmesimpson.html" target="_blank">avec l'aide de notre application</a>, on obtient</p>
-<div class="displaymath">
-\begin{equation*}
-\text{Approximation}=0{,}746\,826\,120\,527\,46\ldots
-\end{equation*}
-</div>
-</li>
-</ul>
 <span class="incontext"><a href="presentationsimpson.html#p-1413">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:46:13-04:00    *-->
+<!--*    on 2020-09-12T08:05:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,59 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li><p>Prenez n'importe quelle valeur de départ \(x_0&gt;\sqrt{k}\) et vérifiez que les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> sont vérifiées.</p></li>
-<li>
-<p>Montrez que la relation de récurrence de la méthode de Newton-Raphson donne, dans ce cas,</p>
+<p>Et pour approcher \(c_-\text{,}\) comme \(f(-2)&gt;0\text{,}\) on part de \(x_0=-2\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+x_0&amp;=-2\\
+x_1&amp;=x_0-\frac{f(x_0)}{f'(x_0)}\approx -1{,}843\,482\\
+x_2&amp;=x_1-\frac{f(x_1)}{f'(x_1)}\approx -1{,}841\,406\\
+x_3&amp;=x_2-\frac{f(x_2)}{f'(x_2)}\approx -1{,}841\,406
+\end{align*}
+</div>
+<p data-braille="continuation">Donc</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}=\frac{x_n+\frac{k}{x_n}}{2}
+c_-\approx -1{,}841.
 \end{equation*}
 </div>
-<p data-braille="continuation">qui n'est autre que la formule de la <a class="external" href="https://fr.wikipedia.org/wiki/Extraction_de_racine_carr%C3%A9e#La_m%C3%A9thode_de_H%C3%A9ron" target="_blank">méthode de Héron.</a></p>
-</li>
-<li>
-<p>Montrez que</p>
-<div class="displaymath">
-\begin{equation*}
-x_{n+1}-\sqrt{k}=\frac{1}{2x_n}(x_n-\sqrt{k})^2\qquad\text{pour tout}\;n\geq 0.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Déduisez-en que</p>
-<div class="displaymath">
-\begin{equation*}
-\left|x_{n+1}-\sqrt{k}\right|\leq \frac{1}{2}\left|x_n-\sqrt{k}\right|^2\qquad\text{pour tout}\;n\geq 0.
-\end{equation*}
-</div>
-<p>Terminologie : On dit que la convergence de la suite \(\{x_n\}\) est quadratique à cause du \(2\) en exposant.</p>
-</li>
-<li>
-<p>Montrez que</p>
-<div class="displaymath">
-\begin{equation*}
-\left|x_3-\sqrt{k}\right|\leq \frac{1}{2^7}\left|x_0-\sqrt{k}\right|^8
-\end{equation*}
-</div>
-<p data-braille="continuation">après trois itérations.</p>
-</li>
-<li><p>Déduisez de ce qui précède un majorant de la valeur absolue de l'erreur \(\left|x_3-\sqrt{k}\right|\) commise lorsqu'on effectue l'approximation de \(\sqrt{k}\) par \(x_3\) et qu'on part d'une valeur \(x_0\) telle que \(\left|x_0-\sqrt{k}\right|\leq 0{,}5\text{.}\)</p></li>
-<li>
-<p>Effectuez trois itérations de la méthode de Newton-Raphson / Héron dans chacun des cas suivants :</p>
-<ol class="lower-alpha">
-<li><p>\(k=3\) et \(x_0=2\text{;}\)</p></li>
-<li><p>\(k=5\) et \(x_0=2{,}5\text{.}\)</p></li>
-</ol>
-</li>
-<li>
-<p>Déduisez de ce qui précède une valeur arrondie à trois décimales pour</p>
-<ol class="lower-alpha">
-<li><p>\(\sqrt{3}\text{;}\)</p></li>
-<li><p>\(\sqrt{5}\text{.}\)</p></li>
-</ol>
-</li>
-</ol>
 <span class="incontext"><a href="exercicesnewton.html#p-652">Contexte</a></span>
 </body>
 </html>

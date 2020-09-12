@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:46:09-04:00    *-->
+<!--*    on 2020-09-12T08:05:42-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,9 +13,29 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.6.2</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.6.1</span><span class="period">.</span>
 </h6>
-<p>Comme c'est un polynôme, la fonction \(f\) est continue sur l'intervalle \([4/15;1]\text{.}\) Comme \(f(0{,}3)\cdot f(1)\approx(-1)\cdot 1&lt;0\;,\) le théorème des valeurs intermédiaires implique qu'il existe un zéro \(c\) pour \(f\) dans \(]0{,}3;1[\text{.}\)</p>
-<p>Et comme \(f\) est strictement croissante sur \(]0{,}3;1[\text{,}\) il n'y a pas d'autre zéro dans cet intervalle.</p></article><span class="incontext"><a href="exercicesnewton.html#li-310">Contexte</a></span>
+<p>On a</p>
+<div class="displaymath">
+\begin{align*}
+f(x)&amp;=3x^5-x^4-1\\
+f'(x)&amp;=15x^4-4x^3=x^3(15x-4)\\
+f''(x)&amp;=60x^3-12x^2=12x^2(5x-1)
+\end{align*}
+</div>
+<p>Donc \(f'\) s'annule en \(0\) et \(\frac{4}{15}\text{,}\) et \(f''\) s'annule en \(0\) et \(\frac{1}{5}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|ccccccc}
+x&amp;0&amp;&amp;&amp;&amp;1/5&amp;&amp;&amp;&amp;4/15&amp;&amp;&amp;&amp;+\infty&amp;\\
+\hline
+f''(x)&amp;0&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+&amp;&amp;+&amp;&amp;+\infty&amp;\\
+\hline
+f'(x)&amp;0&amp;&amp;-&amp;&amp;-&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+\infty&amp;\\
+\hline
+f(x)&amp;-1&amp;&amp;\searrow&amp;&amp;&amp;&amp;\searrow&amp;&amp;&amp;&amp;\nearrow&amp;&amp;+\infty&amp;
+\end{array}
+\end{equation*}
+</div></article><span class="incontext"><a href="exercicesnewton.html#li-310">Contexte</a></span>
 </body>
 </html>

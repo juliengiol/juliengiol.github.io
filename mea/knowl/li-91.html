@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:45:34-04:00    *-->
+<!--*    on 2020-09-12T08:05:02-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,18 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">2.3.8.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">2.3.8.2</span><span class="period">.</span>
 </h6>
-<pre class="code-block tex2jax_ignore">def subdivisionReguliere1(a, b, n):
+<pre class="code-block tex2jax_ignore">def subdivisionReguliere2(a, b, n):
     deltaX = (b - a) / n
     x = a
-    for k in range(0, n+1):
-        print(x)
+    liste = [a]
+    while x &lt; b:
         x = x + deltaX
+        liste.append(x)
+    return liste
 
-subdivisionReguliere1(1.0, 3.0, 4)
+print(subdivisionReguliere2(1.0, 3.0, 4))
 </pre></article><span class="incontext"><a href="exercicesfonctions.html#li-91">Contexte</a></span>
 </body>
 </html>

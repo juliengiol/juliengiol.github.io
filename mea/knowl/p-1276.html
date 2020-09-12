@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:47:39-04:00    *-->
+<!--*    on 2020-09-12T08:07:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>C'est trop dur au niveau cégep selon moi.</p>
+<p>Alors l'erreur d'approximation par la méthode des trapèzes</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right)}_{\text{Approximation}}
+\end{equation*}
+</div>
+<p data-braille="continuation">vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\leq\frac{M(b-a)^3}{12n^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(M\) est n'importe quel nombre tel que</p>
+<div class="displaymath">
+\begin{equation*}
+|f''(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\end{equation*}
+</div>
 <span class="incontext"><a href="presentationtrapezes.html#p-1276">Contexte</a></span>
 </body>
 </html>

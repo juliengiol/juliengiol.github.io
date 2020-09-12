@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:47:20-04:00    *-->
+<!--*    on 2020-09-12T08:06:44-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,17 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
+<p>Alors la deuxième équation donne</p>
 <div class="displaymath">
-\begin{equation*}
-N(t)=y_0+\frac{y_1-y_0}{x_1-x_0}(t-x_0)+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}(t-x_0)(t-x_1)
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\left[A_0,A_1,A_2\right](t-x_0)(t-x_1).
-\end{equation*}
+\begin{align*}
+d_0+(x_1-x_0)d_1=y_1&amp;\quad\Rightarrow\quad y_0+(x_1-x_0)d_1=y_1\\
+&amp;\quad\Rightarrow\quad (x_1-x_0)d_1=y_1-y_0\\
+&amp;\quad\Rightarrow\quad d_1=\frac{y_1-y_0}{x_1-x_0}.
+\end{align*}
 </div>
 <span class="incontext"><a href="exercicesdiffdiv.html#p-1126">Contexte</a></span>
 </body>

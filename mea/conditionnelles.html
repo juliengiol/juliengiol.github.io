@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-07T08:43:59-04:00    *-->
+<!--*    on 2020-09-12T08:03:28-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -231,16 +231,16 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="conditionnelles"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Conditionnelles</span>
 </h2>
-<a href="conditionnelles.html" class="permalink">¶</a><p id="p-79">Voici les mots-clés des <a class="external" href="https://fr.wikipedia.org/wiki/Instruction_conditionnelle_(programmation)#:~:text=En%20informatique%2C%20une%20instruction%20conditionnelle,%C3%A0%20savoir%20vraie%20ou%20fausse." target="_blank">instructions conditionnelles</a> en Python :</p>
+<a href="conditionnelles.html" class="permalink">¶</a><p id="p-80">Voici les mots-clés des <a class="external" href="https://fr.wikipedia.org/wiki/Instruction_conditionnelle_(programmation)#:~:text=En%20informatique%2C%20une%20instruction%20conditionnelle,%C3%A0%20savoir%20vraie%20ou%20fausse." target="_blank">instructions conditionnelles</a> en Python :</p>
 <ul class="disc">
-<li id="li-32"><p id="p-80"><code class="code-inline tex2jax_ignore">if ... :</code> se lit "si ...";</p></li>
-<li id="li-33"><p id="p-81"><code class="code-inline tex2jax_ignore">elif ... :</code> se lit "sinon si ...";</p></li>
-<li id="li-34"><p id="p-82"><code class="code-inline tex2jax_ignore">else:</code> se lit "sinon".</p></li>
+<li id="li-33"><p id="p-81"><code class="code-inline tex2jax_ignore">if ... :</code> se lit "si ...";</p></li>
+<li id="li-34"><p id="p-82"><code class="code-inline tex2jax_ignore">elif ... :</code> se lit "sinon si ...";</p></li>
+<li id="li-35"><p id="p-83"><code class="code-inline tex2jax_ignore">else:</code> se lit "sinon".</p></li>
 </ul>
 <article class="remark remark-like" id="remark-7"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
 </h6>
-<p id="p-83">Comme pour les boucles, attention à ne pas oublier les deux-points <code class="code-inline tex2jax_ignore"> :</code> et à respecter les indentations (4 espaces fortement recommandés).</p></article><p id="p-84">Essayez de deviner ce qu'affichent les blocs de code qui suivent avant de les évaluer. <div class="sagecell-python" id="sage-26"><script type="text/x-sage">x = -2
+<p id="p-84">Comme pour les boucles, attention à ne pas oublier les deux-points <code class="code-inline tex2jax_ignore"> :</code> et à respecter les indentations (4 espaces fortement recommandés).</p></article><p id="p-85">Essayez de deviner ce qu'affichent les blocs de code qui suivent avant de les évaluer. <div class="sagecell-python" id="sage-26"><script type="text/x-sage">x = -2
 if x > 0:  # si x est plus grand que 0
     print('positif')  # affiche la chaîne de caractères 'positif'
 else:
@@ -263,8 +263,8 @@ elif age < 12:
 else:
     print('plein tarif')
 </script></div></p>
-<p id="p-85">Nous allons finir cette section en utilisant l'<a class="external" href="https://fr.wikipedia.org/wiki/Modulo_(op%C3%A9ration)" target="_blank">opérateur modulo</a> qui se note <code class="code-inline tex2jax_ignore">a % b</code> en Python, et qui renvoie le reste de la division euclidienne de \(\text{a}\) par \(\text{b}\text{.}\)</p>
-<p id="p-86">Divisez \(14\) et \(25\) par \(7\) à la main avant d'évaluer les blocs de code suivants.</p>
+<p id="p-86">Nous allons finir cette section en utilisant l'<a class="external" href="https://fr.wikipedia.org/wiki/Modulo_(op%C3%A9ration)" target="_blank">opérateur modulo</a> qui se note <code class="code-inline tex2jax_ignore">a % b</code> en Python, et qui renvoie le reste de la division euclidienne de \(\text{a}\) par \(\text{b}\text{.}\)</p>
+<p id="p-87">Divisez \(14\) et \(25\) par \(7\) à la main avant d'évaluer les blocs de code suivants.</p>
 <div class="sagecell-python" id="sage-30"><script type="text/x-sage">k = 14
 print(k % 7)
 </script></div>
@@ -274,19 +274,19 @@ print(k % 7)
 <article class="remark remark-like" id="remark-8"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
 </h6>
-<p id="p-87">Pour deux entiers a et b, les assertions suivantes sont équivalentes :</p>
+<p id="p-88">Pour deux entiers a et b, les assertions suivantes sont équivalentes :</p>
 <ol class="decimal">
-<li id="li-35"><p id="p-88">a est un multiple de b;</p></li>
-<li id="li-36"><p id="p-89">b est divisible par a;</p></li>
-<li id="li-37"><p id="p-90"><code class="code-inline tex2jax_ignore">a % b</code> renvoie 0.</p></li>
-</ol></article><p id="p-91">Nous pouvons maintenant afficher les multiples de \(7\) compris entre \(7\) et \(60\) inclus, à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>, et sans déterminer au préalable le plus grand (56) de ces multiples. <div class="sagecell-python" id="bla"><script type="text/x-sage">for k in range(7, 60+1):  # pour k allant de 7 à 60
+<li id="li-36"><p id="p-89">a est un multiple de b;</p></li>
+<li id="li-37"><p id="p-90">b est divisible par a;</p></li>
+<li id="li-38"><p id="p-91"><code class="code-inline tex2jax_ignore">a % b</code> renvoie 0.</p></li>
+</ol></article><p id="p-92">Nous pouvons maintenant afficher les multiples de \(7\) compris entre \(7\) et \(60\) inclus, à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>, et sans déterminer au préalable le plus grand (56) de ces multiples. <div class="sagecell-python" id="bla"><script type="text/x-sage">for k in range(7, 60+1):  # pour k allant de 7 à 60
     if k % 7 == 0:  # si k est un multiple de 7
         print(k)  # affiche k
 </script></div></p>
 <article class="remark remark-like" id="remark-9"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
 </h6>
-<p id="p-92">Notez la double indentation précédant <code class="code-inline tex2jax_ignore">print(k)</code> dans le code ci-dessus : elle est due au fait que cette instruction fait partie de la conditionnelle <code class="code-inline tex2jax_ignore">if ... :</code> (première indentation) qui elle-même fait partie de la boucle <code class="code-inline tex2jax_ignore">for ... :</code> (deuxième indentation).</p></article></section></div></main>
+<p id="p-93">Notez la double indentation précédant <code class="code-inline tex2jax_ignore">print(k)</code> dans le code ci-dessus : elle est due au fait que cette instruction fait partie de la conditionnelle <code class="code-inline tex2jax_ignore">if ... :</code> (première indentation) qui elle-même fait partie de la boucle <code class="code-inline tex2jax_ignore">for ... :</code> (deuxième indentation).</p></article></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;
