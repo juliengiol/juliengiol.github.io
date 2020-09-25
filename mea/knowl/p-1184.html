@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:06:51-04:00    *-->
+<!--*    on 2020-09-25T09:42:31-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Revenons à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_rectangles.html" title="Exemple 8.1.12">8.1.12</a> et cherchons combien de rectangles \(n\) il faudrait au minimum pour que la valeur absolue de l'erreur commise par la méthode des rectangles ne dépasse pas \(10^{-5}\text{,}\) c'est-à-dire</p>
+<p>Par la méthode des rectangles au milieu, on a trouvé</p>
 <div class="displaymath">
 \begin{equation*}
-|\text{Erreur}|\leq 10^{-5}.
+\text{Approximation}\approx 0{,}748\,747\,131\,891\,009
 \end{equation*}
 </div>
-<p data-braille="continuation">D'après le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>, il suffit pour cela que</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{cccc}
-&amp;\frac{M(b-a)^2}{2n}&amp;\leq&amp; 10^{-5}\\
-\Leftrightarrow&amp;\frac{2\cdot(1-0)^2}{2\cdot n}&amp;\leq&amp; 10^{-5}\\
-\Leftrightarrow&amp;\frac{1}{n}&amp;\leq&amp; 10^{-5}\\
-\Leftrightarrow&amp;10^5&amp;\leq&amp; n
-\end{array}
+0{,}74\leq\text{Approximation}\leq 0{,}75.
+\end{equation*}
+</div>
+<p data-braille="continuation">En ajoutant l'encadrement de l'erreur, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}74-0{,}25\leq\text{Approximation}+\text{Erreur}\leq 0{,}75+0{,}25
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}49\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 1{,}00.
 \end{equation*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#p-1184">Contexte</a></span>

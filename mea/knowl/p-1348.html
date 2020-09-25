@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:07:08-04:00    *-->
+<!--*    on 2020-09-25T09:42:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,29 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour \(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec six trapèzes, posons \(f(x)=e^{x^2}\text{.}\) Alors</p>
+<p>Voici la subdivision régulière de l'intervalle \([-1;2]\) en trois sous-intervalles de même longueur :</p>
 <div class="displaymath">
 \begin{equation*}
-f'(x)=e^{x^2}\cdot 2x\quad\text{et}\quad f''(x)=e^{x^2}\cdot(4x^2+2).
+-1&lt;0&lt;1&lt;2.
 \end{equation*}
 </div>
-<p data-braille="continuation">Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 4x^2+2\) sont croissantes sur \([0;1]\text{,}\) on a</p>
+<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
 <div class="displaymath">
 \begin{align*}
-|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|\\
-&amp;=e^{x^2}(4x^2+2)\\
-&amp;\leq e^{1^2}(4\cdot 1^2+2)\\
-&amp;=6e
-\end{align*}
-</div>
-<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\) Donc on peut prendre \(M=6e\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
-<div class="displaymath">
-\begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
-&amp;=\frac{e}{72}\\
-&amp;=0{,}037\,7\ldots\\
-&amp;\leq 0{,}038.
+&amp;\frac{\Delta x}{2}\cdot\left(h(-1)+2h(0)+2h(1)+h(2)\right)\\
+=\;&amp;0{,}5\cdot\left(\ln(\ln(2)+1)+2\cdot 0+2\ln(\ln(2)+1)+\ln(\ln(5)+1)\right)\\
+\approx\;&amp;1{,}269.
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicestrapezes.html#p-1348">Contexte</a></span>

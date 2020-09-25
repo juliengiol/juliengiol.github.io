@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:05:44-04:00    *-->
+<!--*    on 2020-09-25T09:41:34-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,17 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On considère la fonction</p>
+<p>Fixons un indice \(n\geq 0\text{.}\) D'après la <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Taylor#Formule_de_Taylor-Lagrange" target="_blank">formule de Taylor-Lagrange</a> à l'ordre \(2\) en \(x_n\text{,}\) il existe \(\xi\in\;]c;x_n[\) tel que</p>
 <div class="displaymath">
-\begin{equation*}
-f(x)=x^3-2.
-\end{equation*}
-</div>
-<p data-braille="continuation">Si on part de \(x_0=2\text{,}\) le théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> s'applique et la suite \(\{x_n\}\) définie par la méthode de Newton-Raphson converge vers</p>
-<div class="displaymath">
-\begin{equation*}
-c=\sqrt[3]{2}=1{,}259\ldots
-\end{equation*}
+\begin{align*}
+&amp;f(c)=f(x_n)+f'(x_n)(c-x_n)+\frac{f''(\xi)}{2}(c-x_n)^2\\
+\Rightarrow\quad&amp;0=f(x_n)+f'(x_n)(c-x_n)+\frac{f''(\xi)}{2}(c-x_n)^2\\
+\Rightarrow\quad&amp;0=\frac{f(x_n)}{f'(x_n)}+c-x_n+\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2\\
+\Rightarrow\quad&amp;x_n-\frac{f(x_n)}{f'(x_n)}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2\\
+\Rightarrow\quad&amp;x_{n+1}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2\\
+\Rightarrow\quad&amp;|x_{n+1}-c|=\frac{|f''(\xi)|}{2|f'(x_n)|}|x_n-c|^2.
+\end{align*}
 </div>
 <span class="incontext"><a href="exercicesnewton.html#p-637">Contexte</a></span>
 </body>

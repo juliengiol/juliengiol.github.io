@@ -26,7 +26,7 @@
             if x == 1:
                 return 'OK'
             elif x % 2 == 0:
-                return syracuse(x / 2)
+                return syracuse(x // 2)
             else:
                 return syracuse(3 * x + 1)
 
@@ -106,7 +106,7 @@
   <sage language='python'>
     <input>
       def valeurAbsolue(x):
-          if x &gt; 0:
+          if x &gt;= 0:
               return x
           else:
               return -x
@@ -119,7 +119,8 @@
 </p>
 
 <p>
-  Terminons cette section avec la fonction factorielle. Pour <m>n\geq 1</m>, on rappelle que
+  Terminons cette section avec la fonction factorielle.
+  Pour <m>n\geq 1</m>, on rappelle que
   <me>n!=1\cdot 2\cdot 3\cdots n.</me>
   La fonction <c>factorielle(n)</c> ci-après calcule n! de manière itérative à l'aide d'une boucle <c>for</c>.
   On la teste avec <c>print(factorielle(5))</c> qui doit afficher <m>\text{120}</m> puisque
@@ -159,7 +160,7 @@
   de sorte que <m>5!</m> s'obtient par la multiplication de <m>5</m> avec la valeur de la fonction factorielle pour l'entier précédent (4).
 </p>
 <p>
-  Le code qui suit définit une fonction <c>factorielle(n)</c> suivant le point de vue récursif adopté ci-dessus.
+  Le code qui suit définit une fonction <c>factorielle(n)</c> adoptant ce point de vue récursif.
   On le teste avec <c>print(factorielle(5))</c> qui doit afficher <m>\text{120}</m>.
 </p>
 
@@ -210,7 +211,7 @@
 
 <exercise>
   <statement>
-    <p>Codez une fonction <c>aireTrapeze(base1, base2, hauteur)</c> qui renvoie l'aire d'un trapèze en fonction des longeurs de ses deux bases et de sa hauteur.</p>
+    <p>Codez une fonction <c>aireTrapeze(base1, base2, hauteur)</c> qui renvoie l'aire d'un trapèze en fonction des longueurs de ses deux bases et de sa hauteur.</p>
     <p>Testez votre code avec <c>print(aireTrapeze(4, 7, 3)</c> qui doit afficher <m>\text{16.5}</m>.</p>
   </statement>
   <solution>
@@ -238,7 +239,7 @@
       <ul>
         <li><p><c>print(f(-4))</c> doit afficher <m>\text{3}</m>.</p></li>
         <li><p><c>print(f(2))</c> doit afficher <m>\text{7}</m>.</p></li>
-        <li><p><c>print(f(5))</c> doit afficher <m>\text{21}</m>.</p></li>
+        <li><p><c>print(f(5))</c> doit afficher <m>\text{-21}</m>.</p></li>
       </ul>
     </p>
   </statement>
@@ -265,6 +266,7 @@
     <p><image width="65%" source="images/fonctions.png"/></p>
     <p>Testez votre code avec les cas suivants.
       <ul>
+        <li><p><c>print(f(-7))</c> doit afficher <m>\text{non défini}</m>.</p></li>
         <li><p><c>print(f(-5))</c> doit afficher <m>\text{-5}</m>.</p></li>
         <li><p><c>print(f(-1))</c> doit afficher <m>\text{3}</m>.</p></li>
         <li><p><c>print(f(2.5))</c> doit afficher <m>\text{0.0}</m>.</p></li>
@@ -275,15 +277,18 @@
   <solution>
     <pre>
       def f(x):
-          if -5 &lt;= x &lt; -1:
+          if x &lt; -5:
+              return 'non défini'
+          elif x &lt; -1:
               return x
-          elif -1 &lt;= x &lt; 2:
+          elif x &lt;= 2:
               return 3
-          elif 2 &lt;= x &lt; 5:
+          elif x &lt; 5:
               return - 2 * x + 5
           else:
               return 'non défini'
 
+      print(f(-7))
       print(f(-5))
       print(f(-1))
       print(f(2.5))

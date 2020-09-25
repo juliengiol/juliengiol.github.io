@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:05:08-04:00    *-->
+<!--*    on 2020-09-25T09:40:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,36 +10,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voici une implémentation de cette approche, où la fonction <code class="code-inline tex2jax_ignore">puissanceRecursive(x, n)</code> renvoie la valeur de \(\text{x}^\text{n}\) de manière récursive : <div class="sagecell-python" id="sage-45"><script type="text/x-sage">def puissanceRecursive(x, n):
-    if n == 1:
-        return x
-    elif n % 2 == 0:
-        return puissanceRecursive(x * x, n / 2)
-    else:
-        return x * puissanceRecursive(x * x, (n - 1) / 2)
-
-print(puissanceRecursive(2, 5))
-</script></div></p>
+<p>Revenons au calcul de \(2^5\) et notons que</p>
+<div class="displaymath">
+\begin{equation*}
+2^5=2\cdot (2^2)^2
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+2^5=x\cdot y\cdot y\quad\text{avec}\quad x=2\quad\text{et}\quad y=x\cdot x.
+\end{equation*}
+</div>
 <span class="incontext"><a href="exponentiation.html#p-254">Contexte</a></span>
 </body>
 </html>

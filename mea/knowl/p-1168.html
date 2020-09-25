@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:06:49-04:00    *-->
+<!--*    on 2020-09-25T09:42:30-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour traiter le cas général avec \(n\) rectangles, on commence par l'observation suivante :</p>
+<p>Par le théorème de Lagrange (ou théorème des accroissements finis), pour tout \(x\in]a;b]\text{,}\) il existe \(c_x\in]a;x[\) tel que</p>
 <div class="displaymath">
-\begin{align*}
-\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\Delta x\\
-&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})(x_k-x_{k-1})\\
-&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\int_{x_{k-1}}^{x_k}\mathrm{d}x\\
-&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x_{k-1})\mathrm{d}x\\
-&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x.
-\end{align*}
+\begin{equation*}
+f(x)-f(a)=f'(c_x)(x-a).
+\end{equation*}
 </div>
+<p data-braille="continuation">Et cela reste vrai pour \(x=a\) car \(f(a)-f(a)=f'(c)(a-a)\Leftrightarrow 0=f'(c)\cdot 0\) pour n'importe quelle valeur de \(c\in]a;b[\text{.}\)</p>
 <span class="incontext"><a href="presentationrectangles.html#p-1168">Contexte</a></span>
 </body>
 </html>

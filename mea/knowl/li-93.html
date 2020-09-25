@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:05:02-04:00    *-->
+<!--*    on 2020-09-25T09:40:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -17,11 +17,11 @@
 </h6>
 <pre class="code-block tex2jax_ignore">def subdivisionReguliere2(a, b, n):
     deltaX = (b - a) / n
-    liste = []
     x = a
-    while x &lt;= b:
-        liste.append(x)
+    liste = [a]
+    while x &lt; b:
         x = x + deltaX
+        liste.append(x)
     return liste
 
 print(subdivisionReguliere2(1.0, 3.0, 4))

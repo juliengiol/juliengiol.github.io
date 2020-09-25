@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:05:09-04:00    *-->
+<!--*    on 2020-09-25T09:40:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,17 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On parle alors d'une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche itérative, comme le montrent les graphes ci-après. <figure class="figure figure-like"><iframe src="https://www.desmos.com/calculator/yjztmlow1h" id="desmos-lineaire-log" width="600" height="480"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs logarithmique</figcaption></figure></p>
+<p>Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+x^n=
+\begin{cases}
+x&amp;\text{ si }n=1,\\
+\left(x^2\right)^{n/2}&amp;\text{ si }n\text{ est pair,}\\
+x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
+\end{cases}
+\end{equation*}
+</div>
 <span class="incontext"><a href="exponentiation.html#p-256">Contexte</a></span>
 </body>
 </html>

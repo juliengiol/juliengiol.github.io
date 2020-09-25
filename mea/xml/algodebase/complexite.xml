@@ -10,12 +10,10 @@
       <input>
         # entrée
         n = 5
-
         # instructions
         somme = 1
         for k in range(2, n+1):
             somme = somme + k
-
         # sortie
         print(somme)
       </input>
@@ -400,8 +398,8 @@
           print(compteur)
         </pre>
       </li>
-      <li><pre>23</pre></li>
-      <li><m>T(n)=3+5(n-1)=5n-2</m></li>
+      <li><p><m>23</m></p></li>
+      <li><p><m>T(n)=3+5(n-1)=5n-2</m></p></li>
       <li><p>Il s'agit d'une complexité linéaire.</p></li>
     </ol>
   </solution>
@@ -423,20 +421,18 @@
       <li><p>Qu'est-ce qui est renvoyé par <c>maFonction(7, [5, 7, 2, 3, 9])</c>?</p></li>
       <li><p>Qu'est-ce qui est renvoyé par <c>maFonction(4, [5, 7, 2, 3, 9])</c>?</p></li>
       <li><p>Expliquez avec des mots ce que fait cette fonction.</p></li>
-      <li><p>Le nombre <m>T(n)</m> de toutes les assignations, opérations et comparaisons nécessaires pour exécuter <c>maFonction(x, liste)</c> dépend du nombre d'éléments <m>n</m> dans la liste. Combien vaut-il?</p></li>
-      <li><p>Comment qualifieriez-vous la complexité de cet algorithme?</p></li>
+      <li><p>Le nombre <m>T(n)</m> de toutes les assignations, opérations et comparaisons nécessaires pour exécuter <c>maFonction(x, liste)</c> dépend du nombre d'éléments <m>n</m> dans la liste. Combien vaut-il dans le pire des cas?</p></li>
     </ol>
   </statement>
   <solution>
     <ol>
-      <li><p><c>1</c></p></li>
-      <li><p><c>5</c></p></li>
+      <li><p><m>1</m></p></li>
+      <li><p><m>5</m></p></li>
       <li>
         <p>Cette fonction renvoie la position de la première occurence de <c>x</c> dans <c>liste</c>.</p>
         <p>Si <c>x</c> n'y figure pas, la fonction renvoie la longueur de la liste.</p>
       </li>
-      <li><p><m>T(n)=2+n\cdot 4=4n+2</m></p></li>
-      <li><p>Il s'agit d'une complexité linéaire.</p></li>
+      <li><p>Dans le pire des cas, <m>T(n)=2+n\cdot 4=4n+2</m>.</p></li>
     </ol>
   </solution>
 </exercise>

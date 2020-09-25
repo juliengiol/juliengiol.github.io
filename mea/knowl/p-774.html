@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:06:02-04:00    *-->
+<!--*    on 2020-09-25T09:41:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Erreur d'interpolation : Quand on effectue l'approximation d'une fonction suffisamment régulière par un polynôme interpolateur, on dispose d'une formule permettant de contrôler l'erreur commise (voir l'exercice <a class="xref" data-knowl="./knowl/erreurdinterpolation.html" title="Exercice 6.3.12">6.3.12</a>).</p>
+<p>Principe : Construire ce polynôme comme combinaison linéaire des polynômes</p>
+<div class="displaymath">
+\begin{equation*}
+L_i(t)=\prod_{j\neq i}\frac{t-x_j}{x_i-x_j}
+\end{equation*}
+</div>
+<p data-braille="continuation">en posant</p>
+<div class="displaymath">
+\begin{equation*}
+L(t)=y_0\,L_0(t)+\cdots+y_n\,L_n(t).
+\end{equation*}
+</div>
 <span class="incontext"><a href="presentationlagrange.html#p-774">Contexte</a></span>
 </body>
 </html>

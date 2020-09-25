@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:05:09-04:00    *-->
+<!--*    on 2020-09-25T09:40:50-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,45 +10,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voici une implémentation itérative de la méthode de Horner : <div class="sagecell-python" id="sage-47"><script type="text/x-sage"># entrées
-n = 3
-coefficients = [10, 7, 3, 5]
-x = 9
-
-# instructions
-valeur = coefficients[n]
-for j in range(1, n+1):
-    valeur = coefficients[n-j] + x * valeur
-
-# sortie
-print(valeur)
-</script></div> La complexité de cet algorithme</p>
+<p>Plus généralement, on appelle forme de Horner du polynôme</p>
 <div class="displaymath">
 \begin{equation*}
-T(n)=2n
+P(x)=a_0+a_1x+\ldots+a_nx^n
 \end{equation*}
 </div>
-<p data-braille="continuation">est linéaire et bien meilleure que la complexité quadratique obtenue par l'approche naïve, comme le montrent les graphes ci-après. <figure class="figure figure-like"><iframe src="https://www.desmos.com/calculator/qhvlpnvcmh" id="desmos-lineaire-quadratique" width="600" height="480"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs quadratique</figcaption></figure></p>
+<p data-braille="continuation">la factorisation</p>
+<div class="displaymath">
+\begin{equation*}
+P(x)=a_0+x\cdot\left(a_1+x\cdot\left(a_2+x\cdot\left(\ldots +x\cdot\left(a_{n-1}+x\cdot a_n\right)\right)\right)\right)
+\end{equation*}
+</div>
+<p data-braille="continuation">qui nécessite \(n\) additions et \(n\) multiplications, soit \(2n\) opérations.</p>
 <span class="incontext"><a href="horner.html#p-268">Contexte</a></span>
 </body>
 </html>

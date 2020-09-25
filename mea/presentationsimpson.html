@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:04:08-04:00    *-->
+<!--*    on 2020-09-25T09:40:10-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -215,7 +215,7 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="presentationsimpson"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">10.1</span> <span class="title">Présentation</span>
 </h2>
-<a href="presentationsimpson.html" class="permalink">¶</a><p id="p-1387">Nous voulons toujours approcher la valeur d'une intégrale</p>
+<a href="presentationsimpson.html" class="permalink">¶</a><p id="p-1390">Nous voulons toujours approcher la valeur d'une intégrale</p>
 <div class="displaymath">
 \begin{equation*}
 \displaystyle\int_a^bf(x)\mathrm{d}x
@@ -233,10 +233,10 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 \Delta x=\frac{b-a}{n}.
 \end{equation*}
 </div>
-<ul id="p-1388" class="disc">
+<ul id="p-1391" class="disc">
 <li id="li-725">
-<p id="p-1389">Avec la méthode des rectangles, on remplace la fonction \(f\) par des fonctions constantes (polynômes de degré zéro) sur chaque sous-intervalle \([x_{k-1};x_k]\text{.}\)</p>
-<p id="p-1390">Cela revient à remplacer</p>
+<p id="p-1392">Avec la méthode des rectangles, on remplace la fonction \(f\) par des fonctions constantes (polynômes de degré zéro) sur chaque sous-intervalle \([x_{k-1};x_k]\text{.}\)</p>
+<p id="p-1393">Cela revient à remplacer</p>
 <div class="displaymath">
 \begin{equation*}
 \displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad\Delta x\cdot f(\xi_k).
@@ -244,8 +244,8 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 </div>
 </li>
 <li id="li-726">
-<p id="p-1391">Avec la méthode des trapèzes, on remplace la fonction \(f\) par les morceaux affines (polynômes de degré un au plus) qui interpolent les points \((x_{k-1};f(x_{k-1}))\) et \((x_k;f(x_k))\text{.}\)</p>
-<p id="p-1392">Cela revient à remplacer</p>
+<p id="p-1394">Avec la méthode des trapèzes, on remplace la fonction \(f\) par les morceaux affines (polynômes de degré un au plus) qui interpolent les points \((x_{k-1};f(x_{k-1}))\) et \((x_k;f(x_k))\text{.}\)</p>
+<p id="p-1395">Cela revient à remplacer</p>
 <div class="displaymath">
 \begin{equation*}
 \displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad\frac{\Delta x}{2}\cdot (f(x_{k-1}+f(x_k)).
@@ -253,7 +253,7 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 </div>
 </li>
 <li id="li-727">
-<p id="p-1393">Avec la méthode de Simpson, on remplace la fonction \(f\) par les morceaux polynomiaux de degré deux au plus qui interpolent les points</p>
+<p id="p-1396">Avec la méthode de Simpson, on remplace la fonction \(f\) par les morceaux polynomiaux de degré deux au plus qui interpolent les points</p>
 <div class="displaymath">
 \begin{equation*}
 (x_{k-1};f(x_{k-1})),\; (m_k;f(m_k))\;\text{et}\; (x_k;f(x_k))
@@ -265,7 +265,7 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 m_k=\frac{x_{k-1}+x_k}{2}.
 \end{equation*}
 </div>
-<p id="p-1394">Cela revient à remplacer</p>
+<p id="p-1397">Cela revient à remplacer</p>
 <div class="displaymath">
 \begin{equation*}
 \displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad ?
@@ -276,8 +276,8 @@ m_k=\frac{x_{k-1}+x_k}{2}.
 <article class="proposition theorem-like" id="theorieSimpson"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">10.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-1395">Soit \(\displaystyle m=\frac{c+d}{2}\) le milieu de l'intervalle \([c;d]\) et soit \(\Delta x=d-c\) sa longueur.</p>
-<p id="p-1396">La forme de Newton du polynôme interpolateur des points</p>
+<p id="p-1398">Soit \(\displaystyle m=\frac{c+d}{2}\) le milieu de l'intervalle \([c;d]\) et soit \(\Delta x=d-c\) sa longueur.</p>
+<p id="p-1399">La forme de Newton du polynôme interpolateur des points</p>
 <div class="displaymath">
 \begin{equation*}
 (c;f(c)),\;(m;f(m))\;\text{et}\;(d;f(d))
@@ -294,8 +294,8 @@ N(t)=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x
 \begin{equation*}
 \int_c^dN(t)\mathrm{d}t=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref original" data-refid="hk-proof-13"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-1397">Commençons par vérifier que le polynôme interpolateur est bien celui annoncé.</p>
-<p id="p-1398">D'après la remarque <a class="xref" data-knowl="./knowl/lagrangeEtNewtonTroisPoints.html" title="Remarque 7.1.8">7.1.8</a>, on a</p>
+</div></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref original" data-refid="hk-proof-13"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-1400">Commençons par vérifier que le polynôme interpolateur est bien celui annoncé.</p>
+<p id="p-1401">D'après la remarque <a class="xref" data-knowl="./knowl/lagrangeEtNewtonTroisPoints.html" title="Remarque 7.1.8">7.1.8</a>, on a</p>
 <div class="displaymath">
 \begin{align*}
 N(t)&amp;=f(c)+\frac{f(m)-f(c)}{m-c}(t-c)+\frac{\frac{f(d)-f(m)}{d-m}-\frac{f(m)-f(c)}{m-c}}{d-c}(t-c)(t-m)\\
@@ -303,7 +303,7 @@ N(t)&amp;=f(c)+\frac{f(m)-f(c)}{m-c}(t-c)+\frac{\frac{f(d)-f(m)}{d-m}-\frac{f(m)
 &amp;=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}(t-c)(t-m).
 \end{align*}
 </div>
-<p id="p-1399">Notons ensuite que par linéarité de l'intégrale, on a</p>
+<p id="p-1402">Notons ensuite que par linéarité de l'intégrale, on a</p>
 <div class="displaymath">
 \begin{equation*}
 \int_c^dN(t)\mathrm{d}t=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3
@@ -312,7 +312,7 @@ N(t)&amp;=f(c)+\frac{f(m)-f(c)}{m-c}(t-c)+\frac{\frac{f(d)-f(m)}{d-m}-\frac{f(m)
 <p data-braille="continuation">où</p>
 <ul class="disc">
 <li id="li-728">
-<p id="p-1400">la première intégrale vaut</p>
+<p id="p-1403">la première intégrale vaut</p>
 <div class="displaymath">
 \begin{align*}
 I_1&amp;=\int_c^d1\mathrm{d}t\\
@@ -323,7 +323,7 @@ I_1&amp;=\int_c^d1\mathrm{d}t\\
 </div>
 </li>
 <li id="li-729">
-<p id="p-1401">la deuxième intégrale vaut</p>
+<p id="p-1404">la deuxième intégrale vaut</p>
 <div class="displaymath">
 \begin{align*}
 I_2&amp;=\int_c^d(t-c)\mathrm{d}t\\
@@ -334,7 +334,7 @@ I_2&amp;=\int_c^d(t-c)\mathrm{d}t\\
 </div>
 </li>
 <li id="li-730">
-<p id="p-1402">et la troisième intégrale vaut</p>
+<p id="p-1405">et la troisième intégrale vaut</p>
 <div class="displaymath">
 \begin{align*}
 I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
@@ -348,7 +348,7 @@ I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
 </div>
 </li>
 </ul>
-<p id="p-1403">On a donc</p>
+<p id="p-1406">On a donc</p>
 <div class="displaymath">
 \begin{align*}
 \int_c^dN(t)\mathrm{d}t&amp;=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3\\
@@ -362,7 +362,7 @@ I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
 <article class="definition definition-like" id="definition-5"><h6 class="heading">
 <span class="type">Définition</span><span class="space"> </span><span class="codenumber">10.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode de Simpson.</span>
 </h6>
-<p id="p-1404">Soit une intégrale définie</p>
+<p id="p-1407">Soit une intégrale définie</p>
 <div class="displaymath">
 \begin{equation*}
 \int_a^bf(x)\mathrm{d}x
@@ -380,7 +380,7 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 \Delta x=\frac{b-a}{n}.
 \end{equation*}
 </div>
-<p id="p-1405">Approcher la valeur de cette intégrale par la méthode des trapèzes à l'aide de cette subdivision revient à considérer l'approximation suivante :</p>
+<p id="p-1408">Approcher la valeur de cette intégrale par la méthode des trapèzes à l'aide de cette subdivision revient à considérer l'approximation suivante :</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Approximation}=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)
@@ -395,8 +395,8 @@ m_k=\frac{x_{k-1}+x_k}{2}
 <p data-braille="continuation">est le milieu de l'intervalle \([x_{k-1};x_k]\text{.}\)</p></article><article class="theorem theorem-like" id="erreur_simpson"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">10.1.3</span><span class="period">.</span>
 </h6>
-<p id="p-1406">Soit \(f:[a;b]\longrightarrow\mathbb{R}\) dérivable quatre fois de sorte que \(f^{(4)}\) soit continue sur \([a;b]\text{.}\)</p>
-<p id="p-1407">Soit \(n\geq 1\) un entier et soit</p>
+<p id="p-1409">Soit \(f:[a;b]\longrightarrow\mathbb{R}\) dérivable quatre fois de sorte que \(f^{(4)}\) soit continue sur \([a;b]\text{.}\)</p>
+<p id="p-1410">Soit \(n\geq 1\) un entier et soit</p>
 <div class="displaymath">
 \begin{equation*}
 a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
@@ -408,7 +408,7 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 \Delta x=\frac{b-a}{n}.
 \end{equation*}
 </div>
-<p id="p-1408">Alors l'erreur d'approximation par la méthode des trapèzes</p>
+<p id="p-1411">Alors l'erreur d'approximation par la méthode des trapèzes</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)}_{\text{Approximation}}
@@ -425,12 +425,12 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 \begin{equation*}
 |f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-14"><a data-knowl="" class="id-ref original" data-refid="hk-proof-14"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><p id="p-1409">À venir.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-14"><a data-knowl="" class="id-ref original" data-refid="hk-proof-14"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><p id="p-1412">À venir.</p></article></div>
 <article class="assemblage assemblage-like" id="assemblage-7"><h6 class="heading"><span class="title">Méthode de Simpson : Approcher l'intégrale d'une fonction en la remplaçant par des morceaux polynomiaux de degré deux.</span></h6>
-<ul id="p-1410" class="disc">
-<li id="li-731"><p id="p-1411">Objectif : Obtenir des approximations de la valeur d'une intégrale \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</p></li>
+<ul id="p-1413" class="disc">
+<li id="li-731"><p id="p-1414">Objectif : Obtenir des approximations de la valeur d'une intégrale \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</p></li>
 <li id="li-732">
-<p id="p-1412">Principe : Prendre</p>
+<p id="p-1415">Principe : Prendre</p>
 <div class="displaymath">
 \begin{equation*}
 a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
@@ -451,7 +451,7 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 <p data-braille="continuation">où \(m_k=\frac{x_{k-1}+x_k}{2}\) désigne le milieu de l'intervalle \([x_{k-1};x_k]\) pour tout \(k=1,\ldots,n\text{.}\)</p>
 </li>
 <li id="li-733">
-<p id="p-1413">Hypothèses : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable quatre fois avec une dérivée quatrième continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
+<p id="p-1416">Hypothèses : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable quatre fois avec une dérivée quatrième continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
 |f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
@@ -464,10 +464,10 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 \end{equation*}
 </div>
 </li>
-<li id="li-734"><p id="p-1414">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
+<li id="li-734"><p id="p-1417">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
 </ul></article><article class="example example-like" id="exemple_approx_simpson"><a data-knowl="" class="id-ref original" data-refid="hk-exemple_approx_simpson"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">10.1.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_approx_simpson"><article class="example example-like"><p id="p-1415">Déterminons l'approximation obtenue pour l'intégrale définie</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_approx_simpson"><article class="example example-like"><p id="p-1418">Déterminons l'approximation obtenue pour l'intégrale définie</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^1e^{-x^2}\mathrm{d}x
@@ -475,10 +475,10 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 </div>
 <p data-braille="continuation">si on applique la méthode de Simpson en subdivisant \([0;1]\) en quatre sous-intervalles de même longueur.</p>
 <ul class="disc">
-<li id="li-735"><p id="p-1416">Notons \(f(x)=e^{-x^2}\text{.}\)</p></li>
-<li id="li-736"><p id="p-1417">On a \(n=4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{4}=0{,}25\text{.}\)</p></li>
+<li id="li-735"><p id="p-1419">Notons \(f(x)=e^{-x^2}\text{.}\)</p></li>
+<li id="li-736"><p id="p-1420">On a \(n=4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{4}=0{,}25\text{.}\)</p></li>
 <li id="li-737">
-<p id="p-1418">Alors \(x_k=a+k\cdot\Delta x=k\cdot 0{,}25\) pour \(k=0,\ldots,4\) donne la subdivision régulière</p>
+<p id="p-1421">Alors \(x_k=a+k\cdot\Delta x=k\cdot 0{,}25\) pour \(k=0,\ldots,4\) donne la subdivision régulière</p>
 <div class="displaymath">
 \begin{equation*}
 0&lt;0{,}25&lt;0{,}5&lt;0{,}75&lt;1
@@ -487,7 +487,7 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 <p data-braille="continuation">de l'intervalle d'intégration \([0;1]\text{.}\)</p>
 </li>
 <li id="li-738">
-<p id="p-1419">La méthode de Simpson donne alors</p>
+<p id="p-1422">La méthode de Simpson donne alors</p>
 <div class="displaymath">
 \begin{align*}
 \text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)\\
@@ -496,14 +496,14 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 </div>
 <p data-braille="continuation">où</p>
 <ul class="circle">
-<li id="li-739"><p id="p-1420">\(A_1=f(0)+4f(0{,}125)+f(0{,}25)\)</p></li>
-<li id="li-740"><p id="p-1421">\(A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)\)</p></li>
-<li id="li-741"><p id="p-1422">\(A_3=f(0{,}5)+4f(0{,}625)+f(0{,}75)\)</p></li>
-<li id="li-742"><p id="p-1423">\(A_4=f(0{,}75)+4f(0{,}875)+f(1)\)</p></li>
+<li id="li-739"><p id="p-1423">\(A_1=f(0)+4f(0{,}125)+f(0{,}25)\)</p></li>
+<li id="li-740"><p id="p-1424">\(A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)\)</p></li>
+<li id="li-741"><p id="p-1425">\(A_3=f(0{,}5)+4f(0{,}625)+f(0{,}75)\)</p></li>
+<li id="li-742"><p id="p-1426">\(A_4=f(0{,}75)+4f(0{,}875)+f(1)\)</p></li>
 </ul>
 </li>
 <li id="li-743">
-<p id="p-1424">Après des calculs fastidieux à la calculatrice ou <a class="external" href="https://juliengiol.github.io/algorithmique/algorithmesimpson.html" target="_blank">avec l'aide de notre application</a>, on obtient</p>
+<p id="p-1427">Après des calculs fastidieux à la calculatrice ou <a class="external" href="https://juliengiol.github.io/algorithmique/algorithmesimpson.html" target="_blank">avec l'aide de notre application</a>, on obtient</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Approximation}=0{,}746\,826\,120\,527\,46\ldots
@@ -513,10 +513,10 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 </ul></article></div>
 <article class="example example-like" id="exemple_erreur_simpson"><a data-knowl="" class="id-ref original" data-refid="hk-exemple_erreur_simpson"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">10.1.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_erreur_simpson"><article class="example example-like"><p id="p-1425">Estimons l'erreur commise à l'exemple précédent <a class="xref" data-knowl="./knowl/exemple_approx_simpson.html" title="Exemple 10.1.4">10.1.4</a>.</p>
-<ul id="p-1426" class="disc">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_erreur_simpson"><article class="example example-like"><p id="p-1428">Estimons l'erreur commise à l'exemple précédent <a class="xref" data-knowl="./knowl/exemple_approx_simpson.html" title="Exemple 10.1.4">10.1.4</a>.</p>
+<ul id="p-1429" class="disc">
 <li id="li-744">
-<p id="p-1427">On a \(f(x)=e^{-x^2}\) et, après des calculs fastidieux ou <a class="external" href="https://tinyurl.com/y6dbszyo" target="_blank">avec l'aide d'un logiciel de calcul formel</a>,</p>
+<p id="p-1430">On a \(f(x)=e^{-x^2}\) et, après des calculs fastidieux ou <a class="external" href="https://tinyurl.com/y6dbszyo" target="_blank">avec l'aide d'un logiciel de calcul formel</a>,</p>
 <div class="displaymath">
 \begin{equation*}
 f^{(4)}(x)=4e^{-x^2}\left(4x^4-12x^2+3\right).
@@ -524,7 +524,7 @@ f^{(4)}(x)=4e^{-x^2}\left(4x^4-12x^2+3\right).
 </div>
 </li>
 <li id="li-745">
-<p id="p-1428">Donc</p>
+<p id="p-1431">Donc</p>
 <div class="displaymath">
 \begin{align*}
 |f^{(4)}(x)|&amp;=4e^{-x^2}\cdot \left|4x^4-12x^2+3\right|\\
@@ -536,7 +536,7 @@ f^{(4)}(x)=4e^{-x^2}\left(4x^4-12x^2+3\right).
 <p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\)</p>
 </li>
 <li id="li-746">
-<p id="p-1429">Il en découle qu'on peut prendre \(M=76\) en appliquant le théorème <a class="xref" data-knowl="./knowl/erreur_simpson.html" title="Théorème 10.1.3">10.1.3</a> :</p>
+<p id="p-1432">Il en découle qu'on peut prendre \(M=76\) en appliquant le théorème <a class="xref" data-knowl="./knowl/erreur_simpson.html" title="Théorème 10.1.3">10.1.3</a> :</p>
 <div class="displaymath">
 \begin{align*}
 \left|\text{Erreur}\right|&amp;\leq\frac{M(b-a)^5}{2880n^4}\\
@@ -556,14 +556,14 @@ f^{(4)}(x)=4e^{-x^2}\left(4x^4-12x^2+3\right).
 </ul></article></div>
 <article class="example example-like" id="example-32"><a data-knowl="" class="id-ref original" data-refid="hk-example-32"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">10.1.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-1430">Déduisons des deux exemples précédents <a class="xref" data-knowl="./knowl/exemple_approx_trapezes.html" title="Exemple 9.1.3">9.1.3</a> et <a class="xref" data-knowl="./knowl/exemple_erreur_trapezes.html" title="Exemple 9.1.4">9.1.4</a> un encadrement de l'intégrale définie</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-1433">Déduisons des deux exemples précédents <a class="xref" data-knowl="./knowl/exemple_approx_trapezes.html" title="Exemple 9.1.3">9.1.3</a> et <a class="xref" data-knowl="./knowl/exemple_erreur_trapezes.html" title="Exemple 9.1.4">9.1.4</a> un encadrement de l'intégrale définie</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^1e^{-x^2}\mathrm{d}x
 \end{equation*}
 </div>
 <p data-braille="continuation">avec cinq décimales.</p>
-<p id="p-1431">D'une part</p>
+<p id="p-1434">D'une part</p>
 <div class="displaymath">
 \begin{equation*}
 0{,}746\,82\leq\text{Approximation}\leq 0{,}746\,83
@@ -587,7 +587,7 @@ f^{(4)}(x)=4e^{-x^2}\left(4x^4-12x^2+3\right).
 0{,}746\,71\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 0{,}746\,94.
 \end{equation*}
 </div>
-<p id="p-1432">On est donc sûrs des trois premières décimales (746) alors qu'on n'en avait qu'une (7) avec quatre trapèzes.</p></article></div></section></div></main>
+<p id="p-1435">On est donc sûrs des trois premières décimales (746) alors qu'on n'en avait qu'une (7) avec quatre trapèzes.</p></article></div></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;

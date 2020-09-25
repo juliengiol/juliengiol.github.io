@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:06:49-04:00    *-->
+<!--*    on 2020-09-25T09:42:30-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>En procédant comme ci-dessus pour le cas \(n=1\) sur chaque sous-intervalle \([x_{k-1};x_k]\text{,}\) on a</p>
+<p>Pour tout \(x\in[a;b]\text{,}\) on a donc</p>
 <div class="displaymath">
-\begin{equation*}
-\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\leq \frac{M(\Delta x)^2}{2}\quad\text{où }\Delta x=x_k-x_{k-1}=\frac{b-a}{n}.
-\end{equation*}
+\begin{align*}
+|f(x)-f(a)|&amp;=|f'(c_x)|\cdot|x-a|\\
+&amp;\leq M\cdot|x-a|\\
+&amp;= M\cdot (x-a).
+\end{align*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#p-1169">Contexte</a></span>
 </body>

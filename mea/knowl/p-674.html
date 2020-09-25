@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:05:50-04:00    *-->
+<!--*    on 2020-09-25T09:41:40-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour tout \(n\geq 0\text{,}\) on a donc</p>
+<p>Pour tout \(n\geq 0\text{,}\) on a</p>
 <div class="displaymath">
 \begin{align*}
-\left|x_{n+1}-\sqrt{k}\right|&amp;=\left|\frac{1}{2x_n}\left(x_n-\sqrt{k}\right)^2\right|\\
-&amp;=\left|\frac{1}{2x_n}\cdot\left(x_n-\sqrt{k}\right)\cdot\left(x_n-\sqrt{k}\right)\right|\\
-&amp;=\left|\frac{1}{2x_n}\right|\cdot\left|x_n-\sqrt{k}\right|\cdot\left|x_n-\sqrt{k}\right|\qquad\text{par}\;\knowl{./knowl/propvaleurabsolue.html}{\text{(5.3.1)}}\\
-&amp;=\frac{1}{2x_n}\left|x_n-\sqrt{k}\right|^2\\
-&amp;\leq \frac{1}{2}\left|x_n-\sqrt{k}\right|^2\qquad\text{par}\;\knowl{./knowl/minorxn.html}{\text{(5.3.2)}}.
+\frac{1}{2x_n}\left(x_n-\sqrt{k}\right)^2&amp;=\frac{1}{2x_n}\left(x_n^2-2x_n\sqrt{k}+k\right)\\
+&amp;=\frac{x_n^2}{2x_n}-\frac{2x_n\sqrt{k}}{2x_n}+\frac{k}{2x_n}\\
+&amp;=\frac{x_n}{2}-\sqrt{k}+\frac{k}{2x_n}\\
+&amp;=\frac{x_n+\frac{k}{x_n}}{2}-\sqrt{k}\\
+&amp;=x_{n+1}-\sqrt{k}.
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicesnewton.html#p-674">Contexte</a></span>

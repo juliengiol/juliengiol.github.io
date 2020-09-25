@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:03:36-04:00    *-->
+<!--*    on 2020-09-25T09:39:44-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -236,35 +236,35 @@ MathJax.Hub.Config({
 </h6>
 <ul class="disc">
 <li id="li-196">
-<p id="p-387">Entrées :</p>
+<p id="p-390">Entrées :</p>
 <ul class="circle">
-<li id="li-197"><p id="p-388">Assigner à \(\text{f}\) la fonction dont on cherche à encadrer le zéro.</p></li>
-<li id="li-198"><p id="p-389">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle de départ.</p></li>
-<li id="li-199"><p id="p-390">Assigner à \(\text{longueurMax}\) la longueur maximale désirée pour l'intervalle d'encadrement.</p></li>
+<li id="li-197"><p id="p-391">Assigner à \(\text{f}\) la fonction dont on cherche à encadrer le zéro.</p></li>
+<li id="li-198"><p id="p-392">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle de départ.</p></li>
+<li id="li-199"><p id="p-393">Assigner à \(\text{longueurMax}\) la longueur maximale désirée pour l'intervalle d'encadrement.</p></li>
 </ul>
 </li>
 <li id="li-200">
-<p id="p-391">Instructions :</p>
+<p id="p-394">Instructions :</p>
 <ul class="circle"><li id="li-201">
-<p id="p-392">Tant que \(\text{b}-\text{a}&gt;\text{longueurMax}\text{,}\)</p>
+<p id="p-395">Tant que \(\text{b}-\text{a}&gt;\text{longueurMax}\text{,}\)</p>
 <ul class="square">
-<li id="li-202"><p id="p-393">assigner à \(\text{m}\) la valeur \((\text{a}+\text{b})/2\) ;</p></li>
+<li id="li-202"><p id="p-396">assigner à \(\text{m}\) la valeur \((\text{a}+\text{b})/2\) ;</p></li>
 <li id="li-203"><ul class="disc">
-<li id="li-204"><p id="p-394">si \(\text{f}(\text{m})=0\text{,}\) assigner à \(\text{a}\) et \(\text{b}\) la valeur de \(\text{m}\) et sortir de la boucle tant que ;</p></li>
-<li id="li-205"><p id="p-395">sinon si \(\text{f}(\text{m})\text{f}(\text{a})&lt;0\text{,}\) assigner à \(\text{b}\) la valeur de \(\text{m}\) ;</p></li>
-<li id="li-206"><p id="p-396">sinon assigner à \(\text{a}\) la valeur de \(\text{m}\text{.}\)</p></li>
+<li id="li-204"><p id="p-397">si \(\text{f}(\text{m})=0\text{,}\) assigner à \(\text{a}\) et \(\text{b}\) la valeur de \(\text{m}\) et sortir de la boucle tant que ;</p></li>
+<li id="li-205"><p id="p-398">sinon si \(\text{f}(\text{m})\text{f}(\text{a})&lt;0\text{,}\) assigner à \(\text{b}\) la valeur de \(\text{m}\) ;</p></li>
+<li id="li-206"><p id="p-399">sinon assigner à \(\text{a}\) la valeur de \(\text{m}\text{.}\)</p></li>
 </ul></li>
 </ul>
 </li></ul>
 </li>
 <li id="li-207">
-<p id="p-397">Sortie :</p>
+<p id="p-400">Sortie :</p>
 <ul class="circle">
-<li id="li-208"><p id="p-398">Si \(\text{a}=\text{b}\) (ce qui signifie qu'on est tombés sur le zéro), afficher \(\text{a}\) ;</p></li>
-<li id="li-209"><p id="p-399">sinon afficher \(\text{a}\) et \(\text{b}\text{.}\)</p></li>
+<li id="li-208"><p id="p-401">Si \(\text{a}=\text{b}\) (ce qui signifie qu'on est tombés sur le zéro), afficher \(\text{a}\) ;</p></li>
+<li id="li-209"><p id="p-402">sinon afficher \(\text{a}\) et \(\text{b}\text{.}\)</p></li>
 </ul>
 </li>
-</ul></article><p id="p-400">Voici une implémentation de cet algorithme permettant d'encadrer l'unique zéro de la fonction \(f(x)=x^2-2\) dans l'intervalle \(]0;2[\) par les bornes d'un intervalle de longueur inférieure ou égale à \(0{,}01\text{.}\)</p>
+</ul></article><p id="p-403">Voici une implémentation de cet algorithme permettant d'encadrer l'unique zéro de la fonction \(f(x)=x^2-2\) dans l'intervalle \(]0;2[\) par les bornes d'un intervalle de longueur inférieure ou égale à \(0{,}01\text{.}\)</p>
 <div class="sagecell-python" id="sage-48"><script type="text/x-sage"># entrées
 def f(x):
     return x ** 2 - 2
@@ -290,7 +290,7 @@ if a == b:
 else:
     print(a, b)
 </script></div>
-<p id="p-401">Remarque : on a utilisé la commande <code class="code-inline tex2jax_ignore">break</code> pour sortir de la boucle <code class="code-inline tex2jax_ignore">while</code> dans le cas où on tombe sur le zéro.</p></section></div></main>
+<p id="p-404">Remarque : on a utilisé la commande <code class="code-inline tex2jax_ignore">break</code> pour sortir de la boucle <code class="code-inline tex2jax_ignore">while</code> dans le cas où on tombe sur le zéro.</p></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;

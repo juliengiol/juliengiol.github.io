@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-12T08:03:32-04:00    *-->
+<!--*    on 2020-09-25T09:39:39-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -233,23 +233,23 @@ MathJax.Hub.Config({
 </h2>
 <a href="horner.html" class="permalink">¶</a><article class="problem example-like" id="problemehorner"><a data-knowl="" class="id-ref original" data-refid="hk-problemehorner"><h6 class="heading">
 <span class="type">Problème</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-problemehorner"><article class="problem example-like"><p id="p-257">Comment utiliser efficacement l'ordinateur pour évaluer un polynôme?</p></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-problemehorner"><article class="problem example-like"><p id="p-260">Comment utiliser efficacement l'ordinateur pour évaluer un polynôme?</p></article></div>
 <article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">Algorithme 1 : Approche naïve.</span></h5>
-<p id="p-258">Considérant le polynôme</p>
+<p id="p-261">Considérant le polynôme</p>
 <div class="displaymath">
 \begin{equation*}
 P(x)=10+7x+3x^2+5x^3
 \end{equation*}
 </div>
 <p data-braille="continuation">combien d'opérations mathématiques sont-elles nécessaires pour évaluer \(P(9)\text{?}\)</p>
-<p id="p-259">On a</p>
+<p id="p-262">On a</p>
 <div class="displaymath">
 \begin{equation*}
 P(9)=10+7\cdot 9+3\cdot 9\cdot 9+5\cdot 9\cdot 9\cdot 9.
 \end{equation*}
 </div>
-<p id="p-260">Vu comme ça, il faut trois (comme le degré) additions et six (\(1+2+3\)) multiplications, soit neuf opérations.</p>
-<p id="p-261">Plus généralement, pour un polynôme de degré \(n\)</p>
+<p id="p-263">Vu comme ça, il faut trois (comme le degré) additions et six (\(1+2+3\)) multiplications, soit neuf opérations.</p>
+<p id="p-264">Plus généralement, pour un polynôme de degré \(n\)</p>
 <div class="displaymath">
 \begin{equation*}
 P(x)=a_0+a_1x+\ldots+a_nx^n
@@ -268,7 +268,7 @@ n+\frac{n(n+1)}{2}=0{,}5n^2+1{,}5n
 \end{equation*}
 </div>
 <p data-braille="continuation">opérations.</p>
-<p id="p-262">Cette approche naïve conduit à l'implémentation algorithmique suivante : <div class="sagecell-python" id="sage-46"><script type="text/x-sage"># entrées
+<p id="p-265">Cette approche naïve conduit à l'implémentation algorithmique suivante : <div class="sagecell-python" id="sage-46"><script type="text/x-sage"># entrées
 n = 3
 coefficients = [10, 7, 3, 5]
 x = 9
@@ -290,8 +290,8 @@ T(n)=0{,}5n^2+1{,}5n
 \end{equation*}
 </div>
 <p data-braille="continuation">est qualifiée de quadratique, c'est-à-dire qu'elle est polynomiale de degré deux.</p></article><article class="paragraphs" id="paragraphs-8"><h5 class="heading"><span class="title">Algorithme 2 : Méthode de Horner.</span></h5>
-<p id="p-263">Pour améliorer l'algorithme précédent, on pourrait bien sûr utiliser l'exponentiation rapide vue à la section <a href="exponentiation.html" class="internal" title="Section 3.2: Exponentiation rapide">3.2</a>. Mais on peut faire encore mieux.</p>
-<p id="p-264">Reprenons l'exemple ci-dessus et notons que par factorisations successives de \(x\text{,}\) on obtient</p>
+<p id="p-266">Pour améliorer l'algorithme précédent, on pourrait bien sûr utiliser l'exponentiation rapide vue à la section <a href="exponentiation.html" class="internal" title="Section 3.2: Exponentiation rapide">3.2</a>. Mais on peut faire encore mieux.</p>
+<p id="p-267">Reprenons l'exemple ci-dessus et notons que par factorisations successives de \(x\text{,}\) on obtient</p>
 <div class="displaymath">
 \begin{align*}
 P(x)&amp;=10+7x+3x^2+5x^3\\
@@ -300,7 +300,7 @@ P(x)&amp;=10+7x+3x^2+5x^3\\
 \end{align*}
 </div>
 <p data-braille="continuation">Vue comme ça, l'évaluation de \(P(x)\) ne requiert plus que trois additions et trois multiplications, soit six opérations.</p>
-<p id="p-265">Plus généralement, on appelle forme de Horner du polynôme</p>
+<p id="p-268">Plus généralement, on appelle forme de Horner du polynôme</p>
 <div class="displaymath">
 \begin{equation*}
 P(x)=a_0+a_1x+\ldots+a_nx^n
@@ -313,7 +313,7 @@ P(x)=a_0+x\cdot\left(a_1+x\cdot\left(a_2+x\cdot\left(\ldots +x\cdot\left(a_{n-1}
 \end{equation*}
 </div>
 <p data-braille="continuation">qui nécessite \(n\) additions et \(n\) multiplications, soit \(2n\) opérations.</p>
-<p id="p-266">Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de \(P(x)\) une paire de parenthèses après l'autre.</p>
+<p id="p-269">Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de \(P(x)\) une paire de parenthèses après l'autre.</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lcl}
@@ -326,7 +326,7 @@ P(x)=a_0+x\cdot\left(a_1+x\cdot\left(a_2+x\cdot\left(\ldots +x\cdot\left(a_{n-1}
 \end{array}
 \end{equation*}
 </div>
-<p id="p-267">Par exemple, pour le polynôme</p>
+<p id="p-270">Par exemple, pour le polynôme</p>
 <div class="displaymath">
 \begin{equation*}
 P(x)=10+7x+3x^2+5x^3,
@@ -358,7 +358,7 @@ P(9)=3961
 \end{equation*}
 </div>
 <p data-braille="continuation">après trois additions et trois multiplications.</p>
-<p id="p-268">Voici une implémentation itérative de la méthode de Horner : <div class="sagecell-python" id="sage-47"><script type="text/x-sage"># entrées
+<p id="p-271">Voici une implémentation itérative de la méthode de Horner : <div class="sagecell-python" id="sage-47"><script type="text/x-sage"># entrées
 n = 3
 coefficients = [10, 7, 3, 5]
 x = 9
