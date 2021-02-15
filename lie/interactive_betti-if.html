@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2021-02-15T07:21:07-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>sagecell.makeSagecell({
+    inputLocation: ".sage-interact",
+    autoeval: 'true',
+    hide: ["editor", "evalButton", "permalink"]
+});
+</script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+</head>
+<body class="pretext-content"><div style="width:600px; height:600px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div class="sage-interact"><script type="text/x-sage">Qt.<t> = FunctionField(QQ)
+@interact
+def _(Dimension = input_box(label = html(r'Dimension'), default = 7, width = 10),
+      Field = [html(r'\(\mathbb{Q}(t)\)'), html(r'\(\mathbb{Q}\)')],
+      Table1 = input_box(label = html(r'Table 1'), default = [[1,2,3],[1,3,4],[1,4,5],[1,5,6]], width = 50),
+      Table2 = input_box(label = html(r'Table 2'), default = [[1,6,7],[2,3,5],[2,4,6]], width = 50),
+      Table3 = input_box(label = html(r'Table 3'), default = [[2,5,7,t],[3,4,7,1-t]], width = 50),
+      Table4 = input_box(label = html(r'Table 4'), default = [], width = 50),
+      Table5 = input_box(label = html(r'Table 5'), default = [], width = 50)
+     ):
+
+     Table = Table1 + Table2 + Table3 + Table4 + Table5
+
+     if Field == html(r'\(\mathbb{Q}\)'):
+         Field = QQ
+     elif Field ==  html(r'\(\mathbb{Q}(t)\)'):
+         Field = Qt
+
+     import copy
+
+     def ShiftTable(Table):
+         STable = copy.deepcopy(Table)
+         for k in range(len(Table)):
+             for i in range(3):
+                 STable[k][i] -= 1
+         return STable
+
+     def Eval(f, x):
+         p, q = f.numerator(), f.denominator()
+         return p(x)/q(x)
+
+     def SpecializeTable(Table, x):
+         SpTable = copy.deepcopy(Table)
+         for r in range(len(Table)):
+             if len(Table[r]) == 4:
+                 f = Table[r][3]
+                 SpTable[r][3] = Eval(f, x)
+         return SpTable
+
+     def FillSC(Field, Table, Dimension):
+         SC = []
+         T = copy.deepcopy(Table)
+         for k in range(Dimension):
+             SC.append(matrix(Field, Dimension))
+         for r in range(len(Table)):
+             if len(T[r]) == 3:
+                 T[r].append(1)
+             if len(T[r]) != 4:
+                 print('syntax problem', r, ':', T[r])
+             i, j, k, c = T[r][0], T[r][1], T[r][2], T[r][3]
+             if i == j:
+                 print('antisymmetry problem ignored', [i, j], ':', T[r])
+             else:
+                 if SC[k][i, j] != 0:
+                     print('beware duplicate', [i, j])
+                 SC[k][i, j] += c
+                 SC[k][j, i] -= c
+         return SC
+
+     def TrivialCoboundary(Field, SC, m):
+         n = len(SC)
+         if m == 0 or m == n + 1:
+             return matrix(Field, 0, 0)
+         elif m == 1 or m == n:
+             return matrix(Field, binomial(n, m), binomial(n, m - 1))
+         else:
+             baseDomaine = Combinations(range(n), m - 1).list()
+             baseCodomaine = Combinations(range(n), m).list()
+             D = matrix(Field, len(baseCodomaine), len(baseDomaine))
+             c = 0  # indice de la colonne.
+             for I in baseDomaine:
+                 l = 0  # indice de la ligne.
+                 J = set(range(n)) - set(I)
+                 for r in I:
+                     for p in J:
+                         for q in {s for s in J if p < s}:
+                             II = sorted(list(set(I+[p,q])-{r}))
+                             wt = baseCodomaine.index(II)
+                             Sp = len([s for s in II if s < p])
+                             Sq = len([s for s in II if s < q])
+                             Sr = len([s for s in I if s < r])
+                             vv = (-1)^(Sp + Sq + Sr)
+                             D[wt, c] += vv * SC[r][p, q]
+                 c += 1
+             return D
+
+     def TrivialBettiNumbers(Field, SC):
+         n = len(SC)
+         TrivialRanks = [0]
+         mMax = floor(n / 2)
+         for m in range(1, mMax+2):
+             TrivialRanks.append(TrivialCoboundary(Field, SC, m).rank())
+         Betti = [1]
+         for m in range(1, mMax+1):
+              Betti.append(binomial(n,m) - TrivialRanks[m+1] - TrivialRanks[m])
+         for m in range(mMax+1, n+1):
+             Betti.append(Betti[n-m])
+         return Betti
+
+     ShiftedTable = ShiftTable(Table)
+     SC = FillSC(Field, ShiftedTable, Dimension)
+     Betti = TrivialBettiNumbers(Field, SC)
+     pretty_print(html(r'Betti Numbers: \[%s\]' %Betti))
+</script></div></div></body>
+</html>

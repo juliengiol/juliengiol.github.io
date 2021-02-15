@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2021-02-15T07:21:08-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lie Theory</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://en.wikipedia.org/wiki/Sophus_Lie" target="_blank"><img src="images/sophus.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="lie.html"><span class="title">Lie Algebras</span></a></h1>
+<p class="byline">Julien</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="trivialH2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="trivialH2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="trivialH2_code.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="trivialH2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="trivialH2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="trivialH2_code.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="home.html" data-scroll="home"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="jacobiidentity.html" data-scroll="jacobiidentity"><span class="codenumber">1</span> <span class="title">Jacobi identity</span></a><ul>
+<li><a href="jacobiidentity_theory.html" data-scroll="jacobiidentity_theory">Theory</a></li>
+<li><a href="jacobiidentity_examples.html" data-scroll="jacobiidentity_examples">Examples</a></li>
+<li><a href="jacobiidentity_exercises.html" data-scroll="jacobiidentity_exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="trivialcohomology.html" data-scroll="trivialcohomology"><span class="codenumber">2</span> <span class="title">Trivial cohomology</span></a><ul>
+<li><a href="trivialcohomology_theory.html" data-scroll="trivialcohomology_theory">Theory</a></li>
+<li><a href="trivialcohomology_examples.html" data-scroll="trivialcohomology_examples">Examples</a></li>
+<li><a href="trivialcohomology_exercises.html" data-scroll="trivialcohomology_exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="trivialH2.html" data-scroll="trivialH2"><span class="codenumber">3</span> <span class="title">Trivial H2</span></a><ul>
+<li><a href="trivialH2_theory.html" data-scroll="trivialH2_theory" class="active">Theory</a></li>
+<li><a href="trivialH2_code.html" data-scroll="trivialH2_code">Code</a></li>
+<li><a href="trivialH2_examples.html" data-scroll="trivialH2_examples">Examples</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="trivialH2_theory"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Theory</span>
+</h2>
+<a href="trivialH2_theory.html" class="permalink">¶</a><p id="p-30">Let \(\mathfrak{g}\) be a Lie algebra over a commutative ring \(R\text{.}\)</p>
+<div class="displaymath">
+\begin{equation}
+\Lambda^3\mathfrak{g}\stackrel{\partial_3}{\longrightarrow}\Lambda^2\mathfrak{g}\stackrel{\partial_2}{\longrightarrow}\mathfrak{g}\tag{3.1.1}
+\end{equation}
+</div>
+<div class="displaymath">
+\begin{equation}
+\partial_2(x\wedge y)=[x,y]\tag{3.1.2}
+\end{equation}
+</div>
+<div class="displaymath">
+\begin{equation}
+\partial_3(x\wedge y\wedge z)=[x,y]\wedge z+[y,z]\wedge x+[z,x]\wedge y\tag{3.1.3}
+\end{equation}
+</div>
+<article class="remark remark-like" id="remark-1"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-31">Given these definitions, the Jacobi identity boils down to</p>
+<div class="displaymath">
+\begin{equation}
+\partial_2\circ\partial_3=0.\tag{3.1.4}
+\end{equation}
+</div></article><p id="p-32">The \(R\)-module</p>
+<div class="displaymath">
+\begin{equation}
+H_2(\mathfrak{g};R)=\mathrm{Ker}\,\partial_2/\mathrm{Im}\,\partial_3\tag{3.1.5}
+\end{equation}
+</div>
+<p id="p-33">Now assume that \(\mathfrak{g}\) has finite dimension over \(R\) and fix a basis \(\{e_1,\ldots,e_n\}\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+\mathfrak{g}=Re_1\oplus\cdots\oplus Re_n.
+\end{equation*}
+</div>
+<p data-braille="continuation">Then all the information about \(\mathfrak{g}\) is contained in the \(n^3\) structure constants</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{c_{i,j}^k\,|\,1\le i,j,k\le n\right\}
+\end{equation*}
+</div>
+<p data-braille="continuation">which are defined by the following \(n^2\) equations:</p>
+<div class="displaymath">
+\begin{equation}
+[e_i,e_j]=\sum_{k=1}^nc_{i,j}^ke_k\qquad\text{for all}\,1\leq i,j\le n.\tag{3.1.6}
+\end{equation}
+</div>
+<p id="p-34">If we equip \(\Lambda^2\mathfrak{g}\) with the basis</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{e_i\wedge e_j\,|\,1\le i&lt;j\le n\right\},
+\end{equation*}
+</div>
+<p data-braille="continuation">then the matrix of \(\partial_2\) is</p>
+<div class="displaymath">
+\begin{equation*}
+D_2=\left[c_{i,j}^k\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">with rows indexed by \(k\) and columns indexed by \((i,j)\text{.}\)</p>
+<article class="example example-like" id="example-2"><a data-knowl="" class="id-ref original" data-refid="hk-example-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-35"></p></article></div>
+<article class="lemma theorem-like" id="lemma-1"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-36">Let us consider the set</p>
+<div class="displaymath">
+\begin{equation*}
+S=\{(i,j)\,|\,1\leq i&lt;j\leq n\}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Then</p>
+<div class="displaymath">
+\begin{equation*}
+|S|=\binom{n}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">and if we list the elements of \(S\) in <a class="external" href="https://en.wikipedia.org/wiki/Lexicographical_order" target="_blank">lexicographical order</a>, we have</p>
+<div class="displaymath">
+\begin{equation*}
+S=\{\underbrace{(1,2)}_{s_1},\underbrace{(1,3)}_{s_2},\ldots,\underbrace{(1,n)}_{s_{n-1}},\underbrace{(2,3)}_{s_n},\ldots,\underbrace{(i,j)}_{s_u},\ldots,\underbrace{(n-1,n)}_{s_{|S|}}\}
+\end{equation*}
+</div>
+<p data-braille="continuation">with</p>
+<div class="displaymath">
+\begin{equation*}
+u=\binom{n}{2}-\binom{n-i+1}{2}+j-i.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-37">First observe that if we denote</p>
+<div class="displaymath">
+\begin{equation*}
+(r,s)&lt;(i,j)
+\end{equation*}
+</div>
+<p data-braille="continuation">the lexicographical order, then</p>
+<div class="displaymath">
+\begin{equation*}
+u=\left|\{(r,s)\in S\,|\,(r,s)\leq (i,j)\}\right|.
+\end{equation*}
+</div>
+<p data-braille="continuation">So we have to count how many elements of \(S\) were already listed before reaching the element \((i,j)\) plus one for the latter.</p>
+<p id="p-38">It is convenient to split them by rows</p>
+<div class="displaymath">
+\begin{align*}
+\mathrm{R}_1&amp;=\{(1,2),\ldots,(1,n)\}\\
+\mathrm{R}_2&amp;=\{(2,3),\ldots,(2,n)\}\\
+&amp;\ldots\\
+\mathrm{R}_{i-1}&amp;=\{(i-1,i),\ldots,(i-1,n)\}\\
+\mathrm{R}_i&amp;=\{(i,i+1),\ldots,(i,j)\}
+\end{align*}
+</div>
+<p data-braille="continuation">and then count the elements in each row:</p>
+<div class="displaymath">
+\begin{align*}
+|\mathrm{R}_1|&amp;=n-1,\\
+|\mathrm{R}_2|&amp;=n-2,\\
+&amp;\ldots\\
+|\mathrm{R}_{i-1}|&amp;=n-i+1,\\
+|\mathrm{R}_i|&amp;=j-i.
+\end{align*}
+</div>
+<p id="p-39">Therefore</p>
+<div class="displaymath">
+\begin{align*}
+u&amp;=|R_1|+|R_2|+\cdots+|R_{i-1}|+|R_i|\\
+&amp;=(n-1)+(n-2)+\cdots+(n-i+1)+(j-i)\\
+&amp;=\sum_{m=1}^{n-1}m-\sum_{m=1}^{n-i}m+j-i\\
+&amp;=\binom{n}{2}-\binom{n-i+1}{2}+j-i.
+\end{align*}
+</div></article></div>
+<article class="lemma theorem-like" id="lemma-2"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-40">Let us consider the set</p>
+<div class="displaymath">
+\begin{equation*}
+T=\{(i,j,k)\,|\,1\leq i&lt;j&lt;k\leq n\}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Then</p>
+<div class="displaymath">
+\begin{equation*}
+|T|=\binom{n}{3}
+\end{equation*}
+</div>
+<p data-braille="continuation">and if we list the elements of \(T\) in <a class="external" href="https://en.wikipedia.org/wiki/Lexicographical_order" target="_blank">lexicographical order</a>, we have</p>
+<div class="displaymath">
+\begin{equation*}
+T=\{\underbrace{(1,2,3)}_{t_1},\underbrace{(1,2,4)}_{t_2},\ldots,\underbrace{(1,2,n)}_{t_{n-1}},\underbrace{(2,3,4)}_{t_n},\ldots,\underbrace{(i,j,k)}_{t_v},\ldots,\underbrace{(n-2,n-1,n)}_{t_{|T|}}\}
+\end{equation*}
+</div>
+<p data-braille="continuation">with</p>
+<div class="displaymath">
+\begin{equation*}
+v=\binom{n}{3}-\binom{n-i+1}{3}+\binom{n-i}{2}-\binom{n-j+1}{2}+k-j.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-41">First observe that if we denote</p>
+<div class="displaymath">
+\begin{equation*}
+(r,s,t)&lt;(i,j,k)
+\end{equation*}
+</div>
+<p data-braille="continuation">the lexicographical order, then</p>
+<div class="displaymath">
+\begin{equation*}
+v=\left|\{(r,s,t)\in T\,|\,(r,s,t)\leq (i,j,k)\}\right|.
+\end{equation*}
+</div>
+<p data-braille="continuation">So we have to count how many elements of \(T\) were already listed before reaching the element \((i,j,k)\) plus one for the latter.</p>
+<ul class="disc">
+<li id="li-11">
+<p id="p-42">If \(r=i\) and \(s=j\text{,}\) the elements to be taken into account are those for which</p>
+<div class="displaymath">
+\begin{equation*}
+j+1\leq t\leq k.
+\end{equation*}
+</div>
+<p data-braille="continuation">This yields</p>
+<div class="displaymath">
+\begin{equation*}
+A=k-j
+\end{equation*}
+</div>
+<p data-braille="continuation">elements.</p>
+</li>
+<li id="li-12">
+<p id="p-43">If \(r=i\) and \(i&lt;s&lt;j\text{,}\) all the \(t\)'s such that</p>
+<div class="displaymath">
+\begin{equation*}
+s+1\leq t\leq n
+\end{equation*}
+</div>
+<p data-braille="continuation">must be taken into account, which yields</p>
+<div class="displaymath">
+\begin{equation*}
+n-s
+\end{equation*}
+</div>
+<p data-braille="continuation">elements.</p>
+<p id="p-44">Therefore the case \(r=i\) and \(i&lt;s&lt;j\) yields</p>
+<div class="displaymath">
+\begin{align*}
+B&amp;=(n-i-1)+(n-i-2)+\cdots+(n-j+1)\\
+&amp;=\sum_{m=1}^{n-i-1}m-\sum_{m=1}^{n-j}m\\
+&amp;=\binom{n-i}{2}-\binom{n-j+1}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">elements.</p>
+</li>
+<li id="li-13">
+<p id="p-45">For each \(r&lt;i\text{,}\) all the pairs \((s,t)\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+r+1\leq s&lt;t\leq n
+\end{equation*}
+</div>
+<p data-braille="continuation">must be taken into account, which yields</p>
+<div class="displaymath">
+\begin{equation*}
+\binom{n-r}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">elements.</p>
+<p id="p-46">Therefore the case \(r&lt;i\) yields</p>
+<div class="displaymath">
+\begin{align*}
+C&amp;=\binom{n-1}{2}+\cdots+\binom{n-i+1}{2}\\
+&amp;=\sum_{m=2}^{n-1}\binom{m}{2}-\sum_{m=2}^{n-i}\binom{m}{2}\\
+&amp;=\binom{n}{3}-\binom{n-i+1}{3}
+\end{align*}
+</div>
+<p data-braille="continuation">elements thanks to the <a class="external" href="https://en.wikipedia.org/wiki/Hockey-stick_identity" target="_blank">hockey-stick identity</a>.</p>
+</li>
+</ul>
+<p id="p-47">Finally, we find</p>
+<div class="displaymath">
+\begin{align*}
+v&amp;=C+B+A\\
+&amp;=\binom{n}{3}-\binom{n-i+1}{3}+\binom{n-i}{2}-\binom{n-j+1}{2}+k-j.
+\end{align*}
+</div></article></div></section></div></main>
+</div>
+</body>
+</html>

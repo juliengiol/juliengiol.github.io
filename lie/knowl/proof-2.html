@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2021-02-15T07:21:09-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>First observe that if we denote</p>
+<div class="displaymath">
+\begin{equation*}
+(r,s,t)&lt;(i,j,k)
+\end{equation*}
+</div>
+<p data-braille="continuation">the lexicographical order, then</p>
+<div class="displaymath">
+\begin{equation*}
+v=\left|\{(r,s,t)\in T\,|\,(r,s,t)\leq (i,j,k)\}\right|.
+\end{equation*}
+</div>
+<p data-braille="continuation">So we have to count how many elements of \(T\) were already listed before reaching the element \((i,j,k)\) plus one for the latter.</p>
+<ul class="disc">
+<li>
+<p>If \(r=i\) and \(s=j\text{,}\) the elements to be taken into account are those for which</p>
+<div class="displaymath">
+\begin{equation*}
+j+1\leq t\leq k.
+\end{equation*}
+</div>
+<p data-braille="continuation">This yields</p>
+<div class="displaymath">
+\begin{equation*}
+A=k-j
+\end{equation*}
+</div>
+<p data-braille="continuation">elements.</p>
+</li>
+<li>
+<p>If \(r=i\) and \(i&lt;s&lt;j\text{,}\) all the \(t\)'s such that</p>
+<div class="displaymath">
+\begin{equation*}
+s+1\leq t\leq n
+\end{equation*}
+</div>
+<p data-braille="continuation">must be taken into account, which yields</p>
+<div class="displaymath">
+\begin{equation*}
+n-s
+\end{equation*}
+</div>
+<p data-braille="continuation">elements.</p>
+<p>Therefore the case \(r=i\) and \(i&lt;s&lt;j\) yields</p>
+<div class="displaymath">
+\begin{align*}
+B&amp;=(n-i-1)+(n-i-2)+\cdots+(n-j+1)\\
+&amp;=\sum_{m=1}^{n-i-1}m-\sum_{m=1}^{n-j}m\\
+&amp;=\binom{n-i}{2}-\binom{n-j+1}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">elements.</p>
+</li>
+<li>
+<p>For each \(r&lt;i\text{,}\) all the pairs \((s,t)\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+r+1\leq s&lt;t\leq n
+\end{equation*}
+</div>
+<p data-braille="continuation">must be taken into account, which yields</p>
+<div class="displaymath">
+\begin{equation*}
+\binom{n-r}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">elements.</p>
+<p>Therefore the case \(r&lt;i\) yields</p>
+<div class="displaymath">
+\begin{align*}
+C&amp;=\binom{n-1}{2}+\cdots+\binom{n-i+1}{2}\\
+&amp;=\sum_{m=2}^{n-1}\binom{m}{2}-\sum_{m=2}^{n-i}\binom{m}{2}\\
+&amp;=\binom{n}{3}-\binom{n-i+1}{3}
+\end{align*}
+</div>
+<p data-braille="continuation">elements thanks to the <a class="external" href="https://en.wikipedia.org/wiki/Hockey-stick_identity" target="_blank">hockey-stick identity</a>.</p>
+</li>
+</ul>
+<p>Finally, we find</p>
+<div class="displaymath">
+\begin{align*}
+v&amp;=C+B+A\\
+&amp;=\binom{n}{3}-\binom{n-i+1}{3}+\binom{n-i}{2}-\binom{n-j+1}{2}+k-j.
+\end{align*}
+</div></article><span class="incontext"><a href="trivialH2_theory.html#proof-2">in-context</a></span>
+</body>
+</html>

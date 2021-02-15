@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2021-02-15T07:21:08-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Let \(L_{3,2}\) be the 3-dimensional algebra with nonzero bracket</p>
+<div class="displaymath">
+\begin{equation*}
+[x_1,x_2]=x_3
+\end{equation*}
+</div>
+<p data-braille="continuation">a.k.a. <a class="external" href="https://en.wikipedia.org/wiki/Heisenberg_group#Heisenberg_algebra" target="_blank">the Heisenberg algebra</a>. Let us first shift the multiplication table. <div class="sagecell-sage" id="sage-2"><script type="text/x-sage">##### Input:
+Table = [[1,2,3]]
+##### Instructions:
+Table_L3_2 = ShiftTable(Table)
+print(Table_L3_2)
+</script></div> Then let us build the list of all structure constants, and print out in particular the \(3\times 3\) matrix \(\left(c_{ij}^3\right)\text{.}\) <div class="sagecell-sage" id="sage-3"><script type="text/x-sage">##### Additional input:
+Field = QQ
+Dimension = 3
+##### Additional instructions:
+SC_L3_2 = FillSC(Field, Dimension, Table_L3_2)
+print(SC_L3_2[2])
+</script></div> The product is antisymmetric by construction. Now here is how we verify that it satisfies the Jacobi identity. <div class="sagecell-sage" id="sage-4"><script type="text/x-sage">##### Additional instruction:
+print(JacobiTest(SC_L3_2))
+</script></div></p>
+<span class="incontext"><a href="jacobiidentity_examples.html#p-5">in-context</a></span>
+</body>
+</html>

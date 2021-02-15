@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2021-02-15T07:21:10-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="li"><h6 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
+</h6>
+<p>Now let us play with the NLAs of the array <code class="code-inline tex2jax_ignore">scNLA</code>.</p>
+<p>First, let us compare the Betti numbers that we obtain here in trivial cohomology with those obtained in the previous chapter in homology.</p>
+<div class="sagecell-sage" id="sage-29"><script type="text/x-sage">def D(m, sc, n):  # returns the matrix of d_m given the structure constants stored in an (n+1, n+1, n+1) Numpy array
+    endBasis = basisOfLambda(m - 1, n)
+    startBasis = basisOfLambda(m, n)
+    nCols = len(startBasis)
+    nRows = len(endBasis)
+    D = matrix(QQ, nRows, nCols)
+    c = 0  # running column number
+    for k in startBasis:
+        for i in range(0, m - 1):
+            for j in range(i + 1, m):
+                y = k[:]  # a copy not an alias
+                y.remove(k[i])
+                y.remove(k[j])
+                for l in range(1, n+1):
+                    z = merge(l, y)
+                    if z != 0:
+                        r = endBasis.index(z[1])  # the key point which makes computations of the previous chapter pointless
+                        D[r, c] += (- 1) ** (i + j - 1) * sc[k[i], k[j], l] * z[0]
+        c += 1  # go to the next column
+    return D
+
+def dimH(m, sc, n):
+    Dm = D(m, sc, n)
+    return binomial(n, m) - D(m, sc, n).rank() - D(m + 1, sc, n).rank()
+
+for n in range(3, 6+1):
+    m = scNLA[n][0, 0, 0, 0]
+    for k in range(1, m+1):
+        sc = scNLA[n, k]
+        bettiNumbers1 = [1]
+        bettiNumbers2 = [1]
+        for p in range(1, n):
+            bettiNumbers1.append(dimH(p, sc, n))
+            bettiNumbers2.append(basisOfH(p, sc, n).ncols())
+        bettiNumbers1.append(1)
+        bettiNumbers2.append(1)
+        print(n, k, ' : ', bettiNumbers1, bettiNumbers2)
+</script></div>
+<p>They are the same, i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+\mathrm{dim}\,H^p(\mathfrak{g},\mathbb{C})=\mathrm{dim}\,H_p(\mathfrak{g},\mathbb{C})\quad\text{for all}\quad 0\leq p\leq\mathrm{dim}\,\mathfrak{g}
+\end{equation*}
+</div>
+<p data-braille="continuation">for all the NLAs of <code class="code-inline tex2jax_ignore">scNLA</code>.</p></article><span class="incontext"><a href="trivialH2_examples.html#li-23">in-context</a></span>
+</body>
+</html>

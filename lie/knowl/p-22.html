@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2021-02-15T07:21:08-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Here is the code you need to run first: <div class="sagecell-sage" id="sage-12"><script type="text/x-sage">import copy
+
+Qt.<t> = FunctionField(QQ)
+
+def ShiftTable(Table):
+    STable = copy.deepcopy(Table)
+    for k in range(len(Table)):
+        for i in range(3):
+            STable[k][i] -= 1
+    return STable
+
+def Eval(f, x):
+    p, q = f.numerator(), f.denominator()
+    return p(x)/q(x)
+
+def SpecializeTable(Table, x):
+    SpTable = copy.deepcopy(Table)
+    for r in range(len(Table)):
+        if len(Table[r]) == 4:
+            f = Table[r][3]
+            SpTable[r][3] = Eval(f, x)
+    return SpTable
+
+def FillSC(Field, Table, Dimension):
+    SC = []
+    T = copy.deepcopy(Table)
+    for k in range(Dimension):
+        SC.append(matrix(Field, Dimension))
+    for r in range(len(Table)):
+        if len(T[r]) == 3:
+            T[r].append(1)
+        if len(T[r]) != 4:
+            print('syntax problem', r, ':', T[r])
+        i, j, k, c = T[r][0], T[r][1], T[r][2], T[r][3]
+        if i == j:
+            print('antisymmetry problem ignored', [i, j], ':', T[r])
+        else:
+            if SC[k][i, j] != 0:
+                print('beware duplicate', [i, j])
+            SC[k][i, j] += c
+            SC[k][j, i] -= c
+    return SC
+
+def TrivialCoboundary(Field, SC, m):
+    n = len(SC)
+    if m == 0 or m == n + 1:
+        return matrix(Field, 0, 0)
+    elif m == 1 or m == n:
+        return matrix(Field, binomial(n, m), binomial(n, m - 1))
+    else:
+        baseDomaine = Combinations(range(n), m - 1).list()
+        baseCodomaine = Combinations(range(n), m).list()
+        D = matrix(Field, len(baseCodomaine), len(baseDomaine))
+        c = 0  # indice de la colonne.
+        for I in baseDomaine:
+            l = 0  # indice de la ligne.
+            J = set(range(n)) - set(I)
+            for r in I:
+                for p in J:
+                    for q in {s for s in J if p < s}:
+                        II = sorted(list(set(I+[p,q])-{r}))
+                        wt = baseCodomaine.index(II)
+                        Sp = len([s for s in II if s < p])
+                        Sq = len([s for s in II if s < q])
+                        Sr = len([s for s in I if s < r])
+                        vv = (-1)^(Sp + Sq + Sr)
+                        D[wt, c] += vv * SC[r][p, q]
+            c += 1
+        return D
+
+def TrivialBettiNumbers(Field, SC):
+    n = len(SC)
+    TrivialRanks = [0]
+    mMax = floor(n / 2)
+    for m in range(1, mMax+2):
+        TrivialRanks.append(TrivialCoboundary(Field, SC, m).rank())
+    Betti = [1]
+    for m in range(1, mMax+1):
+         Betti.append(binomial(n,m) - TrivialRanks[m+1] - TrivialRanks[m])
+    for m in range(mMax+1, n+1):
+        Betti.append(Betti[n-m])
+    return Betti
+</script></div></p>
+<span class="incontext"><a href="trivialcohomology_examples.html#p-22">in-context</a></span>
+</body>
+</html>

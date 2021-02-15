@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2021-02-15T07:21:09-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>First observe that if we denote</p>
+<div class="displaymath">
+\begin{equation*}
+(r,s)&lt;(i,j)
+\end{equation*}
+</div>
+<p data-braille="continuation">the lexicographical order, then</p>
+<div class="displaymath">
+\begin{equation*}
+u=\left|\{(r,s)\in S\,|\,(r,s)\leq (i,j)\}\right|.
+\end{equation*}
+</div>
+<p data-braille="continuation">So we have to count how many elements of \(S\) were already listed before reaching the element \((i,j)\) plus one for the latter.</p>
+<p>It is convenient to split them by rows</p>
+<div class="displaymath">
+\begin{align*}
+\mathrm{R}_1&amp;=\{(1,2),\ldots,(1,n)\}\\
+\mathrm{R}_2&amp;=\{(2,3),\ldots,(2,n)\}\\
+&amp;\ldots\\
+\mathrm{R}_{i-1}&amp;=\{(i-1,i),\ldots,(i-1,n)\}\\
+\mathrm{R}_i&amp;=\{(i,i+1),\ldots,(i,j)\}
+\end{align*}
+</div>
+<p data-braille="continuation">and then count the elements in each row:</p>
+<div class="displaymath">
+\begin{align*}
+|\mathrm{R}_1|&amp;=n-1,\\
+|\mathrm{R}_2|&amp;=n-2,\\
+&amp;\ldots\\
+|\mathrm{R}_{i-1}|&amp;=n-i+1,\\
+|\mathrm{R}_i|&amp;=j-i.
+\end{align*}
+</div>
+<p>Therefore</p>
+<div class="displaymath">
+\begin{align*}
+u&amp;=|R_1|+|R_2|+\cdots+|R_{i-1}|+|R_i|\\
+&amp;=(n-1)+(n-2)+\cdots+(n-i+1)+(j-i)\\
+&amp;=\sum_{m=1}^{n-1}m-\sum_{m=1}^{n-i}m+j-i\\
+&amp;=\binom{n}{2}-\binom{n-i+1}{2}+j-i.
+\end{align*}
+</div></article><span class="incontext"><a href="trivialH2_theory.html#proof-1">in-context</a></span>
+</body>
+</html>
