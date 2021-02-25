@@ -72,93 +72,68 @@
 
 <div id="entete">
   <h1>Calculatrices <a href="https://juliengiol.github.io/mea/sagemath.html" target="_blank">Sage</a></h1>
-  <p>Attention :
-    <ul>
-      <li>
-        <p>
-          Modifiez seulement les entrées, puis cliquez sur le bouton Exécuter (Sage).
-        </p>
-      </li>
-      <li>
-        <p>Il faut indiquer toutes les opérations ( x * cos(x) et non pas xcos(x) par exemple).</p>
-      </li>
-      <li>
-        <p>Pour Sage, \(\log =\log_e=\ln\) et \(\infty\) se note oo.</p>
-      </li>
-    </ul>
-  </p>
+  <ul>
+    <li>Modifiez seulement les entrées, puis cliquez sur le bouton Évaluer (Sage).</li>
+    <li>Indiquez toutes les opérations : x * cos(x) et non pas xcos(x) par exemple.</li>
+    <li>Pour Sage, \(\log =\log_e=\ln\) et \(\infty\) se note oo.</li>
+  </ul>
 </div>
 <hr>
 <h2>Limites :</h2>
-<div class="sagecell-sage"><script type="text/x-sage"># Entrées :
+<div class="sagecell-sage"><script type="text/x-sage"># entrées :
 f(x) = sin(x) / x  # fonction dont on veut calculer la limite quand x tend vers ...
 x0 = 0  # ... x0
-
-# Instructions Sage :
-show('Fonction :', f(x))
-show('x0 :', x0)
+# instructions :
 L = limit(f(x), x = x0)
-show('Limite :', L, ' = ', L.n())
+show(L, ' = ', L.n())
 </script></div>
 <hr>
 <hr>
 <h2>Limites à droite ou à gauche:</h2>
-<div class="sagecell-sage"><script type="text/x-sage"># Entrées :
+<div class="sagecell-sage"><script type="text/x-sage"># entrées :
 f(x) = (2 - x) / (x - 1)  # fonction dont on veut calculer la limite quand x tend vers ...
 x0 = 1  # ... x0
 pm = 'plus'  # ... à droite
-
-# Instructions Sage :
-show('Fonction :', f(x))
-show('x0 :', x0)
-show('Droite (plus) ou gauche (minus) :', pm)
+# instructions :
 L = limit(f(x), x = x0, dir = pm)
-show('Limite :', L, ' = ', L.n())
+show(L, ' = ', L.n())
 </script></div>
 <hr>
 <h2>Dérivées :</h2>
-<div class="sagecell-sage"><script type="text/x-sage"># Entrée :
+<div class="sagecell-sage"><script type="text/x-sage"># entrée :
 f(x) = sin( ln(x) / x )  # fonction dont on veut calculer la dérivée par rapport à x
-
-# Instructions Sage :
-show('Fonction :', f(x))
+# instructions :
 g(x) = derivative(f(x), x)
-show('Dérivée :', g(x))
+show(g(x))
 </script></div>
 <hr>
 <h2>Intégrales indéfinies :</h2>
-<div class="sagecell-sage"><script type="text/x-sage"># Entrée :
-f(x) = sec(x) * (cos(x) + 1)  # fonction dont on veut calculer l'intégrale indéfinie
-
-# Instructions Sage :
-show('Fonction :', f(x))
+<div class="sagecell-sage"><script type="text/x-sage"># entrée :
+f(x) = sec(x) * (cos(x) + 1)  # fonction dont on veut calculer les primitives
+# instructions :
 g(x) = integral(f(x), x)
-show('Intégrale indéfinie :', g(x), ' + C')
+show(g(x), ' + C')
 </script></div>
 <hr>
 <h2>Intégrales définies :</h2>
-<div class="sagecell-sage"><script type="text/x-sage"># Entrées :
-f(x) = ( sin(x) )^2  # fonction dont on veut calculer l'intégrale définie entre les bornes ...
+<div class="sagecell-sage"><script type="text/x-sage"># entrées :
+f(x) = ( sin(x) )^2  # fonction à intégrer entre les bornes ...
 a = - pi / 4  # ... a ...
 b = pi / 4  # ... et b
-
-# Instructions Sage :
-show('Fonction :', f(x))
-show('Bornes :', a, ' et ', b)
+# instructions :
 I = integral(f(x), x, a, b)
-show('Intégrale définie :', I, ' = ', I.n())
+show(I, ' = ', I.n())
 </script></div>
 <hr>
 <h2>Gauss-Jordan :</h2>
-<div class="sagecell-sage"><script type="text/x-sage"># Entrées :
+<div class="sagecell-sage"><script type="text/x-sage"># entrées :
 M = matrix(3,  # nombre de lignes
            4,  # nombre de colonnes
            [5, 7, -2, 8, # coefficients de la première ligne ...
             0, 4, 0, -5,  # ...
             4, -9, 11, 0]  # ... et de la dernière ligne
           )
-
-# Instructions Sage :
+# instructions :
 show('M :', M)
 GJ = M.rref()
 show('Réduite de M par Gauss-Jordan :', GJ)
