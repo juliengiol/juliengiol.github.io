@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JG</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="css/jg.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-25018634-7');
+  </script>
+<!--script pour MathJax :-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [['\\(','\\)']]
+      },
+      asciimath2jax: {
+          ignoreClass: ".*",
+          processClass: "has_am"
+      },
+      jax: ["input/AsciiMath"],
+      extensions: ["asciimath2jax.js"],
+      TeX: {
+          extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+          // scrolling to fragment identifiers is controlled by other Javascript
+          positionToHash: false,
+          equationNumbers: { autoNumber: "none", useLabelIds: true, },
+          TagSide: "right",
+          TagIndent: ".8em",
+      },
+      // HTML-CSS output Jax to be dropped for MathJax 3.0
+      "HTML-CSS": {
+          scale: 88,
+          mtextFontInherit: true,
+      },
+      CommonHTML: {
+          scale: 88,
+          mtextFontInherit: true,
+      },
+  });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+<!--scripts pour SageMathCell :-->
+  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  'div.sagecell-interact',
+                           hide: ['editor', 'evalButton', 'permalink'],
+                           autoeval: true});
+    // Make *any* div with class 'compute' a Sage cell with Sage
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                            evalButtonText: 'Run (Sage)'});
+    // Make *any* div with class 'compute' a Sage cell with Python
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           languages: ['python'],
+                           evalButtonText: 'Run (Python)'});
+    });
+    </script>
+</head>
+
+<body>
+
+<div id="entete">
+  <h1><a href="https://www.sagemath.org/" target="_blank">Sage</a> Calculators</h1>
+  <ul>
+    <li>Modify the input as should be, then click on Run (Sage).</li>
+    <li>Indicate every operation: x * cos(x) ans not xcos(x), for instance.</li>
+    <li>For Sage, \(\log =\log_e=\ln\) and \(\infty\) is denoted by oo.</li>
+  </ul>
+</div>
+<hr>
+<h2>Limits:</h2>
+<div class="sagecell-sage"><script type="text/x-sage"># input:
+f(x) = sin(x) / x
+x0 = 0
+# instructions:
+L = limit(f(x), x = x0)
+show(L, ' = ', L.n())
+</script></div>
+<hr>
+<hr>
+<h2>One-sided limits:</h2>
+<div class="sagecell-sage"><script type="text/x-sage"># input:
+f(x) = (2 - x) / (x - 1)
+x0 = 1
+pm = 'plus'
+# instructions:
+L = limit(f(x), x = x0, dir = pm)
+show(L, ' = ', L.n())
+</script></div>
+<hr>
+<h2>Derivatives:</h2>
+<div class="sagecell-sage"><script type="text/x-sage"># input:
+f(x) = sin( ln(x) / x )
+# instructions:
+g(x) = derivative(f(x), x)
+show(g(x))
+</script></div>
+<hr>
+<h2>Indefinite integrals:</h2>
+<div class="sagecell-sage"><script type="text/x-sage"># input:
+f(x) = sec(x) * (cos(x) + 1)
+# instructions :
+g(x) = integral(f(x), x)
+show(g(x), ' + C')
+</script></div>
+<hr>
+<h2>Definite integrals:</h2>
+<div class="sagecell-sage"><script type="text/x-sage"># input:
+f(x) = ( sin(x) )^2
+a = - pi / 4
+b = pi / 4
+# instructions :
+I = integral(f(x), x, a, b)
+show(I, ' = ', I.n())
+</script></div>
+<hr>
+<h2>RREF:</h2>
+<div class="sagecell-sage"><script type="text/x-sage"># input:
+M = matrix(3,  # number of rows
+           4,  # number of columns
+           [5, 7, -2, 8, # first row coefficients ...
+            0, 4, 0, -5,  # ...
+            4, -9, 11, 0]  # ... and last row coefficients
+          )
+# instructions :
+show('M:', M)
+GJ = M.rref()
+show('Reduced Row Echelon Form of M:', GJ)
+</script></div>
+<hr>
+<!--Start: Google Global Site Tag code-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-25018634-7');
+</script><!--End: Google Global Site Tag code-->
+</body>
+
+</html>

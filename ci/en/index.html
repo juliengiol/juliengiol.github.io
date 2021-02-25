@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CI Calculator</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="ci.css">
+  <script src="ci.js" type="text/javascript"></script>
+</head>
+
+<body onload=metAJour()>
+  <div id="entrees">
+    <p>Number of courses:
+      <select class="customSelect" id="nPrep" onchange="metAJour()">
+        <option>1</option>
+        <option selected>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </p>
+    <p><span id="montreCours1"></span></p>
+    <p><span id="montreCours2"></span></p>
+    <p><span id="montreCours3"></span></p>
+    <p><span id="montreCours4"></span></p>
+  </div>
+  <div id="resultat">
+    <p>CI = <span id="montreCI"></span></p>
+  </div>
+  <div id="pied">
+    <p>
+      This CI computation obeys the 2015-2020 version of the <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/0B8wJ8ZmcV6LFYWk2OGpfelQyMFk/view?usp=sharing">collective agreement</a>.
+      <br>
+      For more options, I recommend <a target="_blank" rel="noopener noreferrer" href="http://lestextes.com/ci/">lestextes.com</a>.
+      <br>
+      &copy; 2016-2020 Julien Giol
+      <br>
+      <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    </p>
+  </div>
+</body>
+
+</html>

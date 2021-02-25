@@ -85,13 +85,30 @@
 <div>
   <p>Teaching:</p>
   <ul>
-    <li><a href="https://translate.google.com/translate?hl=en&sl=fr&tl=en&u=https%3A%2F%2Fjuliengiol.github.io%2Fmea%2Faccueil.html" target="_blank">Mathematics and Algorithmic</a></li>
+    <li></li>
   </ul>
 </div>
 
-<p>Here is how to compute the GCD of \(2589\) and \(234\) with the Euclidean Algorithm in Python:</p>
-
-<div class="sagecell-python"><script type="text/x-sage"># input:
+<HR>
+<p>
+  Teaching:
+  <ul>
+    <li>An interactive digital textbook: <a href="https://juliengiol.github.io/mea/" target="_blank">Mathématiques et algorithmique</a> | <a href="https://translate.google.com/translate?hl=en&sl=fr&tl=en&u=https%3A%2F%2Fjuliengiol.github.io%2Fmea%2Faccueil.html" target="_blank">Mathematics and Algorithmic</a>.</li>
+    <li>For cegep teachers: <a href="https://juliengiol.github.io/ci/en/" target="_blank">CI Calculator</a>.</li>
+    <li><a href="https://juliengiol.github.io/Sagecalculators.html" target="_blank">Sage Calculators</a>.</li>
+  </ul>
+</p>
+<HR>
+<p>
+  Promotion for <a href="https://pretextbook.org/" target="_blank">PreTeXt</a>: An <a href="https://translate.google.com/translate?hl=en&sl=fr&tl=en&u=https%3A%2F%2Fwww.profweb.ca%2Fpublications%2Frecits%2Fpretext-un-systeme-d-edition-de-notes-de-cours-a-decouvrir-pour-creer-un-site-web-ou-un-livre-numerique&sandbox=1" target="_blank">interview</a> on <a href="https://www.profweb.ca/en/" target="_blank">profweb</a>'s portal.
+</p>
+<HR>
+<p>
+  Promotion for  <a href="https://sagecell.sagemath.org/" target="_blank">SageMathCell</a>:
+  <ul>
+    <li>
+      Here is how to compute the GCD of \(2589\) and \(234\) with the Euclidean Algorithm in Python:
+      <div class="sagecell-python"><script type="text/x-sage"># input:
 a = 2589
 b = 234
 # instructions:
@@ -99,11 +116,11 @@ while b != 0:
     a, b = b, a % b
 # output:
 print(a)
-</script></div>
-
-<p>And here is how to approximate \(\int_a^bf(x)\,\mathrm{d}x\) with the Rectangle Method:</p>
-
-<div class="sagecell-interact"><script type="text/x-sage">@interact
+      </script></div>
+    </li>
+    <li>
+      And here is how to approximate \(\int_a^bf(x)\,\mathrm{d}x\) with the Rectangle Method:
+      <div class="sagecell-interact"><script type="text/x-sage">@interact
 def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 5, width = 30), a = input_box(label = html(r'\(a\)'), default = 1, width = 10), b = input_box(label = html(r'\(b\)'), default = 7, width = 10), n = input_box(label = html(r'\(n\)'), default = 3, width = 10), Rectangles = ['Left', 'Middle', 'Right']):
     if Rectangles == 'Left':
         t = 0
@@ -138,9 +155,18 @@ def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 5, width =
     pretty_print(html(r'Exact value: \[\int_{%s}^{%s}f(x)\,\mathrm{d}x=%s\]' %(a, b, integrale)))
     pretty_print(html(r'Approximation by the Rectangle Method: \[%s\]'%approximation))
     pretty_print(html(r'Error: \[%s\]' %erreur))
-</script></div>
-<p>It looks like Einstein said that: "In theory, theory and practice are the same. In practice, they are not."</p>
-<p>As for Michel Colucci: "Tennis and table tennis are the same. Except that in tennis, the players are standing on the table."</p>
+      </script></div>
+    </li>
+  </ul>
+</p>
+<HR>
+<p>
+  Quotes:
+  <ul>
+    <li>It looks like Einstein said that: "In theory, theory and practice are the same. In practice, they are not."</li>
+    <li>As for Michel Colucci: "Tennis and table tennis are the same. Except that in tennis, the players are standing on the table."</li>
+  </ul>
+</p>
 <!--Start: Google Global Site Tag code-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script><script>  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
