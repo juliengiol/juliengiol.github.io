@@ -1,20 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-15T08:12:06-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-25T07:49:39-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
 </h6>
-<p><a class="external" href="http://sagebook.gforge.inria.fr/" target="_blank">Calcul mathématique avec Sage</a>.</p></article><span class="incontext"><a href="sage.html#li-676">??</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">Application : approximation de \(\pi\) à l'aide de la série de Leibniz.</p>
+<ol class="lower-alpha">
+<li>En remplaçant \(x\) par \(-x^2\) dans le DSE de \(f(x)\text{,}\) on trouve :<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{1+x^2}=\sum_{n=0}^{+\infty}(-1)^nx^{2n}\qquad\forall x\in ]-1\,;\,1[
+\end{equation*}
+</div>
+</li>
+<li>En intégrant terme à terme le DSE précédent, on obtient, après ajustement de la constante d'intégration :<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\arctan(x)=\sum_{n=0}^{+\infty}(-1)^n\frac{x^{2n+1}}{2n+1}\qquad\forall x\in ]-1\,;\,1[
+\end{equation*}
+</div>
+</li>
+<li>En faisant tendre \(x\) vers \(1\) terme à terme dans le DSE précédent, on a :<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\arctan(1)=\sum_{n=0}^{+\infty}(-1)^n\frac{1}{2n+1}
+\end{equation*}
+</div>
+</li>
+<li>En multipliant l'équation précédente par 4, on obtient \(\pi\) comme somme d'une série satisfaisant les conditions d'application du test des séries alternées :<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\pi=\sum_{n=0}^{+\infty}(-1)^n\frac{4}{2n+1}
+\end{equation*}
+</div>
+</li>
+<li>Explicitons le regroupement de termes \(\displaystyle S=S_{19}+R_{19}\) pour la série donnant \(\pi\) ci-dessus. Cela donne:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\pi=\sum_{n=0}^{19}(-1)^n\frac{4}{2n+1}+\sum_{n=20}^{+\infty}(-1)^n\frac{4}{2n+1}
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\pi=\underbrace{4-\frac{4}{3}+\frac{4}{5}-\ldots-\frac{4}{39}}_{S_{19}}+\underbrace{\frac{4}{41}-\frac{4}{43}+\ldots}_{R_{19}}
+\end{equation*}
+</div>
+</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Calculons \(S_{19}\) et estimons \(R_{19}\text{.}\) On obtient :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S_{19}=\sum_{n=0}^{19}(-1)^n\frac{4}{2n+1}=\frac{516197940314096}{166966608033225}\approx 3,09
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|R_{19}|\leq \frac{4}{41}\approx 0,098
+\end{equation*}
+</div>
+</li>
+<li>Concluons en encadrant \(\pi\) :<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+3,0 &lt; S_{19} &lt; 3,1
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+0 &lt; R_{19} &lt; 0,1
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+3,0+0 &lt; S_{19}+R_{19} &lt; 3,1+0,1
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+3,0 &lt; \pi &lt; 3,2
+\end{equation*}
+</div>
+</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Remarques :</p>
+<ul class="disc">
+<li>Le fait qu'on ait le droit d'effectuer des opérations comme la dérivation, l'intégration ou la limite terme à terme dans un DSE n'est pas évident. Il y a de vrais théorèmes cachés derrière. Pour le point 3 c. par exemple, on peut invoquer un <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_d%27Abel_%28analyse%29" target="_blank">théorème attribué à Abel</a>.</li>
+<li>Dans le cadre du test des séries alternées, la valeur absolue de l'erreur est inférieure à la valeur absolue du premier terme oublié. De plus, l'erreur est positive si le premier terme oublié est positif, et elle est négative dans le cas contraire.</li>
+<li>Quand on augmente \(n\text{,}\) on fait diminuer l'erreur \(R_n\text{.}\) Dans le cas de cette série, l'erreur ne diminue pas très vite : il faudrait se rendre très loin dans la somme partielle pour commencer à obtenir un nombre satisfaisant de décimales correctes pour la somme \(S=\pi\text{.}\)</li>
+<li>L'estimation obtenue ci-dessus est toutefois suffisante pour réfuter <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">la <a class="external" href="https://fr.wikipedia.org/wiki/Projet_de_loi_pi_de_l%27Indiana" target="_blank">proposition de loi No 246</a> qui faillit être adoptée en 1897 par l'Assemblée législative de l'Indiana</em>. Si on en croit Wikipedia, cette dernière impliquait entre autres que \(\pi\) serait égal à 3,2.</li>
+</ul>
+</li>
+</ol></article><span class="incontext"><a href="serie-de-leibniz.html#li-676">??</a></span>
 </body>
 </html>

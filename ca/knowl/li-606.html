@@ -1,37 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-15T08:11:57-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-25T07:49:32-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.1.6.3</span><span class="period">.</span>
+<article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.2.2.1</span><span class="period">.</span>
 </h6>
-<p>À l'étape 1. est apparue la valeur</p>
-<div class="displaymath">
+<p>Commençons par calculer les gradients de</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-1.
+f(x,y)=x-y\quad\text{et}\quad g(x,y)=x^2+y^2.
 \end{equation*}
 </div>
-<p data-braille="continuation">À l'étape 2. sont apparues les valeurs</p>
-<div class="displaymath">
+<p class="continuation">Cela donne</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
--2\quad\text{et}\quad 2.
+\nabla f=\begin{bmatrix}1\\-1\end{bmatrix}\quad\text{et}\quad\nabla g=\begin{bmatrix}2x\\2y\end{bmatrix}.
 \end{equation*}
 </div>
-<p>Par conséquent, on a</p>
-<div class="displaymath">
+<p>On doit donc résoudre le système</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\max_Df=2\quad\text{et}\quad\min_Df=-2.
+\begin{cases}\nabla f=\lambda\nabla g\\g(x,y)=9\end{cases}
 \end{equation*}
-</div></article><span class="incontext"><a href="extremums.html#li-606">??</a></span>
+</div>
+<p class="continuation">qui donne les trois équations suivantes</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{2}
+(E_1)\quad&amp;&amp; 1 &amp; {}={} 2\lambda x\\
+(E_2)\quad&amp;&amp; -1 &amp; {}={} 2\lambda y\\
+(E_3)\quad&amp;&amp;x^2+y^2 &amp; {}={} 9
+\end{alignat*}
+</div>
+<p class="continuation">d'où</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x=-y=\frac{1}{2\lambda}
+\end{equation*}
+</div>
+<p class="continuation">par \((E_1)\) et \((E_2)\text{.}\)</p>
+<p>Par \((E_3)\text{,}\) il en découle que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+x^2+(-x)^2=9&amp;\quad\Leftrightarrow\quad 2x^2=9\\
+&amp;\quad\Leftrightarrow\quad x^2=\frac{9}{2}\\
+&amp;\quad\Leftrightarrow\quad x=\pm\sqrt{\frac{9}{2}}\\
+&amp;\quad\Leftrightarrow\quad x=\pm\frac{3\sqrt{2}}{2}.
+\end{align*}
+</div>
+<p class="continuation">On obtient ainsi les deux points</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left(\frac{3\sqrt{2}}{2},-\frac{3\sqrt{2}}{2}\right)\quad\text{et}\quad\left(-\frac{3\sqrt{2}}{2},\frac{3\sqrt{2}}{2}\right).
+\end{equation*}
+</div></article><span class="incontext"><a href="lagrange.html#li-606">??</a></span>
 </body>
 </html>

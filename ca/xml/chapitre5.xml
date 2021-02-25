@@ -830,6 +830,7 @@
 
 </section>
 
+<!--
 <section xml:id="gradient">
   <title>Critère de Sylvester et méthode du gradient</title>
 
@@ -992,6 +993,7 @@
   <p>Vous pouvez maintenant résoudre les exercices prioritaires de cette section.</p>
 
 </section>
+-->
 
 <section xml:id="lagrange">
   <title>Multiplicateurs de Lagrange</title>

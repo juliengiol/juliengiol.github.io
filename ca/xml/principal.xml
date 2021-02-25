@@ -69,7 +69,6 @@
               <p>
                 Vous trouverez ici :
                 <ul>
-                  <li><xref ref="coronavirus"> Coronavirus | Partie</xref> : Informations essentielles concernant la reprise des activités pédagogiques propres à ce cours.</li>
                   <li><xref ref="documents"> Partie</xref> : Échéanciers, exercices suggérés, errata et anciennes évaluations.</li>
                   <li><xref ref="volume"> Partie</xref> : Notes de cours suivant le volume.</li>
                   <li><xref ref="complements"> Partie</xref> : Matière non couverte par le volume, Sage, etc...</li>
@@ -87,15 +86,16 @@
 
             <acknowledgement>
               <p><image source="images/caview.png"/></p>
-              <p>Merci à tous les membres du département de mathématiques du <url href="https://www.collegeahuntsic.qc.ca/">Collège Ahuntsic</url> dont le travail m'a aidé dans la préparation de ce cours.
-              Merci tout particulièrement à Johanne Paquin (la plupart des documents pdf accessibles par ce site lui sont dus), Marie-José Dutil, Charles Bariteau et Luc Poitras.
-              Désolé pour ceux que j'oublie.</p>
+              <p>
+                Merci à tous les membres du département de mathématiques du <url href="https://www.collegeahuntsic.qc.ca/">Collège Ahuntsic</url> dont le travail m'a aidé dans la préparation de ce cours.
+                Merci tout particulièrement à Johanne Paquin (la plupart des documents pdf accessibles par ce site lui sont dus), Marie-José Dutil, Charles Bariteau et Luc Poitras.
+                Désolé pour ceux que j'oublie.</p>
               <p>Merci aussi à <url href="https://wstein.org/">William Stein</url> et à ses collaborateurs pour <url href="http://www.sagemath.org/index.html">SageMath</url> et <url href="https://cocalc.com">CoCalc</url>.</p>
               <p>Merci mille fois à <url href="http://buzzard.ups.edu/">Rob Beezer</url> pour <url href="https://pretextbook.org">PreTeXt</url>, grâce à quoi j'ai pu créer ces pages html.</p>
             </acknowledgement>
 
         </frontmatter>
-
+<!--
         <part xml:id="coronavirus">
           <title>Coronavirus</title>
 
@@ -159,7 +159,7 @@
           </p>
 
         </part>
-
+-->
         <part xml:id="documents">
           <title>Documents</title>
 
@@ -168,7 +168,8 @@
               <p>Voici le <url href="https://drive.google.com/file/d/1O5HA-aL8FDaMp-vkm6_RY8BbPygT5mO5/view?usp=sharing">plan de cours abrégé</url>.</p>
             </li>
             <li>
-              <p>Les échéanciers sont là pour indiquer la matière couverte à chaque rencontre, ainsi que les événements particuliers tels que les quiz et les examens. Ne les imprimez pas, car ils sont toujours susceptibles d'être modifiés si nécessaire.
+              <p>
+                Les échéanciers sont là pour indiquer la matière couverte à chaque rencontre, ainsi que les événements particuliers tels que les quiz et les examens. Ne les imprimez pas, car ils sont toujours susceptibles d'être modifiés si nécessaire.
                 <ul>
                   <li><url href="https://docs.google.com/document/d/1oN0a4lbX9GJwneVtcnLeERK5vfgdQv-bb9WcgVUQGH4/edit?usp=sharing">Échéancier de l'étape 1</url></li>
                   <li><url href="https://docs.google.com/document/d/12M2FZVuVME2tAZCHmEgPoWySnNx3Bsz3ZAYTwdBbG6Q/edit?usp=sharing">Échéancier des étapes 2 et 3</url></li>

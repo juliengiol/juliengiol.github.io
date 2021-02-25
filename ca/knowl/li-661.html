@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-15T08:12:04-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-25T07:49:39-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span>
 </h6>
-<p>Il n'est pas toujours nécessaire de trouver les valeurs de \(\lambda\text{.}\)</p></article><span class="incontext"><a href="lagrange.html#li-661">??</a></span>
+<p>Dans l'exemple 2 page 70, on s'intéresse à la série suivante :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{n=0}^{+\infty}\frac{x^n}{n!}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Montrez que cette série converge pour tout \(x\in\mathbb{R}\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Le but principal des questions suivantes est de déterminer la fonction somme.</p>
+</li>
+<li>Déduisez de la question précédente que<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}\frac{x^n}{n!}=0\qquad \forall x\in\mathbb{R}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>On note \(f(x)=e^x\) la fonction exponentielle et on admet qu'elle vérifie les propriétés suivantes :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f'(x)=f(x)\quad\forall x\in\mathbb{R}\qquad\mbox{ et }\qquad f(0)=1
+\end{equation*}
+</div>
+<p class="continuation">Combien vaut \(f^{(n)}(0)\) pour \(n\in\mathbb{N}\text{?}\)</p>
+</li>
+<li>Vérifiez que la série ci-dessus n'est autre que la série de Taylor de \(f\) centrée en \(0\) (on parle de série de Maclaurin).</li>
+<li>Utilisez l'<a class="external" href="https://goo.gl/vqXDDy" target="_blank">application</a> afin d'expliciter les quatre premiers polynômes de Taylor \(T_0(x), T_1(x), T_2(x)\) et \(T_3(x)\) de \(f\) centrés en \(0\text{,}\) puis représentez-les graphiquement en même temps que \(f\) à l'aide de <a class="external" href="https://www.desmos.com/calculator/l79y6dn3se" target="_blank">Desmos</a>.</li>
+<li>Pour ce point, on s'intéresse plus particulièrement à \(T_3(x)\) (somme partielle jusqu'à \(n=3\)). Si on approche \(f(x)=e^x\) par \(T_3(x)\text{,}\) on commet l'erreur \(R_3(x)=f(x)-T_3(x)\text{.}\) Donnez-en une estimation sur l'intervalle \([-1\,;\,1]\text{.}\)</li>
+<li>Plus généralement, donnez une estimation de l'erreur \(R_n(x)=f(x)-T_n(x)\) lorsque \(|x|\leq d\) pour un entier \(n\) et un réel positif \(d\) quelconques.</li>
+<li>
+<p>Utilisez l'estimation précédente pour en conclure que la fonction \(f(x)=e^x\) est égale à la somme de sa série de Maclaurin pour tout \(x\in\mathbb{R}\text{,}\) c'est-à-dire que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+e^x=\sum_{n=0}^{+\infty}\frac{x^n}{n!}\qquad\forall x\in\mathbb{R}
+\end{equation*}
+</div>
+<p>Remarques :</p>
+<ul class="disc">
+<li>Le fait qu'une fonction soit égale à la somme de sa série de Taylor n'est pas anodin. Il est notamment possible de construire une fonction non nulle dont la série de Maclaurin est nulle.</li>
+<li>La démarche adoptée au dernier point dans le solutionnaire est très légèrement différente de celle choisie par le volume. En prenant \(\displaystyle\frac{e^dd^{n+1}}{(n+1)!}\) comme estimation au lieu de \(\displaystyle\frac{e^d|x|^{n+1}}{(n+1)!}\text{,}\) on démontre que le reste tend vers 0 uniformément sur l'intervalle \([-d\,;\,d]\text{.}\) C'est-à-dire que le contrôle qu'on a s'applique à tous les \(x\) de l'intervalle en même temps. Ce concept est fondamental lorsqu'on veut prouver que la fonction somme d'une série entière est continue.</li>
+</ul>
+</li>
+</ol></article><span class="incontext"><a href="bornes.html#li-661">??</a></span>
 </body>
 </html>

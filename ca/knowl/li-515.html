@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-15T08:11:44-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-25T07:49:14-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">4.4.7.2</span><span class="period">.</span>
+<article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>On trouve</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{\sqrt{5}}{e^2}.
-\end{equation*}
+<p>Commençons par évaluer le gradient de \(T\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\nabla T&amp;=\begin{bmatrix}T_x\\T_y\\T_z\end{bmatrix}\\
+&amp;=\begin{bmatrix}\frac{\partial}{\partial x}(200e^{-x^2-3y^2-9z^2})\\\frac{\partial}{\partial y}\left(200e^{-x^2-3y^2-9z^2}\right)\\\frac{\partial}{\partial z}(200e^{-x^2-3y^2-9z^2})\end{bmatrix}\\
+&amp;=200e^{-x^2-3y^2-9z^2}\begin{bmatrix}-2x\\-6y\\-18z\end{bmatrix}\\
+&amp;=-400e^{-x^2-3y^2-9z^2}\begin{bmatrix}x\\3y\\9z\end{bmatrix}
+\end{align*}
+</div>
+<p class="continuation">au point \(P(2,-1,2)\) :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\nabla T(2,-2,1)&amp;=-400\exp\left(-2^2-3\cdot(-1)^2-9\cdot 2^2\right)\begin{bmatrix}2\\3\cdot(-1)\\9\cdot 2\end{bmatrix}\\
+&amp;=-400e^{-43}\begin{bmatrix}2\\-3\\18\end{bmatrix}.
+\end{align*}
 </div></article><span class="incontext"><a href="derivees-directionnelles.html#li-515">??</a></span>
 </body>
 </html>

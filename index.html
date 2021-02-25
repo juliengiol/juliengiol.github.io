@@ -70,31 +70,39 @@
 <div id="entete">
   <h2>Julien Giol</h2>
 </div>
-
-<div>
-  <p><a href="https://juliengiol.github.io">Version française</a> / <a href="https://juliengiol.github.io/home.html">English version</a></p>
-  <p>Sur le Web :
-    <a href="https://www.linkedin.com/in/julien-giol-8a216443/?locale=fr_FR" target="_blank">LinkedIn</a>,
-    <a href="https://scholar.google.fr/citations?user=o3RET-QAAAAJ&hl=fr" target="_blank">Google Scholar</a>,
-    <a href="https://genealogy.math.ndsu.nodak.edu/id.php?id=131802" target="_blank">Généalogie Mathématique</a>,
-    <a href="https://math.stackexchange.com/users/38053/julien" target="_blank">Math Stack Exchange</a>.
-  </p>
-  <p>Contact : julien.giol arobase gmail.com.</p>
-</div>
-
-<div>
-  <p>Enseignement :</p>
+<p><a href="https://juliengiol.github.io">Version française</a> / <a href="https://juliengiol.github.io/home.html">English version</a></p>
+<p>Ailleurs sur le Web :
+  <a href="https://www.linkedin.com/in/julien-giol-8a216443/?locale=fr_FR" target="_blank">LinkedIn</a>,
+  <a href="https://scholar.google.fr/citations?user=o3RET-QAAAAJ&hl=fr" target="_blank">Google Scholar</a>,
+  <a href="https://genealogy.math.ndsu.nodak.edu/id.php?id=131802" target="_blank">Généalogie Mathématique</a>,
+  <a href="https://math.stackexchange.com/users/38053/julien" target="_blank">Math Stack Exchange</a>.
+</p>
+<p>Contact : julien.giol arobase gmail.com.</p>
+<HR>
+<p>
+  Enseignement :
   <ul>
-    <li><a href="https://juliengiol.github.io/mea/" target="_blank">Mathématiques et algorithmique</a></li>
-    <li><a href="https://juliengiol.github.io/videos303.html" target="_blank">Calcul avancé</a></li>
-    <li><a href="https://juliengiol.github.io/calculatricesSage.html" target="_blank">Calculatrices Sage</a></li>
-    <li><a href="https://juliengiol.github.io/ci" target="_blank">Calcul de CI</a></li>
+    <li>Un livre numérique interactif : <a href="https://juliengiol.github.io/mea/" target="_blank">Mathématiques et algorithmique</a>.</li>
+    <li>
+        Vidéos de l'hiver 2020 :
+        <a href="https://juliengiol.github.io/videosWebCAM.html" target="_blank">Calcul intégral</a>
+        | <a href="https://juliengiol.github.io/videos303.html" target="_blank">Calcul avancé</a>.
+    </li>
+    <li>Pour les profs de cégep : <a href="https://juliengiol.github.io/ci" target="_blank">Calcul de CI</a>.</li>
+    <li><a href="https://juliengiol.github.io/calculatricesSage.html" target="_blank">Calculatrices Sage</a>.</li>
   </ul>
-</div>
-
-<p>Voici comment calculer le PGCD de \(2589\) et de \(234\) avec l'algorithme d'Euclide implémenté en Python :</p>
-
-<div class="sagecell-python"><script type="text/x-sage"># entrées :
+</p>
+<HR>
+<p>
+  Promotion pour <a href="https://pretextbook.org/" target="_blank">PreTeXt</a> : Une <a href="https://www.profweb.ca/publications/recits/pretext-un-systeme-d-edition-de-notes-de-cours-a-decouvrir-pour-creer-un-site-web-ou-un-livre-numerique" target="_blank">entrevue</a> sur le site de <a href="https://www.profweb.ca/" target="_blank">profweb</a>.
+</p>
+<HR>
+<p>
+  Promotion pour  <a href="https://sagecell.sagemath.org/" target="_blank">SageMathCell</a> :
+  <ul>
+    <li>
+      Voici comment calculer le PGCD de \(2589\) et de \(234\) avec l'algorithme d'Euclide implémenté en Python :
+      <div class="sagecell-python"><script type="text/x-sage"># entrées :
 a = 2589
 b = 234
 # instructions :
@@ -102,11 +110,11 @@ while b != 0:
     a, b = b, a % b
 # sortie :
 print(a)
-</script></div>
-
-<p>Et voilà de quoi appliquer la méthode des rectangles pour calculer des valeurs approchées de l'intégrale définie \(\int_a^bf(x)\,\mathrm{d}x\) :</p>
-
-<div class="sagecell-interact"><script type="text/x-sage">@interact
+      </script></div>
+    </li>
+    <li>
+      Et voilà de quoi appliquer la méthode des rectangles pour calculer des valeurs approchées de l'intégrale définie \(\int_a^bf(x)\,\mathrm{d}x\) :
+      <div class="sagecell-interact"><script type="text/x-sage">@interact
 def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 5, width = 30), a = input_box(label = html(r'\(a\)'), default = 1, width = 10), b = input_box(label = html(r'\(b\)'), default = 7, width = 10), n = input_box(label = html(r'\(n\)'), default = 3, width = 10), Rectangles = ['Gauche', 'Milieu', 'Droite']):
     if Rectangles == 'Gauche':
         t = 0
@@ -142,9 +150,17 @@ def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 5, width =
     pretty_print(html(r'Approximation par la méthode des rectangles : \[%s\]'%approximation))
     pretty_print(html(r'Erreur : \[%s\]' %erreur))
 </script></div>
-
-<p>Apparemment, Einstein a dit ça : «La théorie, c'est quand on sait tout et que rien ne fonctionne. La pratique, c'est quand tout fonctionne et que personne ne sait pourquoi. Ici, nous avons réuni théorie et pratique : Rien ne fonctionne... et personne ne sait pourquoi !»</p>
-<p>Quant à Coluche : «Le tennis et le ping-pong, c'est pareil. Sauf qu'au tennis, les joueurs sont debout sur la table.»</p>
+    </li>
+  </ul>
+</p>
+<HR>
+<p>
+  Citations :
+  <ul>
+    <li>Apparemment, Einstein a dit ça : «La théorie, c'est quand on sait tout et que rien ne fonctionne. La pratique, c'est quand tout fonctionne et que personne ne sait pourquoi. Ici, nous avons réuni théorie et pratique : Rien ne fonctionne... et personne ne sait pourquoi !»</li>
+    <li>Quant à Coluche : «Le tennis et le ping-pong, c'est pareil. Sauf qu'au tennis, les joueurs sont debout sur la table.»</li>
+  </ul>
+</p>
 <!--Start: Google Global Site Tag code-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-7"></script><script>  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
