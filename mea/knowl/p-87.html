@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:38-04:00    *-->
+<!--*    on 2021-02-27T11:46:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,10 +10,49 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Nous allons finir cette section en utilisant l'<a class="external" href="https://fr.wikipedia.org/wiki/Modulo_(op%C3%A9ration)" target="_blank">opérateur modulo</a> qui se note <code class="code-inline tex2jax_ignore">a % b</code> en Python, et qui renvoie le reste de la division euclidienne de \(\text{a}\) par \(\text{b}\text{.}\)</p>
+<p>Essayez de deviner ce qu'affichent les blocs de code qui suivent avant de les évaluer. <div class="sagecell-python" id="sage-26"><script type="text/x-sage">x = -2
+if x > 0:  # si x est plus grand que 0
+    print('positif')  # affiche la chaîne de caractères 'positif'
+else:
+    print('négatif ou nul')  # sinon affiche 'négatif ou nul'
+</script></div> <div class="sagecell-python" id="sage-27"><script type="text/x-sage">x = -2
+if x > 0:
+    print('positif')
+</script></div> <div class="sagecell-python" id="sage-28"><script type="text/x-sage">x = -2
+if x > 0:  # si x est plus grand que 0
+    print('positif')  # affiche 'positif'
+elif x == 0:  # sinon si x est égal à 0
+    print('nul')  # affiche 'nul'
+else:
+    print('négatif')  # sinon affiche 'négatif'
+</script></div> <div class="sagecell-python" id="sage-29"><script type="text/x-sage">age = 8
+if age < 3:
+    print('entrée gratuite')
+elif age < 12:
+    print('tarif réduit')
+else:
+    print('plein tarif')
+</script></div></p>
 <span class="incontext"><a href="conditionnelles.html#p-87">Contexte</a></span>
 </body>
 </html>

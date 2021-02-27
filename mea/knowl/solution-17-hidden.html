@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:45-04:00    *-->
+<!--*    on 2021-02-27T11:46:13-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,19 +11,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore">def natureTriangle(a, b, c):
-    if (a &gt; b + c) or (b &gt; a + c) or (c &gt; a + b):
-        return 'impossible'
-    elif (a == b) and (a == c):
-        return 'équilatéral'
-    elif (a == b) or (a == c) or (b == c):
-        return 'isocèle'
-    else:
-        return 'scalène'
+<body><div class="solution solution-like"><ol class="decimal">
+<li><pre class="code-block tex2jax_ignore">def subdivisionReguliere1(a, b, n):
+    deltaX = (b - a) / n
+    x = a
+    for k in range(0, n+1):
+        print(x)
+        x = x + deltaX
 
-print(natureTriangle(1, 2, 4))
-print(natureTriangle(2, 2, 2))
-print(natureTriangle(2, 2, 3))
-print(natureTriangle(1, 2, 2.5))
-</pre></div></body>
+subdivisionReguliere1(1.0, 3.0, 4)
+</pre></li>
+<li><pre class="code-block tex2jax_ignore">def subdivisionReguliere2(a, b, n):
+    deltaX = (b - a) / n
+    liste = []
+    x = a
+    while x &lt;= b:
+        liste.append(x)
+        x = x + deltaX
+    return liste
+
+print(subdivisionReguliere2(1.0, 3.0, 4))
+</pre></li>
+</ol></div></body>
 </html>

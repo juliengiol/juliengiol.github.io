@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:48-04:00    *-->
+<!--*    on 2021-02-27T11:47:11-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,54 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Démonstration</span></h6>
-<p>Soit \(L(t)=L(t)=y_0\,L_0(t)+\cdots+y_n\,L_n(t)\text{.}\) Nous devons montrer que le polynôme \(L(t)\) est de degré \(n\) au plus, et que \(L(x_i)=y_i\) pour \(i=0,1,\dots,n\text{.}\)</p>
-<p>D'après le lemme <a class="xref" data-knowl="./knowl/basedelagrange.html" title="Lemme 6.1.4">6.1.4</a>, les polynômes \(L_i\) sont de degré \(n\) et vérifient</p>
+<p>Un polynôme réel \(P(t)\) de degré \(n\) au plus s'écrit</p>
 <div class="displaymath">
 \begin{equation*}
-L_i(x_i)=1\qquad\text{et}\qquad L_i(x_k)=0\quad\text{pour tout}\;k\neq i.
+P(t)=a_0+a_1t+\cdots+a_nt^n\qquad\text{où}\; a_0,a_1,\ldots,a_n\in\mathbb{R}.
 \end{equation*}
 </div>
-<p>Il en découle immédiatement que le polynôme \(L\) est de degré \(n\) au plus, comme combinaison linéaire de polynômes de degré \(n\text{.}\)</p>
-<p>Fixons maintenant un indice \(i\text{.}\) Alors</p>
+<p>Les conditions \(P(x_i)=y_i\) pour tout \(i=0,1,\ldots,n\) sont alors équivalentes au système linéaire de \(n+1\) équations suivant, où les \(n+1\) inconnues sont les coefficients \(a_0,\ldots,a_n\) du polynôme cherché.</p>
 <div class="displaymath">
-\begin{align*}
-L(x_i)&amp;=y_0\,L_0(x_i)+\cdots+y_i\,L_i(x_i)+\cdots+y_n\,L_n(x_i)\\
-&amp;=y_0\cdot 0+\cdots+y_i\cdot 1+\cdots+y_n\cdot 0\\
-&amp;=y_i.
-\end{align*}
-</div></article><span class="incontext"><a href="presentationlagrange.html#proof-9">Contexte</a></span>
+\begin{equation*}
+\begin{cases}
+a_0&amp;+&amp;a_1x_0&amp;+&amp;a_2x_0^2&amp;+&amp;\cdots&amp;+&amp;a_nx_0^n&amp;=&amp;y_0\\
+a_0&amp;+&amp;a_1x_1&amp;+&amp;a_2x_1^2&amp;+&amp;\cdots&amp;+&amp;a_nx_1^n&amp;=&amp;y_1\\
+a_0&amp;+&amp;a_1x_2&amp;+&amp;a_2x_2^2&amp;+&amp;\cdots&amp;+&amp;a_nx_2^n&amp;=&amp;y_2\\
+\vdots&amp;&amp;\vdots&amp;&amp;\vdots&amp;&amp;&amp;&amp;\vdots&amp;&amp;\vdots\\
+a_0&amp;+&amp;a_1x_n&amp;+&amp;a_2x_n^2&amp;+&amp;\cdots&amp;+&amp;a_nx_n^n&amp;=&amp;y_n
+\end{cases}
+\end{equation*}
+</div>
+<p>La matrice des coefficients de ce système est une <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde" target="_blank">matrice de Vandermonde</a> \((n+1)\times(n+1)\) :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1&amp;x_0&amp;x_0^2&amp;\cdots&amp;x_0^n\\
+1&amp;x_1&amp;x_1^2&amp;\cdots&amp;x_1^n\\
+1&amp;x_2&amp;x_2^2&amp;\cdots&amp;x_2^n\\
+\vdots&amp;\vdots&amp;\vdots&amp;&amp;\vdots\\
+1&amp;x_n&amp;x_n^2&amp;\cdots&amp;x_n^n
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>Son <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde#D%C3%A9terminant" target="_blank">déterminant</a> vaut</p>
+<div class="displaymath">
+\begin{equation*}
+\prod_{0\leq i&lt;j\leq n}(x_j-x_i).
+\end{equation*}
+</div>
+<p>Comme les \(x_i\) sont distincts deux à deux, on a \(x_i\neq x_j\) et donc</p>
+<div class="displaymath">
+\begin{equation*}
+x_j-x_i\neq 0\qquad\text{pour tout}\; 0\leq i&lt;j\leq n.
+\end{equation*}
+</div>
+<p>On en déduit que le déterminant du système est non nul, c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+\prod_{0\leq i&lt;j\leq n}(x_j-x_i)\neq 0.
+\end{equation*}
+</div>
+<p>Il en découle que la matrice du système est inversible. Par conséquent, le système admet une unique solution \((a_0,\ldots,a_n)\text{.}\)</p></article><span class="incontext"><a href="presentationlagrange.html#proof-9">Contexte</a></span>
 </body>
 </html>

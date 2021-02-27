@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:51-04:00    *-->
+<!--*    on 2021-02-27T11:48:20-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,46 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li>
-<p>Avec la méthode des rectangles, on remplace la fonction \(f\) par des fonctions constantes (polynômes de degré zéro) sur chaque sous-intervalle \([x_{k-1};x_k]\text{.}\)</p>
-<p>Cela revient à remplacer</p>
+<p>Voici la subdivision régulière de l'intervalle \([0;1]\) en six sous-intervalles de même longueur :</p>
 <div class="displaymath">
 \begin{equation*}
-\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad\Delta x\cdot f(\xi_k).
+0&lt;\frac{1}{6}&lt;\frac{1}{3}&lt;\frac{1}{2}&lt;\frac{2}{3}&lt;\frac{5}{6}&lt;1.
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Avec la méthode des trapèzes, on remplace la fonction \(f\) par les morceaux affines (polynômes de degré un au plus) qui interpolent les points \((x_{k-1};f(x_{k-1}))\) et \((x_k;f(x_k))\text{.}\)</p>
-<p>Cela revient à remplacer</p>
+<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
 <div class="displaymath">
-\begin{equation*}
-\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad\frac{\Delta x}{2}\cdot (f(x_{k-1}+f(x_k)).
-\end{equation*}
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f\left(\frac{1}{6}\right)+2f\left(\frac{1}{3}\right)+2f\left(\frac{1}{2}\right)\right.\\
+&amp;\qquad\qquad\left.+2f\left(\frac{2}{3}\right)+2f\left(\frac{5}{6}\right)+f(1)\right)\\
+=\;&amp;\frac{1}{12}\cdot\left(e^{0^2}+2e^{\left(\frac{1}{6}\right)^2}+2e^{\left(\frac{1}{3}\right)^2}+2e^{\left(\frac{1}{2}\right)^2}+2e^{\left(\frac{2}{3}\right)^2}+2e^{\left(\frac{5}{6}\right)^2}+e^{1^2}\right)\\
+\approx\;&amp;1{,}475.
+\end{align*}
 </div>
-</li>
-<li>
-<p>Avec la méthode de Simpson, on remplace la fonction \(f\) par les morceaux polynomiaux de degré deux au plus qui interpolent les points</p>
-<div class="displaymath">
-\begin{equation*}
-(x_{k-1};f(x_{k-1})),\; (m_k;f(m_k))\;\text{et}\; (x_k;f(x_k))
-\end{equation*}
-</div>
-<p data-braille="continuation">où \(m_k\) est le milieu de l'intervalle \([x_{k-1};x_k]\text{,}\) c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-m_k=\frac{x_{k-1}+x_k}{2}.
-\end{equation*}
-</div>
-<p>Cela revient à remplacer</p>
-<div class="displaymath">
-\begin{equation*}
-\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad ?
-\end{equation*}
-</div>
-</li>
-</ul>
-<span class="incontext"><a href="presentationsimpson.html#p-1391">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#p-1391">Contexte</a></span>
 </body>
 </html>

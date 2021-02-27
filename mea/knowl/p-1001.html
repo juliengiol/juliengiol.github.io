@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:13-04:00    *-->
+<!--*    on 2021-02-27T11:47:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,23 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Principe : Construire \(N(t)\) comme combinaison linéaire des polynômes</p>
+<p>On a</p>
 <div class="displaymath">
-\begin{equation*}
-N_i(t)=(t-x_0)(t-x_1)\cdots(t-x_{i-1})
-\end{equation*}
-</div>
-<p data-braille="continuation">en posant</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)
-\end{equation*}
-</div>
-<p data-braille="continuation">où le coefficient \(d_i\) est la différence divisée associée aux points \(A_0=(x_0;y_0),\ldots,A_i=(x_i;y_i)\text{,}\) c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-d_i=\left[A_0,\ldots,A_i\right]
-\end{equation*}
+\begin{align*}
+N(t)&amp;=d_0+d_1\,N_1(t)+d_2\,N_2(t)\\
+&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
+&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2).
+\end{align*}
 </div>
 <span class="incontext"><a href="presentationdiffdiv.html#p-1001">Contexte</a></span>
 </body>

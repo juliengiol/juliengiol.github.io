@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:08-04:00    *-->
+<!--*    on 2021-02-27T11:47:27-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,41 +13,38 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.12.3</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.5.2</span><span class="period">.</span>
 </h6>
-<p>Si \(t\) est égal à l'une des abscisses \(x_i\text{,}\) alors</p>
+<p>La forme de Lagrange du polynôme interpolateur est donnée par</p>
 <div class="displaymath">
-\begin{equation*}
-f(t)-P(t)=0\quad\text{et}\quad(t-x_0)\cdots(t-x_n)=0.
-\end{equation*}
+\begin{align*}
+L(t)&amp;=y_0L_0(t)+y_1L_1(t)+y_2L_2(t)\\
+&amp;=4\cdot L_0(t)+0\cdot L_1(t)+(-1)\cdot L_2(t)\\
+&amp;=4\cdot L_0(t)-L_2(t)
+\end{align*}
 </div>
-<p data-braille="continuation">Dans ce cas, n'importe quel \(\xi_t\in\;]\min\{t,x_i\};\max\{t,x_i\}[\) convient, par exemple \(\xi_t=x_i\text{.}\)</p>
-<p>Supposons maintenant que \(t\neq x_i\) pour tout \(i=0,1,\ldots,n\text{.}\) On peut alors considérer la fonction suivante :</p>
+<p data-braille="continuation">où</p>
 <div class="displaymath">
-\begin{equation*}
-\phi(s)=f(s)-P(s)-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}\cdot\prod_{i=0}^n(s-x_i).
-\end{equation*}
+\begin{align*}
+L_0(t)&amp;=\frac{(t-x_1)(t-x_2)}{(x_0-x_1)(x_0-x_2)}\\
+&amp;=\frac{(t-2)(t-5)}{(-1-2)(-1-5)}\\
+&amp;=\frac{1}{18}(t-2)(t-5)
+\end{align*}
 </div>
-<p>On vérifie que cette fonction \(\phi\) s'annule aux \(n+2\) valeurs distinctes \(x_0,x_1,\ldots,x_n\) et \(t\text{.}\)</p>
-<p>En appliquant \(n+1\) fois le théorème de Rolle, on en déduit que sa dérivée s'annule \(n+1\) fois dans l'intervalle \(]\min\{t,x_i\};\max\{t,x_i\}[\text{.}\)</p>
-<p>En continuant à appliquer le théorème de Rolle, on en conclut que \(\phi^{(n+1)}\) s'annule au moins une fois dans cet intervalle. Autrement dit, il existe \(\xi_t\in\;]\min\{t,x_0\};\max\{t,x_0\}[\) tel que</p>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
-\begin{equation*}
-\phi^{(n+1)}(\xi_t)=0
-\end{equation*}
+\begin{align*}
+L_2(t)&amp;=\frac{(t-x_0)(t-x_1)}{(x_2-x_0)(x_2-x_1)}\\
+&amp;=\frac{(t+1)(t-2)}{(5+1)(5-2)}\\
+&amp;=\frac{1}{18}(t+1)(t-2).
+\end{align*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p>On a donc</p>
 <div class="displaymath">
-\begin{equation*}
-f^{(n+1)}(\xi_t)-P^{(n+1)}(\xi_t)-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}\cdot\frac{d^{n+1}}{ds^{n+1}}\left[\prod_{i=0}^n(s-x_i)\right]\Bigg\vert_{s=\xi_t}=0.
-\end{equation*}
-</div>
-<p data-braille="continuation">Comme \(P\) est de degré \(n\) au plus, on a \(P^{(n+1)}=0\text{.}\) Par ailleurs, on voit que \(\displaystyle\frac{d^{n+1}}{ds^{n+1}}\prod_{i=0}^n(s-x_i)=(n+1)!\text{.}\) On a donc</p>
-<div class="displaymath">
-\begin{equation*}
-f^{(n+1)}(\xi_t)-0-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}(n+1)!=0
-\end{equation*}
-</div>
-<p data-braille="continuation">et il ne reste qu'à isoler \(f(t)-P(t)\) pour conclure.</p></article><span class="incontext"><a href="exerciceslagrange.html#li-481">Contexte</a></span>
+\begin{align*}
+L(t)&amp;=4\cdot\frac{1}{18}(t-2)(t-5)-\frac{1}{18}(t+1)(t-2)\\
+&amp;=\frac{2}{9}(t-2)(t-5)-\frac{1}{18}(t+1)(t-2).
+\end{align*}
+</div></article><span class="incontext"><a href="exerciceslagrange.html#li-481">Contexte</a></span>
 </body>
 </html>

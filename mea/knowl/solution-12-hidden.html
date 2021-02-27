@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:43-04:00    *-->
+<!--*    on 2021-02-27T11:46:10-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,9 +11,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore">def aireTrapeze(base1, base2, hauteur):
-    return (base1 + base2) * hauteur * 0.5
+<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore">def f(x):
+    if x &lt; -5:
+        return 'non défini'
+    elif x &lt; -1:
+        return x
+    elif x &lt;= 2:
+        return 3
+    elif x &lt; 5:
+        return - 2 * x + 5
+    else:
+        return 'non défini'
 
-print(aireTrapeze(4, 7, 3))
+print(f(-7))
+print(f(-5))
+print(f(-1))
+print(f(2.5))
+print(f(5))
 </pre></div></body>
 </html>

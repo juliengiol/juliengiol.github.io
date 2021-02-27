@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:13-04:00    *-->
+<!--*    on 2021-02-27T11:47:30-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,15 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.8.3</span><span class="period">.</span>
 </h6>
-<p>Principe : Construire \(N(t)\) comme combinaison linéaire des polynômes</p>
 <div class="displaymath">
-\begin{equation*}
-N_i(t)=(t-x_0)(t-x_1)\cdots(t-x_{i-1})
-\end{equation*}
-</div>
-<p data-braille="continuation">en posant</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)
-\end{equation*}
-</div>
-<p data-braille="continuation">où le coefficient \(d_i\) est la différence divisée associée aux points \(A_0=(x_0;y_0),\ldots,A_i=(x_i;y_i)\text{,}\) c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-d_i=\left[A_0,\ldots,A_i\right]
-\end{equation*}
-</div></article><span class="incontext"><a href="presentationdiffdiv.html#li-500">Contexte</a></span>
+\begin{align*}
+L(t)&amp;=1\cdot L_0(t)+\frac{\sqrt{3}}{2}\cdot L_1(t)+\frac{1}{2}\cdot L_2(t)\\
+&amp;=1\cdot\frac{(t-\pi/6)(t-\pi/3)}{(0-\pi/6)(0-\pi/3)}+\frac{\sqrt{3}}{2}\cdot\frac{(t-0)(t-\pi/3)}{(\pi/6-0)(\pi/6-\pi/3)}\\
+&amp;\qquad +\frac{1}{2}\cdot\frac{(t-0)(t-\pi/6)}{(\pi/3-0)(\pi/3-\pi/6)}\\
+&amp;=\frac{18}{\pi^2}\left(t-\frac{\pi}{6}\right)\left(t-\frac{\pi}{3}\right)-\frac{18\sqrt{3}}{\pi^2}\cdot t\left(t-\frac{\pi}{3}\right)+\frac{9}{\pi^2}\cdot t\left(t-\frac{\pi}{6}\right)
+\end{align*}
+</div></article><span class="incontext"><a href="exerciceslagrange.html#li-500">Contexte</a></span>
 </body>
 </html>

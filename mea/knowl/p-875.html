@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:00-04:00    *-->
+<!--*    on 2021-02-27T11:47:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Déterminez \(L(t)\) le polynôme interpolateur des points du graphe de \(f\) suivants :</p>
+<p>On cherche quatre nombres réels \(a_0,a_1,a_2,a_3\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
-A_0=(0;f(0)),\; A_1=\left(\frac{\pi}{6};f\left(\frac{\pi}{6}\right)\right)\;\text{et}\; A_2=\left(\frac{\pi}{3};f\left(\frac{\pi}{3}\right)\right)
+P(t)=a_0+a_1t+a_2t^2+a_3t^3
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
 \begin{equation*}
-A_0=(0;1),\; A_1=\left(\frac{\pi}{6};\frac{\sqrt{3}}{2}\right)\;\text{et}\; A_2=\left(\frac{\pi}{3};\frac{1}{2}\right).
+\begin{cases}
+P(-7)=2\\
+P(0)=1\\
+P(9)=0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a_0&amp;-&amp;7a_1&amp;+&amp;49a_2&amp;-&amp;343a_3&amp;=&amp;2\\
+a_0&amp;&amp;&amp;&amp;&amp;&amp;&amp;=&amp;1\\
+a_0&amp;+&amp;9a_1&amp;+&amp;81a_2&amp;+&amp;729a_3&amp;=&amp;0\\
+\end{cases}
 \end{equation*}
 </div>
 <span class="incontext"><a href="exerciceslagrange.html#p-875">Contexte</a></span>

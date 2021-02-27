@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:19-04:00    *-->
+<!--*    on 2021-02-27T11:47:45-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
+<p>Pour évaluer la forme de Lagrange, on a besoin de \(14\) additions / soustractions et de \(12\) multiplications / divisions. Quant à la forme de Newton, elle requiert \(13\) additions / soustractions et \(7\) multiplications / divisions. C'est nettement mieux, et cela peut encore être amélioré en appliquant la méthode de Horner :</p>
 <div class="displaymath">
 \begin{equation*}
-N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).
+N(t)=y_0+(t-x_0)\cdot\left(\frac{y_1-y_0}{x_1-x_0}+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0}}{x_2-x_0}\cdot(t-x_1)\right).
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercicesdiffdiv.html#p-1048">Contexte</a></span>
+<p data-braille="continuation">On tombe alors à \(12\) additions / soustractions et \(6\) multiplications / divisions.</p>
+<span class="incontext"><a href="presentationdiffdiv.html#p-1048">Contexte</a></span>
 </body>
 </html>

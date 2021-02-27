@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:06-04:00    *-->
+<!--*    on 2021-02-27T11:46:26-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,53 +14,52 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.3.1.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.10.1</span><span class="period">.</span>
 </h6>
-<ul class="disc">
-<li>Itération 1 :<div class="displaymath">
+<ol class="decimal">
+<li>
+<p>L'algorithme de Horner pour évaluer \(P(3)\) donne</p>
+<div class="displaymath">
 \begin{equation*}
-\begin{array}{ c&lt;{{}} c &gt;{{}}c }
-a=1 &amp; m=1{,}5 &amp; b=2\\
-f(a)=-2 &amp; f(m)=-0{,}75 &amp; f(b)=1
+\begin{array}{lcl}
+\text{Étape 0 :}&amp;valeur&amp;=&amp;1\\
+\text{Étape 1 :}&amp;valeur&amp;=&amp;7+3\cdot 1=10\\
+\text{Étape 2 :}&amp;valeur&amp;=&amp;-2+3\cdot 10=28
 \end{array}
 \end{equation*}
 </div>
+<p>Donc le quotient est \(Q(x)=1\cdot x+10=x+10\) et le reste vaut \(R(x)=28\text{.}\)</p>
+</li>
+<li>
+<p>L'algorithme de Horner pour évaluer \(P(2)\) donne</p>
 <div class="displaymath">
 \begin{equation*}
-\Rightarrow\quad c\in\;]1{,}5;2[
-\end{equation*}
-</div>
-</li>
-<li>Itération 2 :<div class="displaymath">
-\begin{equation*}
-\begin{array}{ c&lt;{{}} c &gt;{{}}c }
-a=1{,}5 &amp; m=1{,}75 &amp; b=2 \\
-f(a)=-0{,}75 &amp; f(m)=0{,}062\,5 &amp; f(b)=1
+\begin{array}{lcl}
+\text{Étape 0 :}&amp;valeur&amp;=&amp;1\\
+\text{Étape 1 :}&amp;valeur&amp;=&amp;-5+2\cdot 1=-3\\
+\text{Étape 2 :}&amp;valeur&amp;=&amp;6+2\cdot(-3)=0\\
+\text{Étape 3 :}&amp;valeur&amp;=&amp;0+2\cdot 0=0
 \end{array}
 \end{equation*}
 </div>
+<p>Donc le quotient est \(Q(x)=1\cdot x^2+(-3)\cdot x+0=x^2-3x\) et le reste vaut \(R(x)=0\text{.}\)</p>
+</li>
+<li>
+<p>L'algorithme de Horner pour évaluer \(P(-4)\) donne</p>
 <div class="displaymath">
 \begin{equation*}
-\Rightarrow\quad c\in\;]1{,}5;1{,}75[
-\end{equation*}
-</div>
-</li>
-<li>Itération 3 :<div class="displaymath">
-\begin{equation*}
-\begin{array}{ c&lt;{{}} c &gt;{{}}c }
-a=1{,}5 &amp; m=1{,}625 &amp; b=1{,}75 \\
-f(a)=-0{,}75 &amp; f(m)=-0{,}359\,375 &amp; f(b)=0{,}062\,5
+\begin{array}{lcl}
+\text{Étape 0 :}&amp;valeur&amp;=&amp;2\\
+\text{Étape 1 :}&amp;valeur&amp;=&amp;1+(-4)\cdot 2=-7\\
+\text{Étape 2 :}&amp;valeur&amp;=&amp;0+(-4)\cdot(-7)=28\\
+\text{Étape 3 :}&amp;valeur&amp;=&amp;7+(-4)\cdot 28=-105
 \end{array}
 \end{equation*}
 </div>
-<div class="displaymath">
-\begin{equation*}
-\Rightarrow\quad c\in\;]1{,}625;1{,}75[
-\end{equation*}
-</div>
+<p>Donc le quotient est \(Q(x)=2\cdot x^2+(-7)\cdot x+28=2x^2-7x+28\) et le reste vaut \(R(x)=-105\text{.}\)</p>
 </li>
-</ul>
+</ol>
 </div>
-<span class="incontext"><a href="exercicesbissection.html#solution-31">Contexte</a></span>
+<span class="incontext"><a href="exercicescomplexite.html#solution-31">Contexte</a></span>
 </body>
 </html>

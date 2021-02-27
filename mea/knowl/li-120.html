@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:52-04:00    *-->
+<!--*    on 2021-02-27T11:46:18-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,8 +13,34 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">3.5.1.2</span><span class="period">.</span>
+<span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>Il calcule la somme des \(n\) premiers entiers naturels non nuls.</p></article><span class="incontext"><a href="exercicescomplexite.html#li-120">Contexte</a></span>
+<p>Supposons que pour un certain entier \(n\ge 3\) on ait</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Alors par produit matriciel, on a</p>
+<div class="displaymath">
+\begin{align*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^n&amp;=\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\\
+&amp;=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\\
+&amp;=\begin{bmatrix}F_n+F_{n-1}&amp;F_n\\F_{n-1}+F_{n-2}&amp;F_{n-1}\end{bmatrix},
+\end{align*}
+</div>
+<p data-braille="continuation">ce qui coïncide bien avec</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}F_{n+1}&amp;F_n\\F_n&amp;F_{n-1}\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">car, par définition <a class="xref" data-knowl="./knowl/defi_fibo.html" title="Définition 3.4.2">3.4.2</a>, on a</p>
+<div class="displaymath">
+\begin{equation*}
+F_n+F_{n-1}=F_{n+1}\quad\text{et}\quad F_{n-1}+F_{n-2}=F_n.
+\end{equation*}
+</div>
+<p data-braille="continuation">La propriété est donc vraie pour \(n+1\text{,}\) ce qui achève la démonstration.</p></article><span class="incontext"><a href="fibonacci.html#li-120">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:53-04:00    *-->
+<!--*    on 2021-02-27T11:46:18-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Modifiez le deuxième bloc de code donné à la section <a href="exponentiation.html" class="internal" title="Section 3.2: Exponentiation rapide">3.2</a> de façon à créer une fonction <code class="code-inline tex2jax_ignore">complexitePuissanceRecursive(n)</code> qui renvoie \(T(n)\) le nombre de multiplications effectuées lors du calcul de \(x^n\) par la méthode d'exponentiation rapide.</p>
-<span class="incontext"><a href="exercicescomplexite.html#p-298">Contexte</a></span>
+<p>Pour la relation de récurrence, on a</p>
+<div class="displaymath">
+\begin{align*}
+\sqrt{5}\,G_{n-1}+\sqrt{5}\,G_{n-2}&amp;=\phi_+^{n-1}-\phi_-^{n-1}+\phi_+^{n-2}-\phi_-^{n-2}\\
+&amp;=\phi_+^{n-1}\cdot 1-\phi_+^{n-2}\cdot(-1)-\phi_-^{n-1}\cdot 1+\phi_-^{n-2}\cdot(-1)\\
+&amp;=\phi_+^{n-1}\cdot\left(\phi_++\phi_-\right)-\phi_+^{n-2}\cdot\left(\phi_+\phi_-\right)\\
+&amp;\quad\quad-\phi_-^{n-1}\cdot\left(\phi_++\phi_-\right)+\phi_-^{n-2}\cdot\left(\phi_+\phi_-\right)\\
+&amp;=\phi_+^n+\cancel{\phi_+^{n-1}\phi_-}-\cancel{\phi_+^{n-1}\phi_-}\\
+&amp;\quad\quad-\bcancel{\phi_-^{n-1}\phi_+}-\phi_-^n+\bcancel{\phi_-^{n-1}\phi_+}\\
+&amp;=\sqrt{5}\,G_n,
+\end{align*}
+</div>
+<p data-braille="continuation">d'où \(G_n=G_{n-1}+G_{n-2}\) pour tout \(n\ge 3\text{.}\)</p>
+<span class="incontext"><a href="fibonacci.html#p-298">Contexte</a></span>
 </body>
 </html>

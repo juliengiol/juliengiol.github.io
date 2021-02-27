@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:40-04:00    *-->
+<!--*    on 2021-02-27T11:48:09-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Alors l'erreur d'approximation par la méthode des trapèzes</p>
+<p>Approximation par les rectangles au milieu :</p>
 <div class="displaymath">
-\begin{equation*}
-\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right)}_{\text{Approximation}}
-\end{equation*}
+\begin{align*}
+&amp;\Delta x\cdot\left(f(0{,}1)+f(0{,}3)+f(0{,}5)+f(0{,}7)+f(0{,}9)\right)\\
+=\;&amp;0{,}2\cdot\left(\frac{1}{1+0{,}1^2}+\frac{1}{1+0{,}3^2}+\frac{1}{1+0{,}5^2}+\frac{1}{1+0{,}7^2}+\frac{1}{1+0{,}9^2}\right)\\
+\approx\;&amp;0{,}786.
+\end{align*}
 </div>
-<p data-braille="continuation">vérifie</p>
-<div class="displaymath">
-\begin{equation*}
-|\text{Erreur}|\leq\frac{M(b-a)^3}{12n^2}
-\end{equation*}
-</div>
-<p data-braille="continuation">où \(M\) est n'importe quel nombre tel que</p>
-<div class="displaymath">
-\begin{equation*}
-|f''(x)|\leq M\quad\text{pour tout }x\in[a;b].
-\end{equation*}
-</div>
-<span class="incontext"><a href="presentationtrapezes.html#p-1279">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#p-1279">Contexte</a></span>
 </body>
 </html>

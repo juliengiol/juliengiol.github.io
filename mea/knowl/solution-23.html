@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:48-04:00    *-->
+<!--*    on 2021-02-27T11:46:20-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,26 +14,19 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.3.12.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.2.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
+<li>Cela renvoie \(2\text{,}\) comme on peut le vérifier avec <a class="external" href="https://tinyurl.com/u9dxsk7d" target="_blank">Python Tutor</a>.</li>
+<li>Cela renvoie \(1\text{,}\) comme on peut le vérifier avec <a class="external" href="https://tinyurl.com/2tp3w9vc" target="_blank">Python Tutor</a>.</li>
+<li>Cela renvoie \(5\text{,}\) comme on peut le vérifier avec <a class="external" href="https://tinyurl.com/48cckh4p" target="_blank">Python Tutor</a>.</li>
 <li>
-<p>Voici le code :<pre class="code-block tex2jax_ignore">def fibonacci(n):
-    if n == 1:
-        return 1
-    elif n == 2:
-        return 1
-    else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
-
-print(fibonacci(20))
-</pre></p>
-<p>Voici ce qu'il affiche :<pre class="code-block tex2jax_ignore">6765
-</pre></p>
+<p>Cette fonction renvoie la position de la première apparition de <code class="code-inline tex2jax_ignore">x</code> dans <code class="code-inline tex2jax_ignore">liste</code>.</p>
+<p>Si <code class="code-inline tex2jax_ignore">x</code> n'y figure pas, elle renvoie la longueur de la liste.</p>
 </li>
-<li><p>Non, cela prend trop de temps. Il vaut mieux s'en tenir à la méthode itérative de l'exercice <a class="xref" data-knowl="./knowl/fibo_iterative.html" title="Exercice 1.4.10">1.4.10</a>.</p></li>
+<li>Avant la boucle, il y a 2 assignations. À chaque tour de boucle, il y a 2 comparaisons, 1 addition et 1 assignation. Dans le pire des cas, on a donc \(T(n)=2+n\cdot 4=4n+2\text{.}\)</li>
 </ol>
 </div>
-<span class="incontext"><a href="exercicesfonctions.html#solution-23">Contexte</a></span>
+<span class="incontext"><a href="exercicescomplexite.html#solution-23">Contexte</a></span>
 </body>
 </html>

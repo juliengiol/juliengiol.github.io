@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:12-04:00    *-->
+<!--*    on 2021-02-27T11:47:40-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Supposons-la vérifiée pour \(n\) points. Notons encore \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{.}\) Alors le polynôme \(P(t)-A(t)\) est de degré \(n\) au plus, et il s'annule au moins \(n\) fois en \(x_0,\ldots,x_{n-1}\text{.}\) On a donc la factorisation</p>
+<p>En continuant à appliquer le théorème de Rolle, on en conclut que \(\phi^{(n+1)}\) s'annule au moins une fois dans cet intervalle. Autrement dit, il existe \(\xi_t\in\;]\min\{t,x_0\};\max\{t,x_0\}[\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-P(t)-A(t)=\lambda(t-x_0)\cdots(t-x_n)
+\phi^{(n+1)}(\xi_t)=0
 \end{equation*}
 </div>
-<p data-braille="continuation">où le coefficent \(\lambda\) et égal à \(\left[A_0,\ldots,A_n\right]\) par le résultat de l'étape 1. En appliquant enfin l'étape 1 à \(A(t)\text{,}\) on obtient bien la formule \(P(t)=N(t)\text{.}\)</p>
-<span class="incontext"><a href="presentationdiffdiv.html#p-987">Contexte</a></span>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+f^{(n+1)}(\xi_t)-P^{(n+1)}(\xi_t)-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}\cdot\frac{d^{n+1}}{ds^{n+1}}\left[\prod_{i=0}^n(s-x_i)\right]\Bigg\vert_{s=\xi_t}=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme \(P\) est de degré \(n\) au plus, on a \(P^{(n+1)}=0\text{.}\) Par ailleurs, on voit que \(\displaystyle\frac{d^{n+1}}{ds^{n+1}}\prod_{i=0}^n(s-x_i)=(n+1)!\text{.}\) On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+f^{(n+1)}(\xi_t)-0-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}(n+1)!=0
+\end{equation*}
+</div>
+<p data-braille="continuation">et il ne reste qu'à isoler \(f(t)-P(t)\) pour conclure.</p>
+<span class="incontext"><a href="exerciceslagrange.html#p-987">Contexte</a></span>
 </body>
 </html>

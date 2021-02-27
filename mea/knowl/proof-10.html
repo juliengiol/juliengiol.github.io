@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:11-04:00    *-->
+<!--*    on 2021-02-27T11:47:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,34 +13,29 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Démonstration</span></h6>
-<p>Notons \(P(t)\) le polynôme interpolateur de ces \(n+1\) points et \(N(t)\) le polynôme défini par la formule ci-dessus. Nous allons scinder cette preuve en deux étapes.</p>
-<ul class="disc">
-<li><p>Étape 1 : Montrer par récurrence sur \(n\) que le coefficient de degré \(n\) de \(P(t)\) est égal à la différence divisée \(\left[A_0,\ldots,A_n\right]\text{.}\)</p></li>
-<li><p>Étape 2 : Montrer par récurrence sur \(n\) que \(P(t)=N(t)\text{.}\)</p></li>
-</ul>
-<p>Commençons donc par l'étape 1.</p>
-<p>Pour un point (\(n=0\)), la propriété est triviale.</p>
-<p>Supposons-la vérifiée pour \(n\) points. Notons alors \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{,}\) et \(B(t)\) le polynôme interpolateur des \(n\) derniers \(A_1,\ldots,A_n\text{.}\) Des calculs sans mystère montrent ensuite qu'on a forcément</p>
+<p>La définition du polynôme \(L_i(t)\) se traduit ainsi :</p>
 <div class="displaymath">
 \begin{equation*}
-P(t)=\frac{(t-x_0)B(t)-(t-x_n)A(t)}{x_n-x_0}
+L_i(t)=\frac{(t-x_0)\cdots (t-x_{i-1})(t-x_{i+1})\cdots(t-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}.
 \end{equation*}
 </div>
-<p data-braille="continuation">par unicité du polynôme interpolateur. Par hypothèse de récurrence appliquée à \(A(t)\) et \(B(t)\text{,}\) on en déduit que le coefficent de degré \(n\) dans \(P(t)\) vaut</p>
+<p>Le numérateur est le produit de \(n\) facteurs de degré \(1\text{.}\) Il s'agit donc d'un polynôme de degré \(n\text{.}\)</p>
+<p>Comme les \(x_j\) sont distincts deux à deux, le dénominateur est un nombre réel non nul.</p>
+<p>Chaque polynôme \(L_i(t)\) est donc un polynôme de degré \(n\text{.}\)</p>
+<p>Si \(k\neq i\text{,}\) alors \(t-x_k\) est l'un de facteurs du numérateur de \(L_i(t)\text{.}\) Donc</p>
 <div class="displaymath">
-\begin{equation*}
-\frac{\left[A_1,\ldots,A_n\right]-\left[A_0,\ldots,A_{n-1}\right]}{x_n-x_0}
-\end{equation*}
+\begin{align*}
+L_i(x_k)&amp;=\frac{(x_k-x_0)\cdots (x_k-x_k)\cdots(x_k-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=\frac{0}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=0.
+\end{align*}
 </div>
-<p data-braille="continuation">c'est-à-dire \(\left[A_0,\ldots,A_n\right]\text{,}\) par la formule de récurrence définissant les différences divisées.</p>
-<p>Passons maintenant à l'étape 2.</p>
-<p>Pour un point (\(n=0\)), la propriété est à nouveau triviale.</p>
-<p>Supposons-la vérifiée pour \(n\) points. Notons encore \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{.}\) Alors le polynôme \(P(t)-A(t)\) est de degré \(n\) au plus, et il s'annule au moins \(n\) fois en \(x_0,\ldots,x_{n-1}\text{.}\) On a donc la factorisation</p>
+<p>Enfin, il reste à évaluer \(L_i(x_i)\text{,}\) ce qui donne</p>
 <div class="displaymath">
-\begin{equation*}
-P(t)-A(t)=\lambda(t-x_0)\cdots(t-x_n)
-\end{equation*}
-</div>
-<p data-braille="continuation">où le coefficent \(\lambda\) et égal à \(\left[A_0,\ldots,A_n\right]\) par le résultat de l'étape 1. En appliquant enfin l'étape 1 à \(A(t)\text{,}\) on obtient bien la formule \(P(t)=N(t)\text{.}\)</p></article><span class="incontext"><a href="presentationdiffdiv.html#proof-10">Contexte</a></span>
+\begin{align*}
+L_i(x_i)&amp;=\frac{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=1.
+\end{align*}
+</div></article><span class="incontext"><a href="presentationlagrange.html#proof-10">Contexte</a></span>
 </body>
 </html>

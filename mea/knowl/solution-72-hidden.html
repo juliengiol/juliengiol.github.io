@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:24-04:00    *-->
+<!--*    on 2021-02-27T11:47:53-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,62 +11,51 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><ol class="decimal">
-<li><div class="displaymath">
-\begin{equation*}
-\begin{array}{c|cccc}
-x_i&amp;y_i&amp;&amp;&amp;\\
-\hline\\
-0{,}8&amp;0{,}717\,356&amp;&amp;&amp;\\
-&amp;&amp;0{,}579\,503&amp;&amp;\\
-1{,}1&amp;0{,}891\,207&amp;&amp;-0{,}448\,261&amp;\\
-&amp;&amp;0{,}265\,720&amp;&amp;-0{,}047\,988\\
-1{,}5&amp;0{,}997\,495&amp;&amp;-0{,}491\;450&amp;\\
-&amp;&amp;-0{,}029\,150&amp;&amp;\\
-1{,}7&amp;0{,}991\,665&amp;&amp;&amp;\\
-\end{array}
-\end{equation*}
-</div></li>
-<li>
-<p>On a</p>
-<div class="displaymath">
-\begin{equation*}
-P(t)=0{,}717\,356+0{,}579\,503(t-0{,}8)-0{,}448\,261(t-0{,}8)(t-1{,}1).
-\end{equation*}
-</div>
-</li>
-<li>
-<p>On a</p>
-<div class="displaymath">
-\begin{equation*}
-Q(t)=0{,}891\,207+0{,}265\,720(t-1{,}1)-0{,}491\;450(t-1{,}1)(t-1{,}5).
-\end{equation*}
-</div>
-</li>
-<li>
-<p>D'une part</p>
+<body><div class="solution solution-like">
+<p>La forme de Newton du polynôme interpolateur de ces quatre points s'écrit</p>
 <div class="displaymath">
 \begin{align*}
-P(1{,}3)&amp;=0{,}717\,356+0{,}579\,503(1{,}3\\
-&amp;\qquad-0{,}8)-0{,}448\,261(1{,}3-0{,}8)(1{,}3-1{,}1)\\
-&amp;\approx 0{,}962\,281.
+N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)+d_3(t-x_0)(t-x_1)(t-x_2)\\
+&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2)+d_3(t-1)(t-2)(t-3).
 \end{align*}
 </div>
-<p>D'autre part</p>
-<div class="displaymath">
-\begin{align*}
-Q(1{,}3)&amp;=0{,}891\,207+0{,}265\,720(1{,}3-1{,}1)\\
-&amp;\qquad-0{,}491\;450(1{,}3-1{,}1)(1{,}3-1{,}5)\\
-&amp;\approx 0{,}964\,009.
-\end{align*}
-</div>
-<p>Et par ailleurs</p>
+<p>On cherche donc quatre nombres réels \(d_0,d_1,d_2,d_3\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
-\sin(1{,}3)\approx 0{,}963\,558.
+\begin{cases}
+N(1)=3\\
+N(2)=6\\
+N(3)=9\\
+N(4)=0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+d_0&amp;&amp;&amp;&amp;&amp;&amp;&amp;=&amp;3\\
+d_0&amp;+&amp;d_1&amp;&amp;&amp;&amp;&amp;=&amp;6\\
+d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;&amp;&amp;=&amp;9\\
+d_0&amp;+&amp;3d_1&amp;+&amp;6d_2&amp;+&amp;6d_3&amp;=&amp;0\\
+\end{cases}
 \end{equation*}
 </div>
-<p>Donc \(P(1{,}3)\) donne une approximation de \(\sin(1{,}3)\) qui lui est inférieure, tandis que \(Q(1{,}3)\) en donne une approximation supérieure.</p>
-</li>
-</ol></div></body>
+<p>Le système correspondant aux trois premières équations a déjà été résolu à l'exercice <a class="xref" data-knowl="./knowl/newtontroispointsalignes.html" title="Exercice 7.3.4">7.3.4</a> :</p>
+<div class="displaymath">
+\begin{equation*}
+d_0=3,\; d_1=3,\; d_2=0.
+\end{equation*}
+</div>
+<p>Alors la quatrième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+3d_1+6d_2+6d_3=0&amp;\Rightarrow\quad 3+9+0+6d_3=0\\
+&amp;\Rightarrow\quad 6d_3=-12\\
+&amp;\Rightarrow\quad d_3=-2.
+\end{align*}
+</div>
+<p>La forme de Newton du polynôme interpolateur de ces quatre points est donc</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=3+3(t-1)-2(t-1)(t-2)(t-3).
+\end{equation*}
+</div>
+</div></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:48-04:00    *-->
+<!--*    on 2021-02-27T11:47:11-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Soit \(L(t)=L(t)=y_0\,L_0(t)+\cdots+y_n\,L_n(t)\text{.}\) Nous devons montrer que le polynôme \(L(t)\) est de degré \(n\) au plus, et que \(L(x_i)=y_i\) pour \(i=0,1,\dots,n\text{.}\)</p>
-<span class="incontext"><a href="presentationlagrange.html#p-760">Contexte</a></span>
+<p>Pour tout \(n\geq 0\text{,}\) on a donc</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{f(x_n)}{\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}}
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{f(x_n)(x_n-x_{n-1})}{f(x_n)-f(x_{n-1})}.
+\end{equation*}
+</div>
+<span class="incontext"><a href="exercicesnewton.html#p-760">Contexte</a></span>
 </body>
 </html>

@@ -490,7 +490,7 @@
       <ul>
         <li><p>Exercice <xref ref="troisiterbissection"/> : <m>c\in\;]1{,}732\,049\,942;1{,}732\,050\,895[</m> donc <m>c\approx 1{,}732\,05</m>.</p></li>
         <li><p>Exercice <xref ref="quatreiterbissection"/> : <m>c\in\;]0{,}693\,146\,70;0{,}693\,147\,659[</m> donc <m>c\approx 0{,}693\,15</m>.</p></li>
-        <li><p>Exercice <xref ref="troisiterbissection"/> : <m>c\in\;]1{,}832\,595\,705;1{,}832\,595\,765[</m> donc <m>c\approx 1{,}832\,60</m>.</p></li>
+        <li><p>Exercice <xref ref="troisiterbissectionbis"/> : <m>c\in\;]1{,}832\,595\,705;1{,}832\,595\,765[</m> donc <m>c\approx 1{,}832\,60</m>.</p></li>
       </ul>
     </p>
   </solution>
@@ -585,7 +585,7 @@
 <exercise>
   <statement>
     <p>Soit <m>f(x)=(x-1)(x-2)</m>, polynôme possédant deux zéros <m>c_1=1</m> et <m>c_2=2</m>.</p>
-    <p>Pour chacun des intervalles de départ <m>[a;b]</m> qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro la méthode de la bissection converge.
+    <p>Pour chacun des intervalles de départ <m>[a;b]</m> qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro l'algorithme converge.
       <ol>
         <li><p><m>[a;b]=[0;1{,}5]</m></p></li>
         <li><p><m>[a;b]=[1{,}5;4]</m></p></li>
@@ -600,7 +600,7 @@
         <li><p>Vers <m>c_1=1</m>.</p></li>
         <li><p>Vers <m>c_2=2</m>.</p></li>
         <li><p>Vers <m>4{,}5</m> qui n'est pas un zéro de <m>f</m>.</p></li>
-        <li><p>Si les hypothèses ne sont pas toutes vérifiées, la méthode de la bissection peut converger vers un nombre qui n'est pas un zéro de la fonction considérée.</p></li>
+        <li><p>Si les hypothèses ne sont pas toutes vérifiées, l'algorithme peut converger vers un nombre qui n'est pas un zéro de la fonction considérée.</p></li>
       </ol>
     </p>
   </answer>
@@ -609,7 +609,7 @@
 <exercise>
   <statement>
     <p>Soit <m>f(x)=(x^2-1)(x^2-4)</m>, polynôme possédant quatre zéros <m>c=\pm 1</m> et <m>c=\pm 2</m>.</p>
-    <p>Pour chacun des intervalles de départ <m>[a;b]</m> qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro la méthode de la bissection converge.
+    <p>Pour chacun des intervalles de départ <m>[a;b]</m> qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro l'algorithme converge.
       <ol>
         <li><p><m>[a;b]=[-3;-0{,}5]</m></p></li>
         <li><p><m>[a;b]=[-1{,}5;3]</m></p></li>
@@ -627,8 +627,8 @@
         <li><p>Vers <m>1</m>.</p></li>
         <li><p>Vers <m>4</m> qui n'est pas un zéro de <m>f</m>.</p></li>
         <li>
-          <p>D'une part, la méthode de la bissection peut converger vers un zéro de la fonction, même si les hypothèses ne sont pas toutes vérifiées (voir la questions 1, 2 et 3).</p>
-          <p>D'autre part, si les hypothèses ne sont pas toutes vérifiées, la méthode de la bissection peut converger vers un nombre qui n'est pas un zéro de la fonction considérée (voir la question 4).</p>
+          <p>D'une part, l'algorithme peut converger vers un zéro de la fonction, même si les hypothèses ne sont pas toutes vérifiées (voir les cas 1, 2 et 3 ci-dessus).</p>
+          <p>D'autre part, si les hypothèses ne sont pas toutes vérifiées, l'algorithme peut converger vers un nombre qui n'est pas un zéro de la fonction considérée (voir le cas 4 ci-dessus).</p>
         </li>
       </ol>
     </p>

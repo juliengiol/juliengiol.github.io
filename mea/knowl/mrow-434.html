@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:30-04:00    *-->
+<!--*    on 2021-02-27T11:48:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,9 +14,10 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^2}{2n}\\
-&amp;=\frac{2\cdot(1-0)^2}{2\cdot 4}\\
-&amp;=0{,}25.
+\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-f(a)(b-a)\\
+&amp;=\int_a^bf(x)\mathrm{d}x-f(a)\int_a^b\mathrm{d}x\\
+&amp;=\int_a^bf(x)\mathrm{d}x-\int_a^bf(a)\mathrm{d}x\\
+&amp;=\int_a^b(f(x)-f(a))\mathrm{d}x.
 \end{align*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#mjx-eqn-mrow-434">Contexte</a></span>

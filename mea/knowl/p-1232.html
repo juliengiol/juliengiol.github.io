@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:36-04:00    *-->
+<!--*    on 2021-02-27T11:48:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Approximation par les rectangles au milieu :</p>
+<p>Remarque : En fait, comme la fonction \(f(x)=e^{-x^2}\) est décroissante sur \([0;1]\text{,}\) on a</p>
 <div class="displaymath">
-\begin{align*}
-&amp;\Delta x\cdot\left(f(0{,}1)+f(0{,}3)+f(0{,}5)+f(0{,}7)+f(0{,}9)\right)\\
-=\;&amp;0{,}2\cdot\left(\frac{1}{1+0{,}1^2}+\frac{1}{1+0{,}3^2}+\frac{1}{1+0{,}5^2}+\frac{1}{1+0{,}7^2}+\frac{1}{1+0{,}9^2}\right)\\
-\approx\;&amp;0{,}786.
-\end{align*}
+\begin{equation*}
+\text{Aire des rectangles à droite}\leq\int_0^1e^{-x^2}\mathrm{d}x\leq\text{Aire des rectangles à gauche}
+\end{equation*}
 </div>
-<span class="incontext"><a href="exercicesrectangles.html#p-1232">Contexte</a></span>
+<p data-braille="continuation">et donc</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}66\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 0{,}82.
+\end{equation*}
+</div>
+<p data-braille="continuation">C'est mieux que tout ce qui précède, sans même avoir à estimer l'erreur.</p>
+<span class="incontext"><a href="presentationrectangles.html#p-1232">Contexte</a></span>
 </body>
 </html>

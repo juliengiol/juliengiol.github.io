@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:50-04:00    *-->
+<!--*    on 2021-02-27T11:46:16-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,17 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Plus généralement, on appelle forme de Horner du polynôme</p>
+<p>Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :</p>
 <div class="displaymath">
 \begin{equation*}
-P(x)=a_0+a_1x+\ldots+a_nx^n
+x^n=
+\begin{cases}
+x&amp;\text{ si }n=1,\\
+\left(x^2\right)^{n/2}&amp;\text{ si }n\text{ est pair,}\\
+x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
+\end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">la factorisation</p>
-<div class="displaymath">
-\begin{equation*}
-P(x)=a_0+x\cdot\left(a_1+x\cdot\left(a_2+x\cdot\left(\ldots +x\cdot\left(a_{n-1}+x\cdot a_n\right)\right)\right)\right)
-\end{equation*}
-</div>
-<p data-braille="continuation">qui nécessite \(n\) additions et \(n\) multiplications, soit \(2n\) opérations.</p>
-<span class="incontext"><a href="horner.html#p-268">Contexte</a></span>
+<span class="incontext"><a href="exponentiation.html#p-268">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:52-04:00    *-->
+<!--*    on 2021-02-27T11:48:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,69 +11,73 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>Commençons par vérifier que le polynôme interpolateur est bien celui annoncé.</p>
-<p>D'après la remarque <a class="xref" data-knowl="./knowl/lagrangeEtNewtonTroisPoints.html" title="Remarque 7.1.8">7.1.8</a>, on a</p>
+<body><article class="hiddenproof"><p>Nous allons démontrer ce résultat pour la méthode des rectangles à gauche (\(\xi_k=x_{k-1}\)).</p>
+<p>Commençons par établir le cas \(n=1\text{,}\) pour lequel \(\Delta x=b-a\) et il y a un seul rectangle d'aire \(f(a)(b-a)\text{.}\)</p>
+<p>L'idée fondamentale de la preuve repose sur l'observation suivante :</p>
 <div class="displaymath">
 \begin{align*}
-N(t)&amp;=f(c)+\frac{f(m)-f(c)}{m-c}(t-c)+\frac{\frac{f(d)-f(m)}{d-m}-\frac{f(m)-f(c)}{m-c}}{d-c}(t-c)(t-m)\\
-&amp;=f(c)+\frac{f(m)-f(c)}{\frac{\Delta x}{2}}(t-c)+\frac{\frac{f(d)-f(m)}{\frac{\Delta x}{2}}-\frac{f(m)-f(c)}{\frac{\Delta x}{2}}}{\Delta x}(t-c)(t-m)\\
-&amp;=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}(t-c)(t-m).
+\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-f(a)(b-a)\\
+&amp;=\int_a^bf(x)\mathrm{d}x-f(a)\int_a^b\mathrm{d}x\\
+&amp;=\int_a^bf(x)\mathrm{d}x-\int_a^bf(a)\mathrm{d}x\\
+&amp;=\int_a^b(f(x)-f(a))\mathrm{d}x.
 \end{align*}
 </div>
-<p>Notons ensuite que par linéarité de l'intégrale, on a</p>
+<p data-braille="continuation">Ceci entraîne</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\int_a^b(f(x)-f(a))\mathrm{d}x\right|\\
+&amp;\leq\int_a^b|f(x)-f(a)|\mathrm{d}x.
+\end{align*}
+</div>
+<p>Par le théorème de Lagrange (ou théorème des accroissements finis), pour tout \(x\in]a;b]\text{,}\) il existe \(c_x\in]a;x[\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-\int_c^dN(t)\mathrm{d}t=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3
+f(x)-f(a)=f'(c_x)(x-a).
 \end{equation*}
 </div>
-<p data-braille="continuation">où</p>
-<ul class="disc">
-<li>
-<p>la première intégrale vaut</p>
+<p data-braille="continuation">Et cela reste vrai pour \(x=a\) car \(f(a)-f(a)=f'(c)(a-a)\Leftrightarrow 0=f'(c)\cdot 0\) pour n'importe quelle valeur de \(c\in]a;b[\text{.}\)</p>
+<p>Pour tout \(x\in[a;b]\text{,}\) on a donc</p>
 <div class="displaymath">
 \begin{align*}
-I_1&amp;=\int_c^d1\mathrm{d}t\\
-&amp;=t\,\Bigg\vert_c^d\\
-&amp;d-c\\
-&amp;=\Delta x\;,
+|f(x)-f(a)|&amp;=|f'(c_x)|\cdot|x-a|\\
+&amp;\leq M\cdot|x-a|\\
+&amp;= M\cdot (x-a).
 \end{align*}
 </div>
-</li>
-<li>
-<p>la deuxième intégrale vaut</p>
+<p>Par conséquent, on a</p>
 <div class="displaymath">
 \begin{align*}
-I_2&amp;=\int_c^d(t-c)\mathrm{d}t\\
-&amp;=\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
-&amp;=\frac{(d-c)^2}{2}-0\\
-&amp;=\frac{(\Delta x)^2}{2}
+\left|\int_a^b(f(x)-f(a))\mathrm{d}x\right|&amp;\leq\int_a^b|f(x)-f(a)|\mathrm{d}x\\
+&amp;\leq\int_a^bM\cdot(x-a)\mathrm{d}x\\
+&amp;=\frac{M(x-a)^2}{2}\bigg\rvert_a^b\\
+&amp;=\frac{M(b-a)^2}{2}.
 \end{align*}
 </div>
-</li>
-<li>
-<p>et la troisième intégrale vaut</p>
+<p>Pour traiter le cas général avec \(n\) rectangles, on commence par l'observation suivante :</p>
 <div class="displaymath">
 \begin{align*}
-I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
-&amp;=\int_c^d(t-c)\left(t-c-\frac{\Delta x}{2}\right)\mathrm{d}t\\
-&amp;=\int_c^d\left((t-c)^2-\frac{\Delta x}{2}\cdot(t-c)\right)\mathrm{d}t\\
-&amp;=\frac{(t-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
-&amp;=\frac{(d-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(d-c)^2}{2}-0\\
-&amp;=\frac{(\Delta x)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(\Delta x)^2}{2}\\
-&amp;=\frac{(\Delta x)^3}{12}.
+\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\Delta x\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})(x_k-x_{k-1})\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\int_{x_{k-1}}^{x_k}\mathrm{d}x\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x_{k-1})\mathrm{d}x\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x.
 \end{align*}
 </div>
-</li>
-</ul>
-<p>On a donc</p>
+<p>En procédant comme ci-dessus pour le cas \(n=1\) sur chaque sous-intervalle \([x_{k-1};x_k]\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\leq \frac{M(\Delta x)^2}{2}\quad\text{où }\Delta x=x_k-x_{k-1}=\frac{b-a}{n}.
+\end{equation*}
+</div>
+<p>Ainsi</p>
 <div class="displaymath">
 \begin{align*}
-\int_c^dN(t)\mathrm{d}t&amp;=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3\\
-&amp;=f(c)\cdot\Delta x+\frac{2(f(m)-f(c))}{\Delta x}\cdot\frac{(\Delta x)^2}{2}\\
-&amp;\qquad+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot\frac{(\Delta x)^3}{12}\\
-&amp;=f(c)\cdot\Delta x+(f(m)-f(c))\cdot\Delta x+(f(c)-2f(m)+f(d))\cdot\frac{\Delta x}{6}\\
-&amp;=\frac{\Delta x}{6}\cdot\left(6f(c)+6(f(m)-f(c))+f(c)-2f(m)+f(d)\right)\\
-&amp;=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).
+|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
+&amp;\leq\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
+&amp;=\sum_{k=1}^n\frac{M(\Delta x)^2}{2}\\
+&amp;=\sum_{k=1}^n\frac{M(b-a)^2}{2n^2}\\
+&amp;=n\cdot\frac{M(b-a)^2}{2n^2}\\
+&amp;=\frac{M(b-a)^2}{2n}.
 \end{align*}
 </div></article></body>
 </html>

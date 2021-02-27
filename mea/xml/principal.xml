@@ -34,7 +34,7 @@
       <initialism>M&amp;A</initialism>
 
       <html>
-          <baseurl href="https://juliengiol.github.io/algorithmique" />
+          <baseurl href="https://juliengiol.github.io/mea" />
       </html>
 
       <!--
@@ -65,7 +65,7 @@
               <email>julien.giol@gmail.com</email>
             </author>
 
-            <date>&#169; 2019-2020</date>
+            <date>&#169; 2019-2021</date>
 
           </titlepage>
 
@@ -88,15 +88,15 @@
                 Loin d'être exhaustives, elles se concentrent sur des exemples et des propriétés accessibles à quiconque
                 <ul>
                   <li><p>connaît le calcul différentiel et intégral de base,</p></li>
-                  <li><p>sait résoudre des systèmes d'équations linéaires par la méthode de Gauss</p></li>
+                  <li><p>sait résoudre des systèmes d'équations linéaires par la méthode de Gauss,</p></li>
                   <li><p>et maîtrise l'arithmétique élémentaire.</p></li>
                 </ul>
               </p>
               <p>
-                Les algorithmes proposés ici sont rarement optimisés : en général, j'ai préféré du code simple à comprendre, quitte à en sacrifier la rapidité.
+                Les algorithmes proposés ici sont rarement optimisés : en général, j'ai préféré du code simple à comprendre, quitte à en sacrifier la concision et la rapidité.
                 Le langage de programmation utilisé est <url href="https://www.python.org/">Python</url>.
               </p>
-              <p>Pour accéder à la table des matières, cliquez sur le lien suivant : <url href="https://juliengiol.github.io/mea/mea.html">Table des matières</url>.</p>
+              <p>Pour accéder à la table des matières, cliquez sur le lien suivant : <url href="https://juliengiol.github.io/mea/mea.html">table des matières</url>.</p>
           </preface>
 
           <preface>
@@ -115,7 +115,7 @@
               À de rares occasions, je me suis permis d'emprunter des énoncés et des exercices après avoir obtenu l'accord de leurs auteurs.
             </p>
             <p>
-              Je mets ces pages à la disposition de tous selon les termes de la <url href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons</url>
+              Je mets ces pages à la disposition de tous selon les termes de la <url href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons suivante :</url>
               <image width="30%" source="images/byncsa.png"/>
               Paternité - Pas d'Utilisation Commerciale - Partage des Conditions Initiales à l'Identique 4.0 International.
             </p>
@@ -135,21 +135,21 @@
             <p>Merci enfin à toutes celles et ceux qui m'ont aidé à corriger des coquilles et, plus généralement, à améliorer ces notes de cours :
               <sidebyside>
                 <ul>
-                  <li><p>Mohammed Larbi Turki</p></li>
-                  <li><p>Raphaël Del Longo</p></li>
-                  <li><p>Justin Lachapelle</p></li>
-                  <li><p>Florence Houde-Gélinas</p></li>
-                  <li><p>Rayen Saifi</p></li>
-                  <li><p>Owais Mian</p></li>
-                  <li><p>Ibrahim Badri</p></li>
+                  <li><p>Mohammed Larbi Turki,</p></li>
+                  <li><p>Raphaël Del Longo,</p></li>
+                  <li><p>Justin Lachapelle,</p></li>
+                  <li><p>Florence Houde-Gélinas,</p></li>
+                  <li><p>Rayen Saifi,</p></li>
+                  <li><p>Owais Mian,</p></li>
+                  <li><p>Ibrahim Badri.</p></li>
                 </ul>
                 <ul>
-                  <li><p>Tommy Brasseur</p></li>
-                  <li><p>Frédérick Lanthier</p></li>
-                  <li><p>Samtou Bodjona</p></li>
-                  <li><p>Philippe Schoeb</p></li>
-                  <li><p>Nasser Jomaa</p></li>
-                  <li><p>Antoine Soldati</p></li>
+                  <li><p>Tommy Brasseur,</p></li>
+                  <li><p>Frédérick Lanthier,</p></li>
+                  <li><p>Samtou Bodjona,</p></li>
+                  <li><p>Philippe Schoeb,</p></li>
+                  <li><p>Nasser Jomaa,</p></li>
+                  <li><p>Antoine Soldati,</p></li>
                 </ul>
               </sidebyside>
             </p>
@@ -161,7 +161,7 @@
                 Papier ou numérique?
                 En tant qu'enseignant, je suis conquis par les innombrables possibilités offertes par <url href="https://pretextbook.org/">PreTeXt</url>.
                 Et les utilisateurs, dans tout ça?
-                J'ai demandé à mes étudiants si cela valait la peine de concevoir de telles notes de cours, en ligne, interactives et s'adaptant à tous les écrans.
+                J'ai demandé à mes étudiants si cela valait la peine de concevoir de telles notes de cours, en ligne, interactives, et s'adaptant à tous les écrans.
                 Voici les témoignages que j'ai recueillis.
               </p>
               <ul>
@@ -201,7 +201,9 @@
                 </li>
                 <li>
                   <p>
-                    «Les notes de cours sont parfaites. On a une interface simple and très facile à utiliser. Parfait pour les étudiants du cours.» (Anonyme, novembre 2019)
+                    «Les notes de cours sont parfaites.
+                    On a une interface simple and très facile à utiliser.
+                    Parfait pour les étudiants du cours.» (Anonyme, novembre 2019)
                   </p>
                 </li>
                 <li>

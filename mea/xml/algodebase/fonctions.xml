@@ -88,8 +88,8 @@
   </sage>
   <p>Le code ci-dessus affiche
     <ul>
-      <li><p><m>\text{7}</m> parce que la commande <c>y = f(2)</c> fait appel à la fonction <c>f(x)</c> et exécute donc <c>print(x ** 2 - 4 * x + 2)</c>;</p></li>
-      <li><p>et <m>\text{None}</m> parce que la fonction <c>f(x)</c> ne renvoie rien, donc la variable <c>y</c> reste vide, de sorte que <c>print(y)</c> <m>\text{None}</m>.</p></li>
+      <li><p><m>\text{7}</m> parce que la commande <c>y = f(5)</c> fait appel à la fonction <c>f(x)</c> et exécute donc <c>print(x ** 2 - 4 * x + 2)</c> pour x valant 5;</p></li>
+      <li><p>et <m>\text{None}</m> parce que la fonction <c>f(x)</c> ne renvoie rien, donc la variable <c>y</c> reste vide, de sorte que <c>print(y)</c> affiche <m>\text{None}</m>.</p></li>
     </ul>
   </p>
 </remark>
@@ -144,8 +144,10 @@
 <section xml:id="recursivite">
 <title>Récursivité</title>
 
-<p>La <url href="https://fr.wikipedia.org/wiki/R%C3%A9cursivit%C3%A9">récursivité</url> est un concept qui intervient dans des domaines aussi variés que la linguistique, les arts et les mathématiques.</p>
-<p>Une fonction est dite récursive lorsqu'elle contient un appel à elle-même.</p>
+<aside>
+  <p>La <url href="https://fr.wikipedia.org/wiki/R%C3%A9cursivit%C3%A9">récursivité</url> est un concept qui intervient dans des domaines aussi variés que la linguistique, les arts, la biologie et les mathématiques.</p>
+</aside>
+<p>Une fonction est dite <em>récursive</em> lorsqu'elle contient un appel à elle-même.</p>
 <p>Attention, une telle fonction doit prévoir au moins un cas de base sur lequel elle finisse par tomber.</p>
 <p>
   La fonction factorielle <m>n!</m> est un bon exemple de fonction pouvant être définie de manière récursive :
@@ -157,7 +159,7 @@
   </me>
   Par exemple, on a
   <me>5!=5\cdot\underbrace{4\cdot 3\cdot 2\cdot 1}_{4!}=5\cdot 4!</me>
-  de sorte que <m>5!</m> s'obtient par la multiplication de <m>5</m> avec la valeur de la fonction factorielle pour l'entier précédent (4).
+  de sorte que <m>5!</m> s'obtient par la multiplication de <m>5</m> avec la valeur de la fonction factorielle appliquée à 4, l'entier précédent 5.
 </p>
 <p>
   Le code qui suit définit une fonction <c>factorielle(n)</c> adoptant ce point de vue récursif.
@@ -181,7 +183,7 @@
 </p>
 <remark>
   <p>
-    Notez que pour le calcul de <c>factorielle(5)</c> avec la fonction récursive ci-dessus, on est obligé de remonter jusqu'au cas de base <c>factorielle(1)</c> avant de redescendre pour calculer <c>factorielle(2)</c>, <c>factorielle(3)</c>, <c>factorielle(4)</c> et enfin <c>factorielle(5)</c> dans cet ordre.
+    Notez que pour calculer <c>factorielle(5)</c> avec la fonction récursive ci-dessus, il faut descendre jusqu'au cas de base <c>factorielle(1)</c> avant de remonter pour calculer <c>factorielle(2)</c>, <c>factorielle(3)</c>, <c>factorielle(4)</c> et enfin <c>factorielle(5)</c> dans cet ordre.
   </p>
 </remark>
 
@@ -195,6 +197,9 @@
     <p>Codez une fonction <c>pairOuImpair(n)</c> qui renvoie <m>\text{pair}</m> si <m>\text{n}</m> est divisible par <m>2</m>, et <m>\text{impair}</m> si ce n'est pas le cas.</p>
     <p>Testez votre code avec <c>print(pairOuImpair(347))</c> et <c>print(pairOuImpair(504))</c> qui doivent afficher <m>\text{impair}</m> et <m>\text{pair}</m> respectivement.</p>
   </statement>
+  <hint>
+    <p>Vous pourriez avoir besoin de l'opérateur modulo <c>%</c>.</p>
+  </hint>
   <solution>
     <pre>
       def pairOuImpair(n):
@@ -229,9 +234,9 @@
     <p>Codez la fonction <c>f(x)</c> définie par
       <me>f(x)=
         \begin{cases}
-        3&amp;\text{si}&amp;x\leq -2,\\
+        3&amp;\text{si}&amp;x\le -2,\\
         x^2+3&amp;\text{si}&amp;-2&lt;x&lt;5,\\
-        4-5x&amp;\text{si}&amp;x&gt;=5.
+        4-5x&amp;\text{si}&amp;x\ge 5.
         \end{cases}
       </me>
     </p>
@@ -263,7 +268,7 @@
 <exercise>
   <statement>
     <p>Codez la fonction <c>f(x)</c> correspondant au graphique qui suit.</p>
-    <p><image width="65%" source="images/fonctions.png"/></p>
+    <p><image width="50%" source="images/fonctions.png"/></p>
     <p>Testez votre code avec les cas suivants.
       <ul>
         <li><p><c>print(f(-7))</c> doit afficher <m>\text{non défini}</m>.</p></li>
@@ -387,8 +392,8 @@
 <exercise xml:id="exercice_defsansreturn">
   <statement>
     <p>Soit <m>[a;b]</m> un intervalle et <m>n\geq 1</m> un entier.</p>
-    <p>On appelle subdivision régulière de <m>[a;b]</m> en <m>n</m> sous-intervalles de même longueur
-      <me>\Delta x=\frac{b-a}{n}</me>
+    <p>On appelle subdivision régulière de <m>[a;b]</m> en <m>n</m> sous-intervalles de longueur
+      <me>\Delta x:=\frac{b-a}{n}</me>
       la suite
       <me>a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_{n-1}&lt;x_n=b</me>
       où
@@ -400,7 +405,7 @@
     <p>
       <ol>
         <li>
-          <p>À l'aide d'une boucle <c>for</c>, codez une fonction <c>subdivisionReguliere1(a, b, n)</c> qui affiche <m>x_k</m> pour <m>k=0,1,\ldots,n</m>.</p>
+          <p>À l'aide d'une boucle <c>for</c>, codez une fonction <c>subdivisionReguliere1(a, b, n)</c> qui affiche <m>x_k</m> pour <m>k=0,1,\ldots,n</m> sans rien renvoyer.</p>
           <p>Testez votre code avec <c>subdivisionReguliere1(1.0, 3.0, 4)</c> qui doit afficher
             <pre>
               1.0
@@ -499,6 +504,9 @@
       </ul>
     </p>
   </statement>
+  <hint>
+    <me>\sum_{k=1}^nk=\underbrace{1+2+\cdots+(n-1)}_{\displaystyle\sum_{k=1}^{n-1}k}+n</me>
+  </hint>
   <solution>
     <pre>
       def sommeEntiers(n):
@@ -510,53 +518,6 @@
       print(sommeEntiers(3))
       print(sommeEntiers(100))
     </pre>
-  </solution>
-</exercise>
-
-<exercise>
-  <statement>
-    <p>Combien de fois le nombre <m>45</m> est-il divisible par <m>2</m>? La réponse est <m>0</m> car <m>45</m> est impair.</p>
-    <p>Combien de fois le nombre <m>24</m> est-il divisible par <m>2</m>? La réponse est <m>3</m> car la factorisation de <m>24</m> en produit de facteurs premiers donne
-      <me>24=2^3\cdot 3.</me>
-    </p>
-    <p>
-      <ol>
-        <li><p>En utilisant une variable <c>compteur</c> et une boucle <c>while</c>, codez une fonction <c>combienDeDeux1(n)</c> qui renvoie le nombre de fois que <m>\text{n}</m> est divisible par <m>2</m>.</p></li>
-        <li><p>Codez une fonction <c>combienDeDeux2(n)</c> qui renvoie de manière récursive le nombre de fois que <m>\text{n}</m> est divisible par <m>2</m>.</p></li>
-      </ol>
-    </p>
-    <p>Testez votre code avec <c>combienDeDeuxj(45)</c> et <c>combienDeDeuxj(24)</c> qui doivent afficher <m>\text{0}</m> et <m>\text{3}</m> respectivement.</p>
-  </statement>
-  <solution>
-    <p>
-      <ol>
-        <li>
-          <pre>
-            def combienDeDeux1(n):
-                compteur = 0
-                while n % 2 == 0:
-                    compteur = compteur + 1
-                    n = n / 2
-                return compteur
-
-            print(combienDeDeux1(45))
-            print(combienDeDeux1(24))
-          </pre>
-        </li>
-        <li>
-          <pre>
-            def combienDeDeux2(n):
-                if n % 2 != 0:
-                    return 0
-                else:
-                    return 1 + combienDeDeux2(n / 2)
-
-            print(combienDeDeux2(45))
-            print(combienDeDeux2(24))
-          </pre>
-        </li>
-      </ol>
-    </p>
   </solution>
 </exercise>
 
@@ -574,8 +535,8 @@
     </p>
     <p>
       <ol>
-        <li><p>Codez une fonction <c>syracuse1(s, n)</c> qui renvoie de manière itérative le terme <m>s_{\text{n}}</m> d'une suite de Syracuse commençant par <m>s_0=\text{s}</m>.</p></li>
-        <li><p>Codez une fonction <c>syracuse2(s, n)</c> qui renvoie de manière récursive le terme <m>s_{\text{n}}</m> d'une suite de Syracuse commençant par <m>s_0=\text{s}</m>.</p></li>
+        <li><p>Codez une fonction <c>syracuse1(s, n)</c> qui renvoie, à l'aide d'une boucle <c>for</c>, le terme <m>s_{\text{n}}</m> d'une suite de Syracuse commençant par <m>s_0=\text{s}</m>.</p></li>
+        <li><p>Codez une fonction <c>syracuse2(s, n)</c> qui renvoie, de manière récursive, le terme <m>s_{\text{n}}</m> d'une suite de Syracuse commençant par <m>s_0=\text{s}</m>.</p></li>
       </ol>
     </p>
     <p>Testez votre code avec <c>print(syracusej(14, 20))</c> qui doit afficher <m>\text{1}</m>.</p>
@@ -614,6 +575,59 @@
   </solution>
 </exercise>
 
+<exercise>
+  <statement>
+    <p>Combien de fois le nombre <m>45</m> est-il divisible par <m>2</m>? La réponse est <m>0</m> car <m>45</m> n'est pas divisible par <m>2</m>.</p>
+    <p>Combien de fois le nombre <m>24</m> est-il divisible par <m>2</m>? La réponse est <m>3</m> car <m>24=2^3\cdot 3</m> est divisible par <m>2^3</m>, mais <m>24/2^3=3</m> n'est pas divisible par <m>2</m>.</p>
+    <p>
+      <ol>
+        <li><p>En utilisant une variable <c>compteur</c> et une boucle <c>while</c>, codez une fonction <c>combienDeDeux1(n)</c> qui renvoie le nombre de fois que <m>\text{n}</m> est divisible par <m>2</m>.</p></li>
+        <li><p>Codez une fonction <c>combienDeDeux2(n)</c> qui renvoie, de manière récursive, le nombre de fois que <m>\text{n}</m> est divisible par <m>2</m>.</p></li>
+      </ol>
+    </p>
+    <p>Testez votre code avec <c>combienDeDeuxj(45)</c> et <c>combienDeDeuxj(24)</c> qui doivent afficher <m>\text{0}</m> et <m>\text{3}</m> respectivement.</p>
+  </statement>
+  <hint>
+    <ul>
+      <li>Dans <m>24</m>, il y a un facteur <m>2</m> de plus que dans <m>24/2=12</m>.</li>
+      <li>Dans <m>12</m>, il y a un facteur <m>2</m> de plus que dans <m>12/2=6</m>.</li>
+      <li>Dans <m>6</m>, il y a un facteur <m>2</m> de plus que dans <m>6/2=3</m>.</li>
+      <li>Dans <m>3</m>, il n'y a aucun facteur égal à <m>2</m>.</li>
+    </ul>
+  </hint>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <pre>
+            def combienDeDeux1(n):
+                compteur = 0
+                while n % 2 == 0:
+                    compteur = compteur + 1
+                    n = n / 2
+                return compteur
+
+            print(combienDeDeux1(45))
+            print(combienDeDeux1(24))
+          </pre>
+        </li>
+        <li>
+          <pre>
+            def combienDeDeux2(n):
+                if n % 2 != 0:
+                    return 0
+                else:
+                    return 1 + combienDeDeux2(n / 2)
+
+            print(combienDeDeux2(45))
+            print(combienDeDeux2(24))
+          </pre>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
 <exercise xml:id="fibo_recursive">
   <statement>
     <p>La suite de Fibonacci est définie par récurrence de la façon suivante :
@@ -627,7 +641,10 @@
   <solution>
     <ol>
       <li>
-        <p>Voici le code :
+        <p>
+          On obtient
+          <me>F_{20}=6765</me>
+          à l'aide du code qui suit.
           <pre>
             def fibonacci(n):
                 if n == 1:
@@ -640,11 +657,18 @@
             print(fibonacci(20))
           </pre>
         </p>
-        <p>Voici ce qu'il affiche :
-          <pre>6765</pre>
-        </p>
       </li>
-      <li><p>Non, cela prend trop de temps. Il vaut mieux s'en tenir à la méthode itérative de l'exercice <xref ref="fibo_iterative"/>.</p></li>
+      <li>
+        <p>
+          Non, cela prend trop de temps.
+          Il vaut mieux s'en tenir à la méthode itérative de l'exercice <xref ref="fibo_iterative"/>.
+        </p>
+        <aside>
+          <p>
+            Le temps de calcul de <m>F_n</m> par cet <url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_r%C3%A9cursif_na%C3%AFf">algorithme récursif naïf</url> est exponentiel en <m>n</m>, ce qui est vite beaucoup plus long que par l'<url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_polynomial">algorithme polynomial</url> itératif.
+          </p>
+        </aside>
+      </li>
     </ol>
   </solution>
 </exercise>

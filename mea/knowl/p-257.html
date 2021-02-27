@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:49-04:00    *-->
+<!--*    on 2021-02-27T11:46:16-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -30,16 +30,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voici une implémentation de cette approche, où la fonction <code class="code-inline tex2jax_ignore">puissanceRecursive(x, n)</code> renvoie la valeur de \(\text{x}^\text{n}\) de manière récursive : <div class="sagecell-python" id="sage-45"><script type="text/x-sage">def puissanceRecursive(x, n):
-    if n == 1:
-        return x
-    elif n % 2 == 0:
-        return puissanceRecursive(x * x, n / 2)
-    else:
-        return x * puissanceRecursive(x * x, (n - 1) / 2)
-
-print(puissanceRecursive(2, 5))
-</script></div></p>
-<span class="incontext"><a href="exponentiation.html#p-257">Contexte</a></span>
+<p>Autrement dit, l'algorithme <div class="sagecell-python" id="sage-43"><script type="text/x-sage"># entrée :
+n = 5
+# instruction :
+somme = n * (n + 1) / 2
+# sortie :
+print(somme)
+</script></div> a une complexité en temps constante</p>
+<div class="displaymath">
+\begin{equation*}
+T(n)=3.
+\end{equation*}
+</div>
+<span class="incontext"><a href="sommeentiers.html#p-257">Contexte</a></span>
 </body>
 </html>

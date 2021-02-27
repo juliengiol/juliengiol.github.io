@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:18-04:00    *-->
+<!--*    on 2021-02-27T11:47:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,95 +14,125 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.3.3.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.3.12.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
 <li>
-<p>La forme de Newton du polynôme interpolateur de ces trois points s'écrit</p>
+<p>Pour \(n=0\text{,}\) on a \(P(t)=y_0\) et l'énoncé dit que, pour tout \(t\in\;]a;b[\text{,}\) il existe \(\xi_t\in\;]\min\{t,x_0\};\max\{t,x_0\}[\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+f(t)-f(x_0)=f'(\xi_t)(t-x_0).
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Dans le cas où \(t\neq x_0\text{,}\) la formule précédente est équivalente à</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{f(t)-f(x_0)}{t-x_0}=f'(\xi_t).
+\end{equation*}
+</div>
+<p>On reconnaît donc le théorème généralement attribué à Lagrange. On l'appelle aussi <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_des_accroissements_finis#%C3%89nonc%C3%A9" target="_blank">théorème des accroissements finis</a>.</p>
+</li>
+<li>
+<p>Si \(t\) est égal à l'une des abscisses \(x_i\text{,}\) alors</p>
+<div class="displaymath">
+\begin{equation*}
+f(t)-P(t)=0\quad\text{et}\quad(t-x_0)\cdots(t-x_n)=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Dans ce cas, n'importe quel \(\xi_t\in\;]\min\{t,x_i\};\max\{t,x_i\}[\) convient, par exemple \(\xi_t=x_i\text{.}\)</p>
+<p>Supposons maintenant que \(t\neq x_i\) pour tout \(i=0,1,\ldots,n\text{.}\) On peut alors considérer la fonction suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(s)=f(s)-P(s)-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}\cdot\prod_{i=0}^n(s-x_i).
+\end{equation*}
+</div>
+<p>On vérifie que cette fonction \(\phi\) s'annule aux \(n+2\) valeurs distinctes \(x_0,x_1,\ldots,x_n\) et \(t\text{.}\)</p>
+<p>En appliquant \(n+1\) fois le théorème de Rolle, on en déduit que sa dérivée s'annule \(n+1\) fois dans l'intervalle \(]\min\{t,x_i\};\max\{t,x_i\}[\text{.}\)</p>
+<p>En continuant à appliquer le théorème de Rolle, on en conclut que \(\phi^{(n+1)}\) s'annule au moins une fois dans cet intervalle. Autrement dit, il existe \(\xi_t\in\;]\min\{t,x_0\};\max\{t,x_0\}[\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+\phi^{(n+1)}(\xi_t)=0
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+f^{(n+1)}(\xi_t)-P^{(n+1)}(\xi_t)-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}\cdot\frac{d^{n+1}}{ds^{n+1}}\left[\prod_{i=0}^n(s-x_i)\right]\Bigg\vert_{s=\xi_t}=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme \(P\) est de degré \(n\) au plus, on a \(P^{(n+1)}=0\text{.}\) Par ailleurs, on voit que \(\displaystyle\frac{d^{n+1}}{ds^{n+1}}\prod_{i=0}^n(s-x_i)=(n+1)!\text{.}\) On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+f^{(n+1)}(\xi_t)-0-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}(n+1)!=0
+\end{equation*}
+</div>
+<p data-braille="continuation">et il ne reste qu'à isoler \(f(t)-P(t)\) pour conclure.</p>
+</li>
+<li>
+<p>On a déjà calculé le polynôme interpolateur à l'exercice <a class="xref" data-knowl="./knowl/exerciceinterpolfonction.html" title="Exercice 6.3.9">6.3.9</a> :</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=\frac{10000}{924}(t-0{,}21)(t-0{,}44)-\frac{11000}{483}t(t-0{,}44)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
++\frac{12000}{1012}t(t-0{,}21).
+\end{equation*}
+</div>
+<p>Ici \(n=2\text{,}\) on peut prendre \(]a;b[\;=\;]-1;+\infty[\text{,}\) et on a</p>
+<div class="displaymath">
+\begin{equation*}
+\min\{x_i\}=0,\;\max\{x_i\}=0{,}44\;\text{et}\; f^{(3)}(t)=\frac{3}{8}(1+t)^{-5/2}.
+\end{equation*}
+</div>
+<p>L'énoncé dit donc que, pour tout \(t\in\;]-1;+\infty[\text{,}\) il existe \(\xi_t\in\;]\min\{t;0\};\max\{t;0{,}44\}[\) tel que</p>
 <div class="displaymath">
 \begin{align*}
-N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
-&amp;=d_0+d_1t+d_2t(t-2).
+f(t)-P(t)&amp;=\frac{f^{(3)}(\xi_t)}{3!}(t-x_0)(t-x_1)(t-x_2)\\
+&amp;=\frac{\frac{3}{8}(1+\xi_t)^{-5/2}}{6}t(t-0{,}21)(t-0{,}44)\\
+&amp;=\frac{1}{16(1+\xi_t)^{5/2}}t(t-0{,}21)(t-0{,}44).
 \end{align*}
-</div>
-<p>On cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{cases}
-N(0)=4\\
-N(2)=-1\\
-N(5)=12
-\end{cases}
-\Leftrightarrow
-\begin{cases}
-d_0&amp;&amp;&amp;&amp;&amp;=&amp;4\\
-d_0&amp;+&amp;2d_1&amp;&amp;&amp;=&amp;-1\\
-d_0&amp;+&amp;5d_1&amp;+&amp;15d_2&amp;=&amp;12\\
-\end{cases}
-\end{equation*}
-</div>
-<p>Ce système linéaire est déjà triangulé.</p>
-<ul class="disc">
-<li>
-<p>La première équation donne</p>
-<div class="displaymath">
-\begin{equation*}
-d_0=4.
-\end{equation*}
 </div>
 </li>
 <li>
-<p>Alors la deuxième équation donne</p>
+<p>Avec le nombre \(t=0{,}1\) on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\xi_t\in\;]0;0{,}44[\quad\Rightarrow\quad\frac{1}{16(1+\xi_t)^{5/2}}\leq\frac{1}{16}.
+\end{equation*}
+</div>
+<p>Par conséquent, on a</p>
 <div class="displaymath">
 \begin{align*}
-d_0+2d_1=-1&amp;\Rightarrow\quad 4+2d_1=-1\\
-&amp;\Rightarrow\quad 2d_1=-5\\
-&amp;\Rightarrow\quad d_1=-\frac{5}{2}.
+\left|f(0{,}1)-P(0{,}1)\right|&amp;=\frac{1}{16(1+\xi_t)^{5/2}}\cdot 0{,}1\cdot |0{,}1-0{,}21|\cdot|0{,}1-0{,}44|\\
+&amp;=\frac{1}{16(1+\xi_t)^{5/2}}\cdot 0{,}00374\\
+&amp;\leq\frac{1}{16}\cdot 0{,}00374\\
+&amp;=0{,}000\,233\,75.
 \end{align*}
 </div>
 </li>
 <li>
-<p>Enfin la troisième équation donne</p>
+<p>À l'exercice <a class="xref" data-knowl="./knowl/exerciceinterpolfonction.html" title="Exercice 6.3.9">6.3.9</a>, on a trouvé</p>
+<div class="displaymath">
+\begin{equation*}
+P(0{,}1)=\frac{1013}{966}
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{align*}
-d_0+5d_1+5d_2=0&amp;\Rightarrow\quad 4-\frac{25}{2}+15d_2=12\\
-&amp;\Rightarrow\quad 15d_2=12-4+\frac{25}{2}=\frac{41}{2}\\
-&amp;\Rightarrow\quad d_2=\frac{41}{30}.
+f(0{,1})-P(0{,}1)&amp;=\sqrt{1{,}1}-\frac{1013}{966}\\
+&amp;\approx 0{,}000\,154\,604\\
+&amp;\leq 0{,}000\,233\,75.
 \end{align*}
 </div>
-</li>
-</ul>
-<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Calculons les différences divisées des trois points :</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{c|ccc}
-x_i&amp;y_i\\
-\hline\\
-0&amp;\left[A_0\right]=4&amp;&amp;\\
-&amp;&amp;\left[A_0,A_1\right]=-\frac{5}{2}&amp;\\
-2&amp;\left[A_1\right]=-1&amp;&amp;\left[A_0,A_1,A_2\right]=\frac{41}{30}\\
-&amp;&amp;\left[A_1,A_2\right]=\frac{13}{3}&amp;\\
-5&amp;\left[A_2\right]=12&amp;&amp;
-\end{array}
-\end{equation*}
-</div>
-<p>On trouve donc la même forme de Newton</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).
-\end{equation*}
-</div>
+<p>La majoration obtenue à la question précédente est donc conforme.</p>
 </li>
 </ol>
 </div>
-<span class="incontext"><a href="exercicesdiffdiv.html#solution-67">Contexte</a></span>
+<span class="incontext"><a href="exerciceslagrange.html#solution-67">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:44:01-04:00    *-->
+<!--*    on 2021-02-27T11:49:16-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,12 +11,94 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>La réponse est donnée par le reste de la division euclidienne de \(5+208=213\) par \(12\text{,}\) soit \(9\) heures, car</p>
+<body><div class="solution solution-like"><ol class="decimal">
+<li>
+<p>Par définition des nombres rationnels, il existe \((a;b)\in\mathbb{Z}\times\mathbb{N}^*\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-213=12\cdot 17+9.
+r=\frac{a}{b}.
 \end{equation*}
 </div>
-</div></body>
+<p>Si \(\text{PGCD}(a;b)=1\text{,}\) on a fini.</p>
+<p>Sinon, notons \(\text{PGCD}(a;b)=d\text{.}\) Comme \(d\) divise \(a\) et \(b\text{,}\) il existe deux entiers relatifs \(a_0, b_0\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+a=da_0\quad\text{et}\quad b=db_0
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+r=\frac{a}{b}=\frac{da_0}{db_0}=\frac{a_0}{b_0}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Il ne reste plus qu'à montrer que \(\text{PGCD}(a_0;b_0)=1\text{.}\) On commence par appliquer Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a> :</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(a;b)=d\quad\Rightarrow\quad\exists(u;v)\in\mathbb{Z}^2,\;au+bv=d.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccr}
+au+bv=d&amp;\quad\Rightarrow\quad&amp;da_0u+db_0v=d&amp;\\
+&amp;\quad\Rightarrow\quad&amp;a_0u+b_0v=1&amp;\text{ par division par }d\\
+&amp;\quad\Rightarrow\quad&amp;\text{PGCD}(a_0;b_0)=1&amp;\text{ par Bézout.}\\
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Raisonnons par l'absurde et supposons qu'il existe \((a_1;a_2)\neq(b_1;b_2)\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+r=\frac{a_1}{b_1}=\frac{a_2}{b_2}\quad\text{avec}\quad(a_i;b_i)\in\mathbb{Z}\times\mathbb{N}^*\;\text{ et }\;\text{PGCD}(a_i;b_i)=1.
+\end{equation*}
+</div>
+<p>Notons que</p>
+<div class="displaymath">
+\begin{equation*}
+a_1b_2=b_1a_2.
+\end{equation*}
+</div>
+<p>Alors</p>
+<div class="displaymath">
+\begin{equation*}
+b_1\vert b_1a_2=a_1b_2\quad\text{et}\quad\text{PGCD}(a_1;b_1)
+\end{equation*}
+</div>
+<p data-braille="continuation">implique que</p>
+<div class="displaymath">
+\begin{equation*}
+b_1\vert b_2
+\end{equation*}
+</div>
+<p data-braille="continuation">par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a> et, par un raisonnement symétrique, on a aussi</p>
+<div class="displaymath">
+\begin{equation*}
+b_2\vert b_1.
+\end{equation*}
+</div>
+<p>Comme \(b_1\) et \(b_2\) sont tous deux positifs, on déduit de ce qui précède qu'il existe deux entiers positifs \(c, d\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+b_1=cb_2\quad\text{et}\quad b_2=db_1,
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccc}
+b_1=cb_2&amp;\quad\Rightarrow\quad&amp;b_1=cdb_1&amp;\\
+&amp;\quad\Rightarrow\quad&amp;1=cd&amp;\text{ par division par }b_1\\
+&amp;\quad\Rightarrow\quad&amp;c=d=1&amp;\text{ car }c, d\in\mathbb{N}^*\\
+&amp;\quad\Rightarrow\quad&amp;b_1=b_2&amp;\text{ car }b_1=cb_2\\
+&amp;\quad\Rightarrow\quad&amp;a_1=a_2&amp;\text{ car }a_1b_2=b_1a_2.\\
+\end{array}
+\end{equation*}
+</div>
+<p>On a donc montré que \((a_1;a_2)=(b_1;b_2)\text{,}\) d'où la contradiction cherchée.</p>
+</li>
+</ol></div></body>
 </html>

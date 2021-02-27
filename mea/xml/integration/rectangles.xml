@@ -747,7 +747,7 @@
           </p>
         </li>
         <li>
-          <p>Rectangles à droite : On prend <m>\xi_k=\frac{x_{k-1}+x_k}{2}=2+(k-0{,}5)\cdot 0{,1}</m> donc
+          <p>Rectangles au milieu : On prend <m>\xi_k=\frac{x_{k-1}+x_k}{2}=2+(k-0{,}5)\cdot 0{,1}</m> donc
             <md>
               <mrow>\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+(k-0{,}5)\cdot 0{,}1)</mrow>
               <mrow>&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k-\sum_{k=1}^{10}0{,}5\right)\cdot 0{,}1\right)</mrow>

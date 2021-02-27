@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:43:04-04:00    *-->
+<!--*    on 2021-02-27T11:48:25-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,7 +11,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="exercise exercise-like"><p>Créez une fonction <code class="code-inline tex2jax_ignore">simpson(f, a, b, n)</code> qui donne la valeur approchée de l'intégrale \(\int_a^bf(x)\mathrm{d}x\) par la méthode de Simpson pour \(n\) sous-intervalles.</p>
-<p>Testez votre code pour \(\int_0^1\frac{1}{1+x}\mathrm{d}x\) avec \(n=100\text{.}\) Vous devez trouver \(\approx 0{,}693\,147\,180\,579\text{.}\)</p>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-95-hidden.html" title="Solution 10.3.5.1"><span class="type">Solution</span></a></div></article></body>
+<body><article class="exercise exercise-like"><p>Soit \(f\) une fonction continue sur l'intervalle \([x_{k-1};x_k]\text{.}\)</p>
+<ol class="decimal">
+<li>
+<p>Donnez la forme de Newton du polynôme interpolateur \(p\) des points</p>
+<div class="displaymath">
+\begin{equation*}
+A_0=(x_{k-1};f(x_{k-1}))\quad\text{et}\quad A_1=(x_k;f(x_k)).
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Montrez que</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{x_{k-1}}^{x_k}p(t)\mathrm{d}t=\frac{1}{2}(f(x_{k-1})+f(x_k))(x_k-x_{k-1}).
+\end{equation*}
+</div>
+</li>
+<li><p>Que venez-vous de démontrer?</p></li>
+</ol>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-94-hidden.html" title="Solution 9.3.8.1"><span class="type">Solution</span></a></div></article></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:41-04:00    *-->
+<!--*    on 2021-02-27T11:46:08-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,25 +14,18 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.4.11.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.3.1.1</span><span class="period">.</span>
 </h6>
-<ol class="decimal">
-<li><pre class="code-block tex2jax_ignore">n = 3
-x = 7.0
-while n &lt; 8:
-    print(x)
-    x = x * n / (5 * n + 2)
-    n = n + 1
-</pre></li>
-<li><pre class="code-block tex2jax_ignore">n = 3
-x = 7.0
-while x &gt; 10 ** (-9):
-    x = x * n / (5 * n + 2)
-    n = n + 1
-print(n)
-</pre></li>
-</ol>
+<pre class="code-block tex2jax_ignore">def pairOuImpair(n):
+    if n % 2 == 0:
+        return 'pair'
+    else:
+        return 'impair'
+
+print(pairOuImpair(347))
+print(pairOuImpair(504))
+</pre>
 </div>
-<span class="incontext"><a href="exercicesassignetc.html#solution-9">Contexte</a></span>
+<span class="incontext"><a href="exercicesfonctions.html#solution-9">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:44:21-04:00    *-->
+<!--*    on 2021-02-27T11:49:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,46 +14,52 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">A.4.4.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.3.8.1</span><span class="period">.</span>
 </h6>
-<ol class="decimal">
-<li>
-<p>Commençons par encadrer l'approximation.</p>
+<p>Il s'agit de trouver un entier \(x\) égal environ à \(700\) et tel que</p>
 <div class="displaymath">
 \begin{equation*}
-3{,}339\,682\leq\text{Approximation}\leq 3{,}339\,683.
+\left\{
+\begin{array}{cccl}
+x&amp;\equiv&amp;0&amp;\text{mod}\; 5,\\
+x&amp;\equiv&amp;3&amp;\text{mod}\; 7,\\
+x&amp;\equiv&amp;4&amp;\text{mod}\; 11.
+\end{array}
+\right.
 \end{equation*}
 </div>
-<p>Encadrons ensuite l'erreur, sachant que \(\frac{4}{11}=0{,}363\,636\,363\ldots\text{,}\)</p>
+<p data-braille="continuation">Comme les entiers \(5, 7, 11\) sont premiers entre eux deux à deux, on peut appliquer le théorème des restes chinois :</p>
 <div class="displaymath">
 \begin{equation*}
--0{,}363\,637\leq\text{Erreur}\leq 0.
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
+\hline
+0&amp;5&amp;77&amp;&amp;&amp;0\\
+\hline
+3&amp;7&amp;55&amp;1=55\cdot(-1)+7\cdot 8&amp;-1&amp;-165\\
+\hline
+4&amp;11&amp;35&amp;1=35\cdot (-5)+11\cdot 16&amp;-5&amp;-700\\
+\hline
+M=&amp;385&amp;&amp;&amp;x_0=&amp;-865\\
+\hline
+\end{array}
 \end{equation*}
 </div>
-<p>On a donc</p>
+<p>Les solutions sont donc caractérisées par</p>
 <div class="displaymath">
 \begin{equation*}
-3{,}339\,682-0{,}363\,637\leq\text{Approximation}+\text{Erreur}\leq 3{,}339\,683+0
+x\equiv -865\;\mathrm{mod}\;385.
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p>La solution qui se rapproche le plus de \(700\) est donc</p>
 <div class="displaymath">
 \begin{equation*}
-2{,}976\,045\leq\text{Valeur exacte}\leq 3{,}339\,683.
+-865+385\cdot 4=675.
 \end{equation*}
 </div>
-</li>
-<li>
-<p>L'arrondissement le plus précis qu'on puisse en déduire est le suivant :</p>
-<div class="displaymath">
-\begin{equation*}
-\text{Valeur exacte}\approx 3.
-\end{equation*}
+<p>Réponse : Victor a six cent soixante-quinze billes exactement.</p>
 </div>
-</li>
-</ol>
-<p>La somme de cette série bien connue vaut \(\pi\text{.}\) Mais il faut prendre beaucoup plus de termes dans la somme partielle pour obtenir un nombre intéressant de décimales de \(\pi\text{.}\)</p>
-</div>
-<span class="incontext"><a href="exercicesapproximation.html#solution-122">Contexte</a></span>
+<span class="incontext"><a href="exerciceschinois.html#solution-122">Contexte</a></span>
 </body>
 </html>

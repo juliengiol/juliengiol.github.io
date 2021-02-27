@@ -231,7 +231,7 @@
       <li>
         <p>La méthode de Simpson donne alors
           <md>
-            <mrow>\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)</mrow>
+            <mrow>\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^4\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)</mrow>
             <mrow>&amp;=\frac{0{,}25}{6}\cdot(A_1+A_2+A_3+A_4)</mrow>
           </md>
           où
@@ -252,7 +252,7 @@
         </p>
       </li>
       <li>
-        <p>Après des calculs fastidieux à la calculatrice ou <url href="https://juliengiol.github.io/algorithmique/algorithmesimpson.html">avec l'aide de notre application</url>, on obtient
+        <p>Après des calculs fastidieux à la calculatrice ou <url href="https://juliengiol.github.io/mea/algorithmesimpson.html">avec l'aide de notre application</url>, on obtient
           <me>\text{Approximation}=0{,}746\,826\,120\,527\,46\ldots</me>
         </p>
       </li>

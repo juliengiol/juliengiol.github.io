@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:44:30-04:00    *-->
+<!--*    on 2021-02-27T11:50:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -29,28 +29,31 @@
 </script>
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">Conditionnelles.</span></h5>
+<article class="paragraphs"><h5 class="heading"><span class="title">Variables.</span></h5>
 <ul class="disc">
 <li>
-<p>Exemple 1 :</p>
-<div class="sagecell-python" id="sage-70"><script type="text/x-sage">note = 59.5
-if note < 60:
-    print('échec')
-else:
-    print('réussite')
+<p>Assigner une valeur à une variable et l'afficher  :</p>
+<div class="sagecell-python" id="sage-67"><script type="text/x-sage">x = 5 # assigne la valeur 5 à la variable x
+print(x) # affiche x
 </script></div>
 </li>
 <li>
-<p>Exemple 2 :</p>
-<div class="sagecell-python" id="sage-71"><script type="text/x-sage">age = 8
-if age < 3:
-    print('entrée gratuite')
-elif age < 12:
-    print('tarif réduit')
-else:
-    print('plein tarif')
+<p>Modifier des variables :</p>
+<div class="sagecell-python" id="sage-68"><script type="text/x-sage">x, y = 5, 3 # assignation simultanée de 5 à x et de 3 à y
+somme = x + y # la variable somme contient 8
+print(somme)
+somme =  somme + 7 # maintenant la variable somme contient 15
+print(somme)
 </script></div>
 </li>
-</ul></article><span class="incontext"><a href="python_boucles_et_cond.html#paragraphs-13">Contexte</a></span>
+<li>
+<p>Échanger les contenus de deux variables :</p>
+<div class="sagecell-python" id="sage-69"><script type="text/x-sage">x, y = 5, 3
+print(x, y) # affichage simultané de x et de y
+x, y = y, x # échange simultané des contenus de x et de y
+print(x, y)
+</script></div>
+</li>
+</ul></article><span class="incontext"><a href="python_varia.html#paragraphs-13">Contexte</a></span>
 </body>
 </html>

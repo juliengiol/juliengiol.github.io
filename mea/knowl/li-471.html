@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:05-04:00    *-->
+<!--*    on 2021-02-27T11:47:24-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,27 +13,39 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.11.2</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.4.1</span><span class="period">.</span>
 </h6>
-<p>La forme de Lagrange du polynôme interpolateur est la suivante :</p>
+<p>On cherche deux nombres réels \(a_0,a_1\) tels que</p>
 <div class="displaymath">
-\begin{align*}
-L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
-&amp;=2{,}007\frac{(t-4)(t-6)}{(3-4)(3-6)}+2{,}502\frac{(t-3)(t-6)}{(4-3)(4-6)}\\
-&amp;\qquad+2{,}142\frac{(t-3)(t-4)}{(6-3)(6-4)}\\
-&amp;=\frac{2{,}007}{3}(t-4)(t-6)-1{,}251(t-3)(t-6)\\
-&amp;\qquad +0{,}357(t-3)(t-4).
-\end{align*}
+\begin{equation*}
+P(t)=a_0+a_1t
+\end{equation*}
 </div>
-<p>On a</p>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
-\begin{align*}
-L(5)&amp;=\frac{2{,}007}{3}(5-4)(5-6)-1{,}251(5-3)(5-6)\\
-&amp;\qquad +0{,}357(5-3)(5-4)\\
-&amp;=-\frac{2{,}007}{3}+1{,}251\cdot 2+0{,}357\cdot 2\\
-&amp;=2{,}547.
-\end{align*}
+\begin{equation*}
+\begin{cases}
+P(-1)=4\\
+P(2)=0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a_0&amp;-&amp;a_1&amp;=&amp;4\\
+a_0&amp;+&amp;2a_1&amp;=&amp;0
+\end{cases}
+\end{equation*}
 </div>
-<p data-braille="continuation">On estime ainsi que l'intensité valait \(2{,}547\;\text{A}\) environ au moment du cinquième relevé.</p></article><span class="incontext"><a href="exerciceslagrange.html#li-471">Contexte</a></span>
+<p>Ce système peut se résoudre par la méthode de Cramer :</p>
+<div class="displaymath">
+\begin{equation*}
+a_0=\frac{\begin{vmatrix}4&amp;-1\\0&amp;2\end{vmatrix}}{\begin{vmatrix}1&amp;-1\\1&amp;2\end{vmatrix}}=\frac{8}{3}\qquad\text{et}\qquad a_1=\frac{\begin{vmatrix}1&amp;4\\1&amp;0\end{vmatrix}}{\begin{vmatrix}1&amp;-1\\1&amp;2\end{vmatrix}}=\frac{-4}{3}.
+\end{equation*}
+</div>
+<p>On obtient donc</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=\frac{8}{3}+\left(-\frac{4}{3}\right)t=\frac{8}{3}-\frac{4}{3}t.
+\end{equation*}
+</div></article><span class="incontext"><a href="exerciceslagrange.html#li-471">Contexte</a></span>
 </body>
 </html>

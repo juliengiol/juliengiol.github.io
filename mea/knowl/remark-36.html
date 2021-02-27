@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:43:50-04:00    *-->
+<!--*    on 2021-02-27T11:49:24-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,10 +13,16 @@
 </head>
 <body>
 <article class="remark remark-like"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">13.1.9</span><span class="period">.</span>
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">13.1.13</span><span class="period">.</span>
 </h6>
-<p>Comme pour les matrices, il y a une multiplication mais (pas vraiment) de division.</p>
-<p>Avec les matrices, on définit néammoins le concept d'inverse à l'aide du théorème qui suit.</p>
-<p>Diviser revient alors à multiplier par la matrice inverse, quand elle existe, de même que diviser un nombre réel par \(5\) revient à le multiplier par \(0{,}2\text{.}\)</p></article><span class="incontext"><a href="presentationchinois.html#remark-36">Contexte</a></span>
+<p>Supposons que \(a\) soit inversible modulo \(m\text{.}\)</p>
+<p>Pour trouver un inverse particulier, il suffit d'appliquer l'algorithme d'Euclide étendu.</p>
+<p>En effet, comme \(\text{PGCD}(a;m)=1\text{,}\) ce dernier fournit un couple de coefficients \((u;v)\in\mathbb{Z}^2\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+au+mv=1\quad\Rightarrow\quad au=1+(-v)m\quad\Rightarrow\quad au\equiv 1\;\mathrm{mod}\;m
+\end{equation*}
+</div>
+<p data-braille="continuation">donc le coefficient \(u\) est un inverse de \(a\) modulo \(m\text{.}\)</p></article><span class="incontext"><a href="presentationchinois.html#remark-36">Contexte</a></span>
 </body>
 </html>

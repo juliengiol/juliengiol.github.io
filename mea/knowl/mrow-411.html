@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:30-04:00    *-->
+<!--*    on 2021-02-27T11:47:59-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,12 +14,17 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-f(a)(b-a)\\
-&amp;=\int_a^bf(x)\mathrm{d}x-f(a)\int_a^b\mathrm{d}x\\
-&amp;=\int_a^bf(x)\mathrm{d}x-\int_a^bf(a)\mathrm{d}x\\
-&amp;=\int_a^b(f(x)-f(a))\mathrm{d}x.
+&amp;d_0+(x_2-x_0)d_1+(x_2-x_0)(x_2-x_1)d_2=y_2\\
+\Rightarrow\quad&amp;y_0+(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}+(x_2-x_0)(x_2-x_1)d_2=y_2\\
+\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_0-(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}\\
+\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+y_1-y_0-(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}\\
+\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+\left(x_1-x_0-(x_2-x_0)\right)\frac{y_1-y_0}{x_1-x_0}\\
+\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+\left(x_1-x_2\right)\frac{y_1-y_0}{x_1-x_0}\\
+\Rightarrow\quad&amp;d_2=\frac{y_2-y_1}{(x_2-x_0)(x_2-x_1)}+\left(x_1-x_2\right)\frac{y_1-y_0}{(x_1-x_0)(x_2-x_0)(x_2-x_1)}\\
+\Rightarrow\quad&amp;d_2=\frac{y_2-y_1}{(x_2-x_0)(x_2-x_1)}-\frac{y_1-y_0}{(x_1-x_0)(x_2-x_0)}\\
+\Rightarrow\quad&amp;d_2=\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}.
 \end{align*}
 </div>
-<span class="incontext"><a href="presentationrectangles.html#mjx-eqn-mrow-411">Contexte</a></span>
+<span class="incontext"><a href="exercicesdiffdiv.html#mjx-eqn-mrow-411">Contexte</a></span>
 </body>
 </html>

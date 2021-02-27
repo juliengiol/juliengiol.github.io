@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:44:08-04:00    *-->
+<!--*    on 2021-02-27T11:49:36-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,49 +11,92 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>Il s'agit de trouver un entier \(x\) égal environ à \(700\) et tel que</p>
+<body><div class="solution solution-like"><ol class="decimal">
+<li><p>Non, car \(\text{PGCD}(4;26)=2\neq 1\text{.}\)</p></li>
+<li>
+<p>Oui, car \(\text{PGCD}(4;25)=1\text{.}\)</p>
+<p>Grâce à l'algorithme d'Euclide étendu, on obtient la combinaison linéaire</p>
 <div class="displaymath">
 \begin{equation*}
-\left\{
-\begin{array}{cccl}
-x&amp;\equiv&amp;0&amp;\text{mod}\; 5,\\
-x&amp;\equiv&amp;3&amp;\text{mod}\; 7,\\
-x&amp;\equiv&amp;4&amp;\text{mod}\; 11.
-\end{array}
-\right.
+1=4\cdot (-6)+25\cdot 1.
 \end{equation*}
 </div>
-<p data-braille="continuation">Comme les entiers \(5, 7, 11\) sont premiers entre eux deux à deux, on peut appliquer le théorème des restes chinois :</p>
+<p data-braille="continuation">Donc \(u_0=-6\) est un inverse de \(4\) modulo \(25\text{.}\)</p>
+<p>De plus, l'ensemble des inverses de \(4\) modulo \(25\) correspond à la progression arithmétique</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
-\hline
-0&amp;5&amp;77&amp;&amp;&amp;0\\
-\hline
-3&amp;7&amp;55&amp;1=55\cdot(-1)+7\cdot 8&amp;-1&amp;-165\\
-\hline
-4&amp;11&amp;35&amp;1=35\cdot (-5)+11\cdot 16&amp;-5&amp;-700\\
-\hline
-M=&amp;385&amp;&amp;&amp;x_0=&amp;-865\\
-\hline
-\end{array}
+\left\{-6+25k\,|\,k\in\mathbb{Z}\right\}
 \end{equation*}
 </div>
-<p>Les solutions sont donc caractérisées par</p>
+<p data-braille="continuation">soit</p>
 <div class="displaymath">
 \begin{equation*}
-x\equiv -865\;\mathrm{mod}\;385.
+\left\{\ldots,\;-6-25,\;-6,\;-6+25,\;-6+25\cdot 2,\;\ldots\right\}.
 \end{equation*}
 </div>
-<p>La solution qui se rapproche le plus de \(700\) est donc</p>
+<p>Le plus petit inverse positif de \(4\) modulo \(25\) est donc</p>
 <div class="displaymath">
 \begin{equation*}
--865+385\cdot 4=675.
+-6+25=19.
 \end{equation*}
 </div>
-<p>Réponse : Victor a six cent soixante-quinze billes exactement.</p>
-</div></body>
+</li>
+<li>
+<p>Oui, car \(\text{PGCD}(-34;9)=1\text{.}\)</p>
+<p>Grâce à l'algorithme d'Euclide étendu, on obtient la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+1=(-34)\cdot(-4)+9\cdot(-15).
+\end{equation*}
+</div>
+<p data-braille="continuation">Donc \(u_0=-4\) est un inverse de \(-34\) modulo \(9\text{.}\)</p>
+<p>De plus, l'ensemble des inverses de \(-34\) modulo \(9\) correspond à la progression arithmétique</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{-4+9k\,|\,k\in\mathbb{Z}\right\}
+\end{equation*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{\ldots,\;-4-9,\;-4,\;-4+9,\;-4+9\cdot 2,\;\ldots\right\}.
+\end{equation*}
+</div>
+<p>Le plus petit inverse positif de \(4\) modulo \(25\) est donc</p>
+<div class="displaymath">
+\begin{equation*}
+-4+9=5.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Oui, car \(\text{PGCD}(1954;205)=1\text{.}\)</p>
+<p>Grâce à l'algorithme d'Euclide étendu, on obtient la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+1=1954\cdot 79+205\cdot(-753).
+\end{equation*}
+</div>
+<p data-braille="continuation">Donc \(u_0=79\) est un inverse de \(1954\) modulo \(205\text{.}\)</p>
+<p>De plus, l'ensemble des inverses de \(1954\) modulo \(205\) correspond à la progression arithmétique</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{79+205k\,|\,k\in\mathbb{Z}\right\}
+\end{equation*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{\ldots,\;79-205,\;79,\;79+205,\;79+205\cdot 2,\;\ldots\right\}.
+\end{equation*}
+</div>
+<p>Le plus petit inverse positif de \(1954\) modulo \(205\) est donc</p>
+<div class="displaymath">
+\begin{equation*}
+79.
+\end{equation*}
+</div>
+</li>
+<li><p>Non, car \(\text{PGCD}(0;5)=5\neq 1\text{.}\)</p></li>
+</ol></div></body>
 </html>

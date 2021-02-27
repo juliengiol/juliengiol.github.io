@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:35-04:00    *-->
+<!--*    on 2021-02-27T11:45:59-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -231,36 +231,36 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="python_boucles_et_cond"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">C.3</span> <span class="title">Boucles, conditionnelles et fonctions</span>
 </h2>
-<a href="python_boucles_et_cond.html" class="permalink">¶</a><article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Boucles.</span></h5>
+<a href="python_boucles_et_cond.html" class="permalink">¶</a><article class="paragraphs" id="paragraphs-14"><h5 class="heading"><span class="title">Boucles.</span></h5>
 <ul class="disc">
-<li id="li-1211">
-<p id="p-2348">Exemple de boucle <code class="code-inline tex2jax_ignore">for</code> (pour) :</p>
-<div class="sagecell-python" id="sage-68"><script type="text/x-sage">for k in range(1, 6):
+<li id="li-1261">
+<p id="p-2395">Exemple de boucle <code class="code-inline tex2jax_ignore">for</code> (pour) :</p>
+<div class="sagecell-python" id="sage-70"><script type="text/x-sage">for k in range(1, 6):
     print(k)
 </script></div>
 </li>
-<li id="li-1212">
-<p id="p-2349">Exemple de boucle <code class="code-inline tex2jax_ignore">while</code> (tant que) :</p>
-<div class="sagecell-python" id="sage-69"><script type="text/x-sage">k = 1
+<li id="li-1262">
+<p id="p-2396">Exemple de boucle <code class="code-inline tex2jax_ignore">while</code> (tant que) :</p>
+<div class="sagecell-python" id="sage-71"><script type="text/x-sage">k = 1
 while k < 6:
     print(k)
     k = k + 1
 </script></div>
 </li>
-</ul></article><article class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Conditionnelles.</span></h5>
+</ul></article><article class="paragraphs" id="paragraphs-15"><h5 class="heading"><span class="title">Conditionnelles.</span></h5>
 <ul class="disc">
-<li id="li-1213">
-<p id="p-2350">Exemple 1 :</p>
-<div class="sagecell-python" id="sage-70"><script type="text/x-sage">note = 59.5
+<li id="li-1263">
+<p id="p-2397">Exemple 1 :</p>
+<div class="sagecell-python" id="sage-72"><script type="text/x-sage">note = 59.5
 if note < 60:
     print('échec')
 else:
     print('réussite')
 </script></div>
 </li>
-<li id="li-1214">
-<p id="p-2351">Exemple 2 :</p>
-<div class="sagecell-python" id="sage-71"><script type="text/x-sage">age = 8
+<li id="li-1264">
+<p id="p-2398">Exemple 2 :</p>
+<div class="sagecell-python" id="sage-73"><script type="text/x-sage">age = 8
 if age < 3:
     print('entrée gratuite')
 elif age < 12:
@@ -269,11 +269,11 @@ else:
     print('plein tarif')
 </script></div>
 </li>
-</ul></article><article class="paragraphs" id="paragraphs-14"><h5 class="heading"><span class="title">Fonctions.</span></h5>
+</ul></article><article class="paragraphs" id="paragraphs-16"><h5 class="heading"><span class="title">Fonctions.</span></h5>
 <ul class="disc">
-<li id="li-1215">
-<p id="p-2352">Exemple 1 :</p>
-<div class="sagecell-python" id="sage-72"><script type="text/x-sage">def factorielleIterative(n):
+<li id="li-1265">
+<p id="p-2399">Exemple 1 :</p>
+<div class="sagecell-python" id="sage-74"><script type="text/x-sage">def factorielleIterative(n):
     produit = 1
     for k in range(2, n+1):
         produit = produit * k
@@ -282,9 +282,9 @@ else:
 print(factorielleIterative(5))
 </script></div>
 </li>
-<li id="li-1216">
-<p id="p-2353">Exemple 2 :</p>
-<div class="sagecell-python" id="sage-73"><script type="text/x-sage">def factorielleRecursive(n):
+<li id="li-1266">
+<p id="p-2400">Exemple 2 :</p>
+<div class="sagecell-python" id="sage-75"><script type="text/x-sage">def factorielleRecursive(n):
     if n == 1:
         return 1
     else:

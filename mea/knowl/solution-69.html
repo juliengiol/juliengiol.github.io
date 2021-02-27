@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:21-04:00    *-->
+<!--*    on 2021-02-27T11:47:49-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,53 +14,37 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.3.5.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.3.2.1</span><span class="period">.</span>
 </h6>
-<p>La forme de Newton du polynôme interpolateur de ces quatre points s'écrit</p>
-<div class="displaymath">
-\begin{align*}
-N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)+d_3(t-x_0)(t-x_1)(t-x_2)\\
-&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2)+d_3(t-1)(t-2)(t-3).
-\end{align*}
-</div>
-<p>On cherche donc quatre nombres réels \(d_0,d_1,d_2,d_3\) tels que</p>
+<p>Commençons par calculer \(\left[A,B,C\right]\) :</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{cases}
-N(1)=3\\
-N(2)=6\\
-N(3)=9\\
-N(4)=0
-\end{cases}
-\Leftrightarrow
-\begin{cases}
-d_0&amp;&amp;&amp;&amp;&amp;&amp;&amp;=&amp;3\\
-d_0&amp;+&amp;d_1&amp;&amp;&amp;&amp;&amp;=&amp;6\\
-d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;&amp;&amp;=&amp;9\\
-d_0&amp;+&amp;3d_1&amp;+&amp;6d_2&amp;+&amp;6d_3&amp;=&amp;0\\
-\end{cases}
+\begin{array}{c|ccc}
+x&amp;y\\
+\hline\\
+1&amp;\left[A\right]=3&amp;&amp;\\
+&amp;&amp;\left[A,B\right]=-4&amp;\\
+3&amp;\left[B\right]=-5&amp;&amp;\left[A,B,C\right]=\frac{11}{3}\\
+&amp;&amp;\left[B,C\right]=7&amp;\\
+4&amp;\left[C\right]=2&amp;&amp;
+\end{array}
 \end{equation*}
 </div>
-<p>Le système correspondant aux trois premières équations a déjà été résolu à l'exercice <a class="xref" data-knowl="./knowl/newtontroispointsalignes.html" title="Exercice 7.3.4">7.3.4</a> :</p>
+<p>Calculons ensuite \(\left[C,A,B\right]\) :</p>
 <div class="displaymath">
 \begin{equation*}
-d_0=3,\; d_1=3,\; d_2=0.
+\begin{array}{c|ccc}
+x&amp;y\\
+\hline\\
+4&amp;\left[C\right]=2&amp;&amp;\\
+&amp;&amp;\left[C,A\right]=-\frac{1}{3}&amp;\\
+1&amp;\left[A\right]=3&amp;&amp;\left[C,A,B\right]=\frac{11}{3}\\
+&amp;&amp;\left[A,B\right]=-4&amp;\\
+3&amp;\left[B\right]=-5&amp;&amp;
+\end{array}
 \end{equation*}
 </div>
-<p>Alors la quatrième équation donne</p>
-<div class="displaymath">
-\begin{align*}
-d_0+3d_1+6d_2+6d_3=0&amp;\Rightarrow\quad 3+9+0+6d_3=0\\
-&amp;\Rightarrow\quad 6d_2=-12\\
-&amp;\Rightarrow\quad d_2=-2.
-\end{align*}
-</div>
-<p>La forme de Newton du polynôme interpolateur de ces quatre points est donc</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=3+3(t-1)-2(t-1)(t-2)(t-3).
-\end{equation*}
-</div>
+<p>On a bien \(\displaystyle\left[A,B,C\right]=\left[C,A,B\right]=\frac{11}{3}\text{.}\)</p>
 </div>
 <span class="incontext"><a href="exercicesdiffdiv.html#solution-69">Contexte</a></span>
 </body>

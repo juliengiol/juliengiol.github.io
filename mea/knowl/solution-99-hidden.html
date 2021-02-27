@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:43:27-04:00    *-->
+<!--*    on 2021-02-27T11:48:39-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,66 +11,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><ol class="decimal">
-<li>
-<p>On a</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{|c|c|c|c|}
-\hline
-a&amp;b&amp;\text{Division euclidienne}&amp;r\\
-\hline
-363&amp;198&amp;363=198\cdot 1+165&amp;165\\
-198&amp;165&amp;198=165\cdot 1+33&amp;33\\
-165&amp;33&amp;165=33\cdot 5+0&amp;0\\
-\hline
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">Donc \(\text{PGCD}(363;198)=33\text{.}\)</p>
-</li>
-<li>
-<p>On a</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{|c|c|c|c|}
-\hline
-a&amp;b&amp;\text{Division euclidienne}&amp;r\\
-\hline
-3410&amp;2784&amp;3410=2784\cdot 1+626&amp;626\\
-2784&amp;626&amp;2784=626\cdot 4+280&amp;280\\
-626&amp;280&amp;626=280\cdot 2+66&amp;66\\
-280&amp;66&amp;280=66\cdot 4+16&amp;16\\
-66&amp;16&amp;66=16\cdot 4+2&amp;2\\
-16&amp;2&amp;16=2\cdot 8+0&amp;0\\
-\hline
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">Donc \(\text{PGCD}(2784;3410)=2\text{.}\)</p>
-</li>
-<li>
-<p>On a</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{|c|c|c|c|}
-\hline
-a&amp;b&amp;\text{Division euclidienne}&amp;r\\
-\hline
-2784&amp;1180&amp;2784=1180\cdot 2+424&amp;424\\
-1180&amp;424&amp;1180=424\cdot 2+332&amp;332\\
-424&amp;332&amp;424=332\cdot 1+92&amp;92\\
-332&amp;92&amp;332=92\cdot 3+56&amp;56\\
-92&amp;56&amp;92=56\cdot 1+36&amp;36\\
-56&amp;36&amp;56=36\cdot 1+20&amp;20\\
-36&amp;20&amp;36=20\cdot 1+16&amp;16\\
-20&amp;16&amp;20=16\cdot 1+4&amp;4\\
-16&amp;4&amp;16=4\cdot 4+0&amp;0\\
-\hline
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">Donc \(\text{PGCD}(2784;1180)=4\text{.}\)</p>
-</li>
-</ol></div></body>
+<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># entrées
+import numpy as np
+def f(x):
+    return 4 * np.sqrt(1 - x ** 2)
+a = 0.0
+b = 1.0
+n = 32
+
+# instructions
+approximation = 0
+deltaX = (b - a) / n
+xi1 = a
+while xi1 &lt; b:
+    xi2 = xi1 + deltaX / 2
+    xi3 = xi1 + deltaX
+    approximation = approximation + f(xi1) + 4 * f(xi2) + f(xi3)
+    xi1 = xi1 + deltaX
+approximation = approximation * deltaX / 6
+
+# sortie
+print(approximation)
+</pre></div></body>
 </html>

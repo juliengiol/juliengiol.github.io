@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:43-04:00    *-->
+<!--*    on 2021-02-27T11:46:08-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p><code class="code-inline tex2jax_ignore">print(f(2))</code> doit afficher \(\text{7}\text{.}\)</p>
-<span class="incontext"><a href="exercicesfonctions.html#p-169">Contexte</a></span>
+<p>La fonction factorielle \(n!\) est un bon exemple de fonction pouvant être définie de manière récursive :</p>
+<div class="displaymath">
+\begin{equation*}
+n!=
+\begin{cases}
+1&amp;\text{si}\;n=1,\\
+n\cdot(n-1)!&amp;\text{si}\;n\ge 2.
+\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">Par exemple, on a</p>
+<div class="displaymath">
+\begin{equation*}
+5!=5\cdot\underbrace{4\cdot 3\cdot 2\cdot 1}_{4!}=5\cdot 4!
+\end{equation*}
+</div>
+<p data-braille="continuation">de sorte que \(5!\) s'obtient par la multiplication de \(5\) avec la valeur de la fonction factorielle appliquée à 4, l'entier précédent 5.</p>
+<span class="incontext"><a href="recursivite.html#p-169">Contexte</a></span>
 </body>
 </html>

@@ -904,10 +904,11 @@
           <me>x=ka.</me>
           D'autre part, on a donc
           <me>b\vert ka\quad\text{et}\quad\text{PGCD}(a;b)=1.</me>
-          Par le lemme de Gauss <xref ref="lemmedegauss"/>, on en déduit que <m>b</m> divise <m>k</m>, de sorte qu'il existe <m>n\in\mathbb{Z}</m> tel que
+          Par le lemme de Gauss <xref ref="lemmedegauss"/>, on en déduit que <m>b</m> divise <m>k</m>, de sorte qu'il existe <m>m\in\mathbb{Z}</m> tel que
           <me>k=mb.</me>
           Finalement, on obtient
-          <me>x=ka=(mb)\cdot a=m\cdot(ab)\quad\Rightarrow\quad ab\vert x.</me>
+          <me>x=ka=(mb)\cdot a=m\cdot(ab)</me>
+          ce qui montre que <m>ab</m> divise <m>x</m>. 
         </p>
       </li>
       <li>
@@ -941,7 +942,7 @@
           </p>
         </li>
         <li>
-          <p>Par exemple, l'algorithme d'Euclide étendu appliqué à <url href="https://juliengiol.github.io/algorithmique/bezout.html"><m>2589</m> et <m>234</m></url> donne
+          <p>Par exemple, l'algorithme d'Euclide étendu appliqué à <url href="https://juliengiol.github.io/mea/bezout.html"><m>2589</m> et <m>234</m></url> donne
             <me>0=2589\cdot 78+234\cdot(-863)\quad\Rightarrow\quad\frac{2589}{234}=\frac{863}{78}.</me>
           </p>
         </li>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:33-04:00    *-->
+<!--*    on 2021-02-27T11:46:53-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Soit \(M\) et \(m\) des nombres positifs tels que</p>
+<p>La relation de récurrence donne ici</p>
 <div class="displaymath">
 \begin{equation*}
-|f''(x)|\leq M\quad\text{et}\quad|f'(x)|\geq m\quad\text{pour tout }x\in]c;x_0[.
+x_{n+1}=x_n-\frac{e^{x_n}-1}{e^{x_n}}=x_n-1+e^{-x_n}.
 \end{equation*}
+</div>
+<p data-braille="continuation">Donc</p>
+<div class="displaymath">
+\begin{align*}
+x_0&amp;=5\\
+x_1&amp;=x_0-1+e^{-x_0}\approx 4{,}006\,738\\
+x_2&amp;=x_1-1+e^{-x_1}\approx 3{,}024\,931\\
+x_3&amp;=x_2-1+e^{-x_2}\approx 2{,}073\,492
+\end{align*}
 </div>
 <span class="incontext"><a href="exercicesnewton.html#p-631">Contexte</a></span>
 </body>

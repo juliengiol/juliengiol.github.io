@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:30-04:00    *-->
+<!--*    on 2021-02-27T11:47:58-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Par le théorème de Lagrange (ou théorème des accroissements finis), pour tout \(x\in]a;b]\text{,}\) il existe \(c_x\in]a;x[\) tel que</p>
+<p>En utilisant le code donné à la section <a href="algorithmediffdiv.html" class="internal" title="Section 7.2: Algorithme">7.2</a>, on obtient les différences divisées de ces quatre points, dont on déduit le polynôme interpolateur sous sa forme de Newton :</p>
 <div class="displaymath">
-\begin{equation*}
-f(x)-f(a)=f'(c_x)(x-a).
-\end{equation*}
+\begin{align*}
+P(t)&amp;\approx 362\\
+&amp;\qquad+0{,}260857142857(t-1500)\\
+&amp;\qquad+2{,}22857142857\cdot 10^{-6}(t-1500)(t-5000)\\
+&amp;\qquad-1{,}71438966056\cdot 10^{-10}(t-1500)(t-5000)(t-10000).
+\end{align*}
 </div>
-<p data-braille="continuation">Et cela reste vrai pour \(x=a\) car \(f(a)-f(a)=f'(c)(a-a)\Leftrightarrow 0=f'(c)\cdot 0\) pour n'importe quelle valeur de \(c\in]a;b[\text{.}\)</p>
-<span class="incontext"><a href="presentationrectangles.html#p-1168">Contexte</a></span>
+<span class="incontext"><a href="exercicesdiffdiv.html#p-1168">Contexte</a></span>
 </body>
 </html>

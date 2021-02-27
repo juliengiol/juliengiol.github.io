@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:42-04:00    *-->
+<!--*    on 2021-02-27T11:46:08-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,39 +10,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
 <article class="remark remark-like"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
 </h6>
-<p>Une fonction Python sans <code class="code-inline tex2jax_ignore">return</code> peut quand même afficher des choses quand on l'appelle, même si elle ne renvoie rien à proprement parler.</p>
-<div class="sagecell-python" id="sage-37"><script type="text/x-sage">def f(x):
-    print(x ** 2 - 4 * x + 2)
-
-y = f(5)
-print(y)
-</script></div>
-<p>Le code ci-dessus affiche</p>
-<ul class="disc">
-<li><p>\(\text{7}\) parce que la commande <code class="code-inline tex2jax_ignore">y = f(2)</code> fait appel à la fonction <code class="code-inline tex2jax_ignore">f(x)</code> et exécute donc <code class="code-inline tex2jax_ignore">print(x ** 2 - 4 * x + 2)</code>;</p></li>
-<li><p>et \(\text{None}\) parce que la fonction <code class="code-inline tex2jax_ignore">f(x)</code> ne renvoie rien, donc la variable <code class="code-inline tex2jax_ignore">y</code> reste vide, de sorte que <code class="code-inline tex2jax_ignore">print(y)</code> \(\text{None}\text{.}\)</p></li>
-</ul></article><span class="incontext"><a href="syntaxefonctions.html#remark-11">Contexte</a></span>
+<p>Notez que pour calculer <code class="code-inline tex2jax_ignore">factorielle(5)</code> avec la fonction récursive ci-dessus, il faut descendre jusqu'au cas de base <code class="code-inline tex2jax_ignore">factorielle(1)</code> avant de remonter pour calculer <code class="code-inline tex2jax_ignore">factorielle(2)</code>, <code class="code-inline tex2jax_ignore">factorielle(3)</code>, <code class="code-inline tex2jax_ignore">factorielle(4)</code> et enfin <code class="code-inline tex2jax_ignore">factorielle(5)</code> dans cet ordre.</p></article><span class="incontext"><a href="recursivite.html#remark-11">Contexte</a></span>
 </body>
 </html>

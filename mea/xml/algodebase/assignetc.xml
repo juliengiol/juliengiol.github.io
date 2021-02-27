@@ -38,7 +38,7 @@
       </li>
       <li>
         <p>
-          et 2 conditionnelles.
+          et 2 structures conditionnelles.
         </p>
       </li>
     </ul>
@@ -77,7 +77,7 @@
 </sage>
 
 <p>
-  Voici maintenant comment effectuer les deux assignations <c>x = 5</c> et <c>y = 3</c> de manière simultanée :
+  Voici maintenant comment effectuer les deux assignations <c>x = 5</c> et <c>y = 3</c> de manière simultanée.
 </p>
 
 <sage language='python'>
@@ -115,7 +115,7 @@
     </input>
   </sage>
   <p>
-    Ces deux exemples montrent notamment que le code s'exécute ligne après ligne : l'ordre des instructions est donc très important.
+    Cet exemple montre notamment que le code est évalué ligne après ligne : l'ordre des instructions est donc très important.
   </p>
 </remark>
 
@@ -125,7 +125,7 @@
     L'application <url href="http://pythontutor.com/">Python Tutor</url> est une aide formidable quand il s'agit de comprendre pas à pas l'exécution d'un bloc de code.
   </p>
   <p>
-    Étudiez soigneusement ce qui se passe quand on exécute pas à pas les deux blocs de la remarque <xref ref="echange"/>  qui précède en cliquant sur <c>Next</c> autant de fois que nécessaire.
+    Étudiez soigneusement ce qui se passe quand on évalue pas à pas les deux blocs de la remarque <xref ref="echange"/> en cliquant sur <c>Next</c> autant de fois que nécessaire.
     <ul>
       <li>
         <p><url href="https://tinyurl.com/y5o448w3">Bloc 1</url>.</p>
@@ -138,7 +138,7 @@
 </remark>
 
 <p>
-  Essayez de prédire le résultat des blocs de code qui suivent.
+  Essayez maintenant de prédire le résultat des blocs de code qui suivent.
 </p>
 <sage language='python'>
   <input>
@@ -166,7 +166,7 @@
     <me>\text{x * 2 va dans x.}</me>
   </p>
   <p>
-    Comme l'illustre l'exemple suivant, quand on a plusieurs <c>=</c> sur la même ligne, il est pratique de les interpréter en les lisant de la droite vers la gauche.
+    Comme l'illustre l'exemple suivant, quand on a plusieurs assignations <c>=</c> sur la même ligne, il est pratique de les interpréter en les lisant de la droite vers la gauche.
     <sage language='python'>
       <input>
         x = 2
@@ -193,7 +193,7 @@
     </input>
   </sage>
   <p>
-    L'exponentiation est l'opération qui est la première dans l'ordre de priorité des <xref ref="python_priorite_operations">opérations mathématiques</xref> utilisées par Python.
+    L'exponentiation est la première dans l'ordre de priorité des <xref ref="python_priorite_operations">opérations mathématiques</xref> utilisées par Python.
   </p>
   <sage language='python'>
     <input>
@@ -261,10 +261,10 @@
 <section xml:id="boucles">
 <title>Boucles</title>
 
-<p>Voici les mots-clés des <url href="https://fr.wikipedia.org/wiki/Boucle_for">boucles for</url> et des <url href="https://fr.wikipedia.org/wiki/Boucle_while">boucles while</url> en Python :
+<p>Voici les mots-clés des <url href="https://fr.wikipedia.org/wiki/Boucle_for">boucles for</url> et des <url href="https://fr.wikipedia.org/wiki/Boucle_while">boucles while</url> en Python.
   <ul>
-    <li><p><c>for ... in ... :</c> se lit "pour ... dans ... "";</p></li>
-    <li><p><c>while ... :</c> se lit "tant que ...".</p></li>
+    <li><p><c>for ... in ... :</c> se lit « pour ... dans ... ».</p></li>
+    <li><p><c>while ... :</c> se lit « tant que ... ».</p></li>
   </ul>
 </p>
 <p>
@@ -289,10 +289,9 @@
 </sage>
 
 <p>
-  Bien sûr, le code suivant fait exactement la même chose.
-  Mais il permet de mettre en évidence la vraie borne supérieure de l'ensemble
+  Le code suivant fait exactement la même chose, mais il permet de mettre en évidence la vraie borne supérieure de l'ensemble
   <me>\left\{3, 4, 5, 6, 7\right\}</me>
-  auquel correspond le code <c>range(3, 8)</c>.
+  auquel correspond la commande <c>range(3, 8)</c>.
 </p>
 
 <sage language='python'>
@@ -301,6 +300,10 @@
         print(k)
   </input>
 </sage>
+
+<p>
+  J'utiliserai souvent cet artifice d'écriture à des fins purement pédagogiques.
+</p>
 
 <remark>
   <title>Indentations</title>
@@ -340,7 +343,7 @@
         print(somme)  # pas dans la boucle for
       </input>
     </sage>
-    <p>Pour suivre pas à pas l'exécution du code précédent, cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y4e3ctpp">Python Tutor</url>.</p>
+    <p>Pour suivre pas à pas l'évaluation du code précédent, cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y4e3ctpp">Python Tutor</url>.</p>
     </li>
   <li>
     <sage language='python'>
@@ -351,7 +354,7 @@
             print(somme)  # dans la boucle for
       </input>
     </sage>
-    <p>Pour suivre pas à pas l'exécution du code précédent, cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y4xefy4a">Python Tutor</url>.</p>
+    <p>Pour suivre pas à pas l'évaluation du code précédent, cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y4xefy4a">Python Tutor</url>.</p>
     </li>
   <li>
     <sage language='python'>
@@ -362,7 +365,7 @@
             somme = somme + k
       </input>
     </sage>
-    <p>Pour suivre pas à pas l'exécution du code précédent, cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y44tm6js">Python Tutor</url>.</p>
+    <p>Pour suivre pas à pas l'évaluation du code précédent, cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y44tm6js">Python Tutor</url>.</p>
   </li>
 </ul>
 
@@ -375,7 +378,7 @@
   À la différence d'une boucle <c>for</c>, une boucle <c>while</c> ne nécessite pas de connaître au préalable le nombre d'itérations à effectuer.
 </p>
 <p>
-  Voici comment faire la même chose que le premier code de la section <xref ref="bouclespour"/> sur les boucles <c>for</c>, mais avec une boucle <c>while</c> :
+  Voici comment faire la même chose que le premier bloc de code de la section <xref ref="bouclespour"/> sur les boucles <c>for</c>, mais avec une boucle <c>while</c>.
   <sage language='python'>
     <input>
       k = 3  # pars de k = 3
@@ -386,7 +389,7 @@
   </sage>
 </p>
 <p>
-  Essayez maintenant de deviner ce que le code suivant affiche avant de l'évaluer.
+  Essayez maintenant de deviner ce que le bloc de code suivant affiche avant de l'évaluer.
   <sage language='python'>
     <input>
       k = 3
@@ -409,7 +412,7 @@
 </p>
 <p>
   Pour finir, essayez de faire la même chose avec une boucle <c>for</c>.
-  Voyez-vous quel peut-être l'avantage d'utiliser une boucle <c>while</c>?
+  Voyez-vous quel peut être l'avantage d'utiliser une boucle <c>while</c>?
 </p>
 
 </subsection>
@@ -419,19 +422,17 @@
 <section xml:id="conditionnelles">
 <title>Conditionnelles</title>
 
-<p>Voici les mots-clés des <url href="https://fr.wikipedia.org/wiki/Instruction_conditionnelle_(programmation)#:~:text=En%20informatique%2C%20une%20instruction%20conditionnelle,%C3%A0%20savoir%20vraie%20ou%20fausse.">instructions conditionnelles</url> en Python :
+<p>Voici les mots-clés des <url href="https://fr.wikipedia.org/wiki/Instruction_conditionnelle_(programmation)#:~:text=En%20informatique%2C%20une%20instruction%20conditionnelle,%C3%A0%20savoir%20vraie%20ou%20fausse.">instructions conditionnelles</url> en Python.
   <ul>
-    <li><p><c>if ... :</c> se lit "si ...";</p></li>
-    <li><p><c>elif ... :</c> se lit "sinon si ...";</p></li>
-    <li><p><c>else:</c> se lit "sinon".</p></li>
+    <li><p><c>if ... :</c> se lit « si ... ».</p></li>
+    <li><p><c>elif ... :</c> se lit « sinon si ... ».</p></li>
+    <li><p><c>else:</c> se lit « sinon ».</p></li>
   </ul>
 </p>
 
-<remark>
-  <p>
-    Comme pour les boucles, attention à ne pas oublier les deux-points <c> :</c> et à respecter les indentations (4 espaces fortement recommandés).
-  </p>
-</remark>
+<p>
+  Comme pour les boucles, faites attention à ne pas oublier les deux-points <c> :</c> et à respecter les indentations de 4 espaces.
+</p>
 
 <p>
   Essayez de deviner ce qu'affichent les blocs de code qui suivent avant de les évaluer.
@@ -479,11 +480,11 @@
   Nous allons finir cette section en utilisant l'<url href="https://fr.wikipedia.org/wiki/Modulo_(op%C3%A9ration)">opérateur modulo</url> qui se note <c>a % b</c> en Python, et qui renvoie le reste de la division euclidienne de <m>\text{a}</m> par <m>\text{b}</m>.
 </p>
 <p>
-  Divisez <m>14</m> et <m>25</m> par <m>7</m> à la main avant d'évaluer les blocs de code suivants.
+  Divisez <m>28</m> puis <m>25</m> par <m>7</m> à la main avant d'évaluer les blocs de code suivants.
 </p>
 <sage language='python'>
   <input>
-    k = 14
+    k = 28
     print(k % 7)
   </input>
 </sage>
@@ -495,16 +496,16 @@
 </sage>
 <remark>
   <p>
-    Pour deux entiers a et b, les assertions suivantes sont équivalentes :
+    Pour deux entiers a et b, les assertions suivantes sont équivalentes.
     <ol>
-      <li><p>a est un multiple de b;</p></li>
-      <li><p>b est divisible par a;</p></li>
+      <li><p>a est un multiple de b.</p></li>
+      <li><p>b est divisible par a.</p></li>
       <li><p><c>a % b</c> renvoie 0.</p></li>
     </ol>
   </p>
 </remark>
 <p>
-  Nous pouvons maintenant afficher les multiples de <m>7</m> compris entre <m>7</m> et <m>60</m> inclus, à l'aide d'une boucle <c>for</c>, et sans déterminer au préalable le plus grand (56) de ces multiples.
+  Nous pouvons maintenant afficher les multiples de <m>7</m> compris entre <m>7</m> et <m>60</m> inclus à l'aide d'une boucle <c>for</c>, sans avoir à déterminer au préalable le plus grand de ces multiples (56).
   <sage language='python' xml:id="bla">
     <input>
       for k in range(7, 60+1):  # pour k allant de 7 à 60
@@ -516,7 +517,7 @@
 
 <remark>
   <p>
-  Notez la double indentation précédant <c>print(k)</c> dans le code ci-dessus : elle est due au fait que cette instruction fait partie de la conditionnelle <c>if ... :</c> (première indentation) qui elle-même fait partie de la boucle <c>for ... :</c> (deuxième indentation).
+    Notez la double indentation précédant <c>print(k)</c> dans le code ci-dessus : elle est due au fait que cette instruction fait partie de la conditionnelle <c>if ... :</c> (première indentation) qui elle-même fait partie de la boucle <c>for ... :</c> (deuxième indentation).
   </p>
 </remark>
 
@@ -527,7 +528,8 @@
 
 <exercise>
   <statement>
-    <p>Pour chacun des blocs de codes qui suivent, dites ce qu'il affiche.
+    <p>
+      Devinez ce qui est affiché par chacun des blocs de codes suivants.
       <ol>
         <li>
           <pre>
@@ -583,6 +585,28 @@
       </ol>
     </p>
   </statement>
+  <hint>
+    <p>
+      Si vous ne parvenez pas à suivre pas à pas l'évaluation de ce code à la main, utilisez l'application <url href="http://pythontutor.com/">Python Tutor</url>.
+      <ol>
+        <li>
+          Cliquez sur <em>Start visualizing your code now</em>.
+        </li>
+        <li>
+          Assurez-vous que le langage Python est sélectionné; la version est peu importante.
+        </li>
+        <li>
+          Copiez le code et collez-le dans la fenêtre.
+        </li>
+        <li>
+          Cliquez sur <em>Visualize Execution</em>.
+        </li>
+        <li>
+          Cliquez sur <em>Next</em> autant de fois que nécessaire.
+        </li>
+      </ol>
+    </p>
+  </hint>
   <answer>
     <p>
       <ol>
@@ -617,9 +641,9 @@
     <p>
       <ol>
         <li>
-          <p>Exécutez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.
+          <p>Évaluez le code suivant à la main pour déterminer ce qu'il affiche.
             <pre>
-              from math import sqrt  # charge la fonction racine carrée sqrt
+              from math import sqrt  # importe la fonction racine carrée
               a = 1.0
               b = -6.0
               c = 9.0
@@ -642,6 +666,11 @@
       </ol>
     </p>
   </statement>
+  <hint>
+    <p>
+      Si vous ne parvenez pas à suivre pas à pas l'évaluation de ce code à la main, utilisez l'application <url href="http://pythontutor.com/">Python Tutor</url>.
+    </p>
+  </hint>
   <answer>
     <p>
       <ol>
@@ -654,10 +683,10 @@
 
 <exercise>
   <statement>
-    <p>Exécutez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.
+    <p>Évaluez le code suivant à la main pour déterminer ce qu'il affiche.
       <pre>
         capital = 2500
-        taux = 0.1
+        taux = 0.07
         n = 3
         for k in range(1, n+1):
             capital = capital * (1 + taux)
@@ -665,17 +694,17 @@
       </pre>
     </p>
   </statement>
+  <hint>
+    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/yylzevzt">Python Tutor</url>.</p>
+  </hint>
   <answer>
-    <p><m>3327{,}5</m></p>
+    <pre>3062.6075</pre>
   </answer>
-  <solution>
-    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/yxt83ywg">Python Tutor</url>.</p>
-  </solution>
 </exercise>
 
 <exercise>
   <statement>
-    <p>Exécutez le code suivant à la main pour déterminer ce qu'il affiche à la sortie.
+    <p>Évaluez le code suivant à la main pour déterminer ce qu'il affiche.
       <pre>
         a = 0.0
         b = 1.0
@@ -688,6 +717,9 @@
       </pre>
     </p>
   </statement>
+  <hint>
+    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y25m7kwy">Python Tutor</url>.</p>
+  </hint>
   <answer>
     <pre>
       0.0
@@ -696,25 +728,23 @@
       0.75
     </pre>
   </answer>
-  <solution>
-    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y25m7kwy">Python Tutor</url>.</p>
-  </solution>
 </exercise>
 
 <exercise>
   <statement>
-    <p>Calculez la somme des entiers de 1 à 99 inclus.
+    <p>
+      Calculez la somme des entiers de 1 à 99 inclus
       <ol>
-        <li><p>À l'aide d'une boucle <c>for</c>.</p></li>
-        <li><p>À l'aide d'une boucle <c>while</c>.</p></li>
+        <li><p>à l'aide d'une boucle <c>for</c>;</p></li>
+        <li><p>à l'aide d'une boucle <c>while</c>.</p></li>
       </ol>
     </p>
   </statement>
-  <answer>
-    <p><m>4950</m></p>
-  </answer>
   <solution>
     <p>
+      La réponse est
+      <me>\sum_{k=1}^{99}k=4950.</me>
+      On peut l'obtenir grâce à l'un ou l'autre des blocs de code qui suivent.
       <ol>
         <li>
           <pre>
@@ -741,26 +771,30 @@
 
 <exercise>
   <statement>
-    <p>Affichez tous les nombres impairs compris entre 17 et 55 inclus.
+    <p>
+      Affichez tous les nombres impairs compris entre 30 et 55 inclus
       <ol>
-        <li><p>À l'aide d'une boucle <c>for</c>.</p></li>
-        <li><p>À l'aide d'une boucle <c>while</c>.</p></li>
+        <li><p>à l'aide d'une boucle <c>for</c>;</p></li>
+        <li><p>à l'aide d'une boucle <c>while</c>.</p></li>
       </ol>
     </p>
     <p>Avez-vous une préférence?</p>
   </statement>
   <solution>
     <p>
+      Il s'agit de la liste
+      <me>31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55.</me>
+      On peut l'afficher grâce à l'un ou l'autre des blocs de code qui suivent.
       <ol>
         <li>
           <pre>
-            for k in range(8, 27+1):
+            for k in range(15, 27+1):
                 print(2 * k + 1)
           </pre>
         </li>
         <li>
           <pre>
-            k = 17
+            k = 31
             while k &lt; 56:
                 print(k)
                 k = k + 2
@@ -768,13 +802,14 @@
         </li>
       </ol>
     </p>
-    <p>Je préfère la boucle <c>while</c>, car elle évite d'avoir à déterminer les bornes <c>8</c> et <c>27</c>.</p>
+    <p>Je préfère la boucle <c>while</c>, car elle évite d'avoir à déterminer les bornes <c>15</c> et <c>27</c> au préalable.</p>
   </solution>
 </exercise>
 
 <exercise>
   <statement>
-    <p>Complétez le code suivant pour qu'il affiche tous les multiples de 4 compris strictement entre 57 et 89.
+    <p>
+      Complétez le code suivant pour qu'il affiche tous les multiples de 4 compris strictement entre 57 et 89.
       <pre>
         k = 60
         while
@@ -795,12 +830,178 @@
 
 <exercise>
   <statement>
+    <p>On considère la suite <m>\{x_n\}</m> définie par récurrence de la façon suivante :
+      <me>x_3=7\quad\text{et}\quad x_{n+1}=x_n\cdot\frac{n}{5n+2}\quad\text{pour tout}\;n\geq 3.</me>
+    </p>
+    <p>On admet qu'elle converge vers <m>0</m> en décroissant.</p>
+    <p>
+      <ol>
+        <li>
+          <p>Complétez le code suivant afin qu'il affiche les cinq premières valeurs de la suite.
+            <pre>
+              n = 3
+              x = 7.0
+              while n &lt;
+                  print(x)
+                  x =
+                  n = n + 1
+            </pre>
+          </p>
+          <p>Quelles sont ces valeurs?</p>
+        </li>
+        <li>
+          <p>Complétez le code suivant afin qu'il affiche la plus petite valeur de <m>n</m> pour laquelle on ait <m>x_n\leq 10^{-9}</m>.
+            <pre>
+              n =
+              x = 7.0
+              while
+                  x = x * n / (5 * n + 2)
+                  n =
+              print(n)
+            </pre>
+          </p>
+          <p>Quelle est cette valeur?</p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Il s'agit des 5 nombres qui suivent.
+            <pre>
+              7.0
+              1.23529411765
+              0.224598930481
+              0.0415923945336
+              0.00779857397504
+            </pre>
+          </p>
+          <p>
+            On peut les afficher à l'aide du bloc de code suivant.
+            <pre>
+              n = 3
+              x = 7.0
+              while n &lt; 8:
+                  print(x)
+                  x = x * n / (5 * n + 2)
+                  n = n + 1
+            </pre>
+          </p>
+        </li>
+        <li>
+          <p>
+            Il s'agit de
+            <me>n=17</me>
+            et on peut l'afficher à l'aide du bloc de code suivant.
+            <pre>
+              n = 3
+              x = 7.0
+              while x &gt; 10 ** (-9):
+                  x = x * n / (5 * n + 2)
+                  n = n + 1
+              print(n)
+            </pre>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>On considère la suite <m>\{a_n\}</m> définie par récurrence de la façon suivante :
+      <me>a_0=1\quad\text{et}\quad a_{n+1}=\sin(a_n)\quad\text{pour tout}\;n\geq 0.</me>
+    </p>
+    <p>On admet qu'elle converge vers <m>0</m> en décroissant.</p>
+    <p>Complétez le code suivant afin qu'il affiche la plus petite valeur de <m>n</m> pour laquelle on ait <m>a_n\leq 0{,}01</m>.
+      <pre>
+        from math import sin  # importe la fonction sinus
+        n = 0
+        a =
+        while
+            n =
+            a = sin(a)
+        print(n)
+      </pre>
+    </p>
+    <p>Quelle est cette valeur?</p>
+  </statement>
+  <solution>
+    <p>
+      Il s'agit de
+      <me>n=29\,992</me>
+      et on peut l'afficher à l'aide du bloc de code suivant.
+      <pre>
+        from math import sin  # importe la fonction sinus
+        n = 0
+        a = 1.0
+        while a &gt; 0.01:
+            n = n + 1
+            a = sin(a)
+        print(n)
+      </pre>
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      On s'intéresse à la suite <m>\{s_n\}</m> définie par récurrence de la façon suivante :
+      <me>s_0=14\quad\text{et}\quad s_{n+1}
+        =
+        \begin{cases}
+        s_n/2&amp;\text{si}\;s_n\;\text{est pair,}\\
+        3s_n+1&amp;\text{sinon,}
+        \end{cases}
+        \quad\text{pour tout}\;n\geq 0.
+      </me>
+    </p>
+    <p>Calculez les <m>21</m> premiers termes de cette suite à l'aide d'une boucle <c>for</c>.</p>
+  </statement>
+  <solution>
+    <p>
+      En partant de <m>14</m>, les 21 premiers termes de cette suite sont
+      <me>14, 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1.</me>
+    </p>
+    <aside>
+      <p>
+        Notez qu'une fois qu'on est tombé sur <m>1</m>, le comportement de la suite devient périodique.
+      </p>
+      <p>
+        La célèbre <url href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">conjecture de Syracuse</url> (ou Collatz, ou Ulam, ou 3x+1, ...) prédit qu'une telle suite finit toujours par tomber sur <m>1</m>, quel que soit l'entier positif dont on parte.
+        Mais personne n'a encore réussi à le démontrer.
+      </p>
+    </aside>
+    <p>
+      On peut les afficher à l'aide du bloc de code suivant.
+      <pre>
+        s = 14
+        for n in range(1, 21+1):
+            print(s)
+            if s % 2 == 0:
+                s = s / 2
+            else:
+                s = 3 * s + 1
+      </pre>
+    </p>
+    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/yybkqoep">Python Tutor</url> si vous voulez suivre pas à pas l'évaluation du code qui précède.</p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
     <p>
       L'assignation simultanée est très pratique pour échanger le contenu de deux variables <m>\text{x}</m> et <m>\text{y}</m> : la ligne de code <c>x, y = y, x</c> suffit.
-      Voir <xref ref="echange"></xref>.
+      Voir la remarque <xref ref="echange"></xref>.
     </p>
     <p>Et si le langage utilisé ne permet pas les assignations simultanées?</p>
-    <p>Complétez le code suivant avec des <m>\text{x}</m> et des <m>\text{y}</m> seulement, afin qu'il échange le contenu de <m>\text{x}</m> et de <m>\text{y}</m>.
+    <p>
+      Complétez le code suivant avec des <m>\text{x}</m> et des <m>\text{y}</m> seulement, afin qu'il échange le contenu de <m>\text{x}</m> et de <m>\text{y}</m>.
       <pre>
         # avant l'échange
         x = 5
@@ -832,183 +1033,39 @@
       # après l'échange :
       print(x, y)
     </pre>
-    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y5numxma">Python Tutor</url> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
-  </solution>
-</exercise>
-
-<exercise>
-  <statement>
-    <p>On s'intéresse à la suite <m>\{s_n\}</m> définie par récurrence de la façon suivante :
-      <me>s_0=14\quad\text{et}\quad s_{n+1}
-        =
-        \begin{cases}
-        s_n/2&amp;\text{si}\;s_n\;\text{est pair,}\\
-        3s_n+1&amp;\text{sinon,}
-        \end{cases}
-        \quad\text{pour tout}\;n\geq 0.
-      </me>
-    </p>
-    <p>Calculez les <m>21</m> premiers termes de cette suite à l'aide d'une boucle <c>for</c>.</p>
-  </statement>
-  <answer>
-    <p>
-      En partant de <m>14</m>, les 21 premiers termes de cette suite sont
-      <me>14, 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1.</me>
-    </p>
-    <p>
-      Notez qu'une fois qu'on est tombé sur <m>1</m>, le comportement devient périodique.
-    </p>
-    <p>
-      La célèbre <url href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">conjecture de Syracuse</url> (ou Collatz, ou Ulam, ou 3x+1, ...) prédit qu'une telle suite finit toujours par tomber sur <m>1</m>, quel que soit l'entier positif dont on parte.
-      Mais personne n'a encore réussi à le démontrer.
-    </p>
-  </answer>
-  <solution>
-    <pre>
-      s = 14
-      for n in range(1, 21+1):
-          print(s)
-          if s % 2 == 0:
-              s = s / 2
-          else:
-              s = 3 * s + 1
-    </pre>
-    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/yybkqoep">Python Tutor</url> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y5numxma">Python Tutor</url> si vous voulez suivre pas à pas l'évaluation du code qui précède.</p>
   </solution>
 </exercise>
 
 <exercise xml:id="fibo_iterative">
   <statement>
-    <p>La suite de Fibonacci est définie par récurrence de la façon suivante :
+    <p>
+      La suite de Fibonacci est définie par récurrence de la façon suivante :
       <me>F_1=F_2=1\quad\text{et}\quad F_n=F_{n-1}+F_{n-2}\quad\text{pour tout}\;n\geq 3.</me>
     </p>
     <p>Calculez <m>F_{100}</m> à l'aide d'une boucle <c>for</c>.</p>
   </statement>
-  <answer>
-    <pre>354224848179261915075</pre>
-  </answer>
-  <solution>
-    <pre>
-      a = 1
-      b = 1
-      for n in range(3, 100+1):
-          a, b = b, a + b
-      print(b)
-    </pre>
-    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y6rszlxl">Python Tutor</url> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
-  </solution>
-</exercise>
-
-<exercise>
-  <statement>
-    <p>On considère la suite <m>\{x_n\}</m> définie par récurrence de la façon suivante :
-      <me>x_3=7\quad\text{et}\quad x_{n+1}=x_n\cdot\frac{n}{5n+2}\quad\text{pour tout}\;n\geq 3.</me>
-    </p>
-    <p>On admet qu'elle converge vers <m>0</m> en décroissant strictement.</p>
-    <p>
-      <ol>
-        <li>
-          <p>Complétez le code suivant afin qu'il affiche les cinq premières valeurs de la suite.
-            <pre>
-              n = 3
-              x = 7.0
-              while n &lt;
-                  print(x)
-                  x =
-                  n = n + 1
-            </pre>
-          </p>
-        </li>
-        <li>
-          <p>Complétez le code suivant afin qu'il affiche la plus petite valeur de <m>n</m> pour laquelle on ait <m>x_n\leq 10^{-9}</m>.
-            <pre>
-              n =
-              x = 7.0
-              while
-                  x = x * n / (5 * n + 2)
-                  n =
-              print(n)
-            </pre>
-          </p>
-        </li>
-      </ol>
-    </p>
-  </statement>
-  <answer>
-    <p>
-      <ol>
-        <li>
-          <pre>
-            7.0
-            1.23529411765
-            0.224598930481
-            0.0415923945336
-            0.00779857397504
-          </pre>
-        </li>
-        <li><pre>17</pre></li>
-      </ol>
-    </p>
-  </answer>
   <solution>
     <p>
-      <ol>
-        <li>
-          <pre>
-            n = 3
-            x = 7.0
-            while n &lt; 8:
-                print(x)
-                x = x * n / (5 * n + 2)
-                n = n + 1
-          </pre>
-        </li>
-        <li>
-          <pre>
-            n = 3
-            x = 7.0
-            while x &gt; 10 ** (-9):
-                x = x * n / (5 * n + 2)
-                n = n + 1
-            print(n)
-          </pre>
-        </li>
-      </ol>
+      Le centième terme de cette suite est
+      <me>354\,224\,848\,179\,261\,915\,075.</me>
     </p>
-  </solution>
-</exercise>
-
-<exercise>
-  <statement>
-    <p>On considère la suite <m>\{a_n\}</m> définie par récurrence de la façon suivante :
-      <me>a_0=1\quad\text{et}\quad a_{n+1}=\sin(a_n)\quad\text{pour tout}\;n\geq 0.</me>
-    </p>
-    <p>On admet qu'elle converge vers <m>0</m> en décroissant.</p>
-    <p>Complétez le code suivant afin qu'il affiche la plus petite valeur de <m>n</m> pour laquelle on ait <m>a_n\leq 0{,}01</m>.
+    <aside>
+      <p>
+        Essayez de vérifier cette réponse à l'aide de la <url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#formule_de_Binet">formule de Binet</url>.
+      </p>
+    </aside>
+    <p>
+      On peut l'afficher à l'aide du bloc de code suivant
       <pre>
-        from math import sin  # charge la fonction sin
-        n = 0
-        a =
-        while
-            n =
-            a = sin(a)
-        print(n)
+        a = 1
+        b = 1
+        for n in range(3, 100+1):
+            a, b = b, a + b
+        print(b)
       </pre>
     </p>
-  </statement>
-  <answer>
-    <pre>29992</pre>
-  </answer>
-  <solution>
-    <pre>
-      from math import sin  # charge la fonction sin
-      n = 0
-      a = 1.0
-      while a &gt; 0.01:
-          n = n + 1
-          a = sin(a)
-      print(n)
-    </pre>
+    <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y6rszlxl">Python Tutor</url> si vous voulez suivre pas à pas l'évaluation du code qui précède.</p>
   </solution>
 </exercise>
 

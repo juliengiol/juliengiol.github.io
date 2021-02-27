@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:41-04:00    *-->
+<!--*    on 2021-02-27T11:47:06-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,10 +14,12 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-x_0&amp;=2\\
-x_1&amp;=\frac{x_0+\frac{3}{x_0}}{2}=\frac{2+\frac{3}{2}}{2}=\frac{7}{4}=1{,}75\\
-x_2&amp;=\frac{x_1+\frac{3}{x_1}}{2}=\frac{\frac{7}{4}+\frac{3\cdot 4}{7}}{2}=\frac{97}{56}=1{,}732\,142\,857\ldots\\
-x_3&amp;=\frac{x_2+\frac{3}{x_2}}{2}=\frac{\frac{97}{56}+\frac{3\cdot 56}{97}}{2}=\frac{18817}{10864}=1{,}732\,050\,810\ldots
+x_{n+1}&amp;=x_n-\frac{f(x_n)}{f'(x_n)}\\
+&amp;=x_n-\frac{x_n^2-k}{2x_n}\\
+&amp;=x_n-\frac{x_n^2}{2x_n}+\frac{k}{2x_n}\\
+&amp;=x_n-\frac{x_n}{2}+\frac{k}{2x_n}\\
+&amp;=\frac{x_n}{2}+\frac{k}{2x_n}\\
+&amp;=\frac{x_n+\frac{k}{x_n}}{2}.
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicesnewton.html#mjx-eqn-mrow-127">Contexte</a></span>

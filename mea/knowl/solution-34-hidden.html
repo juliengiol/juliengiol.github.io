@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:07-04:00    *-->
+<!--*    on 2021-02-27T11:46:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,12 +11,48 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>Il suffit d'assigner la valeur \(10^{-6}=0{,}000\,001\) (pour les deux premiers exercices) ou \(10^{-7}=0{,}000\,000\,1\) (pour le troisième exercice) à la variable \(\text{longueurMax}\text{.}\)</p>
-<ul class="disc">
-<li><p>Exercice <a class="xref" data-knowl="./knowl/troisiterbissection.html" title="Exercice 4.3.1">4.3.1</a> : \(c\in\;]1{,}732\,049\,942;1{,}732\,050\,895[\) donc \(c\approx 1{,}732\,05\text{.}\)</p></li>
-<li><p>Exercice <a class="xref" data-knowl="./knowl/quatreiterbissection.html" title="Exercice 4.3.2">4.3.2</a> : \(c\in\;]0{,}693\,146\,70;0{,}693\,147\,659[\) donc \(c\approx 0{,}693\,15\text{.}\)</p></li>
-<li><p>Exercice <a class="xref" data-knowl="./knowl/troisiterbissection.html" title="Exercice 4.3.1">4.3.1</a> : \(c\in\;]1{,}832\,595\,705;1{,}832\,595\,765[\) donc \(c\approx 1{,}832\,60\text{.}\)</p></li>
-</ul>
-</div></body>
+<body><div class="solution solution-like"><ul class="disc">
+<li>Itération 1 :<div class="displaymath">
+\begin{equation*}
+\begin{array}{ c&lt;{{}} c &gt;{{}}c }
+a=1 &amp; m=1{,}5 &amp; b=2\\
+f(a)=-2 &amp; f(m)=-0{,}75 &amp; f(b)=1
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Rightarrow\quad c\in\;]1{,}5;2[
+\end{equation*}
+</div>
+</li>
+<li>Itération 2 :<div class="displaymath">
+\begin{equation*}
+\begin{array}{ c&lt;{{}} c &gt;{{}}c }
+a=1{,}5 &amp; m=1{,}75 &amp; b=2 \\
+f(a)=-0{,}75 &amp; f(m)=0{,}062\,5 &amp; f(b)=1
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Rightarrow\quad c\in\;]1{,}5;1{,}75[
+\end{equation*}
+</div>
+</li>
+<li>Itération 3 :<div class="displaymath">
+\begin{equation*}
+\begin{array}{ c&lt;{{}} c &gt;{{}}c }
+a=1{,}5 &amp; m=1{,}625 &amp; b=1{,}75 \\
+f(a)=-0{,}75 &amp; f(m)=-0{,}359\,375 &amp; f(b)=0{,}062\,5
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Rightarrow\quad c\in\;]1{,}625;1{,}75[
+\end{equation*}
+</div>
+</li>
+</ul></div></body>
 </html>

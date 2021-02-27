@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:48-04:00    *-->
+<!--*    on 2021-02-27T11:46:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -42,25 +42,23 @@
 \sum_{k=1}^nk=1+2+3+\cdots+n.
 \end{equation*}
 </div>
-<p>Voici une implémentation de l'algorithme qui renvoie la valeur de cette somme en suivant cette approche naïve : <div class="sagecell-python" id="sage-42"><script type="text/x-sage"># entrée
+<p>Voici une implémentation de l'algorithme qui renvoie la valeur de cette somme en suivant cette approche naïve. <div class="sagecell-python" id="sage-42"><script type="text/x-sage"># entrée :
 n = 5
-
-# instructions
+# instructions :
 somme = 1
 for k in range(2, n+1):
     somme = somme + k
-
-# sortie
+# sortie :
 print(somme)
 </script></div></p>
 <p>Pour faire simple, on peut considérer que la vitesse d'exécution de cet algorithme dépend essentiellement du nombre d'additions qu'il doit effectuer.</p>
-<p>Notons \(T(n)\) ce nombre qui dépend bien sûr de l'entier donné en entrée.</p>
-<p>La fonction \(T\) ainsi définie est une estimation de la <a class="external" href="https://fr.wikipedia.org/wiki/Complexit%C3%A9_en_temps" target="_blank">complexité en temps</a> de cet algorithme, et on a</p>
+<p>Notons \(T(n)\) ce nombre qui dépend de l'entier donné en entrée comme suit :</p>
 <div class="displaymath">
 \begin{equation*}
 T(n)=n-1.
 \end{equation*}
 </div>
+<p data-braille="continuation">La fonction \(T\) ainsi définie est une estimation de la <a class="external" href="https://fr.wikipedia.org/wiki/Complexit%C3%A9_en_temps" target="_blank">complexité en temps</a> de cet algorithme.</p>
 <p>Plus \(n\) est grand, plus le temps de calcul représenté par \(T(n)\) est grand.</p>
 <p>Comme \(T\) dépend linéairement de \(n\text{,}\) on dit que la complexité de cet algorithme est linéaire.</p></article><span class="incontext"><a href="sommeentiers.html#paragraphs-3">Contexte</a></span>
 </body>

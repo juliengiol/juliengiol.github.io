@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:17-04:00    *-->
+<!--*    on 2021-02-27T11:46:30-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,39 +11,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>Par le <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_des_accroissements_finis#%C3%89nonc%C3%A9" target="_blank">théorème des accroissements finis</a> (le cas \(n=0\) de la <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Taylor#Formule_de_Taylor-Lagrange" target="_blank">formule de Taylor-Lagrange</a>, parfois aussi appelé théorème de Lagrange) appliqué à l'intervalle \([c;x_0]\text{,}\) il existe \(\xi\in\;]c;x_0[\) tel que</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{f(x_0)-f(c)}{x_0-c}=f'(\xi).
-\end{equation*}
-</div>
-<p data-braille="continuation">On en déduit que</p>
-<div class="displaymath">
-\begin{equation*}
-f(x_0)-f(c)=f'(\xi)(x_0-c)
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation}
-f(x_0)=f'(\xi)(x_0-c)\tag{5.1.1}
-\end{equation}
-</div>
-<p data-braille="continuation">puisque \(f(c)=0\text{.}\)</p>
-<p>On va maintenant établir les inégalités \(c&lt;x_1\) et \(x_1&lt;x_0\text{.}\)</p>
-<p>Commençons par la seconde. Comme \(f'(\xi)&gt;0\) et \(x_0&gt;c\) par hypothèses, on déduit de <a class="xref" data-knowl="./knowl/application_taylor_lagrange.html" title="Équation 5.1.1">(5.1.1)</a> que  \(f(x_0)&gt;0\text{.}\) D'autre part, on a \(f'(x_0)&gt;0\) par hypothèse. Donc</p>
-<div class="displaymath">
-\begin{equation*}
--\frac{f(x_0)}{f'(x_0)}&lt;0\quad\Rightarrow\quad\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}&lt;x_0.
-\end{equation*}
-</div>
-<p>Il reste à montrer que \(c&lt;x_1\text{.}\) Par positivité de \(f''\text{,}\) la fonction \(f'\) est strictement croissante sur \(]c;b[\text{.}\) En utilisant cela et <a class="xref" data-knowl="./knowl/application_taylor_lagrange.html" title="Équation 5.1.1">(5.1.1)</a>, on a</p>
-<div class="displaymath">
-\begin{align*}
-\xi&lt;x_0&amp;\quad\Rightarrow\quad f'(\xi)&lt;f'(x_0)\\
-&amp;\quad\Rightarrow\quad\underbrace{f'(\xi)(x_0-c)}_{f(x_0)}&lt;f'(x_0)(x_0-c)\\
-&amp;\quad\Rightarrow\quad \frac{f(x_0)}{f'(x_0)}&lt;x_0-c\\
-&amp;\quad\Rightarrow\quad c&lt;\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}.
-\end{align*}
-</div></article></body>
+<body><article class="hiddenproof"><p>Par hypothèse, les nombres \(f(a)\) et \(f(b)\) sont non nuls et de signes opposés. Après avoir calculé \(f(m)\text{,}\) on a donc trois cas possibles.</p>
+<ul class="disc">
+<li><p>Cas 1 : \(f(m)=0\text{.}\)</p></li>
+<li><p>Cas 2 : \(f(m)\neq 0\) est du même signe que \(f(b)\;\Leftrightarrow\; f(m)f(a)&lt;0\text{.}\)</p></li>
+<li><p>Cas 3 : \(f(m)\neq 0\) est du même signe que \(f(a)\;\Leftrightarrow\; f(m)f(b)&lt;0\text{.}\)</p></li>
+</ul>
+<p>Par hypothèse d'unicité du zéro \(c\text{,}\) le cas 1 entraîne que \(c=m\text{.}\)</p>
+<p>Dans le cas 2, le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a> entraîne l'existence d'un zéro dans l'intervalle \(]a;m[\text{.}\) Par unicité, il s'agit forcément de \(c\text{.}\)</p>
+<p>Dans le cas 3, le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a> entraîne l'existence d'un zéro dans l'intervalle \(]m;b[\text{.}\) Par unicité, il s'agit forcément de \(c\text{.}\)</p></article></body>
 </html>

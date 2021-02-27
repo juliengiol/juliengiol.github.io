@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:43:43-04:00    *-->
+<!--*    on 2021-02-27T11:49:13-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,112 @@
 </head>
 <body><div class="solution solution-like"><ol class="decimal">
 <li>
-<p>Supposons que \(a\) et \(b\) sont premiers entre eux, et qu'ils divisent \(x\) tous les deux. Alors, d'une part, il existe \(k\in\mathbb{Z}\) tel que</p>
+<p>L'algorithme fourni donne</p>
 <div class="displaymath">
 \begin{equation*}
-x=ka.
+\text{PGCD}(377;233)=1\quad\text{et}\quad 1=377\cdot 89+233\cdot (-144).
 \end{equation*}
 </div>
-<p data-braille="continuation">D'autre part, on a donc</p>
+<p>Notons \((u_0;v_0)=(89;-144)\) cette solution particulière de l'équation</p>
+<div class="displaymath">
+\begin{equation}
+au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 377\cdot u+233\cdot v=1.\tag{12.3.3}
+\end{equation}
+</div>
+<p>Si on pose, par exemple,</p>
 <div class="displaymath">
 \begin{equation*}
-b\vert ka\quad\text{et}\quad\text{PGCD}(a;b)=1.
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;+&amp;b&amp;=&amp;89&amp;+&amp;233&amp;=&amp;322\\
+v&amp;=&amp;v_0&amp;-&amp;a&amp;=&amp;-144&amp;-&amp;377&amp;=&amp;-521
+\end{array}\right.
 \end{equation*}
 </div>
-<p data-braille="continuation">Par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>, on en déduit que \(b\) divise \(k\text{,}\) de sorte qu'il existe \(n\in\mathbb{Z}\) tel que</p>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(322;-521)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout1.html" title="Équation 12.3.3">(12.3.3)</a>.</p>
+<p>Et si on pose, par exemple,</p>
 <div class="displaymath">
 \begin{equation*}
-k=mb.
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;+&amp;2b&amp;=&amp;89&amp;+&amp;2\cdot 233&amp;=&amp;555\\
+v&amp;=&amp;v_0&amp;-&amp;2a&amp;=&amp;-144&amp;-&amp;2\cdot 377&amp;=&amp;-898
+\end{array}\right.
 \end{equation*}
 </div>
-<p data-braille="continuation">Finalement, on obtient</p>
-<div class="displaymath">
-\begin{equation*}
-x=ka=(mb)\cdot a=m\cdot(ab)\quad\Rightarrow\quad ab\vert x.
-\end{equation*}
-</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(555;-898)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout1.html" title="Équation 12.3.3">(12.3.3)</a>.</p>
 </li>
-<li><p>Ce résultat découle du précédent par récurrence sur \(n\text{.}\)</p></li>
+<li>
+<p>L'algorithme fourni donne</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(377;234)=13\quad\text{et}\quad 13=377\cdot 5+234\cdot (-8).
+\end{equation*}
+</div>
+<p>Notons \((u_0;v_0)=(13;-8)\) cette solution particulière de l'équation</p>
+<div class="displaymath">
+\begin{equation}
+au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 377\cdot u+234\cdot v=13.\tag{12.3.4}
+\end{equation}
+</div>
+<p>Si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;-&amp;b&amp;=&amp;13&amp;-&amp;234&amp;=&amp;-221\\
+v&amp;=&amp;v_0&amp;+&amp;a&amp;=&amp;-8&amp;+&amp;377&amp;=&amp;369
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(-221;369)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout2.html" title="Équation 12.3.4">(12.3.4)</a>.</p>
+<p>Et si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;+&amp;5b&amp;=&amp;13&amp;+&amp;5\cdot 234&amp;=&amp;1183\\
+v&amp;=&amp;v_0&amp;-&amp;5a&amp;=&amp;-8&amp;-&amp;5\cdot 377&amp;=&amp;-1893
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(1183;-1893)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout2.html" title="Équation 12.3.4">(12.3.4)</a>.</p>
+</li>
+<li>
+<p>L'algorithme fourni donne</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(356002;18954)=2\quad\text{et}\quad 2=356002\cdot (-694)+18954\cdot 13035.
+\end{equation*}
+</div>
+<p>Notons \((u_0;v_0)=(-694;13035)\) cette solution particulière de l'équation</p>
+<div class="displaymath">
+\begin{equation}
+au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 356002\cdot u+18954\cdot v=2.\tag{12.3.5}
+\end{equation}
+</div>
+<p>Si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rccccc}
+u&amp;=&amp;u_0&amp;+&amp;7b&amp;=&amp;131984\\
+v&amp;=&amp;v_0&amp;-&amp;7a&amp;=&amp;-2478979
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(131\,984;-2\,278\,979)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout3.html" title="Équation 12.3.5">(12.3.5)</a>.</p>
+<p>Et si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rccccc}
+u&amp;=&amp;u_0&amp;-&amp;3b&amp;=&amp;-57556\\
+v&amp;=&amp;v_0&amp;+&amp;3a&amp;=&amp;1081041
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(-57\,556;1\,081\,041)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout3.html" title="Équation 12.3.5">(12.3.5)</a>.</p>
+</li>
 </ol></div></body>
 </html>

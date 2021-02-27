@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:04-04:00    *-->
+<!--*    on 2021-02-27T11:47:30-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,71 +14,47 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.3.11.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.3.8.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
+<li><div class="displaymath">
+\begin{align*}
+T(t)&amp;=f(0)+f'(0)t+\frac{f''(0)}{2}t^2\\
+&amp;=1-\frac{1}{2}t^2.
+\end{align*}
+</div></li>
 <li>
-<p>La forme de Lagrange du polynôme interpolateur est la suivante :</p>
+<p>Première approximation de \(\displaystyle\cos\left(\frac{\pi}{12}\right)=f\left(\frac{\pi}{12}\right)\) :</p>
 <div class="displaymath">
 \begin{align*}
-L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)\\
-&amp;=224\frac{t-6}{4-6}+226\frac{t-4}{6-4}\\
-&amp;=-112(t-6)+113(t-4).
+T\left(\frac{\pi}{12}\right)&amp;=1-\frac{1}{2}\left(\frac{\pi}{12}\right)^2\\
+&amp;=1-\frac{\pi^2}{288}\\
+&amp;\approx 0{,}965\,731.
 \end{align*}
 </div>
-<p>On a</p>
-<div class="displaymath">
-\begin{align*}
-L(5)&amp;=-112(5-6)+113(5-4)\\
-&amp;=225.
-\end{align*}
-</div>
-<p data-braille="continuation">On estime ainsi que la tension valait \(225\;\text{V}\) environ au moment du cinquième relevé.</p>
 </li>
+<li><div class="displaymath">
+\begin{align*}
+L(t)&amp;=1\cdot L_0(t)+\frac{\sqrt{3}}{2}\cdot L_1(t)+\frac{1}{2}\cdot L_2(t)\\
+&amp;=1\cdot\frac{(t-\pi/6)(t-\pi/3)}{(0-\pi/6)(0-\pi/3)}+\frac{\sqrt{3}}{2}\cdot\frac{(t-0)(t-\pi/3)}{(\pi/6-0)(\pi/6-\pi/3)}\\
+&amp;\qquad +\frac{1}{2}\cdot\frac{(t-0)(t-\pi/6)}{(\pi/3-0)(\pi/3-\pi/6)}\\
+&amp;=\frac{18}{\pi^2}\left(t-\frac{\pi}{6}\right)\left(t-\frac{\pi}{3}\right)-\frac{18\sqrt{3}}{\pi^2}\cdot t\left(t-\frac{\pi}{3}\right)+\frac{9}{\pi^2}\cdot t\left(t-\frac{\pi}{6}\right)
+\end{align*}
+</div></li>
 <li>
-<p>La forme de Lagrange du polynôme interpolateur est la suivante :</p>
+<p>Deuxième approximation de \(\displaystyle\cos\left(\frac{\pi}{12}\right)=f\left(\frac{\pi}{12}\right)\) :</p>
 <div class="displaymath">
 \begin{align*}
-L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
-&amp;=2{,}007\frac{(t-4)(t-6)}{(3-4)(3-6)}+2{,}502\frac{(t-3)(t-6)}{(4-3)(4-6)}\\
-&amp;\qquad+2{,}142\frac{(t-3)(t-4)}{(6-3)(6-4)}\\
-&amp;=\frac{2{,}007}{3}(t-4)(t-6)-1{,}251(t-3)(t-6)\\
-&amp;\qquad +0{,}357(t-3)(t-4).
+L\left(\frac{\pi}{12}\right)&amp;=\frac{18}{\pi^2}\left(\frac{\pi}{12}-\frac{\pi}{6}\right)\left(\frac{\pi}{12}-\frac{\pi}{3}\right)-\frac{18\sqrt{3}}{\pi^2}\frac{\pi}{12}\left(\frac{\pi}{12}-\frac{\pi}{3}\right)\\
+&amp;\qquad +\frac{9}{\pi^2}\frac{\pi}{12}\left(\frac{\pi}{12}-\frac{\pi}{6}\right)\\
+&amp;=\frac{18}{\pi^2}\left(-\frac{\pi}{12}\right)\left(-\frac{\pi}{4}\right)-\frac{18\sqrt{3}}{\pi^2}\frac{\pi}{12}\left(-\frac{\pi}{4}\right)+\frac{9}{\pi^2}\frac{\pi}{12}\left(-\frac{\pi}{12}\right)\\
+&amp;=\frac{3}{8}+\frac{3\sqrt{3}}{8}-\frac{1}{16}\\
+&amp;=\frac{5}{16}+\frac{3\sqrt{3}}{8}\\
+&amp;\approx 0{,}962\,019.
 \end{align*}
 </div>
-<p>On a</p>
-<div class="displaymath">
-\begin{align*}
-L(5)&amp;=\frac{2{,}007}{3}(5-4)(5-6)-1{,}251(5-3)(5-6)\\
-&amp;\qquad +0{,}357(5-3)(5-4)\\
-&amp;=-\frac{2{,}007}{3}+1{,}251\cdot 2+0{,}357\cdot 2\\
-&amp;=2{,}547.
-\end{align*}
-</div>
-<p data-braille="continuation">On estime ainsi que l'intensité valait \(2{,}547\;\text{A}\) environ au moment du cinquième relevé.</p>
 </li>
-<li>
-<p>La forme de Lagrange du polynôme interpolateur est la suivante :</p>
-<div class="displaymath">
-\begin{align*}
-L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
-&amp;=560{,}448\frac{(t-6)(t-7)}{(4-6)(4-7)}+484{,}092\frac{(t-4)(t-7)}{(6-4)(6-7)}\\
-&amp;\qquad+494{,}262\frac{(t-4)(t-6)}{(7-4)(7-6)}\\
-&amp;=\frac{560{,}448}{6}(t-6)(t-7)-\frac{484{,}092}{2}(t-4)(t-7)\\
-&amp;\qquad +\frac{494{,}262}{3}(t-4)(t-6).
-\end{align*}
-</div>
-<p>On a</p>
-<div class="displaymath">
-\begin{align*}
-L(5)&amp;=\frac{560{,}448}{6}(5-6)(5-7)-\frac{484{,}092}{2}(5-4)(5-7)\\
-&amp;\qquad +\frac{494{,}262}{3}(5-4)(5-6)\\
-&amp;=\frac{560{,}448\cdot 2}{6}+\frac{484{,}092\cdot 2}{2}-\frac{494{,}262}{3}\\
-&amp;=506{,}154.
-\end{align*}
-</div>
-<p data-braille="continuation">On estime ainsi que la puissance valait \(506{,}154\;\text{W}\) environ au moment du cinquième relevé.</p>
-</li>
+<li><p>Comme \(\displaystyle\cos\left(\frac{\pi}{12}\right)\approx 0{,}965\,926\text{,}\) c'est le polynôme de Taylor qui fournit la meilleure approximation.</p></li>
 </ol>
 </div>
 <span class="incontext"><a href="exerciceslagrange.html#solution-63">Contexte</a></span>

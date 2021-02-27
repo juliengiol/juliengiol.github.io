@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:15-04:00    *-->
+<!--*    on 2021-02-27T11:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour \(\text{j}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
-<ul class="square">
-<li><p>initialiser \(\text{nouvelleColonne}\text{,}\) la liste qui contiendra toutes les différences divisées calculées à l'étape \(j\) : \(\text{nouvelleColonne}=\left[\;\right]\) ;</p></li>
-<li>
-<p>pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n-j}\text{,}\)</p>
-<ul class="disc">
-<li>
-<p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
+<p>Deux points :</p>
 <div class="displaymath">
 \begin{equation*}
-\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;
+\left[A_{i_1},A_{i_2}\right]=\frac{\left[A_{i_2}\right]-\left[A_{i_1}\right]}{x_{i_2}-x_{i_1}}=\frac{y_{i_2}-y_{i_1}}{x_{i_2}-x_{i_1}}
 \end{equation*}
 </div>
-</li>
-<li><p>ajouter la nouvelle différence divisée \(\text{nouvelleDiffDiv}\) à la liste \(\text{nouvelleColonne}\) ;</p></li>
-</ul>
-</li>
-<li><p>ajouter \(\text{nouvelleColonne}\) à la liste \(\text{diffDiv}\text{.}\)</p></li>
-</ul>
-<span class="incontext"><a href="algorithmediffdiv.html#p-1013">Contexte</a></span>
+<p data-braille="continuation">pour \(0\leq i_1&lt;i_2\leq n\text{.}\)</p>
+<span class="incontext"><a href="presentationdiffdiv.html#p-1013">Contexte</a></span>
 </body>
 </html>

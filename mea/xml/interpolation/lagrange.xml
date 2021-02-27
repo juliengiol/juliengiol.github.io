@@ -317,7 +317,7 @@
   <p>D'après l'exemple <xref ref="polysdelagrange2"/>, on a
     <md>
       <mrow>L_0(t)&amp;=\frac{1}{2}(t-2)(t-3)\;,</mrow>
-      <mrow>L_1(t)&amp;=\frac{1}{2}(t-2)(t-3)\;,</mrow>
+      <mrow>L_1(t)&amp;=(-1)(t-1)(t-3)\;,</mrow>
       <mrow>L_2(t)&amp;=\frac{1}{2}(t-1)(t-2).</mrow>
     </md>
   </p>

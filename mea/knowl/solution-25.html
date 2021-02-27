@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:52-04:00    *-->
+<!--*    on 2021-02-27T11:46:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,16 +14,20 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.2.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.4.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
-<li><p>\(1\)</p></li>
-<li><p>\(5\)</p></li>
-<li>
-<p>Cette fonction renvoie la position de la première occurence de <code class="code-inline tex2jax_ignore">x</code> dans <code class="code-inline tex2jax_ignore">liste</code>.</p>
-<p>Si <code class="code-inline tex2jax_ignore">x</code> n'y figure pas, la fonction renvoie la longueur de la liste.</p>
-</li>
-<li><p>Dans le pire des cas, \(T(n)=2+n\cdot 4=4n+2\text{.}\)</p></li>
+<li><p>Si on ne tient compte que du nombre de multiplications impliquées, on obtient la fonction qui suit.<pre class="code-block tex2jax_ignore">def complexitePuissanceRecursive(n):
+    if n == 1:
+        return 0
+    elif n % 2 == 0:
+        return 1 + complexitePuissanceRecursive(n / 2)
+    else:
+        return 2 + complexitePuissanceRecursive((n - 1) / 2)
+</pre></p></li>
+<li>Après évaluation du bloc précédent, la commande <code class="code-inline tex2jax_ignore">print(complexitePuissanceRecursive(45))</code> affiche bien 8.</li>
+<li>Grâce au code précédent, on trouve \(T(10\,000)=17\text{.}\)</li>
+<li>C'est bien vrai car \(\log_2(10\,000)-1\approx 12{,}3\) et \(2\log_2(10\,000)\approx 26{,}6\text{.}\)</li>
 </ol>
 </div>
 <span class="incontext"><a href="exercicescomplexite.html#solution-25">Contexte</a></span>

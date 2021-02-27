@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:46-04:00    *-->
+<!--*    on 2021-02-27T11:46:14-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,17 +14,29 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.3.9.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.3.11.1</span><span class="period">.</span>
 </h6>
-<pre class="code-block tex2jax_ignore">def sommeEntiers(n):
-    if n == 1:
-        return 1
-    else:
-        return n + sommeEntiers(n - 1)
+<ol class="decimal">
+<li><pre class="code-block tex2jax_ignore">def combienDeDeux1(n):
+    compteur = 0
+    while n % 2 == 0:
+        compteur = compteur + 1
+        n = n / 2
+    return compteur
 
-print(sommeEntiers(3))
-print(sommeEntiers(100))
-</pre>
+print(combienDeDeux1(45))
+print(combienDeDeux1(24))
+</pre></li>
+<li><pre class="code-block tex2jax_ignore">def combienDeDeux2(n):
+    if n % 2 != 0:
+        return 0
+    else:
+        return 1 + combienDeDeux2(n / 2)
+
+print(combienDeDeux2(45))
+print(combienDeDeux2(24))
+</pre></li>
+</ol>
 </div>
 <span class="incontext"><a href="exercicesfonctions.html#solution-20">Contexte</a></span>
 </body>

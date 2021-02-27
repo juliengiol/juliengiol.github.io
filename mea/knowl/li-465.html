@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:03-04:00    *-->
+<!--*    on 2021-02-27T11:47:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,51 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.10.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.3.1</span><span class="period">.</span>
 </h6>
-<p>On choisit d'interpoler les points suivants :</p>
+<p>On cherche trois nombres réels \(a_0,a_1,a_2\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
-A_0=(52;4186)\;\text{et}\; A_1(82;4199).
+P(t)=a_0+a_1t+a_2t^2
 \end{equation*}
 </div>
-<p>La forme de Lagrange du polynôme interpolateur est alors</p>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
-\begin{align*}
-L(T)&amp;=4186\,L_0(T)+4199\,L_1(T)\\
-&amp;=4186\frac{T-82}{52-82}+4199\frac{T-52}{82-52}\\
-&amp;=-\frac{4186}{30}(T-82)+\frac{4199}{30}(T-52).
-\end{align*}
+\begin{equation*}
+\begin{cases}
+P(-3)=4\\
+P(2)=1\\
+P(9)=0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a_0&amp;-&amp;3a_1&amp;+&amp;9a_2&amp;=&amp;4\\
+a_0&amp;+&amp;2a_1&amp;+&amp;4a_2&amp;=&amp;1\\
+a_0&amp;+&amp;9a_1&amp;+&amp;81a_2&amp;=&amp;0\\
+\end{cases}
+\end{equation*}
 </div>
-<p>On a</p>
+<p>Résolvons ce système par la méthode de Gauss-Jordan :</p>
 <div class="displaymath">
-\begin{align*}
-L(61)&amp;=-\frac{4186}{30}(61-82)+\frac{4199}{30}(61-52)\\
-&amp;=\frac{4186\cdot 21}{30}+\frac{4199\cdot 9}{30}\\
-&amp;=\frac{41899}{10}\\
-&amp;=4189{,}9.
-\end{align*}
+\begin{equation*}
+\begin{bmatrix}
+1&amp;-3&amp;9&amp;4\\
+1&amp;2&amp;4&amp;1\\
+1&amp;9&amp;81&amp;0
+\end{bmatrix}
+\sim\ldots\sim
+\begin{bmatrix}
+1&amp;0&amp;0&amp;\frac{69}{35}\\
+0&amp;1&amp;0&amp;-\frac{59}{105}\\
+0&amp;0&amp;1&amp;\frac{4}{105}
+\end{bmatrix}.
+\end{equation*}
 </div>
-<p data-braille="continuation">On estime ainsi que \(C\) vaut environ <span class="quantity">4189,9 <sup>J</sup>⁄<sub>kg·°C</sub></span> à <span class="quantity">61 °C</span>.</p></article><span class="incontext"><a href="exerciceslagrange.html#li-465">Contexte</a></span>
+<p>L'unique solution de ce problème est donc le polynôme suivant :</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=\frac{69}{35}-\frac{59}{105}t+\frac{4}{105}t^2.
+\end{equation*}
+</div></article><span class="incontext"><a href="exerciceslagrange.html#li-465">Contexte</a></span>
 </body>
 </html>

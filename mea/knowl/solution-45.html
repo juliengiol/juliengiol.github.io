@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:29-04:00    *-->
+<!--*    on 2021-02-27T11:46:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,72 +14,80 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.5.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.2.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
 <li>
-<p>On a</p>
+<p>La relation de récurrence donne ici</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n+\frac{\cos(x_n)}{\sin(x_n)}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Donc</p>
 <div class="displaymath">
 \begin{align*}
-f(x)&amp;=x^3+2x-10\\
-f'(x)&amp;=3x^2+2\\
-f''(x)&amp;=6x
+x_0&amp;=2\\
+x_1&amp;=x_0+\frac{\cos(x_0)}{\sin(x_0)}\approx 1{,}542\,342\\
+x_2&amp;=x_1+\frac{\cos(x_1)}{\sin(x_1)}\approx 1{,}570\,804\\
+x_3&amp;=x_2+\frac{\cos(x_2)}{\sin(x_2)}\approx 1{,}570\,796
 \end{align*}
 </div>
-<p>Donc \(f'\) ne s'annule pas, et \(f''\) s'annule en \(0\text{.}\)</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{c|ccccc}
-x&amp;-\infty&amp;&amp;&amp;&amp;0&amp;&amp;&amp;&amp;+\infty&amp;\\
-\hline
-f''(x)&amp;-\infty&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+\infty&amp;\\
-\hline
-f'(x)&amp;+\infty&amp;&amp;+&amp;&amp;+&amp;&amp;+&amp;&amp;+\infty&amp;\\
-\hline
-f(x)&amp;-\infty&amp;&amp;\nearrow&amp;&amp;-10&amp;&amp;\nearrow&amp;&amp;+\infty&amp;
-\end{array}
-\end{equation*}
-</div>
+<p>Comme \(c=\frac{\pi}{2}\approx 1{,}570\,796\,327\text{,}\) les six décimales de \(x_3\) sont correctes.</p>
 </li>
 <li>
-<p>Comme c'est un polynôme, la fonction \(f\) est continue sur l'intervalle \([1;2]\text{.}\) Comme</p>
+<p>La relation de récurrence donne ici</p>
 <div class="displaymath">
 \begin{equation*}
-f(1)\cdot f(2)=(-7)\cdot 2&lt;0\;,
+x_{n+1}=x_n-\frac{x_n^3-5}{3x_n^2}.
 \end{equation*}
 </div>
-<p data-braille="continuation">le théorème des valeurs intermédiaires implique qu'il existe un zéro \(c\) pour \(f\) dans \(]1;2[\text{.}\)</p>
-<p>Et comme \(f\) est strictement croissante sur \(]1;2[\text{,}\) il n'y a pas d'autre zéro dans cet intervalle.</p>
-</li>
-<li>
-<p>Grâce au tableau de variations qui précède, on voit que</p>
-<div class="displaymath">
-\begin{equation*}
-f'(x)&gt;0\qquad\text{et}\qquad f''(x)&gt;0\qquad\text{pour tout }x\in\;]0;3[.
-\end{equation*}
-</div>
-<p>Comme \(c\in ]1;2[\subset]0;3[\text{,}\) les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> sont donc bien vérifiées avec \(b=3\text{.}\)</p>
-<p>Remarque : Les hypothèses de l'encadré sont vérifiées aussi, donc non seulement \(\{x_n\}\) converge vers \(c\) en décroissant strictement, mais on peut s'attendre à ce que le nombre de décimales exactes double grosso modo à chaque itération.</p>
-</li>
-<li>
-<p>Voici le <a class="external" href="https://tinyurl.com/y6hrszru" target="_blank">code à utiliser</a>.</p>
+<p data-braille="continuation">Donc</p>
 <div class="displaymath">
 \begin{align*}
-x_1&amp;\approx 1{,}857\,142\,857\,14\\
-x_2&amp;\approx 1{,}847\,461\,629\,28\\
-x_3&amp;\approx 1{,}847\,419\,038\,65\\
-x_4&amp;\approx 1{,}847\,419\,037\,83\\
-x_5&amp;\approx 1{,}847\,419\,037\,83
+x_0&amp;=9\\
+x_1&amp;=x_0-\frac{x_0^3-5}{3x_0^2}\approx 6{,}020\,576\\
+x_2&amp;=x_1-\frac{x_1^3-5}{3x_1^2}\approx 4{,}059\,698\\
+x_3&amp;=x_2-\frac{x_2^3-5}{3x_2^2}\approx 2{,}807\,591
 \end{align*}
 </div>
+<p>Comme \(c=\sqrt[3]{5}\approx 1{,}709\,975\,947\text{,}\) l'approximation \(c\approx x_3\) est très mauvaise : on est parti d'une valeur trop éloignée.</p>
 </li>
 <li>
-<p>À partir de la quatrième itération, les onze décimales affichées sont identiques. On peut donc être certains que les dix premières sont exactes. D'où</p>
+<p>La relation de récurrence donne ici</p>
 <div class="displaymath">
 \begin{equation*}
-c=1{,}847\,419\,037\,8\ldots
+x_{n+1}=x_n-x_n\cdot\ln(x_n).
 \end{equation*}
 </div>
+<p data-braille="continuation">Donc</p>
+<div class="displaymath">
+\begin{align*}
+x_0&amp;=2\\
+x_1&amp;=x_0-x_0\cdot\ln(x_0)\approx 0{,}613\,706\\
+x_2&amp;=x_1-x_1\cdot\ln(x_1)\approx 0{,}913\,341\\
+x_3&amp;=x_2-x_2\cdot\ln(x_2)\approx 0{,}996\,132
+\end{align*}
+</div>
+<p>Comme \(c=1\text{,}\) l'approximation \(c\approx x_3\) est déjà assez bonne.</p>
+</li>
+<li>
+<p>La relation de récurrence donne ici</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{e^{x_n}-1}{e^{x_n}}=x_n-1+e^{-x_n}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Donc</p>
+<div class="displaymath">
+\begin{align*}
+x_0&amp;=5\\
+x_1&amp;=x_0-1+e^{-x_0}\approx 4{,}006\,738\\
+x_2&amp;=x_1-1+e^{-x_1}\approx 3{,}024\,931\\
+x_3&amp;=x_2-1+e^{-x_2}\approx 2{,}073\,492
+\end{align*}
+</div>
+<p>Comme \(c=0\text{,}\) l'approximation \(c\approx x_3\) est très mauvaise : on est parti d'une valeur trop éloignée.</p>
 </li>
 </ol>
 </div>

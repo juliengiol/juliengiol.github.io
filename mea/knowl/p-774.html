@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:49-04:00    *-->
+<!--*    on 2021-02-27T11:47:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Principe : Construire ce polynôme comme combinaison linéaire des polynômes</p>
+<p>La matrice des coefficients de ce système est une <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde" target="_blank">matrice de Vandermonde</a> \((n+1)\times(n+1)\) :</p>
 <div class="displaymath">
 \begin{equation*}
-L_i(t)=\prod_{j\neq i}\frac{t-x_j}{x_i-x_j}
-\end{equation*}
-</div>
-<p data-braille="continuation">en posant</p>
-<div class="displaymath">
-\begin{equation*}
-L(t)=y_0\,L_0(t)+\cdots+y_n\,L_n(t).
+\begin{bmatrix}
+1&amp;x_0&amp;x_0^2&amp;\cdots&amp;x_0^n\\
+1&amp;x_1&amp;x_1^2&amp;\cdots&amp;x_1^n\\
+1&amp;x_2&amp;x_2^2&amp;\cdots&amp;x_2^n\\
+\vdots&amp;\vdots&amp;\vdots&amp;&amp;\vdots\\
+1&amp;x_n&amp;x_n^2&amp;\cdots&amp;x_n^n
+\end{bmatrix}
 \end{equation*}
 </div>
 <span class="incontext"><a href="presentationlagrange.html#p-774">Contexte</a></span>

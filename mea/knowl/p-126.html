@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:41-04:00    *-->
+<!--*    on 2021-02-27T11:46:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,38 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La célèbre <a class="external" href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse" target="_blank">conjecture de Syracuse</a> (ou Collatz, ou Ulam, ou 3x+1, ...) prédit qu'une telle suite finit toujours par tomber sur \(1\text{,}\) quel que soit l'entier positif dont on parte. Mais personne n'a encore réussi à le démontrer.</p>
+<ol class="decimal">
+<li>
+<p>Il s'agit des 5 nombres qui suivent.<pre class="code-block tex2jax_ignore">7.0
+1.23529411765
+0.224598930481
+0.0415923945336
+0.00779857397504
+</pre></p>
+<p>On peut les afficher à l'aide du bloc de code suivant.<pre class="code-block tex2jax_ignore">n = 3
+x = 7.0
+while n &lt; 8:
+    print(x)
+    x = x * n / (5 * n + 2)
+    n = n + 1
+</pre></p>
+</li>
+<li>
+<p>Il s'agit de</p>
+<div class="displaymath">
+\begin{equation*}
+n=17
+\end{equation*}
+</div>
+<p data-braille="continuation">et on peut l'afficher à l'aide du bloc de code suivant.<pre class="code-block tex2jax_ignore">n = 3
+x = 7.0
+while x &gt; 10 ** (-9):
+    x = x * n / (5 * n + 2)
+    n = n + 1
+print(n)
+</pre></p>
+</li>
+</ol>
 <span class="incontext"><a href="exercicesassignetc.html#p-126">Contexte</a></span>
 </body>
 </html>

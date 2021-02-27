@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:23-04:00    *-->
+<!--*    on 2021-02-27T11:47:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,26 +11,66 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><ol class="decimal">
+<body><div class="solution solution-like">
+<ol class="decimal">
 <li>
-<p>Calculons les différences divisées des trois points :</p>
+<p>La forme de Newton du polynôme interpolateur de ces trois points s'écrit</p>
+<div class="displaymath">
+\begin{align*}
+N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
+&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2).
+\end{align*}
+</div>
+<p>On cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{c|ccc}
-x_i&amp;y_i\\
-\hline\\
--2&amp;3&amp;&amp;\\
-&amp;&amp;\frac{-3-3}{1+2}=-2&amp;\\
-1&amp;-3&amp;&amp;\frac{\frac{5}{6}+2}{7+2}=\frac{17}{54}\\
-&amp;&amp;\frac{2+3}{7-1}=\frac{5}{6}&amp;\\
-7&amp;2&amp;&amp;
-\end{array}
+\begin{cases}
+N(1)=3\\
+N(2)=6\\
+N(3)=9
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+d_0&amp;&amp;&amp;&amp;&amp;=&amp;3\\
+d_0&amp;+&amp;d_1&amp;&amp;&amp;=&amp;6\\
+d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;9\\
+\end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">Donc</p>
+<p>Ce système linéaire est déjà triangulé.</p>
+<ul class="disc">
+<li>
+<p>La première équation donne</p>
 <div class="displaymath">
 \begin{equation*}
-P(t)=3-2(t+2)+\frac{17}{54}(t+2)(t-1).
+d_0=3.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Alors la deuxième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+d_1=6&amp;\Rightarrow\quad 3+d_1=6\\
+&amp;\Rightarrow\quad d_1=3.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Enfin la troisième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+2d_1+2d_2=0&amp;\Rightarrow\quad 3+6+2d_2=9\\
+&amp;\Rightarrow\quad 2d_2=0\\
+&amp;\Rightarrow\quad d_2=0.
+\end{align*}
+</div>
+</li>
+</ul>
+<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=3+3(t-1)+0(t-1)(t-2)=3+3(t-1).
 \end{equation*}
 </div>
 </li>
@@ -41,68 +81,39 @@ P(t)=3-2(t+2)+\frac{17}{54}(t+2)(t-1).
 \begin{array}{c|ccc}
 x_i&amp;y_i\\
 \hline\\
--2&amp;-2&amp;&amp;\\
-&amp;&amp;\frac{2+2}{-1+2}=4&amp;\\
--1&amp;2&amp;&amp;\frac{\frac{5}{6}-4}{5+2}=-\frac{19}{42}\\
-&amp;&amp;\frac{7-2}{5+1}=\frac{5}{6}&amp;\\
-5&amp;7&amp;&amp;
+1&amp;\left[A_0\right]=3&amp;&amp;\\
+&amp;&amp;\left[A_0,A_1\right]=3&amp;\\
+2&amp;\left[A_1\right]=6&amp;&amp;\left[A_0,A_1,A_2\right]=0\\
+&amp;&amp;\left[A_1,A_2\right]=3&amp;\\
+3&amp;\left[A_2\right]=9&amp;&amp;
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">Donc</p>
+<p>On trouve donc les mêmes coefficients qu'à la question 1, soit</p>
 <div class="displaymath">
 \begin{equation*}
-P(t)=-2+4(t+2)-\frac{19}{42}(t+2)(t+1).
+N(t)=3+3(t-1)+0(t-1)(t-2)=3+3(t-1).
 \end{equation*}
 </div>
 </li>
-<li>
-<p>Calculons les différences divisées de ces quatre points :</p>
+</ol>
+<p>Remarque : En regardant les trois points à interpoler de plus près, on s'aperçoit qu'il sont alignés car ils appartiennent tous les trois à la droite d'équation</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{c|cccc}
-x_i&amp;y_i&amp;&amp;&amp;\\
-\hline\\
-1&amp;3&amp;&amp;&amp;\\
-&amp;&amp;\frac{-3-3}{2-1}=-6&amp;&amp;\\
-2&amp;-3&amp;&amp;\frac{-1+6}{4-1}=\frac{5}{3}&amp;\\
-&amp;&amp;\frac{-5+3}{4-2}=-1&amp;&amp;\frac{\frac{14}{3}-\frac{5}{3}}{5-1}=\frac{3}{4}\\
-4&amp;-5&amp;&amp;\frac{13+1}{5-2}=\frac{14}{3}&amp;\\
-&amp;&amp;\frac{8+5}{5-4}=13&amp;&amp;\\
-5&amp;8&amp;&amp;&amp;\\
-\end{array}
+y=3x.
 \end{equation*}
 </div>
-<p>Donc</p>
+<p data-braille="continuation">Leur polynôme interpolateur est donc le polynôme dont le graphe correspond à cette droite, c'est-à-dire</p>
 <div class="displaymath">
 \begin{equation*}
-P(t)=3-6(t-1)+\frac{5}{3}(t-1)(t-2)+\frac{3}{4}(t-1)(t-2)(t-4).
+P(x)=3x.
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Calculons les différences divisées de ces quatre points :</p>
+<p data-braille="continuation">Pour donner sa forme de Newton, il suffit d'effectuer la transformation algébrique suivante :</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{c|cccc}
-x_i&amp;y_i&amp;&amp;&amp;\\
-\hline\\
--1&amp;3&amp;&amp;&amp;\\
-&amp;&amp;\frac{7-3}{4+1}=\frac{4}{5}&amp;&amp;\\
-4&amp;7&amp;&amp;\frac{-5-\frac{4}{5}}{6+1}=-\frac{29}{35}&amp;\\
-&amp;&amp;\frac{-3-7}{6-4}=-5&amp;&amp;\frac{\frac{25}{24}+\frac{29}{35}}{10+1}=\frac{1571}{9240}\\
-6&amp;-3&amp;&amp;\frac{\frac{5}{4}+5}{10-4}=\frac{25}{24}&amp;\\
-&amp;&amp;\frac{2+3}{10-6}=\frac{5}{4}&amp;&amp;\\
-10&amp;2&amp;&amp;&amp;\\
-\end{array}
+P(x)=3x-3+3=3(x-1)+3.
 \end{equation*}
 </div>
-<p>Donc</p>
-<div class="displaymath">
-\begin{equation*}
-P(t)=3+\frac{4}{5}(t+1)-\frac{29}{35}(t+1)(t-4)+\frac{1571}{9240}(t+1)(t-4)(t-6).
-\end{equation*}
-</div>
-</li>
-</ol></div></body>
+</div></body>
 </html>

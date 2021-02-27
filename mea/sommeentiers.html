@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:39:39-04:00    *-->
+<!--*    on 2021-02-27T11:44:50-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -233,60 +233,57 @@ MathJax.Hub.Config({
 </h2>
 <a href="sommeentiers.html" class="permalink">¶</a><article class="problem example-like" id="problemesommeentiers"><a data-knowl="" class="id-ref original" data-refid="hk-problemesommeentiers"><h6 class="heading">
 <span class="type">Problème</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-problemesommeentiers"><article class="problem example-like"><p id="p-234">Comment utiliser efficacement l'ordinateur pour calculer la somme des \(n\) premiers entiers non nuls</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-problemesommeentiers"><article class="problem example-like"><p id="p-246">Comment utiliser efficacement l'ordinateur pour calculer la somme des \(n\) premiers entiers non nuls</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=1}^nk=1+2+\cdots+n\;?
 \end{equation*}
 </div></article></div>
 <article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Algorithme 1 : Approche naïve.</span></h5>
-<p id="p-235">Combien d'additions doit-on effectuer pour évaluer la somme</p>
+<p id="p-247">Combien d'additions doit-on effectuer pour évaluer la somme</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=1}^{5}k=1+2+3+4+5\;?
 \end{equation*}
 </div>
-<p id="p-236">Il en faut quatre. Plus généralement, on a besoin de \(n-1\) additions pour évaluer la somme des \(n\) premiers entiers naturels non nuls</p>
+<p id="p-248">Il en faut quatre. Plus généralement, on a besoin de \(n-1\) additions pour évaluer la somme des \(n\) premiers entiers naturels non nuls</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=1}^nk=1+2+3+\cdots+n.
 \end{equation*}
 </div>
-<p id="p-237">Voici une implémentation de l'algorithme qui renvoie la valeur de cette somme en suivant cette approche naïve : <div class="sagecell-python" id="sage-42"><script type="text/x-sage"># entrée
+<p id="p-249">Voici une implémentation de l'algorithme qui renvoie la valeur de cette somme en suivant cette approche naïve. <div class="sagecell-python" id="sage-42"><script type="text/x-sage"># entrée :
 n = 5
-
-# instructions
+# instructions :
 somme = 1
 for k in range(2, n+1):
     somme = somme + k
-
-# sortie
+# sortie :
 print(somme)
 </script></div></p>
-<p id="p-238">Pour faire simple, on peut considérer que la vitesse d'exécution de cet algorithme dépend essentiellement du nombre d'additions qu'il doit effectuer.</p>
-<p id="p-239">Notons \(T(n)\) ce nombre qui dépend bien sûr de l'entier donné en entrée.</p>
-<p id="p-240">La fonction \(T\) ainsi définie est une estimation de la <a class="external" href="https://fr.wikipedia.org/wiki/Complexit%C3%A9_en_temps" target="_blank">complexité en temps</a> de cet algorithme, et on a</p>
+<p id="p-250">Pour faire simple, on peut considérer que la vitesse d'exécution de cet algorithme dépend essentiellement du nombre d'additions qu'il doit effectuer.</p>
+<p id="p-251">Notons \(T(n)\) ce nombre qui dépend de l'entier donné en entrée comme suit :</p>
 <div class="displaymath">
 \begin{equation*}
 T(n)=n-1.
 \end{equation*}
 </div>
-<p id="p-241">Plus \(n\) est grand, plus le temps de calcul représenté par \(T(n)\) est grand.</p>
-<p id="p-242">Comme \(T\) dépend linéairement de \(n\text{,}\) on dit que la complexité de cet algorithme est linéaire.</p></article><article class="paragraphs" id="paragraphs-4"><h5 class="heading"><span class="title">Algorithme 2 : Formule de Faulhaber.</span></h5>
-<p id="p-243">En fait, il existe une formule bien connue qui permet de calculer directement la valeur de \(\displaystyle\sum_{k=1}^nk\text{.}\) La voici :</p>
+<p data-braille="continuation">La fonction \(T\) ainsi définie est une estimation de la <a class="external" href="https://fr.wikipedia.org/wiki/Complexit%C3%A9_en_temps" target="_blank">complexité en temps</a> de cet algorithme.</p>
+<p id="p-252">Plus \(n\) est grand, plus le temps de calcul représenté par \(T(n)\) est grand.</p>
+<p id="p-253">Comme \(T\) dépend linéairement de \(n\text{,}\) on dit que la complexité de cet algorithme est linéaire.</p></article><article class="paragraphs" id="paragraphs-4"><h5 class="heading"><span class="title">Algorithme 2 : Formule de Faulhaber.</span></h5>
+<p id="p-254">En fait, il existe une formule bien connue qui permet de calculer directement la valeur de \(\displaystyle\sum_{k=1}^nk\text{.}\) La voici :</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=1}^nk=\frac{n(n+1)}{2}.
 \end{equation*}
 </div>
-<p id="p-244">Quelle que soit la valeur de \(n\text{,}\) cette approche ne requiert que trois opérations : une multiplication, une addition et une division.</p>
-<p id="p-245">Autrement dit, l'algorithme suivant <div class="sagecell-python" id="sage-43"><script type="text/x-sage"># entrée
+<p data-braille="continuation"><aside class="aside aside-like" id="aside-5"><p id="p-255">Il s'agit d'un cas simple d'une formule plus générale portant le nom de <a class="external" href="https://fr.wikipedia.org/wiki/Formule_de_Faulhaber#Exemples" target="_blank">formule de Faulhaber</a>.</p></aside></p>
+<p id="p-256">Quelle que soit la valeur de \(n\text{,}\) cette approche ne requiert que trois opérations : une multiplication, une addition et une division.</p>
+<p id="p-257">Autrement dit, l'algorithme <div class="sagecell-python" id="sage-43"><script type="text/x-sage"># entrée :
 n = 5
-
-# instructions
+# instruction :
 somme = n * (n + 1) / 2
-
-# sortie
+# sortie :
 print(somme)
 </script></div> a une complexité en temps constante</p>
 <div class="displaymath">
@@ -294,7 +291,7 @@ print(somme)
 T(n)=3.
 \end{equation*}
 </div>
-<p id="p-246">Il s'agit donc d'un algorithme beaucoup plus efficace que le précédent pour résoudre le problème <a class="xref" data-knowl="./knowl/problemesommeentiers.html" title="Problème 3.1.1">3.1.1</a>.</p></article></section></div></main>
+<p id="p-258">Il s'agit donc d'un algorithme beaucoup plus efficace que le précédent pour résoudre le problème <a class="xref" data-knowl="./knowl/problemesommeentiers.html" title="Problème 3.1.1">3.1.1</a>.</p></article></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;

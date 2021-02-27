@@ -8,13 +8,13 @@
     Voici un exemple d'algorithme.
     <sage language='python'>
       <input>
-        # entrée
+        # entrée :
         n = 5
-        # instructions
+        # instructions :
         somme = 1
         for k in range(2, n+1):
             somme = somme + k
-        # sortie
+        # sortie :
         print(somme)
       </input>
     </sage>
@@ -24,10 +24,10 @@
     L'exécution de l'algorithme prend donc de plus en plus de temps.
   </p>
   <p>
-    Après avoir exécuté le code ci-dessus une première fois, essayez par exemple les valeurs <c>n = 10</c>, puis <c>n = 10 ** 5</c>, et enfin <c>n = 10 ** 7</c>.
+    Après avoir évalué le code ci-dessus une première fois, essayez par exemple les valeurs <c>n = 10</c>, puis <c>n = 10 ** 5</c>, et enfin <c>n = 10 ** 7</c>.
   </p>
   <p>
-    Analyser la complexité d'un algorithme, c'est se demander de quelle façon le temps d'exécution dépend de la taille des données fournies en entrée.
+    Analyser la <em>complexité</em> d'un algorithme, c'est se demander de quelle façon le temps d'exécution dépend de la taille des données fournies en entrée.
   </p>
 
 </introduction>
@@ -44,32 +44,34 @@
 <paragraphs>
   <title>Algorithme 1 : Approche naïve</title>
 
-  <p>Combien d'additions doit-on effectuer pour évaluer la somme
+  <p>
+    Combien d'additions doit-on effectuer pour évaluer la somme
     <me>\sum_{k=1}^{5}k=1+2+3+4+5\;?</me>
   </p>
-  <p>Il en faut quatre. Plus généralement, on a besoin de <m>n-1</m> additions pour évaluer la somme des <m>n</m> premiers entiers naturels non nuls
+  <p>
+    Il en faut quatre. Plus généralement, on a besoin de <m>n-1</m> additions pour évaluer la somme des <m>n</m> premiers entiers naturels non nuls
     <me>\sum_{k=1}^nk=1+2+3+\cdots+n.</me>
   </p>
-  <p>Voici une implémentation de l'algorithme qui renvoie la valeur de cette somme en suivant cette approche naïve :
+  <p>
+    Voici une implémentation de l'algorithme qui renvoie la valeur de cette somme en suivant cette approche naïve.
     <sage language='python'>
       <input>
-        # entrée
+        # entrée :
         n = 5
-
-        # instructions
+        # instructions :
         somme = 1
         for k in range(2, n+1):
             somme = somme + k
-
-        # sortie
+        # sortie :
         print(somme)
       </input>
     </sage>
   </p>
   <p>Pour faire simple, on peut considérer que la vitesse d'exécution de cet algorithme dépend essentiellement du nombre d'additions qu'il doit effectuer.</p>
-  <p>Notons <m>T(n)</m> ce nombre qui dépend bien sûr de l'entier donné en entrée.</p>
-  <p>La fonction <m>T</m> ainsi définie est une estimation de la <url href="https://fr.wikipedia.org/wiki/Complexit%C3%A9_en_temps">complexité en temps</url> de cet algorithme, et on a
+  <p>
+    Notons <m>T(n)</m> ce nombre qui dépend de l'entier donné en entrée comme suit :
     <me>T(n)=n-1.</me>
+    La fonction <m>T</m> ainsi définie est une estimation de la <url href="https://fr.wikipedia.org/wiki/Complexit%C3%A9_en_temps">complexité en temps</url> de cet algorithme.
   </p>
   <p>Plus <m>n</m> est grand, plus le temps de calcul représenté par <m>T(n)</m> est grand.</p>
   <p>Comme <m>T</m> dépend linéairement de <m>n</m>, on dit que la complexité de cet algorithme est linéaire.</p>
@@ -81,18 +83,19 @@
 
   <p>En fait, il existe une formule bien connue qui permet de calculer directement la valeur de <m>\displaystyle\sum_{k=1}^nk</m>. La voici :
     <me>\sum_{k=1}^nk=\frac{n(n+1)}{2}.</me>
+    <aside>
+      <p>Il s'agit d'un cas simple d'une formule plus générale portant le nom de <url href="https://fr.wikipedia.org/wiki/Formule_de_Faulhaber#Exemples">formule de Faulhaber</url>.</p>
+    </aside>
   </p>
   <p>Quelle que soit la valeur de <m>n</m>, cette approche ne requiert que trois opérations : une multiplication, une addition et une division.</p>
-  <p>Autrement dit, l'algorithme suivant
+  <p>Autrement dit, l'algorithme
     <sage language='python'>
       <input>
-        # entrée
+        # entrée :
         n = 5
-
-        # instructions
+        # instruction :
         somme = n * (n + 1) / 2
-
-        # sortie
+        # sortie :
         print(somme)
       </input>
     </sage>
@@ -116,30 +119,32 @@
   <title>Algorithme 1 : Approche naïve</title>
 
   <p>Combien de multiplications doit-on effectuer pour évaluer <m>2^5</m>?</p>
-  <p>On a
+  <p>
+    On a
     <me>2^5=2\cdot 2\cdot 2\cdot 2\cdot 2.</me>
   </p>
-  <p>Vu comme ça, il en faut quatre. Plus généralement, on a besoin de <m>n-1</m> multiplications pour évaluer <m>x^n</m>, puisque
+  <p>
+    Vu comme ça, il en faut quatre. Plus généralement, on a besoin de <m>n-1</m> multiplications pour évaluer <m>x^n</m>, puisque
     <me>x^n=x\cdot x\cdot x\cdots x.</me>
   </p>
-  <p>Voici une implémentation de l'algorithme qui renvoie la valeur de <m>x^n</m> en suivant cette approche naïve :
+  <p>
+    Voici une implémentation de l'algorithme qui renvoie la valeur de <m>x^n</m> en suivant cette approche naïve.
     <sage language='python'>
       <input>
-        # entrées
+        # entrées :
         x = 2
         n = 5
-
-        # instructions
+        # instructions :
         produit = x
         for k in range(1, n):
             produit = produit * x
-
-        # sortie
+        # sortie :
         print(produit)
       </input>
     </sage>
   </p>
-  <p>Si on ne tient compte que des opérations mathématiques, la complexité en temps de cet algorithme ne dépend que de l'entrée <m>n</m> et vaut
+  <p>
+    Si on ne tient compte que des opérations mathématiques, la complexité en temps de cet algorithme ne dépend que de l'entrée <m>n</m> et vaut
     <me>T(n)=n-1.</me>
   </p>
   <p>On parle donc de complexité linéaire.</p>
@@ -149,13 +154,15 @@
 <paragraphs>
     <title>Algorithme 2 : Exponentiation rapide</title>
 
-    <p>Revenons au calcul de <m>2^5</m> et notons que
+    <p>
+      Revenons au calcul de <m>2^5</m> et notons que
       <me>2^5=2\cdot (2^2)^2</me>
       c'est-à-dire
       <me>2^5=x\cdot y\cdot y\quad\text{avec}\quad x=2\quad\text{et}\quad y=x\cdot x.</me>
     </p>
     <p>Vu comme ça, le calcul de <m>2^5</m> ne requiert plus que trois multiplications.</p>
-    <p>Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :
+    <p>
+      Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :
       <me>x^n=
         \begin{cases}
         x&amp;\text{ si }n=1,\\
@@ -164,7 +171,11 @@
         \end{cases}
       </me>
     </p>
-    <p>Voici une implémentation de cette approche, où la fonction <c>puissanceRecursive(x, n)</c> renvoie la valeur de <m>\text{x}^\text{n}</m> de manière récursive :
+    <aside>
+      <p>L'algorithme d'<url href="https://fr.wikipedia.org/wiki/Exponentiation_rapide#Algorithme">exponentiation rapide</url> n'est pas seulement pertinent pour des nombres, mais aussi, par exemple, pour des matrices.</p>
+    </aside>
+    <p>
+      Voici une implémentation de cette approche, où la fonction <c>puissanceRecursive(x, n)</c> renvoie la valeur de <m>\text{x}^\text{n}</m> de manière récursive.
       <sage language='python'>
         <input>
           def puissanceRecursive(x, n):
@@ -179,13 +190,15 @@
         </input>
       </sage>
     </p>
-    <p>Si on ne tient compte que des multiplications, alors on peut montrer que la complexité <m>T(n)</m> de cet algorithme vérifie l'encadrement
-      <me>\log_2(n)\leq T(n)\leq 2\log_2(n).</me>
+    <p>
+      Si on ne tient compte que des multiplications, alors on peut montrer que la complexité <m>T(n)</m> de cet algorithme vérifie l'encadrement
+      <me>\log_2(n)-1\leq T(n)\leq 2\log_2(n).</me>
     </p>
-    <p>On parle alors d'une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche itérative, comme le montrent les graphes ci-après.
+    <p>
+      On parle alors d'une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche itérative, comme l'illustrent les graphes ci-après.
       <figure>
           <caption>Linéaire vs logarithmique</caption>
-          <interactive xml:id="desmos-lineaire-log" desmos="yjztmlow1h" width="100%" aspect="5:4"/>
+          <interactive xml:id="desmos-lineaire-log" desmos="opbr8wrbya" width="100%" aspect="5:4"/>
       </figure>
     </p>
 
@@ -203,54 +216,56 @@
 <paragraphs>
   <title>Algorithme 1 : Approche naïve</title>
 
-  <p>Considérant le polynôme
+  <p>
+    Considérant le polynôme
     <me>P(x)=10+7x+3x^2+5x^3</me>
     combien d'opérations mathématiques sont-elles nécessaires pour évaluer <m>P(9)</m>?
   </p>
-  <p>On a
+  <p>
+    On a
     <me>P(9)=10+7\cdot 9+3\cdot 9\cdot 9+5\cdot 9\cdot 9\cdot 9.</me>
   </p>
   <p>Vu comme ça, il faut trois (comme le degré) additions et six (<m>1+2+3</m>) multiplications, soit neuf opérations.</p>
-  <p>Plus généralement, pour un polynôme de degré <m>n</m>
-    <me>P(x)=a_0+a_1x+\ldots+a_nx^n</me>
+  <p>
+    Plus généralement, pour un polynôme de degré <m>n</m>
+    <me>P(x)=a_0+a_1x+\cdots+a_nx^n</me>
     défini par la liste de ses coefficients <m>\left[a_0,a_1,\ldots,a_n\right]</m>, le calcul de <m>P(x)</m> peut nécessiter jusqu'à <m>n</m> additions et
-    <me>1+2+\ldots+n=\frac{n(n+1)}{2}</me>
+    <me>1+2+\cdots+n=\frac{n(n+1)}{2}</me>
     multiplications, soit
-    <me>n+\frac{n(n+1)}{2}=0{,}5n^2+1{,}5n</me>
+    <me>n+\frac{n(n+1)}{2}=0{,}5\,n^2+1{,}5\,n</me>
     opérations.
   </p>
-  <p>Cette approche naïve conduit à l'implémentation algorithmique suivante :
+  <p>
+    Cette approche naïve conduit à l'implémentation algorithmique
     <sage language='python'>
       <input>
-        # entrées
+        # entrées :
         n = 3
         coefficients = [10, 7, 3, 5]
         x = 9
-
-        # instructions
+        # instructions :
         valeur = coefficients[0]
         for j in range(1, n+1):
             produit = coefficients[j]
             for k in range(1, j+1):
                 produit = produit * x
             valeur = valeur + produit
-
-        # sortie
+        # sortie :
         print(valeur)
       </input>
     </sage>
     dont la complexité
-    <me>T(n)=0{,}5n^2+1{,}5n</me>
+    <me>T(n)=0{,}5\,n^2+1{,}5\,n</me>
     est qualifiée de quadratique, c'est-à-dire qu'elle est polynomiale de degré deux.
   </p>
-
 </paragraphs>
 
 <paragraphs>
   <title>Algorithme 2 : Méthode de Horner</title>
 
   <p>Pour améliorer l'algorithme précédent, on pourrait bien sûr utiliser l'exponentiation rapide vue à la section <xref ref="exponentiation"/>. Mais on peut faire encore mieux.</p>
-  <p>Reprenons l'exemple ci-dessus et notons que par factorisations successives de <m>x</m>, on obtient
+  <p>
+    Reprenons l'exemple ci-dessus et notons que par factorisations successives de <m>x</m>, on obtient
     <md>
       <mrow>P(x)&amp;=10+7x+3x^2+5x^3</mrow>
       <mrow>&amp;=10+x\cdot(7+3x+5x^2)</mrow>
@@ -258,25 +273,16 @@
     </md>
     Vue comme ça, l'évaluation de <m>P(x)</m> ne requiert plus que trois additions et trois multiplications, soit six opérations.
   </p>
-  <p>Plus généralement, on appelle forme de Horner du polynôme
-    <me>P(x)=a_0+a_1x+\ldots+a_nx^n</me>
+  <p>
+    Plus généralement, on appelle forme de Horner du polynôme
+    <me>P(x)=a_0+a_1x+\cdots+a_nx^n</me>
     la factorisation
-    <me>P(x)=a_0+x\cdot\left(a_1+x\cdot\left(a_2+x\cdot\left(\ldots +x\cdot\left(a_{n-1}+x\cdot a_n\right)\right)\right)\right)</me>
+    <me>P(x)=a_0+x\cdot\left(a_1+x\cdot\left(a_2+x\cdot\left(\cdots +x\cdot\left(a_{n-1}+x\cdot a_n\right)\right)\right)\right)</me>
     qui nécessite <m>n</m> additions et <m>n</m> multiplications, soit <m>2n</m> opérations.
   </p>
-  <p>Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de <m>P(x)</m> une paire de parenthèses après l'autre.
-    <me>
-      \begin{array}{lcl}
-      \text{Étape 0 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_n.\\
-      \text{Étape 1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-1}+x\cdot valeur.\\
-      \text{Étape 2 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-2}+x\cdot valeur.\\
-      \ldots&amp;\ldots&amp;\\
-      \text{Étape n-1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_1+x\cdot valeur.\\
-      \text{Étape n :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_0+x\cdot valeur.\\
-      \end{array}
-    </me>
-  </p>
-  <p>Par exemple, pour le polynôme
+  <p>
+    Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de <m>P(x)</m> une paire de parenthèses après l'autre.
+    Par exemple, pour le polynôme
     <me>P(x)=10+7x+3x^2+5x^3,</me>
     le calcul de
     <md>
@@ -284,45 +290,63 @@
       <mrow>&amp;=10+9\cdot(7+3\cdot 9+5\cdot 9^2)</mrow>
       <mrow>&amp;=10+9\cdot(7+9\cdot(3+9\cdot 5))</mrow>
     </md>
-    par la méthode de Horner revient à suivre les étapes
+    par la méthode de Horner revient à calculer les valeurs successives
     <me>
-      \begin{array}{lcl}
+      \begin{array}{llll}
       \text{Étape 0 :}&amp;valeur&amp;=&amp;5\\
       \text{Étape 1 :}&amp;valeur&amp;=&amp;3+9\cdot 5=48\\
       \text{Étape 2 :}&amp;valeur&amp;=&amp;7+9\cdot 48=439\\
       \text{Étape 3 :}&amp;valeur&amp;=&amp;10+9\cdot 439=3961
       \end{array}
     </me>
-    dont on déduit que
+    dont la dernière donne
     <me>P(9)=3961</me>
     après trois additions et trois multiplications.
   </p>
-  <p>Voici une implémentation itérative de la méthode de Horner :
+  <p>
+    Dans le cas général, cet algorithme de calcul de <m>P(x)</m> peut donc être décrit comme suit.
+    <me>
+      \begin{array}{llll}
+      \text{Étape 0 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_n.\\
+      \text{Étape 1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-1}+x\cdot valeur.\\
+      \text{Étape 2 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-2}+x\cdot valeur.\\
+      \ldots&amp;\ldots&amp;\ldots&amp;\ldots&amp;\ldots\\
+      \text{Étape n-1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_1+x\cdot valeur.\\
+      \text{Étape n :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_0+x\cdot valeur.\\
+      \end{array}
+    </me>
+  </p>
+  <aside>
+    <p>
+      Vous pouvez aussi appeler cet algorithme <url href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_Ruffini-Horner#Histoire">méthode de Ruffini-Horner</url> si vous voulez faire honneur à Paolo Ruffini qui semble avoir eu cette idée avant William George Horner lui-même.
+    </p>
+  </aside>
+  <p>
+    Voici une implémentation itérative de la méthode de Horner.
     <sage language='python'>
       <input>
-        # entrées
+        # entrées :
         n = 3
         coefficients = [10, 7, 3, 5]
         x = 9
-
-        # instructions
+        # instructions :
         valeur = coefficients[n]
         for j in range(1, n+1):
             valeur = coefficients[n-j] + x * valeur
-
-        # sortie
+        # sortie :
         print(valeur)
       </input>
     </sage>
+  </p>
+  <p>
     La complexité de cet algorithme
     <me>T(n)=2n</me>
-    est linéaire et bien meilleure que la complexité quadratique obtenue par l'approche naïve, comme le montrent les graphes ci-après.
-      <figure>
-          <caption>Linéaire vs quadratique</caption>
-          <interactive xml:id="desmos-lineaire-quadratique" desmos="qhvlpnvcmh" width="100%" aspect="5:4"/>
-      </figure>
-    </p>
-
+    est linéaire, donc bien meilleure que la complexité quadratique obtenue par l'approche naïve, comme l'illustrent les graphes ci-après.
+    <figure>
+        <caption>Linéaire vs quadratique</caption>
+        <interactive xml:id="desmos-lineaire-quadratique" desmos="qhvlpnvcmh" width="100%" aspect="5:4"/>
+    </figure>
+  </p>
 </paragraphs>
 
 </section>
@@ -334,14 +358,194 @@
 <p>Comment utiliser efficacement l'ordinateur pour calculer les nombres de Fibonacci?</p>
 </problem>
 
-<ul>
-  <li><p>L'algorithme récursif naïf implémenté à l'exercice <xref ref="fibo_recursive"/> a une complexité exponentielle, c'est pourquoi cela prend déjà un temps terriblement long pour calculer le centième nombre de Fibonacci de cette façon.</p></li>
-  <li><p>L'algorithme itératif implémenté à l'exercice <xref ref="fibo_iterative"/> est bien meilleur étant donné que sa complexité s'avère linéaire.</p></li>
-  <li>
-    <p>On peut faire encore mieux et obtenir une complexité logarithmique en utilisant certaines propriétés de la suite de Fibonacci.</p>
-    <p>Voir <url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithmes_de_calcul_des_nombres_de_Fibonacci">Algorithmes de calcul des nombres de Fibonacci</url> pour plus de détails.</p>
-  </li>
-</ul>
+<definition xml:id="defi_fibo">
+  <p>
+    La suite de Fibonacci est définie par récurrence de la façon suivante :
+    <me>F_1=F_2=1\quad\text{et}\quad F_n=F_{n-1}+F_{n-2}\quad\text{pour tout}\;n\geq 3.</me>
+  </p>
+</definition>
+
+<p>L'algorithme récursif naïf implémenté à l'exercice <xref ref="fibo_recursive"/> a une complexité exponentielle, c'est pourquoi cela prend déjà un temps terriblement long pour calculer <m>F_{100}</m> de cette façon.</p>
+
+<p>L'algorithme itératif implémenté à l'exercice <xref ref="fibo_iterative"/> est bien meilleur étant donné que sa complexité s'avère linéaire.</p>
+
+<p>
+  Mais on peut mieux faire : nous allons maintenant calculer <m>F_{50}</m> à l'aide de deux autres algorithmes qui peuvent être plus avantageux, dépendant du contexte et des buts cherchés.
+</p>
+
+<paragraphs>
+  <title>Algorithme 1 : Formule de Binet</title>
+
+  <p>
+    Comme <m>(F_n)</m> est une <url href="https://fr.wikipedia.org/wiki/Suite_r%C3%A9currente_lin%C3%A9aire">suite récurrente linéaire</url>, il est possible d'exprimer son terme général à l'aide d'une formule explicite.
+  </p>
+  <aside>
+    <p>Cette formule est due à <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Binet/">Jacques Binet</url>, qui découvrit également les règles de calcul du produit matriciel.</p>
+  </aside>
+
+  <theorem xml:id="fibo_binet">
+    <statement>
+      <p>
+        Pour tout <m>n\ge 3</m>, on a
+        <me>F_n=\frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}-\frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}</me>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Notons
+        <me>\phi_+:=\frac{1+\sqrt{5}}{2}\quad\text{et}\quad\phi_-:=\frac{1-\sqrt{5}}{2},</me>
+        et observons que
+        <me>\phi_++\phi_-=1,\quad\phi_+-\phi_-=\sqrt{5}\quad\text{et}\quad\phi_+\phi_-=-1.</me>
+      </p>
+      <p>
+        Étant donné la définition <xref ref="defi_fibo"/>, il suffit de vérifier que
+        <me>G_n:=\left(\phi_+^n-\phi_-^n\right)/\sqrt{5}</me>
+        satisfait
+        <me>G_1=G_2=1\quad\text{et}\quad G_n=G_{n-1}+G_{n-2}\quad\text{pour tout}\;n\geq 3.</me>
+        <ul>
+          <li>
+            <p>
+              On voit tout de suite que
+              <me>\sqrt{5}\,G_1=\phi_+-\phi_-=\sqrt{5}</me>
+              et que
+              <me>\sqrt{5}\,G_2=\phi_+^2-\phi_-^2=\left(\phi_+-\phi_-\right)\left(\phi_++\phi_-\right)=\sqrt{5}\cdot 1=\sqrt{5},</me>
+              d'où <m>G_1=G_2=1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Pour la relation de récurrence, on a
+              <md>
+                <mrow>\sqrt{5}\,G_{n-1}+\sqrt{5}\,G_{n-2}&amp;=\phi_+^{n-1}-\phi_-^{n-1}+\phi_+^{n-2}-\phi_-^{n-2}</mrow>
+                <mrow>&amp;=\phi_+^{n-1}\cdot 1-\phi_+^{n-2}\cdot(-1)-\phi_-^{n-1}\cdot 1+\phi_-^{n-2}\cdot(-1)</mrow>
+                <mrow>&amp;=\phi_+^{n-1}\cdot\left(\phi_++\phi_-\right)-\phi_+^{n-2}\cdot\left(\phi_+\phi_-\right)</mrow>
+                <mrow>&amp;\quad\quad-\phi_-^{n-1}\cdot\left(\phi_++\phi_-\right)+\phi_-^{n-2}\cdot\left(\phi_+\phi_-\right)</mrow>
+                <mrow>&amp;=\phi_+^n+\cancel{\phi_+^{n-1}\phi_-}-\cancel{\phi_+^{n-1}\phi_-}</mrow>
+                <mrow>&amp;\quad\quad-\bcancel{\phi_-^{n-1}\phi_+}-\phi_-^n+\bcancel{\phi_-^{n-1}\phi_+}</mrow>
+                <mrow>&amp;=\sqrt{5}\,G_n,</mrow>
+              </md>
+              d'où <m>G_n=G_{n-1}+G_{n-2}</m> pour tout <m>n\ge 3</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </proof>
+  </theorem>
+  <p>
+    Dans cette formule, seul le premier terme importe vraiment.
+    En effet, comme
+    <me>\left|\frac{1-\sqrt{5}}{2}\right|\simeq 0{,}62,</me>
+    le terme
+    <me>\frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}</me>
+    est assez petit pour que <m>F_n</m> soit égal à l'entier le plus proche de
+    <me>\frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}.</me>
+  </p>
+
+  <p>
+    Évaluez le code suivant pour calculer <m>F_{50}</m> à l'aide de la formule de Binet.
+    <sage language='python'>
+      <input>
+        # entrée :
+        n = 50
+        # instructions :
+        from math import sqrt
+        x = (1 + sqrt(5)) ** n / (2 ** n * sqrt(5))
+        # sortie :
+        print(x)
+      </input>
+    </sage>
+    On en déduit que <m>F_{50}=12\,586\,269\,025</m>.
+  </p>
+  <p>
+    A priori, il n'y a pas mieux qu'une formule explicite.
+    Pourtant, la nature de celle-ci fait en sorte que des erreurs d'arrondis liées à la présence de <m>\sqrt{5}</m> la rendent vite inutile pour obtenir la valeur exacte de l'entier <m>F_n</m>.
+  </p>
+
+</paragraphs>
+
+<paragraphs>
+  <title>Algorithme 2 : Exponentiation matricielle rapide</title>
+
+  <p>
+    Nous allons maintenant transformer l'évaluation d'un terme de la suite <m>(F_n)</m> en un problème d'exponentiation grâce au calcul matriciel.
+  </p>
+
+  <theorem xml:id="fibo_matriciel">
+    <statement>
+      <p>
+        Pour tout <m>n\ge 3</m>, on a
+        <me>\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}.</me>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Nous allons établir cette formule à l'aide d'une preuve par récurrence.
+        <ul>
+          <li>
+            <p>
+              Pour <m>n=3</m>,  on a
+              <me>\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^2=\begin{bmatrix}2&amp;1\\1&amp;1\end{bmatrix},</me>
+              ce qui coïncide bien avec
+              <me>\begin{bmatrix}F_3&amp;F_2\\F_2&amp;F_1\end{bmatrix}.</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              Supposons que pour un certain entier <m>n\ge 3</m> on ait
+              <me>\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}.</me>
+              Alors par produit matriciel, on a
+              <md>
+                <mrow>\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^n&amp;=\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}</mrow>
+                <mrow>&amp;=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}</mrow>
+                <mrow>&amp;=\begin{bmatrix}F_n+F_{n-1}&amp;F_n\\F_{n-1}+F_{n-2}&amp;F_{n-1}\end{bmatrix},</mrow>
+              </md>
+              ce qui coïncide bien avec
+              <me>\begin{bmatrix}F_{n+1}&amp;F_n\\F_n&amp;F_{n-1}\end{bmatrix}</me>
+              car, par définition <xref ref="defi_fibo"/>, on a
+              <me>F_n+F_{n-1}=F_{n+1}\quad\text{et}\quad F_{n-1}+F_{n-2}=F_n.</me>
+              La propriété est donc vraie pour <m>n+1</m>, ce qui achève la démonstration.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </proof>
+  </theorem>
+
+  <p>
+    Évaluez le code suivant pour calculer <m>F_{50}</m> à l'aide d'une exponentiation matricielle rapide implémentée en Python à l'aide de NumPy.
+    <sage language='python'>
+      <input>
+        # entrée :
+        n = 49
+        # instructions :
+        import numpy as np
+        M = np.array([[1,1], [1,0]])
+
+        def puissanceRecursive(M, n):
+            if n == 1:
+                return M
+            elif n % 2 == 0:
+                return puissanceRecursive(M.dot(M.T), n / 2)
+            else:
+                N = puissanceRecursive(M.dot(M.T), (n - 1) / 2)
+                return M.dot(N.T)
+
+        N = puissanceRecursive(M, n)
+        # sortie :
+        print(N)
+      </input>
+    </sage>
+    On en déduit à nouveau que <m>F_{50}=12\,586\,269\,025</m>.
+  </p>
+  <p>
+    Quoique moins rapide que la formule de Binet, cet algorithme a le mérite de donner des valeurs exactes de <m>F_n</m> pour des valeurs de <m>n</m> plus nombreuses.
+    Et si on tient compte de la complexité de l'addition utilisée dans l'approche itérative utilisée dans l'exercice <xref ref="fibo_iterative"/>, il s'avère plus rapide que cette dernière.
+  </p>
+  <p>
+    Atttention : Notez toutefois que cette implémentation pose un problème à partir de <m>n=92</m>.
+    Pour aller plus loin sans erreur, on peut <url href="https://tinyurl.com/43r32vwy">utiliser Sage</url>, par exemple.
+  </p>
+</paragraphs>
 
 </section>
 
@@ -350,26 +554,25 @@
 
 <exercise>
   <statement>
-    <p>On s'intéresse à l'algorithme suivant :
+    <p>
+      On s'intéresse à l'algorithme qui suit.
       <pre>
-        # entrée
+        # entrée :
         n = 5
-
-        # instructions
+        # instructions :
         k = 1
         somme = 1
         while k &lt; n:
             k = k + 1
             somme = somme + k
-
-        # sortie
+        # sortie :
         print(somme)
       </pre>
     </p>
     <ol>
       <li><p>Qu'affiche-t-il?</p></li>
       <li><p>Que fait cet algorithme pour chaque valeur de <m>n</m> donnée en entrée?</p></li>
-      <li><p>En utilisant une variable que vous appellerez <c>compteur</c>, modifiez l'algorithme de façon à ce qu'il affiche aussi <m>T(n)</m> le nombre de toutes les assignations, opérations et comparaisons effectuées (en excluant celles liées à <c>compteur</c>).</p></li>
+      <li><p>En utilisant une variable que vous appellerez <c>compteur</c>, modifiez l'algorithme de façon à ce qu'il affiche aussi <m>T(n)</m> le nombre de toutes les assignations, opérations et comparaisons effectuées, en excluant celles liées à <c>compteur</c>.</p></li>
       <li><p>Combien vaut <m>T(5)</m>?</p></li>
       <li><p>Combien vaut <m>T(n)</m>?</p></li>
       <li><p>Comment qualifieriez-vous la complexité de cet algorithme?</p></li>
@@ -377,37 +580,41 @@
   </statement>
   <solution>
     <ol>
-      <li><pre>15</pre></li>
-      <li><p>Il calcule la somme des <m>n</m> premiers entiers naturels non nuls.</p></li>
+      <li>Ce bloc de code a pour effet d'afficher 15.</li>
+      <li>Il calcule la somme des <m>n</m> premiers entiers naturels non nuls.</li>
       <li>
-        <pre>
-          # entrée
-          n = 5
-
-          # instructions
-          k = 1
-          somme = 1
-          compteur = 3
-          while k &lt; n:
-              k = k + 1
-              somme = somme + k
-              compteur = compteur + 5
-
-          # sortie
-          print(somme)
-          print(compteur)
-        </pre>
+        <p>
+          Il y a 3 assignations avant d'entrer dans la boucle.
+          À chaque tour de boucle, il y a 1 comparaison, 2 additions et 2 assignations.
+          Pour compter tout ça, on peut donc s'y prendre comme suit.
+          <pre>
+            # entrée :
+            n = 5
+            # instructions :
+            k = 1
+            somme = 1
+            compteur = 3
+            while k &lt; n:
+                k = k + 1
+                somme = somme + k
+                compteur = compteur + 5
+            # sortie :
+            print(somme)
+            print(compteur)
+          </pre>
+        </p>
       </li>
-      <li><p><m>23</m></p></li>
-      <li><p><m>T(n)=3+5(n-1)=5n-2</m></p></li>
-      <li><p>Il s'agit d'une complexité linéaire.</p></li>
+      <li>On a <m>T(5)=3+4\cdot 5=23</m>.</li>
+      <li>On a <m>T(n)=3+5(n-1)=5n-2</m>.</li>
+      <li>Il s'agit d'une complexité linéaire.</li>
     </ol>
   </solution>
 </exercise>
 
 <exercise>
   <statement>
-    <p>On s'intéresse à la fonction suivante :
+    <p>
+      On s'intéresse à la fonction qui suit.
       <pre>
         def maFonction(x, liste):
             i = 0
@@ -418,55 +625,252 @@
       </pre>
     </p>
     <ol>
-      <li><p>Qu'est-ce qui est renvoyé par <c>maFonction(7, [5, 7, 2, 3, 9])</c>?</p></li>
-      <li><p>Qu'est-ce qui est renvoyé par <c>maFonction(4, [5, 7, 2, 3, 9])</c>?</p></li>
-      <li><p>Expliquez avec des mots ce que fait cette fonction.</p></li>
-      <li><p>Le nombre <m>T(n)</m> de toutes les assignations, opérations et comparaisons nécessaires pour exécuter <c>maFonction(x, liste)</c> dépend du nombre d'éléments <m>n</m> dans la liste. Combien vaut-il dans le pire des cas?</p></li>
+      <li>Qu'est-ce qui est renvoyé par <c>maFonction(8, [7, 5, 8, 5, 2])</c>?</li>
+      <li>Qu'est-ce qui est renvoyé par <c>maFonction(5, [7, 5, 8, 5, 2])</c>?</li>
+      <li>Qu'est-ce qui est renvoyé par <c>maFonction(4, [7, 5, 8, 5, 2])</c>?</li>
+      <li>Expliquez avec des mots ce que fait cette fonction.</li>
+      <li>
+        <p>
+          Le nombre <m>T(n)</m> de toutes les assignations, opérations et comparaisons nécessaires pour évaluer <c>maFonction(x, liste)</c> dépend du nombre d'éléments <m>n</m> dans la liste.
+          Combien vaut-il dans le pire des cas?
+        </p>
+      </li>
     </ol>
   </statement>
   <solution>
     <ol>
-      <li><p><m>1</m></p></li>
-      <li><p><m>5</m></p></li>
+      <li>Cela renvoie <m>2</m>, comme on peut le vérifier avec <url href="https://tinyurl.com/u9dxsk7d">Python Tutor</url>.</li>
+      <li>Cela renvoie <m>1</m>, comme on peut le vérifier avec <url href="https://tinyurl.com/2tp3w9vc">Python Tutor</url>.</li>
+      <li>Cela renvoie <m>5</m>, comme on peut le vérifier avec <url href="https://tinyurl.com/48cckh4p">Python Tutor</url>.</li>
       <li>
-        <p>Cette fonction renvoie la position de la première occurence de <c>x</c> dans <c>liste</c>.</p>
-        <p>Si <c>x</c> n'y figure pas, la fonction renvoie la longueur de la liste.</p>
+        <p>Cette fonction renvoie la position de la première apparition de <c>x</c> dans <c>liste</c>.</p>
+        <p>Si <c>x</c> n'y figure pas, elle renvoie la longueur de la liste.</p>
       </li>
-      <li><p>Dans le pire des cas, <m>T(n)=2+n\cdot 4=4n+2</m>.</p></li>
+      <li>
+        Avant la boucle, il y a 2 assignations.
+        À chaque tour de boucle, il y a 2 comparaisons, 1 addition et 1 assignation.
+        Dans le pire des cas, on a donc <m>T(n)=2+n\cdot 4=4n+2</m>.</li>
     </ol>
+  </solution>
+</exercise>
+
+<exercise xml:id="expo_rapide_45">
+  <statement>
+    <p>
+      On veut calculer <m>3^{45}</m> à l'aide de l'algorithme d'exponentiation rapide présenté à la section <xref ref="exponentiation"/>.
+      <ol>
+        <li>
+          Vérifiez que cela revient à décomposer <m>3^{45}</m> de la façon suivante :
+          <me>3\cdot 3^4\cdot 3^8\cdot 3^{32}.</me>
+        </li>
+        <li>Combien de multiplications doit-on effectuer au total?</li>
+        <li>Voyez-vous un lien avec l'écriture de <m>45</m> en binaire?</li>
+        <li>
+          <p>
+            Utilisez cette méthode pour calculer à la main la matrice
+            <me>\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{45}.</me>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Voici les étapes de l'algorithme :
+            <md>
+              <mrow>3^{45}&amp;=3\cdot\left(3^2\right)^{22},</mrow>
+              <mrow>&amp;=3\cdot\left(3^4\right)^{11},</mrow>
+              <mrow>&amp;=3\cdot 3^4\cdot\left(3^8\right)^5,</mrow>
+              <mrow>&amp;=3\cdot 3^4\cdot 3^8\cdot\left(3^{16}\right)^2,</mrow>
+              <mrow>&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32}.</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Cela prend 5 multiplications pour calculer
+            <md>
+              <mrow>&amp;3^2=3\cdot 3=9,</mrow>
+              <mrow>&amp;3^4=3^2\cdot 3^2=81,</mrow>
+              <mrow>&amp;3^8=3^4\cdot 3^4=6\,561,</mrow>
+              <mrow>&amp;3^{16}=3^8\cdot 3^8=43\,046\,721,</mrow>
+              <mrow>&amp;3^{32}=3^{16}\cdot 3^{16}=1\,853\,020\,188\,851\,841,</mrow>
+            </md>
+            et 3 de plus pour calculer
+            <md>
+              <mrow>3^{45}&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32},</mrow>
+              <mrow>&amp;=3\cdot 81\cdot 6\,561\cdot 1\,853\,020\,188\,851\,841,</mrow>
+              <mrow>&amp;=2\,954\,312\,706\,550\,833\,698\,643.</mrow>
+            </md>
+          </p>
+          <p>
+            Cela fait donc un total de 8 multiplications.
+          </p>
+        </li>
+        <li>
+          <p>
+            On a
+            <md>
+              <mrow>45&amp;=32+13,</mrow>
+              <mrow>&amp;=32+8+5,</mrow>
+              <mrow>&amp;=32+8+4+1,</mrow>
+              <mrow>&amp;=1\cdot 2^5+1\cdot 2^3+1\cdot 2^2+1\cdot 2^0,</mrow>
+              <mrow>&amp;=1\cdot 2^5+0\cdot 2^4+1\cdot 2^3+1\cdot 2^2+0\cdot 2^1+1\cdot 2^0.</mrow>
+            </md>
+            L'écriture en binaire de <m>45</m> est donc <m>101101</m> et les puissances de <m>2</m> qui apparaissent, à savoir <m>1,4,8</m> et <m>32</m>, sont les exposants utiles de la décomposition
+            <me>3^{45}=3\cdot 3^4\cdot 3^8\cdot 3^{32}.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Notons
+            <me>M:=\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}.</me>
+            Comme <m>M^{45}=M\cdot M^4\cdot M^8\cdot M^{32}</m>, on doit d'abord calculer les puissances de <m>M</m> suivantes :
+            <me>M^2=\begin{bmatrix}2&amp;1\\1&amp;1\end{bmatrix},</me>
+            <me>M^4=\begin{bmatrix}5&amp;3\\3&amp;2\end{bmatrix},</me>
+            <me>M^8=\begin{bmatrix}34&amp;21\\21&amp;13\end{bmatrix},</me>
+            <me>M^{16}=\begin{bmatrix}1\,597&amp;987\\987&amp;610\end{bmatrix},</me>
+            <me>M^{32}=\begin{bmatrix}3\,524\,578&amp;2\,178\,309\\2\,178\,309&amp;1\,346\,269\end{bmatrix}.</me>
+          </p>
+          <p>
+            Maintenant <m>M^{45}=M\cdot M^4\cdot M^8\cdot M^{32}</m> donne
+            <me>M^{45}=\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}5&amp;3\\3&amp;2\end{bmatrix}\begin{bmatrix}34&amp;21\\21&amp;13\end{bmatrix}\begin{bmatrix}3\,524\,578&amp;2\,178\,309\\2\,178\,309&amp;1\,346\,269\end{bmatrix},</me>
+            d'où
+            <me>M^{45}=\begin{bmatrix}8&amp;5\\5&amp;3\end{bmatrix}\begin{bmatrix}34&amp;21\\21&amp;13\end{bmatrix}\begin{bmatrix}3\,524\,578&amp;2\,178\,309\\2\,178\,309&amp;1\,346\,269\end{bmatrix},</me>
+            puis
+            <me>M^{45}=\begin{bmatrix}377&amp;233\\233&amp;144\end{bmatrix}\begin{bmatrix}3\,524\,578&amp;2\,178\,309\\2\,178\,309&amp;1\,346\,269\end{bmatrix},</me>
+            et finalement
+            <me>M^{45}=\begin{bmatrix}1\,836\,311\,903&amp;1\,134\,903\,170\\1\,134\,903\,170&amp;701\,408\,733\end{bmatrix}.</me>
+          </p>
+          <aside>Les coefficients de ces matrices vous évoquent-ils quelque chose?</aside>
+        </li>
+      </ol>
+    </p>
   </solution>
 </exercise>
 
 <exercise>
   <statement>
     <ol>
-      <li><p>Modifiez le deuxième bloc de code donné à la section <xref ref="exponentiation"/> de façon à créer une fonction <c>complexitePuissanceRecursive(n)</c> qui renvoie <m>T(n)</m> le nombre de multiplications effectuées lors du calcul de <m>x^n</m> par la méthode d'exponentiation rapide.</p></li>
-      <li><p>Combien vaut <m>T(10\,000)</m>?</p></li>
-      <li><p>Vérifiez que <m>T(10\,000)</m> est compris entre <m>\log_2(10\,000)</m> et <m>2\log_2(10\,000)</m>.</p></li>
+      <li>Modifiez le deuxième bloc de code donné à la section <xref ref="exponentiation"/> de façon à créer une fonction <c>complexitePuissanceRecursive(n)</c> qui renvoie <m>T(n)</m> le nombre de multiplications effectuées lors du calcul de <m>x^n</m> par la méthode d'exponentiation rapide.</li>
+      <li>Vérifiez que <c>complexitePuissanceRecursive(45)</c> renvoie bien 8, comme déterminé à la question 2 de l'exercice <xref ref="expo_rapide_45"/>.</li>
+      <li>Combien vaut <m>T(10\,000)</m>?</li>
+      <li>Vérifiez que <m>T(10\,000)</m> est compris entre <m>\log_2(10\,000)-1</m> et <m>2\log_2(10\,000)</m>.</li>
     </ol>
   </statement>
   <solution>
     <ol>
       <li>
-        <pre>
-          def complexitePuissanceRecursive(n):
-              if n == 1:
-                  return 0
-              elif n % 2 == 0:
-                  return 1 + complexitePuissanceRecursive(n / 2)
-              else:
-                  return 2 + complexitePuissanceRecursive((n - 1) / 2)
-        </pre>
+        <p>
+          Si on ne tient compte que du nombre de multiplications impliquées, on obtient la fonction qui suit.
+          <pre>
+            def complexitePuissanceRecursive(n):
+                if n == 1:
+                    return 0
+                elif n % 2 == 0:
+                    return 1 + complexitePuissanceRecursive(n / 2)
+                else:
+                    return 2 + complexitePuissanceRecursive((n - 1) / 2)
+          </pre>
+        </p>
       </li>
-      <li><m>T(10\,000)=17</m></li>
-      <li><p>C'est bien vrai car <m>\log_2(10\,000)\approx 13{,}3</m> et <m>2\log_2(10\,000)\approx 26{,}6</m>.</p></li>
+      <li>Après évaluation du bloc précédent, la commande <c>print(complexitePuissanceRecursive(45))</c> affiche bien 8.</li>
+      <li>Grâce au code précédent, on trouve <m>T(10\,000)=17</m>.</li>
+      <li>C'est bien vrai car <m>\log_2(10\,000)-1\approx 12{,}3</m> et <m>2\log_2(10\,000)\approx 26{,}6</m>.</li>
     </ol>
   </solution>
 </exercise>
 
 <exercise>
   <statement>
-    <p>Exécutez l'algorithme de Horner à la main pour calculer <m>P(3)</m>.
+    <p>On utilise l'algorithme d'exponentiation décrit à la section <xref ref="exponentiation"/> pour calculer les puissances d'une matrice carrée <m>M</m>.</p>
+    <p>Qu'est-ce qui prend le plus de produits matriciels : le calcul de <m>M^{47}</m> ou celui de <m>M^{48}</m>?</p>
+  </statement>
+  <hint>Comment <m>47</m> et <m>48</m> s'écrivent-ils en binaire?</hint>
+  <answer>Celui de <m>M^{47}</m>.</answer>
+  <solution>
+    <p>
+      La décomposition binaire de <m>47</m> donne 5 morceaux non nuls :
+      <me>47=32+8+4+2+1=1\cdot 2^5+0\cdot 2^4+1\cdot 2^3+1\cdot 2^2+1\cdot 2^1+1\cdot 2^0.</me>
+      Celle de <m>48</m> n'en donne que 2 :
+      <me>48=32+16=1\cdot 2^5+1\cdot 2^4+0\cdot 2^3+0\cdot 2^2+0\cdot 2^1+0\cdot 2^0.</me>
+    </p>
+    <p>
+      Dans les deux cas, il y a 5 produits matriciels à effectuer pour déterminer <m>M^2,M^4,M^8,M^{16}</m> et <m>M^{32}</m>, puis 4 autres por calculer
+      <me>M^{47}=M\cdot M^2\cdot M^4\cdot M^8\cdot M^{32}</me>
+      et seulement 1 autre pour calculer
+      <me>M^{48}=M^{16}\cdot M^{32}.</me>
+    </p>
+    <p>
+      C'est donc le calcul de <m>M^{47}</m> qui nécessite le plus de produits matriciels lorsqu'on applique l'algorithme d'exponentiation rapide.
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Soit <m>n\ge 2</m> un entier et soit
+      <me>n=2^d+c_{d-1}2^{d-1}+\cdots+c_12^1+c_02^0</me>
+      sa décomposition en binaire, où <m>c_i\in\{0,1\}</m> pour tout <m>0\le i\le d-1</m>.
+    </p>
+    <ol>
+      <li>Quel est le plus petit nombre de chiffres non nuls possible pour l'écriture de <m>n</m> en binaire?</li>
+      <li>Quel est, en fonction de <m>d</m>, le plus grand nombre de chiffres non nuls possible dans l'écriture de <m>n</m> en binaire?</li>
+      <li>Quel est, en fonction de <m>d</m>, le plus petit nombre possible de multiplications nécessaires pour évaluer <m>x^n</m> à l'aide de l'algorithme d'exponentiation rapide?</li>
+      <li>Quel est, en fonction de <m>d</m>, le plus grand nombre possible de multiplications nécessaires pour évaluer <m>x^n</m> à l'aide de l'algorithme d'exponentiation rapide?</li>
+      <li>
+        <p>
+          Si on note <m>T(n)</m> de multiplications nécessaires pour évaluer <m>x^n</m> à l'aide de l'algorithme d'exponentiation rapide, montrez que
+          <me>\lfloor\log_2(n)\rfloor\le T(n)\le 2\lfloor\log_2(n)\rfloor</me>
+          où <m>\lfloor\log_2(n)\rfloor</m> désigne la <url href="https://fr.wikipedia.org/wiki/Partie_enti%C3%A8re_et_partie_fractionnaire">partie entière</url> de <m>\log_2(n)</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li>Le plus petit nombre de chiffres non nuls possible est <m>1</m>, lorsque <m>n=2^d</m> est une puissance de <m>2</m>.</li>
+      <li>Le plus grand nombre de chiffres non nuls possible est <m>d+1</m>, lorsque <m>n=2^d+2^{d-1}+\cdots+2+1</m> précède une puissance de <m>2</m>.</li>
+      <li>
+        <p>
+          Ce minimum est atteint dans le cas où <m>n=2^d</m> est une puissance de <m>2</m>.
+          Il faut alors <m>d</m> multiplications puisqu'il faut calculer <m>x^2,\ldots,x^{2^d}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Ce maximum est atteint dans le cas où <m>n=2^d+2^{d-1}+\cdots+2+1</m> précède une puissance de <m>2</m>.
+          Il faut alors <m>d</m> multiplications pour calculer d'abord <m>x^2,\ldots,x^{2^d}</m>, et <m>d</m> multiplications pour calculer ensuite
+          <me>x^n=x\cdot x^2\cdots x^{2^{d-1}}\cdot x^{2^d}.</me>
+          Cela prend donc <m>2d</m> multiplications en tout.
+        </p>
+      </li><li>
+        <p>
+          On déduit des deux questions précédentes l'encadrement
+          <me>d\le T(n)\le 2d.</me>
+        </p>
+        <p>
+          Par ailleurs, on a
+          <me>2^d\le n&lt; 2^{d+1}</me>
+          d'où
+          <me>d\le\log_2(n)&lt; d+1</me>
+          par croissance de la fonction <m>\log_2(x)</m>, et il en découle que <m>d</m> est égal à la partie entière de <m>\log_2(n)</m>
+          <me>d=\lfloor\log_2(n)\rfloor,</me>
+          ce qui achève la démonstration.
+        </p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Exécutez l'algorithme de Horner à la main pour calculer <m>P(3)</m>.
       <ol>
         <li><m>P(x)=2+7x+4x^2</m></li>
         <li><m>P(x)=-2-7x+4x^2</m></li>
@@ -475,7 +879,8 @@
     </p>
   </statement>
   <solution>
-    <p>Exécutez l'algorithme de Horner à la main pour calculer <m>P(3)</m>.
+    <p>
+      Exécutez l'algorithme de Horner à la main pour calculer <m>P(3)</m>.
       <ol>
         <li>
           <me>
@@ -515,7 +920,8 @@
 
 <exercise>
   <statement>
-    <p>Exécutez l'algorithme de Horner à la main pour calculer <m>P(-2)</m>.
+    <p>
+      Exécutez l'algorithme de Horner à la main pour calculer <m>P(-2)</m>.
       <ol>
         <li><m>P(x)=2+7x+4x^2</m></li>
         <li><m>P(x)=-2-7x+4x^2</m></li>
@@ -564,12 +970,13 @@
 
 <exercise xml:id="horneretdivision">
   <statement>
-    <p>On s'intéresse au polynôme <m>P(x)=9+5x+4x^2+2x^3+7x^4</m></p>
-    <ol>
-      <li><p>Exécutez l'algorithme de Horner à la main pour évaluer <m>P(x)</m> en <m>x=2</m>.</p></li>
-      <li><p>Effectuez la division euclidienne de <m>P(x)</m> par <m>x-2</m>.</p></li>
-      <li><p>Qu'observez-vous?</p></li>
-    </ol>
+    <p>
+      On s'intéresse au polynôme <m>P(x)=9+5x+4x^2+2x^3+7x^4</m></p>
+      <ol>
+        <li><p>Exécutez l'algorithme de Horner à la main pour évaluer <m>P(x)</m> en <m>x=2</m>.</p></li>
+        <li><p>Effectuez la division euclidienne de <m>P(x)</m> par <m>x-2</m>.</p></li>
+        <li><p>Qu'observez-vous?</p></li>
+      </ol>
   </statement>
   <solution>
     <ol>
@@ -586,7 +993,8 @@
         <p>Donc <m>P(2)=163</m>.</p>
       </li>
       <li>
-        <p>Le quotient est
+        <p>
+          Le quotient est
           <me>Q(x)=7x^3+16x^2+36x+77</me>
           et le reste vaut
           <me>R(x)=163.</me>
@@ -602,13 +1010,15 @@
 
 <exercise>
   <statement>
-    <p>La remarque faite à la troisième question de l'exercice <xref ref="horneretdivision"/> est vraie en général : lorsqu'on exécute l'algorithme de Horner pour évaluer <m>P(x_0)</m>
+    <p>
+      La remarque faite à la troisième question de l'exercice <xref ref="horneretdivision"/> est vraie en général : lorsqu'on exécute l'algorithme de Horner pour évaluer <m>P(x_0)</m>
       <ul>
         <li><p>la dernière valeur calculée donne le reste de la division euclidienne de <m>P(x)</m> par <m>x-x_0</m></p></li>
         <li><p>et les valeurs précédentes forment la liste des coefficients du quotient de cette division.</p></li>
       </ul>
     </p>
-    <p>Sachant cela, utilisez l'algorithme de Horner pour déterminer le quotient et le reste des divisions indiquées ci-dessous.
+    <p>
+      Sachant cela, utilisez l'algorithme de Horner pour déterminer le quotient et le reste des divisions indiquées ci-dessous.
       <ol>
         <li><p><m>P(x)=x^2+7x-2</m> divisé par <m>x-3</m></p></li>
         <li><p><m>P(x)=x^3-5x^2+6x</m> divisé par <m>x-2</m></p></li>
@@ -619,7 +1029,8 @@
   <solution>
     <ol>
       <li>
-        <p>L'algorithme de Horner pour évaluer <m>P(3)</m> donne
+        <p>
+          L'algorithme de Horner pour évaluer <m>P(3)</m> donne
           <me>
             \begin{array}{lcl}
             \text{Étape 0 :}&amp;valeur&amp;=&amp;1\\
@@ -631,7 +1042,8 @@
         <p>Donc le quotient est <m>Q(x)=1\cdot x+10=x+10</m> et le reste vaut <m>R(x)=28</m>.</p>
       </li>
       <li>
-        <p>L'algorithme de Horner pour évaluer <m>P(2)</m> donne
+        <p>
+          L'algorithme de Horner pour évaluer <m>P(2)</m> donne
           <me>
             \begin{array}{lcl}
             \text{Étape 0 :}&amp;valeur&amp;=&amp;1\\
@@ -644,7 +1056,8 @@
         <p>Donc le quotient est <m>Q(x)=1\cdot x^2+(-3)\cdot x+0=x^2-3x</m> et le reste vaut <m>R(x)=0</m>.</p>
       </li>
       <li>
-        <p>L'algorithme de Horner pour évaluer <m>P(-4)</m> donne
+        <p>
+          L'algorithme de Horner pour évaluer <m>P(-4)</m> donne
           <me>
             \begin{array}{lcl}
             \text{Étape 0 :}&amp;valeur&amp;=&amp;2\\
@@ -660,7 +1073,74 @@
   </solution>
 </exercise>
 
-</section>
+<exercise>
+  <statement>
+    <p>
+      Utilisez l'algorithme basé sur la formule de Binet <xref ref="fibo_binet"/> pour calculer les termes suivants de la suite de Fibonacci :
+      <ol>
+        <li><m>F_{14}</m>;</li>
+        <li><m>F_{15}</m>;</li>
+        <li><m>F_{16}</m>;</li>
+        <li><m>F_{40}</m>;</li>
+        <li><m>F_{100}</m>.</li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      En prenant l'entier le plus proche du nombre calculé, on trouve :
+      <ol>
+        <li><m>F_{14}=377</m>;</li>
+        <li><m>F_{15}=610</m>;</li>
+        <li><m>F_{16}=987</m>;</li>
+        <li><m>F_{40}=102\,334\,155</m>;</li>
+        <li><m>F_{100}=3{,}542\,248\,481\,792\,631\times 10^{20}</m>.</li>
+      </ol>
+    </p>
+    <p>Les quatre premiers calculs sont conformes aux <url href="https://oeis.org/A000045">valeurs fournies par OEIS</url>.</p>
+    <p>
+      Suite aux erreurs d'arrondis dues à la présence de <m>\sqrt{5}</m>, le cinquième calcul ne fournit que les 14 premiers chiffres exacts de
+      <me>F_{100}=354\,224\,848\,179\,261\,915\,075</me>
+      qu'on avait calculé à l'exercice <xref ref="fibo_iterative"/>.
+    </p>
+  </solution>
+</exercise>
 
+<exercise>
+  <statement>
+    <p>
+      Utilisez l'algorithme basé sur la formule matricielle <xref ref="fibo_matriciel"/> pour calculer les termes suivants de la suite de Fibonacci :
+      <ol>
+        <li><m>F_{14}</m>;</li>
+        <li><m>F_{15}</m>;</li>
+        <li><m>F_{16}</m>;</li>
+        <li><m>F_{40}</m>;</li>
+        <li><m>F_{100}</m>.</li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      En prenant le premier coefficient de la matrice
+      <ol>
+        <li><m>M^{13}</m>, on trouve <m>F_{14}=377</m>;</li>
+        <li><m>M^{14}</m>, on trouve <m>F_{15}=610</m>;</li>
+        <li><m>M^{15}</m>, on trouve <m>F_{16}=987</m>;</li>
+        <li><m>M^{39}</m>, on trouve <m>F_{40}=102\,334\,155</m>;</li>
+        <li><m>M^{99}</m>, on trouve <m>F_{100}=3\,736\,710\,778\,780\,434\,371</m>.</li>
+      </ol>
+    </p>
+    <p>Les quatre premiers calculs sont conformes aux <url href="https://oeis.org/A000045">valeurs fournies par OEIS</url>.</p>
+    <p>
+      Suite aux erreurs de manipulations de matrices dont les coeffficients deviennent trop grands, le cinquième calcul est totalement faux et très loin de
+      <me>F_{100}=354\,224\,848\,179\,261\,915\,075</me>
+      qu'on avait calculé à l'exercice <xref ref="fibo_iterative"/>.
+      Cela prend donc autre chose que cette utilisation de NumPy pour implémenter l'exponentiation matricielle rapide de façon à réellement battre l'approche itérative de ce dernier.
+    </p>
+    <p>Pour aller plus loin sans erreur, on peut <url href="https://tinyurl.com/43r32vwy">utiliser Sage</url>, par exemple.</p>
+  </solution>
+</exercise>
+
+</section>
 
 </chapter>

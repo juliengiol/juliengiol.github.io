@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:49-04:00    *-->
+<!--*    on 2021-02-27T11:46:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -43,30 +43,17 @@ P(x)&amp;=10+7x+3x^2+5x^3\\
 <p>Plus généralement, on appelle forme de Horner du polynôme</p>
 <div class="displaymath">
 \begin{equation*}
-P(x)=a_0+a_1x+\ldots+a_nx^n
+P(x)=a_0+a_1x+\cdots+a_nx^n
 \end{equation*}
 </div>
 <p data-braille="continuation">la factorisation</p>
 <div class="displaymath">
 \begin{equation*}
-P(x)=a_0+x\cdot\left(a_1+x\cdot\left(a_2+x\cdot\left(\ldots +x\cdot\left(a_{n-1}+x\cdot a_n\right)\right)\right)\right)
+P(x)=a_0+x\cdot\left(a_1+x\cdot\left(a_2+x\cdot\left(\cdots +x\cdot\left(a_{n-1}+x\cdot a_n\right)\right)\right)\right)
 \end{equation*}
 </div>
 <p data-braille="continuation">qui nécessite \(n\) additions et \(n\) multiplications, soit \(2n\) opérations.</p>
-<p>Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de \(P(x)\) une paire de parenthèses après l'autre.</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{lcl}
-\text{Étape 0 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_n.\\
-\text{Étape 1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-1}+x\cdot valeur.\\
-\text{Étape 2 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-2}+x\cdot valeur.\\
-\ldots&amp;\ldots&amp;\\
-\text{Étape n-1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_1+x\cdot valeur.\\
-\text{Étape n :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_0+x\cdot valeur.\\
-\end{array}
-\end{equation*}
-</div>
-<p>Par exemple, pour le polynôme</p>
+<p>Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de \(P(x)\) une paire de parenthèses après l'autre. Par exemple, pour le polynôme</p>
 <div class="displaymath">
 \begin{equation*}
 P(x)=10+7x+3x^2+5x^3,
@@ -80,10 +67,10 @@ P(9)&amp;=10+7\cdot 9+3\cdot 9^2+5\cdot 9^3\\
 &amp;=10+9\cdot(7+9\cdot(3+9\cdot 5))
 \end{align*}
 </div>
-<p data-braille="continuation">par la méthode de Horner revient à suivre les étapes</p>
+<p data-braille="continuation">par la méthode de Horner revient à calculer les valeurs successives</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{lcl}
+\begin{array}{llll}
 \text{Étape 0 :}&amp;valeur&amp;=&amp;5\\
 \text{Étape 1 :}&amp;valeur&amp;=&amp;3+9\cdot 5=48\\
 \text{Étape 2 :}&amp;valeur&amp;=&amp;7+9\cdot 48=439\\
@@ -91,31 +78,43 @@ P(9)&amp;=10+7\cdot 9+3\cdot 9^2+5\cdot 9^3\\
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">dont on déduit que</p>
+<p data-braille="continuation">dont la dernière donne</p>
 <div class="displaymath">
 \begin{equation*}
 P(9)=3961
 \end{equation*}
 </div>
 <p data-braille="continuation">après trois additions et trois multiplications.</p>
-<p>Voici une implémentation itérative de la méthode de Horner : <div class="sagecell-python" id="sage-47"><script type="text/x-sage"># entrées
+<p>Dans le cas général, cet algorithme de calcul de \(P(x)\) peut donc être décrit comme suit.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{llll}
+\text{Étape 0 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_n.\\
+\text{Étape 1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-1}+x\cdot valeur.\\
+\text{Étape 2 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_{n-2}+x\cdot valeur.\\
+\ldots&amp;\ldots&amp;\ldots&amp;\ldots&amp;\ldots\\
+\text{Étape n-1 :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_1+x\cdot valeur.\\
+\text{Étape n :}&amp;\text{Assigner à}&amp;valeur&amp;\text{le contenu de }&amp;a_0+x\cdot valeur.\\
+\end{array}
+\end{equation*}
+</div>
+<aside class="aside aside-like"><p>Vous pouvez aussi appeler cet algorithme <a class="external" href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_Ruffini-Horner#Histoire" target="_blank">méthode de Ruffini-Horner</a> si vous voulez faire honneur à Paolo Ruffini qui semble avoir eu cette idée avant William George Horner lui-même.</p></aside><p>Voici une implémentation itérative de la méthode de Horner. <div class="sagecell-python" id="sage-47"><script type="text/x-sage"># entrées :
 n = 3
 coefficients = [10, 7, 3, 5]
 x = 9
-
-# instructions
+# instructions :
 valeur = coefficients[n]
 for j in range(1, n+1):
     valeur = coefficients[n-j] + x * valeur
-
-# sortie
+# sortie :
 print(valeur)
-</script></div> La complexité de cet algorithme</p>
+</script></div></p>
+<p>La complexité de cet algorithme</p>
 <div class="displaymath">
 \begin{equation*}
 T(n)=2n
 \end{equation*}
 </div>
-<p data-braille="continuation">est linéaire et bien meilleure que la complexité quadratique obtenue par l'approche naïve, comme le montrent les graphes ci-après. <figure class="figure figure-like"><iframe src="https://www.desmos.com/calculator/qhvlpnvcmh" id="desmos-lineaire-quadratique" width="600" height="480"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs quadratique</figcaption></figure></p></article><span class="incontext"><a href="horner.html#paragraphs-8">Contexte</a></span>
+<p data-braille="continuation">est linéaire, donc bien meilleure que la complexité quadratique obtenue par l'approche naïve, comme l'illustrent les graphes ci-après. <figure class="figure figure-like"><iframe src="https://www.desmos.com/calculator/qhvlpnvcmh" id="desmos-lineaire-quadratique" width="600" height="480"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs quadratique</figcaption></figure></p></article><span class="incontext"><a href="horner.html#paragraphs-8">Contexte</a></span>
 </body>
 </html>

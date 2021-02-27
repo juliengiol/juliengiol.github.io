@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:51-04:00    *-->
+<!--*    on 2021-02-27T11:46:20-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,31 +14,119 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.1.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.3.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
-<li><pre class="code-block tex2jax_ignore">15
-</pre></li>
-<li><p>Il calcule la somme des \(n\) premiers entiers naturels non nuls.</p></li>
-<li><pre class="code-block tex2jax_ignore"># entrée
-n = 5
-
-# instructions
-k = 1
-somme = 1
-compteur = 3
-while k &lt; n:
-    k = k + 1
-    somme = somme + k
-    compteur = compteur + 5
-
-# sortie
-print(somme)
-print(compteur)
-</pre></li>
-<li><p>\(23\)</p></li>
-<li><p>\(T(n)=3+5(n-1)=5n-2\)</p></li>
-<li><p>Il s'agit d'une complexité linéaire.</p></li>
+<li>
+<p>Voici les étapes de l'algorithme :</p>
+<div class="displaymath">
+\begin{align*}
+3^{45}&amp;=3\cdot\left(3^2\right)^{22},\\
+&amp;=3\cdot\left(3^4\right)^{11},\\
+&amp;=3\cdot 3^4\cdot\left(3^8\right)^5,\\
+&amp;=3\cdot 3^4\cdot 3^8\cdot\left(3^{16}\right)^2,\\
+&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Cela prend 5 multiplications pour calculer</p>
+<div class="displaymath">
+\begin{align*}
+&amp;3^2=3\cdot 3=9,\\
+&amp;3^4=3^2\cdot 3^2=81,\\
+&amp;3^8=3^4\cdot 3^4=6\,561,\\
+&amp;3^{16}=3^8\cdot 3^8=43\,046\,721,\\
+&amp;3^{32}=3^{16}\cdot 3^{16}=1\,853\,020\,188\,851\,841,
+\end{align*}
+</div>
+<p data-braille="continuation">et 3 de plus pour calculer</p>
+<div class="displaymath">
+\begin{align*}
+3^{45}&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32},\\
+&amp;=3\cdot 81\cdot 6\,561\cdot 1\,853\,020\,188\,851\,841,\\
+&amp;=2\,954\,312\,706\,550\,833\,698\,643.
+\end{align*}
+</div>
+<p>Cela fait donc un total de 8 multiplications.</p>
+</li>
+<li>
+<p>On a</p>
+<div class="displaymath">
+\begin{align*}
+45&amp;=32+13,\\
+&amp;=32+8+5,\\
+&amp;=32+8+4+1,\\
+&amp;=1\cdot 2^5+1\cdot 2^3+1\cdot 2^2+1\cdot 2^0,\\
+&amp;=1\cdot 2^5+0\cdot 2^4+1\cdot 2^3+1\cdot 2^2+0\cdot 2^1+1\cdot 2^0.
+\end{align*}
+</div>
+<p data-braille="continuation">L'écriture en binaire de \(45\) est donc \(101101\) et les puissances de \(2\) qui apparaissent, à savoir \(1,4,8\) et \(32\text{,}\) sont les exposants utiles de la décomposition</p>
+<div class="displaymath">
+\begin{equation*}
+3^{45}=3\cdot 3^4\cdot 3^8\cdot 3^{32}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Notons</p>
+<div class="displaymath">
+\begin{equation*}
+M:=\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme \(M^{45}=M\cdot M^4\cdot M^8\cdot M^{32}\text{,}\) on doit d'abord calculer les puissances de \(M\) suivantes :</p>
+<div class="displaymath">
+\begin{equation*}
+M^2=\begin{bmatrix}2&amp;1\\1&amp;1\end{bmatrix},
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+M^4=\begin{bmatrix}5&amp;3\\3&amp;2\end{bmatrix},
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+M^8=\begin{bmatrix}34&amp;21\\21&amp;13\end{bmatrix},
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+M^{16}=\begin{bmatrix}1\,597&amp;987\\987&amp;610\end{bmatrix},
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+M^{32}=\begin{bmatrix}3\,524\,578&amp;2\,178\,309\\2\,178\,309&amp;1\,346\,269\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Maintenant \(M^{45}=M\cdot M^4\cdot M^8\cdot M^{32}\) donne</p>
+<div class="displaymath">
+\begin{equation*}
+M^{45}=\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}5&amp;3\\3&amp;2\end{bmatrix}\begin{bmatrix}34&amp;21\\21&amp;13\end{bmatrix}\begin{bmatrix}3\,524\,578&amp;2\,178\,309\\2\,178\,309&amp;1\,346\,269\end{bmatrix},
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+M^{45}=\begin{bmatrix}8&amp;5\\5&amp;3\end{bmatrix}\begin{bmatrix}34&amp;21\\21&amp;13\end{bmatrix}\begin{bmatrix}3\,524\,578&amp;2\,178\,309\\2\,178\,309&amp;1\,346\,269\end{bmatrix},
+\end{equation*}
+</div>
+<p data-braille="continuation">puis</p>
+<div class="displaymath">
+\begin{equation*}
+M^{45}=\begin{bmatrix}377&amp;233\\233&amp;144\end{bmatrix}\begin{bmatrix}3\,524\,578&amp;2\,178\,309\\2\,178\,309&amp;1\,346\,269\end{bmatrix},
+\end{equation*}
+</div>
+<p data-braille="continuation">et finalement</p>
+<div class="displaymath">
+\begin{equation*}
+M^{45}=\begin{bmatrix}1\,836\,311\,903&amp;1\,134\,903\,170\\1\,134\,903\,170&amp;701\,408\,733\end{bmatrix}.
+\end{equation*}
+</div>
+<aside class="aside aside-like">Les coefficients de ces matrices vous évoquent-ils quelque chose?</aside>
+</li>
 </ol>
 </div>
 <span class="incontext"><a href="exercicescomplexite.html#solution-24">Contexte</a></span>

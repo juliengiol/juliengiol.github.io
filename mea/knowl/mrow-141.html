@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:45-04:00    *-->
+<!--*    on 2021-02-27T11:47:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,12 +14,11 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-x_0&amp;=0\\
-x_1&amp;=1\\
-x_2&amp;=x_1-\frac{f(x_1)(x_1-x_0)}{f(x_1)-f(x_0)}=0{,}612\,699\ldots\\
-x_3&amp;=x_2-\frac{f(x_2)(x_2-x_1)}{f(x_2)-f(x_1)}=0{,}563\,838\ldots\\
-x_4&amp;=x_3-\frac{f(x_3)(x_3-x_2)}{f(x_3)-f(x_2)}=0{,}567\,170\ldots\\
-x_5&amp;=x_4-\frac{f(x_4)(x_4-x_3)}{f(x_4)-f(x_3)}=0{,}567\,143\ldots
+\left|x_{n+1}-\sqrt{k}\right|&amp;=\left|\frac{1}{2x_n}\left(x_n-\sqrt{k}\right)^2\right|\\
+&amp;=\left|\frac{1}{2x_n}\cdot\left(x_n-\sqrt{k}\right)\cdot\left(x_n-\sqrt{k}\right)\right|\\
+&amp;=\left|\frac{1}{2x_n}\right|\cdot\left|x_n-\sqrt{k}\right|\cdot\left|x_n-\sqrt{k}\right|\qquad\text{par}\;\knowl{./knowl/propvaleurabsolue.html}{\text{(5.3.1)}}\\
+&amp;=\frac{1}{2x_n}\left|x_n-\sqrt{k}\right|^2\\
+&amp;\leq \frac{1}{2}\left|x_n-\sqrt{k}\right|^2\qquad\text{par}\;\knowl{./knowl/minorxn.html}{\text{(5.3.2)}}.
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicesnewton.html#mjx-eqn-mrow-141">Contexte</a></span>

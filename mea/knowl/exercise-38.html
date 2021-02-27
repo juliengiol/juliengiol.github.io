@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:09-04:00    *-->
+<!--*    on 2021-02-24T09:47:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,65 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 class="heading">
-<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">B.3.3</span><span class="period">.</span>
 </h6>
-<p>On veut encadrer \(\ln(2)\) par les bornes d'un intervalle de longueur inférieure ou égale à \(10^{-9}\text{.}\)</p>
-<p>Pour cela, on applique la méthode de la bissection à la fonction \(f(x)=e^x-2\) en partant de l'intervalle \([0;1]\text{.}\)</p>
-<p>Combien d'itérations doit-on effectuer au minimum?</p>
-<div class="solutions">
-<a class="original" data-knowl="./knowl/answer-15-hidden.html" title="Réponse 4.3.7.1"><span class="type">Réponse</span></a><a class="original" data-knowl="./knowl/solution-37-hidden.html" title="Solution 4.3.7.1"><span class="type">Solution</span></a>
-</div></article><span class="incontext"><a href="exercicesbissection.html#exercise-38">Contexte</a></span>
+<p>Voici un guide de démarrage relativement rapide pour <a class="external" href="https://cocalc.com" target="_blank">CoCalc</a>.</p>
+<ol class="decimal">
+<li><p>Créez un compte gratuit et connectez-vous.</p></li>
+<li><p>Créez un projet "Exemples" à l'aide du bouton <code class="code-inline tex2jax_ignore">+ Create New Project</code>.</p></li>
+<li><p>Dans ce projet, créez un fichier "Premiers_Pas.sagews" (Sage Worksheet) à l'aide du bouton <code class="code-inline tex2jax_ignore">+ New</code>.</p></li>
+<li>
+<p>Dans ce fichier :</p>
+<ol class="lower-alpha">
+<li><p>Commencez par écrire les lignes suivantes :<pre class="code-block tex2jax_ignore">%md
+# Mon premier titre avec Markdown
+Bonjour!
+Voici ma *première* feuille de travail SageMath.
+
+**Ceci est une cellule de type Markdown**,
+parce qu'elle commence par `%md`.
+
+Comme je ne la commencerai pas par `%md`,
+la cellule qui suit sera une cellule de code SageMath.
+</pre></p></li>
+<li><p>Évaluez cette cellule en utilisant la combinaison de touches <code class="code-inline tex2jax_ignore">Majuscule + Entrée</code>.</p></li>
+<li><p>Écrivez maintenant les lignes de code suivantes en respectant soigneusement l'indentation de quatre espaces.<pre class="code-block tex2jax_ignore">a = 57
+b = 42
+while a % b != 0:
+    a, b = b, a % b
+print(b)
+</pre></p></li>
+<li><p>Évaluez cette deuxième cellule en utilisant la combinaison de touches <code class="code-inline tex2jax_ignore">Majuscule + Entrée</code>.</p></li>
+<li>
+<p>Créez une troisième cellule en Markdown, de façon à ce qu'elle affiche la phrase</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Le PGCD de 57 et 42 vaut donc 3.}
+\end{equation*}
+</div>
+<p data-braille="continuation">et que PGCD soit en caractères gras.</p>
+</li>
+<li><p>Voici à quoi votre fichier doit ressembler à ce stade : <a class="external" href="https://share.cocalc.com/share/c372faf6-6106-4c15-866e-69928fb8a79e/201-131-AH/Premiers%20pas/Premiers_pas.sagews?viewer=share" target="_blank">Premiers_Pas.sagews</a>.</p></li>
+<li><p>Cliquez maintenant sur les petits triangles à droite des numéros de lignes 1 et 20 afin de faire disparaître le code Markdown et qu'il n'en reste que le résultat.</p></li>
+<li><p>Cherchez l'icône qui vous permet de créer une version .pdf de ce fichier : cliquez et faites ce qu'il faut pour sauvegarder ce pdf sur votre bureau.</p></li>
+</ol>
+</li>
+<li><ol class="lower-alpha">
+<li><p>Créez maintenant un fichier "Premiers_Pas.ipynb" (Jupyter notebook) à l'aide du bouton <code class="code-inline tex2jax_ignore">+ New</code>.</p></li>
+<li>
+<p>Suivez les mêmes étapes qu'au point précédent pour "Premiers_Pas.sagews".</p>
+<p>Attention! Pour les cellules Markdown, on n'utilise pas la ligne de code <code class="code-inline tex2jax_ignore">%md</code>. À la place, on utilise le menu déroulant qui permet de basculer de <code class="code-inline tex2jax_ignore">Code</code> à <code class="code-inline tex2jax_ignore">Markdown</code>.</p>
+<p>Modifiez aussi légèrement le texte comme il se doit.</p>
+<p>Il n'y a pas d'icône permettant de créer un pdf, alors sautez cette étape.</p>
+</li>
+<li><p>Voici à quoi votre fichier doit ressembler à ce stade : <a class="external" href="https://share.cocalc.com/share/c372faf6-6106-4c15-866e-69928fb8a79e/201-131-AH/Premiers%20pas/Premiers_pas.ipynb?viewer=share" target="_blank">Premiers_Pas.ipynb</a>.</p></li>
+<li><p>Cherchez l'icône qui vous permet d'imprimer ce fichier : cliquez pour obtenir la version html.</p></li>
+<li><p>À partir de là, vous pouvez utiliser votre fureteur pour imprimer ce document ou l'enregistrer au format pdf.</p></li>
+</ol></li>
+<li><p>À l'aide du bouton <code class="code-inline tex2jax_ignore">+ New</code> créez un dossier "Premiers pas" dans votre projet.</p></li>
+<li><p>Revenez à la racine de votre projet, sélectionnez tous les fichiers "Premiers_Pas", et déplacez-les dans le dossier "Premiers pas" à l'aide du bouton <code class="code-inline tex2jax_ignore">Move</code>.</p></li>
+<li><p>C'est tout. Bravo.</p></li>
+</ol>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-32-hidden.html" title="Solution B.3.3.1"><span class="type">Solution</span></a></div></article><span class="incontext"><a href="exercicessagemath.html#exercise-38">Contexte</a></span>
 </body>
 </html>

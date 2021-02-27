@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:55-04:00    *-->
+<!--*    on 2021-02-27T11:46:19-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Le quotient est</p>
-<div class="displaymath">
-\begin{equation*}
-Q(x)=7x^3+16x^2+36x+77
-\end{equation*}
-</div>
-<p data-braille="continuation">et le reste vaut</p>
-<div class="displaymath">
-\begin{equation*}
-R(x)=163.
-\end{equation*}
-</div>
+<p>Il y a 3 assignations avant d'entrer dans la boucle. À chaque tour de boucle, il y a 1 comparaison, 2 additions et 2 assignations. Pour compter tout ça, on peut donc s'y prendre comme suit.<pre class="code-block tex2jax_ignore"># entrée :
+n = 5
+# instructions :
+k = 1
+somme = 1
+compteur = 3
+while k &lt; n:
+    k = k + 1
+    somme = somme + k
+    compteur = compteur + 5
+# sortie :
+print(somme)
+print(compteur)
+</pre></p>
 <span class="incontext"><a href="exercicescomplexite.html#p-317">Contexte</a></span>
 </body>
 </html>

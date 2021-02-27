@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:42-04:00    *-->
+<!--*    on 2021-02-27T11:46:08-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,11 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Notez que pour le calcul de <code class="code-inline tex2jax_ignore">factorielle(5)</code> avec la fonction récursive ci-dessus, on est obligé de remonter jusqu'au cas de base <code class="code-inline tex2jax_ignore">factorielle(1)</code> avant de redescendre pour calculer <code class="code-inline tex2jax_ignore">factorielle(2)</code>, <code class="code-inline tex2jax_ignore">factorielle(3)</code>, <code class="code-inline tex2jax_ignore">factorielle(4)</code> et enfin <code class="code-inline tex2jax_ignore">factorielle(5)</code> dans cet ordre.</p>
-<span class="incontext"><a href="recursivite.html#p-161">Contexte</a></span>
+<p>Le code ci-dessus affiche</p>
+<ul class="disc">
+<li><p>\(\text{7}\) parce que la commande <code class="code-inline tex2jax_ignore">y = f(5)</code> fait appel à la fonction <code class="code-inline tex2jax_ignore">f(x)</code> et exécute donc <code class="code-inline tex2jax_ignore">print(x ** 2 - 4 * x + 2)</code> pour x valant 5;</p></li>
+<li><p>et \(\text{None}\) parce que la fonction <code class="code-inline tex2jax_ignore">f(x)</code> ne renvoie rien, donc la variable <code class="code-inline tex2jax_ignore">y</code> reste vide, de sorte que <code class="code-inline tex2jax_ignore">print(y)</code> affiche \(\text{None}\text{.}\)</p></li>
+</ul>
+<span class="incontext"><a href="syntaxefonctions.html#p-161">Contexte</a></span>
 </body>
 </html>

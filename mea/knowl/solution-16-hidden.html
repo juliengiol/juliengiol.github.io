@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:44-04:00    *-->
+<!--*    on 2021-02-27T11:46:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,13 +11,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore">def conversion(mesure, echelle):
-    if echelle == 'C':
-        return mesure * 1.8 + 32
-    elif echelle == 'F':
-        return (mesure - 32.0) * 5 / 9
+<body><div class="solution solution-like"><ol class="decimal">
+<li><pre class="code-block tex2jax_ignore">def subdivisionReguliere1(a, b, n):
+    deltaX = (b - a) / n
+    x = a
+    print(x)
+    for k in range(0, n):
+        x = x + deltaX
+        print(x)
 
-print(conversion(17, 'C'))
-print(conversion(84, 'F'))
-</pre></div></body>
+subdivisionReguliere1(1.0, 3.0, 4)
+</pre></li>
+<li><pre class="code-block tex2jax_ignore">def subdivisionReguliere2(a, b, n):
+    deltaX = (b - a) / n
+    x = a
+    liste = [a]
+    while x &lt; b:
+        x = x + deltaX
+        liste.append(x)
+    return liste
+
+print(subdivisionReguliere2(1.0, 3.0, 4))
+</pre></li>
+</ol></div></body>
 </html>

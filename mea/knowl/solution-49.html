@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:36-04:00    *-->
+<!--*    on 2021-02-27T11:47:00-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,67 +14,70 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.9.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.6.1</span><span class="period">.</span>
 </h6>
-<p>Résoudre cette équation revient à résoudre</p>
+<ol class="decimal">
+<li>
+<p>On a</p>
 <div class="displaymath">
-\begin{equation*}
-e^x-2-x=0.
-\end{equation*}
+\begin{align*}
+f(x)&amp;=3x^5-x^4-1\\
+f'(x)&amp;=15x^4-4x^3=x^3(15x-4)\\
+f''(x)&amp;=60x^3-12x^2=12x^2(5x-1)
+\end{align*}
 </div>
-<p data-braille="continuation">Autrement dit, nous cherchons les zéros de la fonction</p>
-<div class="displaymath">
-\begin{equation*}
-f(x)=e^x-2-x.
-\end{equation*}
-</div>
-<p>Comme \(f'(x)=e^x-1\) et \(f''(x)=e^x\text{,}\) on peut dresser le tableau de variations suivant :</p>
+<p>Donc \(f'\) s'annule en \(0\) et \(\frac{4}{15}\text{,}\) et \(f''\) s'annule en \(0\) et \(\frac{1}{5}\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c|ccccccc}
-x&amp;-\infty&amp;&amp;&amp;&amp;0&amp;&amp;&amp;&amp;+\infty&amp;\\
+x&amp;0&amp;&amp;&amp;&amp;1/5&amp;&amp;&amp;&amp;4/15&amp;&amp;&amp;&amp;+\infty&amp;\\
 \hline
-f''(x)&amp;0&amp;&amp;+&amp;&amp;+&amp;&amp;+&amp;&amp;+\infty&amp;\\
+f''(x)&amp;0&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+&amp;&amp;+&amp;&amp;+\infty&amp;\\
 \hline
-f'(x)&amp;-1&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+\infty&amp;\\
+f'(x)&amp;0&amp;&amp;-&amp;&amp;-&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+\infty&amp;\\
 \hline
-f(x)&amp;+\infty&amp;&amp;\searrow&amp;&amp;-1&amp;&amp;\nearrow&amp;&amp;+\infty&amp;
+f(x)&amp;-1&amp;&amp;\searrow&amp;&amp;&amp;&amp;\searrow&amp;&amp;&amp;&amp;\nearrow&amp;&amp;+\infty&amp;
 \end{array}
 \end{equation*}
 </div>
-<p>On en déduit que \(f\) possède un zéro positif \(c_+\) et un zéro négatif \(c_-\text{.}\) Pour le premier, le théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> s'applique. Pour le second, c'est sa version symétrique de la remarque <a class="xref" data-knowl="./knowl/methodedenewtonbis.html" title="Remarque 5.1.8">5.1.8</a>.</p>
-<p>Pour approcher \(c_+\text{,}\) comme \(f(2)&gt;0\text{,}\) on part de \(x_0=2\text{.}\) En arrondissant à six décimales à chaque étape, on trouve</p>
-<div class="displaymath">
-\begin{align*}
-x_0&amp;=2\\
-x_1&amp;=x_0-\frac{f(x_0)}{f'(x_0)}\approx 1{,}469\,553\\
-x_2&amp;=x_1-\frac{f(x_1)}{f'(x_1)}\approx 1{,}207\,330\\
-x_3&amp;=x_2-\frac{f(x_2)}{f'(x_2)}\approx 1{,}148\,806\\
-x_4&amp;=x_3-\frac{f(x_3)}{f'(x_3)}\approx 1{,}146\,198\\
-x_5&amp;=x_4-\frac{f(x_4)}{f'(x_4)}\approx 1{,}146\,193
-\end{align*}
-</div>
-<p data-braille="continuation">Donc</p>
+</li>
+<li>
+<p>Comme c'est un polynôme, la fonction \(f\) est continue sur l'intervalle \([4/15;1]\text{.}\) Comme \(f(0{,}3)\cdot f(1)\approx(-1)\cdot 1&lt;0\;,\) le théorème des valeurs intermédiaires implique qu'il existe un zéro \(c\) pour \(f\) dans \(]0{,}3;1[\text{.}\)</p>
+<p>Et comme \(f\) est strictement croissante sur \(]0{,}3;1[\text{,}\) il n'y a pas d'autre zéro dans cet intervalle.</p>
+</li>
+<li>
+<p>Grâce au tableau de variations qui précède, on voit que</p>
 <div class="displaymath">
 \begin{equation*}
-c_+\approx 1{,}146.
+f'(x)&gt;0\qquad\text{et}\qquad f''(x)&gt;0\qquad\text{pour tout }\;x\in\;]4/15;2[.
 \end{equation*}
 </div>
-<p>Et pour approcher \(c_-\text{,}\) comme \(f(-2)&gt;0\text{,}\) on part de \(x_0=-2\text{.}\)</p>
+<p>Comme \(c\in ]0{,}3;1[\subset]4/15;2[\text{,}\) les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> sont donc bien vérifiées avec \(b=2\text{.}\)</p>
+<p>Remarque : Les hypothèses de l'encadré sont vérifiées aussi, donc non seulement \(\{x_n\}\) converge vers \(c\) en décroissant strictement, mais on peut s'attendre à ce que le nombre de décimales exactes double grosso modo à chaque itération.</p>
+</li>
+<li>
+<p>Voici le <a class="external" href="https://tinyurl.com/y6mmam6y" target="_blank">code à utiliser</a>, et voici le résultat :</p>
 <div class="displaymath">
 \begin{align*}
-x_0&amp;=-2\\
-x_1&amp;=x_0-\frac{f(x_0)}{f'(x_0)}\approx -1{,}843\,482\\
-x_2&amp;=x_1-\frac{f(x_1)}{f'(x_1)}\approx -1{,}841\,406\\
-x_3&amp;=x_2-\frac{f(x_2)}{f'(x_2)}\approx -1{,}841\,406
+x_1&amp;\approx 0{,}909\,090\,909\,091\\
+x_2&amp;\approx 0{,}884\,263\,293\,31\\
+x_3&amp;\approx 0{,}882\,621\,228\,331\\
+x_4&amp;\approx 0{,}882\,614\,429\,406\\
+x_5&amp;\approx 0{,}882\,614\,429\,289\\
+x_6&amp;\approx 0{,}882\,614\,429\,289\\
+x_7&amp;\approx 0{,}882\,614\,429\,289
 \end{align*}
 </div>
-<p data-braille="continuation">Donc</p>
+</li>
+<li>
+<p>À partir de la cinquième itération, les douze décimales affichées sont identiques. On peut donc être certains que les onze premières sont exactes :</p>
 <div class="displaymath">
 \begin{equation*}
-c_-\approx -1{,}841.
+c=0{,}882\,614\,429\,28\ldots
 \end{equation*}
 </div>
+</li>
+</ol>
 </div>
 <span class="incontext"><a href="exercicesnewton.html#solution-49">Contexte</a></span>
 </body>

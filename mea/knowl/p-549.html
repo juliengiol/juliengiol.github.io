@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:22-04:00    *-->
+<!--*    on 2021-02-27T11:46:46-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,8 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour \(\text{i}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
-<ul class="square"><li><p>assigner à \(\text{x0}\) la valeur de \(\displaystyle \text{x0}-\frac{\text{f}(\text{x0})}{\text{fPrime}(\text{x0})}\text{.}\)</p></li></ul>
-<span class="incontext"><a href="algorithmenewton.html#p-549">Contexte</a></span>
+<p>Il reste à montrer que \(c&lt;x_1\text{.}\) Par positivité de \(f''\text{,}\) la fonction \(f'\) est strictement croissante sur \(]c;b[\text{.}\) En utilisant cela et <a class="xref" data-knowl="./knowl/application_taylor_lagrange.html" title="Équation 5.1.1">(5.1.1)</a>, on a</p>
+<div class="displaymath">
+\begin{align*}
+\xi&lt;x_0&amp;\quad\Rightarrow\quad f'(\xi)&lt;f'(x_0)\\
+&amp;\quad\Rightarrow\quad\underbrace{f'(\xi)(x_0-c)}_{f(x_0)}&lt;f'(x_0)(x_0-c)\\
+&amp;\quad\Rightarrow\quad \frac{f(x_0)}{f'(x_0)}&lt;x_0-c\\
+&amp;\quad\Rightarrow\quad c&lt;\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}.
+\end{align*}
+</div>
+<span class="incontext"><a href="presentationnewton.html#p-549">Contexte</a></span>
 </body>
 </html>

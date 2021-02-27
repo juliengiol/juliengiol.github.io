@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:46-04:00    *-->
+<!--*    on 2021-02-27T11:46:14-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,25 +12,25 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like"><ol class="decimal">
-<li><pre class="code-block tex2jax_ignore">def subdivisionReguliere1(a, b, n):
-    deltaX = (b - a) / n
-    x = a
-    for k in range(0, n+1):
-        print(x)
-        x = x + deltaX
+<li><pre class="code-block tex2jax_ignore">def syracuse1(s, n):
+    for k in range(1, n+1):
+        if s % 2 == 0:
+              s = s / 2
+        else:
+            s = 3 * s + 1
+    return s
 
-subdivisionReguliere1(1.0, 3.0, 4)
+print(syracuse1(14, 20))
 </pre></li>
-<li><pre class="code-block tex2jax_ignore">def subdivisionReguliere2(a, b, n):
-    deltaX = (b - a) / n
-    liste = []
-    x = a
-    while x &lt;= b:
-        liste.append(x)
-        x = x + deltaX
-    return liste
+<li><pre class="code-block tex2jax_ignore">def syracuse2(s, n):
+    if n == 0:
+        return s
+    elif s % 2 == 0:
+        return syracuse2(s / 2, n-1)
+    else:
+        return syracuse2(3 * s + 1, n-1)
 
-print(subdivisionReguliere2(1.0, 3.0, 4))
+print(syracuse2(14, 20))
 </pre></li>
 </ol></div></body>
 </html>

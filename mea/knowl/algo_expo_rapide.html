@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2021-02-25T17:19:58-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Algorithme 2 : Exponentiation rapide.</span></h5>
+<p>Revenons au calcul de \(2^5\) et notons que</p>
+<div class="displaymath">
+\begin{equation*}
+2^5=2\cdot (2^2)^2
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+2^5=x\cdot y\cdot y\quad\text{avec}\quad x=2\quad\text{et}\quad y=x\cdot x.
+\end{equation*}
+</div>
+<p>Vu comme ça, le calcul de \(2^5\) ne requiert plus que trois multiplications.</p>
+<p>Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+x^n=
+\begin{cases}
+x&amp;\text{ si }n=1,\\
+\left(x^2\right)^{n/2}&amp;\text{ si }n\text{ est pair,}\\
+x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
+\end{cases}
+\end{equation*}
+</div>
+<p>Voici une implémentation de cette approche, où la fonction <code class="code-inline tex2jax_ignore">puissanceRecursive(x, n)</code> renvoie la valeur de \(\text{x}^\text{n}\) de manière récursive. <div class="sagecell-python" id="sage-45"><script type="text/x-sage">def puissanceRecursive(x, n):
+    if n == 1:
+        return x
+    elif n % 2 == 0:
+        return puissanceRecursive(x * x, n / 2)
+    else:
+        return x * puissanceRecursive(x * x, (n - 1) / 2)
+
+print(puissanceRecursive(2, 5))
+</script></div> <aside class="aside aside-like"><p>L'algorithme d'<a class="external" href="https://fr.wikipedia.org/wiki/Exponentiation_rapide#Algorithme" target="_blank">exponentiation rapide</a> n'est pas seulement pertinent pour des nombres, mais aussi, par exemple, pour des matrices.</p></aside></p>
+<p>Si on ne tient compte que des multiplications, alors on peut montrer que la complexité \(T(n)\) de cet algorithme vérifie l'encadrement</p>
+<div class="displaymath">
+\begin{equation*}
+\log_2(n)\leq T(n)\leq 2\log_2(n).
+\end{equation*}
+</div>
+<p>On parle alors d'une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche itérative, comme l'illustrent les graphes ci-après. <figure class="figure figure-like"><iframe src="https://www.desmos.com/calculator/yjztmlow1h" id="desmos-lineaire-log" width="600" height="480"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs logarithmique</figcaption></figure></p></article><span class="incontext"><a href="exponentiation.html#algo_expo_rapide">Contexte</a></span>
+</body>
+</html>

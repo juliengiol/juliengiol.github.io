@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:00-04:00    *-->
+<!--*    on 2021-02-27T11:47:26-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,43 +12,135 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like"><ol class="decimal">
-<li><div class="displaymath">
-\begin{align*}
-T(t)&amp;=f(0)+f'(0)t+\frac{f''(0)}{2}t^2\\
-&amp;=1-\frac{1}{2}t^2.
-\end{align*}
-</div></li>
 <li>
-<p>Première approximation de \(\displaystyle\cos\left(\frac{\pi}{12}\right)=f\left(\frac{\pi}{12}\right)\) :</p>
+<p>On cherche trois nombres réels \(a_0,a_1,a_2\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=a_0+a_1t+a_2t^2
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+P(-1)=4\\
+P(2)=0\\
+P(5)=-1
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a_0&amp;-&amp;a_1&amp;+&amp;a_2&amp;=&amp;4\\
+a_0&amp;+&amp;2a_1&amp;+4&amp;a_2&amp;=&amp;0\\
+a_0&amp;+&amp;5a_1&amp;+25&amp;a_2&amp;=&amp;-1
+\end{cases}
+\end{equation*}
+</div>
+<p>Résolvons ce système par la méthode de Gauss. Commençons donc par le trianguler :</p>
 <div class="displaymath">
 \begin{align*}
-T\left(\frac{\pi}{12}\right)&amp;=1-\frac{1}{2}\left(\frac{\pi}{12}\right)^2\\
-&amp;=1-\frac{\pi^2}{288}\\
-&amp;\approx 0{,}965\,731.
+\begin{bmatrix}
+1&amp;-1&amp;1&amp;4\\
+1&amp;2&amp;4&amp;0\\
+1&amp;5&amp;25&amp;-1
+\end{bmatrix}
+&amp;\sim
+\begin{bmatrix}
+1&amp;-1&amp;1&amp;4\\
+0&amp;3&amp;3&amp;-4\\
+0&amp;6&amp;24&amp;-5
+\end{bmatrix}\\
+&amp;\sim
+\begin{bmatrix}
+1&amp;-1&amp;1&amp;4\\
+0&amp;3&amp;3&amp;-4\\
+0&amp;0&amp;18&amp;3
+\end{bmatrix}.
+\end{align*}
+</div>
+<p>Maintenant que le système est triangulé, on peut effectuer la remontée.</p>
+<ul class="disc">
+<li>
+<p>La troisième ligne donne</p>
+<div class="displaymath">
+\begin{equation*}
+18a_2=3\;\Rightarrow\; a_2=\frac{3}{18}=\frac{1}{6}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Alors la deuxième ligne donne</p>
+<div class="displaymath">
+\begin{align*}
+3a_1+3a_2=-4&amp;\Rightarrow\quad 3a_1+3\cdot\frac{1}{6}=-4\\
+&amp;\Rightarrow\quad 3a_1=-4-\frac{3}{6}=-\frac{9}{2}\\
+&amp;\Rightarrow\quad a_1=-\frac{9}{3\cdot 2}=-\frac{3}{2}.
 \end{align*}
 </div>
 </li>
-<li><div class="displaymath">
-\begin{align*}
-L(t)&amp;=1\cdot L_0(t)+\frac{\sqrt{3}}{2}\cdot L_1(t)+\frac{1}{2}\cdot L_2(t)\\
-&amp;=1\cdot\frac{(t-\pi/6)(t-\pi/3)}{(0-\pi/6)(0-\pi/3)}+\frac{\sqrt{3}}{2}\cdot\frac{(t-0)(t-\pi/3)}{(\pi/6-0)(\pi/6-\pi/3)}\\
-&amp;\qquad +\frac{1}{2}\cdot\frac{(t-0)(t-\pi/6)}{(\pi/3-0)(\pi/3-\pi/6)}\\
-&amp;=\frac{18}{\pi^2}\left(t-\frac{\pi}{6}\right)\left(t-\frac{\pi}{3}\right)-\frac{18\sqrt{3}}{\pi^2}\cdot t\left(t-\frac{\pi}{3}\right)+\frac{9}{\pi^2}\cdot t\left(t-\frac{\pi}{6}\right)
-\end{align*}
-</div></li>
 <li>
-<p>Deuxième approximation de \(\displaystyle\cos\left(\frac{\pi}{12}\right)=f\left(\frac{\pi}{12}\right)\) :</p>
+<p>Enfin la première ligne donne</p>
 <div class="displaymath">
 \begin{align*}
-L\left(\frac{\pi}{12}\right)&amp;=\frac{18}{\pi^2}\left(\frac{\pi}{12}-\frac{\pi}{6}\right)\left(\frac{\pi}{12}-\frac{\pi}{3}\right)-\frac{18\sqrt{3}}{\pi^2}\frac{\pi}{12}\left(\frac{\pi}{12}-\frac{\pi}{3}\right)\\
-&amp;\qquad +\frac{9}{\pi^2}\frac{\pi}{12}\left(\frac{\pi}{12}-\frac{\pi}{6}\right)\\
-&amp;=\frac{18}{\pi^2}\left(-\frac{\pi}{12}\right)\left(-\frac{\pi}{4}\right)-\frac{18\sqrt{3}}{\pi^2}\frac{\pi}{12}\left(-\frac{\pi}{4}\right)+\frac{9}{\pi^2}\frac{\pi}{12}\left(-\frac{\pi}{12}\right)\\
-&amp;=\frac{3}{8}+\frac{3\sqrt{3}}{8}-\frac{1}{16}\\
-&amp;=\frac{5}{16}+\frac{3\sqrt{3}}{8}\\
-&amp;\approx 0{,}962\,019.
+a_0-a_1+a_2=4&amp;\Rightarrow\quad a_0-\left(-\frac{3}{2}\right)+\frac{1}{6}=4\\
+&amp;\Rightarrow\quad a_0=4-\frac{3}{2}-\frac{1}{6}=\frac{14}{6}=\frac{7}{3}.
 \end{align*}
 </div>
 </li>
-<li><p>Comme \(\displaystyle\cos\left(\frac{\pi}{12}\right)\approx 0{,}965\,926\text{,}\) c'est le polynôme de Taylor qui fournit la meilleure approximation.</p></li>
+</ul>
+<p>On obtient donc</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=\frac{7}{3}+\left(-\frac{3}{2}\right)t+\frac{1}{6}t^2=\frac{7}{3}-\frac{3}{2}t+\frac{1}{6}t^2.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>La forme de Lagrange du polynôme interpolateur est donnée par</p>
+<div class="displaymath">
+\begin{align*}
+L(t)&amp;=y_0L_0(t)+y_1L_1(t)+y_2L_2(t)\\
+&amp;=4\cdot L_0(t)+0\cdot L_1(t)+(-1)\cdot L_2(t)\\
+&amp;=4\cdot L_0(t)-L_2(t)
+\end{align*}
+</div>
+<p data-braille="continuation">où</p>
+<div class="displaymath">
+\begin{align*}
+L_0(t)&amp;=\frac{(t-x_1)(t-x_2)}{(x_0-x_1)(x_0-x_2)}\\
+&amp;=\frac{(t-2)(t-5)}{(-1-2)(-1-5)}\\
+&amp;=\frac{1}{18}(t-2)(t-5)
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+L_2(t)&amp;=\frac{(t-x_0)(t-x_1)}{(x_2-x_0)(x_2-x_1)}\\
+&amp;=\frac{(t+1)(t-2)}{(5+1)(5-2)}\\
+&amp;=\frac{1}{18}(t+1)(t-2).
+\end{align*}
+</div>
+<p>On a donc</p>
+<div class="displaymath">
+\begin{align*}
+L(t)&amp;=4\cdot\frac{1}{18}(t-2)(t-5)-\frac{1}{18}(t+1)(t-2)\\
+&amp;=\frac{2}{9}(t-2)(t-5)-\frac{1}{18}(t+1)(t-2).
+\end{align*}
+</div>
+</li>
+<li>
+<p>On a bien \(P(t)=L(t)\) car</p>
+<div class="displaymath">
+\begin{align*}
+\frac{2}{9}(t-2)(t-5)-\frac{1}{18}(t+1)(t-2)&amp;=\frac{1}{18}(t-2)\left(4(t-5)-(t+1)\right)\\
+&amp;=\frac{1}{18}(t-2)(4t-20-t-1)\\
+&amp;=\frac{1}{18}(t-2)(3t-21)\\
+&amp;=\frac{1}{6}(t-2)(t-7)\\
+&amp;=\frac{1}{6}(t^2-9t+14)\\
+&amp;=\frac{1}{6}t^2-\frac{9}{6}t+\frac{14}{6}\\
+&amp;=\frac{1}{6}t^2-\frac{3}{2}t+\frac{7}{3}\\
+&amp;=\frac{7}{3}-\frac{3}{2}t+\frac{1}{6}t^2.
+\end{align*}
+</div>
+</li>
 </ol></div></body>
 </html>

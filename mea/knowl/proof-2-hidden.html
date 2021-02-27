@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:59-04:00    *-->
+<!--*    on 2021-02-27T11:46:18-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,13 +11,50 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>Par hypothèse, les nombres \(f(a)\) et \(f(b)\) sont non nuls et de signes opposés. Après avoir calculé \(f(m)\text{,}\) on a donc trois cas possibles.</p>
+<body><article class="hiddenproof"><p>Nous allons établir cette formule à l'aide d'une preuve par récurrence.</p>
 <ul class="disc">
-<li><p>Cas 1 : \(f(m)=0\text{.}\)</p></li>
-<li><p>Cas 2 : \(f(m)\neq 0\) est du même signe que \(f(b)\;\Leftrightarrow\; f(m)f(a)&lt;0\text{.}\)</p></li>
-<li><p>Cas 3 : \(f(m)\neq 0\) est du même signe que \(f(a)\;\Leftrightarrow\; f(m)f(b)&lt;0\text{.}\)</p></li>
-</ul>
-<p>Par hypothèse d'unicité du zéro \(c\text{,}\) le cas 1 entraîne que \(c=m\text{.}\)</p>
-<p>Dans le cas 2, le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a> entraîne l'existence d'un zéro dans l'intervalle \(]a;m[\text{.}\) Par unicité, il s'agit forcément de \(c\text{.}\)</p>
-<p>Dans le cas 3, le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a> entraîne l'existence d'un zéro dans l'intervalle \(]m;b[\text{.}\) Par unicité, il s'agit forcément de \(c\text{.}\)</p></article></body>
+<li>
+<p>Pour \(n=3\text{,}\)  on a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^2=\begin{bmatrix}2&amp;1\\1&amp;1\end{bmatrix},
+\end{equation*}
+</div>
+<p data-braille="continuation">ce qui coïncide bien avec</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}F_3&amp;F_2\\F_2&amp;F_1\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Supposons que pour un certain entier \(n\ge 3\) on ait</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Alors par produit matriciel, on a</p>
+<div class="displaymath">
+\begin{align*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^n&amp;=\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\\
+&amp;=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\\
+&amp;=\begin{bmatrix}F_n+F_{n-1}&amp;F_n\\F_{n-1}+F_{n-2}&amp;F_{n-1}\end{bmatrix},
+\end{align*}
+</div>
+<p data-braille="continuation">ce qui coïncide bien avec</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}F_{n+1}&amp;F_n\\F_n&amp;F_{n-1}\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">car, par définition <a class="xref" data-knowl="./knowl/defi_fibo.html" title="Définition 3.4.2">3.4.2</a>, on a</p>
+<div class="displaymath">
+\begin{equation*}
+F_n+F_{n-1}=F_{n+1}\quad\text{et}\quad F_{n-1}+F_{n-2}=F_n.
+\end{equation*}
+</div>
+<p data-braille="continuation">La propriété est donc vraie pour \(n+1\text{,}\) ce qui achève la démonstration.</p>
+</li>
+</ul></article></body>
 </html>

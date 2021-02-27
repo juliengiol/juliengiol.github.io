@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:44:06-04:00    *-->
+<!--*    on 2021-02-27T11:49:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,51 +14,76 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.3.7.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.3.4.1</span><span class="period">.</span>
 </h6>
-<p>Il s'agit de trouver un entier \(x\) égal environ à \(667\) et tel que</p>
+<p>Principe : Calculer le reste \(r\) de la division euclidienne de \(ua\) par \(m\text{.}\) Alors \(u\) est un inverse de \(a\) modulo \(m\) si et seulement si \(r=1\text{.}\)</p>
+<ol class="decimal">
+<li>
+<p>On a</p>
 <div class="displaymath">
 \begin{equation*}
-\left\{
-\begin{array}{cccl}
-x&amp;\equiv&amp;2&amp;\text{mod}\; 5,\\
-x&amp;\equiv&amp;4&amp;\text{mod}\; 6,\\
-x&amp;\equiv&amp;3&amp;\text{mod}\; 11.
-\end{array}
-\right.
-\end{equation*}
-</div>
-<p data-braille="continuation">Comme les entiers \(5, 6\) et \(11\) sont premiers entre eux deux à deux, on peut appliquer le théorème des restes chinois :</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
-\hline
-2&amp;5&amp;66&amp;1=66\cdot 1+5\cdot(-13)&amp;1&amp;132\\
-\hline
-4&amp;6&amp;55&amp;1=55\cdot 1+6\cdot(-9)&amp;1&amp;220\\
-\hline
-3&amp;11&amp;30&amp;1=30\cdot (-4)+11\cdot 11&amp;-4&amp;-360\\
-\hline
-M=&amp;330&amp;&amp;&amp;x_0=&amp;-8\\
-\hline
+\begin{array}{cccr}
+ua&amp;=&amp;7\cdot 4\\
+&amp;=&amp;28\\
+&amp;\equiv&amp;2\;\mathrm{mod}\;26&amp;\text{ car }28=26\cdot 1+2.
 \end{array}
 \end{equation*}
 </div>
-<p>Les solutions sont donc caractérisées par</p>
+<p data-braille="continuation">Donc \(u=7\) n'est pas un inverse de \(a=4\) modulo \(m=26\text{.}\)</p>
+</li>
+<li>
+<p>On a</p>
 <div class="displaymath">
 \begin{equation*}
-x\equiv -8\;\mathrm{mod}\;330.
+\begin{array}{cccr}
+ua&amp;=&amp;69\cdot 4\\
+&amp;=&amp;276\\
+&amp;\equiv&amp;1\;\mathrm{mod}\;25&amp;\text{ car }276=25\cdot 11+1.\\
+\end{array}
 \end{equation*}
 </div>
-<p>La solution qui se rapproche le plus de \(667\) est donc</p>
+<p data-braille="continuation">Donc \(u=69\) est un inverse de \(a=4\) modulo \(m=25\text{.}\)</p>
+</li>
+<li>
+<p>On a</p>
 <div class="displaymath">
 \begin{equation*}
--8+2\cdot 330=652.
+\begin{array}{cccr}
+ua&amp;=&amp;3\cdot(-34)\\
+&amp;=&amp;-102\\
+&amp;\equiv&amp;6\;\mathrm{mod}\;9&amp;\text{ car }-102=9\cdot(-12)+6.\\
+\end{array}
 \end{equation*}
 </div>
-<p>Réponse : Il restait six cent cinquante-deux soldats dans l'armée du général.</p>
+<p data-braille="continuation">Donc \(u=3\) n'est pas un inverse de \(a=-34\) modulo \(m=9\text{.}\)</p>
+</li>
+<li>
+<p>On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccr}
+ua&amp;=&amp;(-536)\cdot 1954\\
+&amp;=&amp;-1047344\\
+&amp;\equiv&amp;1\;\mathrm{mod}\;205&amp;\text{ car }-1047344=205\cdot(-5109)+1.\\
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">Donc \(u=-536\) est un inverse de \(a=1954\) modulo \(m=205\text{.}\)</p>
+</li>
+<li>
+<p>On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccr}
+ua&amp;=&amp;3\cdot 0\\
+&amp;=&amp;0\\
+&amp;\equiv&amp;0\;\mathrm{mod}\;5&amp;\text{ car }0=5\cdot 0+0.\\
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">Donc \(u=3\) n'est pas un inverse de \(a=0\) modulo \(m=5\text{.}\)</p>
+</li>
+</ol>
 </div>
 <span class="incontext"><a href="exerciceschinois.html#solution-118">Contexte</a></span>
 </body>

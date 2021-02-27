@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:21-04:00    *-->
+<!--*    on 2021-02-27T11:47:48-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On cherche donc quatre nombres réels \(d_0,d_1,d_2,d_3\) tels que</p>
+<p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{cases}
-N(1)=3\\
-N(2)=6\\
-N(3)=9\\
-N(4)=0
-\end{cases}
-\Leftrightarrow
-\begin{cases}
-d_0&amp;&amp;&amp;&amp;&amp;&amp;&amp;=&amp;3\\
-d_0&amp;+&amp;d_1&amp;&amp;&amp;&amp;&amp;=&amp;6\\
-d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;&amp;&amp;=&amp;9\\
-d_0&amp;+&amp;3d_1&amp;+&amp;6d_2&amp;+&amp;6d_3&amp;=&amp;0\\
-\end{cases}
+\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercicesdiffdiv.html#p-1066">Contexte</a></span>
+<span class="incontext"><a href="algorithmediffdiv.html#p-1066">Contexte</a></span>
 </body>
 </html>

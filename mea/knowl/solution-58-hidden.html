@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:58-04:00    *-->
+<!--*    on 2021-02-27T11:47:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,58 +11,160 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>La forme de Lagrange du polynôme interpolateur est donnée par</p>
+<body><div class="solution solution-like"><ol class="decimal">
+<li>
+<p>On cherche trois nombres réels \(a_0,a_1,a_2\) tels que</p>
 <div class="displaymath">
-\begin{align*}
-L(t)&amp;=y_0\cdot L_0(t)+y_1\cdot L_1(t)+y_2\cdot L_2(t)+y_3\cdot L_3(t)+y_4\cdot L_4(t)\\
-&amp;=1\cdot L_0(t)+(-1)\cdot L_1(t)+1\cdot L_2(t)+(-1)\cdot L_3(t)+1\cdot L_4(t)\\
-&amp;=L_0(t)-L_1(t)+L_2(t)-L_3(t)+L_4(t)
-\end{align*}
+\begin{equation*}
+P(t)=a_0+a_1t+a_2t^2
+\end{equation*}
 </div>
-<p data-braille="continuation">où</p>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
-\begin{align*}
-L_0(t)&amp;=\frac{(t-x_1)(t-x_2)(t-x_3)(t-x_4)}{(x_0-x_1)(x_0-x_2)(x_0-x_3)(x_0-x_4)}\\
-&amp;=\frac{(t-1)(t-2)(t-3)(t-4)}{(0-1)(0-2)(0-3)(0-4)}\\
-&amp;=\frac{1}{24}(t-1)(t-2)(t-3)(t-4),
-\end{align*}
+\begin{equation*}
+\begin{cases}
+P(-3)=4\\
+P(2)=1\\
+P(9)=0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a_0&amp;-&amp;3a_1&amp;+&amp;9a_2&amp;=&amp;4\\
+a_0&amp;+&amp;2a_1&amp;+&amp;4a_2&amp;=&amp;1\\
+a_0&amp;+&amp;9a_1&amp;+&amp;81a_2&amp;=&amp;0\\
+\end{cases}
+\end{equation*}
 </div>
+<p>Résolvons ce système par la méthode de Gauss-Jordan :</p>
 <div class="displaymath">
-\begin{align*}
-L_1(t)&amp;=\frac{(t-x_0)(t-x_2)(t-x_3)(t-x_4)}{(x_1-x_0)(x_1-x_2)(x_1-x_3)(x_1-x_4)}\\
-&amp;=\frac{(t-0)(t-2)(t-3)(t-4)}{(1-0)(1-2)(1-3)(1-4)}\\
-&amp;=-\frac{1}{6}t(t-2)(t-3)(t-4),
-\end{align*}
+\begin{equation*}
+\begin{bmatrix}
+1&amp;-3&amp;9&amp;4\\
+1&amp;2&amp;4&amp;1\\
+1&amp;9&amp;81&amp;0
+\end{bmatrix}
+\sim\ldots\sim
+\begin{bmatrix}
+1&amp;0&amp;0&amp;\frac{69}{35}\\
+0&amp;1&amp;0&amp;-\frac{59}{105}\\
+0&amp;0&amp;1&amp;\frac{4}{105}
+\end{bmatrix}.
+\end{equation*}
 </div>
+<p>L'unique solution de ce problème est donc le polynôme suivant :</p>
 <div class="displaymath">
-\begin{align*}
-L_2(t)&amp;=\frac{(t-x_0)(t-x_1)(t-x_3)(t-x_4)}{(x_2-x_0)(x_2-x_1)(x_2-x_3)(x_2-x_4)}\\
-&amp;=\frac{(t-0)(t-1)(t-3)(t-4)}{(2-0)(2-1)(2-3)(2-4)}\\
-&amp;=\frac{1}{4}t(t-1)(t-3)(t-4),
-\end{align*}
+\begin{equation*}
+P(t)=\frac{69}{35}-\frac{59}{105}t+\frac{4}{105}t^2.
+\end{equation*}
 </div>
+</li>
+<li>
+<p>On cherche quatre nombres réels \(a_0,a_1,a_2,a_3\) tels que</p>
 <div class="displaymath">
-\begin{align*}
-L_3(t)&amp;=\frac{(t-x_0)(t-x_1)(t-x_2)(t-x_4)}{(x_3-x_0)(x_3-x_1)(x_3-x_2)(x_3-x_4)}\\
-&amp;=\frac{(t-0)(t-1)(t-2)(t-4)}{(3-0)(3-1)(3-2)(3-4)}\\
-&amp;=-\frac{1}{6}t(t-1)(t-2)(t-4),
-\end{align*}
+\begin{equation*}
+P(t)=a_0+a_1t+a_2t^2+a_3t^3
+\end{equation*}
 </div>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
-\begin{align*}
-L_4(t)&amp;=\frac{(t-x_0)(t-x_1)(t-x_2)(t-x_3)}{(x_4-x_0)(x_4-x_1)(x_4-x_2)(x_4-x_3)}\\
-&amp;=\frac{(t-0)(t-1)(t-2)(t-3)}{(4-0)(4-1)(4-2)(4-3)}\\
-&amp;=\frac{1}{24}t(t-1)(t-2)(t-3).
-\end{align*}
+\begin{equation*}
+\begin{cases}
+P(-7)=2\\
+P(0)=1\\
+P(9)=0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a_0&amp;-&amp;7a_1&amp;+&amp;49a_2&amp;-&amp;343a_3&amp;=&amp;2\\
+a_0&amp;&amp;&amp;&amp;&amp;&amp;&amp;=&amp;1\\
+a_0&amp;+&amp;9a_1&amp;+&amp;81a_2&amp;+&amp;729a_3&amp;=&amp;0\\
+\end{cases}
+\end{equation*}
 </div>
-<p>On a donc</p>
+<p>Résolvons ce système par la méthode de Gauss-Jordan :</p>
 <div class="displaymath">
-\begin{align*}
-L(t)&amp;=\frac{1}{24}(t-1)(t-2)(t-3)(t-4)+\frac{1}{6}t(t-2)(t-3)(t-4)\\
-&amp;\;+\frac{1}{4}t(t-1)(t-3)(t-4)+\frac{1}{6}t(t-1)(t-2)(t-4)\\
-&amp;\;+\frac{1}{24}t(t-1)(t-2)(t-3).
-\end{align*}
+\begin{equation*}
+\begin{bmatrix}
+1&amp;-7&amp;49&amp;-343&amp;2\\
+1&amp;0&amp;0&amp;0&amp;1\\
+1&amp;9&amp;81&amp;729&amp;0
+\end{bmatrix}
+\sim\ldots\sim
+\begin{bmatrix}
+1&amp;0&amp;0&amp;0&amp;1\\
+0&amp;1&amp;0&amp;63&amp;-\frac{65}{504}\\
+0&amp;0&amp;1&amp;2&amp;\frac{1}{504}
+\end{bmatrix}.
+\end{equation*}
 </div>
-</div></body>
+<p>Ce système admet une infinité de solutions :</p>
+<div class="displaymath">
+\begin{equation*}
+a_0=1,\quad a_1=-\frac{65}{504}-63s,\quad a_2=\frac{1}{504}-2s,\quad a_3=s\;\in\mathbb{R}.
+\end{equation*}
+</div>
+<p>Il y a donc une infinité de polynômes qui répondent à la question :</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=1+\left(-\frac{65}{504}-63s\right)t+\left(\frac{1}{504}-2s\right)t^2+st^3
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(s\neq 0\) afin que \(P(t)\) soit de degré \(3\text{.}\)</p>
+<p>Par exemple, en posant \(s=-\frac{1}{504}\text{,}\) on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=1-\frac{2}{504}t+\frac{3}{504}t^2-\frac{1}{504}t^3.
+\end{equation*}
+</div>
+<p>Et en posant \(s=\frac{3}{504}\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=1-\frac{254}{504}t-\frac{5}{504}t^2+\frac{3}{504}t^3.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>On cherche deux nombres réels \(a_0,a_1\) tels que</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=a_0+a_1t
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+P(-3)=7\\
+P(1)=1\\
+P(4)=6
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a_0&amp;-&amp;3a_1&amp;=&amp;7\\
+a_0&amp;+&amp;a_1&amp;=&amp;1\\
+a_0&amp;+&amp;4a_1&amp;=&amp;6\\
+\end{cases}
+\end{equation*}
+</div>
+<p>Résolvons ce système par la méthode de Gauss-Jordan :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1&amp;-3&amp;7\\
+1&amp;1&amp;1\\
+1&amp;4&amp;6
+\end{bmatrix}
+\sim\ldots\sim
+\begin{bmatrix}
+1&amp;0&amp;0\\
+0&amp;1&amp;0\\
+0&amp;0&amp;1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Ce système n'admet aucune solution.</p>
+<p>Il n'y a donc aucun polynôme qui vérifie les conditions imposées.</p>
+<p>Remarque : Cette question revient à essayer de faire passer une droite par trois points non alignés. Il n'est donc pas surprenant qu'on n'ait pas trouvé de solution.</p>
+</li>
+</ol></div></body>
 </html>

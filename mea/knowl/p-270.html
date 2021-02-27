@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:50-04:00    *-->
+<!--*    on 2021-02-27T11:46:16-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,41 +10,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Par exemple, pour le polynôme</p>
-<div class="displaymath">
-\begin{equation*}
-P(x)=10+7x+3x^2+5x^3,
-\end{equation*}
-</div>
-<p data-braille="continuation">le calcul de</p>
-<div class="displaymath">
-\begin{align*}
-P(9)&amp;=10+7\cdot 9+3\cdot 9^2+5\cdot 9^3\\
-&amp;=10+9\cdot(7+3\cdot 9+5\cdot 9^2)\\
-&amp;=10+9\cdot(7+9\cdot(3+9\cdot 5))
-\end{align*}
-</div>
-<p data-braille="continuation">par la méthode de Horner revient à suivre les étapes</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{lcl}
-\text{Étape 0 :}&amp;valeur&amp;=&amp;5\\
-\text{Étape 1 :}&amp;valeur&amp;=&amp;3+9\cdot 5=48\\
-\text{Étape 2 :}&amp;valeur&amp;=&amp;7+9\cdot 48=439\\
-\text{Étape 3 :}&amp;valeur&amp;=&amp;10+9\cdot 439=3961
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">dont on déduit que</p>
-<div class="displaymath">
-\begin{equation*}
-P(9)=3961
-\end{equation*}
-</div>
-<p data-braille="continuation">après trois additions et trois multiplications.</p>
-<span class="incontext"><a href="horner.html#p-270">Contexte</a></span>
+<p>Voici une implémentation de cette approche, où la fonction <code class="code-inline tex2jax_ignore">puissanceRecursive(x, n)</code> renvoie la valeur de \(\text{x}^\text{n}\) de manière récursive. <div class="sagecell-python" id="sage-45"><script type="text/x-sage">def puissanceRecursive(x, n):
+    if n == 1:
+        return x
+    elif n % 2 == 0:
+        return puissanceRecursive(x * x, n / 2)
+    else:
+        return x * puissanceRecursive(x * x, (n - 1) / 2)
+
+print(puissanceRecursive(2, 5))
+</script></div></p>
+<span class="incontext"><a href="exponentiation.html#p-270">Contexte</a></span>
 </body>
 </html>

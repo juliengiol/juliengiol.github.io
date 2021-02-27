@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:53-04:00    *-->
+<!--*    on 2021-02-27T11:46:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,20 +14,33 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.3.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.5.1</span><span class="period">.</span>
 </h6>
-<ol class="decimal">
-<li><pre class="code-block tex2jax_ignore">def complexitePuissanceRecursive(n):
-    if n == 1:
-        return 0
-    elif n % 2 == 0:
-        return 1 + complexitePuissanceRecursive(n / 2)
-    else:
-        return 2 + complexitePuissanceRecursive((n - 1) / 2)
-</pre></li>
-<li>\(\displaystyle T(10\,000)=17\)</li>
-<li><p>C'est bien vrai car \(\log_2(10\,000)\approx 13{,}3\) et \(2\log_2(10\,000)\approx 26{,}6\text{.}\)</p></li>
-</ol>
+<p>La décomposition binaire de \(47\) donne 5 morceaux non nuls :</p>
+<div class="displaymath">
+\begin{equation*}
+47=32+8+4+2+1=1\cdot 2^5+0\cdot 2^4+1\cdot 2^3+1\cdot 2^2+1\cdot 2^1+1\cdot 2^0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Celle de \(48\) n'en donne que 2 :</p>
+<div class="displaymath">
+\begin{equation*}
+48=32+16=1\cdot 2^5+1\cdot 2^4+0\cdot 2^3+0\cdot 2^2+0\cdot 2^1+0\cdot 2^0.
+\end{equation*}
+</div>
+<p>Dans les deux cas, il y a 5 produits matriciels à effectuer pour déterminer \(M^2,M^4,M^8,M^{16}\) et \(M^{32}\text{,}\) puis 4 autres por calculer</p>
+<div class="displaymath">
+\begin{equation*}
+M^{47}=M\cdot M^2\cdot M^4\cdot M^8\cdot M^{32}
+\end{equation*}
+</div>
+<p data-braille="continuation">et seulement 1 autre pour calculer</p>
+<div class="displaymath">
+\begin{equation*}
+M^{48}=M^{16}\cdot M^{32}.
+\end{equation*}
+</div>
+<p>C'est donc le calcul de \(M^{47}\) qui nécessite le plus de produits matriciels lorsqu'on applique l'algorithme d'exponentiation rapide.</p>
 </div>
 <span class="incontext"><a href="exercicescomplexite.html#solution-26">Contexte</a></span>
 </body>

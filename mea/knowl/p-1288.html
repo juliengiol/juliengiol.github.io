@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:40-04:00    *-->
+<!--*    on 2021-02-27T11:48:10-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,38 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Déterminons l'approximation obtenue pour l'intégrale définie</p>
-<div class="displaymath">
-\begin{equation*}
-\int_0^1e^{-x^2}\mathrm{d}x
-\end{equation*}
-</div>
-<p data-braille="continuation">si on applique la méthode des trapèzes avec quatre trapèzes.</p>
-<ul class="disc">
-<li><p>Notons \(f(x)=e^{-x^2}\text{.}\)</p></li>
-<li><p>On a \(n=4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{4}=0{,}25\text{.}\)</p></li>
-<li>
-<p>Alors \(x_k=a+k\cdot\Delta x=k\cdot 0{,}25\) pour \(k=0,\ldots,4\) donne la subdivision régulière</p>
-<div class="displaymath">
-\begin{equation*}
-0&lt;0{,}25&lt;0{,}5&lt;0{,}75&lt;1
-\end{equation*}
-</div>
-<p data-braille="continuation">de l'intervalle d'intégration \([0;1]\text{.}\)</p>
-</li>
-<li>
-<p>La méthode des trapèzes donne alors</p>
+<p>Approximation par les rectangles au milieu :</p>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right)\\
-&amp;=\frac{0{,}25}{2}\cdot((f(0)+f(0{,}25))+(f(0{,}25)+f(0{,}5))\\
-&amp;\qquad\qquad+(f(0{,}5)+f(0{,}75))+(f(0{,}75)+f(1)))\\
-&amp;=\frac{0{,}25}{2}\cdot(f(0)+2f(0{,}25)+2f(0{,}5)+2f(0{,}75)+f(1))\\
-&amp;\approx 0{,}742\,984\,097\,800\,38.
+&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)\\
+=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{8}\right)+\sin\left(\frac{3\pi}{8}\right)+\sin\left(\frac{5\pi}{8}\right)+\sin\left(\frac{7\pi}{8}\right)\right)\\
+\approx\;&amp;2{,}052.
 \end{align*}
 </div>
-</li>
-</ul>
-<span class="incontext"><a href="presentationtrapezes.html#p-1288">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#p-1288">Contexte</a></span>
 </body>
 </html>

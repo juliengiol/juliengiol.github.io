@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:41:46-04:00    *-->
+<!--*    on 2021-02-27T11:47:06-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La matrice des coefficients de ce système est une <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde" target="_blank">matrice de Vandermonde</a> \((n+1)\times(n+1)\) :</p>
+<p>Pour tout \(n\geq 0\text{,}\) on a</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-1&amp;x_0&amp;x_0^2&amp;\cdots&amp;x_0^n\\
-1&amp;x_1&amp;x_1^2&amp;\cdots&amp;x_1^n\\
-1&amp;x_2&amp;x_2^2&amp;\cdots&amp;x_2^n\\
-\vdots&amp;\vdots&amp;\vdots&amp;&amp;\vdots\\
-1&amp;x_n&amp;x_n^2&amp;\cdots&amp;x_n^n
-\end{bmatrix}
-\end{equation*}
+\begin{align*}
+\frac{1}{2x_n}\left(x_n-\sqrt{k}\right)^2&amp;=\frac{1}{2x_n}\left(x_n^2-2x_n\sqrt{k}+k\right)\\
+&amp;=\frac{x_n^2}{2x_n}-\frac{2x_n\sqrt{k}}{2x_n}+\frac{k}{2x_n}\\
+&amp;=\frac{x_n}{2}-\sqrt{k}+\frac{k}{2x_n}\\
+&amp;=\frac{x_n+\frac{k}{x_n}}{2}-\sqrt{k}\\
+&amp;=x_{n+1}-\sqrt{k}.
+\end{align*}
 </div>
-<span class="incontext"><a href="presentationlagrange.html#p-724">Contexte</a></span>
+<span class="incontext"><a href="exercicesnewton.html#p-724">Contexte</a></span>
 </body>
 </html>

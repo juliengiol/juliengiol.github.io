@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:54-04:00    *-->
+<!--*    on 2021-02-27T11:46:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,17 +13,26 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">3.5.5.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">3.5.3.2</span><span class="period">.</span>
 </h6>
+<p>Cela prend 5 multiplications pour calculer</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{array}{lcl}
-\text{Étape 0 :}&amp;valeur&amp;=&amp;4\\
-\text{Étape 1 :}&amp;valeur&amp;=&amp;7+(-2)\cdot 4=-1\\
-\text{Étape 2 :}&amp;valeur&amp;=&amp;2+(-2)\cdot (-1)=4
-\end{array}
-\end{equation*}
+\begin{align*}
+&amp;3^2=3\cdot 3=9,\\
+&amp;3^4=3^2\cdot 3^2=81,\\
+&amp;3^8=3^4\cdot 3^4=6\,561,\\
+&amp;3^{16}=3^8\cdot 3^8=43\,046\,721,\\
+&amp;3^{32}=3^{16}\cdot 3^{16}=1\,853\,020\,188\,851\,841,
+\end{align*}
 </div>
-<p>Donc \(P(-2)=4\text{.}\)</p></article><span class="incontext"><a href="exercicescomplexite.html#li-148">Contexte</a></span>
+<p data-braille="continuation">et 3 de plus pour calculer</p>
+<div class="displaymath">
+\begin{align*}
+3^{45}&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32},\\
+&amp;=3\cdot 81\cdot 6\,561\cdot 1\,853\,020\,188\,851\,841,\\
+&amp;=2\,954\,312\,706\,550\,833\,698\,643.
+\end{align*}
+</div>
+<p>Cela fait donc un total de 8 multiplications.</p></article><span class="incontext"><a href="exercicescomplexite.html#li-148">Contexte</a></span>
 </body>
 </html>

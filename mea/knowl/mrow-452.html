@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:36-04:00    *-->
+<!--*    on 2021-02-27T11:48:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,11 +14,14 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)\\
-=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{8}\right)+\sin\left(\frac{3\pi}{8}\right)+\sin\left(\frac{5\pi}{8}\right)+\sin\left(\frac{7\pi}{8}\right)\right)\\
-\approx\;&amp;2{,}052.
+|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
+&amp;\leq\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
+&amp;=\sum_{k=1}^n\frac{M(\Delta x)^2}{2}\\
+&amp;=\sum_{k=1}^n\frac{M(b-a)^2}{2n^2}\\
+&amp;=n\cdot\frac{M(b-a)^2}{2n^2}\\
+&amp;=\frac{M(b-a)^2}{2n}.
 \end{align*}
 </div>
-<span class="incontext"><a href="exercicesrectangles.html#mjx-eqn-mrow-452">Contexte</a></span>
+<span class="incontext"><a href="presentationrectangles.html#mjx-eqn-mrow-452">Contexte</a></span>
 </body>
 </html>

@@ -176,7 +176,7 @@
       </li>
     </ul>
   </p>
-  <p>Notez que cette définition est récursive : Pour calculer une différence divisée de <m>k</m> points, il faut déjà savoir le faire pour <m>k-1</m> points.</p>
+  <p>Notez que cette définition est récursive : pour calculer une différence divisée de <m>k</m> points, il faut déjà savoir le faire pour <m>k-1</m> points.</p>
 </definition>
 
 <example xml:id="exemple1diffdiv">
@@ -461,7 +461,7 @@
 
     # sortie
     for j in range(0, n+1):
-        print(diffDiv[j][0]),
+        print(diffDiv[j][0])
   </input>
 </sage>
 
@@ -652,7 +652,7 @@
               \end{array}
             </me>
           </p>
-          <p>On trouve donc la même forme de Newton
+          <p>On trouve donc les mêmes coefficients qu'à la question 1, soit
             <me>N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).</me>
           </p>
         </li>
@@ -740,13 +740,13 @@
               \end{array}
             </me>
           </p>
-          <p>On trouve donc la même forme de Newton
+          <p>On trouve donc les mêmes coefficients qu'à la question 1, soit
             <me>N(t)=3+3(t-1)+0(t-1)(t-2)=3+3(t-1).</me>
           </p>
         </li>
       </ol>
     </p>
-    <p>Remarque : En regardant les trois points à interpoler de plus près, on s'aperçoit qu'il sont alignés car ils appartiennent tous les trois à la droite d'équation :
+    <p>Remarque : En regardant les trois points à interpoler de plus près, on s'aperçoit qu'il sont alignés car ils appartiennent tous les trois à la droite d'équation
       <me>y=3x.</me>
       Leur polynôme interpolateur est donc le polynôme dont le graphe correspond à cette droite, c'est-à-dire
       <me>P(x)=3x.</me>
@@ -792,8 +792,8 @@
     <p>Alors la quatrième équation donne
       <md>
         <mrow>d_0+3d_1+6d_2+6d_3=0&amp;\Rightarrow\quad 3+9+0+6d_3=0</mrow>
-        <mrow>&amp;\Rightarrow\quad 6d_2=-12</mrow>
-        <mrow>&amp;\Rightarrow\quad d_2=-2.</mrow>
+        <mrow>&amp;\Rightarrow\quad 6d_3=-12</mrow>
+        <mrow>&amp;\Rightarrow\quad d_3=-2.</mrow>
       </md>
     </p>
     <p>La forme de Newton du polynôme interpolateur de ces quatre points est donc
@@ -861,7 +861,7 @@
 
 <exercise>
   <statement>
-    <p>Déterminez le polynôme interpolateur des points donnés en utilisant la technique des différences divisées.
+    <p>Déterminez le polynôme interpolateur <m>P(t)</m> des points donnés en utilisant la technique des différences divisées.
       <ol>
         <li><p><m>(-2;3),(1;-3),(7;2)</m>.</p></li>
         <li><p><m>(-2;-2),(-1;2),(5;7)</m>.</p></li>
@@ -1030,7 +1030,7 @@
           <p>Et par ailleurs
             <me>\sin(1{,}3)\approx 0{,}963\,558.</me>
           </p>
-          <p>Donc <m>P(1{,}3)</m> donne une approximation de <m>\sin(1{,}3)</m> qui lui est inférieure, tandis que <m>Q(1{,}3)</m> en donne une approximation supérieure.</p>
+          <p>Donc <m>P(1{,}3)</m> constitue une approximation de <m>\sin(1{,}3)</m> qui lui est inférieure, tandis que <m>Q(1{,}3)</m> est une approximation supérieure.</p>
         </li>
       </ol>
     </p>
@@ -1135,6 +1135,7 @@
       <me>1\,\text{heure}\;10\,\text{minutes}\;16\,\text{secondes}</me>
       pour courir son prochain <m>15</m> kilomètres.
     </p>
+<!--
     <p>Étant donné que la dernière différence divisée est vraiment petite, on est tenté d'éliminer le premier point correspondant au <m>1500</m> mètres.
       Le polynôme interpolateur des trois points qui restent est alors
       <md>
@@ -1150,6 +1151,7 @@
       <me>1\,\text{heure}\;10\,\text{minutes}\;30\,\text{secondes}</me>
       pour courir son prochain <m>15</m> kilomètres.
     </p>
+-->
   </solution>
 </exercise>
 

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:42:03-04:00    *-->
+<!--*    on 2021-02-27T11:47:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,34 +13,70 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.10.2</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.3.2</span><span class="period">.</span>
 </h6>
-<p>On choisit d'interpoler les points suivants :</p>
+<p>On cherche quatre nombres réels \(a_0,a_1,a_2,a_3\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
-A_0=(42;4179),\;A_1=(52;4186)\;\text{et}\; A_2(82;4199).
+P(t)=a_0+a_1t+a_2t^2+a_3t^3
 \end{equation*}
 </div>
-<p>La forme de Lagrange du polynôme interpolateur est alors</p>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
-\begin{align*}
-L(T)&amp;=4179\,L_0(T)+4186\,L_1(T)+4199\,L_2(T)\\
-&amp;=4179\frac{(T-52)(T-82)}{(42-52)(42-82)}+4186\frac{(T-42)(T-82)}{(52-42)(52-82)}\\
-&amp;\qquad +4199\frac{(T-42)(T-52)}{(82-42)(82-52)}\\
-&amp;=\frac{4179}{400}(T-52)(T-82)-\frac{4186}{300}(T-42)(T-82)\\
-&amp;\qquad +\frac{4199}{1200}(T-42)(T-52).
-\end{align*}
+\begin{equation*}
+\begin{cases}
+P(-7)=2\\
+P(0)=1\\
+P(9)=0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a_0&amp;-&amp;7a_1&amp;+&amp;49a_2&amp;-&amp;343a_3&amp;=&amp;2\\
+a_0&amp;&amp;&amp;&amp;&amp;&amp;&amp;=&amp;1\\
+a_0&amp;+&amp;9a_1&amp;+&amp;81a_2&amp;+&amp;729a_3&amp;=&amp;0\\
+\end{cases}
+\end{equation*}
 </div>
-<p>On a</p>
+<p>Résolvons ce système par la méthode de Gauss-Jordan :</p>
 <div class="displaymath">
-\begin{align*}
-L(61)&amp;=\frac{4179}{400}(61-52)(61-82)-\frac{4186}{300}(61-42)(61-82)\\
-&amp;\qquad +\frac{4199}{1200}(61-42)(61-52)\\
-&amp;=-\frac{4179\cdot 9\cdot 21}{400}+\frac{4186\cdot 19\cdot 21}{300}+\frac{4199\cdot 19\cdot 9}{1200}\\
-&amp;=\frac{104779}{25}\\
-&amp;=4191{,}16.
-\end{align*}
+\begin{equation*}
+\begin{bmatrix}
+1&amp;-7&amp;49&amp;-343&amp;2\\
+1&amp;0&amp;0&amp;0&amp;1\\
+1&amp;9&amp;81&amp;729&amp;0
+\end{bmatrix}
+\sim\ldots\sim
+\begin{bmatrix}
+1&amp;0&amp;0&amp;0&amp;1\\
+0&amp;1&amp;0&amp;63&amp;-\frac{65}{504}\\
+0&amp;0&amp;1&amp;2&amp;\frac{1}{504}
+\end{bmatrix}.
+\end{equation*}
 </div>
-<p data-braille="continuation">On estime ainsi que \(C\) vaut environ <span class="quantity">4191,16 <sup>J</sup>⁄<sub>kg·°C</sub></span> à <span class="quantity">61 °C</span>.</p></article><span class="incontext"><a href="exerciceslagrange.html#li-466">Contexte</a></span>
+<p>Ce système admet une infinité de solutions :</p>
+<div class="displaymath">
+\begin{equation*}
+a_0=1,\quad a_1=-\frac{65}{504}-63s,\quad a_2=\frac{1}{504}-2s,\quad a_3=s\;\in\mathbb{R}.
+\end{equation*}
+</div>
+<p>Il y a donc une infinité de polynômes qui répondent à la question :</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=1+\left(-\frac{65}{504}-63s\right)t+\left(\frac{1}{504}-2s\right)t^2+st^3
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(s\neq 0\) afin que \(P(t)\) soit de degré \(3\text{.}\)</p>
+<p>Par exemple, en posant \(s=-\frac{1}{504}\text{,}\) on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=1-\frac{2}{504}t+\frac{3}{504}t^2-\frac{1}{504}t^3.
+\end{equation*}
+</div>
+<p>Et en posant \(s=\frac{3}{504}\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=1-\frac{254}{504}t-\frac{5}{504}t^2+\frac{3}{504}t^3.
+\end{equation*}
+</div></article><span class="incontext"><a href="exerciceslagrange.html#li-466">Contexte</a></span>
 </body>
 </html>

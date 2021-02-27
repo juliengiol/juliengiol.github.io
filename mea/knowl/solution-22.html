@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:47-04:00    *-->
+<!--*    on 2021-02-27T11:46:19-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,31 +14,30 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.3.11.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.1.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
-<li><pre class="code-block tex2jax_ignore">def syracuse1(s, n):
-    for k in range(1, n+1):
-        if s % 2 == 0:
-              s = s / 2
-        else:
-            s = 3 * s + 1
-    return s
-
-print(syracuse1(14, 20))
-</pre></li>
-<li><pre class="code-block tex2jax_ignore">def syracuse2(s, n):
-    if n == 0:
-        return s
-    elif s % 2 == 0:
-        return syracuse2(s / 2, n-1)
-    else:
-        return syracuse2(3 * s + 1, n-1)
-
-print(syracuse2(14, 20))
-</pre></li>
+<li>Ce bloc de code a pour effet d'afficher 15.</li>
+<li>Il calcule la somme des \(n\) premiers entiers naturels non nuls.</li>
+<li><p>Il y a 3 assignations avant d'entrer dans la boucle. À chaque tour de boucle, il y a 1 comparaison, 2 additions et 2 assignations. Pour compter tout ça, on peut donc s'y prendre comme suit.<pre class="code-block tex2jax_ignore"># entrée :
+n = 5
+# instructions :
+k = 1
+somme = 1
+compteur = 3
+while k &lt; n:
+    k = k + 1
+    somme = somme + k
+    compteur = compteur + 5
+# sortie :
+print(somme)
+print(compteur)
+</pre></p></li>
+<li>On a \(T(5)=3+4\cdot 5=23\text{.}\)</li>
+<li>On a \(T(n)=3+5(n-1)=5n-2\text{.}\)</li>
+<li>Il s'agit d'une complexité linéaire.</li>
 </ol>
 </div>
-<span class="incontext"><a href="exercicesfonctions.html#solution-22">Contexte</a></span>
+<span class="incontext"><a href="exercicescomplexite.html#solution-22">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-09-25T09:40:47-04:00    *-->
+<!--*    on 2021-02-27T11:46:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,24 +12,27 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like"><ol class="decimal">
-<li><pre class="code-block tex2jax_ignore">def combienDeDeux1(n):
-    compteur = 0
-    while n % 2 == 0:
-        compteur = compteur + 1
-        n = n / 2
-    return compteur
-
-print(combienDeDeux1(45))
-print(combienDeDeux1(24))
-</pre></li>
-<li><pre class="code-block tex2jax_ignore">def combienDeDeux2(n):
-    if n % 2 != 0:
-        return 0
+<li>
+<p>On obtient</p>
+<div class="displaymath">
+\begin{equation*}
+F_{20}=6765
+\end{equation*}
+</div>
+<p data-braille="continuation">à l'aide du code qui suit.<pre class="code-block tex2jax_ignore">def fibonacci(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
     else:
-        return 1 + combienDeDeux2(n / 2)
+        return fibonacci(n - 1) + fibonacci(n - 2)
 
-print(combienDeDeux2(45))
-print(combienDeDeux2(24))
-</pre></li>
+print(fibonacci(20))
+</pre></p>
+</li>
+<li>
+<p>Non, cela prend trop de temps. Il vaut mieux s'en tenir à la méthode itérative de l'exercice <a class="xref" data-knowl="./knowl/fibo_iterative.html" title="Exercice 1.4.12">1.4.12</a>.</p>
+<aside class="aside aside-like"><p>Le temps de calcul de \(F_n\) par cet <a class="external" href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_r%C3%A9cursif_na%C3%AFf" target="_blank">algorithme récursif naïf</a> est exponentiel en \(n\text{,}\) ce qui est vite beaucoup plus long que par l'<a class="external" href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_polynomial" target="_blank">algorithme polynomial</a> itératif.</p></aside>
+</li>
 </ol></div></body>
 </html>
