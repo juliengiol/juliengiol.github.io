@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:46:07-05:00    *-->
+<!--*    on 2021-02-28T13:09:03-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,10 +10,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Comme pour les boucles et les conditionnelles, les deux-points <code class="code-inline tex2jax_ignore"> :</code> annoncent une <a class="external" href="https://www.askpython.com/python/python-indentation" target="_blank">indentation</a> (4 espaces fortement recommandés). Notez aussi que le <code class="code-inline tex2jax_ignore">return</code> doit faire partie du bloc indenté.</p>
-<span class="incontext"><a href="syntaxefonctions.html#p-158">Contexte</a></span>
+<p>Et voilà une fonction <em class="emphasis">récursive</em> dont on affiche la valeur en 14. <div class="sagecell-python" id="sage-34"><script type="text/x-sage">def syracuse(x):
+    if x == 1:
+        return 'OK'
+    elif x % 2 == 0:
+        return syracuse(x // 2)
+    else:
+        return syracuse(3 * x + 1)
+
+print(syracuse(14))
+</script></div></p>
+<span class="incontext"><a href="fonctions.html#p-158">Contexte</a></span>
 </body>
 </html>

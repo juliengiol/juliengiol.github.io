@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:13-05:00    *-->
+<!--*    on 2021-02-28T13:11:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,23 +14,27 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.3.8.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.3.6.1</span><span class="period">.</span>
 </h6>
-<pre class="code-block tex2jax_ignore"># fonction
-def rectanglesAuMilieu(f, a, b, n):
-    approximation = 0
-    deltaX = (b - a) / n
-    x = a + deltaX / 2
-    while x &lt; b:
-        approximation = approximation + f(x)
-        x = x + deltaX
-    approximation = deltaX * approximation
-    return approximation
-
-# test
+<pre class="code-block tex2jax_ignore"># entrées
+import numpy as np
 def f(x):
-    return 1 / (1 + x)
-print(rectanglesAuMilieu(f, 0.0, 1.0, 1000))
+    return 4 * np.sqrt(1 - x ** 2)
+a = 0.0
+b = 1.0
+n = 1000
+
+# instructions
+approximation = 0
+deltaX = (b - a) / n
+x = b
+while x &gt; a:
+    approximation = approximation + f(x)
+    x = x - deltaX
+approximation = deltaX * approximation
+
+# sortie
+print(approximation)
 </pre>
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#solution-87">Contexte</a></span>

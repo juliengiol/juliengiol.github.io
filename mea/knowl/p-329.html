@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:46:21-05:00    *-->
+<!--*    on 2021-02-28T13:09:24-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,37 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Notons</p>
+<p>Voici les étapes de l'algorithme :</p>
 <div class="displaymath">
-\begin{equation*}
-M:=\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Comme \(M^{45}=M\cdot M^4\cdot M^8\cdot M^{32}\text{,}\) on doit d'abord calculer les puissances de \(M\) suivantes :</p>
-<div class="displaymath">
-\begin{equation*}
-M^2=\begin{bmatrix}2&amp;1\\1&amp;1\end{bmatrix},
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-M^4=\begin{bmatrix}5&amp;3\\3&amp;2\end{bmatrix},
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-M^8=\begin{bmatrix}34&amp;21\\21&amp;13\end{bmatrix},
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-M^{16}=\begin{bmatrix}1\,597&amp;987\\987&amp;610\end{bmatrix},
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-M^{32}=\begin{bmatrix}3\,524\,578&amp;2\,178\,309\\2\,178\,309&amp;1\,346\,269\end{bmatrix}.
-\end{equation*}
+\begin{align*}
+3^{45}&amp;=3\cdot\left(3^2\right)^{22},\\
+&amp;=3\cdot\left(3^4\right)^{11},\\
+&amp;=3\cdot 3^4\cdot\left(3^8\right)^5,\\
+&amp;=3\cdot 3^4\cdot 3^8\cdot\left(3^{16}\right)^2,\\
+&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32}.
+\end{align*}
 </div>
 <span class="incontext"><a href="exercicescomplexite.html#p-329">Contexte</a></span>
 </body>

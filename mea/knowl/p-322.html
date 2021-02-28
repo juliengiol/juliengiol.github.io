@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:46:20-05:00    *-->
+<!--*    on 2021-02-28T13:09:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On veut calculer \(3^{45}\) à l'aide de l'algorithme d'exponentiation rapide présenté à la section <a href="exponentiation.html" class="internal" title="Section 3.2: Exponentiation rapide">3.2</a>.</p>
-<ol class="decimal">
-<li>Vérifiez que cela revient à décomposer \(3^{45}\) de la façon suivante :<div class="displaymath">
-\begin{equation*}
-3\cdot 3^4\cdot 3^8\cdot 3^{32}.
-\end{equation*}
-</div>
-</li>
-<li>Combien de multiplications doit-on effectuer au total?</li>
-<li>Voyez-vous un lien avec l'écriture de \(45\) en binaire?</li>
-<li>
-<p>Utilisez cette méthode pour calculer à la main la matrice</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{45}.
-\end{equation*}
-</div>
-</li>
-</ol>
+<p>On s'intéresse à la fonction qui suit.<pre class="code-block tex2jax_ignore">def maFonction(x, liste):
+    i = 0
+    n = len(liste)
+    while i &lt; n and liste[i] != x:
+        i = i + 1
+    return i
+</pre></p>
 <span class="incontext"><a href="exercicescomplexite.html#p-322">Contexte</a></span>
 </body>
 </html>

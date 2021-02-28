@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:12-05:00    *-->
+<!--*    on 2021-02-28T13:11:13-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Combien faudrait-il utiliser de rectangles au minimum pour être certains que la valeur absolue de l'erreur d'approximation ne dépasse pas \(10^{-6}\text{?}\)</p>
-<span class="incontext"><a href="exercicesrectangles.html#p-1310">Contexte</a></span>
+<p>La méthode des trapèzes donne alors</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;=\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right)\\
+&amp;=\frac{0{,}25}{2}\cdot((f(0)+f(0{,}25))+(f(0{,}25)+f(0{,}5))\\
+&amp;\qquad\qquad+(f(0{,}5)+f(0{,}75))+(f(0{,}75)+f(1)))\\
+&amp;=\frac{0{,}25}{2}\cdot(f(0)+2f(0{,}25)+2f(0{,}5)+2f(0{,}75)+f(1))\\
+&amp;\approx 0{,}742\,984\,097\,800\,38.
+\end{align*}
+</div>
+<span class="incontext"><a href="presentationtrapezes.html#p-1310">Contexte</a></span>
 </body>
 </html>

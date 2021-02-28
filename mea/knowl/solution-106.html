@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:49:01-05:00    *-->
+<!--*    on 2021-02-28T13:12:06-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,89 +14,15 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.3.10.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.3.8.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
-<li>
-<p>Par définition du produit matriciel, on a</p>
-<div class="displaymath">
-\begin{align*}
-\begin{bmatrix}0&amp;1\\1&amp;-q\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}&amp;=\begin{bmatrix}0\cdot a+1\cdot b\\1\cdot a-q\cdot b\end{bmatrix}\\
-&amp;=\begin{bmatrix}b\\r\end{bmatrix}.
-\end{align*}
-</div>
-</li>
-<li>
-<p>D'après ce qui précède, il suffit de prendre</p>
-<div class="displaymath">
-\begin{equation*}
-M_1=\begin{bmatrix}0&amp;1\\1&amp;-11\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Il suffit de prendre</p>
-<div class="displaymath">
-\begin{equation*}
-M_2=\begin{bmatrix}0&amp;1\\1&amp;-15\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Par associativité, on a</p>
-<div class="displaymath">
-\begin{equation*}
-(M_2M_1)\begin{bmatrix}2589\\234\end{bmatrix}=M_2\left(M_1\begin{bmatrix}2589\\234\end{bmatrix}\right)=M_2\begin{bmatrix}234\\15\end{bmatrix}=\begin{bmatrix}15\\9\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>En observant les quotients des trois dernières étapes de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(2589;234)\text{,}\) on voit qu'il suffit de prendre</p>
-<div class="displaymath">
-\begin{equation*}
-M_3=\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}, M_4=\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\text{ et }M_5=\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Un peu de calcul matriciel montre que \(M_5M_4M_3M_2M_1\) donne la matrice</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-15\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-11\end{bmatrix}\\
-=&amp;\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}1&amp;-11\\-15&amp;166\end{bmatrix}\\
-=&amp;\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}-15&amp;166\\16&amp;-177\end{bmatrix}\\
-=&amp;\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}\begin{bmatrix}16&amp;-177\\-31&amp;343\end{bmatrix}\\
-=&amp;\begin{bmatrix}-31&amp;343\\78&amp;-863\end{bmatrix}.
-\end{align*}
-</div>
-</li>
-<li>
-<p>D'après ce qui précède, on sait que</p>
-<div class="displaymath">
-\begin{equation*}
-M_5M_4M_3M_2M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}3\\0\end{bmatrix},
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}-31&amp;343\\78&amp;-863\end{bmatrix}\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}3\\0\end{bmatrix}.
-\end{equation*}
-</div>
-<p>La première ligne de cette identité matricielle donne</p>
-<div class="displaymath">
-\begin{equation*}
-(-31)\cdot 2589+343\cdot 234=3,
-\end{equation*}
-</div>
-<p data-braille="continuation">soit</p>
-<div class="displaymath">
-\begin{equation*}
-2589u+234v=3\quad\text{avec }(u;v)=(-31;343).
-\end{equation*}
-</div>
-</li>
+<li><p>L'algorithme d'Euclide nécessite \(7\) divisions, nombre qui est bien majoré par \(5\times 2=10\text{.}\)</p></li>
+<li><p>L'algorithme d'Euclide nécessite \(10\) divisions, nombre qui est bien majoré par \(5\times 2=10\text{.}\)</p></li>
+<li><p>L'algorithme d'Euclide nécessite \(16\) divisions, nombre qui est bien majoré par \(5\times 4=20\text{.}\)</p></li>
+<li><p>L'algorithme d'Euclide nécessite \(19\) divisions, nombre qui est bien majoré par \(5\times 4=20\text{.}\)</p></li>
 </ol>
+<p>Remarque : Dans les trois derniers cas, il s'agit de <a class="external" href="https://oeis.org/A000045" target="_blank">nombres de Fibonacci</a> consécutifs, lesquels sont connus pour fournir les cas limites du théorème de Lamé.</p>
 </div>
 <span class="incontext"><a href="exerciceseuclide.html#solution-106">Contexte</a></span>
 </body>

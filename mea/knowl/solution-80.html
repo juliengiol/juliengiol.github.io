@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:08-05:00    *-->
+<!--*    on 2021-02-28T13:10:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,59 +14,80 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.3.1.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.3.11.1</span><span class="period">.</span>
 </h6>
-<p>Notons \(f(x)=\frac{1}{1+x^2}\text{,}\) \(n=5\) et</p>
+<p>Soit \(A_0=(x_0;y_0),A_1=(x_1;y_1)\) et \(A_2=(x_2;y_2)\) trois points d'abscisses distinctes deux à deux. La forme de Newton de leur polynôme annulateur s'écrit</p>
 <div class="displaymath">
 \begin{equation*}
-\Delta x=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2.
+N(t)=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1).
 \end{equation*}
 </div>
-<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([0;1]\) en cinq sous-intervalles de même longueur est donnée par</p>
+<p>On cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
-x_k=a+k\cdot\Delta x=k\cdot 0{,}2\quad\text{pour }k=0,1,\ldots,5,
+\begin{cases}
+N(x_0)=y_0\\
+N(x_1)=y_1\\
+N(x_2)=y_2
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+d_0&amp;=&amp;y_0\\
+d_0+(x_1-x_0)d_1&amp;=&amp;y_1\\
+d_0+(x_2-x_0)d_1+(x_2-x_0)(x_2-x_1)d_2&amp;=&amp;y_2\\
+\end{cases}
+\end{equation*}
+</div>
+<p>Ce système linéaire est déjà triangulé.</p>
+<ul class="disc">
+<li>
+<p>La première équation donne</p>
+<div class="displaymath">
+\begin{equation*}
+d_0=y_0.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Alors la deuxième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+(x_1-x_0)d_1=y_1&amp;\quad\Rightarrow\quad y_0+(x_1-x_0)d_1=y_1\\
+&amp;\quad\Rightarrow\quad (x_1-x_0)d_1=y_1-y_0\\
+&amp;\quad\Rightarrow\quad d_1=\frac{y_1-y_0}{x_1-x_0}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Enfin la troisième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+&amp;d_0+(x_2-x_0)d_1+(x_2-x_0)(x_2-x_1)d_2=y_2\\
+\Rightarrow\quad&amp;y_0+(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}+(x_2-x_0)(x_2-x_1)d_2=y_2\\
+\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_0-(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}\\
+\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+y_1-y_0-(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}\\
+\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+\left(x_1-x_0-(x_2-x_0)\right)\frac{y_1-y_0}{x_1-x_0}\\
+\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+\left(x_1-x_2\right)\frac{y_1-y_0}{x_1-x_0}\\
+\Rightarrow\quad&amp;d_2=\frac{y_2-y_1}{(x_2-x_0)(x_2-x_1)}+\left(x_1-x_2\right)\frac{y_1-y_0}{(x_1-x_0)(x_2-x_0)(x_2-x_1)}\\
+\Rightarrow\quad&amp;d_2=\frac{y_2-y_1}{(x_2-x_0)(x_2-x_1)}-\frac{y_1-y_0}{(x_1-x_0)(x_2-x_0)}\\
+\Rightarrow\quad&amp;d_2=\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}.
+\end{align*}
+</div>
+</li>
+</ul>
+<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=y_0+\frac{y_1-y_0}{x_1-x_0}(t-x_0)+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}(t-x_0)(t-x_1)
 \end{equation*}
 </div>
 <p data-braille="continuation">c'est-à-dire</p>
 <div class="displaymath">
 \begin{equation*}
-0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
+N(t)=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\left[A_0,A_1,A_2\right](t-x_0)(t-x_1).
 \end{equation*}
 </div>
-<ol class="decimal">
-<li>
-<p>Approximation par les rectangles à gauche :</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\Delta x\cdot\left(f(0)+f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)\right)\\
-=\;&amp;0{,}2\cdot\left(\frac{1}{1+0^2}+\frac{1}{1+0{,}2^2}+\frac{1}{1+0{,}4^2}+\frac{1}{1+0{,}6^2}+\frac{1}{1+0{,}8^2}\right)\\
-\approx\;&amp;0{,}834.
-\end{align*}
 </div>
-</li>
-<li>
-<p>Approximation par les rectangles à droite :</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\Delta x\cdot\left(f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)+f(1)\right)\\
-=\;&amp;0{,}2\cdot\left(\frac{1}{1+0{,}2^2}+\frac{1}{1+0{,}4^2}+\frac{1}{1+0{,}6^2}+\frac{1}{1+0{,}8^2}+\frac{1}{1+1^2}\right)\\
-\approx\;&amp;0{,}734.
-\end{align*}
-</div>
-</li>
-<li>
-<p>Approximation par les rectangles au milieu :</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\Delta x\cdot\left(f(0{,}1)+f(0{,}3)+f(0{,}5)+f(0{,}7)+f(0{,}9)\right)\\
-=\;&amp;0{,}2\cdot\left(\frac{1}{1+0{,}1^2}+\frac{1}{1+0{,}3^2}+\frac{1}{1+0{,}5^2}+\frac{1}{1+0{,}7^2}+\frac{1}{1+0{,}9^2}\right)\\
-\approx\;&amp;0{,}786.
-\end{align*}
-</div>
-</li>
-</ol>
-</div>
-<span class="incontext"><a href="exercicesrectangles.html#solution-80">Contexte</a></span>
+<span class="incontext"><a href="exercicesdiffdiv.html#solution-80">Contexte</a></span>
 </body>
 </html>

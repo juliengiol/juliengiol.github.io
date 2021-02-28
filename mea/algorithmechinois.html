@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:45:51-05:00    *-->
+<!--*    on 2021-02-28T13:08:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,43 +235,43 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">13.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Théorème des restes chinois.</span>
 </h6>
 <ul class="disc">
-<li id="li-1093">
-<p id="p-2083">Entrées :</p>
+<li id="li-1089">
+<p id="p-2054">Entrées :</p>
 <ul class="circle">
-<li id="li-1094"><p id="p-2084">Assigner à \(\text{lesA}\) la liste des \(a_i\text{.}\)</p></li>
-<li id="li-1095"><p id="p-2085">Assigner à \(\text{lesM}\) la liste des \(m_i\text{.}\)</p></li>
+<li id="li-1090"><p id="p-2055">Assigner à \(\text{lesA}\) la liste des \(a_i\text{.}\)</p></li>
+<li id="li-1091"><p id="p-2056">Assigner à \(\text{lesM}\) la liste des \(m_i\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-1096">
-<p id="p-2086">Prérequis : Définir une fonction \(\text{euclideEtendu(a, b)}\) qui renvoie \(\text{(r, u, v)}\) où</p>
+<li id="li-1092">
+<p id="p-2057">Prérequis : Définir une fonction \(\text{euclideEtendu(a, b)}\) qui renvoie \(\text{(r, u, v)}\) où</p>
 <ul class="circle">
-<li id="li-1097"><p id="p-2087">\(\text{r}\) est le PGCD de \(\text{a}\) et de \(\text{b}\text{;}\)</p></li>
-<li id="li-1098"><p id="p-2088">\(\text{u}\) et \(\text{v}\) sont les coefficients de la combinaison linéaire donnée par l'algorithme d'Euclide étendu.</p></li>
+<li id="li-1093"><p id="p-2058">\(\text{r}\) est le PGCD de \(\text{a}\) et de \(\text{b}\text{;}\)</p></li>
+<li id="li-1094"><p id="p-2059">\(\text{u}\) et \(\text{v}\) sont les coefficients de la combinaison linéaire donnée par l'algorithme d'Euclide étendu.</p></li>
 </ul>
 </li>
-<li id="li-1099">
-<p id="p-2089">Instructions :</p>
+<li id="li-1095">
+<p id="p-2060">Instructions :</p>
 <ul class="circle">
-<li id="li-1100"><p id="p-2090">Assigner à \(\text{M}\) la valeur \(1\text{.}\)</p></li>
-<li id="li-1101">
-<p id="p-2091">Pour \(\text{m}\) parcourant la liste \(\text{lesM}\text{,}\)</p>
-<ul class="square"><li id="li-1102"><p id="p-2092">assigner à \(\text{M}\) la valeur \(\text{M}\cdot\text{m}\text{.}\)</p></li></ul>
+<li id="li-1096"><p id="p-2061">Assigner à \(\text{M}\) la valeur \(1\text{.}\)</p></li>
+<li id="li-1097">
+<p id="p-2062">Pour \(\text{m}\) parcourant la liste \(\text{lesM}\text{,}\)</p>
+<ul class="square"><li id="li-1098"><p id="p-2063">assigner à \(\text{M}\) la valeur \(\text{M}\cdot\text{m}\text{.}\)</p></li></ul>
 </li>
-<li id="li-1103"><p id="p-2093">Assigner à \(\text{x0}\) la valeur \(0\text{.}\)</p></li>
-<li id="li-1104">
-<p id="p-2094">Pour \(\text{i}\) allant de \(0\) au nombre d'élements dans la liste \(\text{lesM}\) moins \(1\text{,}\)</p>
+<li id="li-1099"><p id="p-2064">Assigner à \(\text{x0}\) la valeur \(0\text{.}\)</p></li>
+<li id="li-1100">
+<p id="p-2065">Pour \(\text{i}\) allant de \(0\) au nombre d'élements dans la liste \(\text{lesM}\) moins \(1\text{,}\)</p>
 <ul class="square">
-<li id="li-1105"><p id="p-2095">assigner à \(\text{ai}\) la \(\text{i}\)-ème valeur de la liste \(\text{lesA}\) ;</p></li>
-<li id="li-1106"><p id="p-2096">assigner à \(\text{mi}\) la \(\text{i}\)-ème valeur de la liste \(\text{lesM}\) ;</p></li>
-<li id="li-1107"><p id="p-2097">assigner à \(\text{Mi}\) la valeur de \(\text{M}/\text{mi}\) ;</p></li>
-<li id="li-1108"><p id="p-2098">assigner à \(\text{ui}\) la deuxième composante de \(\text{euclideEtendu(Mi, mi)}\) ;</p></li>
-<li id="li-1109"><p id="p-2099">assigner à \(\text{x0}\) la valeur de \(\text{x0}+\text{ai}\cdot\text{Mi}\cdot\text{ui}\text{.}\)</p></li>
+<li id="li-1101"><p id="p-2066">assigner à \(\text{ai}\) la \(\text{i}\)-ème valeur de la liste \(\text{lesA}\) ;</p></li>
+<li id="li-1102"><p id="p-2067">assigner à \(\text{mi}\) la \(\text{i}\)-ème valeur de la liste \(\text{lesM}\) ;</p></li>
+<li id="li-1103"><p id="p-2068">assigner à \(\text{Mi}\) la valeur de \(\text{M}/\text{mi}\) ;</p></li>
+<li id="li-1104"><p id="p-2069">assigner à \(\text{ui}\) la deuxième composante de \(\text{euclideEtendu(Mi, mi)}\) ;</p></li>
+<li id="li-1105"><p id="p-2070">assigner à \(\text{x0}\) la valeur de \(\text{x0}+\text{ai}\cdot\text{Mi}\cdot\text{ui}\text{.}\)</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li id="li-1110"><p id="p-2100">Sortie : Afficher \(\text{x0}\) et \(\text{M}\text{.}\)</p></li>
-</ul></article><p id="p-2101">Voici une implémentation de cet algorithme qui permet de résoudre le problème <a class="xref" data-knowl="./knowl/pirates3.html" title="Problème 13.1.5">13.1.5</a>.</p>
+<li id="li-1106"><p id="p-2071">Sortie : Afficher \(\text{x0}\) et \(\text{M}\text{.}\)</p></li>
+</ul></article><p id="p-2072">Voici une implémentation de cet algorithme qui permet de résoudre le problème <a class="xref" data-knowl="./knowl/pirates3.html" title="Problème 13.1.5">13.1.5</a>.</p>
 <div class="sagecell-python" id="sage-62"><script type="text/x-sage"># entrées
 lesA = [3, 4, 5]
 lesM = [17, 11, 6]

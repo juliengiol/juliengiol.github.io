@@ -387,7 +387,7 @@
     <statement>
       <p>
         Pour tout <m>n\ge 3</m>, on a
-        <me>F_n=\frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}-\frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}</me>
+        <me>F_n=\frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}-\frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}.</me>
       </p>
     </statement>
     <proof>
@@ -434,7 +434,7 @@
   <p>
     Dans cette formule, seul le premier terme importe vraiment.
     En effet, comme
-    <me>\left|\frac{1-\sqrt{5}}{2}\right|\simeq 0{,}62,</me>
+    <me>\left|\frac{1-\sqrt{5}}{2}\right|\approx 0{,}62,</me>
     le terme
     <me>\frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}</me>
     est assez petit pour que <m>F_n</m> soit égal à l'entier le plus proche de
@@ -745,12 +745,14 @@
             et finalement
             <me>M^{45}=\begin{bmatrix}1\,836\,311\,903&amp;1\,134\,903\,170\\1\,134\,903\,170&amp;701\,408\,733\end{bmatrix}.</me>
           </p>
-          <aside>Les coefficients de ces matrices vous évoquent-ils quelque chose?</aside>
         </li>
       </ol>
     </p>
   </solution>
 </exercise>
+<aside>
+  <p>Les coefficients des matrices de l'exercice <xref ref="expo_rapide_45"/> vous évoquent-ils quelque chose?</p>
+</aside>
 
 <exercise>
   <statement>

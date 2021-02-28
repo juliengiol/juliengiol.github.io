@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:47:44-05:00    *-->
+<!--*    on 2021-02-28T13:10:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Supposons-la vérifiée pour \(n\) points. Notons alors \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{,}\) et \(B(t)\) le polynôme interpolateur des \(n\) derniers \(A_1,\ldots,A_n\text{.}\) Des calculs sans mystère montrent ensuite qu'on a forcément</p>
+<p>Pour \(\text{j}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
+<ul class="square">
+<li><p>initialiser \(\text{nouvelleColonne}\text{,}\) la liste qui contiendra toutes les différences divisées calculées à l'étape \(j\) : \(\text{nouvelleColonne}=\left[\;\right]\) ;</p></li>
+<li>
+<p>pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n-j}\text{,}\)</p>
+<ul class="disc">
+<li>
+<p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
 <div class="displaymath">
 \begin{equation*}
-P(t)=\frac{(t-x_0)B(t)-(t-x_n)A(t)}{x_n-x_0}
+\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;
 \end{equation*}
 </div>
-<p data-braille="continuation">par unicité du polynôme interpolateur. Par hypothèse de récurrence appliquée à \(A(t)\) et \(B(t)\text{,}\) on en déduit que le coefficent de degré \(n\) dans \(P(t)\) vaut</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{\left[A_1,\ldots,A_n\right]-\left[A_0,\ldots,A_{n-1}\right]}{x_n-x_0}
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire \(\left[A_0,\ldots,A_n\right]\text{,}\) par la formule de récurrence définissant les différences divisées.</p>
-<span class="incontext"><a href="presentationdiffdiv.html#p-1034">Contexte</a></span>
+</li>
+<li><p>ajouter la nouvelle différence divisée \(\text{nouvelleDiffDiv}\) à la liste \(\text{nouvelleColonne}\) ;</p></li>
+</ul>
+</li>
+<li><p>ajouter \(\text{nouvelleColonne}\) à la liste \(\text{diffDiv}\text{.}\)</p></li>
+</ul>
+<span class="incontext"><a href="algorithmediffdiv.html#p-1034">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:49:01-05:00    *-->
+<!--*    on 2021-02-28T13:12:10-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La première étape de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(2589;234)\) consiste en la division euclidienne</p>
+<p>La première étape consistait à effectuer la division euclidienne de \(2589\) par \(234\text{,}\) soit</p>
 <div class="displaymath">
 \begin{equation*}
-2589=234\cdot 11+15.
+2589=234\cdot 11+15,
 \end{equation*}
 </div>
-<p data-braille="continuation">Donnez une matrice \(2\times 2\) \(M_1\) telle que</p>
+<p data-braille="continuation">puis à isoler le reste, soit</p>
 <div class="displaymath">
 \begin{equation*}
-M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}234\\15\end{bmatrix}.
+15=2589-234\cdot 11,
 \end{equation*}
 </div>
-<span class="incontext"><a href="exerciceseuclide.html#p-1814">Contexte</a></span>
+<p data-braille="continuation">qui donne la combinaison linéaire de \(2589\) et \(234\) suivante :</p>
+<div class="displaymath">
+\begin{equation}
+\underbrace{15}_{r_2}=2589\cdot\underbrace{1}_{u_2}+234\cdot\underbrace{(-11)}_{v_2}.\tag{12.1.1}
+\end{equation}
+</div>
+<span class="incontext"><a href="presentationbezout.html#p-1814">Contexte</a></span>
 </body>
 </html>

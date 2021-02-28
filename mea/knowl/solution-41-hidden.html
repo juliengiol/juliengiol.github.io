@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:46:44-05:00    *-->
+<!--*    on 2021-02-28T13:09:46-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,30 +11,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># entrées
-def f(x):
-    return x ** 2 - 2
-a = 0.0
-b = 2.0
-longueurMax = 0.01
-
-# instructions
-while b - a &gt; longueurMax:
-    print(a, b)
-    m = (a + b) / 2
-    if f(m) == 0:
-        a = m
-        b = m
-        break
-    elif f(m) * f(a) &lt; 0:
-        b = m
-    else:
-        a = m
-
-# sortie
-if a == b:
-    print(a)
-else:
-    print(a, b)
-</pre></div></body>
+<body><div class="solution solution-like">
+<p>Il converge</p>
+<ol class="decimal">
+<li>vers \(c_1=1\text{;}\)</li>
+<li>vers \(c_2=2\text{;}\)</li>
+<li>vers \(4{,}5\) qui n'est pas un zéro de \(f\text{.}\)</li>
+</ol>
+<p>Si les hypothèses ne sont pas toutes vérifiées, l'algorithme peut converger vers un nombre qui n'est pas un zéro de la fonction considérée.</p>
+</div></body>
 </html>

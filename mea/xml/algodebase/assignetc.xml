@@ -50,6 +50,10 @@
 <title>Assignations</title>
 
 <p>Une <url href="https://fr.wikipedia.org/wiki/Affectation_(informatique)">assignation</url>, c'est le fait d'attribuer une valeur à une variable.</p>
+<aside>
+  <p>On rencontre aussi le terme affectation pour désigner une assignation.</p>
+</aside>
+
 
 <p>
   Par exemple, le code <c>x = 2</c> a pour effet d'assigner la valeur <m>\text{2}</m> à la variable <m>\text{x}</m>.
@@ -136,6 +140,9 @@
     </ul>
   </p>
 </remark>
+<aside>
+  <p>Python Tutor gère également les langages Java, JavaScript, C, C++ et Ruby.</p>
+</aside>
 
 <p>
   Essayez maintenant de prédire le résultat des blocs de code qui suivent.
@@ -261,12 +268,16 @@
 <section xml:id="boucles">
 <title>Boucles</title>
 
-<p>Voici les mots-clés des <url href="https://fr.wikipedia.org/wiki/Boucle_for">boucles for</url> et des <url href="https://fr.wikipedia.org/wiki/Boucle_while">boucles while</url> en Python.
+<p>
+  Voici les mots-clés des <url href="https://fr.wikipedia.org/wiki/Boucle_for">boucles for</url> et des <url href="https://fr.wikipedia.org/wiki/Boucle_while">boucles while</url> en Python.
   <ul>
-    <li><p><c>for ... in ... :</c> se lit « pour ... dans ... ».</p></li>
-    <li><p><c>while ... :</c> se lit « tant que ... ».</p></li>
+    <li><c>for ... in ... :</c> se lit « pour ... dans ... ».</li>
+    <li><c>while ... :</c> se lit « tant que ... ».</li>
   </ul>
 </p>
+<aside>
+  <p>Les répétitions d'une boucle peuvent être considérées comme des exemples du concept d'<url href="https://fr.wikipedia.org/wiki/It%C3%A9ration#Informatique">itération</url> en informatique.</p>
+</aside>
 <p>
   Attention à ne pas oublier les deux-points <c> :</c>.
 </p>
@@ -314,7 +325,7 @@
     Ce nombre de 4 espaces est typique avec <url href="https://www.python.org">Python</url> et je vous invite à le respecter scrupuleusement, même si cela semble fonctionner avec 3, 7, ou n'importe quel nombre positif d'espaces.
   </p>
   <p>
-    Avant de passer à la suite, évaluez puis corrigez le code erroné suivant :
+    Avant de passer à la suite, évaluez puis corrigez le code erroné qui suit afin d'obtenir <m>5\cdot 3=15</m> lignes d'affichage.
     <sage language='python'>
       <input>
         for k in range(3, 7+1):
@@ -330,7 +341,7 @@
   Les trois exemples qui suivent sont là pour illustrer l'importance des <url href="https://fr.wikipedia.org/wiki/Style_d%27indentation">indentations</url> et de l'ordre dans lequel les instructions sont données.
   Dans tous les cas, il s'agit d'utiliser une boucle <c>for</c> pour calculer la somme
   <me>\sum_{k=1}^5k=1+2+3+4+5.</me>
-  Nous allons simplement déplacer l'instruction <c>print(somme)</c> pour voir l'effet que sa position dans la séquence d'instructions a sur le résultat.
+  Nous allons simplement déplacer l'instruction <c>print(somme)</c> pour voir l'effet de sa position dans la séquence d'instructions sur le résultat.
 </p>
 
 <ul>
@@ -401,6 +412,9 @@
 </p>
 <p>
   Dans l'exemple qui suit, nous allons afficher tous les multiples de <m>7</m> compris entre <m>7</m> et <m>60</m> inclus.
+  <aside>
+    <p>Remplacez <c>k = k + 7</c> par <c>k += 7</c> dans le bloc de code ci-contre, et vérifiez que cela fait exactement la même chose.</p>
+  </aside>
   <sage language='python'>
     <input>
       k = 7
@@ -429,6 +443,9 @@
     <li><p><c>else:</c> se lit « sinon ».</p></li>
   </ul>
 </p>
+<aside>
+  <p>On appelle structure conditionnelle tout ensemble d'instructions conditionnelles placées au même niveau d'indentation.</p>
+</aside>
 
 <p>
   Comme pour les boucles, faites attention à ne pas oublier les deux-points <c> :</c> et à respecter les indentations de 4 espaces.
@@ -479,6 +496,9 @@
 <p>
   Nous allons finir cette section en utilisant l'<url href="https://fr.wikipedia.org/wiki/Modulo_(op%C3%A9ration)">opérateur modulo</url> qui se note <c>a % b</c> en Python, et qui renvoie le reste de la division euclidienne de <m>\text{a}</m> par <m>\text{b}</m>.
 </p>
+<aside>
+  <p>En mathématiques, l'opérateur modulo est à la base de l'arithmétique modulaire qui fonde la théorie derrière l'algorithme de <url href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">chiffrement RSA</url>.</p>
+</aside>
 <p>
   Divisez <m>28</m> puis <m>25</m> par <m>7</m> à la main avant d'évaluer les blocs de code suivants.
 </p>
@@ -526,6 +546,9 @@
 <section xml:id="exercicesassignetc">
 <title>Exercices</title>
 
+<aside>
+  <p>Il est fortement recommandé d'utiliser <url href="http://pythontutor.com/">Python Tutor</url> lors de la résolution de ces exercices.</p>
+</aside>
 <exercise>
   <statement>
     <p>
@@ -729,6 +752,16 @@
     </pre>
   </answer>
 </exercise>
+
+<aside>
+  <p>
+    Notez qu'une fois qu'on est tombé sur <m>1</m> dans l'exercice <xref ref="ex_collatz"/>, le comportement de la suite devient périodique.
+  </p>
+  <p>
+    La célèbre <url href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">conjecture de Syracuse</url> (ou Collatz, ou Ulam, ou 3x+1, ...) prédit qu'une telle suite finit toujours par tomber sur <m>1</m>, quel que soit l'entier positif dont on parte.
+    Mais personne n'a encore réussi à le démontrer.
+  </p>
+</aside>
 
 <exercise>
   <statement>
@@ -948,7 +981,7 @@
   </solution>
 </exercise>
 
-<exercise>
+<exercise xml:id="ex_collatz">
   <statement>
     <p>
       On s'intéresse à la suite <m>\{s_n\}</m> définie par récurrence de la façon suivante :
@@ -968,15 +1001,6 @@
       En partant de <m>14</m>, les 21 premiers termes de cette suite sont
       <me>14, 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1.</me>
     </p>
-    <aside>
-      <p>
-        Notez qu'une fois qu'on est tombé sur <m>1</m>, le comportement de la suite devient périodique.
-      </p>
-      <p>
-        La célèbre <url href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">conjecture de Syracuse</url> (ou Collatz, ou Ulam, ou 3x+1, ...) prédit qu'une telle suite finit toujours par tomber sur <m>1</m>, quel que soit l'entier positif dont on parte.
-        Mais personne n'a encore réussi à le démontrer.
-      </p>
-    </aside>
     <p>
       On peut les afficher à l'aide du bloc de code suivant.
       <pre>
@@ -1050,11 +1074,6 @@
       Le centième terme de cette suite est
       <me>354\,224\,848\,179\,261\,915\,075.</me>
     </p>
-    <aside>
-      <p>
-        Essayez de vérifier cette réponse à l'aide de la <url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#formule_de_Binet">formule de Binet</url>.
-      </p>
-    </aside>
     <p>
       On peut l'afficher à l'aide du bloc de code suivant
       <pre>
@@ -1068,6 +1087,11 @@
     <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y6rszlxl">Python Tutor</url> si vous voulez suivre pas à pas l'évaluation du code qui précède.</p>
   </solution>
 </exercise>
+<aside>
+  <p>
+    Essayez de résoudre l'exercice <xref ref="fibo_iterative"/> à l'aide de la <url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#formule_de_Binet">formule de Binet</url>.
+  </p>
+</aside>
 
 </section>
 

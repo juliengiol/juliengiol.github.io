@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:46:18-05:00    *-->
+<!--*    on 2021-02-28T13:09:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,52 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Quoique moins rapide que la formule de Binet, cet algorithme a le mérite de donner des valeurs exactes de \(F_n\) pour des valeurs de \(n\) plus nombreuses. Et si on tient compte de la complexité de l'addition utilisée dans l'approche itérative utilisée dans l'exercice <a class="xref" data-knowl="./knowl/fibo_iterative.html" title="Exercice 1.4.12">1.4.12</a>, il s'avère plus rapide que cette dernière.</p>
+<p>Nous allons établir cette formule à l'aide d'une preuve par récurrence.</p>
+<ul class="disc">
+<li>
+<p>Pour \(n=3\text{,}\)  on a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^2=\begin{bmatrix}2&amp;1\\1&amp;1\end{bmatrix},
+\end{equation*}
+</div>
+<p data-braille="continuation">ce qui coïncide bien avec</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}F_3&amp;F_2\\F_2&amp;F_1\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Supposons que pour un certain entier \(n\ge 3\) on ait</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Alors par produit matriciel, on a</p>
+<div class="displaymath">
+\begin{align*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^n&amp;=\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\\
+&amp;=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\\
+&amp;=\begin{bmatrix}F_n+F_{n-1}&amp;F_n\\F_{n-1}+F_{n-2}&amp;F_{n-1}\end{bmatrix},
+\end{align*}
+</div>
+<p data-braille="continuation">ce qui coïncide bien avec</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}F_{n+1}&amp;F_n\\F_n&amp;F_{n-1}\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">car, par définition <a class="xref" data-knowl="./knowl/defi_fibo.html" title="Définition 3.4.2">3.4.2</a>, on a</p>
+<div class="displaymath">
+\begin{equation*}
+F_n+F_{n-1}=F_{n+1}\quad\text{et}\quad F_{n-1}+F_{n-2}=F_n.
+\end{equation*}
+</div>
+<p data-braille="continuation">La propriété est donc vraie pour \(n+1\text{,}\) ce qui achève la démonstration.</p>
+</li>
+</ul>
 <span class="incontext"><a href="fibonacci.html#p-308">Contexte</a></span>
 </body>
 </html>

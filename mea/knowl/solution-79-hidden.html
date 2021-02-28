@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:47:59-05:00    *-->
+<!--*    on 2021-02-28T13:10:56-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,28 +11,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># entrées
-n = 3
-x = [1.0, 2.0, 3.0, 4.0]
-y = [-3.0, 7.0, 0.0, 5.0]
-var('t')
-
-# instructions
-diffDiv = [y]
-for j in range(1, n+1):
-    nouvelleColonne = []
-    for i in range(0, n-j+1):
-        nouvelleDiffDiv = (diffDiv[j-1][i+1] - diffDiv[j-1][i]) / (x[i+j] - x[i])
-        nouvelleColonne.append(nouvelleDiffDiv)
-    diffDiv.append(nouvelleColonne)
-N = diffDiv[0][0]
-for j in range(1, n+1):
-    Nj = 1
-    for i in range(0, j):
-        Nj = Nj * (t - x[i])
-    N = N + diffDiv[j][0] * Nj
-
-# sortie
-print(N)
-</pre></div></body>
+<body><div class="solution solution-like">
+<p>En utilisant le code donné à la section <a href="algorithmediffdiv.html" class="internal" title="Section 7.2: Algorithme">7.2</a>, on obtient les différences divisées de ces quatre points, dont on déduit le polynôme interpolateur sous sa forme de Newton :</p>
+<div class="displaymath">
+\begin{align*}
+P(t)&amp;\approx 362\\
+&amp;\qquad+0{,}260857142857(t-1500)\\
+&amp;\qquad+2{,}22857142857\cdot 10^{-6}(t-1500)(t-5000)\\
+&amp;\qquad-1{,}71438966056\cdot 10^{-10}(t-1500)(t-5000)(t-10000).
+\end{align*}
+</div>
+<p>On calcule alors \(P(15000)\) et on trouve</p>
+<div class="displaymath">
+\begin{equation*}
+P(15000)\approx 4216.
+\end{equation*}
+</div>
+<p>On estime ainsi que Victor mettra \(4216\) secondes environ, soit</p>
+<div class="displaymath">
+\begin{equation*}
+1\,\text{heure}\;10\,\text{minutes}\;16\,\text{secondes}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour courir son prochain \(15\) kilomètres.</p>
+</div></body>
 </html>

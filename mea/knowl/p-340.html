@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:46:23-05:00    *-->
+<!--*    on 2021-02-28T13:09:25-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Ce maximum est atteint dans le cas où \(n=2^d+2^{d-1}+\cdots+2+1\) précède une puissance de \(2\text{.}\) Il faut alors \(d\) multiplications pour calculer d'abord \(x^2,\ldots,x^{2^d}\text{,}\) et \(d\) multiplications pour calculer ensuite</p>
+<p>Dans les deux cas, il y a 5 produits matriciels à effectuer pour déterminer \(M^2,M^4,M^8,M^{16}\) et \(M^{32}\text{,}\) puis 4 autres por calculer</p>
 <div class="displaymath">
 \begin{equation*}
-x^n=x\cdot x^2\cdots x^{2^{d-1}}\cdot x^{2^d}.
+M^{47}=M\cdot M^2\cdot M^4\cdot M^8\cdot M^{32}
 \end{equation*}
 </div>
-<p data-braille="continuation">Cela prend donc \(2d\) multiplications en tout.</p>
+<p data-braille="continuation">et seulement 1 autre pour calculer</p>
+<div class="displaymath">
+\begin{equation*}
+M^{48}=M^{16}\cdot M^{32}.
+\end{equation*}
+</div>
 <span class="incontext"><a href="exercicescomplexite.html#p-340">Contexte</a></span>
 </body>
 </html>

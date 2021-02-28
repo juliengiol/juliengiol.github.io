@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:58-05:00    *-->
+<!--*    on 2021-02-28T13:11:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,30 +11,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><ol class="decimal">
-<li><ul class="disc">
-<li><p>Diviseurs positifs de \(36\) : \(1, 2, 3, 4, 6, 9, 12, 18, 36\text{.}\)</p></li>
-<li><p>Diviseurs positifs de \(54\) : \(1, 2, 3, 6, 9, 18, 27, 54\text{.}\)</p></li>
-<li>
-<p>Donc les diviseurs positifs communs sont \(1, 2, 3, 6, 9, 18\) et</p>
-<div class="displaymath">
-\begin{equation*}
-\text{PGCD}(36;54)=18.
-\end{equation*}
-</div>
-</li>
-</ul></li>
-<li><ul class="disc">
-<li><p>Diviseurs positifs de \(57\) : \(1, 3, 19, 57\text{.}\)</p></li>
-<li><p>Diviseurs positifs de \(42\) : \(1, 2, 3, 6, 7, 14, 21, 42\text{.}\)</p></li>
-<li>
-<p>Donc les diviseurs positifs communs sont \(1, 3\) et</p>
-<div class="displaymath">
-\begin{equation*}
-\text{PGCD}(57;42)=3.
-\end{equation*}
-</div>
-</li>
-</ul></li>
-</ol></div></body>
+<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># entrées
+import numpy as np
+def f(x):
+    return 4 * np.sqrt(1 - x ** 2)
+a = 0.0
+b = 1.0
+n = 32
+
+# instructions
+approximation = 0
+deltaX = (b - a) / n
+xi1 = a
+while xi1 &lt; b:
+    xi2 = xi1 + deltaX / 2
+    xi3 = xi1 + deltaX
+    approximation = approximation + f(xi1) + 4 * f(xi2) + f(xi3)
+    xi1 = xi1 + deltaX
+approximation = approximation * deltaX / 6
+
+# sortie
+print(approximation)
+</pre></div></body>
 </html>

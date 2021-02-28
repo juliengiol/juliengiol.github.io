@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:11-05:00    *-->
+<!--*    on 2021-02-28T13:11:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,9 +11,40 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="answer solution-like"><div class="displaymath">
+<body><div class="answer solution-like"><ol class="decimal">
+<li><p>\(2&lt;2{,}5&lt;3&lt;3{,}5&lt;4\)</p></li>
+<li><p>À vous de jouer.</p></li>
+<li><div class="displaymath">
 \begin{equation*}
-0{,}645\leq\int_0^1\frac{1}{1+x}\mathrm{d}x\leq 0{,}846
+\begin{array}{ccc}
+\text{Aire du trapèze 1}&amp;=&amp;2{,}25\\
+\text{Aire du trapèze 2}&amp;\approx&amp;1{,}833\\
+\text{Aire du trapèze 3}&amp;\approx&amp;1{,}548\\
+\text{Aire du trapèze 4}&amp;\approx&amp;1{,}339
+\end{array}
 \end{equation*}
-</div></div></body>
+</div></li>
+<li><div class="displaymath">
+\begin{equation*}
+\text{Approximation}\approx 2{,}25+1{,}833+1{,}548+1{,}339=6{,}97
+\end{equation*}
+</div></li>
+<li><div class="displaymath">
+\begin{align*}
+\text{Erreur}&amp;=\int_2^4f(x)\mathrm{d}x-\text{Approximation}\\
+&amp;\approx 10\ln(2)-6{,}97\\
+&amp;\approx -0{,}039
+\end{align*}
+</div></li>
+<li>
+<p>Comme la fonction \(f(x)=\frac{10}{x}\) a une dérivée seconde \(f''(x)=\frac{20}{x^3}\) positive sur \([2;4]\text{,}\) elle est convexe (concave vers le haut) sur cet intervalle.</p>
+<p>C'est pour cela que sur chaque sous-intervalle \([x_{k-1};x_k]\text{,}\) la valeur de l'intégrale de \(f\) est inférieure à l'aire du trapèze correspondant.</p>
+<p>On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+\int_2^4f(x)\mathrm{d}x&lt;\text{Approximation}\quad\Rightarrow\quad\underbrace{\int_2^4f(x)\mathrm{d}x-\text{Approximation}}_{\text{Erreur}}&lt;0.
+\end{equation*}
+</div>
+</li>
+</ol></div></body>
 </html>

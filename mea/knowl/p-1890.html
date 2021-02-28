@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:49:09-05:00    *-->
+<!--*    on 2021-02-28T13:12:16-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :</p>
+<p>On a</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{rclcrclr}
-772&amp;=&amp;44\cdot 17+24&amp;\quad\Rightarrow\quad&amp;24&amp;=&amp;772-44\cdot 17&amp;(\text{E}_1)\\
-44&amp;=&amp;24\cdot 1+20&amp;\quad\Rightarrow\quad&amp;20&amp;=&amp;44-24\cdot 1&amp;(\text{E}_2)\\
-24&amp;=&amp;20\cdot 1+4&amp;\quad\Rightarrow\quad&amp;4&amp;=&amp;24-20\cdot 1&amp;(\text{E}_3)\\
-20&amp;=&amp;4\cdot 5+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+\begin{array}{|c|c|c|c|c|}
+\hline
+r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+\hline
+30&amp;1&amp;0&amp;\\
+\hline
+5&amp;0&amp;1&amp;30=5\cdot 6+0&amp;\\
+&amp;&amp;&amp;\text{Stop}&amp;\\
+\hline
 \end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">On déduit de la dernière ligne la valeur du PGCD</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(30;5)=5
+\end{equation*}
+</div>
+<p data-braille="continuation">ainsi que la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+5=30\cdot 0+5\cdot 1.
 \end{equation*}
 </div>
 <span class="incontext"><a href="exercicesbezout.html#p-1890">Contexte</a></span>

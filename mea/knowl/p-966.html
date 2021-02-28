@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:47:35-05:00    *-->
+<!--*    on 2021-02-28T13:10:36-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On a</p>
+<p>Au chapitre <a href="lagrange.html" class="internal" title="Chapitre 6: Forme de Lagrange">6</a>, on a vu comment calculer la forme de Lagrange</p>
 <div class="displaymath">
-\begin{align*}
-L(5)&amp;=\frac{2{,}007}{3}(5-4)(5-6)-1{,}251(5-3)(5-6)\\
-&amp;\qquad +0{,}357(5-3)(5-4)\\
-&amp;=-\frac{2{,}007}{3}+1{,}251\cdot 2+0{,}357\cdot 2\\
-&amp;=2{,}547.
-\end{align*}
+\begin{equation*}
+L(t)=y_0\,L_0(t)+y_1\,L_1(t)+\cdots+y_n\,L_n(t)
+\end{equation*}
 </div>
-<p data-braille="continuation">On estime ainsi que l'intensité valait \(2{,}547\;\text{A}\) environ au moment du cinquième relevé.</p>
-<span class="incontext"><a href="exerciceslagrange.html#p-966">Contexte</a></span>
+<p data-braille="continuation">du polynôme interpolateur de \(n+1\) points d'abscisses distinctes deux à deux</p>
+<div class="displaymath">
+\begin{equation*}
+A_0=(x_0;y_0),\;A_1=(x_1;y_1),\;\ldots,\;A_n=(x_n;y_n)\;\in\mathbb{R}^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">C'est une technique très simple d'un point de vue théorique, mais elle présente deux inconvénients majeurs.</p>
+<ul class="disc">
+<li><p>Elle nécessite trop de calculs quand le nombre de points à interpoler augmente.</p></li>
+<li><p>Il faut refaire tous les calculs chaque fois qu'on ajoute un point à interpoler.</p></li>
+</ul>
+<span class="incontext"><a href="presentationdiffdiv.html#p-966">Contexte</a></span>
 </body>
 </html>

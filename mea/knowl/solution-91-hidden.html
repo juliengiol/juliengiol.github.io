@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:23-05:00    *-->
+<!--*    on 2021-02-28T13:11:20-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,163 +11,70 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>Notons \(f(x)=\sin(x^2)\text{.}\) Alors</p>
+<body><div class="solution solution-like"><ol class="decimal">
+<li>
+<p>Pour \(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec six trapèzes, posons \(f(x)=e^{x^2}\text{.}\) Alors</p>
 <div class="displaymath">
 \begin{equation*}
-f'(x)=\cos(x^2)\cdot 2x\quad\text{et}\quad f''(x)=-\sin(x^2)\cdot 4x^2+\cos(x^2)\cdot 2.
+f'(x)=e^{x^2}\cdot 2x\quad\text{et}\quad f''(x)=e^{x^2}\cdot(4x^2+2).
 \end{equation*}
 </div>
-<p data-braille="continuation">Donc, pour tout \(x\in[0;1]\text{,}\) on a</p>
+<p data-braille="continuation">Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 4x^2+2\) sont croissantes sur \([0;1]\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|\\
+&amp;=e^{x^2}(4x^2+2)\\
+&amp;\leq e^{1^2}(4\cdot 1^2+2)\\
+&amp;=6e
+\end{align*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\) Donc on peut prendre \(M=6e\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
+&amp;=\frac{e}{72}\\
+&amp;=0{,}037\,7\ldots\\
+&amp;\leq 0{,}038.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Pour \(\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x\) avec quatre trapèzes, posons \(g(x)=\cos\left(\frac{x^3}{5}\right)\text{.}\) Alors</p>
+<div class="displaymath">
+\begin{equation*}
+g'(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{3x^2}{5}
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+g''(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On a</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{ccl}
-|f''(x)|&amp;=&amp;\left|-\sin(x^2)\cdot 4x^2+\cos(x^2)\cdot 2\right|\\
-&amp;\leq&amp;\left|\sin(x^2)\cdot 4x^2\right|+\left|\cos(x^2)\cdot 2\right|\\
-&amp;=&amp;\left|\sin(x^2)\right|\cdot 4x^2+\left|\cos(x^2)\right|\cdot 2\\
-&amp;\leq&amp;1\cdot 4x^2+1\cdot 2\\
-&amp;\leq&amp;1\cdot 4\cdot 1^2+1\cdot 2\\
-&amp;=&amp;6.
+|g''(x)|&amp;=&amp;\left|-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
+&amp;\leq&amp;\left|\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}\right|+\left|\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
+&amp;=&amp;\left|\sin\left(\frac{x^3}{5}\right)\right|\cdot\frac{6|x|}{5}+\left|\cos\left(\frac{x^3}{5}\right)\right|\cdot\frac{9x^4}{25}\\
+&amp;\leq&amp;1\cdot\frac{6|x|}{5}+1\cdot\frac{9x^4}{25}\\
+&amp;\leq&amp;1\cdot\frac{6\cdot 4}{5}+1\cdot\frac{9\cdot 4^4}{25}\\
+&amp;=&amp;\frac{2424}{25}\\
+&amp;=&amp;96{,}96
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">On pourra donc prendre \(M=6\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> quand on estimera l'erreur commise.</p>
-<ol class="decimal">
-<li><ul class="disc">
-<li><p>Ici \(n=5\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2\text{.}\)</p></li>
-<li>
-<p>Subdivision régulière de \([0;1]\) en cinq sous-intervalles de même longueur :</p>
-<div class="displaymath">
-\begin{equation*}
-0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>L'approximation fournie par la méthode des trapèzes est alors</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}2)+2f(0{,}4)+2f(0{,}6)+2f(0{,}8)+f(1)\right)\\
-=\;&amp;\text{ à vous de jouer avec votre calculatrice}\\
-=\;&amp;0{,}313\,902\ldots
-\end{align*}
-</div>
-<p data-braille="continuation">En gardant trois décimales, on a donc l'encadrement suivant :</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}313\leq\text{Approximation}\leq 0{,}314.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=6\text{,}\) on a</p>
+<p data-braille="continuation">pour tout \(x\in[2;4]\text{.}\) Donc on peut prendre \(M=96{,}96\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
 <div class="displaymath">
 \begin{align*}
 |\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{6\cdot(1-0)^3}{12\cdot 5^2}\\
-&amp;=0{,}02
+&amp;=\frac{96{,}96\cdot(4-2)^3}{12\cdot 4^2}\\
+&amp;=4{,}04.
 \end{align*}
 </div>
-<p data-braille="continuation">d'où</p>
-<div class="displaymath">
-\begin{equation*}
--0{,}020\leq\text{Erreur}\leq 0{,}020.
-\end{equation*}
-</div>
 </li>
-<li>
-<p>On obtient donc l'encadrement</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}313-0{,}020\leq\text{Approximation}+\text{Erreur}\leq 0{,}314+0{,}020
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}293\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}334.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Le meilleur arrondissement qu'on peut en déduire est donc</p>
-<div class="displaymath">
-\begin{equation*}
-\int_0^1\sin(x^2)\mathrm{d}x\approx 0{,}3.
-\end{equation*}
-</div>
-</li>
-</ul></li>
-<li><ul class="disc">
-<li><p>Ici \(n=10\,000=10^4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{10^4}=0{,}000\,1\text{.}\)</p></li>
-<li>
-<p>Subdivision régulière de \([0;1]\) en dix mille sous-intervalles de même longueur :</p>
-<div class="displaymath">
-\begin{equation*}
-0&lt;0{,}000\,1&lt;0{,}000\,2&lt;\ldots&lt;0,999\,9&lt;1.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>L'approximation fournie par la méthode des trapèzes est alors</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}000\,1)+\cdots+2f(0,999\,9)+f(1)\right)\\
-=\;&amp;\text{ à vous de jouer avec l'algorithme fourni}\\
-=\;&amp;0{,}310\,268\,302\,623\ldots
-\end{align*}
-</div>
-<p data-braille="continuation">En gardant neuf décimales, on a donc l'encadrement</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}310\,268\,302\leq\text{Approximation}\leq 0{,}310\,268\,303.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=6\text{,}\) on a</p>
-<div class="displaymath">
-\begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{6\cdot(1-0)^3}{12\cdot (10^4)^2}\\
-&amp;=0{,}5\cdot 10^{-8}\\
-&amp;=0{,}000\,000\,005
-\end{align*}
-</div>
-<p data-braille="continuation">d'où</p>
-<div class="displaymath">
-\begin{equation*}
--0{,}000\,000\,005\leq\text{Erreur}\leq 0{,}000\,000\,005.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>On obtient donc l'encadrement</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{cc}
-&amp;0{,}310\,268\,302-0{,}000\,000\,005\\
-\leq&amp;\text{Approximation}+\text{Erreur}\\
-\leq&amp;0{,}310\,268\,303+0{,}000\,000\,005
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}310\,268\,297\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}310\,268\,308.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Le meilleur arrondissement qu'on peut en déduire est donc</p>
-<div class="displaymath">
-\begin{equation*}
-\int_0^1\sin(x^2)\mathrm{d}x\approx 0{,}310\,268\,3.
-\end{equation*}
-</div>
-</li>
-</ul></li>
-</ol>
-</div></body>
+<li><p>Trop difficile au niveau cégep selon moi.</p></li>
+</ol></div></body>
 </html>

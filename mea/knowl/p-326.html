@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:46:21-05:00    *-->
+<!--*    on 2021-02-28T13:09:24-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Cela prend 5 multiplications pour calculer</p>
-<div class="displaymath">
-\begin{align*}
-&amp;3^2=3\cdot 3=9,\\
-&amp;3^4=3^2\cdot 3^2=81,\\
-&amp;3^8=3^4\cdot 3^4=6\,561,\\
-&amp;3^{16}=3^8\cdot 3^8=43\,046\,721,\\
-&amp;3^{32}=3^{16}\cdot 3^{16}=1\,853\,020\,188\,851\,841,
-\end{align*}
+<p>On veut calculer \(3^{45}\) à l'aide de l'algorithme d'exponentiation rapide présenté à la section <a href="exponentiation.html" class="internal" title="Section 3.2: Exponentiation rapide">3.2</a>.</p>
+<ol class="decimal">
+<li>Vérifiez que cela revient à décomposer \(3^{45}\) de la façon suivante :<div class="displaymath">
+\begin{equation*}
+3\cdot 3^4\cdot 3^8\cdot 3^{32}.
+\end{equation*}
 </div>
-<p data-braille="continuation">et 3 de plus pour calculer</p>
+</li>
+<li>Combien de multiplications doit-on effectuer au total?</li>
+<li>Voyez-vous un lien avec l'écriture de \(45\) en binaire?</li>
+<li>
+<p>Utilisez cette méthode pour calculer à la main la matrice</p>
 <div class="displaymath">
-\begin{align*}
-3^{45}&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32},\\
-&amp;=3\cdot 81\cdot 6\,561\cdot 1\,853\,020\,188\,851\,841,\\
-&amp;=2\,954\,312\,706\,550\,833\,698\,643.
-\end{align*}
+\begin{equation*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{45}.
+\end{equation*}
 </div>
+</li>
+</ol>
 <span class="incontext"><a href="exercicescomplexite.html#p-326">Contexte</a></span>
 </body>
 </html>

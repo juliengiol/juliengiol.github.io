@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:46:53-05:00    *-->
+<!--*    on 2021-02-28T13:10:00-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Il suffit de déplacer <code class="code-inline tex2jax_ignore">print(x0)</code> à l'intérieur de la boucle <code class="code-inline tex2jax_ignore">for</code> :<pre class="code-block tex2jax_ignore"># entrées
-def f(x):
-    return x ** 2 - 2
-def fPrime(x):
-    return 2 * x
-x0 = 2.0
-n = 3
-
-# instructions / sorties
-for i in range(1, n+1):
-    x0 = x0 - f(x0) / fPrime(x0)
-    print(x0)
-</pre></p>
+<p>Soit \(f(x)=3x^5-x^4-1\text{.}\)</p>
+<ol class="decimal">
+<li><p>Dressez le tableau de variations de \(f\) sur l'intervalle \([0;+\infty[\) en incluant le signe de \(f'\text{,}\) ainsi que celui de \(f''\text{.}\)</p></li>
+<li><p>Expliquez pourquoi \(f\) admet un unique zéro \(c\) dans l'intervalle \(]0{,}3;1[\text{.}\)</p></li>
+<li><p>Les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> sont-elles vérifiées?</p></li>
+<li><p>Utilisez le code de l'exercice <a class="xref" data-knowl="./knowl/newtonaffichetout.html" title="Exercice 5.3.3">5.3.3</a> pour effectuer sept itérations de la méthode de Newton-Raphson en partant de \(x_0=1\text{.}\)</p></li>
+<li><p>Combien de décimales de \(c\) connait-on à la cinquième itération?</p></li>
+</ol>
 <span class="incontext"><a href="exercicesnewton.html#p-634">Contexte</a></span>
 </body>
 </html>

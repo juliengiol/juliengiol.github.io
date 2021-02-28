@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:09-05:00    *-->
+<!--*    on 2021-02-28T13:10:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,56 +11,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>Notons \(f(x)=\sin(x)\text{,}\) \(n=4\) et</p>
-<div class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}=\frac{\pi-0}{4}=\frac{\pi}{4}.
-\end{equation*}
-</div>
-<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([0;\pi]\) en quatre sous-intervalles de même longueur est donnée par</p>
-<div class="displaymath">
-\begin{equation*}
-x_k=a+k\cdot\Delta x=k\cdot\frac{\pi}{4}\quad\text{pour }k=0,1,\ldots,4,
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-0&lt;\frac{\pi}{4}&lt;\frac{\pi}{2}&lt;\frac{3\pi}{4}&lt;\pi.
-\end{equation*}
-</div>
-<ol class="decimal">
-<li>
-<p>Approximation par les rectangles à gauche :</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\Delta x\cdot\left(f(0)+f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)\right)\\
-=\;&amp;\frac{\pi}{4}\cdot\left(\sin(0)+\sin\left(\frac{\pi}{4}\right)+\sin\left(\frac{\pi}{2}\right)+\sin\left(\frac{3\pi}{4}\right)\right)\\
-\approx\;&amp;1{,}896.
-\end{align*}
-</div>
-</li>
-<li>
-<p>Approximation par les rectangles à droite :</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)\\
-=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{4}\right)+\sin\left(\frac{\pi}{2}\right)+\sin\left(\frac{3\pi}{4}\right)+\sin(\pi)\right)\\
-\approx\;&amp;1{,}896.
-\end{align*}
-</div>
-</li>
-<li>
-<p>Approximation par les rectangles au milieu :</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)\\
-=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{8}\right)+\sin\left(\frac{3\pi}{8}\right)+\sin\left(\frac{5\pi}{8}\right)+\sin\left(\frac{7\pi}{8}\right)\right)\\
-\approx\;&amp;2{,}052.
-\end{align*}
-</div>
-</li>
-</ol>
-</div></body>
+<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># entrées
+n = 3
+x = [1.0, 2.0, 3.0, 4.0]
+y = [-3.0, 7.0, 0.0, 5.0]
+var('t')
+
+# instructions
+diffDiv = [y]
+for j in range(1, n+1):
+    nouvelleColonne = []
+    for i in range(0, n-j+1):
+        nouvelleDiffDiv = (diffDiv[j-1][i+1] - diffDiv[j-1][i]) / (x[i+j] - x[i])
+        nouvelleColonne.append(nouvelleDiffDiv)
+    diffDiv.append(nouvelleColonne)
+N = diffDiv[0][0]
+for j in range(1, n+1):
+    Nj = 1
+    for i in range(0, j):
+        Nj = Nj * (t - x[i])
+    N = N + diffDiv[j][0] * Nj
+
+# sortie
+print(N)
+</pre></div></body>
 </html>

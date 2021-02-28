@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:45:19-05:00    *-->
+<!--*    on 2021-02-28T13:07:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,34 +235,34 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Forme de Lagrange du polynôme interpolateur.</span>
 </h6>
 <ul class="disc">
-<li id="li-429">
-<p id="p-829">Entrées :</p>
+<li id="li-425">
+<p id="p-800">Entrées :</p>
 <ul class="circle">
-<li id="li-430"><p id="p-830">Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</p></li>
-<li id="li-431"><p id="p-831">Assigner à \(\text{x0},\text{x1},\ldots,\text{xn}\) les abscisses des points à interpoler.</p></li>
-<li id="li-432"><p id="p-832">Assigner à \(\text{y0},\text{y1},\ldots,\text{yn}\) les ordonnées des points à interpoler.</p></li>
-<li id="li-433"><p id="p-833">Déclarer \(\text{t}\) comme la variable du polynôme interpolateur.</p></li>
+<li id="li-426"><p id="p-801">Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</p></li>
+<li id="li-427"><p id="p-802">Assigner à \(\text{x0},\text{x1},\ldots,\text{xn}\) les abscisses des points à interpoler.</p></li>
+<li id="li-428"><p id="p-803">Assigner à \(\text{y0},\text{y1},\ldots,\text{yn}\) les ordonnées des points à interpoler.</p></li>
+<li id="li-429"><p id="p-804">Déclarer \(\text{t}\) comme la variable du polynôme interpolateur.</p></li>
 </ul>
 </li>
-<li id="li-434">
-<p id="p-834">Instructions :</p>
+<li id="li-430">
+<p id="p-805">Instructions :</p>
 <ul class="circle">
-<li id="li-435"><p id="p-835">Initialiser \(\text{L}\) la variable contenant la valeur du polynôme interpolateur : \(L=0\text{.}\)</p></li>
-<li id="li-436">
-<p id="p-836">Pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
+<li id="li-431"><p id="p-806">Initialiser \(\text{L}\) la variable contenant la valeur du polynôme interpolateur : \(L=0\text{.}\)</p></li>
+<li id="li-432">
+<p id="p-807">Pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
 <ul class="square">
-<li id="li-437"><p id="p-837">initialiser \(\text{Li}\) la variable contenant la valeur de \(L_i(t)\) : \(\text{Li}=1\) ;</p></li>
-<li id="li-438">
-<p id="p-838">pour \(\text{j}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
-<ul class="disc"><li id="li-439"><p id="p-839">si \(\text{j}\neq\text{i}\text{,}\) assigner à \(\text{Li}\) la valeur de \(\displaystyle \text{Li}\cdot\frac{t-x_j}{x_i-x_j}\) ;</p></li></ul>
+<li id="li-433"><p id="p-808">initialiser \(\text{Li}\) la variable contenant la valeur de \(L_i(t)\) : \(\text{Li}=1\) ;</p></li>
+<li id="li-434">
+<p id="p-809">pour \(\text{j}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
+<ul class="disc"><li id="li-435"><p id="p-810">si \(\text{j}\neq\text{i}\text{,}\) assigner à \(\text{Li}\) la valeur de \(\displaystyle \text{Li}\cdot\frac{t-x_j}{x_i-x_j}\) ;</p></li></ul>
 </li>
-<li id="li-440"><p id="p-840">assigner à \(\text{L}\) la valeur de \(\text{L}+y_i\cdot\text{Li}\text{.}\)</p></li>
+<li id="li-436"><p id="p-811">assigner à \(\text{L}\) la valeur de \(\text{L}+y_i\cdot\text{Li}\text{.}\)</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li id="li-441"><p id="p-841">Sortie : Afficher \(\text{L}\text{.}\)</p></li>
-</ul></article><p id="p-842">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/aveclagrange2.html" title="Exemple 6.1.9">6.1.9</a>.</p>
+<li id="li-437"><p id="p-812">Sortie : Afficher \(\text{L}\text{.}\)</p></li>
+</ul></article><p id="p-813">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/aveclagrange2.html" title="Exemple 6.1.9">6.1.9</a>.</p>
 <div class="sagecell-python" id="sage-52"><script type="text/x-sage"># entrées
 n = 2
 x = [1.0, 2.0, 3.0]

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:47:47-05:00    *-->
+<!--*    on 2021-02-28T13:10:48-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour \(\text{j}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
-<ul class="square">
-<li><p>initialiser \(\text{nouvelleColonne}\text{,}\) la liste qui contiendra toutes les différences divisées calculées à l'étape \(j\) : \(\text{nouvelleColonne}=\left[\;\right]\) ;</p></li>
-<li>
-<p>pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n-j}\text{,}\)</p>
-<ul class="disc">
-<li>
-<p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
+<p>La forme de Newton du polynôme interpolateur de ces trois points s'écrit</p>
 <div class="displaymath">
-\begin{equation*}
-\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;
-\end{equation*}
+\begin{align*}
+N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
+&amp;=d_0+d_1t+d_2t(t-2).
+\end{align*}
 </div>
-</li>
-<li><p>ajouter la nouvelle différence divisée \(\text{nouvelleDiffDiv}\) à la liste \(\text{nouvelleColonne}\) ;</p></li>
-</ul>
-</li>
-<li><p>ajouter \(\text{nouvelleColonne}\) à la liste \(\text{diffDiv}\text{.}\)</p></li>
-</ul>
-<span class="incontext"><a href="algorithmediffdiv.html#p-1063">Contexte</a></span>
+<span class="incontext"><a href="exercicesdiffdiv.html#p-1063">Contexte</a></span>
 </body>
 </html>

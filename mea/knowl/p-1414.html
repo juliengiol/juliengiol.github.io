@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:23-05:00    *-->
+<!--*    on 2021-02-28T13:11:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>L'approximation fournie par la méthode des trapèzes est alors</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}2)+2f(0{,}4)+2f(0{,}6)+2f(0{,}8)+f(1)\right)\\
-=\;&amp;\text{ à vous de jouer avec votre calculatrice}\\
-=\;&amp;0{,}313\,902\ldots
-\end{align*}
-</div>
-<p data-braille="continuation">En gardant trois décimales, on a donc l'encadrement suivant :</p>
+<p>Avec la méthode de Simpson, on remplace la fonction \(f\) par les morceaux polynomiaux de degré deux au plus qui interpolent les points</p>
 <div class="displaymath">
 \begin{equation*}
-0{,}313\leq\text{Approximation}\leq 0{,}314.
+(x_{k-1};f(x_{k-1})),\; (m_k;f(m_k))\;\text{et}\; (x_k;f(x_k))
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercicestrapezes.html#p-1414">Contexte</a></span>
+<p data-braille="continuation">où \(m_k\) est le milieu de l'intervalle \([x_{k-1};x_k]\text{,}\) c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+m_k=\frac{x_{k-1}+x_k}{2}.
+\end{equation*}
+</div>
+<span class="incontext"><a href="presentationsimpson.html#p-1414">Contexte</a></span>
 </body>
 </html>

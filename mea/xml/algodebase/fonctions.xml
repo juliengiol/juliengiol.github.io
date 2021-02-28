@@ -42,8 +42,8 @@
 <p>En algorithmique comme en mathématiques, une fonction peut être vue comme une boîte noire qui renvoie un ou plusieurs résultats en sortie, dépendant des éléments qui lui ont été donnés en entrée.</p>
 <p>En Python, les mots-clés qu'on utilise pour définir une fonction sont les suivants.
   <ul>
-    <li><p><c>def ... :</c> : Pour annoncer le début de la définition.</p></li>
-    <li><p><c>return</c> : Pour annoncer la chose à renvoyer.</p></li>
+    <li><c>def ... :</c> annonce le début de la définition.</li>
+    <li><c>return</c> annonce la chose à renvoyer.</li>
   </ul>
 </p>
 
@@ -93,6 +93,9 @@
     </ul>
   </p>
 </remark>
+<aside>
+  <p>On distingue parfois les fonctions qui ne renvoient rien des autres en les appelant <em>procédures</em>.</p>
+</aside>
 
 <p>
   Codons ensuite la fonction valeur absolue qui peut être définie comme suit :
@@ -122,7 +125,7 @@
   Terminons cette section avec la fonction factorielle.
   Pour <m>n\geq 1</m>, on rappelle que
   <me>n!=1\cdot 2\cdot 3\cdots n.</me>
-  La fonction <c>factorielle(n)</c> ci-après calcule n! de manière itérative à l'aide d'une boucle <c>for</c>.
+  La fonction <c>factorielle(n)</c> ci-après calcule n! à l'aide d'une boucle <c>for</c>.
   On la teste avec <c>print(factorielle(5))</c> qui doit afficher <m>\text{120}</m> puisque
   <me>5!=1\cdot 2\cdot 3\cdot 4\cdot 5=120.</me>
   <sage language='python'>
@@ -661,17 +664,15 @@
       <li>
         <p>
           Non, cela prend trop de temps.
-          Il vaut mieux s'en tenir à la méthode itérative de l'exercice <xref ref="fibo_iterative"/>.
+          Il vaut mieux s'en tenir à la méthode de l'exercice <xref ref="fibo_iterative"/>.
         </p>
-        <aside>
-          <p>
-            Le temps de calcul de <m>F_n</m> par cet <url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_r%C3%A9cursif_na%C3%AFf">algorithme récursif naïf</url> est exponentiel en <m>n</m>, ce qui est vite beaucoup plus long que par l'<url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_polynomial">algorithme polynomial</url> itératif.
-          </p>
-        </aside>
       </li>
     </ol>
   </solution>
 </exercise>
+<aside>
+  <p>Comparez les temps de calcul du centième terme de la suite de Fibonacci pour l'<url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_r%C3%A9cursif_na%C3%AFf">algorithme récursif naïf</url> de l'exercice <xref ref="fibo_recursive"/> avec ceux obtenus pour l'<url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_polynomial">algorithme polynomial</url> de l'exercice <xref ref="fibo_iterative"/>.</p>
+</aside>
 
 </section>
 

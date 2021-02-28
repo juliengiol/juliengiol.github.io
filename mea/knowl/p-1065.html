@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:47:48-05:00    *-->
+<!--*    on 2021-02-28T13:10:48-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,37 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n-j}\text{,}\)</p>
+<p>Ce système linéaire est déjà triangulé.</p>
 <ul class="disc">
 <li>
-<p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
+<p>La première équation donne</p>
 <div class="displaymath">
 \begin{equation*}
-\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;
+d_0=4.
 \end{equation*}
 </div>
 </li>
-<li><p>ajouter la nouvelle différence divisée \(\text{nouvelleDiffDiv}\) à la liste \(\text{nouvelleColonne}\) ;</p></li>
+<li>
+<p>Alors la deuxième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+2d_1=-1&amp;\Rightarrow\quad 4+2d_1=-1\\
+&amp;\Rightarrow\quad 2d_1=-5\\
+&amp;\Rightarrow\quad d_1=-\frac{5}{2}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Enfin la troisième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+5d_1+5d_2=0&amp;\Rightarrow\quad 4-\frac{25}{2}+15d_2=12\\
+&amp;\Rightarrow\quad 15d_2=12-4+\frac{25}{2}=\frac{41}{2}\\
+&amp;\Rightarrow\quad d_2=\frac{41}{30}.
+\end{align*}
+</div>
+</li>
 </ul>
-<span class="incontext"><a href="algorithmediffdiv.html#p-1065">Contexte</a></span>
+<span class="incontext"><a href="exercicesdiffdiv.html#p-1065">Contexte</a></span>
 </body>
 </html>

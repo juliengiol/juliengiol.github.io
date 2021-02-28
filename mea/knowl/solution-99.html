@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:39-05:00    *-->
+<!--*    on 2021-02-28T13:11:40-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,30 +14,9 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">10.3.6.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">10.3.4.1</span><span class="period">.</span>
 </h6>
-<pre class="code-block tex2jax_ignore"># entrées
-import numpy as np
-def f(x):
-    return 4 * np.sqrt(1 - x ** 2)
-a = 0.0
-b = 1.0
-n = 32
-
-# instructions
-approximation = 0
-deltaX = (b - a) / n
-xi1 = a
-while xi1 &lt; b:
-    xi2 = xi1 + deltaX / 2
-    xi3 = xi1 + deltaX
-    approximation = approximation + f(xi1) + 4 * f(xi2) + f(xi3)
-    xi1 = xi1 + deltaX
-approximation = approximation * deltaX / 6
-
-# sortie
-print(approximation)
-</pre>
+<p>Y aller un pas à la fois, comme pour grimper une montagne.</p>
 </div>
 <span class="incontext"><a href="exercicessimpson.html#solution-99">Contexte</a></span>
 </body>

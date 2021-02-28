@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:47:03-05:00    *-->
+<!--*    on 2021-02-28T13:10:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Grâce à l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.7">5.3.7</a>, on sait que la convergence de \(\{x_n\}\) vers \(c\) est quadratique.</p>
+<p>Pour tout \(n\geq 0\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{2x_n}\left(x_n-\sqrt{k}\right)^2&amp;=\frac{1}{2x_n}\left(x_n^2-2x_n\sqrt{k}+k\right)\\
+&amp;=\frac{x_n^2}{2x_n}-\frac{2x_n\sqrt{k}}{2x_n}+\frac{k}{2x_n}\\
+&amp;=\frac{x_n}{2}-\sqrt{k}+\frac{k}{2x_n}\\
+&amp;=\frac{x_n+\frac{k}{x_n}}{2}-\sqrt{k}\\
+&amp;=x_{n+1}-\sqrt{k}.
+\end{align*}
+</div>
 <span class="incontext"><a href="exercicesnewton.html#p-695">Contexte</a></span>
 </body>
 </html>

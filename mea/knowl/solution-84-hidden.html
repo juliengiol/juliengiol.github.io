@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:13-05:00    *-->
+<!--*    on 2021-02-28T13:11:09-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,20 +12,69 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>On a déjà vu à l'exercice précédent qu'on pouvait appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a> avec \(M=1\text{.}\)</p>
-<p>En d'autres termes, on cherche le plus petit \(n\) tel que</p>
+<p>Notons \(f(x)=x\text{,}\) \(n=10\) et</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{cccc}
-&amp;|\text{Erreur}|&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{M(b-a)^2}{2n}&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{1\cdot(1-0)^2}{2n}&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{1}{2n}&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{10^6}{2}&amp;\leq&amp;n\\
-\Leftrightarrow&amp;500\,000&amp;\leq&amp;n
-\end{array}
+\Delta x=\frac{b-a}{n}=\frac{3-2}{10}=0{,}1.
 \end{equation*}
 </div>
-<p>Il faudrait donc \(500\,000\) rectangles au minimum.</p>
+<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([2;3]\) en dix sous-intervalles de même longueur est donnée par</p>
+<div class="displaymath">
+\begin{equation*}
+x_k=a+k\cdot\Delta x=2+k\cdot 0{,}1\quad\text{pour }k=0,1,\ldots,10,
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+2&lt;2{,}1&lt;2{,}2&lt;\ldots&lt;2{,}9&lt;3.
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme il y a beaucoup de valeurs, nous allons utiliser la notation sigma pour exprimer l'approximation cherchée :</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;=\Delta x\cdot\sum_{k=1}^nf(\xi_k)\\
+&amp;=0{,}1\cdot\sum_{k=1}^{10}\xi_k.
+\end{align*}
+</div>
+<ol class="decimal">
+<li>
+<p>Rectangles à gauche : On prend \(\xi_k=x_{k-1}\) donc</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;= 0{,}1\cdot\sum_{k=1}^{10}(2+(k-1)\cdot 0{,}1)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}(k-1)\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^9k\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{9\cdot(9+1)}{2}\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(20+45\cdot 0{,}1\right)\\
+&amp;=2{,}45.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Rectangles à droite : On prend \(\xi_k=x_k\) donc</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+k\cdot 0{,}1)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(20+55\cdot 0{,}1\right)\\
+&amp;=2{,}55.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Rectangles au milieu : On prend \(\xi_k=\frac{x_{k-1}+x_k}{2}=2+(k-0{,}5)\cdot 0{,1}\) donc</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+(k-0{,}5)\cdot 0{,}1)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k-\sum_{k=1}^{10}0{,}5\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}-10\cdot 0{,}5\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(20+55-5\cdot 0{,}1\right)\\
+&amp;=2{,}5.
+\end{align*}
+</div>
+</li>
+</ol>
 </div></body>
 </html>

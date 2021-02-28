@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:04-05:00    *-->
+<!--*    on 2021-02-28T13:11:03-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,29 +15,32 @@
 <article class="li"><h6 class="heading">
 <span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>Par la méthode des rectangles à droite, on a trouvé</p>
+<p>Cas particuliers :</p>
+<ul class="circle">
+<li>
+<p>Pour les rectangles à gauche, prendre</p>
 <div class="displaymath">
 \begin{equation*}
-\text{Approximation}\approx 0{,}663\,969\,027\,946\,812
+\xi_k=x_{k-1}=a+(k-1)\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.
 \end{equation*}
 </div>
-<p data-braille="continuation">d'où</p>
+</li>
+<li>
+<p>Pour les rectangles à droite, prendre</p>
 <div class="displaymath">
 \begin{equation*}
-0{,}66\leq\text{Approximation}\leq 0{,}67.
+\xi_k=x_k=a+k\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.
 \end{equation*}
 </div>
-<p data-braille="continuation">En ajoutant l'encadrement de l'erreur, on obtient</p>
+</li>
+<li>
+<p>Pour les rectangles au milieu, prendre</p>
 <div class="displaymath">
 \begin{equation*}
-0{,}66-0{,}25\leq\text{Approximation}+\text{Erreur}\leq 0{,}67+0{,}25
+\xi_k=\frac{x_{k-1}+x_k}{2}=a+(k-0{,}5)\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}41\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 0{,}92.
-\end{equation*}
-</div></article><span class="incontext"><a href="presentationrectangles.html#li-634">Contexte</a></span>
+</li>
+</ul></article><span class="incontext"><a href="presentationrectangles.html#li-634">Contexte</a></span>
 </body>
 </html>

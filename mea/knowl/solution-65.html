@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:47:33-05:00    *-->
+<!--*    on 2021-02-28T13:10:27-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,64 +14,47 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.3.10.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.3.8.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
+<li><div class="displaymath">
+\begin{align*}
+T(t)&amp;=f(0)+f'(0)t+\frac{f''(0)}{2}t^2\\
+&amp;=1-\frac{1}{2}t^2.
+\end{align*}
+</div></li>
 <li>
-<p>On choisit d'interpoler les points suivants :</p>
-<div class="displaymath">
-\begin{equation*}
-A_0=(52;4186)\;\text{et}\; A_1(82;4199).
-\end{equation*}
-</div>
-<p>La forme de Lagrange du polynôme interpolateur est alors</p>
+<p>Première approximation de \(\displaystyle\cos\left(\frac{\pi}{12}\right)=f\left(\frac{\pi}{12}\right)\) :</p>
 <div class="displaymath">
 \begin{align*}
-L(T)&amp;=4186\,L_0(T)+4199\,L_1(T)\\
-&amp;=4186\frac{T-82}{52-82}+4199\frac{T-52}{82-52}\\
-&amp;=-\frac{4186}{30}(T-82)+\frac{4199}{30}(T-52).
+T\left(\frac{\pi}{12}\right)&amp;=1-\frac{1}{2}\left(\frac{\pi}{12}\right)^2\\
+&amp;=1-\frac{\pi^2}{288}\\
+&amp;\approx 0{,}965\,731.
 \end{align*}
 </div>
-<p>On a</p>
-<div class="displaymath">
-\begin{align*}
-L(61)&amp;=-\frac{4186}{30}(61-82)+\frac{4199}{30}(61-52)\\
-&amp;=\frac{4186\cdot 21}{30}+\frac{4199\cdot 9}{30}\\
-&amp;=\frac{41899}{10}\\
-&amp;=4189{,}9.
-\end{align*}
-</div>
-<p data-braille="continuation">On estime ainsi que \(C\) vaut environ <span class="quantity">4189,9 <sup>J</sup>⁄<sub>kg·°C</sub></span> à <span class="quantity">61 °C</span>.</p>
 </li>
+<li><div class="displaymath">
+\begin{align*}
+L(t)&amp;=1\cdot L_0(t)+\frac{\sqrt{3}}{2}\cdot L_1(t)+\frac{1}{2}\cdot L_2(t)\\
+&amp;=1\cdot\frac{(t-\pi/6)(t-\pi/3)}{(0-\pi/6)(0-\pi/3)}+\frac{\sqrt{3}}{2}\cdot\frac{(t-0)(t-\pi/3)}{(\pi/6-0)(\pi/6-\pi/3)}\\
+&amp;\qquad +\frac{1}{2}\cdot\frac{(t-0)(t-\pi/6)}{(\pi/3-0)(\pi/3-\pi/6)}\\
+&amp;=\frac{18}{\pi^2}\left(t-\frac{\pi}{6}\right)\left(t-\frac{\pi}{3}\right)-\frac{18\sqrt{3}}{\pi^2}\cdot t\left(t-\frac{\pi}{3}\right)+\frac{9}{\pi^2}\cdot t\left(t-\frac{\pi}{6}\right)
+\end{align*}
+</div></li>
 <li>
-<p>On choisit d'interpoler les points suivants :</p>
-<div class="displaymath">
-\begin{equation*}
-A_0=(42;4179),\;A_1=(52;4186)\;\text{et}\; A_2(82;4199).
-\end{equation*}
-</div>
-<p>La forme de Lagrange du polynôme interpolateur est alors</p>
+<p>Deuxième approximation de \(\displaystyle\cos\left(\frac{\pi}{12}\right)=f\left(\frac{\pi}{12}\right)\) :</p>
 <div class="displaymath">
 \begin{align*}
-L(T)&amp;=4179\,L_0(T)+4186\,L_1(T)+4199\,L_2(T)\\
-&amp;=4179\frac{(T-52)(T-82)}{(42-52)(42-82)}+4186\frac{(T-42)(T-82)}{(52-42)(52-82)}\\
-&amp;\qquad +4199\frac{(T-42)(T-52)}{(82-42)(82-52)}\\
-&amp;=\frac{4179}{400}(T-52)(T-82)-\frac{4186}{300}(T-42)(T-82)\\
-&amp;\qquad +\frac{4199}{1200}(T-42)(T-52).
+L\left(\frac{\pi}{12}\right)&amp;=\frac{18}{\pi^2}\left(\frac{\pi}{12}-\frac{\pi}{6}\right)\left(\frac{\pi}{12}-\frac{\pi}{3}\right)-\frac{18\sqrt{3}}{\pi^2}\frac{\pi}{12}\left(\frac{\pi}{12}-\frac{\pi}{3}\right)\\
+&amp;\qquad +\frac{9}{\pi^2}\frac{\pi}{12}\left(\frac{\pi}{12}-\frac{\pi}{6}\right)\\
+&amp;=\frac{18}{\pi^2}\left(-\frac{\pi}{12}\right)\left(-\frac{\pi}{4}\right)-\frac{18\sqrt{3}}{\pi^2}\frac{\pi}{12}\left(-\frac{\pi}{4}\right)+\frac{9}{\pi^2}\frac{\pi}{12}\left(-\frac{\pi}{12}\right)\\
+&amp;=\frac{3}{8}+\frac{3\sqrt{3}}{8}-\frac{1}{16}\\
+&amp;=\frac{5}{16}+\frac{3\sqrt{3}}{8}\\
+&amp;\approx 0{,}962\,019.
 \end{align*}
 </div>
-<p>On a</p>
-<div class="displaymath">
-\begin{align*}
-L(61)&amp;=\frac{4179}{400}(61-52)(61-82)-\frac{4186}{300}(61-42)(61-82)\\
-&amp;\qquad +\frac{4199}{1200}(61-42)(61-52)\\
-&amp;=-\frac{4179\cdot 9\cdot 21}{400}+\frac{4186\cdot 19\cdot 21}{300}+\frac{4199\cdot 19\cdot 9}{1200}\\
-&amp;=\frac{104779}{25}\\
-&amp;=4191{,}16.
-\end{align*}
-</div>
-<p data-braille="continuation">On estime ainsi que \(C\) vaut environ <span class="quantity">4191,16 <sup>J</sup>⁄<sub>kg·°C</sub></span> à <span class="quantity">61 °C</span>.</p>
 </li>
+<li><p>Comme \(\displaystyle\cos\left(\frac{\pi}{12}\right)\approx 0{,}965\,926\text{,}\) c'est le polynôme de Taylor qui fournit la meilleure approximation.</p></li>
 </ol>
 </div>
 <span class="incontext"><a href="exerciceslagrange.html#solution-65">Contexte</a></span>

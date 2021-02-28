@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:47:53-05:00    *-->
+<!--*    on 2021-02-28T13:10:47-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,51 +11,90 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>La forme de Newton du polynôme interpolateur de ces quatre points s'écrit</p>
+<body><div class="solution solution-like"><ol class="decimal">
+<li>
+<p>La forme de Newton du polynôme interpolateur de ces trois points s'écrit</p>
 <div class="displaymath">
 \begin{align*}
-N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)+d_3(t-x_0)(t-x_1)(t-x_2)\\
-&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2)+d_3(t-1)(t-2)(t-3).
+N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
+&amp;=d_0+d_1t+d_2t(t-2).
 \end{align*}
 </div>
-<p>On cherche donc quatre nombres réels \(d_0,d_1,d_2,d_3\) tels que</p>
+<p>On cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{cases}
-N(1)=3\\
-N(2)=6\\
-N(3)=9\\
-N(4)=0
+N(0)=4\\
+N(2)=-1\\
+N(5)=12
 \end{cases}
 \Leftrightarrow
 \begin{cases}
-d_0&amp;&amp;&amp;&amp;&amp;&amp;&amp;=&amp;3\\
-d_0&amp;+&amp;d_1&amp;&amp;&amp;&amp;&amp;=&amp;6\\
-d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;&amp;&amp;=&amp;9\\
-d_0&amp;+&amp;3d_1&amp;+&amp;6d_2&amp;+&amp;6d_3&amp;=&amp;0\\
+d_0&amp;&amp;&amp;&amp;&amp;=&amp;4\\
+d_0&amp;+&amp;2d_1&amp;&amp;&amp;=&amp;-1\\
+d_0&amp;+&amp;5d_1&amp;+&amp;15d_2&amp;=&amp;12\\
 \end{cases}
 \end{equation*}
 </div>
-<p>Le système correspondant aux trois premières équations a déjà été résolu à l'exercice <a class="xref" data-knowl="./knowl/newtontroispointsalignes.html" title="Exercice 7.3.4">7.3.4</a> :</p>
+<p>Ce système linéaire est déjà triangulé.</p>
+<ul class="disc">
+<li>
+<p>La première équation donne</p>
 <div class="displaymath">
 \begin{equation*}
-d_0=3,\; d_1=3,\; d_2=0.
+d_0=4.
 \end{equation*}
 </div>
-<p>Alors la quatrième équation donne</p>
+</li>
+<li>
+<p>Alors la deuxième équation donne</p>
 <div class="displaymath">
 \begin{align*}
-d_0+3d_1+6d_2+6d_3=0&amp;\Rightarrow\quad 3+9+0+6d_3=0\\
-&amp;\Rightarrow\quad 6d_3=-12\\
-&amp;\Rightarrow\quad d_3=-2.
+d_0+2d_1=-1&amp;\Rightarrow\quad 4+2d_1=-1\\
+&amp;\Rightarrow\quad 2d_1=-5\\
+&amp;\Rightarrow\quad d_1=-\frac{5}{2}.
 \end{align*}
 </div>
-<p>La forme de Newton du polynôme interpolateur de ces quatre points est donc</p>
+</li>
+<li>
+<p>Enfin la troisième équation donne</p>
+<div class="displaymath">
+\begin{align*}
+d_0+5d_1+5d_2=0&amp;\Rightarrow\quad 4-\frac{25}{2}+15d_2=12\\
+&amp;\Rightarrow\quad 15d_2=12-4+\frac{25}{2}=\frac{41}{2}\\
+&amp;\Rightarrow\quad d_2=\frac{41}{30}.
+\end{align*}
+</div>
+</li>
+</ul>
+<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
 <div class="displaymath">
 \begin{equation*}
-N(t)=3+3(t-1)-2(t-1)(t-2)(t-3).
+N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).
 \end{equation*}
 </div>
-</div></body>
+</li>
+<li>
+<p>Calculons les différences divisées des trois points :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|ccc}
+x_i&amp;y_i\\
+\hline\\
+0&amp;\left[A_0\right]=4&amp;&amp;\\
+&amp;&amp;\left[A_0,A_1\right]=-\frac{5}{2}&amp;\\
+2&amp;\left[A_1\right]=-1&amp;&amp;\left[A_0,A_1,A_2\right]=\frac{41}{30}\\
+&amp;&amp;\left[A_1,A_2\right]=\frac{13}{3}&amp;\\
+5&amp;\left[A_2\right]=12&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p>On trouve donc les mêmes coefficients qu'à la question 1, soit</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).
+\end{equation*}
+</div>
+</li>
+</ol></div></body>
 </html>

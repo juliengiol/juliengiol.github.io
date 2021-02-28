@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:58-05:00    *-->
+<!--*    on 2021-02-28T13:11:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,64 +13,82 @@
 </head>
 <body><div class="solution solution-like"><ol class="decimal">
 <li>
-<p>On a</p>
+<p>Après des calculs fastidieux ou <a class="external" href="https://tinyurl.com/yy7ktvrz" target="_blank">avec l'aide d'un logiciel de calcul formel</a>, on obtient</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{|c|c|c|c|}
-\hline
-a&amp;b&amp;\text{Division euclidienne}&amp;r\\
-\hline
-363&amp;198&amp;363=198\cdot 1+165&amp;165\\
-198&amp;165&amp;198=165\cdot 1+33&amp;33\\
-165&amp;33&amp;165=33\cdot 5+0&amp;0\\
-\hline
-\end{array}
+f^{(4)}(x)=\frac{\sin(x)}{x}+\frac{4\cos(x)}{x^2}-\frac{12\sin(x)}{x^3}-\frac{24\cos(x)}{x^4}+\frac{24\sin(x)}{x^5}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Donc \(\text{PGCD}(363;198)=33\text{.}\)</p>
 </li>
 <li>
-<p>On a</p>
+<p>Pour tout \(x\in[1;6]\text{,}\) on a</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{array}{|c|c|c|c|}
-\hline
-a&amp;b&amp;\text{Division euclidienne}&amp;r\\
-\hline
-3410&amp;2784&amp;3410=2784\cdot 1+626&amp;626\\
-2784&amp;626&amp;2784=626\cdot 4+280&amp;280\\
-626&amp;280&amp;626=280\cdot 2+66&amp;66\\
-280&amp;66&amp;280=66\cdot 4+16&amp;16\\
-66&amp;16&amp;66=16\cdot 4+2&amp;2\\
-16&amp;2&amp;16=2\cdot 8+0&amp;0\\
-\hline
-\end{array}
-\end{equation*}
+\begin{align*}
+|f^{(4)}(x)|&amp;=\left|\frac{\sin(x)}{x}+\frac{4\cos(x)}{x^2}-\frac{12\sin(x)}{x^3}-\frac{24\cos(x)}{x^4}+\frac{24\sin(x)}{x^5}\right|\\
+&amp;\leq\frac{|\sin(x)|}{x}+\frac{4|\cos(x)|}{x^2}+\frac{12|\sin(x)|}{x^3}+\frac{24|\cos(x)|}{x^4}+\frac{24|\sin(x)|}{x^5}\\
+&amp;\leq\frac{1}{x}+\frac{4\cdot 1}{x^2}+\frac{12\cdot 1}{x^3}+\frac{24\cdot 1}{x^4}+\frac{24\cdot 1}{x^5}\\
+&amp;\leq 1+4+12+24+24\\
+&amp;=65.
+\end{align*}
 </div>
-<p data-braille="continuation">Donc \(\text{PGCD}(2784;3410)=2\text{.}\)</p>
 </li>
 <li>
-<p>On a</p>
+<p>On cherche le plus petit \(n\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{|c|c|c|c|}
-\hline
-a&amp;b&amp;\text{Division euclidienne}&amp;r\\
-\hline
-2784&amp;1180&amp;2784=1180\cdot 2+424&amp;424\\
-1180&amp;424&amp;1180=424\cdot 2+332&amp;332\\
-424&amp;332&amp;424=332\cdot 1+92&amp;92\\
-332&amp;92&amp;332=92\cdot 3+56&amp;56\\
-92&amp;56&amp;92=56\cdot 1+36&amp;36\\
-56&amp;36&amp;56=36\cdot 1+20&amp;20\\
-36&amp;20&amp;36=20\cdot 1+16&amp;16\\
-20&amp;16&amp;20=16\cdot 1+4&amp;4\\
-16&amp;4&amp;16=4\cdot 4+0&amp;0\\
-\hline
+\begin{array}{cccc}
+&amp;|\text{Erreur}|&amp;\leq&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{M(b-a)^5}{2880n^4}&amp;\leq&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{65\cdot (6-1)^5}{2880n^4}&amp;\leq&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{65\cdot 5^5}{2880n^4}&amp;\leq&amp;\frac{1}{10^9}\\
+\Leftrightarrow&amp;\frac{65\cdot 5^5\cdot 10^9}{2880}&amp;\leq&amp;n^4\\
+\Leftrightarrow&amp;\sqrt[4]{\frac{65\cdot 5^5\cdot 10^9}{2880}}&amp;\leq&amp;n\\
+\Leftrightarrow&amp;515{,}3\ldots&amp;\leq&amp;n.
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">Donc \(\text{PGCD}(2784;1180)=4\text{.}\)</p>
+<p>Il s'agit donc de \(n=516\text{.}\)</p>
 </li>
+<li>
+<p><a class="external" href="https://tinyurl.com/y47m7zud" target="_blank">Avec l'algorithme</a> de la section <a href="algorithmesimpson.html" class="internal" title="Section 10.2: Algorithme">10.2</a>, on trouve</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Approximation}=0{,}478\,604\,480\,912\,304\ldots
+\end{equation*}
+</div>
+</li>
+<li>
+<p>D'une part, on a</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\leq 10^{-9}
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+-0{,}000\,000\,001=-10^{-9}\leq\text{Erreur}\leq 10^{-9}=0{,}000\,000\,001.
+\end{equation*}
+</div>
+<p data-braille="continuation">D'autre part, on a</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}478\,604\,480\leq\text{Approximation}\leq 0{,}478\,604\,481.
+\end{equation*}
+</div>
+<p data-braille="continuation">Donc</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}478\,604\,480-10^{-9}\leq\text{Approximation}+\text{Erreur}\leq 0{,}478\,604\,481+10^{-9}
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}478\,604\,479\leq\int_1^6f(x)\mathrm{d}x\leq 0{,}478\,604\,482.
+\end{equation*}
+</div>
+</li>
+<li><p>Avec cet encadrement, on est sûrs de sept décimales (\(478\,604\,4\)).</p></li>
 </ol></div></body>
 </html>

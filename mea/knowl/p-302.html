@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:46:18-05:00    *-->
+<!--*    on 2021-02-28T13:09:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Nous allons maintenant transformer l'évaluation d'un terme de la suite \((F_n)\) en un problème d'exponentiation grâce au calcul matriciel.</p>
+<p>Pour la relation de récurrence, on a</p>
+<div class="displaymath">
+\begin{align*}
+\sqrt{5}\,G_{n-1}+\sqrt{5}\,G_{n-2}&amp;=\phi_+^{n-1}-\phi_-^{n-1}+\phi_+^{n-2}-\phi_-^{n-2}\\
+&amp;=\phi_+^{n-1}\cdot 1-\phi_+^{n-2}\cdot(-1)-\phi_-^{n-1}\cdot 1+\phi_-^{n-2}\cdot(-1)\\
+&amp;=\phi_+^{n-1}\cdot\left(\phi_++\phi_-\right)-\phi_+^{n-2}\cdot\left(\phi_+\phi_-\right)\\
+&amp;\quad\quad-\phi_-^{n-1}\cdot\left(\phi_++\phi_-\right)+\phi_-^{n-2}\cdot\left(\phi_+\phi_-\right)\\
+&amp;=\phi_+^n+\cancel{\phi_+^{n-1}\phi_-}-\cancel{\phi_+^{n-1}\phi_-}\\
+&amp;\quad\quad-\bcancel{\phi_-^{n-1}\phi_+}-\phi_-^n+\bcancel{\phi_-^{n-1}\phi_+}\\
+&amp;=\sqrt{5}\,G_n,
+\end{align*}
+</div>
+<p data-braille="continuation">d'où \(G_n=G_{n-1}+G_{n-2}\) pour tout \(n\ge 3\text{.}\)</p>
 <span class="incontext"><a href="fibonacci.html#p-302">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:11-05:00    *-->
+<!--*    on 2021-02-28T13:11:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,66 +12,52 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Notons \(f(x)=x\text{,}\) \(n=10\) et</p>
+<p>Notons \(f(x)=\frac{1}{1+x^2}\text{,}\) \(n=5\) et</p>
 <div class="displaymath">
 \begin{equation*}
-\Delta x=\frac{b-a}{n}=\frac{3-2}{10}=0{,}1.
+\Delta x=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2.
 \end{equation*}
 </div>
-<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([2;3]\) en dix sous-intervalles de même longueur est donnée par</p>
+<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([0;1]\) en cinq sous-intervalles de même longueur est donnée par</p>
 <div class="displaymath">
 \begin{equation*}
-x_k=a+k\cdot\Delta x=2+k\cdot 0{,}1\quad\text{pour }k=0,1,\ldots,10,
+x_k=a+k\cdot\Delta x=k\cdot 0{,}2\quad\text{pour }k=0,1,\ldots,5,
 \end{equation*}
 </div>
 <p data-braille="continuation">c'est-à-dire</p>
 <div class="displaymath">
 \begin{equation*}
-2&lt;2{,}1&lt;2{,}2&lt;\ldots&lt;2{,}9&lt;3.
+0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
 \end{equation*}
-</div>
-<p data-braille="continuation">Comme il y a beaucoup de valeurs, nous allons utiliser la notation sigma pour exprimer l'approximation cherchée :</p>
-<div class="displaymath">
-\begin{align*}
-\text{Approximation}&amp;=\Delta x\cdot\sum_{k=1}^nf(\xi_k)\\
-&amp;=0{,}1\cdot\sum_{k=1}^{10}\xi_k.
-\end{align*}
 </div>
 <ol class="decimal">
 <li>
-<p>Rectangles à gauche : On prend \(\xi_k=x_{k-1}\) donc</p>
+<p>Approximation par les rectangles à gauche :</p>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;= 0{,}1\cdot\sum_{k=1}^{10}(2+(k-1)\cdot 0{,}1)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}(k-1)\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^9k\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{9\cdot(9+1)}{2}\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(20+45\cdot 0{,}1\right)\\
-&amp;=2{,}45.
+&amp;\Delta x\cdot\left(f(0)+f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)\right)\\
+=\;&amp;0{,}2\cdot\left(\frac{1}{1+0^2}+\frac{1}{1+0{,}2^2}+\frac{1}{1+0{,}4^2}+\frac{1}{1+0{,}6^2}+\frac{1}{1+0{,}8^2}\right)\\
+\approx\;&amp;0{,}834.
 \end{align*}
 </div>
 </li>
 <li>
-<p>Rectangles à droite : On prend \(\xi_k=x_k\) donc</p>
+<p>Approximation par les rectangles à droite :</p>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+k\cdot 0{,}1)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(20+55\cdot 0{,}1\right)\\
-&amp;=2{,}55.
+&amp;\Delta x\cdot\left(f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)+f(1)\right)\\
+=\;&amp;0{,}2\cdot\left(\frac{1}{1+0{,}2^2}+\frac{1}{1+0{,}4^2}+\frac{1}{1+0{,}6^2}+\frac{1}{1+0{,}8^2}+\frac{1}{1+1^2}\right)\\
+\approx\;&amp;0{,}734.
 \end{align*}
 </div>
 </li>
 <li>
-<p>Rectangles au milieu : On prend \(\xi_k=\frac{x_{k-1}+x_k}{2}=2+(k-0{,}5)\cdot 0{,1}\) donc</p>
+<p>Approximation par les rectangles au milieu :</p>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+(k-0{,}5)\cdot 0{,}1)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k-\sum_{k=1}^{10}0{,}5\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}-10\cdot 0{,}5\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(20+55-5\cdot 0{,}1\right)\\
-&amp;=2{,}5.
+&amp;\Delta x\cdot\left(f(0{,}1)+f(0{,}3)+f(0{,}5)+f(0{,}7)+f(0{,}9)\right)\\
+=\;&amp;0{,}2\cdot\left(\frac{1}{1+0{,}1^2}+\frac{1}{1+0{,}3^2}+\frac{1}{1+0{,}5^2}+\frac{1}{1+0{,}7^2}+\frac{1}{1+0{,}9^2}\right)\\
+\approx\;&amp;0{,}786.
 \end{align*}
 </div>
 </li>

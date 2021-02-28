@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:47:58-05:00    *-->
+<!--*    on 2021-02-28T13:10:56-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,79 +14,44 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.3.11.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.3.9.1</span><span class="period">.</span>
 </h6>
-<p>Soit \(A_0=(x_0;y_0),A_1=(x_1;y_1)\) et \(A_2=(x_2;y_2)\) trois points d'abscisses distinctes deux à deux. La forme de Newton de leur polynôme annulateur s'écrit</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1).
-\end{equation*}
-</div>
-<p>On cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{cases}
-N(x_0)=y_0\\
-N(x_1)=y_1\\
-N(x_2)=y_2
-\end{cases}
-\Leftrightarrow
-\begin{cases}
-d_0&amp;=&amp;y_0\\
-d_0+(x_1-x_0)d_1&amp;=&amp;y_1\\
-d_0+(x_2-x_0)d_1+(x_2-x_0)(x_2-x_1)d_2&amp;=&amp;y_2\\
-\end{cases}
-\end{equation*}
-</div>
-<p>Ce système linéaire est déjà triangulé.</p>
-<ul class="disc">
+<ol class="decimal">
 <li>
-<p>La première équation donne</p>
+<p>Voici la table des différences divisées :</p>
 <div class="displaymath">
 \begin{equation*}
-d_0=y_0.
+\begin{array}{c|cccc}
+x_i&amp;y_i&amp;&amp;&amp;\\
+\hline\\
+2014&amp;3310&amp;&amp;&amp;\\
+&amp;&amp;-90&amp;&amp;\\
+2015&amp;3220&amp;&amp;\frac{235}{3}&amp;\\
+&amp;&amp;145&amp;&amp;20\\
+2017&amp;3510&amp;&amp;\frac{475}{3}&amp;\\
+&amp;&amp;620&amp;&amp;\\
+2018&amp;4130&amp;&amp;&amp;\\
+\end{array}
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Alors la deuxième équation donne</p>
+<p>La forme de Newton du polynôme interpolateur est donc</p>
 <div class="displaymath">
 \begin{align*}
-d_0+(x_1-x_0)d_1=y_1&amp;\quad\Rightarrow\quad y_0+(x_1-x_0)d_1=y_1\\
-&amp;\quad\Rightarrow\quad (x_1-x_0)d_1=y_1-y_0\\
-&amp;\quad\Rightarrow\quad d_1=\frac{y_1-y_0}{x_1-x_0}.
+P(t)&amp;=3310-90(t-2014)+\frac{235}{3}(t-2014)(t-2015)\\
+&amp;\qquad +20(t-2014)(t-2015)(t-2017).
 \end{align*}
 </div>
 </li>
 <li>
-<p>Enfin la troisième équation donne</p>
+<p>On en déduit l'estimation suivante pour la donnée manquante :</p>
 <div class="displaymath">
 \begin{align*}
-&amp;d_0+(x_2-x_0)d_1+(x_2-x_0)(x_2-x_1)d_2=y_2\\
-\Rightarrow\quad&amp;y_0+(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}+(x_2-x_0)(x_2-x_1)d_2=y_2\\
-\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_0-(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}\\
-\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+y_1-y_0-(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}\\
-\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+\left(x_1-x_0-(x_2-x_0)\right)\frac{y_1-y_0}{x_1-x_0}\\
-\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+\left(x_1-x_2\right)\frac{y_1-y_0}{x_1-x_0}\\
-\Rightarrow\quad&amp;d_2=\frac{y_2-y_1}{(x_2-x_0)(x_2-x_1)}+\left(x_1-x_2\right)\frac{y_1-y_0}{(x_1-x_0)(x_2-x_0)(x_2-x_1)}\\
-\Rightarrow\quad&amp;d_2=\frac{y_2-y_1}{(x_2-x_0)(x_2-x_1)}-\frac{y_1-y_0}{(x_1-x_0)(x_2-x_0)}\\
-\Rightarrow\quad&amp;d_2=\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}.
+P(2016)&amp;=3310-90\cdot 2+\frac{235}{3}\cdot 2-20\cdot 2\\
+&amp;\approx 3247.
 \end{align*}
 </div>
 </li>
-</ul>
-<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=y_0+\frac{y_1-y_0}{x_1-x_0}(t-x_0)+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}(t-x_0)(t-x_1)
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\left[A_0,A_1,A_2\right](t-x_0)(t-x_1).
-\end{equation*}
-</div>
+</ol>
 </div>
 <span class="incontext"><a href="exercicesdiffdiv.html#solution-78">Contexte</a></span>
 </body>

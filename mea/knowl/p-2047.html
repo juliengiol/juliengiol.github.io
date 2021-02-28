@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:49:24-05:00    *-->
+<!--*    on 2021-02-28T13:12:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,38 +13,51 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Supposons maintenant que ces propriétés sont vérifiées et fixons \(u_0\in\mathbb{Z}\) un inverse de \(a\) modulo \(m\text{,}\) c'est-à-dire tel que</p>
+<ul class="disc">
+<li>
+<p>Objectif : Résoudre un système de congruences du type</p>
 <div class="displaymath">
 \begin{equation*}
-au_0\equiv 1\;\mathrm{mod}\;m.
+\left\{
+\begin{array}{cccc}
+x&amp;\equiv&amp;a_1&amp;\mathrm{mod}\;m_1,\\
+x&amp;\equiv&amp;a_2&amp;\mathrm{mod}\;m_2,\\
+\vdots&amp;&amp;\vdots&amp;\vdots\\
+x&amp;\equiv&amp;a_n&amp;\mathrm{mod}\;m_n.
+\end{array}\right.
 \end{equation*}
 </div>
-<p data-braille="continuation">Il ne nous reste plus qu'à établir l'équivalence suivante, pour tout \(u\in\mathbb{Z}\) :</p>
+</li>
+<li><p>Hypothèse : Il faut que les entiers \(m_i\) soient premiers entre eux deux à deux.</p></li>
+<li>
+<p>Principe : Remplir le tableau suivant</p>
 <div class="displaymath">
 \begin{equation*}
-au\equiv 1\;\mathrm{mod}\;m\quad\Leftrightarrow\quad u\equiv u_0\;\mathrm{mod}\;m.
-\end{equation*}
-</div>
-<p data-braille="continuation">D'une part, on a</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{ccc}
-au\equiv 1\;\mathrm{mod}\;m&amp;\Rightarrow&amp;u_0\cdot (au)\equiv u_0\cdot 1\;\mathrm{mod}\;m\\
-&amp;\Rightarrow&amp;(u_0a)\cdot u\equiv u_0\;\mathrm{mod}\;m\\
-&amp;\Rightarrow&amp;1\cdot u\equiv u_0\;\mathrm{mod}\;m\\
-&amp;\Rightarrow&amp;u\equiv u_0\;\mathrm{mod}\;m.
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+a_1&amp;m_1&amp;M_1=M/m_1&amp;1=M_1u_1+m_1v_1&amp;u_1&amp;a_1M_1u_1\\
+\hline
+a_2&amp;m_2&amp;M_2=M/m_2&amp;1=M_2u_2+m_2v_2&amp;u_2&amp;a_2M_2u_2\\
+\hline
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+\hline
+a_n&amp;m_n&amp;M_n=M/m_n&amp;1=M_nu_n+m_nv_n&amp;u_n&amp;a_nM_nu_n\\
+\hline
+M=&amp;\prod m_i&amp;&amp;&amp;x_0=&amp;\sum a_iM_iu_i\\
+\hline
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">Et réciproquement, on a</p>
+<p>Les solutions constituent alors la progression arithmétique caractérisée par</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{ccc}
-u\equiv u_0\;\mathrm{mod}\;m&amp;\Rightarrow&amp;au\equiv au_0\;\mathrm{mod}\;m\\
-&amp;\Rightarrow&amp;au\equiv 1\;\mathrm{mod}\;m.
-\end{array}
+x\equiv x_0\;\mathrm{mod}\;M\quad\Leftrightarrow\quad \exists k\in\mathbb{Z}, x=x_0+Mk.
 \end{equation*}
 </div>
+</li>
+<li><p>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1XWykGbip4SFK4R56YgqRahgaxohTo-bp/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
+<li><p>Pour aller plus loin : <a class="external" href="http://accromath.uqam.ca/2014/10/les-entiers-ces-fonctions-qui-signorent/" target="_blank">Les entiers, ces fonctions qui s'ignorent</a> ou comment tisser des liens entre le théorème des restes chinois et l'interpolation de Lagrange - un excellent article de Jimmy Dillies, dans la revue de vulgarisation mathématique québécoise <a class="external" href="http://accromath.uqam.ca/" target="_blank">Accromath</a>.</p></li>
+</ul>
 <span class="incontext"><a href="presentationchinois.html#p-2047">Contexte</a></span>
 </body>
 </html>

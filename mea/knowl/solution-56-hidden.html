@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:47:19-05:00    *-->
+<!--*    on 2021-02-28T13:10:08-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,10 +12,70 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like"><ol class="decimal">
-<li><p>\(\displaystyle 2\cdot 2^2\cdot 2^3\)</p></li>
-<li><p>\(\displaystyle 3^3\cdot 5^3\cdot 7^3\cdot 9^3\)</p></li>
-<li><p>\(\displaystyle x(x-2)(x-4)(x-6)(x-8)\)</p></li>
-<li><p>\(\displaystyle x(x-2)(x-4)(x-8)\)</p></li>
-<li><p>\(\displaystyle\left(\frac{t-x_0}{x_3-x_0}\right)\left(\frac{t-x_1}{x_3-x_1}\right)\left(\frac{t-x_2}{x_3-x_2}\right)\left(\frac{t-x_4}{x_3-x_4}\right)\)</p></li>
+<li>
+<p>La fonction \(f\) est continue sur l'intervalle \([0;1]\) car c'est un polynôme. Comme</p>
+<div class="displaymath">
+\begin{equation*}
+f(0)\cdot f(1)=(-1)\cdot 2&lt;0
+\end{equation*}
+</div>
+<p data-braille="continuation">le théorème des valeurs intermédiaires implique que \(f\) admet un zéro \(c\) dans l'intervalle \(]0;1[\text{.}\)</p>
+<p>Par ailleurs, on a</p>
+<div class="displaymath">
+\begin{equation*}
+f'(x)=4x^3+4x=4x(x^2+1).
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme \(x&gt;0\) et \(x^2+1&gt;0\) pour tout \(x\in\;]0;1[\text{,}\) on voit que \(f'(x)&gt;0\) dans cet intervalle. Donc \(f\) est strictement croissante sur \(]0;1[\text{,}\) et elle ne peut pas s'y annuler plus qu'une fois.</p>
+</li>
+<li><ul class="disc">
+<li>
+<p>Itération 1 :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ c&lt;{{}} c &gt;{{}}c }
+a=0 &amp; m=0{,}5 &amp; b=1\\
+f(a)=-1 &amp; f(m)=-0{,}4375 &amp; f(b)=2
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Rightarrow\quad c\in\;]0{,}5;1[
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Itération 2 :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ c&lt;{{}} c &gt;{{}}c }
+a=0{,}5 &amp; m=0{,}75 &amp; b=1 \\
+f(a)=-0{,}4375 &amp; f(m)=0{,}441\,406\,25 &amp; f(b)=2
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Rightarrow\quad c\in\;]0{,}5;0{,}75[
+\end{equation*}
+</div>
+</li>
+</ul></li>
+<li>
+<p>On a \(f''(x)=12x^2+4&gt;0\) pour tout \(x\in\mathbb{R}\) et on a déjà vu que \(f'(x)&gt;0\) pour tout \(x\in\;]0;1[\text{.}\)</p>
+<p>Les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> sont donc vérifiées avec \(b=1\) et c'est \(x_0=0{,}75\text{,}\) la valeur à droite du zéro, qu'il faut choisir.</p>
+</li>
+<li>
+<p>Voici le <a class="external" href="https://tinyurl.com/yxkac9oe" target="_blank">code à utiliser</a>.</p>
+<div class="displaymath">
+\begin{align*}
+x_1&amp;\approx 0{,}655\,833\,333\,333\\
+x_2&amp;\approx 0{,}643\,775\,873\,119\\
+x_3&amp;\approx 0{,}643\,594\,293\,534
+\end{align*}
+</div>
+</li>
+<li><p>Comme on s'attend à ce que le nombre de décimales exactes de \(c\) double grosso modo à chaque itération, on déduit des calculs précédents que les deux premières décimales de \(c\) sont \(64\text{.}\)</p></li>
 </ol></div></body>
 </html>

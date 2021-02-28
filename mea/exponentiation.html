@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:44:50-05:00    *-->
+<!--*    on 2021-02-28T13:07:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -233,22 +233,22 @@ MathJax.Hub.Config({
 </h2>
 <a href="exponentiation.html" class="permalink">¶</a><article class="problem example-like" id="problemeexponentiation"><a data-knowl="" class="id-ref original" data-refid="hk-problemeexponentiation"><h6 class="heading">
 <span class="type">Problème</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-problemeexponentiation"><article class="problem example-like"><p id="p-259">Comment utiliser efficacement l'ordinateur pour calculer la puissance \(n\)-ième d'un nombre réel \(x\text{,}\) c'est-à-dire \(\displaystyle x^n\text{?}\)</p></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-problemeexponentiation"><article class="problem example-like"><p id="p-263">Comment utiliser efficacement l'ordinateur pour calculer la puissance \(n\)-ième d'un nombre réel \(x\text{,}\) c'est-à-dire \(\displaystyle x^n\text{?}\)</p></article></div>
 <article class="paragraphs" id="paragraphs-5"><h5 class="heading"><span class="title">Algorithme 1 : Approche naïve.</span></h5>
-<p id="p-260">Combien de multiplications doit-on effectuer pour évaluer \(2^5\text{?}\)</p>
-<p id="p-261">On a</p>
+<p id="p-264">Combien de multiplications doit-on effectuer pour évaluer \(2^5\text{?}\)</p>
+<p id="p-265">On a</p>
 <div class="displaymath">
 \begin{equation*}
 2^5=2\cdot 2\cdot 2\cdot 2\cdot 2.
 \end{equation*}
 </div>
-<p id="p-262">Vu comme ça, il en faut quatre. Plus généralement, on a besoin de \(n-1\) multiplications pour évaluer \(x^n\text{,}\) puisque</p>
+<p id="p-266">Vu comme ça, il en faut quatre. Plus généralement, on a besoin de \(n-1\) multiplications pour évaluer \(x^n\text{,}\) puisque</p>
 <div class="displaymath">
 \begin{equation*}
 x^n=x\cdot x\cdot x\cdots x.
 \end{equation*}
 </div>
-<p id="p-263">Voici une implémentation de l'algorithme qui renvoie la valeur de \(x^n\) en suivant cette approche naïve. <div class="sagecell-python" id="sage-44"><script type="text/x-sage"># entrées :
+<p id="p-267">Voici une implémentation de l'algorithme qui renvoie la valeur de \(x^n\) en suivant cette approche naïve. <div class="sagecell-python" id="sage-44"><script type="text/x-sage"># entrées :
 x = 2
 n = 5
 # instructions :
@@ -258,14 +258,14 @@ for k in range(1, n):
 # sortie :
 print(produit)
 </script></div></p>
-<p id="p-264">Si on ne tient compte que des opérations mathématiques, la complexité en temps de cet algorithme ne dépend que de l'entrée \(n\) et vaut</p>
+<p id="p-268">Si on ne tient compte que des opérations mathématiques, la complexité en temps de cet algorithme ne dépend que de l'entrée \(n\) et vaut</p>
 <div class="displaymath">
 \begin{equation*}
 T(n)=n-1.
 \end{equation*}
 </div>
-<p id="p-265">On parle donc de complexité linéaire.</p></article><article class="paragraphs" id="paragraphs-6"><h5 class="heading"><span class="title">Algorithme 2 : Exponentiation rapide.</span></h5>
-<p id="p-266">Revenons au calcul de \(2^5\) et notons que</p>
+<p id="p-269">On parle donc de complexité linéaire.</p></article><article class="paragraphs" id="paragraphs-6"><h5 class="heading"><span class="title">Algorithme 2 : Exponentiation rapide.</span></h5>
+<p id="p-270">Revenons au calcul de \(2^5\) et notons que</p>
 <div class="displaymath">
 \begin{equation*}
 2^5=2\cdot (2^2)^2
@@ -277,8 +277,8 @@ T(n)=n-1.
 2^5=x\cdot y\cdot y\quad\text{avec}\quad x=2\quad\text{et}\quad y=x\cdot x.
 \end{equation*}
 </div>
-<p id="p-267">Vu comme ça, le calcul de \(2^5\) ne requiert plus que trois multiplications.</p>
-<p id="p-268">Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :</p>
+<p id="p-271">Vu comme ça, le calcul de \(2^5\) ne requiert plus que trois multiplications.</p>
+<p id="p-272">Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :</p>
 <div class="displaymath">
 \begin{equation*}
 x^n=
@@ -289,7 +289,7 @@ x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
 \end{cases}
 \end{equation*}
 </div>
-<aside class="aside aside-like" id="aside-6"><p id="p-269">L'algorithme d'<a class="external" href="https://fr.wikipedia.org/wiki/Exponentiation_rapide#Algorithme" target="_blank">exponentiation rapide</a> n'est pas seulement pertinent pour des nombres, mais aussi, par exemple, pour des matrices.</p></aside><p id="p-270">Voici une implémentation de cette approche, où la fonction <code class="code-inline tex2jax_ignore">puissanceRecursive(x, n)</code> renvoie la valeur de \(\text{x}^\text{n}\) de manière récursive. <div class="sagecell-python" id="sage-45"><script type="text/x-sage">def puissanceRecursive(x, n):
+<aside class="aside aside-like" id="aside-14"><p id="p-273">L'algorithme d'<a class="external" href="https://fr.wikipedia.org/wiki/Exponentiation_rapide#Algorithme" target="_blank">exponentiation rapide</a> n'est pas seulement pertinent pour des nombres, mais aussi, par exemple, pour des matrices.</p></aside><p id="p-274">Voici une implémentation de cette approche, où la fonction <code class="code-inline tex2jax_ignore">puissanceRecursive(x, n)</code> renvoie la valeur de \(\text{x}^\text{n}\) de manière récursive. <div class="sagecell-python" id="sage-45"><script type="text/x-sage">def puissanceRecursive(x, n):
     if n == 1:
         return x
     elif n % 2 == 0:
@@ -299,13 +299,13 @@ x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
 
 print(puissanceRecursive(2, 5))
 </script></div></p>
-<p id="p-271">Si on ne tient compte que des multiplications, alors on peut montrer que la complexité \(T(n)\) de cet algorithme vérifie l'encadrement</p>
+<p id="p-275">Si on ne tient compte que des multiplications, alors on peut montrer que la complexité \(T(n)\) de cet algorithme vérifie l'encadrement</p>
 <div class="displaymath">
 \begin{equation*}
 \log_2(n)-1\leq T(n)\leq 2\log_2(n).
 \end{equation*}
 </div>
-<p id="p-272">On parle alors d'une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche itérative, comme l'illustrent les graphes ci-après. <figure class="figure figure-like" id="figure-1"><iframe src="https://www.desmos.com/calculator/opbr8wrbya" id="desmos-lineaire-log" width="600" height="480"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs logarithmique</figcaption></figure></p></article></section></div></main>
+<p id="p-276">On parle alors d'une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche itérative, comme l'illustrent les graphes ci-après. <figure class="figure figure-like" id="figure-1"><iframe src="https://www.desmos.com/calculator/opbr8wrbya" id="desmos-lineaire-log" width="600" height="480"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs logarithmique</figcaption></figure></p></article></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;

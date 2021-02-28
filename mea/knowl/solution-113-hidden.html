@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:49:15-05:00    *-->
+<!--*    on 2021-02-28T13:12:19-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,34 +11,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><ol class="decimal">
-<li>
-<p>Supposons que \(a\) et \(b\) sont premiers entre eux, et qu'ils divisent \(x\) tous les deux. Alors, d'une part, il existe \(k\in\mathbb{Z}\) tel que</p>
+<body><div class="solution solution-like">
+<p>Supposons que \(a\vert bc\) et que \(\text{PGCD}(a;b)=1\text{.}\)</p>
+<p>Comme \(a\vert bc\text{,}\) il existe \(d\in\mathbb{Z}\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-x=ka.
+bc=ad.
 \end{equation*}
 </div>
-<p data-braille="continuation">D'autre part, on a donc</p>
+<p data-braille="continuation">Et comme \(\text{PGCD}(a;b)=1\text{,}\) il existe \((u;v)\in\mathbb{Z}^2\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-b\vert ka\quad\text{et}\quad\text{PGCD}(a;b)=1.
+au+bv=1.
 \end{equation*}
 </div>
-<p data-braille="continuation">Par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>, on en déduit que \(b\) divise \(k\text{,}\) de sorte qu'il existe \(m\in\mathbb{Z}\) tel que</p>
+<p>On a donc</p>
 <div class="displaymath">
 \begin{equation*}
-k=mb.
+\begin{array}{ccc}
+c&amp;=&amp;1\cdot c\\
+&amp;=&amp;(au+bv)\cdot c\\
+&amp;=&amp;auc+bvc\\
+&amp;=&amp;auc+(bc)v\\
+&amp;=&amp;auc+(ad)v\\
+&amp;=&amp;a(uc+dv)\\
+&amp;=&amp;ae
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">Finalement, on obtient</p>
-<div class="displaymath">
-\begin{equation*}
-x=ka=(mb)\cdot a=m\cdot(ab)
-\end{equation*}
-</div>
-<p data-braille="continuation">ce qui montre que \(ab\) divise \(x\text{.}\)</p>
-</li>
-<li><p>Ce résultat découle du précédent par récurrence sur \(n\text{.}\)</p></li>
-</ol></div></body>
+<p data-braille="continuation">avec \(e=uc+dv\in\mathbb{Z}\text{,}\)d'où \(a\vert c\text{.}\)</p>
+</div></body>
 </html>

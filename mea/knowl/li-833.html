@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-27T11:48:38-05:00    *-->
+<!--*    on 2021-02-28T13:11:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,33 +13,8 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">10.3.2.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">10.3.7.2</span><span class="period">.</span>
 </h6>
-<p>Pour \(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec \(n=6\text{,}\) posons \(f(x)=e^{x^2}\text{.}\) Alors, avec un peu de patience ou <a class="external" href="https://tinyurl.com/y2boog2m" target="_blank">l'aide de SageMathCell</a>, on obtient</p>
-<div class="displaymath">
-\begin{equation*}
-f^{(4)}(x)=(16x^4+48x^2+12)e^{x^2}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Donc</p>
-<div class="displaymath">
-\begin{align*}
-|f^{(4)}(x)|&amp;=\left|(16x^4+48x^2+12)e^{x^2}\right|\\
-&amp;=\left|16x^4+48x^2+12\right|\cdot e^{x^2}\\
-&amp;\leq (16x^4+48x^2+12)\cdot e^{x^2}\\
-&amp;\leq (16+48+12)e\\
-&amp;=76e
-\end{align*}
-</div>
-<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\) Donc on peut prendre \(M=76e\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_simpson.html" title="Théorème 10.1.3">10.1.3</a> et on a</p>
-<div class="displaymath">
-\begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^5}{2880n^4}\\
-&amp;=\frac{76e(1-0)^5}{2880\cdot 6^4}\\
-&amp;=\frac{76e}{2880\cdot 6^4}\\
-&amp;=0{,}000\,055\,349\ldots\\
-&amp;\leq 0{,}000\,06.
-\end{align*}
-</div></article><span class="incontext"><a href="exercicessimpson.html#li-833">Contexte</a></span>
+<p>Vérifiez que vous pouvez prendre \(M=65\) pour appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_simpson.html" title="Théorème 10.1.3">10.1.3</a>.</p></article><span class="incontext"><a href="exercicessimpson.html#li-833">Contexte</a></span>
 </body>
 </html>

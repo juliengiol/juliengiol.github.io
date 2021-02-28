@@ -45,9 +45,8 @@
 
 <theorem xml:id="applitvi">
   <statement>
-    <p>Soit <m>f:[a;b]\longrightarrow\mathbb{R}</m> une fonction continue. Alors
-    <me>f(a)f(b)&lt;0\quad\Rightarrow\quad\exists c\in\;]a;b[\quad\text{tel que }\quad f(c)=0.</me>
-    </p>
+    <p>Soit <m>f:[a;b]\longrightarrow\mathbb{R}</m> une fonction continue.</p>
+    <p>Si <m>f(a)f(b)&lt;0</m>, alors il existe <m>c\in\;]a;b[</m> tel que <m>f(c)=0</m>.</p>
   </statement>
   <proof>
     <p>Par hypothèse, les nombres <m>f(a)</m> et <m>f(b)</m> sont de signes opposés, de sorte que <m>0</m> est compris strictement entre les deux.</p>
@@ -75,27 +74,28 @@
   <statement>
     <p>Soit <m>f:[a;b]\longrightarrow\mathbb{R}</m> une fonction continue telle que
     <ul>
-      <li><p><m>f(a)f(b)&lt;0\;</m>;</p></li>
-      <li><p><m>\exists !c\in\;]a;b[</m> tel que <m>f(c)=0</m>.</p></li>
+      <li><m>f(a)f(b)&lt;0\;</m></li>
+      <li>il existe un unique <m>c\in\;]a;b[</m> tel que <m>f(c)=0</m>.</li>
     </ul>
     </p>
-    <p>Notons <m>m=\frac{a+b}{2}</m> le milieu de l'intervalle <m>[a;b]</m>.</p>
-    <p>Alors trois cas sont possibles.
+    <p>
+      Si on note <m>m:=\frac{a+b}{2}</m> le milieu de l'intervalle <m>[a;b]</m>, alors trois cas sont possibles.
       <me>
         \begin{array}{cccc}
-        \text{Cas 1 :}&amp;f(m)=0&amp;\Rightarrow&amp;c=m\\
-        \text{Cas 2 :}&amp;f(m)f(a)&lt;0&amp;\Rightarrow&amp;c\in\;]a;m[\\
-        \text{Cas 3 :}&amp;f(m)f(b)&lt;0&amp;\Rightarrow&amp;c\in\;]m;b[
+        \text{Cas 1 :}&amp;f(m)=0&amp;\text{d'où}&amp;c=m.\\
+        \text{Cas 2 :}&amp;f(m)f(a)&lt;0&amp;\text{d'où}&amp;c\in\;]a;m[.\\
+        \text{Cas 3 :}&amp;f(m)f(b)&lt;0&amp;\text{d'où}&amp;c\in\;]m;b[.
         \end{array}
       </me>
     </p>
   </statement>
   <proof>
-    <p>Par hypothèse, les nombres <m>f(a)</m> et <m>f(b)</m> sont non nuls et de signes opposés. Après avoir calculé <m>f(m)</m>, on a donc trois cas possibles.
+    <p>
+      Par hypothèse, les nombres <m>f(a)</m> et <m>f(b)</m> sont non nuls et de signes opposés. Après avoir calculé <m>f(m)</m>, on a donc trois cas possibles.
       <ul>
-        <li><p>Cas 1 : <m>f(m)=0</m>.</p></li>
-        <li><p>Cas 2 : <m>f(m)\neq 0</m> est du même signe que <m>f(b)\;\Leftrightarrow\; f(m)f(a)&lt;0</m>.</p></li>
-        <li><p>Cas 3 : <m>f(m)\neq 0</m> est du même signe que <m>f(a)\;\Leftrightarrow\; f(m)f(b)&lt;0</m>.</p></li>
+        <li>Cas 1 : <m>f(m)=0</m>.</li>
+        <li>Cas 2 : <m>f(m)\neq 0</m> est du même signe que <m>f(b)</m>, ce qui équivaut à <m>f(m)f(a)&lt;0</m>.</li>
+        <li>Cas 3 : <m>f(m)\neq 0</m> est du même signe que <m>f(a)</m>, ce qui équivaut à <m>f(m)f(b)&lt;0</m>.</li>
       </ul>
     </p>
     <p>Par hypothèse d'unicité du zéro <m>c</m>, le cas 1 entraîne que <m>c=m</m>.</p>
@@ -109,14 +109,18 @@
     <p>Reprenons la fonction <m>f(x)=x^2-2</m> de l'exemple <xref ref="x2moins2"/> qui est continue sur <m>\mathbb{R}</m> comme toute fonction polynomiale.</p>
     <ul>
       <li><p>On a <m>f(0)f(2)=(-2)\cdot 2&lt;0</m> et on en déduit que <m>f</m> possède un zéro dans l'intervalle <m>]0;2[</m> par le théorème <xref ref="applitvi"/>.</p></li>
-      <li><p>Comme sa dérivée <m>f'(x)=2x</m> est positive sur <m>]0;2[</m>, la fonction <m>f</m> est strictement croissante sur <m>]0;2[</m>. Par conséquent, elle ne peut pas s'annuler plus qu'une fois dans cet intervalle.</p></li>
+      <li>
+        <p>
+          Comme sa dérivée <m>f'(x)=2x</m> est positive sur <m>]0;2[</m>, la fonction <m>f</m> est strictement croissante sur <m>]0;2[</m>.
+          Par conséquent, elle ne peut pas s'annuler plus qu'une fois dans cet intervalle.
+        </p>
+      </li>
     </ul>
-    <p>Notons donc <m>c</m> l'unique zéro de <m>f</m> dans <m>]0;2[</m>.</p>
-    <p>Appliquons maintenant le corollaire <xref ref="clebissection"/> à l'intervalle <m>[a;b]=[0;2]</m>.</p>
-    <p>Le milieu est <m>m=\frac{0+2}{2}=1</m>.</p>
-    <p>Les trois valeurs à calculer sont
+    <p>Notons donc <m>c</m> l'unique zéro de <m>f</m> dans <m>]0;2[</m>, et appliquons maintenant le corollaire <xref ref="clebissection"/> à l'intervalle <m>[a;b]:=[0;2]</m> dont le milieu est <m>m:=\frac{0+2}{2}=1</m>.</p>
+    <p>
+      Les trois valeurs à calculer sont
       <me>f(a)=f(0)=-2\;,\quad f(m)=f(1)=-1\quad\text{et}\quad f(b)=f(2)=2.</me>
-       Comme <m>f(m)</m> et <m>f(b)</m> sont de signes opposés, on en déduit que <m>c</m> appartient à l'intervalle <m>]m;b[\;=\;]1;2[</m>.
+      Comme <m>f(m)</m> et <m>f(b)</m> sont de signes opposés, on en déduit que <m>c</m> appartient à l'intervalle <m>]m;b[\;=\;]1;2[</m>.
     </p>
   </statement>
 </example>
@@ -143,7 +147,7 @@
                 f(a)=-2 &amp; f(m)=-1 &amp; f(b)=2
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]1;2[</me>
+          <me>\text{d'où}\quad c\in\;]1;2[.</me>
         </li>
         <li>Itération 2 :
           <me>
@@ -152,7 +156,7 @@
                 f(a)=-1 &amp; f(m)=0{,}25 &amp; f(b)=2
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]1;1{,}5[</me>
+          <me>\text{d'où}\quad c\in\;]1;1{,}5[.</me>
         </li>
         <li>Itération 3 :
           <me>
@@ -161,20 +165,27 @@
                 f(a)=-1 &amp; f(m)=-0{,}437\,5 &amp; f(b)=0{,}25
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]1{,}25;1{,}5[</me>
+          <me>\text{d'où}\quad c\in\;]1{,}25;1{,}5[.</me>
         </li>
       </ul>
     </p>
-    <p>Remarques :
+    <p>
+      Remarques :
       <ul>
         <li>Au départ, <m>c</m> appartient à un intervalle de longueur <m>2</m>.</li>
-        <li>À chaque itération, la longueur de l'intervalle auquel <m>c</m> appartient est divisée par <m>2</m> puisqu'on remplace une de ses bornes par son milieu.</li>
-        <li>Après trois itérations, on est donc capables de situer <m>c</m> dans un intervalle de longueur <m>\displaystyle\frac{2}{2^3}=0{,}25</m>.</li>
+        <li>À chaque itération, la longueur de l'intervalle auquel <m>c</m> appartient est divisée par <m>2</m>, puisqu'on remplace une de ses bornes par son milieu.</li>
+        <li>Après trois itérations, on est donc capables de situer <m>c</m> dans un intervalle de longueur <m>2/2^3=0{,}25</m>.</li>
       </ul>
     </p>
   </statement>
 </example>
 
+<aside>
+  <p>
+    Cet algorithme est aussi connu sous le nom de <url href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_dichotomie">méthode de dichotomie</url>.
+    Son principe est analogue à celui d'une recherche aléatoire dans le dictionnaire.
+  </p>
+</aside>
 <assemblage>
   <title>Méthode de la bissection : Encadrer un zéro en coupant des intervalles en deux</title>
   <p>
@@ -186,7 +197,7 @@
           <ul>
             <li><p>Au départ, l'intervalle d'encadrement de <m>c</m> est <m>]a;b[</m>.</p></li>
             <li>
-              <p>Ensuite, on compare les trois valeurs <m>f(a), f(m)</m> et <m>f(b)</m> où <m>m=\frac{a+b}{2}</m> est le milieu de l'intervalle <m>[a;b]</m>.
+              <p>Ensuite, on compare les trois valeurs <m>f(a), f(m)</m> et <m>f(b)</m> où <m>m:=\frac{a+b}{2}</m> est le milieu de l'intervalle <m>[a;b]</m>.
                 <ul>
                   <li><p>Si <m>f(m)=0</m>, on s'arrête car on vient de tomber sur le zéro.</p></li>
                   <li><p>Si <m>f(m)f(a)&lt;0</m>, on remplace <m>]a;b[</m> par <m>]a;m[</m>.</p></li>
@@ -208,11 +219,10 @@
   <statement>
     <p>On considère la fonction polynomiale <m>g(x)=2x^2+5x-3</m> qui est continue sur <m>\mathbb{R}</m> comme toute fonction polynomiale.</p>
     <ul>
-      <li><p>On a <m>g(0)g(4)=(-3)\cdot 49&lt;0</m> et on en déduit que <m>g</m> possède un zéro dans l'intervalle <m>]0;4[</m> par le théorème <xref ref="applitvi"/>.</p></li>
-      <li><p>Comme sa dérivée <m>g'(x)=4x+5</m> est positive sur <m>]0;4[</m>, la fonction <m>g</m> est strictement croissante sur <m>]0;4[</m>. Par conséquent, elle ne peut pas s'annuler plus qu'une fois dans cet intervalle.</p></li>
+      <li>On a <m>g(0)g(4)=(-3)\cdot 49&lt;0</m> et on en déduit que <m>g</m> possède un zéro dans l'intervalle <m>]0;4[</m> par le théorème <xref ref="applitvi"/>.</li>
+      <li>Comme sa dérivée <m>g'(x)=4x+5</m> est positive sur <m>]0;4[</m>, la fonction <m>g</m> est strictement croissante sur cet intervalle, et par conséquent elle ne peut pas s'y annuler plus qu'une fois.</li>
     </ul>
-    <p>Notons donc <m>c</m> l'unique zéro de <m>g</m> dans <m>]0;4[</m>.</p>
-    <p>Appliquons la méthode de la bissection pour obtenir un intervalle d'encadrement de <m>c</m> de longueur inférieure ou égale à <m>0{,}01</m>.</p>
+    <p>Notons donc <m>c</m> l'unique zéro de <m>g</m> dans <m>]0;4[</m> et appliquons la méthode de la bissection afin d'obtenir un intervalle d'encadrement de <m>c</m> de longueur inférieure ou égale à <m>0{,}01</m>.</p>
     <p>
       <me>
         \begin{array}{cccccccc}
@@ -224,15 +234,17 @@
         \end{array}
       </me>
     </p>
-    <p>À la troisième itération, on trouve <m>f(m)=0</m>, ce qui signifie qu'on est tombés par chance sur le zéro qui est donc <m>c=0{,}5</m>. Inutile alors de parler d'encadrement.</p>
+    <p>
+      À la troisième itération, on trouve <m>f(m)=0</m>, ce qui signifie qu'on est tombés par chance sur le zéro qui est donc <m>c=0{,}5</m>.
+      Il est alors inutile de parler d'encadrement.
+    </p>
   </statement>
 </example>
 
 <example xml:id="x2moins2algo">
   <statement>
-    <p>Reprenons l'exemple <xref ref="x2moins23iter" /> là où l'on s'était arrêtés.</p>
-    <p>Partons donc de l'intervalle d'encadrement <m>[1{,}25;1{,}5]</m> du zéro <m>c</m>, dont la longueur est <m>1{,}5-1{,}25=0{,}25</m>.</p>
-    <p>Appliquons la méthode de la bissection pour obtenir un intervalle d'encadrement de <m>c</m> de longueur inférieure ou égale à <m>0{,}01</m>.</p>
+    <p>Reprenons l'exemple <xref ref="x2moins23iter" /> là où l'on s'était arrêtés, et partons donc de l'intervalle d'encadrement <m>[1{,}25;1{,}5]</m> du zéro <m>c</m>, dont la longueur est <m>1{,}5-1{,}25=0{,}25</m>.</p>
+    <p>Appliquons alors la méthode de la bissection afin d'obtenir un intervalle d'encadrement de <m>c</m> de longueur inférieure ou égale à <m>0{,}01</m>.</p>
     <p>
       <me>
         \begin{array}{cccccccc}
@@ -247,13 +259,18 @@
         \end{array}
       </me>
     </p>
-    <p>À la fin de la cinquième itération, l'intervalle d'encadrement est de longueur <m>0{,}007\,812\,5 \leq 0{,}01</m>. Donc on s'arrête et on ne complète pas la sixième itération.</p>
-    <p>Les deux dernières bornes trouvées sont <m>a=1{,}414\,062\,5</m> et <m>b=1{,}421\,875</m>. Autrement dit, le zéro <m>c</m> vérifie l'encadrement
+    <p>Après la cinquième itération, l'intervalle d'encadrement est de longueur <m>0{,}007\,812\,5 \leq 0{,}01</m>. Donc on s'arrête et on ne complète pas la sixième itération.</p>
+    <p>
+      Les deux dernières bornes trouvées sont <m>a=1{,}414\,062\,5</m> et <m>b=1{,}421\,875</m>.
+      Autrement dit, le zéro <m>c</m> vérifie l'encadrement
       <me>1{,}414\,062\,5&lt;c&lt;1{,}421\,875.</me>
     </p>
     <p>Notons enfin que <m>c=\sqrt{2}\approx 1{,}414\,214</m> et que l'encadrement ci-dessus ne fournit pas davantage que la première décimale du zéro <m>c</m>.</p>
   </statement>
 </example>
+<aside>
+  <p>La lenteur est le principal défaut de cet algorithme qui, à part ça, s'avère très <url href="https://en.wikipedia.org/wiki/Robustness_%28computer_science%29">robuste</url>.</p>
+</aside>
 
 </section>
 
@@ -299,18 +316,20 @@
   </statement>
 </algorithm>
 
-<p>Voici une implémentation de cet algorithme permettant d'encadrer l'unique zéro de la fonction <m>f(x)=x^2-2</m> dans l'intervalle <m>]0;2[</m> par les bornes d'un intervalle de longueur inférieure ou égale à <m>0{,}01</m>.</p>
+<p>
+  Voici une implémentation de cet algorithme permettant d'encadrer l'unique zéro de la fonction <m>f(x)=x^2-2</m> dans l'intervalle <m>]0;2[</m> par les bornes d'un intervalle de longueur inférieure ou égale à <m>0{,}01</m>.
+  Notez qu'on utilise la commande <c>break</c> pour sortir de la boucle <c>while</c> dans le cas où on tombe sur le zéro.
+</p>
 
 <sage language='python'>
   <input>
-    # entrées
+    # entrées :
     def f(x):
         return x ** 2 - 2
     a = 0.0
     b = 2.0
     longueurMax = 0.01
-
-    # instructions
+    # instructions :
     while b - a > longueurMax:
         m = (a + b) / 2
         if f(m) == 0:
@@ -321,16 +340,13 @@
             b = m
         else:
             a = m
-
-    # sortie
+    # sortie :
     if a == b:
         print(a)
     else:
         print(a, b)
   </input>
 </sage>
-
-<p>Remarque : on a utilisé la commande <c>break</c> pour sortir de la boucle <c>while</c> dans le cas où on tombe sur le zéro.</p>
 
 </section>
 
@@ -340,12 +356,13 @@
 <exercise xml:id="troisiterbissection">
   <statement>
     <p>La fonction <m>f(x)=x^2-3</m> admet un unique zéro <m>c</m> dans l'intervalle <m>[1;2]</m>.</p>
-    <p>Effectuez trois itérations de la méthode de la bissection.</p>
-    <p>Quel intervalle d'encadrement obtenez-vous?</p>
+    <p>
+      Effectuez trois itérations de la méthode de la bissection.
+      Quel intervalle d'encadrement obtenez-vous?
+    </p>
   </statement>
   <answer>
     <p><me>c\in\;]1{,}625;1{,}75[</me></p>
-    <p>Remarque : <m>c=\sqrt{3}\approx 1,732</m>.</p>
   </answer>
   <solution>
     <p>
@@ -357,7 +374,7 @@
                 f(a)=-2 &amp; f(m)=-0{,}75 &amp; f(b)=1
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]1{,}5;2[</me>
+          <me>\text{d'où}\quad c\in\;]1{,}5;2[.</me>
         </li>
         <li>Itération 2 :
           <me>
@@ -366,7 +383,7 @@
                 f(a)=-0{,}75 &amp; f(m)=0{,}062\,5 &amp; f(b)=1
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]1{,}5;1{,}75[</me>
+          <me>\text{d'où}\quad c\in\;]1{,}5;1{,}75[.</me>
         </li>
         <li>Itération 3 :
           <me>
@@ -375,22 +392,24 @@
                 f(a)=-0{,}75 &amp; f(m)=-0{,}359\,375 &amp; f(b)=0{,}062\,5
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]1{,}625;1{,}75[</me>
+          <me>\text{d'où}\quad c\in\;]1{,}625;1{,}75[.</me>
         </li>
       </ul>
     </p>
+    <p>Remarque : <m>c=\sqrt{3}\approx 1,732</m>.</p>
   </solution>
 </exercise>
 
 <exercise xml:id="quatreiterbissection">
   <statement>
     <p>La fonction <m>f(x)=e^x-2</m> admet un unique zéro dans l'intervalle <m>[0;1]</m>.</p>
-    <p>Effectuez quatre itérations de la méthode de la bissection.</p>
-    <p>Quel intervalle d'encadrement obtenez-vous?</p>
+    <p>
+      Effectuez quatre itérations de la méthode de la bissection.
+      Quel intervalle d'encadrement obtenez-vous?
+    </p>
   </statement>
   <answer>
     <p><me>c\in\;]0{,}687\,5;0{,}75[</me></p>
-    <p>Remarque : <m>c=\ln(2)\approx 0{,}693</m>.</p>
   </answer>
   <solution>
     <p>
@@ -402,7 +421,7 @@
                 f(a)=-1 &amp; f(m)\approx-0{,}351 &amp; f(b)\approx 0{,}718
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]0{,}5;1[</me>
+          <me>\text{d'où}\quad c\in\;]0{,}5;1[.</me>
         </li>
         <li>Itération 2 :
           <me>
@@ -411,7 +430,7 @@
                 f(a)\approx-0{,}351 &amp; f(m)\approx 0{,}117 &amp; f(b)\approx 0{,}718
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]0{,}5;0{,}75[</me>
+          <me>\text{d'où}\quad c\in\;]0{,}5;0{,}75[.</me>
         </li>
         <li>Itération 3 :
           <me>
@@ -420,7 +439,7 @@
                 f(a)\approx-0{,}351 &amp; f(m)\approx -0{,}132 &amp; f(b)\approx 0{,}117
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]0{,}625;0{,}75[</me>
+          <me>\text{d'où}\quad c\in\;]0{,}625;0{,}75[.</me>
         </li>
         <li>Itération 4 :
           <me>
@@ -429,22 +448,24 @@
                 f(a)\approx -0{,}132 &amp; f(m)\approx -0{,}011 &amp; f(b)\approx 0{,}117
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]0{,}687\,5;0{,}75[</me>
+          <me>\text{d'où}\quad c\in\;]0{,}687\,5;0{,}75[.</me>
         </li>
       </ul>
     </p>
+        <p>Remarque : <m>c=\ln(2)\approx 0{,}693</m>.</p>
   </solution>
 </exercise>
 
 <exercise xml:id="troisiterbissectionbis">
   <statement>
     <p>Soit <m>f(x)=4\sin(x)\cos(x)+1</m>.</p>
-    <p>Effectuez trois itérations de la méthode de la bissection en partant de l'intervalle <m>[a;b]=[1;2]</m>.</p>
-    <p>Quel intervalle d'encadrement obtenez-vous?</p>
+    <p>
+      Effectuez trois itérations de la méthode de la bissection en partant de l'intervalle <m>[a;b]=[1;2]</m>.
+      Quel intervalle d'encadrement obtenez-vous?
+    </p>
   </statement>
   <answer>
     <p><me>c\in\;]1{,}75;1{,}875[</me></p>
-    <p>Remarque : <m>\displaystyle c=\frac{7\pi}{12}\approx 1{,}83</m>.</p>
   </answer>
   <solution>
     <p>
@@ -456,7 +477,7 @@
                 f(a)\approx 2{,}8 &amp; f(m)\approx 1{,}3 &amp; f(b)\approx -0{,}5
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]1{,}5;2[</me>
+          <me>\text{d'où}\quad c\in\;]1{,}5;2[.</me>
         </li>
         <li>Itération 2 :
           <me>
@@ -465,7 +486,7 @@
                 f(a)=1{,}3 &amp; f(m)\approx 0{,}3 &amp; f(b)\approx -0{,}5
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]1{,}75;2[</me>
+          <me>\text{d'où}\quad c\in\;]1{,}75;2[.</me>
         </li>
         <li>Itération 3 :
           <me>
@@ -474,10 +495,11 @@
                 f(a)\approx 0{,}3 &amp; f(m)\approx -0{,}1 &amp; f(b)\approx -0{,}5
             \end{array}
           </me>
-          <me>\Rightarrow\quad c\in\;]1{,}75;1{,}875[</me>
+          <me>\text{d'où}\quad c\in\;]1{,}75;1{,}875[.</me>
         </li>
       </ul>
     </p>
+    <p>Remarque : <m>\displaystyle c=\frac{7\pi}{12}\approx 1{,}83</m>.</p>
   </solution>
 </exercise>
 
@@ -486,11 +508,11 @@
     <p>Pour chacun des exercices <xref ref="troisiterbissection"/>, <xref ref="quatreiterbissection"/> et <xref ref="troisiterbissectionbis"/>, utilisez le code fourni à la section <xref ref="algorithmebissection"/> afin de donner une valeur arrondie à cinq décimales du zéro <m>c</m> considéré.</p>
   </statement>
   <solution>
-    <p>Il suffit d'assigner la valeur <m>10^{-6}=0{,}000\,001</m> (pour les deux premiers exercices) ou <m>10^{-7}=0{,}000\,000\,1</m> (pour le troisième exercice) à la variable <m>\text{longueurMax}</m>.
+    <p>Pour les deux premiers exercices, il suffit d'assigner la valeur <m>10^{-6}=0{,}000\,001</m> à la variable <m>\text{longueurMax}</m>, et <m>10^{-7}=0{,}000\,000\,1</m> pour le troisième exercice .
       <ul>
-        <li><p>Exercice <xref ref="troisiterbissection"/> : <m>c\in\;]1{,}732\,049\,942;1{,}732\,050\,895[</m> donc <m>c\approx 1{,}732\,05</m>.</p></li>
-        <li><p>Exercice <xref ref="quatreiterbissection"/> : <m>c\in\;]0{,}693\,146\,70;0{,}693\,147\,659[</m> donc <m>c\approx 0{,}693\,15</m>.</p></li>
-        <li><p>Exercice <xref ref="troisiterbissectionbis"/> : <m>c\in\;]1{,}832\,595\,705;1{,}832\,595\,765[</m> donc <m>c\approx 1{,}832\,60</m>.</p></li>
+        <li>Exercice <xref ref="troisiterbissection"/> : <m>c\in\;]1{,}732\,049\,942;1{,}732\,050\,895[</m> donc <m>c\approx 1{,}732\,05</m>.</li>
+        <li>Exercice <xref ref="quatreiterbissection"/> : <m>c\in\;]0{,}693\,146\,70;0{,}693\,147\,659[</m> donc <m>c\approx 0{,}693\,15</m>.</li>
+        <li>Exercice <xref ref="troisiterbissectionbis"/> : <m>c\in\;]1{,}832\,595\,705;1{,}832\,595\,765[</m> donc <m>c\approx 1{,}832\,60</m>.</li>
       </ul>
     </p>
   </solution>
@@ -499,11 +521,13 @@
 <exercise>
   <statement>
     <p>Soit <m>c</m> l'unique zéro de la fonction <m>f(x)=x^2-5x+2</m> dans l'intervalle <m>[4;5]</m>. Notez que <m>f(4)f(5)&lt;0</m>.</p>
-    <p>Utilisez la méthode de la bissection pour obtenir un encadrement de <m>c</m> par les bornes d'un intervalle de longueur inférieure ou égale à <m>0{,}1</m>.</p>
-    <p>Présentez votre démarche sous la forme d'un tableau comme dans l'exemple <xref ref="x2moins2algo" />.</p>
+    <p>
+      Utilisez la méthode de la bissection pour obtenir un encadrement de <m>c</m> par les bornes d'un intervalle de longueur inférieure ou égale à <m>0{,}1</m>.
+      Présentez votre démarche sous la forme d'un tableau comme dans l'exemple <xref ref="x2moins2algo" />.
+    </p>
   </statement>
   <answer>
-    <p><me>4{,}5&lt;c&lt;4{,}562\,5</me></p>
+    <p><me>c\in\;]4{,}5;4{,}562\,5[</me></p>
   </answer>
   <solution>
     <p>
@@ -520,7 +544,7 @@
       </me>
     </p>
     <p>On en conclut que
-      <me>4{,}5&lt;c&lt;4{,}562\,5.</me>
+      <me>c\in\;]4{,}5;4{,}562\,5[.</me>
     </p>
     <p>Remarque : <m>\displaystyle c=\frac{5+\sqrt{17}}{2}\approx 4{,}562</m>.</p>
   </solution>
@@ -528,8 +552,10 @@
 
 <exercise>
   <statement>
-    <p>On veut encadrer <m>\sqrt{3}</m> par les bornes d'un intervalle de longueur inférieure ou égale à <m>0{,}001</m>.</p>
-    <p>Pour cela, on applique la méthode de la bissection à la fonction <m>f(x)=x^2-3</m> en partant de l'intervalle <m>[1;2]</m>.</p>
+    <p>
+      On veut encadrer <m>\sqrt{3}</m> par les bornes d'un intervalle de longueur inférieure ou égale à <m>0{,}001</m>.
+      Pour cela, on applique la méthode de la bissection à la fonction <m>f(x)=x^2-3</m> en partant de l'intervalle <m>[1;2]</m>.
+    </p>
     <p>Combien d'itérations doit-on effectuer au minimum?</p>
   </statement>
   <answer>
@@ -537,8 +563,9 @@
   </answer>
   <solution>
     <p>
+      On a
       <me>
-        \begin{array}{cccc}
+        \begin{array}{crcl}
         &amp;\frac{b-a}{2^n}&amp;\leq&amp;0{,}001\\
         \Leftrightarrow&amp;\frac{2-1}{2^n}&amp;\leq&amp;0{,}001\\
         \Leftrightarrow&amp;\frac{1}{2^n}&amp;\leq&amp;10^{-3}\\
@@ -546,7 +573,7 @@
         \Leftrightarrow&amp;\log(10^3)&amp;\leq&amp;\log(2^n)\\
         \Leftrightarrow&amp;3&amp;\leq&amp;n\cdot\log(2)\\
         \Leftrightarrow&amp;\frac{3}{\log(2)}&amp;\leq&amp;n\\
-        \Leftrightarrow&amp;9{,}9\ldots&amp;\leq&amp;n
+        \Leftrightarrow&amp;9{,}9\ldots&amp;\leq&amp;n.
         \end{array}
       </me>
     </p>
@@ -556,8 +583,10 @@
 
 <exercise>
   <statement>
-    <p>On veut encadrer <m>\ln(2)</m> par les bornes d'un intervalle de longueur inférieure ou égale à <m>10^{-9}</m>.</p>
-    <p>Pour cela, on applique la méthode de la bissection à la fonction <m>f(x)=e^x-2</m> en partant de l'intervalle <m>[0;1]</m>.</p>
+    <p>
+      On veut encadrer <m>\ln(2)</m> par les bornes d'un intervalle de longueur inférieure ou égale à <m>10^{-9}</m>.
+      Pour cela, on applique la méthode de la bissection à la fonction <m>f(x)=e^x-2</m> en partant de l'intervalle <m>[0;1]</m>.
+    </p>
     <p>Combien d'itérations doit-on effectuer au minimum?</p>
   </statement>
   <answer>
@@ -565,8 +594,9 @@
   </answer>
   <solution>
     <p>
+      On a
       <me>
-        \begin{array}{cccc}
+        \begin{array}{crcl}
         &amp;\frac{b-a}{2^n}&amp;\leq&amp;10^{-9}\\
         \Leftrightarrow&amp;\frac{1-0}{2^n}&amp;\leq&amp;10^{-9}\\
         \Leftrightarrow&amp;\frac{1}{2^n}&amp;\leq&amp;10^{-9}\\
@@ -574,7 +604,7 @@
         \Leftrightarrow&amp;\log(10^9)&amp;\leq&amp;\log(2^n)\\
         \Leftrightarrow&amp;9&amp;\leq&amp;n\cdot\log(2)\\
         \Leftrightarrow&amp;\frac{9}{\log(2)}&amp;\leq&amp;n\\
-        \Leftrightarrow&amp;29{,}8\ldots&amp;\leq&amp;n
+        \Leftrightarrow&amp;29{,}8\ldots&amp;\leq&amp;n.
         \end{array}
       </me>
     </p>
@@ -585,54 +615,56 @@
 <exercise>
   <statement>
     <p>Soit <m>f(x)=(x-1)(x-2)</m>, polynôme possédant deux zéros <m>c_1=1</m> et <m>c_2=2</m>.</p>
-    <p>Pour chacun des intervalles de départ <m>[a;b]</m> qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro l'algorithme converge.
-      <ol>
-        <li><p><m>[a;b]=[0;1{,}5]</m></p></li>
-        <li><p><m>[a;b]=[1{,}5;4]</m></p></li>
-        <li><p><m>[a;b]=[0{,}5;4{,}5]</m></p></li>
-        <li><p>Que concluez-vous de la question précédente?</p></li>
-      </ol>
-    </p>
-  </statement>
-  <answer>
     <p>
+      Pour chacun des intervalles de départ <m>[a;b]</m> qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro l'algorithme converge :
       <ol>
-        <li><p>Vers <m>c_1=1</m>.</p></li>
-        <li><p>Vers <m>c_2=2</m>.</p></li>
-        <li><p>Vers <m>4{,}5</m> qui n'est pas un zéro de <m>f</m>.</p></li>
-        <li><p>Si les hypothèses ne sont pas toutes vérifiées, l'algorithme peut converger vers un nombre qui n'est pas un zéro de la fonction considérée.</p></li>
+        <li><m>[a;b]=[0;1{,}5]</m>;</li>
+        <li><m>[a;b]=[1{,}5;4]</m>;</li>
+        <li><m>[a;b]=[0{,}5;4{,}5]</m>.</li>
       </ol>
     </p>
-  </answer>
+    <p>Qu'en concluez-vous?</p>
+  </statement>
+  <solution>
+    <p>
+      Il converge
+      <ol>
+        <li>vers <m>c_1=1</m>;</li>
+        <li>vers <m>c_2=2</m>;</li>
+        <li>vers <m>4{,}5</m> qui n'est pas un zéro de <m>f</m>.</li>
+      </ol>
+    </p>
+    <p>Si les hypothèses ne sont pas toutes vérifiées, l'algorithme peut converger vers un nombre qui n'est pas un zéro de la fonction considérée.</p>
+  </solution>
 </exercise>
 
 <exercise>
   <statement>
     <p>Soit <m>f(x)=(x^2-1)(x^2-4)</m>, polynôme possédant quatre zéros <m>c=\pm 1</m> et <m>c=\pm 2</m>.</p>
-    <p>Pour chacun des intervalles de départ <m>[a;b]</m> qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro l'algorithme converge.
-      <ol>
-        <li><p><m>[a;b]=[-3;-0{,}5]</m></p></li>
-        <li><p><m>[a;b]=[-1{,}5;3]</m></p></li>
-        <li><p><m>[a;b]=[-3;3]</m></p></li>
-        <li><p><m>[a;b]=[-3;4]</m></p></li>
-        <li><p>Que concluez-vous des questions précédente?</p></li>
-      </ol>
-    </p>
-  </statement>
-  <answer>
     <p>
+      Pour chacun des intervalles de départ <m>[a;b]</m> qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro l'algorithme converge :
       <ol>
-        <li><p>Vers <m>-2</m>.</p></li>
-        <li><p>Vers <m>-1</m>.</p></li>
-        <li><p>Vers <m>1</m>.</p></li>
-        <li><p>Vers <m>4</m> qui n'est pas un zéro de <m>f</m>.</p></li>
-        <li>
-          <p>D'une part, l'algorithme peut converger vers un zéro de la fonction, même si les hypothèses ne sont pas toutes vérifiées (voir les cas 1, 2 et 3 ci-dessus).</p>
-          <p>D'autre part, si les hypothèses ne sont pas toutes vérifiées, l'algorithme peut converger vers un nombre qui n'est pas un zéro de la fonction considérée (voir le cas 4 ci-dessus).</p>
-        </li>
+        <li><m>[a;b]=[-3;-0{,}5]</m>;</li>
+        <li><m>[a;b]=[-1{,}5;3]</m>;</li>
+        <li><m>[a;b]=[-3;3]</m>;</li>
+        <li><m>[a;b]=[-3;4]</m>.</li>
       </ol>
     </p>
-  </answer>
+    <p>Qu'en concluez-vous?</p>
+  </statement>
+  <solution>
+    <p>
+      Il converge
+      <ol>
+        <li>vers <m>-2</m>;</li>
+        <li>vers <m>-1</m>;</li>
+        <li>vers <m>1</m>;</li>
+        <li>vers <m>4</m> qui n'est pas un zéro de <m>f</m>.</li>
+      </ol>
+    </p>
+    <p>D'une part, l'algorithme peut converger vers un zéro de la fonction, même si les hypothèses ne sont pas toutes vérifiées (voir les cas 1, 2 et 3 ci-dessus).</p>
+    <p>D'autre part, si les hypothèses ne sont pas toutes vérifiées, l'algorithme peut converger vers un nombre qui n'est pas un zéro de la fonction considérée (voir le cas 4 ci-dessus).</p>
+  </solution>
 </exercise>
 
 <exercise xml:id="affichetoutbissection">
@@ -641,16 +673,15 @@
   </statement>
   <solution>
     <pre>
-      # entrées
+      # entrées :
       def f(x):
           return x ** 2 - 2
       a = 0.0
       b = 2.0
       longueurMax = 0.01
-
-      # instructions
+      # instructions :
       while b - a > longueurMax:
-          print(a, b)
+          print(a, b) # ligne ajoutée
           m = (a + b) / 2
           if f(m) == 0:
               a = m
@@ -660,8 +691,7 @@
               b = m
           else:
               a = m
-
-      # sortie
+      # sortie :
       if a == b:
           print(a)
       else:
@@ -672,34 +702,35 @@
 
 <exercise>
   <statement>
-    <p>Notez que dans le code donné à la section <xref ref="algorithmebissection"/>, on calcule <m>f(a)</m> à chaque itération pour laquelle <m>f(m)\neq 0</m>, même si <m>a</m> et donc <m>f(a)</m> n'ont pas changé.</p>
-    <p>Modifiez ce code afin de résoudre ce problème.</p>
+    <p>
+      Dans le code donné à la section <xref ref="algorithmebissection"/>, on calcule <m>f(a)</m> à chaque itération pour laquelle <m>f(m)\neq 0</m>, même si <m>a</m> et donc <m>f(a)</m> n'ont pas changé.
+      Il arrive aussi qu'on calcule deux fois <m>f(m)</m>.
+    </p>
+    <p>Modifiez ce code afin de résoudre ces problèmes.</p>
   </statement>
   <solution>
     <pre>
-      # entrées
+      # entrées :
       def f(x):
           return x ** 2 - 2
       a = 0.0
       b = 2.0
       longueurMax = 0.01
-
-      # instructions
-      ya = f(a)
+      # instructions :
+      ya = f(a) # ligne ajoutée
       while b - a &gt; longueurMax:
           m = (a + b) / 2
-          ym = f(m)
-          if ym == 0:
+          ym = f(m) # ligne ajoutée
+          if ym == 0: # ligne modifiée
               a = m
               b = m
               break
-          elif ym * ya &lt; 0:
+          elif ym * ya &lt; 0: # ligne modifiée
               b = m
           else:
               a = m
-              ya = ym
-
-      # sortie
+              ya = ym # ligne ajoutée
+      # sortie :
       if a == b:
           print(a)
       else:
@@ -708,29 +739,34 @@
   </solution>
 </exercise>
 
-<exercise>
+<exercise xml:id="fausse_position">
   <statement>
-    <p>La méthode de la fausse position est une amélioration de la méthode de la bissection qui converge en général plus rapidement qu'elle.</p>
-    <p>Au lieu de couper chaque intervalle <m>[a;b]</m> en son milieu <m>m</m>, elle le coupe à la valeur <m>s</m> correspondant à l'abscisse de l'intersection de l'axe des <m>x</m> avec la droite sécante joignant les points <m>(a;f(a))</m> et <m>(b;f(b))</m>.</p>
-    <p>Exprimez <m>s</m> en fonction de <m>a,b,f(a),f(b)</m>.</p>
+    <p>
+      La <url href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_la_fausse_position">méthode de la fausse position</url> est une amélioration de la méthode de la bissection qui converge en général plus rapidement qu'elle.
+      Au lieu de couper chaque intervalle <m>[a;b]</m> en son milieu <m>m</m>, elle le coupe à la valeur <m>s</m> correspondant à l'abscisse de l'intersection de l'axe des <m>x</m> avec la droite sécante joignant les points <m>(a;f(a))</m> et <m>(b;f(b))</m>.
+    </p>
+    <p>Exprimez <m>s</m> en fonction de <m>a,b,f(a)</m> et <m>f(b)</m>.</p>
   </statement>
   <answer>
     <p><me>s=a-\frac{f(a)(b-a)}{f(b)-f(a)}</me></p>
   </answer>
   <solution>
-    <p>La pente de la droite est
-      <me>m=\frac{f(b)-f(a)}{b-a}.</me>
+    <p>
+      La pente de la droite est
+      <me>m=\frac{f(b)-f(a)}{b-a}</me>
+      et son équation est de la forme <m>y=mx+p</m>.
     </p>
-    <p>Son équation est de la forme <m>y=mx+p</m>.</p>
-    <p>Comme elle passe notamment par le point <m>(a;f(a))</m>, on a
-      <me>f(a)=ma+p\quad\Rightarrow\quad p=f(a)-ma.</me>
+    <p>
+      Comme elle passe notamment par le point <m>(a;f(a))</m>, on a
+      <me>f(a)=ma+p\quad\text{d'où}\quad p=f(a)-ma.</me>
     </p>
-    <p>On obtient donc l'équation
+    <p>
+      On obtient donc l'équation
       <me>
-        \begin{array}{cccc}
+        \begin{array}{crcl}
         &amp;y&amp;=&amp;mx+f(a)-ma\\
         \Leftrightarrow&amp;y&amp;=&amp;f(a)+m(x-a)\\
-        \Leftrightarrow&amp;y&amp;=&amp;f(a)+\frac{f(b)-f(a)}{b-a}\cdot (x-a)
+        \Leftrightarrow&amp;y&amp;=&amp;f(a)+\frac{f(b)-f(a)}{b-a}\cdot (x-a).
         \end{array}
       </me>
     </p>
@@ -738,22 +774,28 @@
       <me>
         \begin{cases}
           y&amp;=&amp;f(a)+\frac{f(b)-f(a)}{b-a}\cdot (s-a)\\
-          y&amp;=&amp;0
+          y&amp;=&amp;0.
         \end{cases}
       </me>
     </p>
-    <p>On a donc
+    <p>Par conséquent, on a
       <me>
-        \begin{array}{cccc}
+        \begin{array}{crcl}
         &amp;f(a)+\frac{f(b)-f(a)}{b-a}\cdot (s-a)&amp;=&amp;0\\
         \Leftrightarrow&amp;\frac{f(b)-f(a)}{b-a}\cdot (s-a)&amp;=&amp;-f(a)\\
         \Leftrightarrow&amp;s-a&amp;=&amp;-\frac{f(a)(b-a)}{f(b)-f(a)}\\
-        \Leftrightarrow&amp;s&amp;=&amp;a-\frac{f(a)(b-a)}{f(b)-f(a)}
+        \Leftrightarrow&amp;s&amp;=&amp;a-\frac{f(a)(b-a)}{f(b)-f(a)}.
         \end{array}
       </me>
     </p>
   </solution>
 </exercise>
+<aside>
+  <p>
+    La méthode de la fausse position étudiée dans l'exercice <xref ref="fausse_position"/> s'apelle aussi méthode regula falsi.
+    On trouve sa trace dans des documents aussi anciens que le <url href="https://fr.wikipedia.org/wiki/Papyrus_Berlin_6619">Papyrus Berlin 6619</url> de l'Égypte antique.
+  </p>
+</aside>
 
 </section>
 
