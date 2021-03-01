@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:03-05:00    *-->
+<!--*    on 2021-03-01T08:57:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -30,16 +30,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Et voilà une fonction <em class="emphasis">récursive</em> dont on affiche la valeur en 14. <div class="sagecell-python" id="sage-34"><script type="text/x-sage">def syracuse(x):
-    if x == 1:
-        return 'OK'
-    elif x % 2 == 0:
-        return syracuse(x // 2)
-    else:
-        return syracuse(3 * x + 1)
+<p>Terminons cette section avec la fonction factorielle. Pour \(n\geq 1\text{,}\) on rappelle que</p>
+<div class="displaymath">
+\begin{equation*}
+n!=1\cdot 2\cdot 3\cdots n.
+\end{equation*}
+</div>
+<p data-braille="continuation">La fonction <code class="code-inline tex2jax_ignore">factorielle(n)</code> ci-après calcule n! à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>. On la teste avec <code class="code-inline tex2jax_ignore">print(factorielle(5))</code> qui doit afficher \(\text{120}\) puisque</p>
+<div class="displaymath">
+\begin{equation*}
+5!=1\cdot 2\cdot 3\cdot 4\cdot 5=120.
+\end{equation*}
+</div>
+<p data-braille="continuation"><div class="sagecell-python" id="sage-39"><script type="text/x-sage">def factorielle(n):
+    produit = 1
+    for k in range(2, n+1):
+        produit = produit * k
+    return produit
 
-print(syracuse(14))
-</script></div></p>
-<span class="incontext"><a href="fonctions.html#p-158">Contexte</a></span>
+print(factorielle(5))
+</script></div> Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/yxl77o2s" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+<span class="incontext"><a href="syntaxefonctions.html#p-158">Contexte</a></span>
 </body>
 </html>

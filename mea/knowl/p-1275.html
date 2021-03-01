@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:11:10-05:00    *-->
+<!--*    on 2021-03-01T08:58:59-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La subdivision régulière de l'intervalle \([0;1]\) à considérer est donc la suivante :</p>
+<p>Alors l'erreur d'approximation par la méthode des trapèzes</p>
 <div class="displaymath">
 \begin{equation*}
-0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
+\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right)}_{\text{Approximation}}
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercicesrectangles.html#p-1275">Contexte</a></span>
+<p data-braille="continuation">vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\leq\frac{M(b-a)^3}{12n^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(M\) est n'importe quel nombre tel que</p>
+<div class="displaymath">
+\begin{equation*}
+|f''(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\end{equation*}
+</div>
+<span class="incontext"><a href="presentationtrapezes.html#p-1275">Contexte</a></span>
 </body>
 </html>

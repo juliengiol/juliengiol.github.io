@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:10:32-05:00    *-->
+<!--*    on 2021-03-01T08:58:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,70 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li>
-<p>La forme de Lagrange du polynôme interpolateur est la suivante :</p>
+<p>Supposons maintenant que \(t\neq x_i\) pour tout \(i=0,1,\ldots,n\text{.}\) On peut alors considérer la fonction suivante :</p>
 <div class="displaymath">
-\begin{align*}
-L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)\\
-&amp;=224\frac{t-6}{4-6}+226\frac{t-4}{6-4}\\
-&amp;=-112(t-6)+113(t-4).
-\end{align*}
+\begin{equation*}
+\phi(s)=f(s)-P(s)-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}\cdot\prod_{i=0}^n(s-x_i).
+\end{equation*}
 </div>
-<p>On a</p>
-<div class="displaymath">
-\begin{align*}
-L(5)&amp;=-112(5-6)+113(5-4)\\
-&amp;=225.
-\end{align*}
-</div>
-<p data-braille="continuation">On estime ainsi que la tension valait \(225\;\text{V}\) environ au moment du cinquième relevé.</p>
-</li>
-<li>
-<p>La forme de Lagrange du polynôme interpolateur est la suivante :</p>
-<div class="displaymath">
-\begin{align*}
-L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
-&amp;=2{,}007\frac{(t-4)(t-6)}{(3-4)(3-6)}+2{,}502\frac{(t-3)(t-6)}{(4-3)(4-6)}\\
-&amp;\qquad+2{,}142\frac{(t-3)(t-4)}{(6-3)(6-4)}\\
-&amp;=\frac{2{,}007}{3}(t-4)(t-6)-1{,}251(t-3)(t-6)\\
-&amp;\qquad +0{,}357(t-3)(t-4).
-\end{align*}
-</div>
-<p>On a</p>
-<div class="displaymath">
-\begin{align*}
-L(5)&amp;=\frac{2{,}007}{3}(5-4)(5-6)-1{,}251(5-3)(5-6)\\
-&amp;\qquad +0{,}357(5-3)(5-4)\\
-&amp;=-\frac{2{,}007}{3}+1{,}251\cdot 2+0{,}357\cdot 2\\
-&amp;=2{,}547.
-\end{align*}
-</div>
-<p data-braille="continuation">On estime ainsi que l'intensité valait \(2{,}547\;\text{A}\) environ au moment du cinquième relevé.</p>
-</li>
-<li>
-<p>La forme de Lagrange du polynôme interpolateur est la suivante :</p>
-<div class="displaymath">
-\begin{align*}
-L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
-&amp;=560{,}448\frac{(t-6)(t-7)}{(4-6)(4-7)}+484{,}092\frac{(t-4)(t-7)}{(6-4)(6-7)}\\
-&amp;\qquad+494{,}262\frac{(t-4)(t-6)}{(7-4)(7-6)}\\
-&amp;=\frac{560{,}448}{6}(t-6)(t-7)-\frac{484{,}092}{2}(t-4)(t-7)\\
-&amp;\qquad +\frac{494{,}262}{3}(t-4)(t-6).
-\end{align*}
-</div>
-<p>On a</p>
-<div class="displaymath">
-\begin{align*}
-L(5)&amp;=\frac{560{,}448}{6}(5-6)(5-7)-\frac{484{,}092}{2}(5-4)(5-7)\\
-&amp;\qquad +\frac{494{,}262}{3}(5-4)(5-6)\\
-&amp;=\frac{560{,}448\cdot 2}{6}+\frac{484{,}092\cdot 2}{2}-\frac{494{,}262}{3}\\
-&amp;=506{,}154.
-\end{align*}
-</div>
-<p data-braille="continuation">On estime ainsi que la puissance valait \(506{,}154\;\text{W}\) environ au moment du cinquième relevé.</p>
-</li>
-</ol>
 <span class="incontext"><a href="exerciceslagrange.html#p-933">Contexte</a></span>
 </body>
 </html>

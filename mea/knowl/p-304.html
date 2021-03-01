@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:21-05:00    *-->
+<!--*    on 2021-03-01T08:57:24-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,34 +10,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Évaluez le code suivant pour calculer \(F_{50}\) à l'aide de la formule de Binet. <div class="sagecell-python" id="sage-48"><script type="text/x-sage"># entrée :
-n = 50
-# instructions :
-from math import sqrt
-x = (1 + sqrt(5)) ** n / (2 ** n * sqrt(5))
-# sortie :
-print(x)
-</script></div> On en déduit que \(F_{50}=12\,586\,269\,025\text{.}\)</p>
-<span class="incontext"><a href="fibonacci.html#p-304">Contexte</a></span>
+<p>On s'intéresse à la fonction qui suit.<pre class="code-block tex2jax_ignore">def maFonction(x, liste):
+    i = 0
+    n = len(liste)
+    while i &lt; n and liste[i] != x:
+        i = i + 1
+    return i
+</pre></p>
+<span class="incontext"><a href="exercicescomplexite.html#p-304">Contexte</a></span>
 </body>
 </html>

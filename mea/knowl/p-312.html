@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:22-05:00    *-->
+<!--*    on 2021-03-01T08:57:25-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Quoique moins rapide que la formule de Binet, cet algorithme a le mérite de donner des valeurs exactes de \(F_n\) pour des valeurs de \(n\) plus nombreuses. Et si on tient compte de la complexité de l'addition utilisée dans l'approche itérative utilisée dans l'exercice <a class="xref" data-knowl="./knowl/fibo_iterative.html" title="Exercice 1.4.12">1.4.12</a>, il s'avère plus rapide que cette dernière.</p>
-<span class="incontext"><a href="fibonacci.html#p-312">Contexte</a></span>
+<p>Cela prend 5 multiplications pour calculer</p>
+<div class="displaymath">
+\begin{align*}
+&amp;3^2=3\cdot 3=9,\\
+&amp;3^4=3^2\cdot 3^2=81,\\
+&amp;3^8=3^4\cdot 3^4=6\,561,\\
+&amp;3^{16}=3^8\cdot 3^8=43\,046\,721,\\
+&amp;3^{32}=3^{16}\cdot 3^{16}=1\,853\,020\,188\,851\,841,
+\end{align*}
+</div>
+<p data-braille="continuation">et 3 de plus pour calculer</p>
+<div class="displaymath">
+\begin{align*}
+3^{45}&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32},\\
+&amp;=3\cdot 81\cdot 6\,561\cdot 1\,853\,020\,188\,851\,841,\\
+&amp;=2\,954\,312\,706\,550\,833\,698\,643.
+\end{align*}
+</div>
+<span class="incontext"><a href="exercicescomplexite.html#p-312">Contexte</a></span>
 </body>
 </html>

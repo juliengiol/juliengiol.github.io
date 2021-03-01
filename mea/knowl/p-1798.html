@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:12:08-05:00    *-->
+<!--*    on 2021-03-01T08:59:45-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,34 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La première ligne de cette identité matricielle donne</p>
+<p>Pour calculer \(\text{PGCD}(a;b)\) tout en l'exprimant comme combinaison linéaire de \(a\) et de \(b\text{,}\) on construit les suites finies</p>
 <div class="displaymath">
 \begin{equation*}
-(-31)\cdot 2589+343\cdot 234=3,
+\{r_n\},\;\{u_n\},\;\{v_n\},\;\{q_n\}
 \end{equation*}
 </div>
-<p data-braille="continuation">soit</p>
+<p data-braille="continuation">définies par les valeurs initiales</p>
 <div class="displaymath">
 \begin{equation*}
-2589u+234v=3\quad\text{avec }(u;v)=(-31;343).
+\left\{
+\begin{array}{lll}
+r_0=a,&amp;u_0=1,&amp;v_0=0,\\
+r_1=b,&amp;u_1=0,&amp;v_1=1,
+\end{array}\right.
 \end{equation*}
 </div>
-<span class="incontext"><a href="exerciceseuclide.html#p-1798">Contexte</a></span>
+<p data-braille="continuation">et les relations de récurrence</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+q_n=r_{n-1}\,//\,r_n,\\
+r_{n+1}=r_{n-1}-r_n\cdot q_n,\\
+u_{n+1}=u_{n-1}-u_n\cdot q_n,\\
+v_{n+1}=v_{n-1}-v_n\cdot q_n
+\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(n\geq 1\) jusqu'à ce qu'on tombe sur \(r_{k+1}=0\text{.}\)</p>
+<span class="incontext"><a href="presentationbezout.html#p-1798">Contexte</a></span>
 </body>
 </html>

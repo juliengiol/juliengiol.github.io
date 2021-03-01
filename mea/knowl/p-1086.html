@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:10:51-05:00    *-->
+<!--*    on 2021-03-01T08:58:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La forme de Newton du polynôme interpolateur de ces quatre points s'écrit</p>
+<p>Calculons les différences divisées des trois points :</p>
 <div class="displaymath">
-\begin{align*}
-N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)+d_3(t-x_0)(t-x_1)(t-x_2)\\
-&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2)+d_3(t-1)(t-2)(t-3).
-\end{align*}
+\begin{equation*}
+\begin{array}{c|ccc}
+x_i&amp;y_i\\
+\hline\\
+-2&amp;-2&amp;&amp;\\
+&amp;&amp;\frac{2+2}{-1+2}=4&amp;\\
+-1&amp;2&amp;&amp;\frac{\frac{5}{6}-4}{5+2}=-\frac{19}{42}\\
+&amp;&amp;\frac{7-2}{5+1}=\frac{5}{6}&amp;\\
+5&amp;7&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">Donc</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=-2+4(t+2)-\frac{19}{42}(t+2)(t+1).
+\end{equation*}
 </div>
 <span class="incontext"><a href="exercicesdiffdiv.html#p-1086">Contexte</a></span>
 </body>

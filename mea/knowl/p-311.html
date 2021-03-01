@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:22-05:00    *-->
+<!--*    on 2021-03-01T08:57:25-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,45 +10,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Évaluez le code suivant pour calculer \(F_{50}\) à l'aide d'une exponentiation matricielle rapide implémentée en Python à l'aide de NumPy. <div class="sagecell-python" id="sage-49"><script type="text/x-sage"># entrée :
-n = 49
-# instructions :
-import numpy as np
-M = np.array([[1,1], [1,0]])
-
-def puissanceRecursive(M, n):
-    if n == 1:
-        return M
-    elif n % 2 == 0:
-        return puissanceRecursive(M.dot(M.T), n / 2)
-    else:
-        N = puissanceRecursive(M.dot(M.T), (n - 1) / 2)
-        return M.dot(N.T)
-
-N = puissanceRecursive(M, n)
-# sortie :
-print(N)
-</script></div> On en déduit à nouveau que \(F_{50}=12\,586\,269\,025\text{.}\)</p>
-<span class="incontext"><a href="fibonacci.html#p-311">Contexte</a></span>
+<p>Voici les étapes de l'algorithme :</p>
+<div class="displaymath">
+\begin{align*}
+3^{45}&amp;=3\cdot\left(3^2\right)^{22},\\
+&amp;=3\cdot\left(3^4\right)^{11},\\
+&amp;=3\cdot 3^4\cdot\left(3^8\right)^5,\\
+&amp;=3\cdot 3^4\cdot 3^8\cdot\left(3^{16}\right)^2,\\
+&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32}.
+\end{align*}
+</div>
+<span class="incontext"><a href="exercicescomplexite.html#p-311">Contexte</a></span>
 </body>
 </html>

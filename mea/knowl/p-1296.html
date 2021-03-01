@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:11:12-05:00    *-->
+<!--*    on 2021-03-01T08:59:01-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Soit \(n\geq 1\) un entier et soit</p>
+<p>Il en découle qu'on peut prendre \(M=2\) en appliquant le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> :</p>
 <div class="displaymath">
-\begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
-\end{equation*}
+\begin{align*}
+\left|\text{Erreur}\right|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{2\cdot(1-0)^3}{12\cdot 4^2}\\
+&amp;=\frac{1}{6\cdot 16}\\
+&amp;=0{,}010\,4\ldots\\
+&amp;\leq 0{,}011
+\end{align*}
 </div>
-<p data-braille="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{equation*}
-\Delta x=\frac{b-a}{n}.
+-0{,}011\leq\text{Erreur}\leq 0{,}011.
 \end{equation*}
 </div>
 <span class="incontext"><a href="presentationtrapezes.html#p-1296">Contexte</a></span>

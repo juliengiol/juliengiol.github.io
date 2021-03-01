@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:19-05:00    *-->
+<!--*    on 2021-03-01T08:57:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,20 +10,37 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :</p>
-<div class="displaymath">
-\begin{equation*}
-x^n=
-\begin{cases}
-x&amp;\text{ si }n=1,\\
-\left(x^2\right)^{n/2}&amp;\text{ si }n\text{ est pair,}\\
-x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
-\end{cases}
-\end{equation*}
-</div>
-<span class="incontext"><a href="exponentiation.html#p-272">Contexte</a></span>
+<p>Voici une implémentation itérative de la méthode de Horner. <div class="sagecell-python" id="sage-47"><script type="text/x-sage"># entrées :
+n = 3
+coefficients = [10, 7, 3, 5]
+x = 9
+# instructions :
+valeur = coefficients[n]
+for j in range(1, n+1):
+    valeur = coefficients[n-j] + x * valeur
+# sortie :
+print(valeur)
+</script></div></p>
+<span class="incontext"><a href="horner.html#p-272">Contexte</a></span>
 </body>
 </html>

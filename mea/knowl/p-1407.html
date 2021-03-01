@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:11:28-05:00    *-->
+<!--*    on 2021-03-01T08:59:13-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Ceci explique rigoureusement d'où sort la formule donnant l'approximation dans la méthode des trapèzes.</p>
-<span class="incontext"><a href="exercicestrapezes.html#p-1407">Contexte</a></span>
+<p>Alors l'erreur d'approximation par la méthode des trapèzes</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)}_{\text{Approximation}}
+\end{equation*}
+</div>
+<p data-braille="continuation">vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\leq\frac{M(b-a)^5}{2880n^4}
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(M\) est n'importe quel nombre tel que</p>
+<div class="displaymath">
+\begin{equation*}
+|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\end{equation*}
+</div>
+<span class="incontext"><a href="presentationsimpson.html#p-1407">Contexte</a></span>
 </body>
 </html>

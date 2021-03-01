@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:12:19-05:00    *-->
+<!--*    on 2021-03-01T08:59:55-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,32 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Comme \(a\vert bc\text{,}\) il existe \(d\in\mathbb{Z}\) tel que</p>
+<p>Sinon, notons \(\text{PGCD}(a;b)=d\text{.}\) Comme \(d\) divise \(a\) et \(b\text{,}\) il existe deux entiers relatifs \(a_0, b_0\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
-bc=ad.
+a=da_0\quad\text{et}\quad b=db_0
 \end{equation*}
 </div>
-<p data-braille="continuation">Et comme \(\text{PGCD}(a;b)=1\text{,}\) il existe \((u;v)\in\mathbb{Z}^2\) tel que</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{equation*}
-au+bv=1.
+r=\frac{a}{b}=\frac{da_0}{db_0}=\frac{a_0}{b_0}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Il ne reste plus qu'à montrer que \(\text{PGCD}(a_0;b_0)=1\text{.}\) On commence par appliquer Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a> :</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(a;b)=d\quad\Rightarrow\quad\exists(u;v)\in\mathbb{Z}^2,\;au+bv=d.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccr}
+au+bv=d&amp;\quad\Rightarrow\quad&amp;da_0u+db_0v=d&amp;\\
+&amp;\quad\Rightarrow\quad&amp;a_0u+b_0v=1&amp;\text{ par division par }d\\
+&amp;\quad\Rightarrow\quad&amp;\text{PGCD}(a_0;b_0)=1&amp;\text{ par Bézout.}\\
+\end{array}
 \end{equation*}
 </div>
 <span class="incontext"><a href="exercicesbezout.html#p-1915">Contexte</a></span>

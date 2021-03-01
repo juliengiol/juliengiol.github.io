@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:08:53-05:00    *-->
+<!--*    on 2021-03-01T08:57:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La célèbre <a class="external" href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse" target="_blank">conjecture de Syracuse</a> (ou Collatz, ou Ulam, ou 3x+1, ...) prédit qu'une telle suite finit toujours par tomber sur \(1\text{,}\) quel que soit l'entier positif dont on parte. Mais personne n'a encore réussi à le démontrer.</p>
+<p>Il s'agit de la liste</p>
+<div class="displaymath">
+\begin{equation*}
+31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55.
+\end{equation*}
+</div>
+<p data-braille="continuation">On peut l'afficher grâce à l'un ou l'autre des blocs de code qui suivent.</p>
+<ol class="decimal">
+<li><pre class="code-block tex2jax_ignore">for k in range(15, 27+1):
+    print(2 * k + 1)
+</pre></li>
+<li><pre class="code-block tex2jax_ignore">k = 31
+while k &lt; 56:
+    print(k)
+    k = k + 2
+</pre></li>
+</ol>
 <span class="incontext"><a href="exercicesassignetc.html#p-114">Contexte</a></span>
 </body>
 </html>

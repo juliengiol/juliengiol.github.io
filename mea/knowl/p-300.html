@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:21-05:00    *-->
+<!--*    on 2021-03-01T08:57:24-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,50 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Étant donné la définition <a class="xref" data-knowl="./knowl/defi_fibo.html" title="Définition 3.4.2">3.4.2</a>, il suffit de vérifier que</p>
-<div class="displaymath">
-\begin{equation*}
-G_n:=\left(\phi_+^n-\phi_-^n\right)/\sqrt{5}
-\end{equation*}
-</div>
-<p data-braille="continuation">satisfait</p>
-<div class="displaymath">
-\begin{equation*}
-G_1=G_2=1\quad\text{et}\quad G_n=G_{n-1}+G_{n-2}\quad\text{pour tout}\;n\geq 3.
-\end{equation*}
-</div>
-<ul class="disc">
-<li>
-<p>On voit tout de suite que</p>
-<div class="displaymath">
-\begin{equation*}
-\sqrt{5}\,G_1=\phi_+-\phi_-=\sqrt{5}
-\end{equation*}
-</div>
-<p data-braille="continuation">et que</p>
-<div class="displaymath">
-\begin{equation*}
-\sqrt{5}\,G_2=\phi_+^2-\phi_-^2=\left(\phi_+-\phi_-\right)\left(\phi_++\phi_-\right)=\sqrt{5}\cdot 1=\sqrt{5},
-\end{equation*}
-</div>
-<p data-braille="continuation">d'où \(G_1=G_2=1\text{.}\)</p>
-</li>
-<li>
-<p>Pour la relation de récurrence, on a</p>
-<div class="displaymath">
-\begin{align*}
-\sqrt{5}\,G_{n-1}+\sqrt{5}\,G_{n-2}&amp;=\phi_+^{n-1}-\phi_-^{n-1}+\phi_+^{n-2}-\phi_-^{n-2}\\
-&amp;=\phi_+^{n-1}\cdot 1-\phi_+^{n-2}\cdot(-1)-\phi_-^{n-1}\cdot 1+\phi_-^{n-2}\cdot(-1)\\
-&amp;=\phi_+^{n-1}\cdot\left(\phi_++\phi_-\right)-\phi_+^{n-2}\cdot\left(\phi_+\phi_-\right)\\
-&amp;\quad\quad-\phi_-^{n-1}\cdot\left(\phi_++\phi_-\right)+\phi_-^{n-2}\cdot\left(\phi_+\phi_-\right)\\
-&amp;=\phi_+^n+\cancel{\phi_+^{n-1}\phi_-}-\cancel{\phi_+^{n-1}\phi_-}\\
-&amp;\quad\quad-\bcancel{\phi_-^{n-1}\phi_+}-\phi_-^n+\bcancel{\phi_-^{n-1}\phi_+}\\
-&amp;=\sqrt{5}\,G_n,
-\end{align*}
-</div>
-<p data-braille="continuation">d'où \(G_n=G_{n-1}+G_{n-2}\) pour tout \(n\ge 3\text{.}\)</p>
-</li>
-</ul>
-<span class="incontext"><a href="fibonacci.html#p-300">Contexte</a></span>
+<p>Combien vaut \(T(5)\text{?}\)</p>
+<span class="incontext"><a href="exercicescomplexite.html#p-300">Contexte</a></span>
 </body>
 </html>

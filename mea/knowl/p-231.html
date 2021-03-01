@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:13-05:00    *-->
+<!--*    on 2021-03-01T08:57:20-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Testez votre code avec <code class="code-inline tex2jax_ignore">print(syracusej(14, 20))</code> qui doit afficher \(\text{1}\text{.}\)</p>
+<p>On obtient</p>
+<div class="displaymath">
+\begin{equation*}
+F_{20}=6765
+\end{equation*}
+</div>
+<p data-braille="continuation">à l'aide du code qui suit.<pre class="code-block tex2jax_ignore">def fibonacci(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(20))
+</pre></p>
 <span class="incontext"><a href="exercicesfonctions.html#p-231">Contexte</a></span>
 </body>
 </html>

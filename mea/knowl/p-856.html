@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:10:23-05:00    *-->
+<!--*    on 2021-03-01T08:58:18-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Remarque : Cette question revient à essayer de faire passer une droite par trois points non alignés. Il n'est donc pas surprenant qu'on n'ait pas trouvé de solution.</p>
+<p>La forme de Lagrange du polynôme interpolateur est donnée par</p>
+<div class="displaymath">
+\begin{align*}
+L(t)&amp;=y_0L_0(t)+y_1L_1(t)+y_2L_2(t)\\
+&amp;=4\cdot L_0(t)+0\cdot L_1(t)+(-1)\cdot L_2(t)\\
+&amp;=4\cdot L_0(t)-L_2(t)
+\end{align*}
+</div>
+<p data-braille="continuation">où</p>
+<div class="displaymath">
+\begin{align*}
+L_0(t)&amp;=\frac{(t-x_1)(t-x_2)}{(x_0-x_1)(x_0-x_2)}\\
+&amp;=\frac{(t-2)(t-5)}{(-1-2)(-1-5)}\\
+&amp;=\frac{1}{18}(t-2)(t-5)
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+L_2(t)&amp;=\frac{(t-x_0)(t-x_1)}{(x_2-x_0)(x_2-x_1)}\\
+&amp;=\frac{(t+1)(t-2)}{(5+1)(5-2)}\\
+&amp;=\frac{1}{18}(t+1)(t-2).
+\end{align*}
+</div>
 <span class="incontext"><a href="exerciceslagrange.html#p-856">Contexte</a></span>
 </body>
 </html>

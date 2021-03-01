@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:11:19-05:00    *-->
+<!--*    on 2021-03-01T08:59:09-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voici la subdivision régulière de l'intervalle \([2;4]\) en quatre sous-intervalles de même longueur :</p>
-<div class="displaymath">
-\begin{equation*}
-2&lt;2{,}5&lt;3&lt;3{,}5&lt;4.
-\end{equation*}
-</div>
-<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
+<p>D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=6\text{,}\) on a</p>
 <div class="displaymath">
 \begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(g(2)+2g(2{,}5)+2g(3)+2g(3{,}5)+g(4)\right)\\
-=\;&amp;0{,}25\cdot\left(\cos\left(\frac{2^3}{5}\right)+2\cos\left(\frac{2{,}5^3}{5}\right)+2\cos\left(\frac{3^3}{5}\right)\right.\\
-&amp;\qquad\qquad\left.+2\cos\left(\frac{3{,}5^3}{5}\right)+\cos\left(\frac{4^3}{5}\right)\right)\\
-\approx\;&amp;-0{,}277.
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6\cdot(1-0)^3}{12\cdot 5^2}\\
+&amp;=0{,}02
 \end{align*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+-0{,}020\leq\text{Erreur}\leq 0{,}020.
+\end{equation*}
 </div>
 <span class="incontext"><a href="exercicestrapezes.html#p-1364">Contexte</a></span>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:07:05-05:00    *-->
+<!--*    on 2021-03-01T08:56:16-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -233,29 +233,29 @@ MathJax.Hub.Config({
 </h2>
 <a href="fibonacci.html" class="permalink">¶</a><article class="problem example-like" id="problemefibonacci"><a data-knowl="" class="id-ref original" data-refid="hk-problemefibonacci"><h6 class="heading">
 <span class="type">Problème</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-problemefibonacci"><article class="problem example-like"><p id="p-291">Comment utiliser efficacement l'ordinateur pour calculer les nombres de Fibonacci?</p></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-problemefibonacci"><article class="problem example-like"><p id="p-274">Comment utiliser efficacement l'ordinateur pour calculer les nombres de Fibonacci?</p></article></div>
 <article class="definition definition-like" id="defi_fibo"><h6 class="heading">
 <span class="type">Définition</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span>
 </h6>
-<p id="p-292">La suite de Fibonacci est définie par récurrence de la façon suivante :</p>
+<p id="p-275">La suite de Fibonacci est définie par récurrence de la façon suivante :</p>
 <div class="displaymath">
 \begin{equation*}
 F_1=F_2=1\quad\text{et}\quad F_n=F_{n-1}+F_{n-2}\quad\text{pour tout}\;n\geq 3.
 \end{equation*}
-</div></article><p id="p-293">L'algorithme récursif naïf implémenté à l'exercice <a class="xref" data-knowl="./knowl/fibo_recursive.html" title="Exercice 2.3.12">2.3.12</a> a une complexité exponentielle, c'est pourquoi cela prend déjà un temps terriblement long pour calculer \(F_{100}\) de cette façon.</p>
-<p id="p-294">L'algorithme itératif implémenté à l'exercice <a class="xref" data-knowl="./knowl/fibo_iterative.html" title="Exercice 1.4.12">1.4.12</a> est bien meilleur étant donné que sa complexité s'avère linéaire.</p>
-<p id="p-295">Mais on peut mieux faire : nous allons maintenant calculer \(F_{50}\) à l'aide de deux autres algorithmes qui peuvent être plus avantageux, dépendant du contexte et des buts cherchés.</p>
+</div></article><p id="p-276">L'algorithme récursif naïf implémenté à l'exercice <a class="xref" data-knowl="./knowl/fibo_recursive.html" title="Exercice 2.3.12">2.3.12</a> a une complexité exponentielle, c'est pourquoi cela prend déjà un temps terriblement long pour calculer \(F_{100}\) de cette façon.</p>
+<p id="p-277">L'algorithme itératif implémenté à l'exercice <a class="xref" data-knowl="./knowl/fibo_iterative.html" title="Exercice 1.4.12">1.4.12</a> est bien meilleur étant donné que sa complexité s'avère linéaire.</p>
+<p id="p-278">Mais on peut mieux faire : nous allons maintenant calculer \(F_{50}\) à l'aide de deux autres algorithmes qui peuvent être plus avantageux, dépendant du contexte et des buts cherchés.</p>
 <article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">Algorithme 1 : Formule de Binet.</span></h5>
-<p id="p-296">Comme \((F_n)\) est une <a class="external" href="https://fr.wikipedia.org/wiki/Suite_r%C3%A9currente_lin%C3%A9aire" target="_blank">suite récurrente linéaire</a>, il est possible d'exprimer son terme général à l'aide d'une formule explicite.</p>
-<aside class="aside aside-like" id="aside-16"><p id="p-297">Cette formule est due à <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Binet/" target="_blank">Jacques Binet</a>, qui découvrit également les règles de calcul du produit matriciel.</p></aside><article class="theorem theorem-like" id="fibo_binet"><h6 class="heading">
+<p id="p-279">Comme \((F_n)\) est une <a class="external" href="https://fr.wikipedia.org/wiki/Suite_r%C3%A9currente_lin%C3%A9aire" target="_blank">suite récurrente linéaire</a>, il est possible d'exprimer son terme général à l'aide d'une formule explicite.</p>
+<article class="theorem theorem-like" id="fibo_binet"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
 </h6>
-<p id="p-298">Pour tout \(n\ge 3\text{,}\) on a</p>
+<p id="p-280">Pour tout \(n\ge 3\text{,}\) on a</p>
 <div class="displaymath">
 \begin{equation*}
 F_n=\frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}-\frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-299">Notons</p>
+</div></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-281">Notons</p>
 <div class="displaymath">
 \begin{equation*}
 \phi_+:=\frac{1+\sqrt{5}}{2}\quad\text{et}\quad\phi_-:=\frac{1-\sqrt{5}}{2},
@@ -267,7 +267,7 @@ F_n=\frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}-\frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}.
 \phi_++\phi_-=1,\quad\phi_+-\phi_-=\sqrt{5}\quad\text{et}\quad\phi_+\phi_-=-1.
 \end{equation*}
 </div>
-<p id="p-300">Étant donné la définition <a class="xref" data-knowl="./knowl/defi_fibo.html" title="Définition 3.4.2">3.4.2</a>, il suffit de vérifier que</p>
+<p id="p-282">Étant donné la définition <a class="xref" data-knowl="./knowl/defi_fibo.html" title="Définition 3.4.2">3.4.2</a>, il suffit de vérifier que</p>
 <div class="displaymath">
 \begin{equation*}
 G_n:=\left(\phi_+^n-\phi_-^n\right)/\sqrt{5}
@@ -281,7 +281,7 @@ G_1=G_2=1\quad\text{et}\quad G_n=G_{n-1}+G_{n-2}\quad\text{pour tout}\;n\geq 3.
 </div>
 <ul class="disc">
 <li id="li-117">
-<p id="p-301">On voit tout de suite que</p>
+<p id="p-283">On voit tout de suite que</p>
 <div class="displaymath">
 \begin{equation*}
 \sqrt{5}\,G_1=\phi_+-\phi_-=\sqrt{5}
@@ -296,7 +296,7 @@ G_1=G_2=1\quad\text{et}\quad G_n=G_{n-1}+G_{n-2}\quad\text{pour tout}\;n\geq 3.
 <p data-braille="continuation">d'où \(G_1=G_2=1\text{.}\)</p>
 </li>
 <li id="li-118">
-<p id="p-302">Pour la relation de récurrence, on a</p>
+<p id="p-284">Pour la relation de récurrence, on a</p>
 <div class="displaymath">
 \begin{align*}
 \sqrt{5}\,G_{n-1}+\sqrt{5}\,G_{n-2}&amp;=\phi_+^{n-1}-\phi_-^{n-1}+\phi_+^{n-2}-\phi_-^{n-2}\\
@@ -311,7 +311,7 @@ G_1=G_2=1\quad\text{et}\quad G_n=G_{n-1}+G_{n-2}\quad\text{pour tout}\;n\geq 3.
 <p data-braille="continuation">d'où \(G_n=G_{n-1}+G_{n-2}\) pour tout \(n\ge 3\text{.}\)</p>
 </li>
 </ul></article></div>
-<p id="p-303">Dans cette formule, seul le premier terme importe vraiment. En effet, comme</p>
+<p id="p-285">Dans cette formule, seul le premier terme importe vraiment. En effet, comme</p>
 <div class="displaymath">
 \begin{equation*}
 \left|\frac{1-\sqrt{5}}{2}\right|\approx 0{,}62,
@@ -329,7 +329,7 @@ G_1=G_2=1\quad\text{et}\quad G_n=G_{n-1}+G_{n-2}\quad\text{pour tout}\;n\geq 3.
 \frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}.
 \end{equation*}
 </div>
-<p id="p-304">Évaluez le code suivant pour calculer \(F_{50}\) à l'aide de la formule de Binet. <div class="sagecell-python" id="sage-48"><script type="text/x-sage"># entrée :
+<p id="p-286">Évaluez le code suivant pour calculer \(F_{50}\) à l'aide de la formule de Binet. <div class="sagecell-python" id="sage-48"><script type="text/x-sage"># entrée :
 n = 50
 # instructions :
 from math import sqrt
@@ -337,20 +337,20 @@ x = (1 + sqrt(5)) ** n / (2 ** n * sqrt(5))
 # sortie :
 print(x)
 </script></div> On en déduit que \(F_{50}=12\,586\,269\,025\text{.}\)</p>
-<p id="p-305">A priori, il n'y a pas mieux qu'une formule explicite. Pourtant, la nature de celle-ci fait en sorte que des erreurs d'arrondis liées à la présence de \(\sqrt{5}\) la rendent vite inutile pour obtenir la valeur exacte de l'entier \(F_n\text{.}\)</p></article><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Algorithme 2 : Exponentiation matricielle rapide.</span></h5>
-<p id="p-306">Nous allons maintenant transformer l'évaluation d'un terme de la suite \((F_n)\) en un problème d'exponentiation grâce au calcul matriciel.</p>
+<p id="p-287">A priori, il n'y a pas mieux qu'une formule explicite. Pourtant, la nature de celle-ci fait en sorte que des erreurs d'arrondis liées à la présence de \(\sqrt{5}\) la rendent vite inutile pour obtenir la valeur exacte de l'entier \(F_n\text{.}\)</p></article><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Algorithme 2 : Exponentiation matricielle rapide.</span></h5>
+<p id="p-288">Nous allons maintenant transformer l'évaluation d'un terme de la suite \((F_n)\) en un problème d'exponentiation grâce au calcul matriciel.</p>
 <article class="theorem theorem-like" id="fibo_matriciel"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span>
 </h6>
-<p id="p-307">Pour tout \(n\ge 3\text{,}\) on a</p>
+<p id="p-289">Pour tout \(n\ge 3\text{,}\) on a</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-308">Nous allons établir cette formule à l'aide d'une preuve par récurrence.</p>
+</div></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-290">Nous allons établir cette formule à l'aide d'une preuve par récurrence.</p>
 <ul class="disc">
 <li id="li-119">
-<p id="p-309">Pour \(n=3\text{,}\)  on a</p>
+<p id="p-291">Pour \(n=3\text{,}\)  on a</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^2=\begin{bmatrix}2&amp;1\\1&amp;1\end{bmatrix},
@@ -364,7 +364,7 @@ print(x)
 </div>
 </li>
 <li id="li-120">
-<p id="p-310">Supposons que pour un certain entier \(n\ge 3\) on ait</p>
+<p id="p-292">Supposons que pour un certain entier \(n\ge 3\) on ait</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}.
@@ -393,7 +393,7 @@ F_n+F_{n-1}=F_{n+1}\quad\text{et}\quad F_{n-1}+F_{n-2}=F_n.
 <p data-braille="continuation">La propriété est donc vraie pour \(n+1\text{,}\) ce qui achève la démonstration.</p>
 </li>
 </ul></article></div>
-<p id="p-311">Évaluez le code suivant pour calculer \(F_{50}\) à l'aide d'une exponentiation matricielle rapide implémentée en Python à l'aide de NumPy. <div class="sagecell-python" id="sage-49"><script type="text/x-sage"># entrée :
+<p id="p-293">Évaluez le code suivant pour calculer \(F_{50}\) à l'aide d'une exponentiation matricielle rapide implémentée en Python à l'aide de NumPy. <div class="sagecell-python" id="sage-49"><script type="text/x-sage"># entrée :
 n = 49
 # instructions :
 import numpy as np
@@ -412,8 +412,8 @@ N = puissanceRecursive(M, n)
 # sortie :
 print(N)
 </script></div> On en déduit à nouveau que \(F_{50}=12\,586\,269\,025\text{.}\)</p>
-<p id="p-312">Quoique moins rapide que la formule de Binet, cet algorithme a le mérite de donner des valeurs exactes de \(F_n\) pour des valeurs de \(n\) plus nombreuses. Et si on tient compte de la complexité de l'addition utilisée dans l'approche itérative utilisée dans l'exercice <a class="xref" data-knowl="./knowl/fibo_iterative.html" title="Exercice 1.4.12">1.4.12</a>, il s'avère plus rapide que cette dernière.</p>
-<p id="p-313">Atttention : Notez toutefois que cette implémentation pose un problème à partir de \(n=92\text{.}\) Pour aller plus loin sans erreur, on peut <a class="external" href="https://tinyurl.com/43r32vwy" target="_blank">utiliser Sage</a>, par exemple.</p></article></section></div></main>
+<p id="p-294">Quoique moins rapide que la formule de Binet, cet algorithme a le mérite de donner des valeurs exactes de \(F_n\) pour des valeurs de \(n\) plus nombreuses. Et si on tient compte de la complexité de l'addition utilisée dans l'approche itérative utilisée dans l'exercice <a class="xref" data-knowl="./knowl/fibo_iterative.html" title="Exercice 1.4.12">1.4.12</a>, il s'avère plus rapide que cette dernière.</p>
+<p id="p-295">Atttention : Notez toutefois que cette implémentation pose un problème à partir de \(n=92\text{.}\) Pour aller plus loin sans erreur, on peut <a class="external" href="https://tinyurl.com/43r32vwy" target="_blank">utiliser Sage</a>, par exemple.</p></article></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;

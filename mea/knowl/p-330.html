@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:24-05:00    *-->
+<!--*    on 2021-03-01T08:57:27-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,46 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Cela prend 5 multiplications pour calculer</p>
+<p>Exécutez l'algorithme de Horner à la main pour calculer \(P(3)\text{.}\)</p>
+<ol class="decimal">
+<li>
 <div class="displaymath">
-\begin{align*}
-&amp;3^2=3\cdot 3=9,\\
-&amp;3^4=3^2\cdot 3^2=81,\\
-&amp;3^8=3^4\cdot 3^4=6\,561,\\
-&amp;3^{16}=3^8\cdot 3^8=43\,046\,721,\\
-&amp;3^{32}=3^{16}\cdot 3^{16}=1\,853\,020\,188\,851\,841,
-\end{align*}
+\begin{equation*}
+\begin{array}{lcl}
+\text{Étape 0 :}&amp;valeur&amp;=&amp;4\\
+\text{Étape 1 :}&amp;valeur&amp;=&amp;7+3\cdot 4=19\\
+\text{Étape 2 :}&amp;valeur&amp;=&amp;2+3\cdot 19=59
+\end{array}
+\end{equation*}
 </div>
-<p data-braille="continuation">et 3 de plus pour calculer</p>
+<p>Donc \(P(3)=59\text{.}\)</p>
+</li>
+<li>
 <div class="displaymath">
-\begin{align*}
-3^{45}&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32},\\
-&amp;=3\cdot 81\cdot 6\,561\cdot 1\,853\,020\,188\,851\,841,\\
-&amp;=2\,954\,312\,706\,550\,833\,698\,643.
-\end{align*}
+\begin{equation*}
+\begin{array}{lcl}
+\text{Étape 0 :}&amp;valeur&amp;=&amp;4\\
+\text{Étape 1 :}&amp;valeur&amp;=&amp;-7+3\cdot 4=5\\
+\text{Étape 2 :}&amp;valeur&amp;=&amp;-2+3\cdot 5=13
+\end{array}
+\end{equation*}
 </div>
+<p>Donc \(P(3)=13\text{.}\)</p>
+</li>
+<li>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{lcl}
+\text{Étape 0 :}&amp;valeur&amp;=&amp;-5\\
+\text{Étape 1 :}&amp;valeur&amp;=&amp;0+3\cdot(-5)=-15\\
+\text{Étape 2 :}&amp;valeur&amp;=&amp;2+3\cdot(-15)=-43\\
+\text{Étape 3 :}&amp;valeur&amp;=&amp;-1+3\cdot(-43)=-130
+\end{array}
+\end{equation*}
+</div>
+<p>Donc \(P(3)=-130\text{.}\)</p>
+</li>
+</ol>
 <span class="incontext"><a href="exercicescomplexite.html#p-330">Contexte</a></span>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <interactive xml:id="interactive_bissection" platform="sage" width="100%" aspect="17:24">
     <slate surface="sage">
       @interact
-      def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 2, width = 30), a = input_box(label = html(r'\(a\)'), default = -4, width = 10), b = input_box(label = html(r'\(b\)'), default = -1, width = 10), n = slider(1, 10, 1, 2, label = html(r'\(n\)'))):
+      def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 2, width = 30), a = input_box(label = html(r'\(a\)'), default = -4, width = 10), b = input_box(label = html(r'\(b\)'), default = -1, width = 10), n = input_box(label = html(r'\(n\)'), default = 3, width = 10)):
           f(x) = f
           borne_gauche = a
           borne_droite = b
@@ -180,12 +180,6 @@
   </statement>
 </example>
 
-<aside>
-  <p>
-    Cet algorithme est aussi connu sous le nom de <url href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_dichotomie">méthode de dichotomie</url>.
-    Son principe est analogue à celui d'une recherche aléatoire dans le dictionnaire.
-  </p>
-</aside>
 <assemblage>
   <title>Méthode de la bissection : Encadrer un zéro en coupant des intervalles en deux</title>
   <p>
@@ -268,9 +262,6 @@
     <p>Notons enfin que <m>c=\sqrt{2}\approx 1{,}414\,214</m> et que l'encadrement ci-dessus ne fournit pas davantage que la première décimale du zéro <m>c</m>.</p>
   </statement>
 </example>
-<aside>
-  <p>La lenteur est le principal défaut de cet algorithme qui, à part ça, s'avère très <url href="https://en.wikipedia.org/wiki/Robustness_%28computer_science%29">robuste</url>.</p>
-</aside>
 
 </section>
 
@@ -790,12 +781,6 @@
     </p>
   </solution>
 </exercise>
-<aside>
-  <p>
-    La méthode de la fausse position étudiée dans l'exercice <xref ref="fausse_position"/> s'apelle aussi méthode regula falsi.
-    On trouve sa trace dans des documents aussi anciens que le <url href="https://fr.wikipedia.org/wiki/Papyrus_Berlin_6619">Papyrus Berlin 6619</url> de l'Égypte antique.
-  </p>
-</aside>
 
 </section>
 

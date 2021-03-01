@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:20-05:00    *-->
+<!--*    on 2021-03-01T08:57:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Reprenons l'exemple ci-dessus et notons que par factorisations successives de \(x\text{,}\) on obtient</p>
+<p>Pour la relation de récurrence, on a</p>
 <div class="displaymath">
 \begin{align*}
-P(x)&amp;=10+7x+3x^2+5x^3\\
-&amp;=10+x\cdot(7+3x+5x^2)\\
-&amp;=10+x\cdot(7+x\cdot(3+x\cdot 5)).
+\sqrt{5}\,G_{n-1}+\sqrt{5}\,G_{n-2}&amp;=\phi_+^{n-1}-\phi_-^{n-1}+\phi_+^{n-2}-\phi_-^{n-2}\\
+&amp;=\phi_+^{n-1}\cdot 1-\phi_+^{n-2}\cdot(-1)-\phi_-^{n-1}\cdot 1+\phi_-^{n-2}\cdot(-1)\\
+&amp;=\phi_+^{n-1}\cdot\left(\phi_++\phi_-\right)-\phi_+^{n-2}\cdot\left(\phi_+\phi_-\right)\\
+&amp;\quad\quad-\phi_-^{n-1}\cdot\left(\phi_++\phi_-\right)+\phi_-^{n-2}\cdot\left(\phi_+\phi_-\right)\\
+&amp;=\phi_+^n+\cancel{\phi_+^{n-1}\phi_-}-\cancel{\phi_+^{n-1}\phi_-}\\
+&amp;\quad\quad-\bcancel{\phi_-^{n-1}\phi_+}-\phi_-^n+\bcancel{\phi_-^{n-1}\phi_+}\\
+&amp;=\sqrt{5}\,G_n,
 \end{align*}
 </div>
-<p data-braille="continuation">Vue comme ça, l'évaluation de \(P(x)\) ne requiert plus que trois additions et trois multiplications, soit six opérations.</p>
-<span class="incontext"><a href="horner.html#p-284">Contexte</a></span>
+<p data-braille="continuation">d'où \(G_n=G_{n-1}+G_{n-2}\) pour tout \(n\ge 3\text{.}\)</p>
+<span class="incontext"><a href="fibonacci.html#p-284">Contexte</a></span>
 </body>
 </html>

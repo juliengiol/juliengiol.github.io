@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:10:39-05:00    *-->
+<!--*    on 2021-03-01T08:58:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La forme de Newton du polynôme interpolateur est alors passée de</p>
+<p>pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n-j}\text{,}\)</p>
+<ul class="disc">
+<li>
+<p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
 <div class="displaymath">
 \begin{equation*}
-N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)
+\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;
 \end{equation*}
 </div>
-<p data-braille="continuation">à</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)+\frac{29}{6}(t-1)(t-2)(t-3).
-\end{equation*}
-</div>
-<span class="incontext"><a href="presentationdiffdiv.html#p-1014">Contexte</a></span>
+</li>
+<li><p>ajouter la nouvelle différence divisée \(\text{nouvelleDiffDiv}\) à la liste \(\text{nouvelleColonne}\) ;</p></li>
+</ul>
+<span class="incontext"><a href="algorithmediffdiv.html#p-1014">Contexte</a></span>
 </body>
 </html>

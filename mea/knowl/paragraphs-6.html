@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:18-05:00    *-->
+<!--*    on 2021-03-01T08:57:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -30,20 +30,20 @@
 </head>
 <body>
 <article class="paragraphs"><h5 class="heading"><span class="title">Algorithme 2 : Exponentiation rapide.</span></h5>
-<p>Revenons au calcul de \(2^5\) et notons que</p>
+<p>Revenons au calcul de \(5^7\) et notons que</p>
 <div class="displaymath">
 \begin{equation*}
-2^5=2\cdot (2^2)^2
+5^7=5\cdot 5^2\cdot 5^4
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p data-braille="continuation">où</p>
 <div class="displaymath">
 \begin{equation*}
-2^5=x\cdot y\cdot y\quad\text{avec}\quad x=2\quad\text{et}\quad y=x\cdot x.
+5^2=5\cdot 5\quad\text{avec}\quad 5^4=5^2\cdot 5^2.
 \end{equation*}
 </div>
-<p>Vu comme ça, le calcul de \(2^5\) ne requiert plus que trois multiplications.</p>
-<p>Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :</p>
+<p>Vu comme ça, le calcul de \(5^7\) ne requiert plus que quatre multiplications.</p>
+<p>Cet exemple nous conduit à adopter une approche récursive basée sur la disjonction de cas suivante :</p>
 <div class="displaymath">
 \begin{equation*}
 x^n=
@@ -54,7 +54,7 @@ x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
 \end{cases}
 \end{equation*}
 </div>
-<aside class="aside aside-like"><p>L'algorithme d'<a class="external" href="https://fr.wikipedia.org/wiki/Exponentiation_rapide#Algorithme" target="_blank">exponentiation rapide</a> n'est pas seulement pertinent pour des nombres, mais aussi, par exemple, pour des matrices.</p></aside><p>Voici une implémentation de cette approche, où la fonction <code class="code-inline tex2jax_ignore">puissanceRecursive(x, n)</code> renvoie la valeur de \(\text{x}^\text{n}\) de manière récursive. <div class="sagecell-python" id="sage-45"><script type="text/x-sage">def puissanceRecursive(x, n):
+<p>Voici une implémentation de cette approche, où la fonction <code class="code-inline tex2jax_ignore">puissanceRecursive(x, n)</code> renvoie la valeur de \(\text{x}^\text{n}\) de manière récursive. <div class="sagecell-python" id="sage-45"><script type="text/x-sage">def puissanceRecursive(x, n):
     if n == 1:
         return x
     elif n % 2 == 0:
@@ -64,12 +64,12 @@ x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
 
 print(puissanceRecursive(2, 5))
 </script></div></p>
-<p>Si on ne tient compte que des multiplications, alors on peut montrer que la complexité \(T(n)\) de cet algorithme vérifie l'encadrement</p>
+<p>Si on ne tient compte que des multiplications, une analyse basée sur l'écriture en binaire de \(n\) permet de montrer que la complexité \(T(n)\) de cet algorithme vérifie l'encadrement</p>
 <div class="displaymath">
 \begin{equation*}
 \log_2(n)-1\leq T(n)\leq 2\log_2(n).
 \end{equation*}
 </div>
-<p>On parle alors d'une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche itérative, comme l'illustrent les graphes ci-après. <figure class="figure figure-like"><iframe src="https://www.desmos.com/calculator/opbr8wrbya" id="desmos-lineaire-log" width="600" height="480"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs logarithmique</figcaption></figure></p></article><span class="incontext"><a href="exponentiation.html#paragraphs-6">Contexte</a></span>
+<p data-braille="continuation">On a donc une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche naïve, comme l'illustrent les graphes ci-après. <figure class="figure figure-like"><iframe src="https://www.desmos.com/calculator/opbr8wrbya" id="desmos-lineaire-log" width="600" height="480"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs logarithmique</figcaption></figure></p></article><span class="incontext"><a href="exponentiation.html#paragraphs-6">Contexte</a></span>
 </body>
 </html>

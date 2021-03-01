@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:11:03-05:00    *-->
+<!--*    on 2021-03-01T08:58:53-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,33 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Cas particuliers :</p>
+<p>Instructions :</p>
 <ul class="circle">
+<li><p>Initialiser \(\text{approximation}\text{,}\) la variable qui donnera la somme des aires des rectangles : \(\text{approximation}=0\text{.}\)</p></li>
+<li><p>Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
+<li><p>Assigner à \(\text{x}\) la valeur \(\text{a}\text{.}\)</p></li>
 <li>
-<p>Pour les rectangles à gauche, prendre</p>
-<div class="displaymath">
-\begin{equation*}
-\xi_k=x_{k-1}=a+(k-1)\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Pour les rectangles à droite, prendre</p>
-<div class="displaymath">
-\begin{equation*}
-\xi_k=x_k=a+k\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Pour les rectangles au milieu, prendre</p>
-<div class="displaymath">
-\begin{equation*}
-\xi_k=\frac{x_{k-1}+x_k}{2}=a+(k-0{,}5)\cdot\Delta x\quad\text{pour tout }k=1,\ldots,n.
-\end{equation*}
-</div>
-</li>
+<p>Tant que \(\text{x}&lt;\text{b}\text{,}\)</p>
+<ul class="square">
+<li><p>assigner à \(\text{approximation}\) la valeur de \(\text{approximation}+\text{f}(\text{x})\) ;</p></li>
+<li><p>assigner à \(\text{x}\) la valeur de \(\text{x}+\text{deltaX}\text{.}\)</p></li>
 </ul>
-<span class="incontext"><a href="presentationrectangles.html#p-1210">Contexte</a></span>
+</li>
+<li><p>Assigner à \(\text{approximation}\) la valeur de \(\text{deltaX}\cdot\text{approximation}\text{.}\)</p></li>
+</ul>
+<span class="incontext"><a href="algorithmerectangles.html#p-1210">Contexte</a></span>
 </body>
 </html>

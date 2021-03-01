@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:11:00-05:00    *-->
+<!--*    on 2021-03-01T08:58:49-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour tout \(x\in[a;b]\text{,}\) on a donc</p>
+<p>Principe : Prendre</p>
 <div class="displaymath">
-\begin{align*}
-|f(x)-f(a)|&amp;=|f'(c_x)|\cdot|x-a|\\
-&amp;\leq M\cdot|x-a|\\
-&amp;= M\cdot (x-a).
-\end{align*}
+\begin{equation*}
+a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
+\end{equation*}
+</div>
+<p data-braille="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x=\frac{b-a}{n}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis choisir \(\xi_k\in[x_{k-1};x_k]\) pour \(k=1,\ldots,n\text{.}\) Et enfin calculer la somme de Riemann correspondante :</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Approximation}=\Delta x\cdot\sum_{k=1}^nf(\xi_k).
+\end{equation*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#p-1187">Contexte</a></span>
 </body>

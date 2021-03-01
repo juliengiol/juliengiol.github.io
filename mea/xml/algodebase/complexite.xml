@@ -29,16 +29,16 @@
   <p>
     Analyser la <em>complexité</em> d'un algorithme, c'est se demander de quelle façon le temps d'exécution dépend de la taille des données fournies en entrée.
   </p>
-
 </introduction>
 
 <section xml:id="sommeentiers">
 <title>Somme des premiers entiers</title>
 
 <problem xml:id="problemesommeentiers">
-<p>Comment utiliser efficacement l'ordinateur pour calculer la somme des <m>n</m> premiers entiers non nuls
-  <me>\sum_{k=1}^nk=1+2+\cdots+n\;?</me>
-</p>
+  <p>
+    Comment utiliser efficacement l'ordinateur pour calculer la somme des <m>n</m> premiers entiers non nuls
+    <me>\sum_{k=1}^nk=1+2+\cdots+n\;?</me>
+  </p>
 </problem>
 
 <paragraphs>
@@ -75,17 +75,14 @@
   </p>
   <p>Plus <m>n</m> est grand, plus le temps de calcul représenté par <m>T(n)</m> est grand.</p>
   <p>Comme <m>T</m> dépend linéairement de <m>n</m>, on dit que la complexité de cet algorithme est linéaire.</p>
-
 </paragraphs>
 
 <paragraphs>
   <title>Algorithme 2 : Formule de Faulhaber</title>
 
-  <p>En fait, il existe une formule bien connue qui permet de calculer directement la valeur de <m>\displaystyle\sum_{k=1}^nk</m>. La voici :
+  <p>
+    En fait, il existe une formule bien connue qui permet de calculer directement la valeur de <m>\displaystyle\sum_{k=1}^nk</m>. La voici :
     <me>\sum_{k=1}^nk=\frac{n(n+1)}{2}.</me>
-    <aside>
-      <p>Il s'agit d'un cas simple d'une formule plus générale portant le nom de <url href="https://fr.wikipedia.org/wiki/Formule_de_Faulhaber#Exemples">formule de Faulhaber</url>.</p>
-    </aside>
   </p>
   <p>Quelle que soit la valeur de <m>n</m>, cette approche ne requiert que trois opérations : une multiplication, une addition et une division.</p>
   <p>Autrement dit, l'algorithme
@@ -103,7 +100,6 @@
     <me>T(n)=3.</me>
   </p>
   <p>Il s'agit donc d'un algorithme beaucoup plus efficace que le précédent pour résoudre le problème <xref ref="problemesommeentiers"/>.</p>
-
 </paragraphs>
 
 </section>
@@ -112,19 +108,20 @@
 <title>Exponentiation rapide</title>
 
 <problem xml:id="problemeexponentiation">
-<p>Comment utiliser efficacement l'ordinateur pour calculer la puissance <m>n</m>-ième d'un nombre réel <m>x</m>, c'est-à-dire <m>\displaystyle x^n</m>?</p>
+  <p>Comment utiliser efficacement l'ordinateur pour calculer la puissance <m>n</m>-ième d'un nombre réel <m>x</m>, c'est-à-dire <m>\displaystyle x^n</m>?</p>
 </problem>
 
 <paragraphs>
   <title>Algorithme 1 : Approche naïve</title>
 
-  <p>Combien de multiplications doit-on effectuer pour évaluer <m>2^5</m>?</p>
+  <p>Combien de multiplications doit-on effectuer pour évaluer <m>5^7</m>?</p>
   <p>
     On a
-    <me>2^5=2\cdot 2\cdot 2\cdot 2\cdot 2.</me>
+    <me>5^7=5\cdot 5\cdot 5\cdot 5\cdot 5\cdot 5\cdot 5,</me>
+    et vu comme ça, il en faut six.
   </p>
   <p>
-    Vu comme ça, il en faut quatre. Plus généralement, on a besoin de <m>n-1</m> multiplications pour évaluer <m>x^n</m>, puisque
+    Plus généralement, on a besoin de <m>n-1</m> multiplications pour évaluer
     <me>x^n=x\cdot x\cdot x\cdots x.</me>
   </p>
   <p>
@@ -148,60 +145,53 @@
     <me>T(n)=n-1.</me>
   </p>
   <p>On parle donc de complexité linéaire.</p>
-
 </paragraphs>
 
 <paragraphs>
-    <title>Algorithme 2 : Exponentiation rapide</title>
+  <title>Algorithme 2 : Exponentiation rapide</title>
 
-    <p>
-      Revenons au calcul de <m>2^5</m> et notons que
-      <me>2^5=2\cdot (2^2)^2</me>
-      c'est-à-dire
-      <me>2^5=x\cdot y\cdot y\quad\text{avec}\quad x=2\quad\text{et}\quad y=x\cdot x.</me>
-    </p>
-    <p>Vu comme ça, le calcul de <m>2^5</m> ne requiert plus que trois multiplications.</p>
-    <p>
-      Ce point de vue nous amène à adopter une approche récursive basée sur la disjonction de cas suivante :
-      <me>x^n=
-        \begin{cases}
-        x&amp;\text{ si }n=1,\\
-        \left(x^2\right)^{n/2}&amp;\text{ si }n\text{ est pair,}\\
-        x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
-        \end{cases}
-      </me>
-    </p>
-    <aside>
-      <p>L'algorithme d'<url href="https://fr.wikipedia.org/wiki/Exponentiation_rapide#Algorithme">exponentiation rapide</url> n'est pas seulement pertinent pour des nombres, mais aussi, par exemple, pour des matrices.</p>
-    </aside>
-    <p>
-      Voici une implémentation de cette approche, où la fonction <c>puissanceRecursive(x, n)</c> renvoie la valeur de <m>\text{x}^\text{n}</m> de manière récursive.
-      <sage language='python'>
-        <input>
-          def puissanceRecursive(x, n):
-              if n == 1:
-                  return x
-              elif n % 2 == 0:
-                  return puissanceRecursive(x * x, n / 2)
-              else:
-                  return x * puissanceRecursive(x * x, (n - 1) / 2)
+  <p>
+    Revenons au calcul de <m>5^7</m> et notons que
+    <me>5^7=5\cdot 5^2\cdot 5^4</me>
+    où
+    <me>5^2=5\cdot 5\quad\text{avec}\quad 5^4=5^2\cdot 5^2.</me>
+  </p>
+  <p>Vu comme ça, le calcul de <m>5^7</m> ne requiert plus que quatre multiplications.</p>
+  <p>
+    Cet exemple nous conduit à adopter une approche récursive basée sur la disjonction de cas suivante :
+    <me>x^n=
+      \begin{cases}
+      x&amp;\text{ si }n=1,\\
+      \left(x^2\right)^{n/2}&amp;\text{ si }n\text{ est pair,}\\
+      x\cdot\left(x^2\right)^{(n-1)/2}&amp;\text{ si }n\geq 3\text{ est impair.}
+      \end{cases}
+    </me>
+  </p>
+  <p>
+    Voici une implémentation de cette approche, où la fonction <c>puissanceRecursive(x, n)</c> renvoie la valeur de <m>\text{x}^\text{n}</m> de manière récursive.
+    <sage language='python'>
+      <input>
+        def puissanceRecursive(x, n):
+            if n == 1:
+                return x
+            elif n % 2 == 0:
+                return puissanceRecursive(x * x, n / 2)
+            else:
+                return x * puissanceRecursive(x * x, (n - 1) / 2)
 
-          print(puissanceRecursive(2, 5))
-        </input>
-      </sage>
-    </p>
-    <p>
-      Si on ne tient compte que des multiplications, alors on peut montrer que la complexité <m>T(n)</m> de cet algorithme vérifie l'encadrement
-      <me>\log_2(n)-1\leq T(n)\leq 2\log_2(n).</me>
-    </p>
-    <p>
-      On parle alors d'une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche itérative, comme l'illustrent les graphes ci-après.
-      <figure>
-          <caption>Linéaire vs logarithmique</caption>
-          <interactive xml:id="desmos-lineaire-log" desmos="opbr8wrbya" width="100%" aspect="5:4"/>
-      </figure>
-    </p>
-
+        print(puissanceRecursive(2, 5))
+      </input>
+    </sage>
+  </p>
+  <p>
+    Si on ne tient compte que des multiplications, une analyse basée sur l'écriture en binaire de <m>n</m> permet de montrer que la complexité <m>T(n)</m> de cet algorithme vérifie l'encadrement
+    <me>\log_2(n)-1\leq T(n)\leq 2\log_2(n).</me>
+    On a donc une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche naïve, comme l'illustrent les graphes ci-après.
+    <figure>
+        <caption>Linéaire vs logarithmique</caption>
+        <interactive xml:id="desmos-lineaire-log" desmos="opbr8wrbya" width="100%" aspect="5:4"/>
+    </figure>
+  </p>
 </paragraphs>
 
 </section>
@@ -210,7 +200,7 @@
 <title>Méthode de Horner</title>
 
 <problem xml:id="problemehorner">
-<p>Comment utiliser efficacement l'ordinateur pour évaluer un polynôme?</p>
+  <p>Comment utiliser efficacement l'ordinateur pour évaluer un polynôme?</p>
 </problem>
 
 <paragraphs>
@@ -316,11 +306,6 @@
       \end{array}
     </me>
   </p>
-  <aside>
-    <p>
-      Vous pouvez aussi appeler cet algorithme <url href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_Ruffini-Horner#Histoire">méthode de Ruffini-Horner</url> si vous voulez faire honneur à Paolo Ruffini qui semble avoir eu cette idée avant William George Horner lui-même.
-    </p>
-  </aside>
   <p>
     Voici une implémentation itérative de la méthode de Horner.
     <sage language='python'>
@@ -355,7 +340,7 @@
 <title>Nombres de Fibonacci</title>
 
 <problem xml:id="problemefibonacci">
-<p>Comment utiliser efficacement l'ordinateur pour calculer les nombres de Fibonacci?</p>
+  <p>Comment utiliser efficacement l'ordinateur pour calculer les nombres de Fibonacci?</p>
 </problem>
 
 <definition xml:id="defi_fibo">
@@ -376,12 +361,7 @@
 <paragraphs>
   <title>Algorithme 1 : Formule de Binet</title>
 
-  <p>
-    Comme <m>(F_n)</m> est une <url href="https://fr.wikipedia.org/wiki/Suite_r%C3%A9currente_lin%C3%A9aire">suite récurrente linéaire</url>, il est possible d'exprimer son terme général à l'aide d'une formule explicite.
-  </p>
-  <aside>
-    <p>Cette formule est due à <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Binet/">Jacques Binet</url>, qui découvrit également les règles de calcul du produit matriciel.</p>
-  </aside>
+  <p>Comme <m>(F_n)</m> est une <url href="https://fr.wikipedia.org/wiki/Suite_r%C3%A9currente_lin%C3%A9aire">suite récurrente linéaire</url>, il est possible d'exprimer son terme général à l'aide d'une formule explicite.</p>
 
   <theorem xml:id="fibo_binet">
     <statement>
@@ -460,15 +440,12 @@
     A priori, il n'y a pas mieux qu'une formule explicite.
     Pourtant, la nature de celle-ci fait en sorte que des erreurs d'arrondis liées à la présence de <m>\sqrt{5}</m> la rendent vite inutile pour obtenir la valeur exacte de l'entier <m>F_n</m>.
   </p>
-
 </paragraphs>
 
 <paragraphs>
   <title>Algorithme 2 : Exponentiation matricielle rapide</title>
 
-  <p>
-    Nous allons maintenant transformer l'évaluation d'un terme de la suite <m>(F_n)</m> en un problème d'exponentiation grâce au calcul matriciel.
-  </p>
+  <p>Nous allons maintenant transformer l'évaluation d'un terme de la suite <m>(F_n)</m> en un problème d'exponentiation grâce au calcul matriciel.</p>
 
   <theorem xml:id="fibo_matriciel">
     <statement>
@@ -750,9 +727,6 @@
     </p>
   </solution>
 </exercise>
-<aside>
-  <p>Les coefficients des matrices de l'exercice <xref ref="expo_rapide_45"/> vous évoquent-ils quelque chose?</p>
-</aside>
 
 <exercise>
   <statement>

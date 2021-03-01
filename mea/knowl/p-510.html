@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:48-05:00    *-->
+<!--*    on 2021-03-01T08:57:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,44 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Soit \(f(x)=x^2-2\) et \(x_0=2\text{.}\)</p>
+<p>Raisonnons par l'absurde et supposons que \(c&lt;\ell\text{.}\) Notons alors que</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}x_{n+1}=\lim_{n\rightarrow+\infty}x_n=\ell
+\end{equation*}
+</div>
+<p data-braille="continuation">puis que</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}f(x_n)=f(\ell)
+\end{equation*}
+</div>
+<p data-braille="continuation">par la continuité de \(f\) en \(\ell\) (qui découle de sa dérivabilité en ce point), et enfin que</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}f'(x_n)=f'(\ell)&gt;0
+\end{equation*}
+</div>
+<p data-braille="continuation">par la continuité de \(f'\) en \(\ell\) (qui découle de sa dérivabilité en ce point). En faisant tendre \(n\) vers l'infini, la relation de récurrence</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
+\end{equation*}
+</div>
+<p data-braille="continuation">entraîne</p>
+<div class="displaymath">
+\begin{align*}
+\ell=\ell-\frac{f(\ell)}{f'(\ell)}&amp;\quad\Rightarrow\quad\frac{f(\ell)}{f'(\ell)}=0\\
+&amp;\quad\Rightarrow\quad f(\ell)=0.
+\end{align*}
+</div>
+<p data-braille="continuation">Mais comme \(f\) est strictement croissante sur \([c;b]\) par positivité de \(f'\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+c&lt;\ell\qquad\Rightarrow\qquad f(c)=0&lt;f(\ell)
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où la contradiction.</p>
 <span class="incontext"><a href="presentationnewton.html#p-510">Contexte</a></span>
 </body>
 </html>

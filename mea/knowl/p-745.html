@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:10:12-05:00    *-->
+<!--*    on 2021-03-01T08:58:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,17 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La matrice des coefficients de ce système est une <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde" target="_blank">matrice de Vandermonde</a> \((n+1)\times(n+1)\) :</p>
+<p>Si \(k\neq i\text{,}\) alors \(t-x_k\) est l'un de facteurs du numérateur de \(L_i(t)\text{.}\) Donc</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-1&amp;x_0&amp;x_0^2&amp;\cdots&amp;x_0^n\\
-1&amp;x_1&amp;x_1^2&amp;\cdots&amp;x_1^n\\
-1&amp;x_2&amp;x_2^2&amp;\cdots&amp;x_2^n\\
-\vdots&amp;\vdots&amp;\vdots&amp;&amp;\vdots\\
-1&amp;x_n&amp;x_n^2&amp;\cdots&amp;x_n^n
-\end{bmatrix}
-\end{equation*}
+\begin{align*}
+L_i(x_k)&amp;=\frac{(x_k-x_0)\cdots (x_k-x_k)\cdots(x_k-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=\frac{0}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=0.
+\end{align*}
 </div>
 <span class="incontext"><a href="presentationlagrange.html#p-745">Contexte</a></span>
 </body>

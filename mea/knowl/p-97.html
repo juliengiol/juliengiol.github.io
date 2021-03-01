@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:08:50-05:00    *-->
+<!--*    on 2021-03-01T08:57:11-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p><code class="code-inline tex2jax_ignore">a % b</code> renvoie 0.</p>
-<span class="incontext"><a href="conditionnelles.html#p-97">Contexte</a></span>
+<ol class="decimal">
+<li><p>Évaluez le code suivant à la main pour déterminer ce qu'il affiche.<pre class="code-block tex2jax_ignore">from math import sqrt  # importe la fonction racine carrée
+a = 1.0
+b = -6.0
+c = 9.0
+delta = b ** 2 - 4 * a * c
+if delta &gt; 0:
+    x1 = (- b - sqrt(delta)) / (2 * a)
+    x2 = (- b + sqrt(delta)) / (2 * a)
+    print(x1, x2)
+elif delta == 0:
+    x0  = - b / (2 * a)
+    print(x0)
+else:
+    print('pas de racines')
+</pre></p></li>
+<li><p>Même question avec <code class="code-inline tex2jax_ignore">c = 2.0</code> à la place de <code class="code-inline tex2jax_ignore">c = 9.0</code>.</p></li>
+</ol>
+<span class="incontext"><a href="exercicesassignetc.html#p-97">Contexte</a></span>
 </body>
 </html>

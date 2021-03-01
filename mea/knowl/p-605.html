@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:56-05:00    *-->
+<!--*    on 2021-03-01T08:57:53-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Il suffit de déplacer <code class="code-inline tex2jax_ignore">print(x0)</code> à l'intérieur de la boucle <code class="code-inline tex2jax_ignore">for</code> :<pre class="code-block tex2jax_ignore"># entrées
-def f(x):
-    return x ** 2 - 2
-def fPrime(x):
-    return 2 * x
-x0 = 2.0
-n = 3
-
-# instructions / sorties
-for i in range(1, n+1):
-    x0 = x0 - f(x0) / fPrime(x0)
-    print(x0)
-</pre></p>
+<p>Comme c'est un polynôme, la fonction \(f\) est continue sur l'intervalle \([1;2]\text{.}\) Comme</p>
+<div class="displaymath">
+\begin{equation*}
+f(1)\cdot f(2)=(-7)\cdot 2&lt;0\;,
+\end{equation*}
+</div>
+<p data-braille="continuation">le théorème des valeurs intermédiaires implique qu'il existe un zéro \(c\) pour \(f\) dans \(]1;2[\text{.}\)</p>
 <span class="incontext"><a href="exercicesnewton.html#p-605">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:24-05:00    *-->
+<!--*    on 2021-03-01T08:57:27-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On veut calculer \(3^{45}\) à l'aide de l'algorithme d'exponentiation rapide présenté à la section <a href="exponentiation.html" class="internal" title="Section 3.2: Exponentiation rapide">3.2</a>.</p>
-<ol class="decimal">
-<li>Vérifiez que cela revient à décomposer \(3^{45}\) de la façon suivante :<div class="displaymath">
-\begin{equation*}
-3\cdot 3^4\cdot 3^8\cdot 3^{32}.
-\end{equation*}
-</div>
-</li>
-<li>Combien de multiplications doit-on effectuer au total?</li>
-<li>Voyez-vous un lien avec l'écriture de \(45\) en binaire?</li>
-<li>
-<p>Utilisez cette méthode pour calculer à la main la matrice</p>
+<p>Ce maximum est atteint dans le cas où \(n=2^d+2^{d-1}+\cdots+2+1\) précède une puissance de \(2\text{.}\) Il faut alors \(d\) multiplications pour calculer d'abord \(x^2,\ldots,x^{2^d}\text{,}\) et \(d\) multiplications pour calculer ensuite</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{45}.
+x^n=x\cdot x^2\cdots x^{2^{d-1}}\cdot x^{2^d}.
 \end{equation*}
 </div>
-</li>
-</ol>
+<p data-braille="continuation">Cela prend donc \(2d\) multiplications en tout.</p>
 <span class="incontext"><a href="exercicescomplexite.html#p-326">Contexte</a></span>
 </body>
 </html>

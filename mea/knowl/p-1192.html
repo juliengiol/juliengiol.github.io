@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:11:02-05:00    *-->
+<!--*    on 2021-03-01T08:58:50-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Revenons à l'exemple <a class="xref" data-knowl="./knowl/exemple_approximation_rectangles.html" title="Exemple 8.1.10">8.1.10</a> concernant l'intégrale définie</p>
+<p>Précision : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable avec une dérivée continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-\int_0^1e^{-x^2}\mathrm{d}x
+|f'(x)|\leq M\quad\text{pour tout }x\in[a;b].
 \end{equation*}
 </div>
-<p data-braille="continuation">à laquelle nous avons appliqué la méthode des rectangles pour \(n=4\) rectangles.</p>
+<p data-braille="continuation">On a alors</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\text{Erreur}\right|\leq \frac{M(b-a)^2}{2n}.
+\end{equation*}
+</div>
 <span class="incontext"><a href="presentationrectangles.html#p-1192">Contexte</a></span>
 </body>
 </html>

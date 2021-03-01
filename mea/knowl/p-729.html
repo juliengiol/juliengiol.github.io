@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:10:10-05:00    *-->
+<!--*    on 2021-03-01T08:58:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,52 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li>
-<p>Prendre cette sécante à la place de la tangente revient à remplacer \(f'(x_n)\) par \(\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}\) dans la relation de récurrence de la méthode de Newton-Raphson.</p>
-<p>Pour tout \(n\geq 0\text{,}\) on a donc</p>
+<p>On cherche donc deux nombres réels \(a_0,a_1\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}}
+P(t)=a_0+a_1t
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)(x_n-x_{n-1})}{f(x_n)-f(x_{n-1})}.
+\begin{cases}
+P(1)=-3\\
+P(2)=7
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a_0&amp;+&amp;a_1&amp;=&amp;-3\\
+a_0&amp;+&amp;2a_1&amp;=&amp;7
+\end{cases}
 \end{equation*}
 </div>
-</li>
-<li>
-<p>On a \(f'(x)=-e^{-x}-1\) pour tout \(x\in\mathbb{R}\text{.}\)</p>
-<p>Comme \(e^{-x}&gt;0\) pour tout \(x\in\mathbb{R}\text{,}\) il est clair que</p>
-<div class="displaymath">
-\begin{equation*}
-f'(x)&lt;0\qquad\text{pour tout}\;x\in\mathbb{R}.
-\end{equation*}
-</div>
-<p>Par conséquent, \(f\) est strictement décroissante sur \(\mathbb{R}\text{.}\)</p>
-</li>
-<li>
-<p>La fonction \(f\) est continue sur \(\mathbb{R}\text{.}\)</p>
-<p>On a \(f(0)=1&gt;0\) et \(f(1)=e^{-1}-1&lt;0\text{.}\)</p>
-<p>Par le théorème des valeurs intermédiaires, la fonction \(f\) possède donc un zéro dans l'intervalle \(]0;1[\text{.}\)</p>
-<p>Et comme \(f\) est strictement décroissante, ce zéro est unique.</p>
-</li>
-<li>
-<p>On trouve</p>
-<div class="displaymath">
-\begin{align*}
-x_0&amp;=0\\
-x_1&amp;=1\\
-x_2&amp;=x_1-\frac{f(x_1)(x_1-x_0)}{f(x_1)-f(x_0)}=0{,}612\,699\ldots\\
-x_3&amp;=x_2-\frac{f(x_2)(x_2-x_1)}{f(x_2)-f(x_1)}=0{,}563\,838\ldots\\
-x_4&amp;=x_3-\frac{f(x_3)(x_3-x_2)}{f(x_3)-f(x_2)}=0{,}567\,170\ldots\\
-x_5&amp;=x_4-\frac{f(x_4)(x_4-x_3)}{f(x_4)-f(x_3)}=0{,}567\,143\ldots
-\end{align*}
-</div>
-</li>
-</ol>
-<span class="incontext"><a href="exercicesnewton.html#p-729">Contexte</a></span>
+<span class="incontext"><a href="presentationlagrange.html#p-729">Contexte</a></span>
 </body>
 </html>

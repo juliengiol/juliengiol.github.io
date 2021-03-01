@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:21-05:00    *-->
+<!--*    on 2021-03-01T08:57:24-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Dans cette formule, seul le premier terme importe vraiment. En effet, comme</p>
-<div class="displaymath">
-\begin{equation*}
-\left|\frac{1-\sqrt{5}}{2}\right|\approx 0{,}62,
-\end{equation*}
-</div>
-<p data-braille="continuation">le terme</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}
-\end{equation*}
-</div>
-<p data-braille="continuation">est assez petit pour que \(F_n\) soit égal à l'entier le plus proche de</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}.
-\end{equation*}
-</div>
-<span class="incontext"><a href="fibonacci.html#p-303">Contexte</a></span>
+<p>Il y a 3 assignations avant d'entrer dans la boucle. À chaque tour de boucle, il y a 1 comparaison, 2 additions et 2 assignations. Pour compter tout ça, on peut donc s'y prendre comme suit.<pre class="code-block tex2jax_ignore"># entrée :
+n = 5
+# instructions :
+k = 1
+somme = 1
+compteur = 3
+while k &lt; n:
+    k = k + 1
+    somme = somme + k
+    compteur = compteur + 5
+# sortie :
+print(somme)
+print(compteur)
+</pre></p>
+<span class="incontext"><a href="exercicescomplexite.html#p-303">Contexte</a></span>
 </body>
 </html>

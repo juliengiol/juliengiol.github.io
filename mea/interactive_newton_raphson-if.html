@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:07:11-05:00    *-->
+<!--*    on 2021-03-01T08:56:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 </script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="pretext-content"><div style="width:600px; height:780px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div class="sage-interact"><script type="text/x-sage">@interact
-def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 2, width = 30), x0 = input_box(label = html(r'\(x_0\)'), default = 1, width = 10), n = slider(1, 8, 1, 3, label = html(r'\(n\)'))):
+def _(f = input_box(label = html(r'\(f(x)\)'), default = 3 * sin(x) + 2, width = 30), x0 = input_box(label = html(r'\(x_0\)'), default = 1, width = 10), n = input_box(label = html(r'\(n\)'), default = 3, width = 10)):
     f(x) = f
     g(x) = derivative(f(x), x)
     xi = x0

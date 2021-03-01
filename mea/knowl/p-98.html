@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:08:50-05:00    *-->
+<!--*    on 2021-03-01T08:57:11-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,30 +10,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Nous pouvons maintenant afficher les multiples de \(7\) compris entre \(7\) et \(60\) inclus à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>, sans avoir à déterminer au préalable le plus grand de ces multiples (56). <div class="sagecell-python" id="bla"><script type="text/x-sage">for k in range(7, 60+1):  # pour k allant de 7 à 60
-    if k % 7 == 0:  # si k est un multiple de 7
-        print(k)  # affiche k
-</script></div></p>
-<span class="incontext"><a href="conditionnelles.html#p-98">Contexte</a></span>
+<p>Évaluez le code suivant à la main pour déterminer ce qu'il affiche.<pre class="code-block tex2jax_ignore">from math import sqrt  # importe la fonction racine carrée
+a = 1.0
+b = -6.0
+c = 9.0
+delta = b ** 2 - 4 * a * c
+if delta &gt; 0:
+    x1 = (- b - sqrt(delta)) / (2 * a)
+    x2 = (- b + sqrt(delta)) / (2 * a)
+    print(x1, x2)
+elif delta == 0:
+    x0  = - b / (2 * a)
+    print(x0)
+else:
+    print('pas de racines')
+</pre></p>
+<span class="incontext"><a href="exercicesassignetc.html#p-98">Contexte</a></span>
 </body>
 </html>

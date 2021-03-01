@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:10:06-05:00    *-->
+<!--*    on 2021-03-01T08:58:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,40 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Comme \(f'(x)=2x\) et \(f''(x)=2\) sont positives sur \(]0;+\infty[\) et que \(f''\) est continue, les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> sont vérifiées. On a donc</p>
+<ul class="disc">
+<li>
+<p>Itération 1 :</p>
 <div class="displaymath">
 \begin{equation*}
-c=\sqrt{k}&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0\qquad\text{pour tout}\;n\geq 0
+\begin{array}{ c&lt;{{}} c &gt;{{}}c }
+a=0 &amp; m=0{,}5 &amp; b=1\\
+f(a)=-1 &amp; f(m)=-0{,}4375 &amp; f(b)=2
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">et</p>
 <div class="displaymath">
 \begin{equation*}
-\lim_{n\rightarrow+\infty}x_n=\sqrt{k}.
+\Rightarrow\quad c\in\;]0{,}5;1[
 \end{equation*}
 </div>
+</li>
+<li>
+<p>Itération 2 :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ c&lt;{{}} c &gt;{{}}c }
+a=0{,}5 &amp; m=0{,}75 &amp; b=1 \\
+f(a)=-0{,}4375 &amp; f(m)=0{,}441\,406\,25 &amp; f(b)=2
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Rightarrow\quad c\in\;]0{,}5;0{,}75[
+\end{equation*}
+</div>
+</li>
+</ul>
 <span class="incontext"><a href="exercicesnewton.html#p-693">Contexte</a></span>
 </body>
 </html>

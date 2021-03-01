@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:11:13-05:00    *-->
+<!--*    on 2021-03-01T08:59:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,52 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li><p>Objectif : Obtenir des approximations de la valeur d'une intégrale définie \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</p></li>
-<li>
-<p>Principe : Prendre</p>
-<div class="displaymath">
-\begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
-\end{equation*}
-</div>
-<p data-braille="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
-<div class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Puis effectuer le calcul suivant :</p>
-<div class="displaymath">
-\begin{equation*}
-\text{Approximation}=\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right).
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Précision : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable deux fois avec une dérivée seconde continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
-<div class="displaymath">
-\begin{equation*}
-|f''(x)|\leq M\quad\text{pour tout }x\in[a;b].
-\end{equation*}
-</div>
-<p data-braille="continuation">On a alors</p>
-<div class="displaymath">
-\begin{equation*}
-\left|\text{Erreur}\right|\leq \frac{M(b-a)^3}{12n^2}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Astuce de calcul : Notez que l'approximation s'obtient aussi par la formule</p>
-<div class="displaymath">
-\begin{equation*}
-\text{Approximation}=\frac{\Delta x}{2}\cdot\left(f(x_0)+2f(x_1)+\cdots+2f(x_{n-1})+f(x_n)\right).
-\end{equation*}
-</div>
-</li>
-<li><p>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
+<p>Entrées :</p>
+<ul class="circle">
+<li><p>Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
+<li><p>Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
+<li><p>Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
 </ul>
-<span class="incontext"><a href="presentationtrapezes.html#p-1300">Contexte</a></span>
+<span class="incontext"><a href="algorithmetrapezes.html#p-1300">Contexte</a></span>
 </body>
 </html>

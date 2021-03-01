@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:03-05:00    *-->
+<!--*    on 2021-03-01T08:57:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -30,14 +30,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voici une fonction <em class="emphasis">non récursive</em> dont on affiche la valeur en 14. <div class="sagecell-python" id="sage-33"><script type="text/x-sage">def collatz(x):
-    if x % 2 == 0:
-        return x // 2
+<p>Codons ensuite la fonction valeur absolue qui peut être définie comme suit :</p>
+<div class="displaymath">
+\begin{equation*}
+x\longmapsto
+\begin{cases}
+x&amp;\text{si}\;x\geq 0,\\
+-x&amp;\text{sinon.}
+\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">Nous allons l'appeler <code class="code-inline tex2jax_ignore">valeurAbsolue</code>, et la tester avec <code class="code-inline tex2jax_ignore">print(valeurAbsolue(5))</code> et <code class="code-inline tex2jax_ignore">print(valeurAbsolue(-7))</code> qui doivent afficher respectivement \(\text{5}\) et \(\text{7}\text{.}\) <div class="sagecell-python" id="sage-38"><script type="text/x-sage">def valeurAbsolue(x):
+    if x >= 0:
+        return x
     else:
-        return 3 * x + 1
+        return -x
 
-print(collatz(14))
-</script></div></p>
-<span class="incontext"><a href="fonctions.html#p-157">Contexte</a></span>
+print(valeurAbsolue(5))
+print(valeurAbsolue(-7))
+</script></div> Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y4dl5v7v" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+<span class="incontext"><a href="syntaxefonctions.html#p-157">Contexte</a></span>
 </body>
 </html>

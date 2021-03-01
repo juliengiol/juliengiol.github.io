@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:15-05:00    *-->
+<!--*    on 2021-03-01T08:57:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,27 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li><pre class="code-block tex2jax_ignore">def combienDeDeux1(n):
-    compteur = 0
-    while n % 2 == 0:
-        compteur = compteur + 1
-        n = n / 2
-    return compteur
-
-print(combienDeDeux1(45))
-print(combienDeDeux1(24))
-</pre></li>
-<li><pre class="code-block tex2jax_ignore">def combienDeDeux2(n):
-    if n % 2 != 0:
-        return 0
-    else:
-        return 1 + combienDeDeux2(n / 2)
-
-print(combienDeDeux2(45))
-print(combienDeDeux2(24))
-</pre></li>
-</ol>
-<span class="incontext"><a href="exercicesfonctions.html#p-239">Contexte</a></span>
+<p>Il en faut quatre. Plus généralement, on a besoin de \(n-1\) additions pour évaluer la somme des \(n\) premiers entiers naturels non nuls</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=1}^nk=1+2+3+\cdots+n.
+\end{equation*}
+</div>
+<span class="incontext"><a href="sommeentiers.html#p-239">Contexte</a></span>
 </body>
 </html>

@@ -50,11 +50,6 @@
 <title>Assignations</title>
 
 <p>Une <url href="https://fr.wikipedia.org/wiki/Affectation_(informatique)">assignation</url>, c'est le fait d'attribuer une valeur à une variable.</p>
-<aside>
-  <p>On rencontre aussi le terme affectation pour désigner une assignation.</p>
-</aside>
-
-
 <p>
   Par exemple, le code <c>x = 2</c> a pour effet d'assigner la valeur <m>\text{2}</m> à la variable <m>\text{x}</m>.
   Si ensuite on fait afficher le contenu de <m>\text{x}</m> à l'aide de la commande <c>print(x)</c>, on obtient <m>\text{2}</m> à la sortie.
@@ -140,9 +135,6 @@
     </ul>
   </p>
 </remark>
-<aside>
-  <p>Python Tutor gère également les langages Java, JavaScript, C, C++ et Ruby.</p>
-</aside>
 
 <p>
   Essayez maintenant de prédire le résultat des blocs de code qui suivent.
@@ -275,9 +267,6 @@
     <li><c>while ... :</c> se lit « tant que ... ».</li>
   </ul>
 </p>
-<aside>
-  <p>Les répétitions d'une boucle peuvent être considérées comme des exemples du concept d'<url href="https://fr.wikipedia.org/wiki/It%C3%A9ration#Informatique">itération</url> en informatique.</p>
-</aside>
 <p>
   Attention à ne pas oublier les deux-points <c> :</c>.
 </p>
@@ -412,9 +401,6 @@
 </p>
 <p>
   Dans l'exemple qui suit, nous allons afficher tous les multiples de <m>7</m> compris entre <m>7</m> et <m>60</m> inclus.
-  <aside>
-    <p>Remplacez <c>k = k + 7</c> par <c>k += 7</c> dans le bloc de code ci-contre, et vérifiez que cela fait exactement la même chose.</p>
-  </aside>
   <sage language='python'>
     <input>
       k = 7
@@ -443,14 +429,9 @@
     <li><p><c>else:</c> se lit « sinon ».</p></li>
   </ul>
 </p>
-<aside>
-  <p>On appelle structure conditionnelle tout ensemble d'instructions conditionnelles placées au même niveau d'indentation.</p>
-</aside>
-
 <p>
   Comme pour les boucles, faites attention à ne pas oublier les deux-points <c> :</c> et à respecter les indentations de 4 espaces.
 </p>
-
 <p>
   Essayez de deviner ce qu'affichent les blocs de code qui suivent avant de les évaluer.
   <sage language='python'>
@@ -492,13 +473,9 @@
     </input>
   </sage>
 </p>
-
 <p>
   Nous allons finir cette section en utilisant l'<url href="https://fr.wikipedia.org/wiki/Modulo_(op%C3%A9ration)">opérateur modulo</url> qui se note <c>a % b</c> en Python, et qui renvoie le reste de la division euclidienne de <m>\text{a}</m> par <m>\text{b}</m>.
 </p>
-<aside>
-  <p>En mathématiques, l'opérateur modulo est à la base de l'arithmétique modulaire qui fonde la théorie derrière l'algorithme de <url href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">chiffrement RSA</url>.</p>
-</aside>
 <p>
   Divisez <m>28</m> puis <m>25</m> par <m>7</m> à la main avant d'évaluer les blocs de code suivants.
 </p>
@@ -546,9 +523,6 @@
 <section xml:id="exercicesassignetc">
 <title>Exercices</title>
 
-<aside>
-  <p>Il est fortement recommandé d'utiliser <url href="http://pythontutor.com/">Python Tutor</url> lors de la résolution de ces exercices.</p>
-</aside>
 <exercise>
   <statement>
     <p>
@@ -752,16 +726,6 @@
     </pre>
   </answer>
 </exercise>
-
-<aside>
-  <p>
-    Notez qu'une fois qu'on est tombé sur <m>1</m> dans l'exercice <xref ref="ex_collatz"/>, le comportement de la suite devient périodique.
-  </p>
-  <p>
-    La célèbre <url href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">conjecture de Syracuse</url> (ou Collatz, ou Ulam, ou 3x+1, ...) prédit qu'une telle suite finit toujours par tomber sur <m>1</m>, quel que soit l'entier positif dont on parte.
-    Mais personne n'a encore réussi à le démontrer.
-  </p>
-</aside>
 
 <exercise>
   <statement>
@@ -1087,11 +1051,6 @@
     <p>Cliquez sur <c>Next</c> autant de fois que nécessaire dans l'application <url href="https://tinyurl.com/y6rszlxl">Python Tutor</url> si vous voulez suivre pas à pas l'évaluation du code qui précède.</p>
   </solution>
 </exercise>
-<aside>
-  <p>
-    Essayez de résoudre l'exercice <xref ref="fibo_iterative"/> à l'aide de la <url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#formule_de_Binet">formule de Binet</url>.
-  </p>
-</aside>
 
 </section>
 

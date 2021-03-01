@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T13:09:20-05:00    *-->
+<!--*    on 2021-03-01T08:57:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,41 +10,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de \(P(x)\) une paire de parenthèses après l'autre. Par exemple, pour le polynôme</p>
-<div class="displaymath">
-\begin{equation*}
-P(x)=10+7x+3x^2+5x^3,
-\end{equation*}
-</div>
-<p data-braille="continuation">le calcul de</p>
-<div class="displaymath">
-\begin{align*}
-P(9)&amp;=10+7\cdot 9+3\cdot 9^2+5\cdot 9^3\\
-&amp;=10+9\cdot(7+3\cdot 9+5\cdot 9^2)\\
-&amp;=10+9\cdot(7+9\cdot(3+9\cdot 5))
-\end{align*}
-</div>
-<p data-braille="continuation">par la méthode de Horner revient à calculer les valeurs successives</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{llll}
-\text{Étape 0 :}&amp;valeur&amp;=&amp;5\\
-\text{Étape 1 :}&amp;valeur&amp;=&amp;3+9\cdot 5=48\\
-\text{Étape 2 :}&amp;valeur&amp;=&amp;7+9\cdot 48=439\\
-\text{Étape 3 :}&amp;valeur&amp;=&amp;10+9\cdot 439=3961
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">dont la dernière donne</p>
-<div class="displaymath">
-\begin{equation*}
-P(9)=3961
-\end{equation*}
-</div>
-<p data-braille="continuation">après trois additions et trois multiplications.</p>
-<span class="incontext"><a href="horner.html#p-286">Contexte</a></span>
+<p>Évaluez le code suivant pour calculer \(F_{50}\) à l'aide de la formule de Binet. <div class="sagecell-python" id="sage-48"><script type="text/x-sage"># entrée :
+n = 50
+# instructions :
+from math import sqrt
+x = (1 + sqrt(5)) ** n / (2 ** n * sqrt(5))
+# sortie :
+print(x)
+</script></div> On en déduit que \(F_{50}=12\,586\,269\,025\text{.}\)</p>
+<span class="incontext"><a href="fibonacci.html#p-286">Contexte</a></span>
 </body>
 </html>

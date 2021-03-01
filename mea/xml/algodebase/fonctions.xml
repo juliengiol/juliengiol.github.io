@@ -93,9 +93,6 @@
     </ul>
   </p>
 </remark>
-<aside>
-  <p>On distingue parfois les fonctions qui ne renvoient rien des autres en les appelant <em>procédures</em>.</p>
-</aside>
 
 <p>
   Codons ensuite la fonction valeur absolue qui peut être définie comme suit :
@@ -147,9 +144,6 @@
 <section xml:id="recursivite">
 <title>Récursivité</title>
 
-<aside>
-  <p>La <url href="https://fr.wikipedia.org/wiki/R%C3%A9cursivit%C3%A9">récursivité</url> est un concept qui intervient dans des domaines aussi variés que la linguistique, les arts, la biologie et les mathématiques.</p>
-</aside>
 <p>Une fonction est dite <em>récursive</em> lorsqu'elle contient un appel à elle-même.</p>
 <p>Attention, une telle fonction doit prévoir au moins un cas de base sur lequel elle finisse par tomber.</p>
 <p>
@@ -670,9 +664,6 @@
     </ol>
   </solution>
 </exercise>
-<aside>
-  <p>Comparez les temps de calcul du centième terme de la suite de Fibonacci pour l'<url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_r%C3%A9cursif_na%C3%AFf">algorithme récursif naïf</url> de l'exercice <xref ref="fibo_recursive"/> avec ceux obtenus pour l'<url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_polynomial">algorithme polynomial</url> de l'exercice <xref ref="fibo_iterative"/>.</p>
-</aside>
 
 </section>
 

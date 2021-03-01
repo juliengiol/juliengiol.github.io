@@ -1,0 +1,74 @@
+<aside>
+  <p>On rencontre aussi le terme affectation pour désigner une assignation.</p>
+</aside>
+<aside>
+  <p>Python Tutor gère également les langages Java, JavaScript, C, C++ et Ruby.</p>
+</aside>
+<aside>
+  <p>Les répétitions d'une boucle peuvent être considérées comme des exemples du concept d'<url href="https://fr.wikipedia.org/wiki/It%C3%A9ration#Informatique">itération</url> en informatique.</p>
+</aside>
+<aside>
+  <p>Remplacez <c>k = k + 7</c> par <c>k += 7</c> dans le bloc de code ci-contre, et vérifiez que cela fait exactement la même chose.</p>
+</aside>
+<aside>
+  <p>On appelle structure conditionnelle tout ensemble d'instructions conditionnelles placées au même niveau d'indentation.</p>
+</aside>
+<aside>
+  <p>En mathématiques, l'opérateur modulo est à la base de l'arithmétique modulaire qui fonde la théorie derrière l'algorithme de <url href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">chiffrement RSA</url>.</p>
+</aside>
+<aside>
+  <p>Il est fortement recommandé d'utiliser <url href="http://pythontutor.com/">Python Tutor</url> lors de la résolution de ces exercices.</p>
+</aside>
+<aside>
+  <p>
+    Notez qu'une fois qu'on est tombé sur <m>1</m> dans l'exercice <xref ref="ex_collatz"/>, le comportement de la suite devient périodique.
+  </p>
+  <p>
+    La célèbre <url href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">conjecture de Syracuse</url> (ou Collatz, ou Ulam, ou 3x+1, ...) prédit qu'une telle suite finit toujours par tomber sur <m>1</m>, quel que soit l'entier positif dont on parte.
+    Mais personne n'a encore réussi à le démontrer.
+  </p>
+</aside>
+<aside>
+  <p>
+    Essayez de résoudre l'exercice <xref ref="fibo_iterative"/> à l'aide de la <url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#formule_de_Binet">formule de Binet</url>.
+  </p>
+</aside>
+<aside>
+  <p>Il s'agit d'un cas simple d'une formule plus générale portant le nom de <url href="https://fr.wikipedia.org/wiki/Formule_de_Faulhaber#Exemples">formule de Faulhaber</url>.</p>
+</aside>
+<aside>
+  <p>L'algorithme d'<url href="https://fr.wikipedia.org/wiki/Exponentiation_rapide#Algorithme">exponentiation rapide</url> n'est pas seulement pertinent pour des nombres, mais aussi, par exemple, pour des matrices.</p>
+</aside>
+<aside>
+  <p>Vous pouvez aussi appeler cet algorithme <url href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_Ruffini-Horner#Histoire">méthode de Ruffini-Horner</url> si vous voulez faire honneur à Paolo Ruffini qui semble avoir eu cette idée avant William George Horner lui-même.</p>
+</aside>
+<aside>
+  <p>Cette formule est due à <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Binet/">Jacques Binet</url>, qui découvrit également les règles de calcul du produit matriciel.</p>
+</aside>
+<aside>
+  <p>Les coefficients des matrices de l'exercice <xref ref="expo_rapide_45"/> vous évoquent-ils quelque chose?</p>
+</aside>
+<aside>
+  <p>On distingue parfois les fonctions qui ne renvoient rien des autres en les appelant <em>procédures</em>.</p>
+</aside>
+<aside>
+  <p>La <url href="https://fr.wikipedia.org/wiki/R%C3%A9cursivit%C3%A9">récursivité</url> est un concept qui intervient dans des domaines aussi variés que la linguistique, les arts, la biologie et les mathématiques.</p>
+</aside>
+<aside>
+  <p>Comparez les temps de calcul du centième terme de la suite de Fibonacci pour l'<url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_r%C3%A9cursif_na%C3%AFf">algorithme récursif naïf</url> de l'exercice <xref ref="fibo_recursive"/> avec ceux obtenus pour l'<url href="https://fr.wikipedia.org/wiki/Suite_de_Fibonacci#Algorithme_polynomial">algorithme polynomial</url> de l'exercice <xref ref="fibo_iterative"/>.</p>
+</aside>
+<aside>
+  <p>
+    Cet algorithme est aussi connu sous le nom de <url href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_dichotomie">méthode de dichotomie</url>.
+    Son principe est analogue à celui d'une recherche aléatoire dans le dictionnaire.
+  </p>
+</aside>
+<aside>
+  <p>La lenteur est le principal défaut de cet algorithme qui, à part ça, s'avère très <url href="https://en.wikipedia.org/wiki/Robustness_%28computer_science%29">robuste</url>.</p>
+</aside>
+<aside>
+  <p>
+    La méthode de la fausse position étudiée dans l'exercice <xref ref="fausse_position"/> s'apelle aussi méthode regula falsi.
+    On trouve sa trace dans des documents aussi anciens que le <url href="https://fr.wikipedia.org/wiki/Papyrus_Berlin_6619">Papyrus Berlin 6619</url> de l'Égypte antique.
+  </p>
+</aside>
