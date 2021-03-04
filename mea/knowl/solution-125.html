@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T09:00:12-05:00    *-->
+<!--*    on 2021-03-04T13:38:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,22 +14,34 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.3.9.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.3.8.1</span><span class="period">.</span>
 </h6>
-<ol class="decimal">
-<li>
-<p>Comme les entiers \(4\) et \(9\) sont premiers entre eux, on peut appliquer le théorème des restes chinois :</p>
+<p>Il s'agit de trouver un entier \(x\) égal environ à \(700\) et tel que</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{cccl}
+x&amp;\equiv&amp;0&amp;\text{mod}\; 5,\\
+x&amp;\equiv&amp;3&amp;\text{mod}\; 7,\\
+x&amp;\equiv&amp;4&amp;\text{mod}\; 11.
+\end{array}
+\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme les entiers \(5, 7, 11\) sont premiers entre eux deux à deux, on peut appliquer le théorème des restes chinois :</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{|c|c|c|c|c|c|}
 \hline
 a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
 \hline
-3&amp;4&amp;9&amp;1=9\cdot 1+4\cdot(-2)&amp;1&amp;27\\
+0&amp;5&amp;77&amp;&amp;&amp;0\\
 \hline
-7&amp;9&amp;4&amp;1=4\cdot(-2)+9\cdot 1&amp;-2&amp;-56\\
+3&amp;7&amp;55&amp;1=55\cdot(-1)+7\cdot 8&amp;-1&amp;-165\\
 \hline
-M=&amp;36&amp;&amp;&amp;x_0=&amp;-29\\
+4&amp;11&amp;35&amp;1=35\cdot (-5)+11\cdot 16&amp;-5&amp;-700\\
+\hline
+M=&amp;385&amp;&amp;&amp;x_0=&amp;-865\\
 \hline
 \end{array}
 \end{equation*}
@@ -37,50 +49,16 @@ M=&amp;36&amp;&amp;&amp;x_0=&amp;-29\\
 <p>Les solutions sont donc caractérisées par</p>
 <div class="displaymath">
 \begin{equation*}
-x\equiv -29\;\mathrm{mod}\;36
+x\equiv -865\;\mathrm{mod}\;385.
 \end{equation*}
 </div>
-<p data-braille="continuation">ou encore, si on préfère,</p>
+<p>La solution qui se rapproche le plus de \(700\) est donc</p>
 <div class="displaymath">
 \begin{equation*}
-x\equiv 7\;\mathrm{mod}\;36.
+-865+385\cdot 4=675.
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Comme les entiers \(2, 5\) et \(7\) sont premiers entre eux, on peut appliquer le théorème des restes chinois :</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
-\hline
-1&amp;2&amp;35&amp;1=35\cdot 1+2\cdot(-17)&amp;1&amp;35\\
-\hline
-2&amp;5&amp;14&amp;1=14\cdot(-1)+5\cdot 3&amp;-1&amp;-28\\
-\hline
-6&amp;7&amp;10&amp;1=10\cdot(-2)+7\cdot 3&amp;-2&amp;-120\\
-\hline
-M=&amp;70&amp;&amp;&amp;x_0=&amp;-113\\
-\hline
-\end{array}
-\end{equation*}
-</div>
-<p>Les solutions sont donc caractérisées par</p>
-<div class="displaymath">
-\begin{equation*}
-x\equiv -113\;\mathrm{mod}\;70
-\end{equation*}
-</div>
-<p data-braille="continuation">ou encore, si on préfère,</p>
-<div class="displaymath">
-\begin{equation*}
-x\equiv 27\;\mathrm{mod}\;70.
-\end{equation*}
-</div>
-</li>
-<li><p>Comme les entiers \(2\) et \(8\) ne sont pas premiers entre eux, on ne peut pas appliquer le théorème des restes chinois.</p></li>
-</ol>
+<p>Réponse : Victor a six cent soixante-quinze billes exactement.</p>
 </div>
 <span class="incontext"><a href="exerciceschinois.html#solution-125">Contexte</a></span>
 </body>

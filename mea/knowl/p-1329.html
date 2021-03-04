@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:04-05:00    *-->
+<!--*    on 2021-03-04T13:36:47-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On a donc</p>
+<p>D'après la remarque <a class="xref" data-knowl="./knowl/lagrangeEtNewtonTroisPoints.html" title="Remarque 7.1.8">7.1.8</a>, on a</p>
 <div class="displaymath">
-\begin{equation*}
-\int_2^4f(x)\mathrm{d}x&lt;\text{Approximation}\quad\Rightarrow\quad\underbrace{\int_2^4f(x)\mathrm{d}x-\text{Approximation}}_{\text{Erreur}}&lt;0.
-\end{equation*}
+\begin{align*}
+N(t)&amp;=f(c)+\frac{f(m)-f(c)}{m-c}(t-c)+\frac{\frac{f(d)-f(m)}{d-m}-\frac{f(m)-f(c)}{m-c}}{d-c}(t-c)(t-m)\\
+&amp;=f(c)+\frac{f(m)-f(c)}{\frac{\Delta x}{2}}(t-c)+\frac{\frac{f(d)-f(m)}{\frac{\Delta x}{2}}-\frac{f(m)-f(c)}{\frac{\Delta x}{2}}}{\Delta x}(t-c)(t-m)\\
+&amp;=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}(t-c)(t-m).
+\end{align*}
 </div>
-<span class="incontext"><a href="exercicestrapezes.html#p-1329">Contexte</a></span>
+<span class="incontext"><a href="presentationsimpson.html#p-1329">Contexte</a></span>
 </body>
 </html>

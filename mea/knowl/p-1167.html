@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:47-05:00    *-->
+<!--*    on 2021-03-04T13:36:26-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour traiter le cas général avec \(n\) rectangles, on commence par l'observation suivante :</p>
+<p>Approximation par les rectangles à gauche :</p>
 <div class="displaymath">
 \begin{align*}
-\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\Delta x\\
-&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})(x_k-x_{k-1})\\
-&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(x_{k-1})\int_{x_{k-1}}^{x_k}\mathrm{d}x\\
-&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x_{k-1})\mathrm{d}x\\
-&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x.
+&amp;\Delta x\cdot\left(f(0)+f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)\right)\\
+=\;&amp;\frac{\pi}{4}\cdot\left(\sin(0)+\sin\left(\frac{\pi}{4}\right)+\sin\left(\frac{\pi}{2}\right)+\sin\left(\frac{3\pi}{4}\right)\right)\\
+\approx\;&amp;1{,}896.
 \end{align*}
 </div>
-<span class="incontext"><a href="presentationrectangles.html#p-1167">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#p-1167">Contexte</a></span>
 </body>
 </html>

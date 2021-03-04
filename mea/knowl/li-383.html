@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:01-05:00    *-->
+<!--*    on 2021-03-04T13:35:27-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,20 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.10.2</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.7.4</span><span class="period">.</span>
 </h6>
-<p>Pour tout \(n\geq 0\text{,}\) on a</p>
+<p>Quelle que soit la valeur de \(A\text{,}\) on a \(g(x)=0\text{.}\)</p>
+<p>L'équation \(g(x_0)=0\) est équivalente à</p>
 <div class="displaymath">
-\begin{align*}
-x_{n+1}&amp;=x_n-\frac{f(x_n)}{f'(x_n)}\\
-&amp;=x_n-\frac{x_n^2-k}{2x_n}\\
-&amp;=x_n-\frac{x_n^2}{2x_n}+\frac{k}{2x_n}\\
-&amp;=x_n-\frac{x_n}{2}+\frac{k}{2x_n}\\
-&amp;=\frac{x_n}{2}+\frac{k}{2x_n}\\
-&amp;=\frac{x_n+\frac{k}{x_n}}{2}.
-\end{align*}
+\begin{equation*}
+\frac{A}{(n+1)!}(x-x_0)^{n+1}=f(x)-f(x_0)-\cdots-\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n.
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme on a supposé \(x\ne x_0\text{,}\) cette dernière est équivalente à</p>
+<div class="displaymath">
+\begin{equation*}
+A=\frac{(n+1)!}{(x-x_0)^{n+1}}\left(f(x)-f(x_0)-\cdots-\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n\right).
+\end{equation*}
 </div></article><span class="incontext"><a href="exercicesnewton.html#li-383">Contexte</a></span>
 </body>
 </html>

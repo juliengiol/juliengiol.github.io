@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2021-03-04T13:35:26-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="exercise exercise-like"><h6 class="heading">
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">5.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Formule de Taylor-Lagrange.</span>
+</h6>
+<p>Soit \(n\ge 0\) un entier et \(f:[a;b]\longrightarrow\mathbb{R}\) une fonction telle que</p>
+<ul class="disc">
+<li>\(f^{(n+1)}\) existe sur \(]a,b[\text{,}\)</li>
+<li>et que \(f^{(n)}\) soit continue sur \([a,b]\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Le but de cet exercice est de montrer que pour tous \(x,x_0\in[a;b]\text{,}\) il existe \(\xi\in\;]a;b[\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^n,
+\end{equation*}
+</div>
+<p data-braille="continuation">i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=f(x_0)+f'(x_0)(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^n.
+\end{equation*}
+</div>
+<p>Ce théorème porte le nom de formule de Taylor-Lagrange : c'est une généralisation du <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Rolle" target="_blank">théorème de Rolle</a>, tout en étant une conséquence de ce dernier.</p>
+<ol class="decimal">
+<li>Vérifiez que ce théorème est trivialement vrai dans le cas où \(x=x_0\text{,}\) et supposez par la suite qu'on a \(x\ne x_0\text{.}\)</li>
+<li>Quel théorème reconnaissez-vous dans le cas où \(n=0\text{,}\) \(x_0=a\) et \(x=b\text{?}\)</li>
+<li>Quel théorème reconnaissez-vous dans le cas où \(n=0\text{,}\) \(x_0=a\text{,}\) \(x=b\text{,}\) et \(f(a)=f(b)\text{?}\)</li>
+<li>
+<p>Soit \(A\in\mathbb{R}\) une constante et \(g:[a;b]\longrightarrow\mathbb{R}\) la fonction définie par</p>
+<div class="displaymath">
+\begin{equation*}
+g(t):=f(x)-\sum_{k=0}^n\frac{f^{(k)}(t)}{k!}(x-t)^k-\frac{A}{(n+1)!}(x-t)^{n+1}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Montrez qu'on peut choisir \(A\) de façon à ce que</p>
+<div class="displaymath">
+\begin{equation*}
+g(x)=g(x_0)=0,
+\end{equation*}
+</div>
+<p data-braille="continuation">et supposez que \(A\) est égale à cette valeur par la suite.</p>
+</li>
+<li>
+<p>Vérifiez que \(g\) est continue sur \([a;b]\text{,}\) et dérivable sur \(]a;b[\) avec</p>
+<div class="displaymath">
+\begin{equation*}
+g'(t)=-\frac{f^{(n+1)}(t)}{n!}(x-t)^n+\frac{A}{n!}(x-t)^n
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(t\in\;]a;b[\text{.}\)</p>
+</li>
+<li>Utilisez le théorème de Rolle pour conclure.</li>
+</ol>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-51-hidden.html" title="Solution 5.3.7.1"><span class="type">Solution</span></a></div></article><span class="incontext"><a href="exercicesnewton.html#taylorlagrange">Contexte</a></span>
+</body>
+</html>

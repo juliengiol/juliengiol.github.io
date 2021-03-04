@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:05-05:00    *-->
+<!--*    on 2021-03-04T13:35:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,18 +14,17 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.12.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.13.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
 <li>
-<p>Prendre cette sécante à la place de la tangente revient à remplacer \(f'(x_n)\) par \(\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}\) dans la relation de récurrence de la méthode de Newton-Raphson.</p>
-<p>Pour tout \(n\geq 0\text{,}\) on a donc</p>
+<p>Prendre cette sécante à la place de la tangente revient à remplacer \(f'(x_n)\) par \(\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}\) dans la relation de récurrence de la méthode de Newton-Raphson. Pour tout \(n\geq 0\text{,}\) on a donc</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}}
+x_{n+1}=x_n-\frac{f(x_n)}{\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}},
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p data-braille="continuation">i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 x_{n+1}=x_n-\frac{f(x_n)(x_n-x_{n-1})}{f(x_n)-f(x_{n-1})}.
@@ -34,30 +33,34 @@ x_{n+1}=x_n-\frac{f(x_n)(x_n-x_{n-1})}{f(x_n)-f(x_{n-1})}.
 </li>
 <li>
 <p>On a \(f'(x)=-e^{-x}-1\) pour tout \(x\in\mathbb{R}\text{.}\)</p>
-<p>Comme \(e^{-x}&gt;0\) pour tout \(x\in\mathbb{R}\text{,}\) il est clair que</p>
-<div class="displaymath">
-\begin{equation*}
-f'(x)&lt;0\qquad\text{pour tout}\;x\in\mathbb{R}.
-\end{equation*}
-</div>
-<p>Par conséquent, \(f\) est strictement décroissante sur \(\mathbb{R}\text{.}\)</p>
+<p>Comme \(e^{-x}&gt;0\text{,}\) on voit que \(f'(x)&lt;0\) pour tout \(x\in\mathbb{R}\) et, par conséquent, la fonction \(f\) est strictement décroissante sur \(\mathbb{R}\text{.}\)</p>
 </li>
 <li>
-<p>La fonction \(f\) est continue sur \(\mathbb{R}\text{.}\)</p>
-<p>On a \(f(0)=1&gt;0\) et \(f(1)=e^{-1}-1&lt;0\text{.}\)</p>
-<p>Par le théorème des valeurs intermédiaires, la fonction \(f\) possède donc un zéro dans l'intervalle \(]0;1[\text{.}\)</p>
-<p>Et comme \(f\) est strictement décroissante, ce zéro est unique.</p>
+<p>La fonction \(f\) est continue sur \(\mathbb{R}\text{.}\) Comme \(f(0)=1&gt;0\) et \(f(1)=e^{-1}-1&lt;0\text{,}\) le théorème des valeurs intermédiaires implique que la fonction \(f\) possède un zéro dans l'intervalle \(]0;1[\text{.}\)</p>
+<p>Comme par ailleurs \(f\) est strictement décroissante sur \(\mathbb{R}\text{,}\) elle ne peut pas avoir plus qu'un zéro.</p>
 </li>
 <li>
-<p>On trouve</p>
+<p>Voici le <a class="external" href="https://tinyurl.com/4mx4w8h8" target="_blank">code à utiliser</a>, et voilà les valeurs trouvées, après troncature :</p>
 <div class="displaymath">
 \begin{align*}
-x_0&amp;=0\\
-x_1&amp;=1\\
-x_2&amp;=x_1-\frac{f(x_1)(x_1-x_0)}{f(x_1)-f(x_0)}=0{,}612\,699\ldots\\
-x_3&amp;=x_2-\frac{f(x_2)(x_2-x_1)}{f(x_2)-f(x_1)}=0{,}563\,838\ldots\\
-x_4&amp;=x_3-\frac{f(x_3)(x_3-x_2)}{f(x_3)-f(x_2)}=0{,}567\,170\ldots\\
-x_5&amp;=x_4-\frac{f(x_4)(x_4-x_3)}{f(x_4)-f(x_3)}=0{,}567\,143\ldots
+x_0&amp;=0;\\
+x_1&amp;=1;\\
+x_2&amp;=0{,}612\,699\,836\,780\,282\ldots;\\
+x_3&amp;=0{,}563\,838\,389\,161\,074\ldots;\\
+x_4&amp;=0{,}567\,170\,358\,419\,744\ldots;\\
+x_5&amp;=0{,}567\,143\,306\,604\,963\ldots.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Voici le <a class="external" href="https://tinyurl.com/36z5k35x" target="_blank">code à utiliser</a>, et voilà les valeurs trouvées, après troncature :</p>
+<div class="displaymath">
+\begin{align*}
+x_1&amp;=1;\\
+x_2&amp;=0{,}537\,882\,842\,739\,990\ldots;\\
+x_3&amp;=0{,}566\,986\,991\,405\,413\ldots;\\
+x_4&amp;=0{,}567\,143\,285\,989\,123\ldots;\\
+x_5&amp;=0{,}567\,143\,290\,409\,783\ldots.
 \end{align*}
 </div>
 </li>

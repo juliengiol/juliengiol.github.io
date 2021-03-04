@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T09:00:06-05:00    *-->
+<!--*    on 2021-03-04T13:38:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,36 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Le nombre \(u\) est-il un inverse de \(a\) modulo \(m\text{?}\)</p>
-<ol class="decimal">
-<li><p>\(u=7\text{,}\) \(a=4\) et \(m=26\text{.}\)</p></li>
-<li><p>\(u=69\text{,}\) \(a=4\) et \(m=25\text{.}\)</p></li>
-<li><p>\(u=3\text{,}\) \(a=-34\) et \(m=9\text{.}\)</p></li>
-<li><p>\(u=-536\text{,}\) \(a=1954\) et \(m=205\text{.}\)</p></li>
-<li><p>\(u=3\text{,}\) \(a=0\) et \(m=5\text{.}\)</p></li>
-</ol>
+<p>Il s'agit de trouver un entier \(x\) égal environ à \(700\) et tel que</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{cccl}
+x&amp;\equiv&amp;0&amp;\text{mod}\; 5,\\
+x&amp;\equiv&amp;3&amp;\text{mod}\; 7,\\
+x&amp;\equiv&amp;4&amp;\text{mod}\; 11.
+\end{array}
+\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme les entiers \(5, 7, 11\) sont premiers entre eux deux à deux, on peut appliquer le théorème des restes chinois :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
+\hline
+0&amp;5&amp;77&amp;&amp;&amp;0\\
+\hline
+3&amp;7&amp;55&amp;1=55\cdot(-1)+7\cdot 8&amp;-1&amp;-165\\
+\hline
+4&amp;11&amp;35&amp;1=35\cdot (-5)+11\cdot 16&amp;-5&amp;-700\\
+\hline
+M=&amp;385&amp;&amp;&amp;x_0=&amp;-865\\
+\hline
+\end{array}
+\end{equation*}
+</div>
 <span class="incontext"><a href="exerciceschinois.html#p-2074">Contexte</a></span>
 </body>
 </html>

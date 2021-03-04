@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:58-05:00    *-->
+<!--*    on 2021-03-04T13:35:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,30 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour la dernière colonne, elle semble indiquer que</p>
+<p>Comme la dérivée de la fonction</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\leq 0{,}8\qquad\text{pour tout}\;n\geq 0.
+g(t)=2t+1-e^t
 \end{equation*}
 </div>
-<p data-braille="continuation">D'après l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.7">5.3.7</a>, on a</p>
+<p data-braille="continuation">vaut \(g'(t)=2-e^t\text{,}\) on a le tableau de variations qui suit.</p>
 <div class="displaymath">
 \begin{equation*}
-|x_{n+1}-c|\leq K|x_n-c|^2\qquad\text{pour tout}\;n\geq 0
+\begin{array}{c|ccccccc}
+x&amp;0&amp;&amp;&amp;&amp;\ln(2)&amp;&amp;&amp;&amp;1&amp;\\
+\hline
+g'(t)&amp;&amp;&amp;+&amp;&amp;0&amp;&amp;-&amp;&amp;+&amp;\\
+\hline
+g(t)&amp;0&amp;&amp;\nearrow&amp;&amp;&amp;&amp;\searrow&amp;&amp;3-e&amp;
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">d'où</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\leq K=\frac{M}{2m}=\frac{12}{2\cdot 3}=2\qquad\text{pour tout}\;n\geq 0.
-\end{equation*}
-</div>
-<p data-braille="continuation">Il n'est donc pas surprenant qu'on ait observé que les valeurs \(\displaystyle\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\) semblent majorées par \(0{,}8\text{.}\) En fait, pour être plus précis, on pourrait montrer que cette suite est croissante et majorée par</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{n\rightarrow+\infty}\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}=\frac{f''(c)}{2f'(c)}=\frac{6c}{2\cdot 3c^2}=\frac{1}{c}=\frac{1}{\sqrt[3]{2}}\approx 0{,}794.
-\end{equation*}
-</div>
+<p data-braille="continuation">On en déduit que \(g(t)\ge 0\text{,}\) d'où \(2t\ge e^t-1\) pour tout \(t\in[0;1]\text{.}\)</p>
 <span class="incontext"><a href="exercicesnewton.html#p-648">Contexte</a></span>
 </body>
 </html>

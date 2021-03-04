@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:01-05:00    *-->
+<!--*    on 2021-03-04T13:35:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,17 +13,28 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.10.3</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.7.5</span><span class="period">.</span>
 </h6>
-<p>Pour tout \(n\geq 0\text{,}\) on a</p>
+<p>Les hypothèses faites sur \(f\) entraînent que \(g\) est continue sur \([a;b]\text{,}\) et dérivable sur \(]a;b[\text{.}\)</p>
+<p>Par ailleurs, notons que la règle du produit donne</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{f^{(k)}(t)}{k!}(x-t)^k\right)=\frac{f^{(k+1)}(t)}{k!}(x-t)^k-\frac{f^{(k)}(t)}{(k-1)!}(x-t)^{k-1}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(1\le k\le n\) et tout \(t\in\;]a;b[\text{.}\)</p>
+<p>Grâce à cette formule de nature télescopique, on voit que</p>
 <div class="displaymath">
 \begin{align*}
-\frac{1}{2x_n}\left(x_n-\sqrt{k}\right)^2&amp;=\frac{1}{2x_n}\left(x_n^2-2x_n\sqrt{k}+k\right)\\
-&amp;=\frac{x_n^2}{2x_n}-\frac{2x_n\sqrt{k}}{2x_n}+\frac{k}{2x_n}\\
-&amp;=\frac{x_n}{2}-\sqrt{k}+\frac{k}{2x_n}\\
-&amp;=\frac{x_n+\frac{k}{x_n}}{2}-\sqrt{k}\\
-&amp;=x_{n+1}-\sqrt{k}.
+g'(t)&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(f(x)-f(t)-\sum_{k=1}^n\frac{f^{(k)}(t)}{k!}(x-t)^k-\frac{A}{(n+1)!}(x-t)^{n+1}\right)\\
+&amp;=-f'(t)-\sum_{k=1}^n\left(\frac{f^{(k+1)}(t)}{k!}(x-t)^k-\frac{f^{(k)}(t)}{(k-1)!}(x-t)^{k-1}\right)\\
+&amp;\quad+\frac{A}{n!}(x-t)^n\\
+&amp;=-f'(t)-\cdots-\frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1}-\frac{f^{(n+1)}(t)}{n!}(x-t)^n\\
+&amp;\quad+f'(t)+\cdots+\frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1}\\
+&amp;\quad+\frac{A}{n!}(x-t)^n\\
+&amp;=\frac{A}{n!}(x-t)^n-\frac{f^{(n+1)}(t)}{n!}(x-t)^n
 \end{align*}
-</div></article><span class="incontext"><a href="exercicesnewton.html#li-384">Contexte</a></span>
+</div>
+<p data-braille="continuation">pour tout \(t\in\;]a;b[\text{.}\)</p></article><span class="incontext"><a href="exercicesnewton.html#li-384">Contexte</a></span>
 </body>
 </html>

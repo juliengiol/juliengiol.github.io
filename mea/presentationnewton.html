@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:56:22-05:00    *-->
+<!--*    on 2021-03-04T13:34:10-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -218,21 +218,21 @@ MathJax.Hub.Config({
 <a href="presentationnewton.html" class="permalink">¶</a><article class="lemma theorem-like" id="basedenewton"><h6 class="heading">
 <span class="type">Lemme</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-484">Soit \(f\) une fonction réelle de la variable réelle et \(x_0\) tels que</p>
+<p id="p-476">Soit \(f\) une fonction réelle de la variable réelle, dérivable en \(x_0\in\mathbb{R}\) avec</p>
 <div class="displaymath">
 \begin{equation*}
 f'(x_0)\neq 0.
 \end{equation*}
 </div>
-<p id="p-485">Alors l'abscisse \(x_1\) du point d'intersection de l'axe des \(x\) avec la tangente au graphe de \(f\) au point \((x_0;f(x_0))\) vaut</p>
+<p id="p-477">Alors l'abscisse \(x_1\) du point d'intersection de l'axe des \(x\) avec la tangente au graphe de \(f\) au point \((x_0;f(x_0))\) vaut</p>
 <div class="displaymath">
 \begin{equation*}
 x_1=x_0-\frac{f(x_0)}{f'(x_0)}.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-486">L'équation de la tangente au point \((x_0;f(x_0))\) est donnée par</p>
+</div></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-478">L'équation de la tangente au point \((x_0;f(x_0))\) est donnée par</p>
 <div class="displaymath">
 \begin{equation*}
-y=\text{polynôme de Taylor de degré un au plus en }x_0
+y=\text{polynôme de Taylor de degré un au plus en }x_0,
 \end{equation*}
 </div>
 <p data-braille="continuation">c'est-à-dire</p>
@@ -241,88 +241,103 @@ y=\text{polynôme de Taylor de degré un au plus en }x_0
 y=f(x_0)+f'(x_0)(x-x_0).
 \end{equation*}
 </div>
-<p id="p-487">Comme l'axe des \(x\) a pour équation \(y=0\text{,}\) on obtient l'abscisse de son intersection avec la tangente ci-dessus en résolvant l'équation suivante :</p>
+<p id="p-479">Comme l'axe des \(x\) a pour équation \(y=0\text{,}\) on obtient l'abscisse de son intersection avec la tangente ci-dessus en résolvant l'équation suivante :</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{cccc}
+\begin{array}{crcl}
 &amp;f(x_0)+f'(x_0)(x-x_0)&amp;=&amp;0\\
 \Leftrightarrow&amp;f'(x_0)(x-x_0)&amp;=&amp;-f(x_0)\\
 \Leftrightarrow&amp;x-x_0&amp;=&amp;-\frac{f(x_0)}{f'(x_0)}\\
-\Leftrightarrow&amp;x&amp;=&amp;x_0-\frac{f(x_0)}{f'(x_0)}
+\Leftrightarrow&amp;x&amp;=&amp;x_0-\frac{f(x_0)}{f'(x_0)}.
 \end{array}
 \end{equation*}
 </div></article></div>
 <article class="example example-like" id="exempleiterationnewton"><a data-knowl="" class="id-ref original" data-refid="hk-exempleiterationnewton"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exempleiterationnewton"><article class="example example-like"><p id="p-488">Soit \(f(x)=x^2-2\) et \(x_0=2\text{.}\)</p>
-<p id="p-489">On a \(f'(x)=2x\text{,}\) donc \(f'(2)=4\neq 0\) et on peut appliquer le lemme <a class="xref" data-knowl="./knowl/basedenewton.html" title="Lemme 5.1.1">5.1.1</a> : l'abscisse \(x_1\) du point d'intersection de l'axe des \(x\) avec la tangente au graphe de \(f\) au point \((2;f(2))=(2;2)\) vaut</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exempleiterationnewton"><article class="example example-like"><figure class="figure figure-like" id="figure-4"><iframe src="https://www.desmos.com/calculator/3redwyg0kh" id="desmos-base-newton" width="570" height="684"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.3<span class="period">.</span></span><span class="space"> </span>Premier pas de la méthode de Newton-Raphson</figcaption></figure><p id="p-480">Soit \(f(x)=x^2-2\) et \(x_0=2\text{.}\)</p>
+<p id="p-481">On a \(f'(x)=2x\text{,}\) donc \(f'(2)=4\neq 0\) et on peut appliquer le lemme <a class="xref" data-knowl="./knowl/basedenewton.html" title="Lemme 5.1.1">5.1.1</a> : l'abscisse \(x_1\) du point d'intersection de l'axe des \(x\) avec la tangente au graphe de \(f\) au point \((2;f(2))=(2;2)\) vaut</p>
 <div class="displaymath">
 \begin{align*}
 x_1&amp;=2-\frac{f(2)}{f'(2)}\\
 &amp;=2-\frac{2}{4}\\
 &amp;=\frac{3}{2}.
 \end{align*}
-</div>
-<p id="p-490"><a class="external" href="https://www.desmos.com/calculator/6l4xvj0f6p" target="_blank">Cliquez ici</a> pour vérifier cela graphiquement avec Desmos.</p></article></div>
+</div></article></div>
 <article class="proposition theorem-like" id="criterepournewton"><h6 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
 </h6>
-<p id="p-491">Soit \(f:[c;b]\longrightarrow\mathbb{R}\) une fonction continue sur \([c;b]\) et deux fois dérivable sur \(]c;b[\text{,}\) telle que</p>
+<p id="p-482">Soit \(f:[c;b]\longrightarrow\mathbb{R}\) une fonction telle que</p>
 <ul class="disc">
-<li id="li-287"><p id="p-492">\(f(c)=0\;\text{;}\)</p></li>
-<li id="li-288"><p id="p-493">\(f'(x)&gt;0\) et \(f''(x)&gt;0\) pour tout \(x\in ]c;b[\;\text{.}\)</p></li>
+<li id="li-285">\(f''\) existe et soit positive sur \(]c;b[\text{,}\)</li>
+<li id="li-286">\(f'\) soit continue sur \([c;b]\) et positive sur \(]c;b[\text{,}\)</li>
+<li id="li-287">\(f(c)=0\text{.}\)</li>
 </ul>
-<p id="p-494">Si \(x_0\in ]c;b[\text{,}\) alors l'abscisse \(\displaystyle x_1=x_0-\frac{f(x_0)}{f'(x_0)}\) donnée par le lemme <a class="xref" data-knowl="./knowl/basedenewton.html" title="Lemme 5.1.1">5.1.1</a> vérifie</p>
+<p id="p-483">Alors pour tout \(x_0\in\;]c;b]\text{,}\) l'abscisse</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle x_1:=x_0-\frac{f(x_0)}{f'(x_0)}
+\end{equation*}
+</div>
+<p data-braille="continuation">donnée par le lemme <a class="xref" data-knowl="./knowl/basedenewton.html" title="Lemme 5.1.1">5.1.1</a> vérifie</p>
 <div class="displaymath">
 \begin{equation*}
 c&lt;x_1&lt;x_0.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref original" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-495">Par le <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_des_accroissements_finis#%C3%89nonc%C3%A9" target="_blank">théorème des accroissements finis</a> (le cas \(n=0\) de la <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Taylor#Formule_de_Taylor-Lagrange" target="_blank">formule de Taylor-Lagrange</a>, parfois aussi appelé théorème de Lagrange) appliqué à l'intervalle \([c;x_0]\text{,}\) il existe \(\xi\in\;]c;x_0[\) tel que</p>
+</div></article><article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref original" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-484">Il y a deux inégalités à établir. Nous allons utiliser deux fois la formule de Taylor-Lagrange démontrée à l'exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>.</p>
+<ul class="disc">
+<li id="li-288">
+<p id="p-485">En appliquant la formule de Taylor-Lagrange pour \(n=0\) à la fonction \(f\text{,}\) on trouve \(\xi_1\in\;]c;b[\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{f(x_0)-f(c)}{x_0-c}=f'(\xi).
+f(x_0)=f(c)+f'(\xi_1)(x_0-c).
 \end{equation*}
 </div>
-<p data-braille="continuation">On en déduit que</p>
+<p data-braille="continuation">Comme \(f(c)=0\text{,}\) \(f'(\xi_1)&gt;0\) et \(x_0&gt;c\text{,}\) on en déduit que \(f(x_0)&gt;0\text{.}\)</p>
+<p id="p-486">Comme par ailleurs \(f''(x_0)&gt;0\text{,}\) il en découle que</p>
 <div class="displaymath">
 \begin{equation*}
-f(x_0)-f(c)=f'(\xi)(x_0-c)
+x_1=x_0-\frac{f(x_0)}{f'(x_0)}&lt;x_0.
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation}
-f(x_0)=f'(\xi)(x_0-c)\label{application_taylor_lagrange}\tag{5.1.1}
-\end{equation}
-</div>
-<p data-braille="continuation">puisque \(f(c)=0\text{.}\)</p>
-<p id="p-496">On va maintenant établir les inégalités \(c&lt;x_1\) et \(x_1&lt;x_0\text{.}\)</p>
-<p id="p-497">Commençons par la seconde. Comme \(f'(\xi)&gt;0\) et \(x_0&gt;c\) par hypothèses, on déduit de <a class="xref" data-knowl="./knowl/application_taylor_lagrange.html" title="Équation 5.1.1">(5.1.1)</a> que  \(f(x_0)&gt;0\text{.}\) D'autre part, on a \(f'(x_0)&gt;0\) par hypothèse. Donc</p>
+</li>
+<li id="li-289">
+<p id="p-487">En appliquant la formule de Taylor-Lagrange pour \(n=1\) à la fonction \(f\text{,}\) on trouve \(\xi_2\in\;]c;b[\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
--\frac{f(x_0)}{f'(x_0)}&lt;0\quad\Rightarrow\quad\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}&lt;x_0.
+f(c)=f(x_0)+f'(x_0)(c-x_0)+\frac{f''(\xi_2)}{2}(c-x_0)^2.
 \end{equation*}
 </div>
-<p id="p-498">Il reste à montrer que \(c&lt;x_1\text{.}\) Par positivité de \(f''\text{,}\) la fonction \(f'\) est strictement croissante sur \(]c;b[\text{.}\) En utilisant cela et <a class="xref" data-knowl="./knowl/application_taylor_lagrange.html" title="Équation 5.1.1">(5.1.1)</a>, on a</p>
+<p data-braille="continuation">Comme \(f(c)=0\text{,}\) diviser par \(f'(x_0)\) conduit à</p>
 <div class="displaymath">
-\begin{align*}
-\xi&lt;x_0&amp;\quad\Rightarrow\quad f'(\xi)&lt;f'(x_0)\\
-&amp;\quad\Rightarrow\quad\underbrace{f'(\xi)(x_0-c)}_{f(x_0)}&lt;f'(x_0)(x_0-c)\\
-&amp;\quad\Rightarrow\quad \frac{f(x_0)}{f'(x_0)}&lt;x_0-c\\
-&amp;\quad\Rightarrow\quad c&lt;\underbrace{x_0-\frac{f(x_0)}{f'(x_0)}}_{x_1}.
-\end{align*}
-</div></article></div>
+\begin{equation*}
+0=\frac{f(x_0)}{f'(x_0)}+c-x_0+\frac{f''(\xi_2)}{2f'(x_0)}(c-x_0)^2,
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+x_1=c+\frac{f''(\xi_2)}{2f'(x_0)}(c-x_0)^2.
+\end{equation*}
+</div>
+<p id="p-488">Comme par ailleurs \(f''(\xi_2)&gt;0\text{,}\) \(f'(x_0)&gt;0\) et \((c-x_0)^2&gt;0\text{,}\) on en conclut que</p>
+<div class="displaymath">
+\begin{equation*}
+x_1&gt;c.
+\end{equation*}
+</div>
+</li>
+</ul></article></div>
 <article class="example example-like" id="exempledecroissanceiteration"><a data-knowl="" class="id-ref original" data-refid="hk-exempledecroissanceiteration"><h6 class="heading">
-<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exempledecroissanceiteration"><article class="example example-like"><p id="p-499">Reprenons la fonction \(f(x)=x^2-2\) et \(x_0=2\text{.}\)</p>
-<p id="p-500">Comme \(f'(x)=2x\) et \(f''(x)=2\text{,}\) les hypothèses de la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.3">5.1.3</a> sont satisfaites avec \([c;b]=[\sqrt{2};3]\text{.}\)</p>
-<p id="p-501">Comme on l'a calculé à l'exemple <a class="xref" data-knowl="./knowl/exempleiterationnewton.html" title="Exemple 5.1.2">5.1.2</a>, on a</p>
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exempledecroissanceiteration"><article class="example example-like"><p id="p-489">Reprenons la fonction \(f(x)=x^2-2\) et \(x_0=2\text{.}\)</p>
+<p id="p-490">Puisque \(f'(x)=2x\) et \(f''(x)=2\text{,}\) les hypothèses de la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.4">5.1.4</a> sont satisfaites avec, par exemple, \([c;b]:=[\sqrt{2};3]\text{.}\)</p>
+<p id="p-491">Comme on l'a calculé à l'exemple <a class="xref" data-knowl="./knowl/exempleiterationnewton.html" title="Exemple 5.1.2">5.1.2</a>, on a</p>
 <div class="displaymath">
 \begin{equation*}
 x_1=x_0-\frac{f(x_0)}{f'(x_0)}=\frac{3}{2}=1{,}5
 \end{equation*}
 </div>
-<p data-braille="continuation">et, comme prévu par la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.3">5.1.3</a>, on a bien</p>
+<p data-braille="continuation">et, comme prévu par la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.4">5.1.4</a>, on a bien</p>
 <div class="displaymath">
 \begin{equation*}
 c&lt;x_1&lt;x_0
@@ -335,51 +350,57 @@ c&lt;x_1&lt;x_0
 \end{equation*}
 </div></article></div>
 <article class="remark remark-like" id="remark-13"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span>
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span>
 </h6>
-<p id="p-502">En d'autres termes, la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.3">5.1.3</a> dit qu'on s'est rapproché du zéro \(c\) en passant de \(x_0\) à \(x_1\text{.}\)</p>
-<p id="p-503">C'est le principe itératif de la méthode de Newton-Raphson.</p></article><article class="theorem theorem-like" id="methodedenewton"><h6 class="heading">
-<span class="type">Théorème</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode de Newton-Raphson.</span>
+<p id="p-492">En d'autres termes, la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.4">5.1.4</a> dit qu'on s'est rapproché du zéro \(c\) en passant de \(x_0\) à \(x_1\) : c'est le principe itératif de la méthode de Newton-Raphson.</p></article><article class="theorem theorem-like" id="methodedenewton"><h6 class="heading">
+<span class="type">Théorème</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode de Newton-Raphson.</span>
 </h6>
-<p id="p-504">Soit \(f:[c;b]\longrightarrow\mathbb{R}\) une fonction continue sur \([c;b]\) et deux fois dérivable sur \(]c;b[\text{,}\) telle que</p>
+<p id="p-493">Soit \(f:[c;b]\longrightarrow\mathbb{R}\) une fonction telle que</p>
 <ul class="disc">
-<li id="li-289"><p id="p-505">\(f(c)=0\;\text{;}\)</p></li>
-<li id="li-290"><p id="p-506">\(f'(x)&gt;0\) et \(f''(x)&gt;0\) pour tout \(x\in ]c;b[\;\text{.}\)</p></li>
+<li id="li-290">\(f''\) existe et soit positive sur \(]c;b[\text{,}\)</li>
+<li id="li-291">\(f'\) soit continue sur \([c;b]\) et positive sur \(]c;b[\text{,}\)</li>
+<li id="li-292">\(f(c)=0\text{.}\)</li>
 </ul>
-<p id="p-507">Si \(x_0\in ]c;b[\text{,}\) alors la formule de récurrence</p>
+<p id="p-494">Quel que soit le point de départ \(x_0\) choisi dans l'intervalle \(]c;b]\text{,}\) la formule de récurrence</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
+x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}
 \end{equation*}
 </div>
 <p data-braille="continuation">définit une suite strictement décroissante \(\{x_n\}\) telle que</p>
 <div class="displaymath">
 \begin{equation*}
-c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0&lt;b\qquad\text{pour tout}\;n\geq 0
+c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0\le b
 \end{equation*}
 </div>
-<p data-braille="continuation">et</p>
+<p data-braille="continuation">pour tout \(n\geq 0\) avec</p>
 <div class="displaymath">
 \begin{equation*}
 \lim_{n\rightarrow+\infty}x_n=c.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-7"><a data-knowl="" class="id-ref original" data-refid="hk-proof-7"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-508">En itérant la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.3">5.1.3</a>, on voit que la suite \(\{x_n\}\) est bien définie et qu'elle vérifie</p>
+</div></article><article class="hiddenproof" id="proof-7"><a data-knowl="" class="id-ref original" data-refid="hk-proof-7"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-495">En itérant la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.4">5.1.4</a>, on voit que la suite \(\{x_n\}\) est bien définie et qu'elle vérifie</p>
 <div class="displaymath">
 \begin{equation*}
-c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0&lt;b\qquad\text{pour tout}\;n\geq 0.
+c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0\le b
 \end{equation*}
 </div>
-<p id="p-509">En particulier, \(\{x_n\}\) est décroissante et minorée par \(c\text{.}\) Par le <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_la_limite_monotone#%C3%89nonc%C3%A9_pour_les_suites" target="_blank">théorème de la limite monotone</a>, on en déduit que</p>
+<p data-braille="continuation">pour tout \(n\geq 0\text{.}\) En particulier, \(\{x_n\}\) est décroissante et minorée par \(c\text{.}\) Par le <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_la_limite_monotone#%C3%89nonc%C3%A9_pour_les_suites" target="_blank">théorème de la limite monotone</a>, on en déduit que</p>
 <div class="displaymath">
 \begin{equation*}
-\ell=\lim_{n\rightarrow+\infty}x_n\quad\text{existe et vérifie}\quad c\leq\ell&lt;b.
+\ell:=\lim_{n\rightarrow+\infty}x_n
+\end{equation*}
+</div>
+<p data-braille="continuation">existe et vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+c\le \ell\le b.
 \end{equation*}
 </div>
 <p data-braille="continuation">Il ne reste plus qu'à montrer que \(\ell=c\text{.}\)</p>
-<p id="p-510">Raisonnons par l'absurde et supposons que \(c&lt;\ell\text{.}\) Notons alors que</p>
+<p id="p-496">Raisonnons par l'absurde et supposons que \(c&lt;\ell\text{.}\) Notons alors que</p>
 <div class="displaymath">
 \begin{equation*}
-\lim_{n\rightarrow+\infty}x_{n+1}=\lim_{n\rightarrow+\infty}x_n=\ell
+\lim_{n\rightarrow+\infty}x_{n+1}=\lim_{n\rightarrow+\infty}x_n=\ell,
 \end{equation*}
 </div>
 <p data-braille="continuation">puis que</p>
@@ -394,180 +415,290 @@ c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0&lt;b\qquad\text{pour tout}\;n\geq
 \lim_{n\rightarrow+\infty}f'(x_n)=f'(\ell)&gt;0
 \end{equation*}
 </div>
-<p data-braille="continuation">par la continuité de \(f'\) en \(\ell\) (qui découle de sa dérivabilité en ce point). En faisant tendre \(n\) vers l'infini, la relation de récurrence</p>
+<p data-braille="continuation">par la continuité de \(f'\) en \(\ell\) (qui découle de sa dérivabilité en ce point). En faisant tendre \(n\) vers l'infini dans la relation de récurrence</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)},
 \end{equation*}
 </div>
-<p data-braille="continuation">entraîne</p>
-<div class="displaymath">
-\begin{align*}
-\ell=\ell-\frac{f(\ell)}{f'(\ell)}&amp;\quad\Rightarrow\quad\frac{f(\ell)}{f'(\ell)}=0\\
-&amp;\quad\Rightarrow\quad f(\ell)=0.
-\end{align*}
-</div>
-<p data-braille="continuation">Mais comme \(f\) est strictement croissante sur \([c;b]\) par positivité de \(f'\text{,}\)</p>
+<p data-braille="continuation">on obtient donc</p>
 <div class="displaymath">
 \begin{equation*}
-c&lt;\ell\qquad\Rightarrow\qquad f(c)=0&lt;f(\ell)
+\ell=\ell-\frac{f(\ell)}{f'(\ell)},
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+f(\ell)=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Mais par ailleurs, la formule de Taylor-Lagrange pour \(n=0\) (voir exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>) entraîne l'existence de \(\xi\in\;]c;\ell[\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+f(\ell)=\cancel{f(c)}+f'(\xi)(\ell-c)&gt;0,
 \end{equation*}
 </div>
 <p data-braille="continuation">d'où la contradiction.</p></article></div>
 <article class="example example-like" id="x2moins2newton"><a data-knowl="" class="id-ref original" data-refid="hk-x2moins2newton"><h6 class="heading">
-<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-x2moins2newton"><article class="example example-like"><p id="p-511">Partant de \(x_0=2\text{,}\) effectuons trois itérations de la méthode de Newton-Raphson pour la fonction \(f(x)=x^2-2\text{,}\) dont on a déjà observé à l'exemple <a class="xref" data-knowl="./knowl/exempledecroissanceiteration.html" title="Exemple 5.1.4">5.1.4</a> qu'elle vérifie les conditions du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> \([c;b]=[\sqrt{2};3]\text{.}\)</p>
-<p id="p-512">Notons que</p>
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-x2moins2newton"><article class="example example-like"><p id="p-497">Partant de \(x_0=2\text{,}\) nous allons effectuer trois itérations de la méthode de Newton-Raphson pour la fonction \(f(x)=x^2-2\text{,}\) dont on a déjà observé à l'exemple <a class="xref" data-knowl="./knowl/exempledecroissanceiteration.html" title="Exemple 5.1.5">5.1.5</a> qu'elle vérifie les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.7: Méthode de Newton-Raphson">5.1.7</a> sur l'intervalle \([c;b]:=[\sqrt{2};3]\text{.}\)</p>
+<p id="p-498">Notons que</p>
 <div class="displaymath">
 \begin{equation*}
-x-\frac{f(x)}{f'(x)}=x-\frac{x^2-2}{2x}=x-\frac{x}{2}+\frac{1}{x}=\frac{x}{2}+\frac{1}{x}
+x-\frac{f(x)}{f'(x)}=x-\frac{x^2-2}{2x}=x-\frac{x}{2}+\frac{1}{x}=\frac{x}{2}+\frac{1}{x}.
 \end{equation*}
 </div>
-<p id="p-513">On trouve donc</p>
+<p id="p-499">On obtient :</p>
 <div class="displaymath">
 \begin{align*}
-x_0&amp;=2\\
-x_1&amp;=\frac{x_0}{2}+\frac{1}{x_0}=\frac{2}{2}+\frac{1}{2}=\frac{3}{2}=1{,}5\\
-x_2&amp;=\frac{x_1}{2}+\frac{1}{x_1}=\frac{3}{4}+\frac{2}{3}=\frac{17}{12}=1{,}41\overline{6}\\
-x_3&amp;=\frac{x_2}{2}+\frac{1}{x_2}=\frac{17}{24}+\frac{12}{17}=\frac{577}{408}=1{,}414\,215\,686\ldots
+x_0&amp;=2;\\
+x_1&amp;=\frac{x_0}{2}+\frac{1}{x_0}=\frac{2}{2}+\frac{1}{2}=\frac{3}{2}=1{,}5;\\
+x_2&amp;=\frac{x_1}{2}+\frac{1}{x_1}=\frac{3}{4}+\frac{2}{3}=\frac{17}{12}=1{,}41\overline{6};\\
+x_3&amp;=\frac{x_2}{2}+\frac{1}{x_2}=\frac{17}{24}+\frac{12}{17}=\frac{577}{408}=1{,}414\,215\,686\ldots.
 \end{align*}
 </div>
-<p id="p-514">Comme \(\sqrt{2}=1{,}414\,213\,562\ldots\text{,}\) trois itérations ont suffi pour obtenir cinq décimales correctes du zéro \(c=\sqrt{2}\) de \(f(x)=x^2-2\text{.}\)</p></article></div>
+<p id="p-500">Comme \(\sqrt{2}=1{,}414\,213\,562\ldots\text{,}\) trois itérations ont suffi pour obtenir cinq décimales correctes du zéro \(c=\sqrt{2}\) de \(f(x)=x^2-2\text{.}\)</p></article></div>
 <article class="remark remark-like" id="methodedenewtonbis"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span>
 </h6>
-<p id="p-515">On déduit du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> la version symétrique suivante.</p>
-<p id="p-516">Soit \(f:[a;c]\longrightarrow\mathbb{R}\) une fonction continue sur \([a;c]\) et deux fois dérivable sur \(]a;c[\text{,}\) telle que</p>
-<ul class="disc">
-<li id="li-291"><p id="p-517">\(f(c)=0\;\text{;}\)</p></li>
-<li id="li-292"><p id="p-518">\(f'(x)&lt;0\) et \(f''(x)&gt;0\) pour tout \(x\in ]a;c[\;\text{.}\)</p></li>
-</ul>
-<p id="p-519">Si \(x_0\in ]a;c[\text{,}\) alors la formule de récurrence</p>
+<p id="p-501">Pour des raisons de symétrie, le théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.7: Méthode de Newton-Raphson">5.1.7</a> s'étend à toute fonction \(f\) s'annulant en \(c\) qui vérifie essentiellement l'une des hypothèses suivantes :</p>
+<ol class="decimal">
+<li id="li-293">\(f'\) et \(f''\) sont de même signe à droite de \(c\text{;}\)</li>
+<li id="li-294">\(f'\) et \(f''\) sont de signes contraires à gauche de \(c\text{.}\)</li>
+</ol>
+<p id="p-502">Pourvu que le point de départ soit choisi suffisamment proche de \(c\text{,}\) la méthode de Newton-Raphson permet de construire une suite convergeant vers \(c\text{,}\) de manière strictement décroissante dans le premier cas, et strictement croissante dans le second.</p></article><article class="example example-like" id="example-9"><a data-knowl="" class="id-ref original" data-refid="hk-example-9"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-503">Partant de \(x_0:=-2\text{,}\) effectuons trois itérations de la méthode de Newton-Raphson pour la fonction</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
+f(x):=x^2-3
 \end{equation*}
 </div>
-<p data-braille="continuation">définit une suite strictement croissante \(\{x_n\}\) telle que</p>
+<p data-braille="continuation">qui satisfait les hypothèses du second cas mentionné à la remarque <a class="xref" data-knowl="./knowl/methodedenewtonbis.html" title="Remarque 5.1.9">5.1.9</a>, car \(f'(x)=2x\) et \(f''(x)=2\) sont de signes contraires à gauche du zéro \(c:=-\sqrt{3}\text{.}\)</p>
+<p id="p-504">Comme</p>
 <div class="displaymath">
 \begin{equation*}
-a&lt;x_0&lt;x_1&lt;\ldots&lt;x_n&lt;x_{n+1}&lt;\ldots&lt;c\qquad\text{pour tout}\;n\geq 0
+x-\frac{f(x)}{f'(x)}=x-\frac{x^2-3}{2x}=x-\frac{x}{2}+\frac{3}{2x}=\frac{x}{2}+\frac{3}{2x},
 \end{equation*}
 </div>
-<p data-braille="continuation">et</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{n\rightarrow+\infty}x_n=c.
-\end{equation*}
-</div></article><article class="example example-like" id="example-9"><a data-knowl="" class="id-ref original" data-refid="hk-example-9"><h6 class="heading">
-<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-520">Partant de \(x_0=-2\text{,}\) effectuons trois itérations de la méthode de Newton-Raphson pour la fonction</p>
-<div class="displaymath">
-\begin{equation*}
-f(x)=x^2-3
-\end{equation*}
-</div>
-<p data-braille="continuation">qui satisfait les hypothèses vues à la remarque <a class="xref" data-knowl="./knowl/methodedenewtonbis.html" title="Remarque 5.1.8">5.1.8</a> avec \([a;b]=[-3;-\sqrt{3}]\text{,}\) car</p>
-<div class="displaymath">
-\begin{equation*}
-f'(x)=2x&lt;0\quad\text{et}\quad f''(x)=2&gt;0\quad\forall x\in]-3;-\sqrt{3}[.
-\end{equation*}
-</div>
-<p id="p-521">Comme</p>
-<div class="displaymath">
-\begin{equation*}
-x-\frac{f(x)}{f'(x)}=x-\frac{x^2-3}{2x}=x-\frac{x}{2}+\frac{3}{2x}=\frac{x}{2}+\frac{3}{2x}
-\end{equation*}
-</div>
-<p id="p-522">on trouve</p>
+<p id="p-505">on obtient :</p>
 <div class="displaymath">
 \begin{align*}
-x_0&amp;=-2\\
-x_1&amp;=\frac{x_0}{2}+\frac{3}{2x_0}=-1-\frac{3}{4}=-\frac{7}{4}=-1{,}75\\
-x_2&amp;=\frac{x_1}{2}+\frac{3}{2x_1}=-\frac{7}{8}-\frac{6}{7}=-\frac{97}{56}=-1{,}732\,142\,857\,142\,8\ldots\\
-x_3&amp;=\frac{x_2}{2}+\frac{3}{2x_2}=-\frac{97}{112}-\frac{84}{97}=-\frac{18817}{10864}=-1{,}732\,050\,810\,014\,7\ldots
+x_0&amp;=-2;\\
+x_1&amp;=\frac{x_0}{2}+\frac{3}{2x_0}=-1-\frac{3}{4}=-\frac{7}{4}=-1{,}75;\\
+x_2&amp;=\frac{x_1}{2}+\frac{3}{2x_1}=-\frac{7}{8}-\frac{6}{7}=-\frac{97}{56}=-1{,}732\,142\,857\,142\,8\ldots;\\
+x_3&amp;=\frac{x_2}{2}+\frac{3}{2x_2}=-\frac{97}{112}-\frac{84}{97}=-\frac{18817}{10864}=-1{,}732\,050\,810\,014\,7\ldots.
 \end{align*}
 </div>
-<p id="p-523">Puisque \(-\sqrt{3}=-1{,}732\,050\,807\,568\,8\ldots\text{,}\) trois itérations ont suffi pour obtenir sept décimales correctes du zéro \(c=-\sqrt{3}\) de \(f(x)=x^2-3\text{.}\)</p></article></div>
-<article class="remark remark-like" id="remark-15"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span>
-</h6>
-<p id="p-524">Quitte à changer \(f\) pour \(-f\) qui a les mêmes zéros, on peut inclure aussi les deux cas suivants.</p>
+<p id="p-506">Puisque \(-\sqrt{3}=-1{,}732\,050\,807\,568\,8\ldots\text{,}\) trois itérations ont suffi pour obtenir sept décimales correctes du zéro \(-\sqrt{3}\) de \(f(x)=x^2-3\text{.}\)</p></article></div>
+<p id="p-507">La méthode de Newton-Raphson semble donc fournir de bonnes approximations lorsqu'on cherche les zéros d'une fonction. Il reste à trouver des hypothèses qui permettent d'en estimer la précision.</p>
 <ul class="disc">
-<li id="li-293"><p id="p-525">Si \(f'&lt;0\) et \(f''&lt;0\) sur \(]c;b[\text{,}\) alors \(x_0\in ]c;b[\) engendre une suite strictement décroissante qui converge vers \(c\text{.}\)</p></li>
-<li id="li-294"><p id="p-526">Si \(f'&lt;0\) et \(f''&gt;0\) sur \(]a;c[\text{,}\) alors \(x_0\in ]a;c[\) engendre une suite strictement croissante qui converge vers \(c\text{.}\)</p></li>
-</ul></article><p id="p-527">La méthode de Newton-Raphson semble donc fournir de bonnes approximations lorsqu'on cherche les zéros d'une fonction. Il reste à trouver des hypothèses qui permettent d'en estimer la précision.</p>
-<ul class="disc">
-<li id="li-295"><p id="p-528">Voir l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.7">5.3.7</a> pour un résultat pas trop difficile à démontrer, sous les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> ou de n'importe laquelle de ses versions symétriques.</p></li>
-<li id="li-296"><p id="p-529">Voir le théorème <a class="xref" data-knowl="./knowl/convergence_quadratique_newton.html" title="Théorème 5.1.11">5.1.11</a> ci-après pour un résultat plus général, mais plus difficile à démontrer.</p></li>
+<li id="li-295">Voir l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.8">5.3.8</a> pour un résultat assez facile à démontrer en partant du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.7: Méthode de Newton-Raphson">5.1.7</a> ou de n'importe laquelle de ses versions symétriques.</li>
+<li id="li-296">Voir le théorème <a class="xref" data-knowl="./knowl/convergence_quadratique_newton.html" title="Théorème 5.1.11">5.1.11</a> ci-après pour une approche légèrement différente et plus condensée.</li>
 </ul>
-<article class="theorem theorem-like" id="convergence_quadratique_newton"><h6 class="heading">
-<span class="type">Théorème</span><span class="space"> </span><span class="codenumber">5.1.11</span><span class="period">.</span>
-</h6>
-<p id="p-530">Soit \(f\) une fonction deux fois dérivable autour d'un zéro \(c\) de sorte qu'il existe \(r&gt;0\) tel que</p>
-<ul class="disc">
-<li id="li-297"><p id="p-531">\(f'(x)\neq 0\) pour tout \(x\in[c-r;c+r]\text{;}\)</p></li>
-<li id="li-298"><p id="p-532">\(f''\) est continue sur \(x\in[c-r;c+r]\text{.}\)</p></li>
-</ul>
-<p id="p-533">Soit \(M&gt;0\) tel que</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{|f''(x)|}{|f'(x)|}\leq M\qquad\text{pour tout }x\in[c-r;c+r].
-\end{equation*}
-</div>
-<p id="p-534">Alors pour tout point de départ \(x_0\) tel que</p>
-<div class="displaymath">
-\begin{equation*}
-|x_0-c|&lt;\min\left\{r;\frac{1}{M}\right\}
-\end{equation*}
-</div>
-<p data-braille="continuation">la suite définie par la formule de récurrence</p>
-<div class="displaymath">
-\begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
-\end{equation*}
-</div>
-<p data-braille="continuation">converge vers \(c\) et vérifie</p>
-<div class="displaymath">
-\begin{equation*}
-|x_{n+1}-c|\leq M|x_n-c|^2\qquad\text{pour tout }n\geq 0
-\end{equation*}
-</div>
-<p data-braille="continuation">ainsi que</p>
-<div class="displaymath">
-\begin{equation*}
-|x_n-c|\leq\frac{1}{M}\left(M|x_0-c|\right)^{2^n}\qquad\text{pour tout }n\geq 1.
-\end{equation*}
-</div>
-<p id="p-535">Remarque : Cet énoncé est très fortement inspiré d'un théorème de l'excellent livre <a class="external" href="https://www.grenoble-sciences.fr/pap-ebook/demailly/accueil" target="_blank">Analyse numérique et équations différentielles</a> de Jean-Pierre Demailly, avec l'accord de son auteur.</p></article><article class="hiddenproof" id="proof-8"><a data-knowl="" class="id-ref original" data-refid="hk-proof-8"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-536">Il me semble que c'est trop difficile au niveau cégep.</p></article></div>
-<article class="remark remark-like" id="remark-16"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span>
-</h6>
-<p id="p-537">Dans le cas de l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.7">5.3.7</a> ou du théorème <a class="xref" data-knowl="./knowl/convergence_quadratique_newton.html" title="Théorème 5.1.11">5.1.11</a>, on parle de convergence quadratique à cause de l'exposant \(2\) dans les inégalités qui en découlent.</p>
-<p id="p-538">En pratique, cela entraîne que le nombre de décimales exactes double grosso modo à chaque itération.</p>
-<p id="p-539">Pour simplifier, on se contentera des hypothèses indiquées dans l'encadré qui suit.</p></article><article class="assemblage assemblage-like" id="assemblage-2"><h6 class="heading"><span class="title">Méthode de Newton-Raphson : Approcher un zéro en calculant successivement les zéros des tangentes.</span></h6>
-<ul id="p-540" class="disc">
-<li id="li-299"><p id="p-541">Objectif : Obtenir des approximations d'un zéro \(c\) de la fonction \(f\text{.}\)</p></li>
-<li id="li-300">
-<p id="p-542">Hypothèses : On suppose que la fonction \(f\) est deux fois dérivable et que \(f''\) est continue autour de \(c\text{,}\) ainsi que</p>
+<p id="p-508">Pour simplifier, on se contentera des hypothèses indiquées dans l'encadré qui suit : l'hypothèse cruciale est la non-nullité de \(f'(c)\text{.}\)</p>
+<article class="assemblage assemblage-like" id="assemblage-2"><h6 class="heading"><span class="title">Méthode de Newton-Raphson : Approcher un zéro en calculant les zéros successifs des tangentes.</span></h6>
+<ul id="p-509" class="disc">
+<li id="li-297">Objectif : Obtenir des approximations d'un zéro \(c\) de la fonction \(f\text{.}\)</li>
+<li id="li-298">
+<p id="p-510">Hypothèses : On suppose que la fonction \(f\) est deux fois dérivable et que \(f''\) est continue autour de \(c\text{,}\) ainsi que</p>
 <div class="displaymath">
 \begin{equation*}
 f'(c)\neq 0.
 \end{equation*}
 </div>
 </li>
-<li id="li-301">
-<p id="p-543">Principe : Choisir une valeur initiale \(x_0\) assez proche de \(c\text{,}\) et appliquer la formule de récurrence</p>
+<li id="li-299">
+<p id="p-511">Principe : Choisir une valeur initiale \(x_0\) assez proche de \(c\text{,}\) et appliquer la formule de récurrence</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}
+x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}
 \end{equation*}
 </div>
 <p data-braille="continuation">autant de fois que désiré.</p>
 </li>
-<li id="li-302"><p id="p-544">Précision : Le nombre de décimales exactes obtenues via l'approximation de \(c\) par \(x_n\) double grosso modo à chaque itération, car la convergence est quadratique sous les hypothèses précédentes.</p></li>
-<li id="li-303"><p id="p-545">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1rn77nSLrjoZnc63BLKJmpv4pwiL2fYJc/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
-</ul></article></section></div></main>
+<li id="li-300">Précision : Le nombre de décimales exactes obtenues via l'approximation de \(c\) par \(x_n\) double grosso modo à chaque itération.</li>
+<li id="li-301">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1rn77nSLrjoZnc63BLKJmpv4pwiL2fYJc/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
+</ul></article><p id="p-512">L'énoncé et la démontration du théorème suivant sont essentiellement tirés de l'excellent livre <a class="external" href="https://www.grenoble-sciences.fr/pap-ebook/demailly/accueil" target="_blank">Analyse numérique et équations différentielles</a> de Jean-Pierre Demailly, avec l'accord de son auteur.</p>
+<article class="theorem theorem-like" id="convergence_quadratique_newton"><h6 class="heading">
+<span class="type">Théorème</span><span class="space"> </span><span class="codenumber">5.1.11</span><span class="period">.</span>
+</h6>
+<p id="p-513">Soit \(f\) une fonction deux fois dérivable continûment autour d'un zéro \(c\text{,}\) de sorte qu'il existe \(r&gt;0\) tel que</p>
+<ul class="disc">
+<li id="li-302">\(f(c)=0\text{,}\)</li>
+<li id="li-303">\(f'(x)\neq 0\) pour tout \(x\in[c-r;c+r]\text{,}\)</li>
+<li id="li-304">et que \(f''\) soit continue sur \(x\in[c-r;c+r]\text{.}\)</li>
+</ul>
+<p id="p-514">Alors pour toute constante \(M&gt;0\) telle que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{|f''(x)|}{|f'(x)|}\leq M\quad\textit{pour tout }x\in[c-r;c+r],
+\end{equation*}
+</div>
+<p data-braille="continuation">et pour tout point de départ \(x_0\) satisfaisant</p>
+<div class="displaymath">
+\begin{equation*}
+|x_0-c|&lt;\min\left\{r;\frac{1}{M}\right\},
+\end{equation*}
+</div>
+<p data-braille="continuation">la suite définie par la formule de récurrence</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}
+\end{equation*}
+</div>
+<p data-braille="continuation">converge vers \(c\) et vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+|x_{n+1}-c|\leq M|x_n-c|^2
+\end{equation*}
+</div>
+<p data-braille="continuation">ainsi que</p>
+<div class="displaymath">
+\begin{equation*}
+|x_n-c|\leq\frac{1}{M}\left(M|x_0-c|\right)^{2^n}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(n\ge 0\text{.}\)</p></article><article class="hiddenproof" id="proof-8"><a data-knowl="" class="id-ref original" data-refid="hk-proof-8"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-515">Nous allons donner ici les grandes lignes d'une démonstration basée sur la considération des fonctions</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(x):=x-\frac{f(x)}{f'(x)}
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+v(x):=\frac{f(x)}{f'(x)}\cdot e^{-Mx}.
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-305">
+<p id="p-516">On observe qu'il suffit de montrer que la fonction vérifie l'inégalité</p>
+<div class="displaymath">
+\begin{equation*}
+|\phi(x)-c|\le M|x-c|^2\quad\text{pour tout }x\in[c-r;c+r],
+\end{equation*}
+</div>
+<p data-braille="continuation">le reste de l'énoncé s'en déduisant par récurrence.</p>
+</li>
+<li id="li-306">Quitte à changer \(f\) en \(-f\text{,}\) on suppose ensuite que \(f'\) est positive sur \([c-r;c+r]\) sans perte de généralité.</li>
+<li id="li-307">
+<p id="p-517">On vérifie que la dérivée de \(v\) vaut</p>
+<div class="displaymath">
+\begin{equation*}
+v'(t)=e^{-Mt}-\left(\frac{f''(t)}{f'(t)}+M\right)v(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">et on en déduit, grâce à l'hypothèse</p>
+<div class="displaymath">
+\begin{equation*}
+-M\le\frac{f''(t)}{f'(t)}\le M\quad\text{pour tout }t\in[c-r;c+r]
+\end{equation*}
+</div>
+<p data-braille="continuation">et au fait que \(f\) et \(f'\text{,}\) donc \(v\text{,}\) sont positives sur \(]c;c+r]\text{,}\) qu'on a</p>
+<div class="displaymath">
+\begin{equation*}
+v'(t)\le e^{-Mt}\quad\text{pour tout }t\in[c;c+r].
+\end{equation*}
+</div>
+</li>
+<li id="li-308">
+<p id="p-518">Pour tout \(s\in\;]c;c+r]\text{,}\) l'intégration de l'inégalité précédente entre \(c\) et \(s\) donne</p>
+<div class="displaymath">
+\begin{equation*}
+v(s)\le\frac{1}{M}\left(e^{-Mc}-e^{-Ms}\right),
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{f(s)}{f'(s)}\le\frac{1}{M}\left(e^{M(s-c)}-1\right)
+\end{equation*}
+</div>
+</li>
+<li id="li-309">
+<p id="p-519">Grâce au résultat établi à l'exercice <a class="xref" data-knowl="./knowl/unlemmepournewton.html" title="Exercice 5.3.14">5.3.14</a>, on déduit du point précédent que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{f(s)}{f'(s)}\le 2(s-c)
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(s\in\;]c;c+r]\text{.}\)</p>
+</li>
+<li id="li-310">
+<p id="p-520">On vérifie que la dérivée de \(\phi\) vaut</p>
+<div class="displaymath">
+\begin{equation*}
+\phi'(s)=\frac{f''(s)}{f'(s)}\cdot\frac{f(s)}{f'(s)}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour déduire du point précédent et de l'hypothèse sur \(M\) que</p>
+<div class="displaymath">
+\begin{align*}
+|\phi'(s)|&amp;=\frac{|f''(s)|}{|f'(s)|}\cdot\frac{f(s)}{f'(s)}\\
+&amp;\le 2M\cdot (s-c)
+\end{align*}
+</div>
+<p data-braille="continuation">pour tout \(s\in\;]c;c+r]\text{.}\)</p>
+</li>
+<li id="li-311">
+<p id="p-521">On vient d'obtenir les inégalités</p>
+<div class="displaymath">
+\begin{equation*}
+-2M\cdot(s-c)\le\phi'(s)\le 2M\cdot (s-c)
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(s\in\;]c;c+r]\text{.}\) Il ne reste plus qu'à les intégrer entre \(c\) et \(x\) pour obtenir</p>
+<div class="displaymath">
+\begin{equation*}
+-M(x-c)^2\le\phi(x)-c\le M(x-c)^2,
+\end{equation*}
+</div>
+<p data-braille="continuation">i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+|\phi(x)-c|\le M(x-c)^2,
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(x\in\;]c;c+r]\text{.}\)</p>
+</li>
+<li id="li-312">Le cas \(x\in\;[c-r;c[\) se traite de manière symétrique, et il n'y a rien à prouver pour \(x=c\text{,}\) ce qui achève la démonstration.</li>
+</ol></article></div>
+<article class="example example-like" id="example-10"><a data-knowl="" class="id-ref original" data-refid="hk-example-10"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-10"><article class="example example-like"><p id="p-522">Considérons la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\sin(x)-0{,}5
+\end{equation*}
+</div>
+<p data-braille="continuation">et le point de départ \(x_0=0{,}5\text{,}\) près du zéro</p>
+<div class="displaymath">
+\begin{equation*}
+c=\frac{\pi}{6}=0{,}523\,598\,775\,598\,298\ldots.\text{.}
+\end{equation*}
+</div>
+<p id="p-523">Comme \(f'(x)=\cos(x)\) et \(f''(x)=-\sin(x)\text{,}\) les hypothèses du théorème <a class="xref" data-knowl="./knowl/convergence_quadratique_newton.html" title="Théorème 5.1.11">5.1.11</a> sont vérifiées avec</p>
+<div class="displaymath">
+\begin{equation*}
+r=\frac{\pi}{12}\quad\text{et}\quad M=1.
+\end{equation*}
+</div>
+<p id="p-524">Les trois premières itérations de la méthode de Newton donnent</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c}
+n&amp;x_n&amp;|x_n-c|&amp;|x_0-c|^{2^n}\\
+\hline
+0&amp;0{,}500\,000\,000\,000\,000&amp;0{,}023\,598\,775\,598\,298&amp;0{,}023\,598\,775\,598\,298\\
+1&amp;0{,}523\,444\,473\,818\,484&amp;0{,}000\,154\,301\,779\,814&amp;0{,}000\,556\,902\,209\,738\\
+2&amp;0{,}523\,598\,768\,727\,057&amp;0{,}000\,000\,006\,871\,240&amp;0{,}000\,000\,310\,140\,071\\
+3&amp;0{,}523\,598\,775\,598\,298&amp;0{,}000\,000\,000\,000\,000&amp;0{,}000\,000\,000\,000\,096
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">et l'on observe bien la progression du nombre de décimales exactes attendue.</p></article></div></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;

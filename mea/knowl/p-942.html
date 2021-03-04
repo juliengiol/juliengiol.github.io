@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:29-05:00    *-->
+<!--*    on 2021-03-04T13:36:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>À l'exercice <a class="xref" data-knowl="./knowl/exerciceinterpolfonction.html" title="Exercice 6.3.9">6.3.9</a>, on a trouvé</p>
+<p>Instructions :</p>
+<ul class="circle">
+<li><p>Assigner la liste \(\text{y}\) comme premier élément de la liste \(\text{diffDiv}\) qui contiendra toutes les différences divisées.</p></li>
+<li>
+<p>Pour \(\text{j}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
+<ul class="square">
+<li><p>initialiser \(\text{nouvelleColonne}\text{,}\) la liste qui contiendra toutes les différences divisées calculées à l'étape \(j\) : \(\text{nouvelleColonne}=\left[\;\right]\) ;</p></li>
+<li>
+<p>pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n-j}\text{,}\)</p>
+<ul class="disc">
+<li>
+<p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
 <div class="displaymath">
 \begin{equation*}
-P(0{,}1)=\frac{1013}{966}
+\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;
 \end{equation*}
 </div>
-<p data-braille="continuation">d'où</p>
-<div class="displaymath">
-\begin{align*}
-f(0{,1})-P(0{,}1)&amp;=\sqrt{1{,}1}-\frac{1013}{966}\\
-&amp;\approx 0{,}000\,154\,604\\
-&amp;\leq 0{,}000\,233\,75.
-\end{align*}
-</div>
-<span class="incontext"><a href="exerciceslagrange.html#p-942">Contexte</a></span>
+</li>
+<li><p>ajouter la nouvelle différence divisée \(\text{nouvelleDiffDiv}\) à la liste \(\text{nouvelleColonne}\) ;</p></li>
+</ul>
+</li>
+<li><p>ajouter \(\text{nouvelleColonne}\) à la liste \(\text{diffDiv}\text{.}\)</p></li>
+</ul>
+</li>
+</ul>
+<span class="incontext"><a href="algorithmediffdiv.html#p-942">Contexte</a></span>
 </body>
 </html>

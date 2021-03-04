@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:57-05:00    *-->
+<!--*    on 2021-03-04T13:35:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,27 +12,46 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Fixons un indice \(n\geq 0\text{.}\) D'après la <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Taylor#Formule_de_Taylor-Lagrange" target="_blank">formule de Taylor-Lagrange</a> à l'ordre \(2\) en \(x_n\text{,}\) il existe \(\xi\in\;]c;x_n[\) tel que</p>
-<div class="displaymath">
-\begin{align*}
-&amp;f(c)=f(x_n)+f'(x_n)(c-x_n)+\frac{f''(\xi)}{2}(c-x_n)^2\\
-\Rightarrow\quad&amp;0=f(x_n)+f'(x_n)(c-x_n)+\frac{f''(\xi)}{2}(c-x_n)^2\\
-\Rightarrow\quad&amp;0=\frac{f(x_n)}{f'(x_n)}+c-x_n+\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2\\
-\Rightarrow\quad&amp;x_n-\frac{f(x_n)}{f'(x_n)}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2\\
-\Rightarrow\quad&amp;x_{n+1}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2\\
-\Rightarrow\quad&amp;|x_{n+1}-c|=\frac{|f''(\xi)|}{2|f'(x_n)|}|x_n-c|^2.
-\end{align*}
-</div>
-<p>Finalement, on a</p>
+<p>Fixons un indice \(n\geq 0\text{.}\) D'après la formule de Taylor-Lagrange (voir exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>), il existe \(\xi\in\;]c;x_n[\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-|f''(\xi)|\leq M\;\text{et}\;|f'(x_n)|\geq m\quad\Rightarrow\quad\frac{|f''(\xi)|}{2|f'(x_n)|}\leq\frac{M}{2m}.
+f(c)=f(x_n)+f'(x_n)(c-x_n)+\frac{f''(\xi)}{2}(c-x_n)^2.
 \end{equation*}
 </div>
-<p>En posant \(\displaystyle K=\frac{M}{2m}\) on obtient bien</p>
+<p data-braille="continuation">Comme \(f(c)=0\text{,}\) une division par \(f'(x_n)\) donne</p>
 <div class="displaymath">
 \begin{equation*}
-|x_{n+1}-c|=\frac{|f''(\xi)|}{2|f'(x_n)|}|x_n-c|^2\leq K|x_n-c|^2.
+0=\frac{f(x_n)}{f'(x_n)}+c-x_n+\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2,
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+x_n-\frac{f(x_n)}{f'(x_n)}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2,
+\end{equation*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2
+\end{equation*}
+</div>
+<p data-braille="continuation">et, en appliquant la valeur absolue à cette équation :</p>
+<div class="displaymath">
+\begin{equation*}
+|x_{n+1}-c|=\frac{|f''(\xi)|}{2|f'(x_n)|}|x_n-c|^2.
+\end{equation*}
+</div>
+<p>Par hypothèses, on a \(|f''(\xi)|\le M\) et \(|f'(x_n)|\ge m\text{,}\) donc</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{|f''(\xi)|}{2|f'(x_n)|}\le K:=\frac{M}{2m},
+\end{equation*}
+</div>
+<p data-braille="continuation">de sorte que</p>
+<div class="displaymath">
+\begin{equation*}
+|x_{n+1}-c|=\frac{|f''(\xi)|}{2|f'(x_n)|}|x_n-c|^2\le K|x_n-c|^2.
 \end{equation*}
 </div>
 </div></body>

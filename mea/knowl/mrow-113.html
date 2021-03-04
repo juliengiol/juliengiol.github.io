@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:57-05:00    *-->
+<!--*    on 2021-03-04T13:35:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,12 +14,13 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-&amp;f(c)=f(x_n)+f'(x_n)(c-x_n)+\frac{f''(\xi)}{2}(c-x_n)^2\\
-\Rightarrow\quad&amp;0=f(x_n)+f'(x_n)(c-x_n)+\frac{f''(\xi)}{2}(c-x_n)^2\\
-\Rightarrow\quad&amp;0=\frac{f(x_n)}{f'(x_n)}+c-x_n+\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2\\
-\Rightarrow\quad&amp;x_n-\frac{f(x_n)}{f'(x_n)}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2\\
-\Rightarrow\quad&amp;x_{n+1}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2\\
-\Rightarrow\quad&amp;|x_{n+1}-c|=\frac{|f''(\xi)|}{2|f'(x_n)|}|x_n-c|^2.
+g'(t)&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(f(x)-f(t)-\sum_{k=1}^n\frac{f^{(k)}(t)}{k!}(x-t)^k-\frac{A}{(n+1)!}(x-t)^{n+1}\right)\\
+&amp;=-f'(t)-\sum_{k=1}^n\left(\frac{f^{(k+1)}(t)}{k!}(x-t)^k-\frac{f^{(k)}(t)}{(k-1)!}(x-t)^{k-1}\right)\\
+&amp;\quad+\frac{A}{n!}(x-t)^n\\
+&amp;=-f'(t)-\cdots-\frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1}-\frac{f^{(n+1)}(t)}{n!}(x-t)^n\\
+&amp;\quad+f'(t)+\cdots+\frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1}\\
+&amp;\quad+\frac{A}{n!}(x-t)^n\\
+&amp;=\frac{A}{n!}(x-t)^n-\frac{f^{(n+1)}(t)}{n!}(x-t)^n
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicesnewton.html#mjx-eqn-mrow-113">Contexte</a></span>

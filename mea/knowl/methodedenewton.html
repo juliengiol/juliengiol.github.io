@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:42-05:00    *-->
+<!--*    on 2021-03-04T13:35:20-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,30 +13,31 @@
 </head>
 <body>
 <article class="theorem theorem-like"><h6 class="heading">
-<span class="type">Théorème</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode de Newton-Raphson.</span>
+<span class="type">Théorème</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode de Newton-Raphson.</span>
 </h6>
-<p>Soit \(f:[c;b]\longrightarrow\mathbb{R}\) une fonction continue sur \([c;b]\) et deux fois dérivable sur \(]c;b[\text{,}\) telle que</p>
+<p>Soit \(f:[c;b]\longrightarrow\mathbb{R}\) une fonction telle que</p>
 <ul class="disc">
-<li><p>\(f(c)=0\;\text{;}\)</p></li>
-<li><p>\(f'(x)&gt;0\) et \(f''(x)&gt;0\) pour tout \(x\in ]c;b[\;\text{.}\)</p></li>
+<li>\(f''\) existe et soit positive sur \(]c;b[\text{,}\)</li>
+<li>\(f'\) soit continue sur \([c;b]\) et positive sur \(]c;b[\text{,}\)</li>
+<li>\(f(c)=0\text{.}\)</li>
 </ul>
-<p>Si \(x_0\in ]c;b[\text{,}\) alors la formule de récurrence</p>
+<p>Quel que soit le point de départ \(x_0\) choisi dans l'intervalle \(]c;b]\text{,}\) la formule de récurrence</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
+x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}
 \end{equation*}
 </div>
 <p data-braille="continuation">définit une suite strictement décroissante \(\{x_n\}\) telle que</p>
 <div class="displaymath">
 \begin{equation*}
-c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0&lt;b\qquad\text{pour tout}\;n\geq 0
+c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0\le b
 \end{equation*}
 </div>
-<p data-braille="continuation">et</p>
+<p data-braille="continuation">pour tout \(n\geq 0\) avec</p>
 <div class="displaymath">
 \begin{equation*}
 \lim_{n\rightarrow+\infty}x_n=c.
 \end{equation*}
-</div></article><article class="hiddenproof"><a class="original" data-knowl="./knowl/proof-7-hidden.html" title="Démonstration 5.1.6.1"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><span class="incontext"><a href="presentationnewton.html#methodedenewton">Contexte</a></span>
+</div></article><article class="hiddenproof"><a class="original" data-knowl="./knowl/proof-7-hidden.html" title="Démonstration 5.1.7.1"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><span class="incontext"><a href="presentationnewton.html#methodedenewton">Contexte</a></span>
 </body>
 </html>

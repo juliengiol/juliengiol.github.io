@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:13-05:00    *-->
+<!--*    on 2021-03-04T13:35:50-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,46 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(\displaystyle\left(\frac{t-x_0}{x_2-x_0}\right)\left(\frac{t-x_1}{x_2-x_1}\right)\left(\frac{t-x_3}{x_2-x_3}\right)\left(\frac{t-x_4}{x_2-x_4}\right)\left(\frac{t-x_5}{x_2-x_5}\right)\)</p>
+<ol class="decimal">
+<li><div class="displaymath">
+\begin{align*}
+T(t)&amp;=f(0)+f'(0)t+\frac{f''(0)}{2}t^2\\
+&amp;=1-\frac{1}{2}t^2.
+\end{align*}
+</div></li>
+<li>
+<p>Première approximation de \(\displaystyle\cos\left(\frac{\pi}{12}\right)=f\left(\frac{\pi}{12}\right)\) :</p>
+<div class="displaymath">
+\begin{align*}
+T\left(\frac{\pi}{12}\right)&amp;=1-\frac{1}{2}\left(\frac{\pi}{12}\right)^2\\
+&amp;=1-\frac{\pi^2}{288}\\
+&amp;\approx 0{,}965\,731.
+\end{align*}
+</div>
+</li>
+<li><div class="displaymath">
+\begin{align*}
+L(t)&amp;=1\cdot L_0(t)+\frac{\sqrt{3}}{2}\cdot L_1(t)+\frac{1}{2}\cdot L_2(t)\\
+&amp;=1\cdot\frac{(t-\pi/6)(t-\pi/3)}{(0-\pi/6)(0-\pi/3)}+\frac{\sqrt{3}}{2}\cdot\frac{(t-0)(t-\pi/3)}{(\pi/6-0)(\pi/6-\pi/3)}\\
+&amp;\qquad +\frac{1}{2}\cdot\frac{(t-0)(t-\pi/6)}{(\pi/3-0)(\pi/3-\pi/6)}\\
+&amp;=\frac{18}{\pi^2}\left(t-\frac{\pi}{6}\right)\left(t-\frac{\pi}{3}\right)-\frac{18\sqrt{3}}{\pi^2}\cdot t\left(t-\frac{\pi}{3}\right)+\frac{9}{\pi^2}\cdot t\left(t-\frac{\pi}{6}\right)
+\end{align*}
+</div></li>
+<li>
+<p>Deuxième approximation de \(\displaystyle\cos\left(\frac{\pi}{12}\right)=f\left(\frac{\pi}{12}\right)\) :</p>
+<div class="displaymath">
+\begin{align*}
+L\left(\frac{\pi}{12}\right)&amp;=\frac{18}{\pi^2}\left(\frac{\pi}{12}-\frac{\pi}{6}\right)\left(\frac{\pi}{12}-\frac{\pi}{3}\right)-\frac{18\sqrt{3}}{\pi^2}\frac{\pi}{12}\left(\frac{\pi}{12}-\frac{\pi}{3}\right)\\
+&amp;\qquad +\frac{9}{\pi^2}\frac{\pi}{12}\left(\frac{\pi}{12}-\frac{\pi}{6}\right)\\
+&amp;=\frac{18}{\pi^2}\left(-\frac{\pi}{12}\right)\left(-\frac{\pi}{4}\right)-\frac{18\sqrt{3}}{\pi^2}\frac{\pi}{12}\left(-\frac{\pi}{4}\right)+\frac{9}{\pi^2}\frac{\pi}{12}\left(-\frac{\pi}{12}\right)\\
+&amp;=\frac{3}{8}+\frac{3\sqrt{3}}{8}-\frac{1}{16}\\
+&amp;=\frac{5}{16}+\frac{3\sqrt{3}}{8}\\
+&amp;\approx 0{,}962\,019.
+\end{align*}
+</div>
+</li>
+<li><p>Comme \(\displaystyle\cos\left(\frac{\pi}{12}\right)\approx 0{,}965\,926\text{,}\) c'est le polynôme de Taylor qui fournit la meilleure approximation.</p></li>
+</ol>
 <span class="incontext"><a href="exerciceslagrange.html#p-809">Contexte</a></span>
 </body>
 </html>

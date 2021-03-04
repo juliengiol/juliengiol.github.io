@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:57-05:00    *-->
+<!--*    on 2021-03-04T13:37:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,41 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">12.3.4.1</span><span class="period">.</span>
 </h6>
-<p>Les solutions de l'équation</p>
+<p>L'algorithme fourni donne</p>
 <div class="displaymath">
 \begin{equation*}
-x\equiv 4\;\mathrm{mod}\;11
+\text{PGCD}(377;233)=1\quad\text{et}\quad 1=377\cdot 89+233\cdot (-144).
 \end{equation*}
 </div>
-<p data-braille="continuation">sont les entiers de la <a class="external" href="https://fr.wikipedia.org/wiki/Suite_arithm%C3%A9tique" target="_blank">progression arithmétique</a> \(\left\{4+11k\,|\,k\in\mathbb{Z}\right\}\text{,}\) soit</p>
+<p>Notons \((u_0;v_0)=(89;-144)\) cette solution particulière de l'équation</p>
+<div class="displaymath">
+\begin{equation}
+au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 377\cdot u+233\cdot v=1.\tag{12.3.3}
+\end{equation}
+</div>
+<p>Si on pose, par exemple,</p>
 <div class="displaymath">
 \begin{equation*}
-\ldots,\;-29,\;-18,\;-7,\;4,\;15,\;26,\;37,\;48,\;\ldots
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;+&amp;b&amp;=&amp;89&amp;+&amp;233&amp;=&amp;322\\
+v&amp;=&amp;v_0&amp;-&amp;a&amp;=&amp;-144&amp;-&amp;377&amp;=&amp;-521
+\end{array}\right.
 \end{equation*}
-</div></article><span class="incontext"><a href="presentationchinois.html#li-1051">Contexte</a></span>
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(322;-521)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout1.html" title="Équation 12.3.3">(12.3.3)</a>.</p>
+<p>Et si on pose, par exemple,</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;+&amp;2b&amp;=&amp;89&amp;+&amp;2\cdot 233&amp;=&amp;555\\
+v&amp;=&amp;v_0&amp;-&amp;2a&amp;=&amp;-144&amp;-&amp;2\cdot 377&amp;=&amp;-898
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(555;-898)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout1.html" title="Équation 12.3.3">(12.3.3)</a>.</p></article><span class="incontext"><a href="exercicesbezout.html#li-1051">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:51-05:00    *-->
+<!--*    on 2021-03-04T13:36:18-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,8 +14,12 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=10^{-5}\cdot\left(f(0)+f\left(10^{-5}\right)+\cdots+f\left(99\,999\cdot 10^{-5}\right)\right)\\
-&amp;=0{,}746\,830\,972\,20\ldots
+|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
+&amp;\leq\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
+&amp;=\sum_{k=1}^n\frac{M(\Delta x)^2}{2}\\
+&amp;=\sum_{k=1}^n\frac{M(b-a)^2}{2n^2}\\
+&amp;=n\cdot\frac{M(b-a)^2}{2n^2}\\
+&amp;=\frac{M(b-a)^2}{2n}.
 \end{align*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#mjx-eqn-mrow-461">Contexte</a></span>

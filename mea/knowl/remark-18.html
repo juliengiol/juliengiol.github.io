@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:32-05:00    *-->
+<!--*    on 2021-03-04T13:36:16-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,31 @@
 </head>
 <body>
 <article class="remark remark-like"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">7.1.7</span><span class="period">.</span>
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span>
 </h6>
-<p>À l'exemple <a class="xref" data-knowl="./knowl/exemple2diffdiv.html" title="Exemple 7.1.6">7.1.6</a>, on a ajouté le point \(A_3=(4;5)\) aux trois points \(A_0=(1;-3),A_1=(2;7)\) et \(A_2=(3;0)\) de l'exemple <a class="xref" data-knowl="./knowl/exemple1newton.html" title="Exemple 7.1.1">7.1.1</a>.</p>
-<p>La forme de Newton du polynôme interpolateur est alors passée de</p>
+<p>La subdivision régulière de l'intervalle \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
 <div class="displaymath">
 \begin{equation*}
-N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)
+a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b.
 \end{equation*}
 </div>
-<p data-braille="continuation">à</p>
+<p data-braille="continuation">donne naissance à \(n\) sous-intervalles</p>
 <div class="displaymath">
 \begin{equation*}
-N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)+\frac{29}{6}(t-1)(t-2)(t-3).
+[x_{k-1};x_k]
 \end{equation*}
 </div>
-<p>Seul le coefficient \(\displaystyle\frac{29}{6}\) correspondant au terme de degré \(3\) s'est ajouté : à la différence de la forme de Lagrange, la forme de Newton permet d'ajouter un point à interpoler sans avoir à reprendre tous les calculs.</p></article><span class="incontext"><a href="presentationdiffdiv.html#remark-18">Contexte</a></span>
+<p data-braille="continuation">qui sont tous de longueur</p>
+<div class="displaymath">
+\begin{equation*}
+x_k-x_{k-1}=\Delta x=\frac{b-a}{n}\quad\text{pour }k=1,\ldots,n.
+\end{equation*}
+</div>
+<p>Dans chaque intervalle \([x_{k-1};x_k]\text{,}\) on appellera</p>
+<ul class="disc">
+<li>\(x_{k-1}\) le point de gauche;</li>
+<li>\(x_k\) le point de droite;</li>
+<li>\(\frac{x_{k-1}+x_k}{2}\) le point du milieu.</li>
+</ul></article><span class="incontext"><a href="presentationrectangles.html#remark-18">Contexte</a></span>
 </body>
 </html>

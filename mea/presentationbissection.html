@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:56:19-05:00    *-->
+<!--*    on 2021-03-04T13:34:08-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -220,24 +220,27 @@ MathJax.Hub.Config({
 </h6>
 <p id="p-369">Soit \(f:[a;b]\longrightarrow\mathbb{R}\) une fonction continue.</p>
 <p id="p-370">Si \(f(a)f(b)&lt;0\text{,}\) alors il existe \(c\in\;]a;b[\) tel que \(f(c)=0\text{.}\)</p></article><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref original" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-371">Par hypothèse, les nombres \(f(a)\) et \(f(b)\) sont de signes opposés, de sorte que \(0\) est compris strictement entre les deux.</p>
-<p id="p-372">Par le théorème des valeurs intermédiaires, il existe donc \(c\in\;]a;b[\) tel que \(f(c)=0\text{.}\)</p></article></div>
+<p id="p-372">Par le <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_des_valeurs_interm%C3%A9diaires" target="_blank">théorème des valeurs intermédiaires</a>, il existe donc \(c\in\;]a;b[\) tel que \(f(c)=0\text{.}\)</p></article></div>
 <article class="example example-like" id="x2moins2"><a data-knowl="" class="id-ref original" data-refid="hk-x2moins2"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-x2moins2"><article class="example example-like"><p id="p-373"><figure class="figure figure-like" id="figure-3"><iframe src="https://www.desmos.com/calculator/h9tdqcusut" id="desmos-exemple-bissection" width="450" height="360"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.3<span class="period">.</span></span><span class="space"> </span>Fonction \(f(x)=x^2-2\)</figcaption></figure></p>
-<p id="p-374">La fonction \(f(x)=x^2-2\) est continue sur \(\mathbb{R}\text{,}\) donc sur n'importe quel intervalle.</p>
-<ul id="p-375" class="disc">
-<li id="li-215"><p id="p-376">\(f(0)f(2)=(-2)\cdot 2&lt;0\) donc il existe un zéro dans \(]0;2[\text{.}\)</p></li>
-<li id="li-216"><p id="p-377">\(f(-2)f(-1)=2\cdot (-1)&lt;0\) donc il existe un zéro dans \(]-2;-1[\text{.}\)</p></li>
-</ul></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-x2moins2"><article class="example example-like"><p id="p-373"><figure class="figure figure-like" id="figure-3"><iframe src="https://www.desmos.com/calculator/wawolqm31e" id="desmos-exemple-bissection" width="570" height="456"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.3<span class="period">.</span></span><span class="space"> </span>Principe de base derrière la méthode de la bissection</figcaption></figure></p>
+<p id="p-374">Soit \(f(x):=x^2-2\) et \([a;b]:=[0;2]\text{.}\)</p>
+<p id="p-375">Comme toute fonction polynomiale, la fonction \(f\) est continue sur \(\mathbb{R}\text{,}\) donc sur \([0;2]\text{.}\) Puisque</p>
+<div class="displaymath">
+\begin{equation*}
+f(0)f(2)=(-2)\cdot 2&lt;0,
+\end{equation*}
+</div>
+<p data-braille="continuation">il existe au moins un zéro dans l'intervalle \(]0;2[\text{.}\)</p></article></div>
 <article class="corollary theorem-like" id="clebissection"><h6 class="heading">
 <span class="type">Corollaire</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
 </h6>
-<p id="p-378">Soit \(f:[a;b]\longrightarrow\mathbb{R}\) une fonction continue telle que</p>
+<p id="p-376">Soit \(f:[a;b]\longrightarrow\mathbb{R}\) une fonction continue telle que</p>
 <ul class="disc">
-<li id="li-217">\(\displaystyle f(a)f(b)&lt;0\;\)</li>
-<li id="li-218">il existe un unique \(c\in\;]a;b[\) tel que \(f(c)=0\text{.}\)</li>
+<li id="li-215">\(\displaystyle f(a)f(b)&lt;0\;\)</li>
+<li id="li-216">il existe un unique \(c\in\;]a;b[\) tel que \(f(c)=0\text{.}\)</li>
 </ul>
-<p id="p-379">Si on note \(m:=\frac{a+b}{2}\) le milieu de l'intervalle \([a;b]\text{,}\) alors trois cas sont possibles.</p>
+<p id="p-377">Si on note \(m:=\frac{a+b}{2}\) le milieu de l'intervalle \([a;b]\text{,}\) alors trois cas sont possibles.</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{cccc}
@@ -246,24 +249,24 @@ MathJax.Hub.Config({
 \text{Cas 3 :}&amp;f(m)f(b)&lt;0&amp;\text{d'où}&amp;c\in\;]m;b[.
 \end{array}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-380">Par hypothèse, les nombres \(f(a)\) et \(f(b)\) sont non nuls et de signes opposés. Après avoir calculé \(f(m)\text{,}\) on a donc trois cas possibles.</p>
+</div></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-378">Par hypothèse, les nombres \(f(a)\) et \(f(b)\) sont non nuls et de signes opposés. Après avoir calculé \(f(m)\text{,}\) on a donc trois cas possibles.</p>
 <ul class="disc">
-<li id="li-219">Cas 1 : \(f(m)=0\text{.}\)</li>
-<li id="li-220">Cas 2 : \(f(m)\neq 0\) est du même signe que \(f(b)\text{,}\) ce qui équivaut à \(f(m)f(a)&lt;0\text{.}\)</li>
-<li id="li-221">Cas 3 : \(f(m)\neq 0\) est du même signe que \(f(a)\text{,}\) ce qui équivaut à \(f(m)f(b)&lt;0\text{.}\)</li>
+<li id="li-217">Cas 1 : \(f(m)=0\text{.}\)</li>
+<li id="li-218">Cas 2 : \(f(m)\neq 0\) est du même signe que \(f(b)\text{,}\) ce qui équivaut à \(f(m)f(a)&lt;0\text{.}\)</li>
+<li id="li-219">Cas 3 : \(f(m)\neq 0\) est du même signe que \(f(a)\text{,}\) ce qui équivaut à \(f(m)f(b)&lt;0\text{.}\)</li>
 </ul>
-<p id="p-381">Par hypothèse d'unicité du zéro \(c\text{,}\) le cas 1 entraîne que \(c=m\text{.}\)</p>
-<p id="p-382">Dans le cas 2, le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a> entraîne l'existence d'un zéro dans l'intervalle \(]a;m[\text{.}\) Par unicité, il s'agit forcément de \(c\text{.}\)</p>
-<p id="p-383">Dans le cas 3, le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a> entraîne l'existence d'un zéro dans l'intervalle \(]m;b[\text{.}\) Par unicité, il s'agit forcément de \(c\text{.}\)</p></article></div>
+<p id="p-379">Par hypothèse d'unicité du zéro \(c\text{,}\) le cas 1 entraîne que \(c=m\text{.}\)</p>
+<p id="p-380">Dans le cas 2, le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a> entraîne l'existence d'un zéro dans l'intervalle \(]a;m[\text{.}\) Par unicité, il s'agit forcément de \(c\text{.}\)</p>
+<p id="p-381">Dans le cas 3, le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a> entraîne l'existence d'un zéro dans l'intervalle \(]m;b[\text{.}\) Par unicité, il s'agit forcément de \(c\text{.}\)</p></article></div>
 <article class="example example-like" id="example-2"><a data-knowl="" class="id-ref original" data-refid="hk-example-2"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-384">Reprenons la fonction \(f(x)=x^2-2\) de l'exemple <a class="xref" data-knowl="./knowl/x2moins2.html" title="Exemple 4.1.2">4.1.2</a> qui est continue sur \(\mathbb{R}\) comme toute fonction polynomiale.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-382">Reprenons la fonction \(f(x)=x^2-2\) de l'exemple <a class="xref" data-knowl="./knowl/x2moins2.html" title="Exemple 4.1.2">4.1.2</a> qui est continue sur \(\mathbb{R}\) comme toute fonction polynomiale.</p>
 <ul class="disc">
-<li id="li-222"><p id="p-385">On a \(f(0)f(2)=(-2)\cdot 2&lt;0\) et on en déduit que \(f\) possède un zéro dans l'intervalle \(]0;2[\) par le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a>.</p></li>
-<li id="li-223"><p id="p-386">Comme sa dérivée \(f'(x)=2x\) est positive sur \(]0;2[\text{,}\) la fonction \(f\) est strictement croissante sur \(]0;2[\text{.}\) Par conséquent, elle ne peut pas s'annuler plus qu'une fois dans cet intervalle.</p></li>
+<li id="li-220"><p id="p-383">On a \(f(0)f(2)=(-2)\cdot 2&lt;0\) et on en déduit que \(f\) possède un zéro dans l'intervalle \(]0;2[\) par le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a>.</p></li>
+<li id="li-221"><p id="p-384">Comme sa dérivée \(f'(x)=2x\) est positive sur \(]0;2[\text{,}\) la fonction \(f\) est strictement croissante sur \(]0;2[\text{.}\) Par conséquent, elle ne peut pas s'annuler plus qu'une fois dans cet intervalle.</p></li>
 </ul>
-<p id="p-387">Notons donc \(c\) l'unique zéro de \(f\) dans \(]0;2[\text{,}\) et appliquons maintenant le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 4.1.4">4.1.4</a> à l'intervalle \([a;b]:=[0;2]\) dont le milieu est \(m:=\frac{0+2}{2}=1\text{.}\)</p>
-<p id="p-388">Les trois valeurs à calculer sont</p>
+<p id="p-385">Notons donc \(c\) l'unique zéro de \(f\) dans \(]0;2[\text{,}\) et appliquons maintenant le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 4.1.4">4.1.4</a> à l'intervalle \([a;b]:=[0;2]\) dont le milieu est \(m:=\frac{0+2}{2}=1\text{.}\)</p>
+<p id="p-386">Les trois valeurs à calculer sont</p>
 <div class="displaymath">
 \begin{equation*}
 f(a)=f(0)=-2\;,\quad f(m)=f(1)=-1\quad\text{et}\quad f(b)=f(2)=2.
@@ -273,17 +276,17 @@ f(a)=f(0)=-2\;,\quad f(m)=f(1)=-1\quad\text{et}\quad f(b)=f(2)=2.
 <article class="remark remark-like" id="remark-12"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span>
 </h6>
-<p id="p-389">Le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 4.1.4">4.1.4</a> est itératif par nature.</p>
+<p id="p-387">Le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 4.1.4">4.1.4</a> est itératif par nature.</p>
 <ul class="disc">
-<li id="li-224">Dans le cas 1, on a trouvé le zéro de la fonction et on peut arrêter de le chercher.</li>
-<li id="li-225">Dans le cas 2, on peut appliquer à nouveau le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 4.1.4">4.1.4</a> à l'intervalle \([a;m]\text{.}\)</li>
-<li id="li-226">Dans le cas 3, on peut appliquer à nouveau le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 4.1.4">4.1.4</a> à l'intervalle \([m;b]\text{.}\)</li>
+<li id="li-222">Dans le cas 1, on a trouvé le zéro de la fonction et on peut arrêter de le chercher.</li>
+<li id="li-223">Dans le cas 2, on peut appliquer à nouveau le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 4.1.4">4.1.4</a> à l'intervalle \([a;m]\text{.}\)</li>
+<li id="li-224">Dans le cas 3, on peut appliquer à nouveau le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 4.1.4">4.1.4</a> à l'intervalle \([m;b]\text{.}\)</li>
 </ul></article><article class="example example-like" id="x2moins23iter"><a data-knowl="" class="id-ref original" data-refid="hk-x2moins23iter"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-x2moins23iter"><article class="example example-like"><p id="p-390">Toujours avec la fonction \(f(x)=x^2-2\) de l'exemple <a class="xref" data-knowl="./knowl/x2moins2.html" title="Exemple 4.1.2">4.1.2</a>, effectuons trois itérations du corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 4.1.4">4.1.4</a> en partant de l'intervalle \([0;2]\text{.}\)</p>
-<p id="p-391">On note \(c\) l'unique zéro de \(f\) dans \(]0;2[\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-x2moins23iter"><article class="example example-like"><p id="p-388">Toujours avec la fonction \(f(x)=x^2-2\) de l'exemple <a class="xref" data-knowl="./knowl/x2moins2.html" title="Exemple 4.1.2">4.1.2</a>, effectuons trois itérations du corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 4.1.4">4.1.4</a> en partant de l'intervalle \([0;2]\text{.}\)</p>
+<p id="p-389">On note \(c\) l'unique zéro de \(f\) dans \(]0;2[\text{.}\)</p>
 <ul class="disc">
-<li id="li-227">Itération 1 :<div class="displaymath">
+<li id="li-225">Itération 1 :<div class="displaymath">
 \begin{equation*}
 \begin{array}{ c&lt;{{}} c &gt;{{}}c }
 a=0 &amp; m=1 &amp; b=2\\
@@ -297,7 +300,7 @@ f(a)=-2 &amp; f(m)=-1 &amp; f(b)=2
 \end{equation*}
 </div>
 </li>
-<li id="li-228">Itération 2 :<div class="displaymath">
+<li id="li-226">Itération 2 :<div class="displaymath">
 \begin{equation*}
 \begin{array}{ c&lt;{{}} c &gt;{{}}c }
 a=1 &amp; m=1{,}5 &amp; b=2 \\
@@ -311,7 +314,7 @@ f(a)=-1 &amp; f(m)=0{,}25 &amp; f(b)=2
 \end{equation*}
 </div>
 </li>
-<li id="li-229">Itération 3 :<div class="displaymath">
+<li id="li-227">Itération 3 :<div class="displaymath">
 \begin{equation*}
 \begin{array}{ c&lt;{{}} c &gt;{{}}c }
 a=1 &amp; m=1{,}25 &amp; b=1{,}5 \\
@@ -326,42 +329,42 @@ f(a)=-1 &amp; f(m)=-0{,}437\,5 &amp; f(b)=0{,}25
 </div>
 </li>
 </ul>
-<p id="p-392">Remarques :</p>
+<p id="p-390">Remarques :</p>
 <ul class="disc">
-<li id="li-230">Au départ, \(c\) appartient à un intervalle de longueur \(2\text{.}\)</li>
-<li id="li-231">À chaque itération, la longueur de l'intervalle auquel \(c\) appartient est divisée par \(2\text{,}\) puisqu'on remplace une de ses bornes par son milieu.</li>
-<li id="li-232">Après trois itérations, on est donc capables de situer \(c\) dans un intervalle de longueur \(2/2^3=0{,}25\text{.}\)</li>
+<li id="li-228">Au départ, \(c\) appartient à un intervalle de longueur \(2\text{.}\)</li>
+<li id="li-229">À chaque itération, la longueur de l'intervalle auquel \(c\) appartient est divisée par \(2\text{,}\) puisqu'on remplace une de ses bornes par son milieu.</li>
+<li id="li-230">Après trois itérations, on est donc capables de situer \(c\) dans un intervalle de longueur \(2/2^3=0{,}25\text{.}\)</li>
 </ul></article></div>
 <article class="assemblage assemblage-like" id="assemblage-1"><h6 class="heading"><span class="title">Méthode de la bissection : Encadrer un zéro en coupant des intervalles en deux.</span></h6>
-<ul id="p-393" class="disc">
-<li id="li-233"><p id="p-394">Objectif : Encadrer un zéro de la fonction \(f\text{.}\)</p></li>
-<li id="li-234"><p id="p-395">Hypothèses : On suppose que la fonction \(f\) est continue sur \([a;b]\text{,}\) qu'elle possède un unique zéro dans \(]a;b[\text{,}\) et que \(f(a)f(b)&lt;0\text{.}\)</p></li>
-<li id="li-235">
-<p id="p-396">Principe :</p>
+<ul id="p-391" class="disc">
+<li id="li-231">Objectif : Encadrer un zéro de la fonction \(f\text{.}\)</li>
+<li id="li-232">Hypothèses : On suppose que la fonction \(f\) est continue sur \([a;b]\text{,}\) qu'elle possède un unique zéro dans \(]a;b[\text{,}\) et que \(f(a)f(b)&lt;0\text{.}\)</li>
+<li id="li-233">
+<p id="p-392">Principe :</p>
 <ul class="circle">
-<li id="li-236"><p id="p-397">Au départ, l'intervalle d'encadrement de \(c\) est \(]a;b[\text{.}\)</p></li>
-<li id="li-237">
-<p id="p-398">Ensuite, on compare les trois valeurs \(f(a), f(m)\) et \(f(b)\) où \(m:=\frac{a+b}{2}\) est le milieu de l'intervalle \([a;b]\text{.}\)</p>
+<li id="li-234">Au départ, l'intervalle d'encadrement de \(c\) est \(]a;b[\text{.}\)</li>
+<li id="li-235">
+<p id="p-393">Ensuite, on compare les trois valeurs \(f(a), f(m)\) et \(f(b)\) où \(m:=\frac{a+b}{2}\) est le milieu de l'intervalle \([a;b]\text{.}\)</p>
 <ul class="square">
-<li id="li-238"><p id="p-399">Si \(f(m)=0\text{,}\) on s'arrête car on vient de tomber sur le zéro.</p></li>
-<li id="li-239"><p id="p-400">Si \(f(m)f(a)&lt;0\text{,}\) on remplace \(]a;b[\) par \(]a;m[\text{.}\)</p></li>
-<li id="li-240"><p id="p-401">Si \(f(m)f(b)&lt;0\text{,}\) on remplace \(]a;b[\) par \(]m;b[\text{.}\)</p></li>
+<li id="li-236"><p id="p-394">Si \(f(m)=0\text{,}\) on s'arrête car on vient de tomber sur le zéro.</p></li>
+<li id="li-237"><p id="p-395">Si \(f(m)f(a)&lt;0\text{,}\) on remplace \(]a;b[\) par \(]a;m[\text{.}\)</p></li>
+<li id="li-238"><p id="p-396">Si \(f(m)f(b)&lt;0\text{,}\) on remplace \(]a;b[\) par \(]m;b[\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-241"><p id="p-402">On répète l'opération précédente jusqu'à ce qu'on tombe sur le zéro ou que la longueur de l'intervalle soit assez petite à notre goût.</p></li>
+<li id="li-239">On répète l'opération précédente jusqu'à ce qu'on tombe sur le zéro ou que la longueur de l'intervalle soit assez petite à notre goût.</li>
 </ul>
 </li>
-<li id="li-242"><p id="p-403">Précision : Après \(n\) itérations, on obtient un intervalle d'encadrement du zéro \(c\) qui est de longueur \(\frac{b-a}{2^n}\text{.}\)</p></li>
-<li id="li-243"><p id="p-404">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1PMzro1wU8GnyWj2TvhTAAgpjXazuDi2K/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
+<li id="li-240">Précision : Après \(n\) itérations, on obtient un intervalle d'encadrement du zéro \(c\) qui est de longueur \(\frac{b-a}{2^n}\text{.}\)</li>
+<li id="li-241">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1PMzro1wU8GnyWj2TvhTAAgpjXazuDi2K/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
 </ul></article><article class="example example-like" id="tombesurc"><a data-knowl="" class="id-ref original" data-refid="hk-tombesurc"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-tombesurc"><article class="example example-like"><p id="p-405">On considère la fonction polynomiale \(g(x)=2x^2+5x-3\) qui est continue sur \(\mathbb{R}\) comme toute fonction polynomiale.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-tombesurc"><article class="example example-like"><p id="p-397">On considère la fonction polynomiale \(g(x)=2x^2+5x-3\) qui est continue sur \(\mathbb{R}\) comme toute fonction polynomiale.</p>
 <ul class="disc">
-<li id="li-244">On a \(g(0)g(4)=(-3)\cdot 49&lt;0\) et on en déduit que \(g\) possède un zéro dans l'intervalle \(]0;4[\) par le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a>.</li>
-<li id="li-245">Comme sa dérivée \(g'(x)=4x+5\) est positive sur \(]0;4[\text{,}\) la fonction \(g\) est strictement croissante sur cet intervalle, et par conséquent elle ne peut pas s'y annuler plus qu'une fois.</li>
+<li id="li-242">On a \(g(0)g(4)=(-3)\cdot 49&lt;0\) et on en déduit que \(g\) possède un zéro dans l'intervalle \(]0;4[\) par le théorème <a class="xref" data-knowl="./knowl/applitvi.html" title="Théorème 4.1.1">4.1.1</a>.</li>
+<li id="li-243">Comme sa dérivée \(g'(x)=4x+5\) est positive sur \(]0;4[\text{,}\) la fonction \(g\) est strictement croissante sur cet intervalle, et par conséquent elle ne peut pas s'y annuler plus qu'une fois.</li>
 </ul>
-<p id="p-406">Notons donc \(c\) l'unique zéro de \(g\) dans \(]0;4[\) et appliquons la méthode de la bissection afin d'obtenir un intervalle d'encadrement de \(c\) de longueur inférieure ou égale à \(0{,}01\text{.}\)</p>
-<div class="displaymath" id="p-407">
+<p id="p-398">Notons donc \(c\) l'unique zéro de \(g\) dans \(]0;4[\) et appliquons la méthode de la bissection afin d'obtenir un intervalle d'encadrement de \(c\) de longueur inférieure ou égale à \(0{,}01\text{.}\)</p>
+<div class="displaymath" id="p-399">
 \begin{equation*}
 \begin{array}{cccccccc}
 \text{Itération}&amp;a&amp;b&amp;b-a&amp;m&amp;f(m)&amp;f(a)&amp;m\rightarrow\\
@@ -372,12 +375,12 @@ f(a)=-1 &amp; f(m)=-0{,}437\,5 &amp; f(b)=0{,}25
 \end{array}
 \end{equation*}
 </div>
-<p id="p-408">À la troisième itération, on trouve \(f(m)=0\text{,}\) ce qui signifie qu'on est tombés par chance sur le zéro qui est donc \(c=0{,}5\text{.}\) Il est alors inutile de parler d'encadrement.</p></article></div>
+<p id="p-400">À la troisième itération, on trouve \(f(m)=0\text{,}\) ce qui signifie qu'on est tombés par chance sur le zéro qui est donc \(c=0{,}5\text{.}\) Il est alors inutile de parler d'encadrement.</p></article></div>
 <article class="example example-like" id="x2moins2algo"><a data-knowl="" class="id-ref original" data-refid="hk-x2moins2algo"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-x2moins2algo"><article class="example example-like"><p id="p-409">Reprenons l'exemple <a class="xref" data-knowl="./knowl/x2moins23iter.html" title="Exemple 4.1.7">4.1.7</a> là où l'on s'était arrêtés, et partons donc de l'intervalle d'encadrement \([1{,}25;1{,}5]\) du zéro \(c\text{,}\) dont la longueur est \(1{,}5-1{,}25=0{,}25\text{.}\)</p>
-<p id="p-410">Appliquons alors la méthode de la bissection afin d'obtenir un intervalle d'encadrement de \(c\) de longueur inférieure ou égale à \(0{,}01\text{.}\)</p>
-<div class="displaymath" id="p-411">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-x2moins2algo"><article class="example example-like"><p id="p-401">Reprenons l'exemple <a class="xref" data-knowl="./knowl/x2moins23iter.html" title="Exemple 4.1.7">4.1.7</a> là où l'on s'était arrêtés, et partons donc de l'intervalle d'encadrement \([1{,}25;1{,}5]\) du zéro \(c\text{,}\) dont la longueur est \(1{,}5-1{,}25=0{,}25\text{.}\)</p>
+<p id="p-402">Appliquons alors la méthode de la bissection afin d'obtenir un intervalle d'encadrement de \(c\) de longueur inférieure ou égale à \(0{,}01\text{.}\)</p>
+<div class="displaymath" id="p-403">
 \begin{equation*}
 \begin{array}{cccccccc}
 \text{Itération}&amp;a&amp;b&amp;b-a&amp;m&amp;f(m)&amp;f(a)&amp;m\rightarrow\\
@@ -391,14 +394,14 @@ f(a)=-1 &amp; f(m)=-0{,}437\,5 &amp; f(b)=0{,}25
 \end{array}
 \end{equation*}
 </div>
-<p id="p-412">Après la cinquième itération, l'intervalle d'encadrement est de longueur \(0{,}007\,812\,5 \leq 0{,}01\text{.}\) Donc on s'arrête et on ne complète pas la sixième itération.</p>
-<p id="p-413">Les deux dernières bornes trouvées sont \(a=1{,}414\,062\,5\) et \(b=1{,}421\,875\text{.}\) Autrement dit, le zéro \(c\) vérifie l'encadrement</p>
+<p id="p-404">Après la cinquième itération, l'intervalle d'encadrement est de longueur \(0{,}007\,812\,5 \leq 0{,}01\text{.}\) Donc on s'arrête et on ne complète pas la sixième itération.</p>
+<p id="p-405">Les deux dernières bornes trouvées sont \(a=1{,}414\,062\,5\) et \(b=1{,}421\,875\text{.}\) Autrement dit, le zéro \(c\) vérifie l'encadrement</p>
 <div class="displaymath">
 \begin{equation*}
 1{,}414\,062\,5&lt;c&lt;1{,}421\,875.
 \end{equation*}
 </div>
-<p id="p-414">Notons enfin que \(c=\sqrt{2}\approx 1{,}414\,214\) et que l'encadrement ci-dessus ne fournit pas davantage que la première décimale du zéro \(c\text{.}\)</p></article></div></section></div></main>
+<p id="p-406">Notons enfin que \(c=\sqrt{2}\approx 1{,}414\,214\) et que l'encadrement ci-dessus ne fournit pas davantage que la première décimale du zéro \(c\text{.}\)</p></article></div></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;

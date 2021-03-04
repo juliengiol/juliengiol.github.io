@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:14-05:00    *-->
+<!--*    on 2021-03-04T13:36:44-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,19 +15,19 @@
 <article class="li"><h6 class="heading">
 <span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>La méthode de Simpson donne alors</p>
+<p>D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=6\text{,}\) on a</p>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^4\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)\\
-&amp;=\frac{0{,}25}{6}\cdot(A_1+A_2+A_3+A_4)
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6\cdot(1-0)^3}{12\cdot 5^2}\\
+&amp;=0{,}02
 \end{align*}
 </div>
-<p data-braille="continuation">où</p>
-<ul class="circle">
-<li><p>\(A_1=f(0)+4f(0{,}125)+f(0{,}25)\)</p></li>
-<li><p>\(A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)\)</p></li>
-<li><p>\(A_3=f(0{,}5)+4f(0{,}625)+f(0{,}75)\)</p></li>
-<li><p>\(A_4=f(0{,}75)+4f(0{,}875)+f(1)\)</p></li>
-</ul></article><span class="incontext"><a href="presentationsimpson.html#li-784">Contexte</a></span>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+-0{,}020\leq\text{Erreur}\leq 0{,}020.
+\end{equation*}
+</div></article><span class="incontext"><a href="exercicestrapezes.html#li-784">Contexte</a></span>
 </body>
 </html>

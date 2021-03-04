@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:43-05:00    *-->
+<!--*    on 2021-03-04T13:37:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,78 +13,10 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 class="heading">
-<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">11.3.10</span><span class="period">.</span>
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">11.3.7</span><span class="period">.</span>
 </h6>
-<p>Le but de cet exercice est d'apprendre à appliquer l'algorithme d'Euclide de façon matricielle, et de découvrir au passage l'objet du chapitre suivant qui est consacré à l'algorithme d'Euclide étendu.</p>
-<ol class="decimal">
-<li>
-<p>Soit \(a,b,q,r\) quatre nombres tels que</p>
-<div class="displaymath">
-\begin{equation*}
-a=b\cdot q+r.
-\end{equation*}
-</div>
-<p data-braille="continuation">Vérifiez qu'on a</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}0&amp;1\\1&amp;-q\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}b\\r\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>La première étape de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(2589;234)\) consiste en la division euclidienne</p>
-<div class="displaymath">
-\begin{equation*}
-2589=234\cdot 11+15.
-\end{equation*}
-</div>
-<p data-braille="continuation">Donnez une matrice \(2\times 2\) \(M_1\) telle que</p>
-<div class="displaymath">
-\begin{equation*}
-M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}234\\15\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>La deuxième étape de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(2589;234)\) consiste en la division euclidienne</p>
-<div class="displaymath">
-\begin{equation*}
-234=15\cdot 15+9.
-\end{equation*}
-</div>
-<p data-braille="continuation">Donnez une matrice \(2\times 2\) \(M_2\) telle que</p>
-<div class="displaymath">
-\begin{equation*}
-M_2\begin{bmatrix}234\\15\end{bmatrix}=\begin{bmatrix}15\\9\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Vérifiez qu'on a</p>
-<div class="displaymath">
-\begin{equation*}
-M_2M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}15\\9\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Continuez ainsi afin d'obtenir des matrices \(2\times 2\) \(M_3,M_4,M_5\) telles que</p>
-<div class="displaymath">
-\begin{equation*}
-M_5M_4M_3M_2M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}3\\0\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li><p>Déterminez la matrice \(M=M_5M_4M_3M_2M_1\text{.}\)</p></li>
-<li>
-<p>En déduire un couple d'entiers relatifs \((u;v)\in\mathbb{Z}^2\) tels que</p>
-<div class="displaymath">
-\begin{equation*}
-2589u+234v=3.
-\end{equation*}
-</div>
-</li>
-</ol>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-108-hidden.html" title="Solution 11.3.10.1"><span class="type">Solution</span></a></div></article><span class="incontext"><a href="exerciceseuclide.html#exercise-117">Contexte</a></span>
+<p>Créez une fonction récursive <code class="code-inline tex2jax_ignore">pgcd(a, b)</code> qui renvoie le PGCD de deux entiers naturels \(\text{a}\geq\text{b}\text{.}\)</p>
+<p>Testez votre code avec \(\text{PGCD}(43\,569;28\,476)=9\text{.}\)</p>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-106-hidden.html" title="Solution 11.3.7.1"><span class="type">Solution</span></a></div></article><span class="incontext"><a href="exerciceseuclide.html#exercise-117">Contexte</a></span>
 </body>
 </html>

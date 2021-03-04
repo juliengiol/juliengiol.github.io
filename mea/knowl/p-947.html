@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:30-05:00    *-->
+<!--*    on 2021-03-04T13:36:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Dans ce chapitre, nous nous intéressons à la forme de Newton du polynôme interpolateur</p>
+<p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
 <div class="displaymath">
 \begin{equation*}
-N(t)=d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)
+\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;
 \end{equation*}
 </div>
-<p data-braille="continuation">où</p>
-<div class="displaymath">
-\begin{equation*}
-N_i(t)=(t-x_0)(t-x_1)\cdots(t-x_{i-1})
-\end{equation*}
-</div>
-<p data-braille="continuation">est un polynôme de degré \(i\) pour \(i=1,2,\ldots,n\text{.}\)</p>
-<span class="incontext"><a href="presentationdiffdiv.html#p-947">Contexte</a></span>
+<span class="incontext"><a href="algorithmediffdiv.html#p-947">Contexte</a></span>
 </body>
 </html>

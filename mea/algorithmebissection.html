@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:56:19-05:00    *-->
+<!--*    on 2021-03-04T13:34:08-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,36 +235,36 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode de la bissection.</span>
 </h6>
 <ul class="disc">
-<li id="li-246">
-<p id="p-415">Entrées :</p>
+<li id="li-244">
+<p id="p-407">Entrées :</p>
 <ul class="circle">
-<li id="li-247"><p id="p-416">Assigner à \(\text{f}\) la fonction dont on cherche à encadrer le zéro.</p></li>
-<li id="li-248"><p id="p-417">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle de départ.</p></li>
-<li id="li-249"><p id="p-418">Assigner à \(\text{longueurMax}\) la longueur maximale désirée pour l'intervalle d'encadrement.</p></li>
+<li id="li-245"><p id="p-408">Assigner à \(\text{f}\) la fonction dont on cherche à encadrer le zéro.</p></li>
+<li id="li-246"><p id="p-409">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle de départ.</p></li>
+<li id="li-247"><p id="p-410">Assigner à \(\text{longueurMax}\) la longueur maximale désirée pour l'intervalle d'encadrement.</p></li>
 </ul>
 </li>
-<li id="li-250">
-<p id="p-419">Instructions :</p>
-<ul class="circle"><li id="li-251">
-<p id="p-420">Tant que \(\text{b}-\text{a}&gt;\text{longueurMax}\text{,}\)</p>
+<li id="li-248">
+<p id="p-411">Instructions :</p>
+<ul class="circle"><li id="li-249">
+<p id="p-412">Tant que \(\text{b}-\text{a}&gt;\text{longueurMax}\text{,}\)</p>
 <ul class="square">
-<li id="li-252"><p id="p-421">assigner à \(\text{m}\) la valeur \((\text{a}+\text{b})/2\) ;</p></li>
-<li id="li-253"><ul class="disc">
-<li id="li-254"><p id="p-422">si \(\text{f}(\text{m})=0\text{,}\) assigner à \(\text{a}\) et \(\text{b}\) la valeur de \(\text{m}\) et sortir de la boucle tant que ;</p></li>
-<li id="li-255"><p id="p-423">sinon si \(\text{f}(\text{m})\text{f}(\text{a})&lt;0\text{,}\) assigner à \(\text{b}\) la valeur de \(\text{m}\) ;</p></li>
-<li id="li-256"><p id="p-424">sinon assigner à \(\text{a}\) la valeur de \(\text{m}\text{.}\)</p></li>
+<li id="li-250"><p id="p-413">assigner à \(\text{m}\) la valeur \((\text{a}+\text{b})/2\) ;</p></li>
+<li id="li-251"><ul class="disc">
+<li id="li-252"><p id="p-414">si \(\text{f}(\text{m})=0\text{,}\) assigner à \(\text{a}\) et \(\text{b}\) la valeur de \(\text{m}\) et sortir de la boucle tant que ;</p></li>
+<li id="li-253"><p id="p-415">sinon si \(\text{f}(\text{m})\text{f}(\text{a})&lt;0\text{,}\) assigner à \(\text{b}\) la valeur de \(\text{m}\) ;</p></li>
+<li id="li-254"><p id="p-416">sinon assigner à \(\text{a}\) la valeur de \(\text{m}\text{.}\)</p></li>
 </ul></li>
 </ul>
 </li></ul>
 </li>
-<li id="li-257">
-<p id="p-425">Sortie :</p>
+<li id="li-255">
+<p id="p-417">Sortie :</p>
 <ul class="circle">
-<li id="li-258"><p id="p-426">Si \(\text{a}=\text{b}\) (ce qui signifie qu'on est tombés sur le zéro), afficher \(\text{a}\) ;</p></li>
-<li id="li-259"><p id="p-427">sinon afficher \(\text{a}\) et \(\text{b}\text{.}\)</p></li>
+<li id="li-256"><p id="p-418">Si \(\text{a}=\text{b}\) (ce qui signifie qu'on est tombés sur le zéro), afficher \(\text{a}\) ;</p></li>
+<li id="li-257"><p id="p-419">sinon afficher \(\text{a}\) et \(\text{b}\text{.}\)</p></li>
 </ul>
 </li>
-</ul></article><p id="p-428">Voici une implémentation de cet algorithme permettant d'encadrer l'unique zéro de la fonction \(f(x)=x^2-2\) dans l'intervalle \(]0;2[\) par les bornes d'un intervalle de longueur inférieure ou égale à \(0{,}01\text{.}\) Notez qu'on utilise la commande <code class="code-inline tex2jax_ignore">break</code> pour sortir de la boucle <code class="code-inline tex2jax_ignore">while</code> dans le cas où on tombe sur le zéro.</p>
+</ul></article><p id="p-420">Voici une implémentation de cet algorithme permettant d'encadrer l'unique zéro de la fonction \(f(x)=x^2-2\) dans l'intervalle \(]0;2[\) par les bornes d'un intervalle de longueur inférieure ou égale à \(0{,}01\text{.}\) Notez qu'on utilise la commande <code class="code-inline tex2jax_ignore">break</code> pour sortir de la boucle <code class="code-inline tex2jax_ignore">while</code> dans le cas où on tombe sur le zéro.</p>
 <div class="sagecell-python" id="sage-50"><script type="text/x-sage"># entrées :
 def f(x):
     return x ** 2 - 2

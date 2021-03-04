@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:33-05:00    *-->
+<!--*    on 2021-03-04T13:35:55-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,27 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.11.2</span><span class="period">.</span>
 </h6>
-<p>Principe : Construire \(N(t)\) comme combinaison linéaire des polynômes</p>
+<p>La forme de Lagrange du polynôme interpolateur est la suivante :</p>
 <div class="displaymath">
-\begin{equation*}
-N_i(t)=(t-x_0)(t-x_1)\cdots(t-x_{i-1})
-\end{equation*}
+\begin{align*}
+L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
+&amp;=2{,}007\frac{(t-4)(t-6)}{(3-4)(3-6)}+2{,}502\frac{(t-3)(t-6)}{(4-3)(4-6)}\\
+&amp;\qquad+2{,}142\frac{(t-3)(t-4)}{(6-3)(6-4)}\\
+&amp;=\frac{2{,}007}{3}(t-4)(t-6)-1{,}251(t-3)(t-6)\\
+&amp;\qquad +0{,}357(t-3)(t-4).
+\end{align*}
 </div>
-<p data-braille="continuation">en posant</p>
+<p>On a</p>
 <div class="displaymath">
-\begin{equation*}
-N(t)=d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)
-\end{equation*}
+\begin{align*}
+L(5)&amp;=\frac{2{,}007}{3}(5-4)(5-6)-1{,}251(5-3)(5-6)\\
+&amp;\qquad +0{,}357(5-3)(5-4)\\
+&amp;=-\frac{2{,}007}{3}+1{,}251\cdot 2+0{,}357\cdot 2\\
+&amp;=2{,}547.
+\end{align*}
 </div>
-<p data-braille="continuation">où le coefficient \(d_i\) est la différence divisée associée aux points \(A_0=(x_0;y_0),\ldots,A_i=(x_i;y_i)\text{,}\) c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-d_i=\left[A_0,\ldots,A_i\right]
-\end{equation*}
-</div></article><span class="incontext"><a href="presentationdiffdiv.html#li-546">Contexte</a></span>
+<p data-braille="continuation">On estime ainsi que l'intensité valait \(2{,}547\;\text{A}\) environ au moment du cinquième relevé.</p></article><span class="incontext"><a href="exerciceslagrange.html#li-546">Contexte</a></span>
 </body>
 </html>

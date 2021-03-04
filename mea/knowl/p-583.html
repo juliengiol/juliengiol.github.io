@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:50-05:00    *-->
+<!--*    on 2021-03-04T13:35:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,36 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Il suffit de déplacer <code class="code-inline tex2jax_ignore">print(x0)</code> à l'intérieur de la boucle <code class="code-inline tex2jax_ignore">for</code> :<pre class="code-block tex2jax_ignore"># entrées
-def f(x):
-    return x ** 2 - 2
-def fPrime(x):
-    return 2 * x
-x0 = 2.0
-n = 3
-
-# instructions / sorties
-for i in range(1, n+1):
-    x0 = x0 - f(x0) / fPrime(x0)
-    print(x0)
-</pre></p>
+<p>Fixons un indice \(n\geq 0\text{.}\) D'après la formule de Taylor-Lagrange (voir exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>), il existe \(\xi\in\;]c;x_n[\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+f(c)=f(x_n)+f'(x_n)(c-x_n)+\frac{f''(\xi)}{2}(c-x_n)^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme \(f(c)=0\text{,}\) une division par \(f'(x_n)\) donne</p>
+<div class="displaymath">
+\begin{equation*}
+0=\frac{f(x_n)}{f'(x_n)}+c-x_n+\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2,
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+x_n-\frac{f(x_n)}{f'(x_n)}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2,
+\end{equation*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}-c=\frac{f''(\xi)}{2f'(x_n)}(c-x_n)^2
+\end{equation*}
+</div>
+<p data-braille="continuation">et, en appliquant la valeur absolue à cette équation :</p>
+<div class="displaymath">
+\begin{equation*}
+|x_{n+1}-c|=\frac{|f''(\xi)|}{2|f'(x_n)|}|x_n-c|^2.
+\end{equation*}
+</div>
 <span class="incontext"><a href="exercicesnewton.html#p-583">Contexte</a></span>
 </body>
 </html>

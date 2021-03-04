@@ -50,23 +50,25 @@
   </statement>
   <proof>
     <p>Par hypothèse, les nombres <m>f(a)</m> et <m>f(b)</m> sont de signes opposés, de sorte que <m>0</m> est compris strictement entre les deux.</p>
-    <p>Par le théorème des valeurs intermédiaires, il existe donc <m>c\in\;]a;b[</m> tel que <m>f(c)=0</m>.</p>
+    <p>Par le <url href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_des_valeurs_interm%C3%A9diaires">théorème des valeurs intermédiaires</url>, il existe donc <m>c\in\;]a;b[</m> tel que <m>f(c)=0</m>.</p>
   </proof>
 </theorem>
 
 <example xml:id="x2moins2">
     <p>
       <figure>
-          <caption>Fonction <m>f(x)=x^2-2</m></caption>
-          <interactive xml:id="desmos-exemple-bissection" desmos="h9tdqcusut" width="75%" aspect="5:4"/>
+          <caption>Principe de base derrière la méthode de la bissection</caption>
+          <interactive xml:id="desmos-exemple-bissection" desmos="wawolqm31e" width="95%" aspect="5:4"/>
       </figure>
     </p>
-    <p>La fonction <m>f(x)=x^2-2</m> est continue sur <m>\mathbb{R}</m>, donc sur n'importe quel intervalle.</p>
     <p>
-      <ul>
-        <li><p><m>f(0)f(2)=(-2)\cdot 2&lt;0</m> donc il existe un zéro dans <m>]0;2[</m>.</p></li>
-        <li><p><m>f(-2)f(-1)=2\cdot (-1)&lt;0</m> donc il existe un zéro dans <m>]-2;-1[</m>.</p></li>
-      </ul>
+      Soit <m>f(x):=x^2-2</m> et <m>[a;b]:=[0;2]</m>.
+    </p>
+    <p>
+      Comme toute fonction polynomiale, la fonction <m>f</m> est continue sur <m>\mathbb{R}</m>, donc sur <m>[0;2]</m>.
+      Puisque
+      <me>f(0)f(2)=(-2)\cdot 2&lt;0,</me>
+      il existe au moins un zéro dans l'intervalle <m>]0;2[</m>.
     </p>
 </example>
 
@@ -184,14 +186,15 @@
   <title>Méthode de la bissection : Encadrer un zéro en coupant des intervalles en deux</title>
   <p>
     <ul>
-      <li><p>Objectif : Encadrer un zéro de la fonction <m>f</m>.</p></li>
-      <li><p>Hypothèses : On suppose que la fonction <m>f</m> est continue sur <m>[a;b]</m>, qu'elle possède un unique zéro dans <m>]a;b[</m>, et que <m>f(a)f(b)&lt;0</m>.</p></li>
+      <li>Objectif : Encadrer un zéro de la fonction <m>f</m>.</li>
+      <li>Hypothèses : On suppose que la fonction <m>f</m> est continue sur <m>[a;b]</m>, qu'elle possède un unique zéro dans <m>]a;b[</m>, et que <m>f(a)f(b)&lt;0</m>.</li>
       <li>
         <p>Principe :
           <ul>
-            <li><p>Au départ, l'intervalle d'encadrement de <m>c</m> est <m>]a;b[</m>.</p></li>
+            <li>Au départ, l'intervalle d'encadrement de <m>c</m> est <m>]a;b[</m>.</li>
             <li>
-              <p>Ensuite, on compare les trois valeurs <m>f(a), f(m)</m> et <m>f(b)</m> où <m>m:=\frac{a+b}{2}</m> est le milieu de l'intervalle <m>[a;b]</m>.
+              <p>
+                Ensuite, on compare les trois valeurs <m>f(a), f(m)</m> et <m>f(b)</m> où <m>m:=\frac{a+b}{2}</m> est le milieu de l'intervalle <m>[a;b]</m>.
                 <ul>
                   <li><p>Si <m>f(m)=0</m>, on s'arrête car on vient de tomber sur le zéro.</p></li>
                   <li><p>Si <m>f(m)f(a)&lt;0</m>, on remplace <m>]a;b[</m> par <m>]a;m[</m>.</p></li>
@@ -199,12 +202,12 @@
                 </ul>
               </p>
             </li>
-            <li><p>On répète l'opération précédente jusqu'à ce qu'on tombe sur le zéro ou que la longueur de l'intervalle soit assez petite à notre goût.</p></li>
+            <li>On répète l'opération précédente jusqu'à ce qu'on tombe sur le zéro ou que la longueur de l'intervalle soit assez petite à notre goût.</li>
           </ul>
         </p>
       </li>
-      <li><p>Précision : Après <m>n</m> itérations, on obtient un intervalle d'encadrement du zéro <m>c</m> qui est de longueur <m>\frac{b-a}{2^n}</m>.</p></li>
-      <li><p>Voir aussi : <url href="https://drive.google.com/file/d/1PMzro1wU8GnyWj2TvhTAAgpjXazuDi2K/view?usp=sharing">Notes de cours de Jérôme</url>.</p></li>
+      <li>Précision : Après <m>n</m> itérations, on obtient un intervalle d'encadrement du zéro <m>c</m> qui est de longueur <m>\frac{b-a}{2^n}</m>.</li>
+      <li>Voir aussi : <url href="https://drive.google.com/file/d/1PMzro1wU8GnyWj2TvhTAAgpjXazuDi2K/view?usp=sharing">Notes de cours de Jérôme</url>.</li>
     </ul>
   </p>
 </assemblage>
@@ -499,7 +502,7 @@
     <p>Pour chacun des exercices <xref ref="troisiterbissection"/>, <xref ref="quatreiterbissection"/> et <xref ref="troisiterbissectionbis"/>, utilisez le code fourni à la section <xref ref="algorithmebissection"/> afin de donner une valeur arrondie à cinq décimales du zéro <m>c</m> considéré.</p>
   </statement>
   <solution>
-    <p>Pour les deux premiers exercices, il suffit d'assigner la valeur <m>10^{-6}=0{,}000\,001</m> à la variable <m>\text{longueurMax}</m>, et <m>10^{-7}=0{,}000\,000\,1</m> pour le troisième exercice .
+    <p>Pour les deux premiers exercices, il suffit d'assigner la valeur <m>10^{-6}=0{,}000\,001</m> à la variable <m>\text{longueurMax}</m>, et <m>10^{-7}=0{,}000\,000\,1</m> pour le troisième exercice.
       <ul>
         <li>Exercice <xref ref="troisiterbissection"/> : <m>c\in\;]1{,}732\,049\,942;1{,}732\,050\,895[</m> donc <m>c\approx 1{,}732\,05</m>.</li>
         <li>Exercice <xref ref="quatreiterbissection"/> : <m>c\in\;]0{,}693\,146\,70;0{,}693\,147\,659[</m> donc <m>c\approx 0{,}693\,15</m>.</li>
@@ -607,11 +610,11 @@
   <statement>
     <p>Soit <m>f(x)=(x-1)(x-2)</m>, polynôme possédant deux zéros <m>c_1=1</m> et <m>c_2=2</m>.</p>
     <p>
-      Pour chacun des intervalles de départ <m>[a;b]</m> qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro l'algorithme converge :
+      Pour chacun des intervalles de départ qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro l'algorithme converge :
       <ol>
-        <li><m>[a;b]=[0;1{,}5]</m>;</li>
-        <li><m>[a;b]=[1{,}5;4]</m>;</li>
-        <li><m>[a;b]=[0{,}5;4{,}5]</m>.</li>
+        <li><m>[0;1{,}5]</m>;</li>
+        <li><m>[1{,}5;4]</m>;</li>
+        <li><m>[0{,}5;4{,}5]</m>.</li>
       </ol>
     </p>
     <p>Qu'en concluez-vous?</p>
@@ -631,14 +634,14 @@
 
 <exercise>
   <statement>
-    <p>Soit <m>f(x)=(x^2-1)(x^2-4)</m>, polynôme possédant quatre zéros <m>c=\pm 1</m> et <m>c=\pm 2</m>.</p>
+    <p>Soit <m>f(x)=(x^2-1)(x^2-4)</m>, polynôme possédant quatre zéros : <m>\pm 1</m> et <m>\pm 2</m>.</p>
     <p>
-      Pour chacun des intervalles de départ <m>[a;b]</m> qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro l'algorithme converge :
+      Pour chacun des intervalles de départ qui suivent, utilisez le code fourni à la section <xref ref="algorithmebissection"/> pour déterminer vers quel zéro l'algorithme converge :
       <ol>
-        <li><m>[a;b]=[-3;-0{,}5]</m>;</li>
-        <li><m>[a;b]=[-1{,}5;3]</m>;</li>
-        <li><m>[a;b]=[-3;3]</m>;</li>
-        <li><m>[a;b]=[-3;4]</m>.</li>
+        <li><m>[-3;-0{,}5]</m>;</li>
+        <li><m>[-1{,}5;3]</m>;</li>
+        <li><m>[-3;3]</m>;</li>
+        <li><m>[-3;4]</m>.</li>
       </ol>
     </p>
     <p>Qu'en concluez-vous?</p>
@@ -731,6 +734,7 @@
 </exercise>
 
 <exercise xml:id="fausse_position">
+  <title>Méthode de la fausse position</title>
   <statement>
     <p>
       La <url href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_la_fausse_position">méthode de la fausse position</url> est une amélioration de la méthode de la bissection qui converge en général plus rapidement qu'elle.

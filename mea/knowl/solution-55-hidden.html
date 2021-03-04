@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:01-05:00    *-->
+<!--*    on 2021-03-04T13:35:31-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body><div class="solution solution-like"><ol class="decimal">
 <li>
-<p>Comme \(f'(x)=2x\) et \(f''(x)=2\) sont positives sur \(]0;+\infty[\) et que \(f''\) est continue, les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> sont vérifiées. On a donc</p>
+<p>Comme \(f'(x)=2x\) et \(f''(x)=2\) sont positives sur \(]0;+\infty[\text{,}\) et que \(f''\) est continue, les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.7: Méthode de Newton-Raphson">5.1.7</a> sont vérifiées. On a donc</p>
 <div class="displaymath">
 \begin{equation*}
-c=\sqrt{k}&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0\qquad\text{pour tout}\;n\geq 0
+c=\sqrt{k}&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0
 \end{equation*}
 </div>
-<p data-braille="continuation">et</p>
+<p data-braille="continuation">pour tout \(n\ge 0\text{,}\) et</p>
 <div class="displaymath">
 \begin{equation*}
 \lim_{n\rightarrow+\infty}x_n=\sqrt{k}.
@@ -55,19 +55,19 @@ x_{n+1}&amp;=x_n-\frac{f(x_n)}{f'(x_n)}\\
 <p>La valeur absolue a la propriété suivante :</p>
 <div class="displaymath">
 \begin{equation}
-\left|A\cdot B\right|=\left|A\right|\cdot\left|B\right|\qquad\text{pour tous}\;A,B\in\mathbb{R}.\tag{5.3.1}
+\left|A\cdot B\right|=\left|A\right|\cdot\left|B\right|\quad\text{pour tous}\;A,B\in\mathbb{R}.\tag{5.3.1}
 \end{equation}
 </div>
 <p>Par ailleurs, on a \(k\geq 2\) par hypothèse et, comme on l'a vu à la première question, \(\sqrt{k}&lt;x_n\) pour tout \(n\geq 0\text{.}\) Donc</p>
 <div class="displaymath">
 \begin{equation*}
-2x_n&gt;2\sqrt{k}\geq 2\sqrt{2}&gt;2\quad\Rightarrow\quad 2x_n\geq 2
+2x_n&gt;2\sqrt{k}\ge 2\sqrt{2}&gt;2
 \end{equation*}
 </div>
-<p data-braille="continuation">d'où</p>
+<p data-braille="continuation">d'où \(2x_n\ge 2\) et</p>
 <div class="displaymath">
 \begin{equation}
-0&lt;\frac{1}{2x_n}\leq\frac{1}{2}\qquad\text{pour tout}\;n\geq 0.\tag{5.3.2}
+0&lt;\frac{1}{2x_n}\leq\frac{1}{2}\quad\text{pour tout}\;n\geq 0.\tag{5.3.2}
 \end{equation}
 </div>
 <p>Pour tout \(n\geq 0\text{,}\) on a donc</p>
@@ -95,7 +95,6 @@ x_{n+1}&amp;=x_n-\frac{f(x_n)}{f'(x_n)}\\
 </div>
 </li>
 <li>
-<p>On a</p>
 <div class="displaymath">
 \begin{align*}
 \left|x_3-\sqrt{k}\right|&amp;\leq\frac{1}{2^7}\left|x_0-\sqrt{k}\right|^8\\
@@ -105,7 +104,7 @@ x_{n+1}&amp;=x_n-\frac{f(x_n)}{f'(x_n)}\\
 &amp;=0{,}000\,030\,517\ldots
 \end{align*}
 </div>
-<p>Donc</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{equation*}
 \left|x_3-\sqrt{k}\right|\leq 0{,}000\,031.
@@ -113,28 +112,34 @@ x_{n+1}&amp;=x_n-\frac{f(x_n)}{f'(x_n)}\\
 </div>
 </li>
 <li><ol class="lower-alpha">
-<li><div class="displaymath">
+<li>
+<p>On obtient :</p>
+<div class="displaymath">
 \begin{align*}
-x_0&amp;=2\\
-x_1&amp;=\frac{x_0+\frac{3}{x_0}}{2}=\frac{2+\frac{3}{2}}{2}=\frac{7}{4}=1{,}75\\
-x_2&amp;=\frac{x_1+\frac{3}{x_1}}{2}=\frac{\frac{7}{4}+\frac{3\cdot 4}{7}}{2}=\frac{97}{56}=1{,}732\,142\,857\ldots\\
-x_3&amp;=\frac{x_2+\frac{3}{x_2}}{2}=\frac{\frac{97}{56}+\frac{3\cdot 56}{97}}{2}=\frac{18817}{10864}=1{,}732\,050\,810\ldots
+x_0&amp;=2;\\
+x_1&amp;=\frac{x_0+\frac{3}{x_0}}{2}=\frac{2+\frac{3}{2}}{2}=\frac{7}{4}=1{,}75;\\
+x_2&amp;=\frac{x_1+\frac{3}{x_1}}{2}=\frac{\frac{7}{4}+\frac{3\cdot 4}{7}}{2}=\frac{97}{56}=1{,}732\,142\,857\ldots;\\
+x_3&amp;=\frac{x_2+\frac{3}{x_2}}{2}=\frac{\frac{97}{56}+\frac{3\cdot 56}{97}}{2}=\frac{18817}{10864}=1{,}732\,050\,810\ldots.
 \end{align*}
-</div></li>
-<li><div class="displaymath">
+</div>
+</li>
+<li>
+<p>On obtient :</p>
+<div class="displaymath">
 \begin{align*}
-x_0&amp;=\frac{5}{2}=2{,}5\\
-x_1&amp;=\frac{x_0+\frac{5}{x_0}}{2}=\frac{\frac{5}{2}+\frac{5\cdot 2}{5}}{2}=\frac{9}{4}=2{,}25\\
-x_2&amp;=\frac{x_1+\frac{5}{x_1}}{2}=\frac{\frac{9}{4}+\frac{5\cdot 4}{9}}{2}=\frac{161}{72}=2{,}236\,\overline{1}\\
-x_3&amp;=\frac{x_2+\frac{5}{x_2}}{2}=\frac{\frac{161}{72}+\frac{5\cdot 72}{161}}{2}=\frac{51841}{23184}=2{,}236\,067\,977\ldots
+x_0&amp;=\frac{5}{2}=2{,}5;\\
+x_1&amp;=\frac{x_0+\frac{5}{x_0}}{2}=\frac{\frac{5}{2}+\frac{5\cdot 2}{5}}{2}=\frac{9}{4}=2{,}25;\\
+x_2&amp;=\frac{x_1+\frac{5}{x_1}}{2}=\frac{\frac{9}{4}+\frac{5\cdot 4}{9}}{2}=\frac{161}{72}=2{,}236\,\overline{1};\\
+x_3&amp;=\frac{x_2+\frac{5}{x_2}}{2}=\frac{\frac{161}{72}+\frac{5\cdot 72}{161}}{2}=\frac{51841}{23184}=2{,}236\,067\,977\ldots.
 \end{align*}
-</div></li>
+</div>
+</li>
 </ol></li>
 <li>
 <p>Comme \(x_n&gt;\sqrt{k}\text{,}\) on a \(\left|x_n-\sqrt{k}\right|=x_n-\sqrt{k}\) pour tout \(n\geq 0\text{.}\) La question 6 entraîne donc</p>
 <div class="displaymath">
 \begin{equation*}
-0\leq x_3-\sqrt{k}\leq 0{,}000\,031
+0\leq x_3-\sqrt{k}\leq 0{,}000\,031,
 \end{equation*}
 </div>
 <p data-braille="continuation">d'où</p>
@@ -145,19 +150,19 @@ x_3&amp;=\frac{x_2+\frac{5}{x_2}}{2}=\frac{\frac{161}{72}+\frac{5\cdot 72}{161}}
 </div>
 <ol class="lower-alpha">
 <li>
-<p>En utlisant les calculs de la question 7, on obtient l'encadrement</p>
+<p>D'après les calculs de la question 7, on a l'encadrement</p>
 <div class="displaymath">
 \begin{equation*}
 1{,}732\,050\leq x_3\leq 1{,}732\,051.
 \end{equation*}
 </div>
-<p data-braille="continuation">En additionnant <a class="xref" data-knowl="./knowl/erreurx3.html" title="Équation 5.3.3">(5.3.3)</a>, on a alors</p>
+<p data-braille="continuation">En additionnant les inégalités <a class="xref" data-knowl="./knowl/erreurx3.html" title="Équation 5.3.3">(5.3.3)</a>, on obtient alors</p>
 <div class="displaymath">
 \begin{equation*}
-1{,}732\,050-0{,}000\,031\leq x_3+\left(\sqrt{3}-x_3\right)\leq 1{,}732\,051+0
+1{,}732\,050-0{,}000\,031\leq x_3+\left(\sqrt{3}-x_3\right)\leq 1{,}732\,051+0,
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p data-braille="continuation">i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 1{,}732\,019\leq\sqrt{3}\leq 1{,}732\,051.
@@ -171,19 +176,19 @@ x_3&amp;=\frac{x_2+\frac{5}{x_2}}{2}=\frac{\frac{161}{72}+\frac{5\cdot 72}{161}}
 </div>
 </li>
 <li>
-<p>En utlisant les calculs de la question 7, on obtient l'encadrement</p>
+<p>D'après les calculs de la question 7, on a l'encadrement</p>
 <div class="displaymath">
 \begin{equation*}
 2{,}236\,067\leq x_3\leq 2{,}236\,068.
 \end{equation*}
 </div>
-<p data-braille="continuation">En additionnant <a class="xref" data-knowl="./knowl/erreurx3.html" title="Équation 5.3.3">(5.3.3)</a>, on a alors</p>
+<p data-braille="continuation">En additionnant les inégalités <a class="xref" data-knowl="./knowl/erreurx3.html" title="Équation 5.3.3">(5.3.3)</a>, on obtient alors</p>
 <div class="displaymath">
 \begin{equation*}
-2{,}236\,067-0{,}000\,031\leq x_3+\left(\sqrt{5}-x_3\right)\leq 2{,}236\,068+0
+2{,}236\,067-0{,}000\,031\leq x_3+\left(\sqrt{5}-x_3\right)\leq 2{,}236\,068+0,
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p data-braille="continuation">i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 2{,}236\,036\leq \sqrt{5}\leq 2{,}236\,068.

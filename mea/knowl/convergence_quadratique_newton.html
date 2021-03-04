@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:45-05:00    *-->
+<!--*    on 2021-03-04T13:35:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,41 +15,42 @@
 <article class="theorem theorem-like"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">5.1.11</span><span class="period">.</span>
 </h6>
-<p>Soit \(f\) une fonction deux fois dérivable autour d'un zéro \(c\) de sorte qu'il existe \(r&gt;0\) tel que</p>
+<p>Soit \(f\) une fonction deux fois dérivable continûment autour d'un zéro \(c\text{,}\) de sorte qu'il existe \(r&gt;0\) tel que</p>
 <ul class="disc">
-<li><p>\(f'(x)\neq 0\) pour tout \(x\in[c-r;c+r]\text{;}\)</p></li>
-<li><p>\(f''\) est continue sur \(x\in[c-r;c+r]\text{.}\)</p></li>
+<li>\(f(c)=0\text{,}\)</li>
+<li>\(f'(x)\neq 0\) pour tout \(x\in[c-r;c+r]\text{,}\)</li>
+<li>et que \(f''\) soit continue sur \(x\in[c-r;c+r]\text{.}\)</li>
 </ul>
-<p>Soit \(M&gt;0\) tel que</p>
+<p>Alors pour toute constante \(M&gt;0\) telle que</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{|f''(x)|}{|f'(x)|}\leq M\qquad\text{pour tout }x\in[c-r;c+r].
+\frac{|f''(x)|}{|f'(x)|}\leq M\quad\textit{pour tout }x\in[c-r;c+r],
 \end{equation*}
 </div>
-<p>Alors pour tout point de départ \(x_0\) tel que</p>
+<p data-braille="continuation">et pour tout point de départ \(x_0\) satisfaisant</p>
 <div class="displaymath">
 \begin{equation*}
-|x_0-c|&lt;\min\left\{r;\frac{1}{M}\right\}
+|x_0-c|&lt;\min\left\{r;\frac{1}{M}\right\},
 \end{equation*}
 </div>
 <p data-braille="continuation">la suite définie par la formule de récurrence</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad\text{pour tout}\;n\geq 0
+x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}
 \end{equation*}
 </div>
 <p data-braille="continuation">converge vers \(c\) et vérifie</p>
 <div class="displaymath">
 \begin{equation*}
-|x_{n+1}-c|\leq M|x_n-c|^2\qquad\text{pour tout }n\geq 0
+|x_{n+1}-c|\leq M|x_n-c|^2
 \end{equation*}
 </div>
 <p data-braille="continuation">ainsi que</p>
 <div class="displaymath">
 \begin{equation*}
-|x_n-c|\leq\frac{1}{M}\left(M|x_0-c|\right)^{2^n}\qquad\text{pour tout }n\geq 1.
+|x_n-c|\leq\frac{1}{M}\left(M|x_0-c|\right)^{2^n}
 \end{equation*}
 </div>
-<p>Remarque : Cet énoncé est très fortement inspiré d'un théorème de l'excellent livre <a class="external" href="https://www.grenoble-sciences.fr/pap-ebook/demailly/accueil" target="_blank">Analyse numérique et équations différentielles</a> de Jean-Pierre Demailly, avec l'accord de son auteur.</p></article><article class="hiddenproof"><a class="original" data-knowl="./knowl/proof-8-hidden.html" title="Démonstration 5.1.11.1"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><span class="incontext"><a href="presentationnewton.html#convergence_quadratique_newton">Contexte</a></span>
+<p data-braille="continuation">pour tout \(n\ge 0\text{.}\)</p></article><article class="hiddenproof"><a class="original" data-knowl="./knowl/proof-8-hidden.html" title="Démonstration 5.1.11.1"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><span class="incontext"><a href="presentationnewton.html#convergence_quadratique_newton">Contexte</a></span>
 </body>
 </html>

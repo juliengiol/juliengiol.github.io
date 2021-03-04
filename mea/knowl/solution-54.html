@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:58-05:00    *-->
+<!--*    on 2021-03-04T13:35:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,15 +14,9 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.9.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.10.1</span><span class="period">.</span>
 </h6>
-<p>Résoudre cette équation revient à résoudre</p>
-<div class="displaymath">
-\begin{equation*}
-e^x-2-x=0.
-\end{equation*}
-</div>
-<p data-braille="continuation">Autrement dit, nous cherchons les zéros de la fonction</p>
+<p>Cette équation est équivalente à \(e^x-2-x=0\text{.}\) Autrement dit, nous cherchons les zéros de la fonction</p>
 <div class="displaymath">
 \begin{equation*}
 f(x)=e^x-2-x.
@@ -42,39 +36,45 @@ f(x)&amp;+\infty&amp;&amp;\searrow&amp;&amp;-1&amp;&amp;\nearrow&amp;&amp;+\inft
 \end{array}
 \end{equation*}
 </div>
-<p>On en déduit que \(f\) possède un zéro positif \(c_+\) et un zéro négatif \(c_-\text{.}\) Pour le premier, le théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> s'applique. Pour le second, c'est sa version symétrique de la remarque <a class="xref" data-knowl="./knowl/methodedenewtonbis.html" title="Remarque 5.1.8">5.1.8</a>.</p>
-<p>Pour approcher \(c_+\text{,}\) comme \(f(2)&gt;0\text{,}\) on part de \(x_0=2\text{.}\) En arrondissant à six décimales à chaque étape, on trouve</p>
+<p>On en déduit que \(f\) possède un zéro positif \(c_+\) et un zéro négatif \(c_-\text{.}\) Pour le premier, le théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.7: Méthode de Newton-Raphson">5.1.7</a> s'applique. Pour le second, c'est sa version symétrique mentionnée à la remarque <a class="xref" data-knowl="./knowl/methodedenewtonbis.html" title="Remarque 5.1.9">5.1.9</a>.</p>
+<ul class="disc">
+<li>
+<p>Pour approcher \(c_+\text{,}\) comme \(f(2)&gt;0\text{,}\) on part de \(x_0=2\text{.}\) En arrondissant à six décimales à chaque étape, on touve :</p>
 <div class="displaymath">
 \begin{align*}
-x_0&amp;=2\\
-x_1&amp;=x_0-\frac{f(x_0)}{f'(x_0)}\approx 1{,}469\,553\\
-x_2&amp;=x_1-\frac{f(x_1)}{f'(x_1)}\approx 1{,}207\,330\\
-x_3&amp;=x_2-\frac{f(x_2)}{f'(x_2)}\approx 1{,}148\,806\\
-x_4&amp;=x_3-\frac{f(x_3)}{f'(x_3)}\approx 1{,}146\,198\\
-x_5&amp;=x_4-\frac{f(x_4)}{f'(x_4)}\approx 1{,}146\,193
+x_0&amp;=2;\\
+x_1&amp;=x_0-\frac{f(x_0)}{f'(x_0)}\approx 1{,}469\,553;\\
+x_2&amp;=x_1-\frac{f(x_1)}{f'(x_1)}\approx 1{,}207\,330;\\
+x_3&amp;=x_2-\frac{f(x_2)}{f'(x_2)}\approx 1{,}148\,806;\\
+x_4&amp;=x_3-\frac{f(x_3)}{f'(x_3)}\approx 1{,}146\,198;\\
+x_5&amp;=x_4-\frac{f(x_4)}{f'(x_4)}\approx 1{,}146\,193.
 \end{align*}
 </div>
-<p data-braille="continuation">Donc</p>
+<p data-braille="continuation">On en déduit que</p>
 <div class="displaymath">
 \begin{equation*}
 c_+\approx 1{,}146.
 \end{equation*}
 </div>
+</li>
+<li>
 <p>Et pour approcher \(c_-\text{,}\) comme \(f(-2)&gt;0\text{,}\) on part de \(x_0=-2\text{.}\)</p>
 <div class="displaymath">
 \begin{align*}
-x_0&amp;=-2\\
-x_1&amp;=x_0-\frac{f(x_0)}{f'(x_0)}\approx -1{,}843\,482\\
-x_2&amp;=x_1-\frac{f(x_1)}{f'(x_1)}\approx -1{,}841\,406\\
-x_3&amp;=x_2-\frac{f(x_2)}{f'(x_2)}\approx -1{,}841\,406
+x_0&amp;=-2;\\
+x_1&amp;=x_0-\frac{f(x_0)}{f'(x_0)}\approx -1{,}843\,482;\\
+x_2&amp;=x_1-\frac{f(x_1)}{f'(x_1)}\approx -1{,}841\,406;\\
+x_3&amp;=x_2-\frac{f(x_2)}{f'(x_2)}\approx -1{,}841\,406.
 \end{align*}
 </div>
-<p data-braille="continuation">Donc</p>
+<p data-braille="continuation">On en déduit que</p>
 <div class="displaymath">
 \begin{equation*}
 c_-\approx -1{,}841.
 \end{equation*}
 </div>
+</li>
+</ul>
 </div>
 <span class="incontext"><a href="exercicesnewton.html#solution-54">Contexte</a></span>
 </body>

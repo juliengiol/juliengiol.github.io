@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:56-05:00    *-->
+<!--*    on 2021-03-04T13:36:26-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,68 +14,54 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.3.3.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.3.2.1</span><span class="period">.</span>
 </h6>
-<p>Notons \(f(x)=x\text{,}\) \(n=10\) et</p>
+<p>Notons \(f(x)=\sin(x)\text{,}\) \(n=4\) et</p>
 <div class="displaymath">
 \begin{equation*}
-\Delta x=\frac{b-a}{n}=\frac{3-2}{10}=0{,}1.
+\Delta x=\frac{b-a}{n}=\frac{\pi-0}{4}=\frac{\pi}{4}.
 \end{equation*}
 </div>
-<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([2;3]\) en dix sous-intervalles de même longueur est donnée par</p>
+<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([0;\pi]\) en quatre sous-intervalles de même longueur est donnée par</p>
 <div class="displaymath">
 \begin{equation*}
-x_k=a+k\cdot\Delta x=2+k\cdot 0{,}1\quad\text{pour }k=0,1,\ldots,10,
+x_k=a+k\cdot\Delta x=k\cdot\frac{\pi}{4}\quad\text{pour }k=0,1,\ldots,4,
 \end{equation*}
 </div>
 <p data-braille="continuation">c'est-à-dire</p>
 <div class="displaymath">
 \begin{equation*}
-2&lt;2{,}1&lt;2{,}2&lt;\ldots&lt;2{,}9&lt;3.
+0&lt;\frac{\pi}{4}&lt;\frac{\pi}{2}&lt;\frac{3\pi}{4}&lt;\pi.
 \end{equation*}
-</div>
-<p data-braille="continuation">Comme il y a beaucoup de valeurs, nous allons utiliser la notation sigma pour exprimer l'approximation cherchée :</p>
-<div class="displaymath">
-\begin{align*}
-\text{Approximation}&amp;=\Delta x\cdot\sum_{k=1}^nf(\xi_k)\\
-&amp;=0{,}1\cdot\sum_{k=1}^{10}\xi_k.
-\end{align*}
 </div>
 <ol class="decimal">
 <li>
-<p>Rectangles à gauche : On prend \(\xi_k=x_{k-1}\) donc</p>
+<p>Approximation par les rectangles à gauche :</p>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;= 0{,}1\cdot\sum_{k=1}^{10}(2+(k-1)\cdot 0{,}1)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}(k-1)\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^9k\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{9\cdot(9+1)}{2}\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(20+45\cdot 0{,}1\right)\\
-&amp;=2{,}45.
+&amp;\Delta x\cdot\left(f(0)+f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)\right)\\
+=\;&amp;\frac{\pi}{4}\cdot\left(\sin(0)+\sin\left(\frac{\pi}{4}\right)+\sin\left(\frac{\pi}{2}\right)+\sin\left(\frac{3\pi}{4}\right)\right)\\
+\approx\;&amp;1{,}896.
 \end{align*}
 </div>
 </li>
 <li>
-<p>Rectangles à droite : On prend \(\xi_k=x_k\) donc</p>
+<p>Approximation par les rectangles à droite :</p>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+k\cdot 0{,}1)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(20+55\cdot 0{,}1\right)\\
-&amp;=2{,}55.
+&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)\\
+=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{4}\right)+\sin\left(\frac{\pi}{2}\right)+\sin\left(\frac{3\pi}{4}\right)+\sin(\pi)\right)\\
+\approx\;&amp;1{,}896.
 \end{align*}
 </div>
 </li>
 <li>
-<p>Rectangles au milieu : On prend \(\xi_k=\frac{x_{k-1}+x_k}{2}=2+(k-0{,}5)\cdot 0{,1}\) donc</p>
+<p>Approximation par les rectangles au milieu :</p>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+(k-0{,}5)\cdot 0{,}1)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k-\sum_{k=1}^{10}0{,}5\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}-10\cdot 0{,}5\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(20+55-5\cdot 0{,}1\right)\\
-&amp;=2{,}5.
+&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)\\
+=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{8}\right)+\sin\left(\frac{3\pi}{8}\right)+\sin\left(\frac{5\pi}{8}\right)+\sin\left(\frac{7\pi}{8}\right)\right)\\
+\approx\;&amp;2{,}052.
 \end{align*}
 </div>
 </li>

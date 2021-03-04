@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:36-05:00    *-->
+<!--*    on 2021-03-04T13:35:54-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,27 +13,32 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 class="heading">
-<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">7.3.2</span><span class="period">.</span>
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">6.3.11</span><span class="period">.</span>
 </h6>
-<p>Soit \(A,B\) deux points d'abscisses distinctes. Il est facile de voir que</p>
+<p>Un électricien étudie le courant produit par un générateur. Pour cela il effectue sept relevés à intervalles de temps réguliers de trente secondes. Mais un appel le dérange au moment de son cinquième relevé et il lui manque les données correspondantes.</p>
 <div class="displaymath">
 \begin{equation*}
-\left[A,B\right]=\left[B,A\right].
+\begin{array}{|c|c|c|c|c|}
+\hline
+\text{Relevé}&amp;\text{Heure}&amp;\text{Tension (V)}&amp;\text{Intensité (A)}&amp;\text{Puissance (W)}\\
+\hline
+1&amp;17:20:00&amp;222&amp;1{,}854&amp;411{,}588\\
+2&amp;17:20:30&amp;225&amp;1{,}917&amp;431{,}325\\
+3&amp;17:21:00&amp;222&amp;2{,}007&amp;445{,}554\\
+4&amp;17:21:30&amp;224&amp;2{,}502&amp;560{,}448\\
+5&amp;17:22:00&amp;\text{?}&amp;\text{?}&amp;\text{?}\\
+6&amp;17:22:30&amp;226&amp;2{,}142&amp;484{,}092\\
+7&amp;17:23:00&amp;226&amp;2{,}187&amp;494{,}262\\
+\hline
+\end{array}
 \end{equation*}
 </div>
-<p>Plus généralement, les différences divisées ne dépendent pas de l'ordre des points : on dit qu'elles sont invariantes par permutation.</p>
-<p>Par exemple, vérifiez que</p>
-<div class="displaymath">
-\begin{equation*}
-\left[A,B,C\right]=\left[C,A,B\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">avec</p>
-<div class="displaymath">
-\begin{equation*}
-A=(1;3),\; B=(3;-5)\;\text{et}\; C=(4;2).
-\end{equation*}
-</div>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-71-hidden.html" title="Solution 7.3.2.1"><span class="type">Solution</span></a></div></article><span class="incontext"><a href="exercicesdiffdiv.html#exercise-74">Contexte</a></span>
+<ol class="decimal">
+<li><p>Estimez la tension avec un polynôme interpolateur de degré un en prenant les relevés \(4\) et \(6\text{.}\)</p></li>
+<li><p>Estimez l'intensité avec un polynôme interpolateur de degré deux en prenant les relevés \(3,4\) et \(6\text{.}\)</p></li>
+<li><p>Estimez la puissance avec un polynôme interpolateur de degré deux en prenant les relevés \(4,6\) et \(7\text{.}\)</p></li>
+</ol>
+<p>Remarque : Comme les mesures interviennent toutes les trente secondes, vous pouvez prendre pour abscisses les numéros des relevés.</p>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-69-hidden.html" title="Solution 6.3.11.1"><span class="type">Solution</span></a></div></article><span class="incontext"><a href="exerciceslagrange.html#exercise-74">Contexte</a></span>
 </body>
 </html>

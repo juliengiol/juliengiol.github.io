@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:06-05:00    *-->
+<!--*    on 2021-03-04T13:36:48-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voici la subdivision régulière de l'intervalle \([-1;2]\) en trois sous-intervalles de même longueur :</p>
+<p>Hypothèses : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable quatre fois avec une dérivée quatrième continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
--1&lt;0&lt;1&lt;2.
+|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
 \end{equation*}
 </div>
-<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
+<p data-braille="continuation">On a alors</p>
 <div class="displaymath">
-\begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(h(-1)+2h(0)+2h(1)+h(2)\right)\\
-=\;&amp;0{,}5\cdot\left(\ln(\ln(2)+1)+2\cdot 0+2\ln(\ln(2)+1)+\ln(\ln(5)+1)\right)\\
-\approx\;&amp;1{,}269.
-\end{align*}
+\begin{equation*}
+\left|\text{Erreur}\right|\leq \frac{M(b-a)^5}{2880n^4}.
+\end{equation*}
 </div>
-<span class="incontext"><a href="exercicestrapezes.html#p-1344">Contexte</a></span>
+<span class="incontext"><a href="presentationsimpson.html#p-1344">Contexte</a></span>
 </body>
 </html>

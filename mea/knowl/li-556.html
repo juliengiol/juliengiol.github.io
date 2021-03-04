@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:34-05:00    *-->
+<!--*    on 2021-03-04T13:35:58-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,32 +13,41 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">6.3.12.3</span><span class="period">.</span>
 </h6>
-<p>Instructions :</p>
-<ul class="circle">
-<li><p>Assigner la liste \(\text{y}\) comme premier élément de la liste \(\text{diffDiv}\) qui contiendra toutes les différences divisées.</p></li>
-<li>
-<p>Pour \(\text{j}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
-<ul class="square">
-<li><p>initialiser \(\text{nouvelleColonne}\text{,}\) la liste qui contiendra toutes les différences divisées calculées à l'étape \(j\) : \(\text{nouvelleColonne}=\left[\;\right]\) ;</p></li>
-<li>
-<p>pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n-j}\text{,}\)</p>
-<ul class="disc">
-<li>
-<p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
+<p>Si \(t\) est égal à l'une des abscisses \(x_i\text{,}\) alors</p>
 <div class="displaymath">
 \begin{equation*}
-\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;
+f(t)-P(t)=0\quad\text{et}\quad(t-x_0)\cdots(t-x_n)=0.
 \end{equation*}
 </div>
-</li>
-<li><p>ajouter la nouvelle différence divisée \(\text{nouvelleDiffDiv}\) à la liste \(\text{nouvelleColonne}\) ;</p></li>
-</ul>
-</li>
-<li><p>ajouter \(\text{nouvelleColonne}\) à la liste \(\text{diffDiv}\text{.}\)</p></li>
-</ul>
-</li>
-</ul></article><span class="incontext"><a href="algorithmediffdiv.html#li-556">Contexte</a></span>
+<p data-braille="continuation">Dans ce cas, n'importe quel \(\xi_t\in\;]\min\{t,x_i\};\max\{t,x_i\}[\) convient, par exemple \(\xi_t=x_i\text{.}\)</p>
+<p>Supposons maintenant que \(t\neq x_i\) pour tout \(i=0,1,\ldots,n\text{.}\) On peut alors considérer la fonction suivante :</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(s)=f(s)-P(s)-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}\cdot\prod_{i=0}^n(s-x_i).
+\end{equation*}
+</div>
+<p>On vérifie que cette fonction \(\phi\) s'annule aux \(n+2\) valeurs distinctes \(x_0,x_1,\ldots,x_n\) et \(t\text{.}\)</p>
+<p>En appliquant \(n+1\) fois le théorème de Rolle, on en déduit que sa dérivée s'annule \(n+1\) fois dans l'intervalle \(]\min\{t,x_i\};\max\{t,x_i\}[\text{.}\)</p>
+<p>En continuant à appliquer le théorème de Rolle, on en conclut que \(\phi^{(n+1)}\) s'annule au moins une fois dans cet intervalle. Autrement dit, il existe \(\xi_t\in\;]\min\{t,x_0\};\max\{t,x_0\}[\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+\phi^{(n+1)}(\xi_t)=0
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+f^{(n+1)}(\xi_t)-P^{(n+1)}(\xi_t)-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}\cdot\frac{d^{n+1}}{ds^{n+1}}\left[\prod_{i=0}^n(s-x_i)\right]\Bigg\vert_{s=\xi_t}=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme \(P\) est de degré \(n\) au plus, on a \(P^{(n+1)}=0\text{.}\) Par ailleurs, on voit que \(\displaystyle\frac{d^{n+1}}{ds^{n+1}}\prod_{i=0}^n(s-x_i)=(n+1)!\text{.}\) On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+f^{(n+1)}(\xi_t)-0-\frac{f(t)-P(t)}{\prod_{i=0}^n(t-x_i)}(n+1)!=0
+\end{equation*}
+</div>
+<p data-braille="continuation">et il ne reste qu'à isoler \(f(t)-P(t)\) pour conclure.</p></article><span class="incontext"><a href="exerciceslagrange.html#li-556">Contexte</a></span>
 </body>
 </html>

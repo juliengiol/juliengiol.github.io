@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:46-05:00    *-->
+<!--*    on 2021-03-04T13:35:24-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li><p>Objectif : Obtenir des approximations d'un zéro \(c\) de la fonction \(f\text{.}\)</p></li>
-<li>
-<p>Hypothèses : On suppose que la fonction \(f\) est deux fois dérivable et que \(f''\) est continue autour de \(c\text{,}\) ainsi que</p>
+<p>La relation de récurrence donne ici</p>
 <div class="displaymath">
 \begin{equation*}
-f'(c)\neq 0.
+x_{n+1}=x_n-x_n\cdot\ln(x_n).
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Principe : Choisir une valeur initiale \(x_0\) assez proche de \(c\text{,}\) et appliquer la formule de récurrence</p>
+<p data-braille="continuation">On obtient :</p>
 <div class="displaymath">
-\begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}
-\end{equation*}
+\begin{align*}
+x_0&amp;=2;\\
+x_1&amp;=x_0-x_0\cdot\ln(x_0)\approx 0{,}613\,706;\\
+x_2&amp;=x_1-x_1\cdot\ln(x_1)\approx 0{,}913\,341;\\
+x_3&amp;=x_2-x_2\cdot\ln(x_2)\approx 0{,}996\,132.
+\end{align*}
 </div>
-<p data-braille="continuation">autant de fois que désiré.</p>
-</li>
-<li><p>Précision : Le nombre de décimales exactes obtenues via l'approximation de \(c\) par \(x_n\) double grosso modo à chaque itération, car la convergence est quadratique sous les hypothèses précédentes.</p></li>
-<li><p>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1rn77nSLrjoZnc63BLKJmpv4pwiL2fYJc/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
-</ul>
-<span class="incontext"><a href="presentationnewton.html#p-540">Contexte</a></span>
+<p data-braille="continuation">Comme \(c=1\text{,}\) l'approximation par \(x_3\) est assez bonne.</p>
+<span class="incontext"><a href="exercicesnewton.html#p-540">Contexte</a></span>
 </body>
 </html>

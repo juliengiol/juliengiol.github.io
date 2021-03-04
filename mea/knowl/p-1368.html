@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:10-05:00    *-->
+<!--*    on 2021-03-04T13:36:50-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Ici \(n=10\,000=10^4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{10^4}=0{,}000\,1\text{.}\)</p>
-<span class="incontext"><a href="exercicestrapezes.html#p-1368">Contexte</a></span>
+<p>Instructions :</p>
+<ul class="circle">
+<li><p>Initialiser \(\text{approximation}\text{,}\) la variable qui donnera la somme des aires des rectangles : \(\text{approximation}=0\text{.}\)</p></li>
+<li><p>Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
+<li>
+<p>Pour \(\text{k}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
+<ul class="square">
+<li><p>assigner à \(\text{xi1}\) la valeur \(\text{a}+(\text{k-1})\cdot\text{deltaX}\) ;</p></li>
+<li><p>assigner à \(\text{xi2}\) la valeur \(\text{xi1}+\text{deltaX}/\text{2}\) ;</p></li>
+<li><p>assigner à \(\text{xi3}\) la valeur \(\text{xi1}+\text{deltaX}\) ;</p></li>
+<li><p>assigner à \(\text{approximation}\) la valeur de \(\text{f}(\text{xi1})+\text{4}\text{f}(\text{xi2})+\text{f}(\text{xi3})\text{.}\)</p></li>
+</ul>
+</li>
+<li><p>Assigner à \(\text{approximation}\) la valeur de \(\text{approximation}\cdot\text{deltaX}/6\text{.}\)</p></li>
+</ul>
+<span class="incontext"><a href="algorithmesimpson.html#p-1368">Contexte</a></span>
 </body>
 </html>

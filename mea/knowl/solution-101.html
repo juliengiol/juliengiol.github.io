@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:22-05:00    *-->
+<!--*    on 2021-03-04T13:36:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,29 +14,24 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">10.3.6.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">10.3.5.1</span><span class="period">.</span>
 </h6>
-<pre class="code-block tex2jax_ignore"># entrées
-import numpy as np
+<pre class="code-block tex2jax_ignore"># fonction
+def simpson(f, a, b, n):
+    approximation = 0
+    deltaX = (b - a) / n
+    for k in range(1, n+1):
+        xi1 = a + (k - 1) * deltaX
+        xi2 = xi1 + deltaX / 2
+        xi3 = xi1 + deltaX
+        approximation = approximation + f(xi1) + 4 * f(xi2) + f(xi3)
+    approximation = approximation * deltaX / 6
+    return(approximation)
+
+# test
 def f(x):
-    return 4 * np.sqrt(1 - x ** 2)
-a = 0.0
-b = 1.0
-n = 32
-
-# instructions
-approximation = 0
-deltaX = (b - a) / n
-xi1 = a
-while xi1 &lt; b:
-    xi2 = xi1 + deltaX / 2
-    xi3 = xi1 + deltaX
-    approximation = approximation + f(xi1) + 4 * f(xi2) + f(xi3)
-    xi1 = xi1 + deltaX
-approximation = approximation * deltaX / 6
-
-# sortie
-print(approximation)
+    return 1 / (1 + x)
+print(simpson(f, 0.0, 1.0, 100))
 </pre>
 </div>
 <span class="incontext"><a href="exercicessimpson.html#solution-101">Contexte</a></span>

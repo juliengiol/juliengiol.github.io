@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T09:00:23-05:00    *-->
+<!--*    on 2021-03-04T13:38:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,10 +10,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voici un lien vers une <a class="external" href="https://share.cocalc.com/share/c372faf6-6106-4c15-866e-69928fb8a79e/201-131-AH/Exemples%20appendice%20SageMath/Exemples_appendice.ipynb?viewer=share" target="_blank">feuille de travail Jupyter</a> reprenant les deux exemples de la section <a href="sage_mathcell.html" class="internal" title="Section B.1: SageMathCell">B.1</a>.</p>
-<span class="incontext"><a href="sage_cocalc.html#p-2290">Contexte</a></span>
+<p>Accéder à un élément d'une liste avec <code class="code-inline tex2jax_ignore">[j]</code> : <div class="sagecell-python" id="sage-80"><script type="text/x-sage">maListe = [3, -7, 'chat', True, 3.14]
+troisiemeElement = maListe[2] # oui, c'est [2] et pas [3]...
+print(troisiemeElement)
+</script></div></p>
+<span class="incontext"><a href="python_types.html#p-2290">Contexte</a></span>
 </body>
 </html>

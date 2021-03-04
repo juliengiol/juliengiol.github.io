@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:02-05:00    *-->
+<!--*    on 2021-03-04T13:35:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,35 +13,25 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.10.4</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.7.6</span><span class="period">.</span>
 </h6>
-<p>La valeur absolue a la propriété suivante :</p>
-<div class="displaymath">
-\begin{equation}
-\left|A\cdot B\right|=\left|A\right|\cdot\left|B\right|\qquad\text{pour tous}\;A,B\in\mathbb{R}.\tag{5.3.1}
-\end{equation}
-</div>
-<p>Par ailleurs, on a \(k\geq 2\) par hypothèse et, comme on l'a vu à la première question, \(\sqrt{k}&lt;x_n\) pour tout \(n\geq 0\text{.}\) Donc</p>
+<p>En appliquant le théorème de Rolle à la fonction \(g\) et à l'intervalle de bornes \(x\) et \(x_0\text{,}\) on trouve \(\xi\) compris strictement entre \(x\) et \(x_0\) tel que \(g'(\xi)=0\text{,}\) d'où</p>
 <div class="displaymath">
 \begin{equation*}
-2x_n&gt;2\sqrt{k}\geq 2\sqrt{2}&gt;2\quad\Rightarrow\quad 2x_n\geq 2
+\frac{A}{n!}(x-\xi)^n=\frac{f^{(n+1)}(\xi)}{n!}(x-\xi)^n
 \end{equation*}
 </div>
-<p data-braille="continuation">d'où</p>
+<p data-braille="continuation">et, finalement,</p>
 <div class="displaymath">
-\begin{equation}
-0&lt;\frac{1}{2x_n}\leq\frac{1}{2}\qquad\text{pour tout}\;n\geq 0.\tag{5.3.2}
-\end{equation}
+\begin{equation*}
+A=f^{(n+1)}(\xi).
+\end{equation*}
 </div>
-<p>Pour tout \(n\geq 0\text{,}\) on a donc</p>
+<p>En isolant \(f(x)\) dans l'équation \(g(x_0)=0\text{,}\) on obtient alors la formule désirée, soit</p>
 <div class="displaymath">
-\begin{align*}
-\left|x_{n+1}-\sqrt{k}\right|&amp;=\left|\frac{1}{2x_n}\left(x_n-\sqrt{k}\right)^2\right|\\
-&amp;=\left|\frac{1}{2x_n}\cdot\left(x_n-\sqrt{k}\right)\cdot\left(x_n-\sqrt{k}\right)\right|\\
-&amp;=\left|\frac{1}{2x_n}\right|\cdot\left|x_n-\sqrt{k}\right|\cdot\left|x_n-\sqrt{k}\right|\qquad\text{par}\;\knowl{./knowl/propvaleurabsolue.html}{\text{(5.3.1)}}\\
-&amp;=\frac{1}{2x_n}\left|x_n-\sqrt{k}\right|^2\\
-&amp;\leq \frac{1}{2}\left|x_n-\sqrt{k}\right|^2\qquad\text{par}\;\knowl{./knowl/minorxn.html}{\text{(5.3.2)}}.
-\end{align*}
+\begin{equation*}
+f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^n.
+\end{equation*}
 </div></article><span class="incontext"><a href="exercicesnewton.html#li-385">Contexte</a></span>
 </body>
 </html>

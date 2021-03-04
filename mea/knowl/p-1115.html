@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:44-05:00    *-->
+<!--*    on 2021-03-04T13:36:20-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voici les temps de course de Victor en fonction des distances sur lesquelles il a déjà été chronométré :</p>
+<p>Revenons à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_rectangles.html" title="Exemple 8.1.12">8.1.12</a> et cherchons combien de rectangles \(n\) il faudrait au minimum pour que la valeur absolue de l'erreur commise par la méthode des rectangles ne dépasse pas \(10^{-5}\text{,}\) c'est-à-dire</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{|c|c|}
-\hline
-\text{Distance en mètres}&amp;\text{Temps en secondes}\\
-\hline
-1\,500&amp;362\\
-5\,000&amp;1275\\
-10\,000&amp;2674\\
-21\,097{,}5&amp;5577\\
-\hline
+|\text{Erreur}|\leq 10^{-5}.
+\end{equation*}
+</div>
+<p data-braille="continuation">D'après le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>, il suffit pour cela que</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccc}
+&amp;\frac{M(b-a)^2}{2n}&amp;\leq&amp; 10^{-5}\\
+\Leftrightarrow&amp;\frac{2\cdot(1-0)^2}{2\cdot n}&amp;\leq&amp; 10^{-5}\\
+\Leftrightarrow&amp;\frac{1}{n}&amp;\leq&amp; 10^{-5}\\
+\Leftrightarrow&amp;10^5&amp;\leq&amp; n
 \end{array}
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercicesdiffdiv.html#p-1115">Contexte</a></span>
+<span class="incontext"><a href="presentationrectangles.html#p-1115">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:24-05:00    *-->
+<!--*    on 2021-03-04T13:36:00-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Estimez la valeur de \(C\) à <span class="quantity">61 °C</span> à l'aide du polynôme interpolateur du degré spécifié en choisissant vos points \((T;C)\) parmi les données ci-dessus, de façon à ce que les valeurs de \(T\) soient les plus proches possible de <span class="quantity">61 °C</span> tout en l'encadrant.</p>
-<ol class="decimal">
-<li><p>Avec un polynôme interpolateur de degré un.</p></li>
-<li><p>Avec un polynôme interpolateur de degré deux.</p></li>
-</ol>
-<span class="incontext"><a href="exerciceslagrange.html#p-895">Contexte</a></span>
+<p>Trois points :</p>
+<div class="displaymath">
+\begin{equation*}
+\left[A_{i_1},A_{i_2},A_{i_3}\right]=\frac{\left[A_{i_2},A_{i_3}\right]-\left[A_{i_1},A_{i_2}\right]}{x_{i_3}-x_{i_1}}=\frac{\frac{y_{i_3}-y_{i_2}}{x_{i_3}-x_{i_2}}-\frac{y_{i_2}-y_{i_1}}{x_{i_2}-x_{i_1}}}{x_{i_3}-x_{i_1}}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour \(0\leq i_1&lt;i_2&lt;i_3\leq n\text{.}\)</p>
+<span class="incontext"><a href="presentationdiffdiv.html#p-895">Contexte</a></span>
 </body>
 </html>

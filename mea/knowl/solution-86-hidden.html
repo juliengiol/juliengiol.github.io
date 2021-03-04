@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:58-05:00    *-->
+<!--*    on 2021-03-04T13:36:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,20 +12,76 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>On a déjà vu à l'exercice précédent qu'on pouvait appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a> avec \(M=1\text{.}\)</p>
-<p>En d'autres termes, on cherche le plus petit \(n\) tel que</p>
+<ul class="disc">
+<li><p>Notons \(f(x)=\frac{1}{1+x}\text{.}\)</p></li>
+<li><p>Soit \(n=5\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2\text{.}\)</p></li>
+<li><p>Alors \(x_k=a+k\cdot\Delta x=k\cdot 0{,}2\) pour \(k=0,\ldots,5\text{.}\)</p></li>
+<li>
+<p>La subdivision régulière de l'intervalle \([0;1]\) à considérer est donc la suivante :</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{cccc}
-&amp;|\text{Erreur}|&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{M(b-a)^2}{2n}&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{1\cdot(1-0)^2}{2n}&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{1}{2n}&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{10^6}{2}&amp;\leq&amp;n\\
-\Leftrightarrow&amp;500\,000&amp;\leq&amp;n
-\end{array}
+0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
 \end{equation*}
 </div>
-<p>Il faudrait donc \(500\,000\) rectangles au minimum.</p>
+</li>
+<li>
+<p>Par la méthode des rectangles à gauche, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+\text{Approximation}&amp;=0{,}2\cdot\left(f(0)+f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)\right)\\
+&amp;=0{,}2\cdot\left(1+\frac{1}{1{,}2}+\frac{1}{1{,}4}+\frac{1}{1{,}6}+\frac{1}{1{,}8}\right)\\
+&amp;=0{,}745\ldots
+\end{align*}
+</div>
+<p data-braille="continuation">On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}745\leq\text{Approximation}\leq 0{,}746.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Notons que \(|f'(x)|=\frac{1}{(1+x)^2}\text{.}\) Pour tout \(x\in[0;1]\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+&amp;&amp;1+x&amp;\geq 1\\
+&amp;\Rightarrow&amp;(1+x)^2&amp;\geq 1\\
+&amp;\Rightarrow&amp;\frac{1}{(1+x)^2}&amp;\leq 1.
+\end{align*}
+</div>
+<p data-braille="continuation">Donc \(|f'(x)|\leq 1\) pour tout \(x\in[0;1]\) et on peut prendre \(M=1\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>.</p>
+</li>
+<li>
+<p>On a donc</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^2}{2n}\\
+&amp;=\frac{1\cdot(1-0)^2}{2\cdot 5}\\
+&amp;=0{,}1
+\end{align*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+-0{,}1\leq\text{Erreur}\leq 0{,}1.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>En additionnant les inéquations qui précèdent, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}745-0{,}1\leq\text{Approximation}+\text{Erreur}\leq 0{,}746+0{,}1
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}645\leq\int_0^1\frac{1}{1+x}\mathrm{d}x\leq 0{,}846.
+\end{equation*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">Remarque : Sachant que cette intégrale vaut \(\ln 2=0,693\ldots\text{,}\) on comprend qu'il faudrait beaucoup plus de rectangles pour être capable d'en déterminer les premières décimales par cette méthode.</p>
 </div></body>
 </html>

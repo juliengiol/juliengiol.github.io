@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:59-05:00    *-->
+<!--*    on 2021-03-04T13:35:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,12 +14,13 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-x_0&amp;=2\\
-x_1&amp;=x_0-\frac{f(x_0)}{f'(x_0)}\approx 1{,}469\,553\\
-x_2&amp;=x_1-\frac{f(x_1)}{f'(x_1)}\approx 1{,}207\,330\\
-x_3&amp;=x_2-\frac{f(x_2)}{f'(x_2)}\approx 1{,}148\,806\\
-x_4&amp;=x_3-\frac{f(x_3)}{f'(x_3)}\approx 1{,}146\,198\\
-x_5&amp;=x_4-\frac{f(x_4)}{f'(x_4)}\approx 1{,}146\,193
+g'(t)&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(f(x)-f(t)-\sum_{k=1}^n\frac{f^{(k)}(t)}{k!}(x-t)^k-\frac{A}{(n+1)!}(x-t)^{n+1}\right)\\
+&amp;=-f'(t)-\sum_{k=1}^n\left(\frac{f^{(k+1)}(t)}{k!}(x-t)^k-\frac{f^{(k)}(t)}{(k-1)!}(x-t)^{k-1}\right)\\
+&amp;\quad+\frac{A}{n!}(x-t)^n\\
+&amp;=-f'(t)-\cdots-\frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1}-\frac{f^{(n+1)}(t)}{n!}(x-t)^n\\
+&amp;\quad+f'(t)+\cdots+\frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1}\\
+&amp;\quad+\frac{A}{n!}(x-t)^n\\
+&amp;=\frac{A}{n!}(x-t)^n-\frac{f^{(n+1)}(t)}{n!}(x-t)^n
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicesnewton.html#mjx-eqn-mrow-117">Contexte</a></span>

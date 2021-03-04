@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:44-05:00    *-->
+<!--*    on 2021-03-04T13:35:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Partant de \(x_0=-2\text{,}\) effectuons trois itérations de la méthode de Newton-Raphson pour la fonction</p>
+<p>On vérifie que la dérivée de \(\phi\) vaut</p>
 <div class="displaymath">
 \begin{equation*}
-f(x)=x^2-3
+\phi'(s)=\frac{f''(s)}{f'(s)}\cdot\frac{f(s)}{f'(s)}
 \end{equation*}
 </div>
-<p data-braille="continuation">qui satisfait les hypothèses vues à la remarque <a class="xref" data-knowl="./knowl/methodedenewtonbis.html" title="Remarque 5.1.8">5.1.8</a> avec \([a;b]=[-3;-\sqrt{3}]\text{,}\) car</p>
+<p data-braille="continuation">pour déduire du point précédent et de l'hypothèse sur \(M\) que</p>
 <div class="displaymath">
-\begin{equation*}
-f'(x)=2x&lt;0\quad\text{et}\quad f''(x)=2&gt;0\quad\forall x\in]-3;-\sqrt{3}[.
-\end{equation*}
+\begin{align*}
+|\phi'(s)|&amp;=\frac{|f''(s)|}{|f'(s)|}\cdot\frac{f(s)}{f'(s)}\\
+&amp;\le 2M\cdot (s-c)
+\end{align*}
 </div>
+<p data-braille="continuation">pour tout \(s\in\;]c;c+r]\text{.}\)</p>
 <span class="incontext"><a href="presentationnewton.html#p-520">Contexte</a></span>
 </body>
 </html>

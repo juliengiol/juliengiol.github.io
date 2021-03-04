@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:14-05:00    *-->
+<!--*    on 2021-03-04T13:36:47-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,8 +14,12 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^4\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)\\
-&amp;=\frac{0{,}25}{6}\cdot(A_1+A_2+A_3+A_4)
+\int_c^dN(t)\mathrm{d}t&amp;=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3\\
+&amp;=f(c)\cdot\Delta x+\frac{2(f(m)-f(c))}{\Delta x}\cdot\frac{(\Delta x)^2}{2}\\
+&amp;\qquad+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot\frac{(\Delta x)^3}{12}\\
+&amp;=f(c)\cdot\Delta x+(f(m)-f(c))\cdot\Delta x+(f(c)-2f(m)+f(d))\cdot\frac{\Delta x}{6}\\
+&amp;=\frac{\Delta x}{6}\cdot\left(6f(c)+6(f(m)-f(c))+f(c)-2f(m)+f(d)\right)\\
+&amp;=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).
 \end{align*}
 </div>
 <span class="incontext"><a href="presentationsimpson.html#mjx-eqn-mrow-601">Contexte</a></span>

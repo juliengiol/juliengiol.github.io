@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:06-05:00    *-->
+<!--*    on 2021-03-04T13:36:40-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,73 +14,77 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.3.3.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.3.2.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
 <li>
-<p>Pour \(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec six trapèzes, posons \(f(x)=e^{x^2}\text{.}\) Alors</p>
+<p>Notons \(f(x)=e^{x^2}\text{,}\) \(n=6\) et</p>
 <div class="displaymath">
 \begin{equation*}
-f'(x)=e^{x^2}\cdot 2x\quad\text{et}\quad f''(x)=e^{x^2}\cdot(4x^2+2).
+\Delta x=\frac{b-a}{n}=\frac{1-0}{6}=\frac{1}{6}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 4x^2+2\) sont croissantes sur \([0;1]\text{,}\) on a</p>
+<p>Voici la subdivision régulière de l'intervalle \([0;1]\) en six sous-intervalles de même longueur :</p>
 <div class="displaymath">
-\begin{align*}
-|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|\\
-&amp;=e^{x^2}(4x^2+2)\\
-&amp;\leq e^{1^2}(4\cdot 1^2+2)\\
-&amp;=6e
-\end{align*}
+\begin{equation*}
+0&lt;\frac{1}{6}&lt;\frac{1}{3}&lt;\frac{1}{2}&lt;\frac{2}{3}&lt;\frac{5}{6}&lt;1.
+\end{equation*}
 </div>
-<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\) Donc on peut prendre \(M=6e\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
+<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
 <div class="displaymath">
 \begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
-&amp;=\frac{e}{72}\\
-&amp;=0{,}037\,7\ldots\\
-&amp;\leq 0{,}038.
+&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f\left(\frac{1}{6}\right)+2f\left(\frac{1}{3}\right)+2f\left(\frac{1}{2}\right)\right.\\
+&amp;\qquad\qquad\left.+2f\left(\frac{2}{3}\right)+2f\left(\frac{5}{6}\right)+f(1)\right)\\
+=\;&amp;\frac{1}{12}\cdot\left(e^{0^2}+2e^{\left(\frac{1}{6}\right)^2}+2e^{\left(\frac{1}{3}\right)^2}+2e^{\left(\frac{1}{2}\right)^2}+2e^{\left(\frac{2}{3}\right)^2}+2e^{\left(\frac{5}{6}\right)^2}+e^{1^2}\right)\\
+\approx\;&amp;1{,}475.
 \end{align*}
 </div>
 </li>
 <li>
-<p>Pour \(\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x\) avec quatre trapèzes, posons \(g(x)=\cos\left(\frac{x^3}{5}\right)\text{.}\) Alors</p>
+<p>Notons \(g(x)=\cos\left(\frac{x^3}{5}\right)\text{,}\) \(n=4\) et</p>
 <div class="displaymath">
 \begin{equation*}
-g'(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{3x^2}{5}
+\Delta x=\frac{b-a}{n}=\frac{4-2}{4}=0{,}5.
 \end{equation*}
 </div>
-<p data-braille="continuation">et</p>
+<p>Voici la subdivision régulière de l'intervalle \([2;4]\) en quatre sous-intervalles de même longueur :</p>
 <div class="displaymath">
 \begin{equation*}
-g''(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}.
+2&lt;2{,}5&lt;3&lt;3{,}5&lt;4.
 \end{equation*}
 </div>
-<p data-braille="continuation">On a</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{ccl}
-|g''(x)|&amp;=&amp;\left|-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
-&amp;\leq&amp;\left|\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}\right|+\left|\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
-&amp;=&amp;\left|\sin\left(\frac{x^3}{5}\right)\right|\cdot\frac{6|x|}{5}+\left|\cos\left(\frac{x^3}{5}\right)\right|\cdot\frac{9x^4}{25}\\
-&amp;\leq&amp;1\cdot\frac{6|x|}{5}+1\cdot\frac{9x^4}{25}\\
-&amp;\leq&amp;1\cdot\frac{6\cdot 4}{5}+1\cdot\frac{9\cdot 4^4}{25}\\
-&amp;=&amp;\frac{2424}{25}\\
-&amp;=&amp;96{,}96
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">pour tout \(x\in[2;4]\text{.}\) Donc on peut prendre \(M=96{,}96\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
+<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
 <div class="displaymath">
 \begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{96{,}96\cdot(4-2)^3}{12\cdot 4^2}\\
-&amp;=4{,}04.
+&amp;\frac{\Delta x}{2}\cdot\left(g(2)+2g(2{,}5)+2g(3)+2g(3{,}5)+g(4)\right)\\
+=\;&amp;0{,}25\cdot\left(\cos\left(\frac{2^3}{5}\right)+2\cos\left(\frac{2{,}5^3}{5}\right)+2\cos\left(\frac{3^3}{5}\right)\right.\\
+&amp;\qquad\qquad\left.+2\cos\left(\frac{3{,}5^3}{5}\right)+\cos\left(\frac{4^3}{5}\right)\right)\\
+\approx\;&amp;-0{,}277.
 \end{align*}
 </div>
 </li>
-<li><p>Trop difficile au niveau cégep selon moi.</p></li>
+<li>
+<p>Notons \(h(x)=\ln(\ln(x^2+1)+1)\text{,}\) \(n=3\) et</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x=\frac{b-a}{n}=\frac{2+1}{3}=1.
+\end{equation*}
+</div>
+<p>Voici la subdivision régulière de l'intervalle \([-1;2]\) en trois sous-intervalles de même longueur :</p>
+<div class="displaymath">
+\begin{equation*}
+-1&lt;0&lt;1&lt;2.
+\end{equation*}
+</div>
+<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(h(-1)+2h(0)+2h(1)+h(2)\right)\\
+=\;&amp;0{,}5\cdot\left(\ln(\ln(2)+1)+2\cdot 0+2\ln(\ln(2)+1)+\ln(\ln(5)+1)\right)\\
+\approx\;&amp;1{,}269.
+\end{align*}
+</div>
+</li>
 </ol>
 </div>
 <span class="incontext"><a href="exercicestrapezes.html#solution-91">Contexte</a></span>

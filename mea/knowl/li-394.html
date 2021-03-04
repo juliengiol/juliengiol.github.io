@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:03-05:00    *-->
+<!--*    on 2021-03-04T13:35:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,8 +13,27 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.11.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">5.3.9.3</span><span class="period">.</span>
 </h6>
-<p>Montrez que la fonction \(f\) admet un unique zéro dans l'intervalle \(]0;1[\text{.}\)</p></article><span class="incontext"><a href="exercicesnewton.html#li-394">Contexte</a></span>
+<p>Comme prévu, \(\displaystyle\lim_{n\rightarrow+\infty}x_n=c\) se traduit par le fait que \(x_n-c\) converge vers \(0\text{.}\)</p>
+<p>Quant à la dernière colonne, elle semble indiquer que</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\leq 0{,}8
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(n\ge 0\text{.}\) Or, grâce à l'exercice <a class="xref" data-knowl="./knowl/newtonestquadratique.html" title="Exercice 5.3.8">5.3.8</a>, on s'attendait à trouver</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}\leq K=\frac{M}{2m}=\frac{12}{2\cdot 3}=2
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(n\ge 0\text{.}\) La majoration des termes de la troisième colonne par \(0{,}8\) n'est donc pas surprenante.</p>
+<p>Remarque : En fait, en travaillant plus fort, on pourrait montrer que cette suite est croissante et majorée par</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}=\frac{f''(c)}{2f'(c)}=\frac{6c}{2\cdot 3c^2}=\frac{1}{c}=\frac{1}{\sqrt[3]{2}}\approx 0{,}794.
+\end{equation*}
+</div></article><span class="incontext"><a href="exercicesnewton.html#li-394">Contexte</a></span>
 </body>
 </html>

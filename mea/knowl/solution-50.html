@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:52-05:00    *-->
+<!--*    on 2021-03-04T13:35:26-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,70 +14,71 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.5.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.6.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
 <li>
 <p>On a</p>
 <div class="displaymath">
 \begin{align*}
-f(x)&amp;=x^3+2x-10\\
-f'(x)&amp;=3x^2+2\\
-f''(x)&amp;=6x
+f(x)&amp;=3x^5-x^4-1,\\
+f'(x)&amp;=15x^4-4x^3=x^3(15x-4),\\
+f''(x)&amp;=60x^3-12x^2=12x^2(5x-1),
 \end{align*}
 </div>
-<p>Donc \(f'\) ne s'annule pas, et \(f''\) s'annule en \(0\text{.}\)</p>
+<p data-braille="continuation">donc \(f'\) s'annule en \(0\) et \(\frac{4}{15}\text{,}\) et \(f''\) s'annule en \(0\) et \(\frac{1}{5}\text{.}\) Cela donne le tableau de variations qui suit.</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{c|ccccc}
-x&amp;-\infty&amp;&amp;&amp;&amp;0&amp;&amp;&amp;&amp;+\infty&amp;\\
+\begin{array}{c|ccccccc}
+x&amp;0&amp;&amp;&amp;&amp;1/5&amp;&amp;&amp;&amp;4/15&amp;&amp;&amp;&amp;+\infty&amp;\\
 \hline
-f''(x)&amp;-\infty&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+\infty&amp;\\
+f''(x)&amp;0&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+&amp;&amp;+&amp;&amp;+\infty&amp;\\
 \hline
-f'(x)&amp;+\infty&amp;&amp;+&amp;&amp;+&amp;&amp;+&amp;&amp;+\infty&amp;\\
+f'(x)&amp;0&amp;&amp;-&amp;&amp;-&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;+\infty&amp;\\
 \hline
-f(x)&amp;-\infty&amp;&amp;\nearrow&amp;&amp;-10&amp;&amp;\nearrow&amp;&amp;+\infty&amp;
+f(x)&amp;-1&amp;&amp;\searrow&amp;&amp;&amp;&amp;\searrow&amp;&amp;&amp;&amp;\nearrow&amp;&amp;+\infty&amp;
 \end{array}
 \end{equation*}
 </div>
 </li>
 <li>
-<p>Comme c'est un polynôme, la fonction \(f\) est continue sur l'intervalle \([1;2]\text{.}\) Comme</p>
+<p>Comme c'est un polynôme, la fonction \(f\) est continue sur l'intervalle \([4/15;1]\text{.}\) Puisque</p>
 <div class="displaymath">
 \begin{equation*}
-f(1)\cdot f(2)=(-7)\cdot 2&lt;0\;,
+f(0{,}3)\cdot f(1)\approx(-1)\cdot 1&lt;0\;,
 \end{equation*}
 </div>
-<p data-braille="continuation">le théorème des valeurs intermédiaires implique qu'il existe un zéro \(c\) pour \(f\) dans \(]1;2[\text{.}\)</p>
-<p>Et comme \(f\) est strictement croissante sur \(]1;2[\text{,}\) il n'y a pas d'autre zéro dans cet intervalle.</p>
+<p data-braille="continuation">le théorème des valeurs intermédiaires implique qu'il existe un zéro \(c\) pour \(f\) dans \(]0{,}3;1[\text{.}\)</p>
+<p>Et comme \(f\) est strictement croissante sur \(]0{,}3;1[\text{,}\) il ne peut y avoir plus qu'un zéro dans cet intervalle.</p>
 </li>
 <li>
 <p>Grâce au tableau de variations qui précède, on voit que</p>
 <div class="displaymath">
 \begin{equation*}
-f'(x)&gt;0\qquad\text{et}\qquad f''(x)&gt;0\qquad\text{pour tout }x\in\;]0;3[.
+f'(x)&gt;0\quad\text{et}\quad f''(x)&gt;0\quad\text{pour tout }\;x\in\;]4/15;2[.
 \end{equation*}
 </div>
-<p>Comme \(c\in ]1;2[\subset]0;3[\text{,}\) les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.6: Méthode de Newton-Raphson">5.1.6</a> sont donc bien vérifiées avec \(b=3\text{.}\)</p>
-<p>Remarque : Les hypothèses de l'encadré sont vérifiées aussi, donc non seulement \(\{x_n\}\) converge vers \(c\) en décroissant strictement, mais on peut s'attendre à ce que le nombre de décimales exactes double grosso modo à chaque itération.</p>
+<p>Comme \(c\in ]0{,}3;1[\subset]4/15;2[\text{,}\) les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.7: Méthode de Newton-Raphson">5.1.7</a> sont donc bien vérifiées avec, par exemple, \(b:=2\text{.}\)</p>
 </li>
 <li>
-<p>Voici le <a class="external" href="https://tinyurl.com/y6hrszru" target="_blank">code à utiliser</a>.</p>
+<p>Voici le <a class="external" href="https://tinyurl.com/53anzeec" target="_blank">code à utiliser</a>, et voilà les valeurs trouvées, arrondies à la quinzième décimale :</p>
 <div class="displaymath">
 \begin{align*}
-x_1&amp;\approx 1{,}857\,142\,857\,14\\
-x_2&amp;\approx 1{,}847\,461\,629\,28\\
-x_3&amp;\approx 1{,}847\,419\,038\,65\\
-x_4&amp;\approx 1{,}847\,419\,037\,83\\
-x_5&amp;\approx 1{,}847\,419\,037\,83
+x_1&amp;\approx 0{,}909\,090\,909\,090\,909;\\
+x_2&amp;\approx 0{,}884\,263\,293\,310\,463;\\
+x_3&amp;\approx 0{,}882\,621\,228\,330\,857;\\
+x_4&amp;\approx 0{,}882\,614\,429\,405\,551;\\
+x_5&amp;\approx 0{,}882\,614\,429\,289\,465;\\
+x_6&amp;\approx 0{,}882\,614\,429\,289\,465;\\
+x_7&amp;\approx 0{,}882\,614\,429\,289\,465.
 \end{align*}
 </div>
 </li>
 <li>
-<p>À partir de la quatrième itération, les onze décimales affichées sont identiques. On peut donc être certains que les dix premières sont exactes. D'où</p>
+<p>D'après le théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.7: Méthode de Newton-Raphson">5.1.7</a>, la suite \(\{x_n\}\) est strictement décroissante et converge vers \(c\text{.}\) Et comme par ailleurs \(f'(c)\ne 0\text{,}\) la convergence est quadratique, de sorte que le nombre de décimales exactes double grosso modo à chaque itération. On déduit donc de ce qui précède que</p>
 <div class="displaymath">
 \begin{equation*}
-c=1{,}847\,419\,037\,8\ldots
+c=0{,}882\,614\,429\,289\,46\ldots
 \end{equation*}
 </div>
 </li>

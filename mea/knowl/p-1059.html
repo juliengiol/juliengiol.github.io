@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:39-05:00    *-->
+<!--*    on 2021-03-04T13:36:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Calculons les différences divisées des trois points :</p>
+<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{c|ccc}
-x_i&amp;y_i\\
-\hline\\
-1&amp;\left[A_0\right]=3&amp;&amp;\\
-&amp;&amp;\left[A_0,A_1\right]=3&amp;\\
-2&amp;\left[A_1\right]=6&amp;&amp;\left[A_0,A_1,A_2\right]=0\\
-&amp;&amp;\left[A_1,A_2\right]=3&amp;\\
-3&amp;\left[A_2\right]=9&amp;&amp;
-\end{array}
+N(t)=y_0+\frac{y_1-y_0}{x_1-x_0}(t-x_0)+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}(t-x_0)(t-x_1)
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\left[A_0,A_1,A_2\right](t-x_0)(t-x_1).
 \end{equation*}
 </div>
 <span class="incontext"><a href="exercicesdiffdiv.html#p-1059">Contexte</a></span>

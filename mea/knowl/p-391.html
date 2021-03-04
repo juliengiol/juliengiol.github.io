@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:57:32-05:00    *-->
+<!--*    on 2021-03-04T13:35:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,50 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On note \(c\) l'unique zéro de \(f\) dans \(]0;2[\text{.}\)</p>
 <ul class="disc">
-<li>Itération 1 :<div class="displaymath">
-\begin{equation*}
-\begin{array}{ c&lt;{{}} c &gt;{{}}c }
-a=0 &amp; m=1 &amp; b=2\\
-f(a)=-2 &amp; f(m)=-1 &amp; f(b)=2
-\end{array}
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-\text{d'où}\quad c\in\;]1;2[.
-\end{equation*}
-</div>
+<li>Objectif : Encadrer un zéro de la fonction \(f\text{.}\)</li>
+<li>Hypothèses : On suppose que la fonction \(f\) est continue sur \([a;b]\text{,}\) qu'elle possède un unique zéro dans \(]a;b[\text{,}\) et que \(f(a)f(b)&lt;0\text{.}\)</li>
+<li>
+<p>Principe :</p>
+<ul class="circle">
+<li>Au départ, l'intervalle d'encadrement de \(c\) est \(]a;b[\text{.}\)</li>
+<li>
+<p>Ensuite, on compare les trois valeurs \(f(a), f(m)\) et \(f(b)\) où \(m:=\frac{a+b}{2}\) est le milieu de l'intervalle \([a;b]\text{.}\)</p>
+<ul class="square">
+<li><p>Si \(f(m)=0\text{,}\) on s'arrête car on vient de tomber sur le zéro.</p></li>
+<li><p>Si \(f(m)f(a)&lt;0\text{,}\) on remplace \(]a;b[\) par \(]a;m[\text{.}\)</p></li>
+<li><p>Si \(f(m)f(b)&lt;0\text{,}\) on remplace \(]a;b[\) par \(]m;b[\text{.}\)</p></li>
+</ul>
 </li>
-<li>Itération 2 :<div class="displaymath">
-\begin{equation*}
-\begin{array}{ c&lt;{{}} c &gt;{{}}c }
-a=1 &amp; m=1{,}5 &amp; b=2 \\
-f(a)=-1 &amp; f(m)=0{,}25 &amp; f(b)=2
-\end{array}
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-\text{d'où}\quad c\in\;]1;1{,}5[.
-\end{equation*}
-</div>
+<li>On répète l'opération précédente jusqu'à ce qu'on tombe sur le zéro ou que la longueur de l'intervalle soit assez petite à notre goût.</li>
+</ul>
 </li>
-<li>Itération 3 :<div class="displaymath">
-\begin{equation*}
-\begin{array}{ c&lt;{{}} c &gt;{{}}c }
-a=1 &amp; m=1{,}25 &amp; b=1{,}5 \\
-f(a)=-1 &amp; f(m)=-0{,}437\,5 &amp; f(b)=0{,}25
-\end{array}
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-\text{d'où}\quad c\in\;]1{,}25;1{,}5[.
-\end{equation*}
-</div>
-</li>
+<li>Précision : Après \(n\) itérations, on obtient un intervalle d'encadrement du zéro \(c\) qui est de longueur \(\frac{b-a}{2^n}\text{.}\)</li>
+<li>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1PMzro1wU8GnyWj2TvhTAAgpjXazuDi2K/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
 </ul>
 <span class="incontext"><a href="presentationbissection.html#p-391">Contexte</a></span>
 </body>

@@ -189,7 +189,7 @@
     On a donc une complexité logarithmique, qui est bien meilleure que la complexité linéaire de l'approche naïve, comme l'illustrent les graphes ci-après.
     <figure>
         <caption>Linéaire vs logarithmique</caption>
-        <interactive xml:id="desmos-lineaire-log" desmos="opbr8wrbya" width="100%" aspect="5:4"/>
+        <interactive xml:id="desmos-lineaire-log" desmos="hulmeiqm0x" width="100%" aspect="5:4"/>
     </figure>
   </p>
 </paragraphs>

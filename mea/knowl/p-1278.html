@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:59-05:00    *-->
+<!--*    on 2021-03-04T13:36:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,52 +13,72 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li><p>Objectif : Obtenir des approximations de la valeur d'une intégrale définie \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</p></li>
+<ol class="decimal">
 <li>
-<p>Principe : Prendre</p>
+<p>Pour \(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec six trapèzes, posons \(f(x)=e^{x^2}\text{.}\) Alors</p>
 <div class="displaymath">
 \begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
+f'(x)=e^{x^2}\cdot 2x\quad\text{et}\quad f''(x)=e^{x^2}\cdot(4x^2+2).
 \end{equation*}
 </div>
-<p data-braille="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
+<p data-braille="continuation">Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 4x^2+2\) sont croissantes sur \([0;1]\text{,}\) on a</p>
 <div class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}.
-\end{equation*}
+\begin{align*}
+|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|\\
+&amp;=e^{x^2}(4x^2+2)\\
+&amp;\leq e^{1^2}(4\cdot 1^2+2)\\
+&amp;=6e
+\end{align*}
 </div>
-<p data-braille="continuation">Puis effectuer le calcul suivant :</p>
+<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\) Donc on peut prendre \(M=6e\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
 <div class="displaymath">
-\begin{equation*}
-\text{Approximation}=\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right).
-\end{equation*}
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
+&amp;=\frac{e}{72}\\
+&amp;=0{,}037\,7\ldots\\
+&amp;\leq 0{,}038.
+\end{align*}
 </div>
 </li>
 <li>
-<p>Précision : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable deux fois avec une dérivée seconde continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
+<p>Pour \(\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x\) avec quatre trapèzes, posons \(g(x)=\cos\left(\frac{x^3}{5}\right)\text{.}\) Alors</p>
 <div class="displaymath">
 \begin{equation*}
-|f''(x)|\leq M\quad\text{pour tout }x\in[a;b].
+g'(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{3x^2}{5}
 \end{equation*}
 </div>
-<p data-braille="continuation">On a alors</p>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
 \begin{equation*}
-\left|\text{Erreur}\right|\leq \frac{M(b-a)^3}{12n^2}.
+g''(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}.
 \end{equation*}
+</div>
+<p data-braille="continuation">On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ccl}
+|g''(x)|&amp;=&amp;\left|-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
+&amp;\leq&amp;\left|\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}\right|+\left|\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
+&amp;=&amp;\left|\sin\left(\frac{x^3}{5}\right)\right|\cdot\frac{6|x|}{5}+\left|\cos\left(\frac{x^3}{5}\right)\right|\cdot\frac{9x^4}{25}\\
+&amp;\leq&amp;1\cdot\frac{6|x|}{5}+1\cdot\frac{9x^4}{25}\\
+&amp;\leq&amp;1\cdot\frac{6\cdot 4}{5}+1\cdot\frac{9\cdot 4^4}{25}\\
+&amp;=&amp;\frac{2424}{25}\\
+&amp;=&amp;96{,}96
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[2;4]\text{.}\) Donc on peut prendre \(M=96{,}96\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{96{,}96\cdot(4-2)^3}{12\cdot 4^2}\\
+&amp;=4{,}04.
+\end{align*}
 </div>
 </li>
-<li>
-<p>Astuce de calcul : Notez que l'approximation s'obtient aussi par la formule</p>
-<div class="displaymath">
-\begin{equation*}
-\text{Approximation}=\frac{\Delta x}{2}\cdot\left(f(x_0)+2f(x_1)+\cdots+2f(x_{n-1})+f(x_n)\right).
-\end{equation*}
-</div>
-</li>
-<li><p>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
-</ul>
-<span class="incontext"><a href="presentationtrapezes.html#p-1278">Contexte</a></span>
+<li><p>Trop difficile au niveau cégep selon moi.</p></li>
+</ol>
+<span class="incontext"><a href="exercicestrapezes.html#p-1278">Contexte</a></span>
 </body>
 </html>

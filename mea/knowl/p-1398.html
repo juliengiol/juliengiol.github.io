@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:12-05:00    *-->
+<!--*    on 2021-03-04T13:36:55-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,51 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Notons ensuite que par linéarité de l'intégrale, on a</p>
+<p>Voici la subdivision régulière de l'intervalle \([2;4]\) en quatre sous-intervalles de même longueur :</p>
 <div class="displaymath">
 \begin{equation*}
-\int_c^dN(t)\mathrm{d}t=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3
+2&lt;2{,}5&lt;3&lt;3{,}5&lt;4.
 \end{equation*}
+</div>
+<p data-braille="continuation">La méthode de Simpson donne alors l'approximation suivante :</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{6}\cdot\sum_{k=1}^4\left(g(x_{k-1})+4g(m_k)+g(x_k)\right)\\
+=\;&amp;\frac{0{,}5}{6}\cdot\left(A_1+A_2+A_3+A_4\right)
+\end{align*}
 </div>
 <p data-braille="continuation">où</p>
 <ul class="disc">
-<li>
-<p>la première intégrale vaut</p>
-<div class="displaymath">
-\begin{align*}
-I_1&amp;=\int_c^d1\mathrm{d}t\\
-&amp;=t\,\Bigg\vert_c^d\\
-&amp;d-c\\
-&amp;=\Delta x\;,
-\end{align*}
-</div>
-</li>
-<li>
-<p>la deuxième intégrale vaut</p>
-<div class="displaymath">
-\begin{align*}
-I_2&amp;=\int_c^d(t-c)\mathrm{d}t\\
-&amp;=\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
-&amp;=\frac{(d-c)^2}{2}-0\\
-&amp;=\frac{(\Delta x)^2}{2}
-\end{align*}
-</div>
-</li>
-<li>
-<p>et la troisième intégrale vaut</p>
-<div class="displaymath">
-\begin{align*}
-I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
-&amp;=\int_c^d(t-c)\left(t-c-\frac{\Delta x}{2}\right)\mathrm{d}t\\
-&amp;=\int_c^d\left((t-c)^2-\frac{\Delta x}{2}\cdot(t-c)\right)\mathrm{d}t\\
-&amp;=\frac{(t-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
-&amp;=\frac{(d-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(d-c)^2}{2}-0\\
-&amp;=\frac{(\Delta x)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(\Delta x)^2}{2}\\
-&amp;=\frac{(\Delta x)^3}{12}.
-\end{align*}
-</div>
-</li>
+<li><p>\(A_1=g(2)+4g(2{,}25)+g(2{,}5)\)</p></li>
+<li><p>\(A_2=g(2{,}5)+4g(2{,}75)+g(3)\)</p></li>
+<li><p>\(A_3=g(3)+4g(3{,}25)+g(3{,}5)\)</p></li>
+<li><p>\(A_4=g(3{,}5)+4g(3{,}75)+g(4)\)</p></li>
 </ul>
-<span class="incontext"><a href="presentationsimpson.html#p-1398">Contexte</a></span>
+<span class="incontext"><a href="exercicessimpson.html#p-1398">Contexte</a></span>
 </body>
 </html>

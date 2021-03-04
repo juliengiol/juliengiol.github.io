@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:58:47-05:00    *-->
+<!--*    on 2021-03-04T13:36:26-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,56 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Par conséquent, on a</p>
+<p>Notons \(f(x)=\sin(x)\text{,}\) \(n=4\) et</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x=\frac{b-a}{n}=\frac{\pi-0}{4}=\frac{\pi}{4}.
+\end{equation*}
+</div>
+<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([0;\pi]\) en quatre sous-intervalles de même longueur est donnée par</p>
+<div class="displaymath">
+\begin{equation*}
+x_k=a+k\cdot\Delta x=k\cdot\frac{\pi}{4}\quad\text{pour }k=0,1,\ldots,4,
+\end{equation*}
+</div>
+<p data-braille="continuation">c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+0&lt;\frac{\pi}{4}&lt;\frac{\pi}{2}&lt;\frac{3\pi}{4}&lt;\pi.
+\end{equation*}
+</div>
+<ol class="decimal">
+<li>
+<p>Approximation par les rectangles à gauche :</p>
 <div class="displaymath">
 \begin{align*}
-\left|\int_a^b(f(x)-f(a))\mathrm{d}x\right|&amp;\leq\int_a^b|f(x)-f(a)|\mathrm{d}x\\
-&amp;\leq\int_a^bM\cdot(x-a)\mathrm{d}x\\
-&amp;=\frac{M(x-a)^2}{2}\bigg\rvert_a^b\\
-&amp;=\frac{M(b-a)^2}{2}.
+&amp;\Delta x\cdot\left(f(0)+f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)\right)\\
+=\;&amp;\frac{\pi}{4}\cdot\left(\sin(0)+\sin\left(\frac{\pi}{4}\right)+\sin\left(\frac{\pi}{2}\right)+\sin\left(\frac{3\pi}{4}\right)\right)\\
+\approx\;&amp;1{,}896.
 \end{align*}
 </div>
-<span class="incontext"><a href="presentationrectangles.html#p-1166">Contexte</a></span>
+</li>
+<li>
+<p>Approximation par les rectangles à droite :</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)\\
+=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{4}\right)+\sin\left(\frac{\pi}{2}\right)+\sin\left(\frac{3\pi}{4}\right)+\sin(\pi)\right)\\
+\approx\;&amp;1{,}896.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Approximation par les rectangles au milieu :</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)\\
+=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{8}\right)+\sin\left(\frac{3\pi}{8}\right)+\sin\left(\frac{5\pi}{8}\right)+\sin\left(\frac{7\pi}{8}\right)\right)\\
+\approx\;&amp;2{,}052.
+\end{align*}
+</div>
+</li>
+</ol>
+<span class="incontext"><a href="exercicesrectangles.html#p-1166">Contexte</a></span>
 </body>
 </html>

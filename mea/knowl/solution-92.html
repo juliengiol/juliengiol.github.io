@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:07-05:00    *-->
+<!--*    on 2021-03-04T13:36:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,24 +14,74 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.3.4.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.3.3.1</span><span class="period">.</span>
 </h6>
-<p>On a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_trapezes.html" title="Exemple 9.1.4">9.1.4</a> qu'on pouvait appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=2\text{.}\)</p>
-<p>Donc</p>
+<ol class="decimal">
+<li>
+<p>Pour \(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec six trapèzes, posons \(f(x)=e^{x^2}\text{.}\) Alors</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{cccc}
-&amp;|\text{Erreur}|&amp;\leq&amp;10^{-5}\\
-\Leftrightarrow&amp;\frac{M(b-a)^3}{12n^2}&amp;\leq&amp;10^{-5}\\
-\Leftrightarrow&amp;\frac{2\cdot (1-0)^3}{12n^2}&amp;\leq&amp;10^{-5}\\
-\Leftrightarrow&amp;\frac{1}{6n^2}&amp;\leq&amp;10^{-5}\\
-\Leftrightarrow&amp;\frac{10^5}{6}&amp;\leq&amp;n^2\\
-\Leftrightarrow&amp;\sqrt{\frac{10^5}{6}}&amp;\leq&amp;n\\
-\Leftrightarrow&amp;129{,}09\ldots&amp;\leq&amp;n
+f'(x)=e^{x^2}\cdot 2x\quad\text{et}\quad f''(x)=e^{x^2}\cdot(4x^2+2).
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 4x^2+2\) sont croissantes sur \([0;1]\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|\\
+&amp;=e^{x^2}(4x^2+2)\\
+&amp;\leq e^{1^2}(4\cdot 1^2+2)\\
+&amp;=6e
+\end{align*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\) Donc on peut prendre \(M=6e\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
+&amp;=\frac{e}{72}\\
+&amp;=0{,}037\,7\ldots\\
+&amp;\leq 0{,}038.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Pour \(\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x\) avec quatre trapèzes, posons \(g(x)=\cos\left(\frac{x^3}{5}\right)\text{.}\) Alors</p>
+<div class="displaymath">
+\begin{equation*}
+g'(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{3x^2}{5}
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+g''(x)=-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ccl}
+|g''(x)|&amp;=&amp;\left|-\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}-\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
+&amp;\leq&amp;\left|\sin\left(\frac{x^3}{5}\right)\cdot\frac{6x}{5}\right|+\left|\cos\left(\frac{x^3}{5}\right)\cdot\frac{9x^4}{25}\right|\\
+&amp;=&amp;\left|\sin\left(\frac{x^3}{5}\right)\right|\cdot\frac{6|x|}{5}+\left|\cos\left(\frac{x^3}{5}\right)\right|\cdot\frac{9x^4}{25}\\
+&amp;\leq&amp;1\cdot\frac{6|x|}{5}+1\cdot\frac{9x^4}{25}\\
+&amp;\leq&amp;1\cdot\frac{6\cdot 4}{5}+1\cdot\frac{9\cdot 4^4}{25}\\
+&amp;=&amp;\frac{2424}{25}\\
+&amp;=&amp;96{,}96
 \end{array}
 \end{equation*}
 </div>
-<p>Il faut donc prendre \(130\) trapèzes au moins.</p>
+<p data-braille="continuation">pour tout \(x\in[2;4]\text{.}\) Donc on peut prendre \(M=96{,}96\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{96{,}96\cdot(4-2)^3}{12\cdot 4^2}\\
+&amp;=4{,}04.
+\end{align*}
+</div>
+</li>
+<li><p>Trop difficile au niveau cégep selon moi.</p></li>
+</ol>
 </div>
 <span class="incontext"><a href="exercicestrapezes.html#solution-92">Contexte</a></span>
 </body>

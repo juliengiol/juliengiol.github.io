@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-01T08:59:45-05:00    *-->
+<!--*    on 2021-03-04T13:37:31-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,34 +13,44 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour calculer \(\text{PGCD}(a;b)\) tout en l'exprimant comme combinaison linéaire de \(a\) et de \(b\text{,}\) on construit les suites finies</p>
+<p>On a</p>
 <div class="displaymath">
 \begin{equation*}
-\{r_n\},\;\{u_n\},\;\{v_n\},\;\{q_n\}
+\begin{array}{|c|c|c|c|c|}
+\hline
+r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+\hline
+12003&amp;1&amp;0&amp;\\
+\hline
+999&amp;0&amp;1&amp;12003=999\cdot 12+15&amp;12\\
+\hline
+15&amp;1-0\cdot 12&amp;0-1\cdot 12&amp;999=15\cdot 66+9&amp;66\\
+&amp;=1&amp;=-12&amp;&amp;\\
+\hline
+9&amp;0-1\cdot 66&amp;1-(-12)\cdot 66&amp;15=9\cdot 1+6&amp;1\\
+&amp;=-66&amp;=793&amp;&amp;\\
+\hline
+6&amp;1-(-66)\cdot 1&amp;-12-793\cdot 1&amp;9=6\cdot 1+3&amp;1\\
+&amp;=67&amp;=-805&amp;&amp;\\
+\hline
+3&amp;-66-67\cdot 1&amp;793-(-805)\cdot 1&amp;6=3\cdot 2+0&amp;\\
+&amp;=-133&amp;=1598&amp;\text{Stop}&amp;\\
+\hline
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">définies par les valeurs initiales</p>
+<p data-braille="continuation">On déduit de la dernière ligne la valeur du PGCD</p>
 <div class="displaymath">
 \begin{equation*}
-\left\{
-\begin{array}{lll}
-r_0=a,&amp;u_0=1,&amp;v_0=0,\\
-r_1=b,&amp;u_1=0,&amp;v_1=1,
-\end{array}\right.
+\text{PGCD}(12003;999)=3
 \end{equation*}
 </div>
-<p data-braille="continuation">et les relations de récurrence</p>
+<p data-braille="continuation">ainsi que la combinaison linéaire</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{cases}
-q_n=r_{n-1}\,//\,r_n,\\
-r_{n+1}=r_{n-1}-r_n\cdot q_n,\\
-u_{n+1}=u_{n-1}-u_n\cdot q_n,\\
-v_{n+1}=v_{n-1}-v_n\cdot q_n
-\end{cases}
+3=12003\cdot (-133)+999\cdot 1598.
 \end{equation*}
 </div>
-<p data-braille="continuation">pour tout \(n\geq 1\) jusqu'à ce qu'on tombe sur \(r_{k+1}=0\text{.}\)</p>
-<span class="incontext"><a href="presentationbezout.html#p-1798">Contexte</a></span>
+<span class="incontext"><a href="exercicesbezout.html#p-1798">Contexte</a></span>
 </body>
 </html>
