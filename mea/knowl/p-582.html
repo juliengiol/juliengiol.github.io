@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:28-05:00    *-->
+<!--*    on 2021-03-08T11:43:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On dit que la convergence est <em class="emphasis">quadratique</em> à cause de l'exposant \(2\) au-dessus de \(|x_n-c|\text{.}\) Cela entraîne que le nombre de décimales exactes double grosso modo à chaque itération dans l'approximation de \(c\) par \(x_n\text{.}\)</p>
+<p>Remarque : En fait, en travaillant plus fort, on pourrait montrer que cette suite est croissante et majorée par</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}=\frac{f''(c)}{2f'(c)}=\frac{6c}{2\cdot 3c^2}=\frac{1}{c}=\frac{1}{\sqrt[3]{2}}\approx 0{,}794.
+\end{equation*}
+</div>
 <span class="incontext"><a href="exercicesnewton.html#p-582">Contexte</a></span>
 </body>
 </html>

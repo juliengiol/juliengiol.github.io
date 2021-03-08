@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:34:15-05:00    *-->
+<!--*    on 2021-03-08T11:42:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,41 +235,40 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Forme de Lagrange du polynôme interpolateur.</span>
 </h6>
 <ul class="disc">
-<li id="li-454">
-<p id="p-710">Entrées :</p>
+<li id="li-456">
+<p id="p-677">Entrées :</p>
 <ul class="circle">
-<li id="li-455"><p id="p-711">Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</p></li>
-<li id="li-456"><p id="p-712">Assigner à \(\text{x0},\text{x1},\ldots,\text{xn}\) les abscisses des points à interpoler.</p></li>
-<li id="li-457"><p id="p-713">Assigner à \(\text{y0},\text{y1},\ldots,\text{yn}\) les ordonnées des points à interpoler.</p></li>
-<li id="li-458"><p id="p-714">Déclarer \(\text{t}\) comme la variable du polynôme interpolateur.</p></li>
+<li id="li-457">Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</li>
+<li id="li-458">Assigner à \(\text{x0},\text{x1},\ldots,\text{xn}\) les abscisses des points à interpoler.</li>
+<li id="li-459">Assigner à \(\text{y0},\text{y1},\ldots,\text{yn}\) les ordonnées des points à interpoler.</li>
+<li id="li-460">Déclarer \(\text{t}\) comme la variable du polynôme interpolateur.</li>
 </ul>
 </li>
-<li id="li-459">
-<p id="p-715">Instructions :</p>
-<ul class="circle">
-<li id="li-460"><p id="p-716">Initialiser \(\text{L}\) la variable contenant la valeur du polynôme interpolateur : \(L=0\text{.}\)</p></li>
 <li id="li-461">
-<p id="p-717">Pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
-<ul class="square">
-<li id="li-462"><p id="p-718">initialiser \(\text{Li}\) la variable contenant la valeur de \(L_i(t)\) : \(\text{Li}=1\) ;</p></li>
+<p id="p-678">Instructions :</p>
+<ul class="circle">
+<li id="li-462">Initialiser \(\text{L}\) la variable contenant la valeur du polynôme interpolateur : \(L=0\text{.}\)</li>
 <li id="li-463">
-<p id="p-719">pour \(\text{j}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
-<ul class="disc"><li id="li-464"><p id="p-720">si \(\text{j}\neq\text{i}\text{,}\) assigner à \(\text{Li}\) la valeur de \(\displaystyle \text{Li}\cdot\frac{t-x_j}{x_i-x_j}\) ;</p></li></ul>
+<p id="p-679">Pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
+<ul class="square">
+<li id="li-464">initialiser \(\text{Li}\) la variable contenant la valeur de \(L_i(t)\) : \(\text{Li}=1\text{;}\)</li>
+<li id="li-465">
+<p id="p-680">pour \(\text{j}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
+<ul class="disc"><li id="li-466">si \(\text{j}\neq\text{i}\text{,}\) assigner à \(\text{Li}\) la valeur de \(\displaystyle \text{Li}\cdot\frac{t-x_j}{x_i-x_j}\text{;}\)</li></ul>
 </li>
-<li id="li-465"><p id="p-721">assigner à \(\text{L}\) la valeur de \(\text{L}+y_i\cdot\text{Li}\text{.}\)</p></li>
+<li id="li-467">assigner à \(\text{L}\) la valeur de \(\text{L}+y_i\cdot\text{Li}\text{.}\)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li id="li-466"><p id="p-722">Sortie : Afficher \(\text{L}\text{.}\)</p></li>
-</ul></article><p id="p-723">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/aveclagrange2.html" title="Exemple 6.1.9">6.1.9</a>.</p>
-<div class="sagecell-python" id="sage-52"><script type="text/x-sage"># entrées
+<li id="li-468">Sortie : Afficher \(\text{L}\text{.}\)</li>
+</ul></article><p id="p-681">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/aveclagrange2.html" title="Exemple 6.1.9">6.1.9</a>.</p>
+<div class="sagecell-python" id="sage-52"><script type="text/x-sage"># entrées :
 n = 2
 x = [1.0, 2.0, 3.0]
 y = [-3.0, 7.0, 0.0]
 var('t')
-
-# instructions
+# instructions :
 L = 0
 for i in range(0, n+1):
     Li = 1
@@ -277,8 +276,7 @@ for i in range(0, n+1):
         if j != i:
             Li = Li * (t - x[j]) / (x[i] - x[j])
     L = L + y[i] * Li
-
-# sortie
+# sortie :
 print(L)
 </script></div></section></div></main>
 </div>

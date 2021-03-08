@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:37:40-05:00    *-->
+<!--*    on 2021-03-08T11:45:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,32 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">12.3.7.1</span><span class="period">.</span>
 </h6>
-<p>L'algorithme d'Euclide étendu permet de mettre une fraction \(\frac{a}{b}\) dans sa forme irréductible.</p>
-<p>Il faut pour cela se rendre jusqu'à la ligne qui permet d'écrire \(0\) comme combinaison linéaire \(a\) et de \(b\) :</p>
+<p>Supposons que \(a\) et \(b\) sont premiers entre eux, et qu'ils divisent \(x\) tous les deux. Alors, d'une part, il existe \(k\in\mathbb{Z}\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-0=au+bv\quad\Rightarrow\quad\frac{a}{b}=-\frac{v}{u}.
+x=ka.
 \end{equation*}
 </div>
-<p data-braille="continuation">Et il se trouve que ces coefficients \(u\) et \(v\) sont forcément premiers entre eux (Sauriez-vous le montrer?).</p></article><span class="incontext"><a href="exercicesbezout.html#li-1062">Contexte</a></span>
+<p data-braille="continuation">D'autre part, on a donc</p>
+<div class="displaymath">
+\begin{equation*}
+b\vert ka\quad\text{et}\quad\text{PGCD}(a;b)=1.
+\end{equation*}
+</div>
+<p data-braille="continuation">Par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>, on en déduit que \(b\) divise \(k\text{,}\) de sorte qu'il existe \(m\in\mathbb{Z}\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+k=mb.
+\end{equation*}
+</div>
+<p data-braille="continuation">Finalement, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+x=ka=(mb)\cdot a=m\cdot(ab)
+\end{equation*}
+</div>
+<p data-braille="continuation">ce qui montre que \(ab\) divise \(x\text{.}\)</p></article><span class="incontext"><a href="exercicesbezout.html#li-1062">Contexte</a></span>
 </body>
 </html>

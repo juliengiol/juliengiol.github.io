@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:32:21-05:00    *-->
+<!--*    on 2021-03-08T11:40:55-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,20 @@
 </head>
 <body>
 <article class="remark remark-like"><h6 class="heading">
-<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
 </h6>
-<p>Le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 1.1.4">1.1.4</a> est itératif par nature.</p>
-<ul class="disc">
-<li>Dans le cas 1, on a trouvé le zéro de la fonction et on peut arrêter de le chercher.</li>
-<li>Dans le cas 2, on peut appliquer à nouveau le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 1.1.4">1.1.4</a> à l'intervalle \([a;m]\text{.}\)</li>
-<li>Dans le cas 3, on peut appliquer à nouveau le corollaire <a class="xref" data-knowl="./knowl/clebissection.html" title="Corollaire 1.1.4">1.1.4</a> à l'intervalle \([m;b]\text{.}\)</li>
-</ul></article><span class="incontext"><a href="presentationbissection.html#remark-1">Contexte</a></span>
+<p>Les trois différences divisées de l'exemple  <a class="xref" data-knowl="./knowl/exemple1diffdiv.html" title="Exemple 2.1.3">2.1.3</a> correspondent aux trois coefficients de la forme de Newton calculés à l'exemple <a class="xref" data-knowl="./knowl/exemple1newton.html" title="Exemple 2.1.1">2.1.1</a>, i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+d_0=\left[A_0\right],\; d_1=\left[A_0,A_1\right]\;\text{et}\; d_2=\left[A_0,A_1,A_2\right].
+\end{equation*}
+</div>
+<p>Autrement dit, la forme de Newton du polynôme interpolateur des trois points \(A_0,A_1,A_2\) est donnée par</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=\left[A_0\right]+\left[A_0,A_1\right](t-1)+\left[A_0,A_1,A_2\right](t-1)(t-2).
+\end{equation*}
+</div>
+<p>Ce n'est pas un hasard, c'est toute la force de l'<a class="external" href="https://fr.wikipedia.org/wiki/Interpolation_newtonienne" target="_blank">interpolation newtonienne</a>.</p></article><span class="incontext"><a href="presentationdiffdiv.html#remark-1">Contexte</a></span>
 </body>
 </html>

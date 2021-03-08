@@ -275,34 +275,44 @@
   <title>Méthode de la bissection</title>
   <statement>
     <ul>
-      <li><p>Entrées :
-        <ul>
-          <li><p>Assigner à <m>\text{f}</m> la fonction dont on cherche à encadrer le zéro.</p></li>
-          <li><p>Assigner à <m>\text{a}</m> et <m>\text{b}</m> les bornes de l'intervalle de départ.</p></li>
-          <li><p>Assigner à <m>\text{longueurMax}</m> la longueur maximale désirée pour l'intervalle d'encadrement.</p></li>
-        </ul></p>
-      </li>
-      <li><p>Instructions :
-        <ul>
-          <li><p>Tant que <m>\text{b}-\text{a}&gt;\text{longueurMax}</m>,</p>
-            <ul>
-              <li><p>assigner à <m>\text{m}</m> la valeur <m>(\text{a}+\text{b})/2</m> ;</p></li>
-              <li>
-                <ul>
-                  <li><p>si <m>\text{f}(\text{m})=0</m>, assigner à <m>\text{a}</m> et <m>\text{b}</m> la valeur de <m>\text{m}</m> et sortir de la boucle tant que ;</p></li>
-                  <li><p>sinon si <m>\text{f}(\text{m})\text{f}(\text{a})&lt;0</m>, assigner à <m>\text{b}</m> la valeur de <m>\text{m}</m> ;</p></li>
-                  <li><p>sinon assigner à <m>\text{a}</m> la valeur de <m>\text{m}</m>.</p></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul></p>
+      <li>
+        <p>
+          Entrées :
+          <ul>
+            <li>Assigner à <m>\text{f}</m> la fonction dont on cherche à encadrer le zéro.</li>
+            <li>Assigner à <m>\text{a}</m> et <m>\text{b}</m> les bornes de l'intervalle de départ.</li>
+            <li>Assigner à <m>\text{longueurMax}</m> la longueur maximale désirée pour l'intervalle d'encadrement.</li>
+          </ul>
+        </p>
       </li>
       <li>
-        <p>Sortie :
+        <p>
+          Instructions :
           <ul>
-            <li><p>Si <m>\text{a}=\text{b}</m> (ce qui signifie qu'on est tombés sur le zéro), afficher <m>\text{a}</m> ;</p></li>
-            <li><p>sinon afficher <m>\text{a}</m> et <m>\text{b}</m>.</p></li>
+            <li>
+              <p>
+                Tant que <m>\text{b}-\text{a}&gt;\text{longueurMax}</m>,
+                <ul>
+                  <li>assigner à <m>\text{m}</m> la valeur <m>(\text{a}+\text{b})/2</m>;</li>
+                  <li>
+                    <ul>
+                      <li>si <m>\text{f}(\text{m})=0</m>, assigner à <m>\text{a}</m> et <m>\text{b}</m> la valeur de <m>\text{m}</m> et sortir de la boucle tant que;</li>
+                      <li>sinon si <m>\text{f}(\text{m})\text{f}(\text{a})&lt;0</m>, assigner à <m>\text{b}</m> la valeur de <m>\text{m}</m>;</li>
+                      <li>sinon assigner à <m>\text{a}</m> la valeur de <m>\text{m}</m>.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          Sortie :
+          <ul>
+            <li>Si <m>\text{a}=\text{b}</m> (ce qui signifie qu'on est tombés sur le zéro), afficher <m>\text{a}</m>;</li>
+            <li>sinon afficher <m>\text{a}</m> et <m>\text{b}</m>.</li>
           </ul>
         </p>
       </li>

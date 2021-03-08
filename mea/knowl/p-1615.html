@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:37:11-05:00    *-->
+<!--*    on 2021-03-08T11:45:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,17 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Effectuez les divisions euclidiennes suivantes, puis identifiez le quotient et le reste.</p>
-<ol class="decimal">
-<li><p>\(14\) divisé par \(3\text{.}\)</p></li>
-<li><p>\(55\) divisé par \(27\text{.}\)</p></li>
-<li><p>\(257\) divisé par \(21\text{.}\)</p></li>
-<li><p>\(2031\) divisé par \(142\text{.}\)</p></li>
-<li><p>\(-347\) divisé par \(22\text{.}\)</p></li>
-</ol>
-<span class="incontext"><a href="exerciceseuclide.html#p-1615">Contexte</a></span>
+<p>Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclcrclr}
+1981&amp;=&amp;222\cdot 8+205&amp;\quad\Rightarrow\quad&amp;205&amp;=&amp;1981-222\cdot 8&amp;(\text{E}_1)\\
+222&amp;=&amp;205\cdot 1+17&amp;\quad\Rightarrow\quad&amp;17&amp;=&amp;222-205\cdot 1&amp;(\text{E}_2)\\
+205&amp;=&amp;17\cdot 12+1&amp;\quad\Rightarrow\quad&amp;1&amp;=&amp;205-17\cdot 12&amp;(\text{E}_3)\\
+17&amp;=&amp;1\cdot 17+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<span class="incontext"><a href="exercicesbezout.html#p-1615">Contexte</a></span>
 </body>
 </html>

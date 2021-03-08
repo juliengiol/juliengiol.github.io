@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:36-05:00    *-->
+<!--*    on 2021-03-08T11:43:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,10 +14,11 @@
 <body><article class="hiddenproof"><p>Un polynôme réel \(P(t)\) de degré \(n\) au plus s'écrit</p>
 <div class="displaymath">
 \begin{equation*}
-P(t)=a_0+a_1t+\cdots+a_nt^n\qquad\text{où}\; a_0,a_1,\ldots,a_n\in\mathbb{R}.
+P(t)=a_0+a_1t+\cdots+a_nt^n
 \end{equation*}
 </div>
-<p>Les conditions \(P(x_i)=y_i\) pour tout \(i=0,1,\ldots,n\) sont alors équivalentes au système linéaire de \(n+1\) équations suivant, où les \(n+1\) inconnues sont les coefficients \(a_0,\ldots,a_n\) du polynôme cherché.</p>
+<p data-braille="continuation">avec \(a_0,a_1,\ldots,a_n\in\mathbb{R}\text{.}\)</p>
+<p>Les conditions \(P(x_k)=y_k\) pour tout \(k=0,1,\ldots,n\) sont alors équivalentes au système linéaire de \(n+1\) équations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{cases}
@@ -29,7 +30,8 @@ a_0&amp;+&amp;a_1x_n&amp;+&amp;a_2x_n^2&amp;+&amp;\cdots&amp;+&amp;a_nx_n^n&amp;
 \end{cases}
 \end{equation*}
 </div>
-<p>La matrice des coefficients de ce système est une <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde" target="_blank">matrice de Vandermonde</a> \((n+1)\times(n+1)\) :</p>
+<p data-braille="continuation">où les \(n+1\) inconnues sont les coefficients \(a_0,\ldots,a_n\) du polynôme cherché.</p>
+<p>La matrice des coefficients de ce système</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -41,23 +43,11 @@ a_0&amp;+&amp;a_1x_n&amp;+&amp;a_2x_n^2&amp;+&amp;\cdots&amp;+&amp;a_nx_n^n&amp;
 \end{bmatrix}
 \end{equation*}
 </div>
-<p>Son <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde#D%C3%A9terminant" target="_blank">déterminant</a> vaut</p>
+<p data-braille="continuation">est une <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde" target="_blank">matrice de Vandermonde</a> de taille \((n+1)\times(n+1)\text{,}\) dont le <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde#D%C3%A9terminant" target="_blank">déterminant</a> vaut</p>
 <div class="displaymath">
 \begin{equation*}
-\prod_{0\leq i&lt;j\leq n}(x_j-x_i).
+\prod_{0\le i&lt;j\leq n}(x_j-x_i).
 \end{equation*}
 </div>
-<p>Comme les \(x_i\) sont distincts deux à deux, on a \(x_i\neq x_j\) et donc</p>
-<div class="displaymath">
-\begin{equation*}
-x_j-x_i\neq 0\qquad\text{pour tout}\; 0\leq i&lt;j\leq n.
-\end{equation*}
-</div>
-<p>On en déduit que le déterminant du système est non nul, c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-\prod_{0\leq i&lt;j\leq n}(x_j-x_i)\neq 0.
-\end{equation*}
-</div>
-<p>Il en découle que la matrice du système est inversible. Par conséquent, le système admet une unique solution \((a_0,\ldots,a_n)\text{.}\)</p></article></body>
+<p data-braille="continuation">Comme les \(x_k\) sont supposés distincts deux à deux, i.e. \(x_i\ne x_j\) pour tous \(i\ne j\text{,}\) on voit que ce déterminant est non nul, ce qui entraîne que le système admet une unique solution \((a_0,\ldots,a_n)\text{.}\)</p></article></body>
 </html>

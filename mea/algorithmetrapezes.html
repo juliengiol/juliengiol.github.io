@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:34:26-05:00    *-->
+<!--*    on 2021-03-08T11:42:13-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,32 +235,32 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">9.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode des trapèzes.</span>
 </h6>
 <ul class="disc">
-<li id="li-741">
-<p id="p-1232">Entrées :</p>
-<ul class="circle">
-<li id="li-742"><p id="p-1233">Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
-<li id="li-743"><p id="p-1234">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
-<li id="li-744"><p id="p-1235">Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
-</ul>
-</li>
 <li id="li-745">
-<p id="p-1236">Instructions :</p>
+<p id="p-1070">Entrées :</p>
 <ul class="circle">
-<li id="li-746"><p id="p-1237">Initialiser \(\text{approximation}\text{,}\) la variable qui donnera l'approximation de l'intégrale : \(\text{approximation}=0\text{.}\)</p></li>
-<li id="li-747"><p id="p-1238">Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
-<li id="li-748">
-<p id="p-1239">Pour \(\text{k}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
+<li id="li-746"><p id="p-1071">Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
+<li id="li-747"><p id="p-1072">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
+<li id="li-748"><p id="p-1073">Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
+</ul>
+</li>
+<li id="li-749">
+<p id="p-1074">Instructions :</p>
+<ul class="circle">
+<li id="li-750"><p id="p-1075">Initialiser \(\text{approximation}\text{,}\) la variable qui donnera l'approximation de l'intégrale : \(\text{approximation}=0\text{.}\)</p></li>
+<li id="li-751"><p id="p-1076">Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
+<li id="li-752">
+<p id="p-1077">Pour \(\text{k}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
 <ul class="square">
-<li id="li-749"><p id="p-1240">assigner à \(\text{xi1}\) la valeur \(\text{a}+(\text{k}-1)\cdot\text{deltaX}\) ;</p></li>
-<li id="li-750"><p id="p-1241">assigner à \(\text{xi2}\) la valeur \(\text{xi1}+\text{deltaX}\) ;</p></li>
-<li id="li-751"><p id="p-1242">assigner à \(\text{approximation}\) la valeur de \(\text{approximation}+\text{f}(\text{xi1})+\text{f}(\text{xi2})\text{.}\)</p></li>
+<li id="li-753"><p id="p-1078">assigner à \(\text{xi1}\) la valeur \(\text{a}+(\text{k}-1)\cdot\text{deltaX}\) ;</p></li>
+<li id="li-754"><p id="p-1079">assigner à \(\text{xi2}\) la valeur \(\text{xi1}+\text{deltaX}\) ;</p></li>
+<li id="li-755"><p id="p-1080">assigner à \(\text{approximation}\) la valeur de \(\text{approximation}+\text{f}(\text{xi1})+\text{f}(\text{xi2})\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-752"><p id="p-1243">Assigner à \(\text{approximation}\) la valeur de \(\text{approximation}\cdot\text{deltaX}/2\text{.}\)</p></li>
+<li id="li-756"><p id="p-1081">Assigner à \(\text{approximation}\) la valeur de \(\text{approximation}\cdot\text{deltaX}/2\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-753"><p id="p-1244">Résultat : Afficher \(\text{approximation}\text{.}\)</p></li>
-</ul></article><p id="p-1245">Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
+<li id="li-757"><p id="p-1082">Résultat : Afficher \(\text{approximation}\text{.}\)</p></li>
+</ul></article><p id="p-1083">Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^14\sqrt{1-x^2}\,\mathrm{d}x=\pi

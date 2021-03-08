@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:37:28-05:00    *-->
+<!--*    on 2021-03-08T11:45:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,26 +13,42 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On en déduit d'abord que</p>
+<p>Alors le système de congruences</p>
 <div class="displaymath">
 \begin{equation*}
-\text{PGCD}(1975;225)=25.
+\left\{
+\begin{array}{cccc}
+x&amp;\equiv&amp;a_1&amp;\mathrm{mod}\;m_1,\\
+x&amp;\equiv&amp;a_2&amp;\mathrm{mod}\;m_2,\\
+\vdots&amp;&amp;\vdots&amp;\vdots\\
+x&amp;\equiv&amp;a_n&amp;\mathrm{mod}\;m_n,
+\end{array}\right.
 \end{equation*}
 </div>
-<p data-braille="continuation">Puis on remonte :</p>
+<p data-braille="continuation">admet une infinité de solutions en progression arithmétique, caractérisées par</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{rclr}
-1&amp;=&amp;205-17\cdot 12&amp;(\text{E}_3)\\
-&amp;=&amp;205-(222-205\cdot 1)\cdot 12&amp;\text{grâce à }(\text{E}_2)\\
-&amp;=&amp;205-222\cdot 12+205\cdot 12&amp;\\
-&amp;=&amp;205\cdot 13-222\cdot 12&amp;\\
-&amp;=&amp;(1981-222\cdot 8)\cdot 13-222\cdot 12&amp;\text{grâce à }(\text{E}_1)\\
-&amp;=&amp;1981\cdot 13-222\cdot 104-222\cdot 12&amp;\\
-&amp;=&amp;1981\cdot 13-222\cdot 116.&amp;
-\end{array}
+x\equiv x_0\;\mathrm{mod}\;M\quad\Leftrightarrow\quad \exists k\in\mathbb{Z}, x=x_0+Mk.
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercicesbezout.html#p-1778">Contexte</a></span>
+<p data-braille="continuation">où</p>
+<div class="displaymath">
+\begin{equation*}
+M=m_1\cdot m_2\cdots m_n
+\end{equation*}
+</div>
+<p data-braille="continuation">et où la solution particulière \(x_0\) peut s'obtenir par la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+x_0=a_1M_1u_1+a_2M_2u_2+\cdots+a_nM_nu_n
+\end{equation*}
+</div>
+<p data-braille="continuation">en prenant pour tout \(i\) un inverse \(u_i\) de \(M_i=M/m_i\) modulo \(m_i\text{,}\) c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+M_i=\frac{M}{m_i}=\prod_{j\neq i}m_j\quad\text{et}\quad M_iu_i\equiv 1\;\mathrm{mod}\;m_i.
+\end{equation*}
+</div>
+<span class="incontext"><a href="presentationchinois.html#p-1778">Contexte</a></span>
 </body>
 </html>

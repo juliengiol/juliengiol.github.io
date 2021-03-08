@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:34:23-05:00    *-->
+<!--*    on 2021-03-08T11:42:10-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,32 +235,32 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">8.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode des rectangles à gauche.</span>
 </h6>
 <ul class="disc">
-<li id="li-678">
-<p id="p-1138">Entrées :</p>
-<ul class="circle">
-<li id="li-679"><p id="p-1139">Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
-<li id="li-680"><p id="p-1140">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
-<li id="li-681"><p id="p-1141">Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
-</ul>
-</li>
 <li id="li-682">
-<p id="p-1142">Instructions :</p>
+<p id="p-976">Entrées :</p>
 <ul class="circle">
-<li id="li-683"><p id="p-1143">Initialiser \(\text{approximation}\text{,}\) la variable qui donnera la somme des aires des rectangles : \(\text{approximation}=0\text{.}\)</p></li>
-<li id="li-684"><p id="p-1144">Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
-<li id="li-685"><p id="p-1145">Assigner à \(\text{x}\) la valeur \(\text{a}\text{.}\)</p></li>
+<li id="li-683"><p id="p-977">Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
+<li id="li-684"><p id="p-978">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
+<li id="li-685"><p id="p-979">Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
+</ul>
+</li>
 <li id="li-686">
-<p id="p-1146">Tant que \(\text{x}&lt;\text{b}\text{,}\)</p>
+<p id="p-980">Instructions :</p>
+<ul class="circle">
+<li id="li-687"><p id="p-981">Initialiser \(\text{approximation}\text{,}\) la variable qui donnera la somme des aires des rectangles : \(\text{approximation}=0\text{.}\)</p></li>
+<li id="li-688"><p id="p-982">Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
+<li id="li-689"><p id="p-983">Assigner à \(\text{x}\) la valeur \(\text{a}\text{.}\)</p></li>
+<li id="li-690">
+<p id="p-984">Tant que \(\text{x}&lt;\text{b}\text{,}\)</p>
 <ul class="square">
-<li id="li-687"><p id="p-1147">assigner à \(\text{approximation}\) la valeur de \(\text{approximation}+\text{f}(\text{x})\) ;</p></li>
-<li id="li-688"><p id="p-1148">assigner à \(\text{x}\) la valeur de \(\text{x}+\text{deltaX}\text{.}\)</p></li>
+<li id="li-691"><p id="p-985">assigner à \(\text{approximation}\) la valeur de \(\text{approximation}+\text{f}(\text{x})\) ;</p></li>
+<li id="li-692"><p id="p-986">assigner à \(\text{x}\) la valeur de \(\text{x}+\text{deltaX}\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-689"><p id="p-1149">Assigner à \(\text{approximation}\) la valeur de \(\text{deltaX}\cdot\text{approximation}\text{.}\)</p></li>
+<li id="li-693"><p id="p-987">Assigner à \(\text{approximation}\) la valeur de \(\text{deltaX}\cdot\text{approximation}\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-690"><p id="p-1150">Sortie : Afficher \(\text{approximation}\text{.}\)</p></li>
-</ul></article><p id="p-1151">Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
+<li id="li-694"><p id="p-988">Sortie : Afficher \(\text{approximation}\text{.}\)</p></li>
+</ul></article><p id="p-989">Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^14\sqrt{1-x^2}\,\mathrm{d}x=\pi

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:08-05:00    *-->
+<!--*    on 2021-03-08T11:44:06-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -28,45 +28,38 @@ N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
 <p>On cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
+\begin{cases}N(1)=3,\\N(2)=6,\\N(3)=9\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">i.e.</p>
+<div class="displaymath">
+\begin{equation*}
 \begin{cases}
-N(1)=3\\
-N(2)=6\\
-N(3)=9
-\end{cases}
-\Leftrightarrow
-\begin{cases}
-d_0&amp;&amp;&amp;&amp;&amp;=&amp;3\\
-d_0&amp;+&amp;d_1&amp;&amp;&amp;=&amp;6\\
-d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;9\\
+d_0&amp;&amp;&amp;&amp;&amp;=&amp;3,\\
+d_0&amp;+&amp;d_1&amp;&amp;&amp;=&amp;6,\\
+d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;9.
 \end{cases}
 \end{equation*}
 </div>
 <p>Ce système linéaire est déjà triangulé.</p>
 <ul class="disc">
+<li>La première équation donne \(d_0=3\text{.}\)</li>
 <li>
-<p>La première équation donne</p>
-<div class="displaymath">
-\begin{equation*}
-d_0=3.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Alors la deuxième équation donne</p>
+<p>La deuxième équation donne \(d_0+d_1=6\text{,}\) d'où</p>
 <div class="displaymath">
 \begin{align*}
-d_0+d_1=6&amp;\Rightarrow\quad 3+d_1=6\\
-&amp;\Rightarrow\quad d_1=3.
+3+d_1&amp;=6,\\
+d_1&amp;=3.
 \end{align*}
 </div>
 </li>
 <li>
-<p>Enfin la troisième équation donne</p>
+<p>La troisième équation donne \(d_0+2d_1+2d_2=0\text{,}\) d'où</p>
 <div class="displaymath">
 \begin{align*}
-d_0+2d_1+2d_2=0&amp;\Rightarrow\quad 3+6+2d_2=9\\
-&amp;\Rightarrow\quad 2d_2=0\\
-&amp;\Rightarrow\quad d_2=0.
+3+6+2d_2&amp;=9,\\
+2d_2&amp;=0,\\
+d_2&amp;=0.
 \end{align*}
 </div>
 </li>
@@ -93,12 +86,7 @@ x_i&amp;y_i\\
 \end{array}
 \end{equation*}
 </div>
-<p>On trouve donc les mêmes coefficients qu'à la question 1, soit</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=3+3(t-1)+0(t-1)(t-2)=3+3(t-1).
-\end{equation*}
-</div>
+<p>On trouve donc les mêmes coefficients qu'à la question précédente.</p>
 </li>
 </ol>
 <p>Remarque : En regardant les trois points à interpoler de plus près, on s'aperçoit qu'il sont alignés car ils appartiennent tous les trois à la droite d'équation</p>

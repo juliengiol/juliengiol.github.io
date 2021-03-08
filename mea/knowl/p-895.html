@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:00-05:00    *-->
+<!--*    on 2021-03-08T11:44:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Trois points :</p>
+<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
 <div class="displaymath">
 \begin{equation*}
-\left[A_{i_1},A_{i_2},A_{i_3}\right]=\frac{\left[A_{i_2},A_{i_3}\right]-\left[A_{i_1},A_{i_2}\right]}{x_{i_3}-x_{i_1}}=\frac{\frac{y_{i_3}-y_{i_2}}{x_{i_3}-x_{i_2}}-\frac{y_{i_2}-y_{i_1}}{x_{i_2}-x_{i_1}}}{x_{i_3}-x_{i_1}}
+N(t)=y_0+\frac{y_1-y_0}{x_1-x_0}(t-x_0)+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}(t-x_0)(t-x_1),
 \end{equation*}
 </div>
-<p data-braille="continuation">pour \(0\leq i_1&lt;i_2&lt;i_3\leq n\text{.}\)</p>
-<span class="incontext"><a href="presentationdiffdiv.html#p-895">Contexte</a></span>
+<p data-braille="continuation">i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\left[A_0,A_1,A_2\right](t-x_0)(t-x_1).
+\end{equation*}
+</div>
+<span class="incontext"><a href="exercicesdiffdiv.html#p-895">Contexte</a></span>
 </body>
 </html>

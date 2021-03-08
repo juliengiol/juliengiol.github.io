@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:21-05:00    *-->
+<!--*    on 2021-03-08T11:43:26-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li>Objectif : Obtenir des approximations d'un zéro \(c\) de la fonction \(f\text{.}\)</li>
-<li>
-<p>Hypothèses : On suppose que la fonction \(f\) est deux fois dérivable et que \(f''\) est continue autour de \(c\text{,}\) ainsi que</p>
+<p>Pour tout \(s\in\;]c;c+r]\text{,}\) l'intégration de l'inégalité précédente entre \(c\) et \(s\) donne</p>
 <div class="displaymath">
 \begin{equation*}
-f'(c)\neq 0.
+v(s)\le\frac{1}{M}\left(e^{-Mc}-e^{-Ms}\right),
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Principe : Choisir une valeur initiale \(x_0\) assez proche de \(c\text{,}\) et appliquer la formule de récurrence</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}
+\frac{f(s)}{f'(s)}\le\frac{1}{M}\left(e^{M(s-c)}-1\right)
 \end{equation*}
 </div>
-<p data-braille="continuation">autant de fois que désiré.</p>
-</li>
-<li>Précision : Le nombre de décimales exactes obtenues via l'approximation de \(c\) par \(x_n\) double grosso modo à chaque itération.</li>
-<li>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1rn77nSLrjoZnc63BLKJmpv4pwiL2fYJc/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
-</ul>
 <span class="incontext"><a href="presentationnewton.html#p-509">Contexte</a></span>
 </body>
 </html>

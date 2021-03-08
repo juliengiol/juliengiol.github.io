@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:48-05:00    *-->
+<!--*    on 2021-03-08T11:44:01-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,34 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On a bien \(P(t)=L(t)\) car</p>
+<p>Afin d'exploiter la nature récursive des différences divisées, on peut utiliser la présentation classique qui suit :</p>
 <div class="displaymath">
-\begin{align*}
-\frac{2}{9}(t-2)(t-5)-\frac{1}{18}(t+1)(t-2)&amp;=\frac{1}{18}(t-2)\left(4(t-5)-(t+1)\right)\\
-&amp;=\frac{1}{18}(t-2)(4t-20-t-1)\\
-&amp;=\frac{1}{18}(t-2)(3t-21)\\
-&amp;=\frac{1}{6}(t-2)(t-7)\\
-&amp;=\frac{1}{6}(t^2-9t+14)\\
-&amp;=\frac{1}{6}t^2-\frac{9}{6}t+\frac{14}{6}\\
-&amp;=\frac{1}{6}t^2-\frac{3}{2}t+\frac{7}{3}\\
-&amp;=\frac{7}{3}-\frac{3}{2}t+\frac{1}{6}t^2.
-\end{align*}
+\begin{equation*}
+\begin{array}{c|ccc}
+x_i&amp;y_i=\left[A_i\right]&amp;\left[A_{i_1},A_{i_2}\right]&amp;\left[A_{i_1},A_{i_2},A_{i_3}\right]\\
+\hline\\
+1&amp;-3&amp;&amp;\\
+&amp;&amp;\frac{7-(-3)}{2-1}=10&amp;\\
+2&amp;7&amp;&amp;\frac{-7-10}{3-1}=-\frac{17}{2}\\
+&amp;&amp;\frac{0-7}{3-2}=-7&amp;\\
+3&amp;0&amp;&amp;
+\end{array}
+\end{equation*}
 </div>
-<span class="incontext"><a href="exerciceslagrange.html#p-790">Contexte</a></span>
+<p data-braille="continuation">i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|ccc}
+x_i&amp;y_i&amp;&amp;\\
+\hline\\
+x_0=1&amp;\left[A_0\right]=-3&amp;&amp;\\
+&amp;&amp;\left[A_0,A_1\right]=10&amp;\\
+x_1=2&amp;\left[A_1\right]=7&amp;&amp;\left[A_0,A_1,A_2\right]=-\frac{17}{2}\\
+&amp;&amp;\left[A_1,A_2\right]=-7&amp;\\
+x_2=3&amp;\left[A_2\right]=0&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<span class="incontext"><a href="presentationdiffdiv.html#p-790">Contexte</a></span>
 </body>
 </html>

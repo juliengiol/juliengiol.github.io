@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:37:17-05:00    *-->
+<!--*    on 2021-03-08T11:45:40-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Calculez \(\text{PGCD}(a;b)\) à l'aide de l'algorithme d'Euclide.</p>
-<span class="incontext"><a href="exerciceseuclide.html#p-1667">Contexte</a></span>
+<p>Supposons que \(p\vert bc\text{.}\)</p>
+<ul class="disc">
+<li><p>Si \(p\) divise \(b\text{,}\) on a fini.</p></li>
+<li>
+<p>Si \(p\) ne divise pas \(b\text{,}\) alors le plus grand diviseur commun à \(p\) et à \(b\) est forcément \(1\text{.}\) On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+p\vert bc\quad\text{et}\quad\text{PGCD}(p;b)=1
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+p\vert c
+\end{equation*}
+</div>
+<p data-braille="continuation">par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>.</p>
+</li>
+</ul>
+<span class="incontext"><a href="exercicesbezout.html#p-1667">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:03-05:00    *-->
+<!--*    on 2021-03-08T11:44:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -19,19 +19,19 @@
 <li>
 <p>Entrées :</p>
 <ul class="circle">
-<li><p>Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</p></li>
-<li><p>Assigner à \(\text{x0},\text{x1},\ldots,\text{xn}\) les abscisses des points à interpoler.</p></li>
-<li><p>Assigner à \(\text{y0},\text{y1},\ldots,\text{yn}\) les ordonnées des points à interpoler.</p></li>
+<li>Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</li>
+<li>Assigner à \(\text{x0},\text{x1},\ldots,\text{xn}\) les abscisses des points à interpoler.</li>
+<li>Assigner à \(\text{y0},\text{y1},\ldots,\text{yn}\) les ordonnées des points à interpoler.</li>
 </ul>
 </li>
 <li>
 <p>Instructions :</p>
 <ul class="circle">
-<li><p>Assigner la liste \(\text{y}\) comme premier élément de la liste \(\text{diffDiv}\) qui contiendra toutes les différences divisées.</p></li>
+<li>Assigner la liste \(\text{y}\) comme premier élément de la liste \(\text{diffDiv}\) qui contiendra toutes les différences divisées.</li>
 <li>
 <p>Pour \(\text{j}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
 <ul class="square">
-<li><p>initialiser \(\text{nouvelleColonne}\text{,}\) la liste qui contiendra toutes les différences divisées calculées à l'étape \(j\) : \(\text{nouvelleColonne}=\left[\;\right]\) ;</p></li>
+<li>initialiser \(\text{nouvelleColonne}\text{,}\) la liste qui contiendra toutes les différences divisées calculées à l'étape \(j\) : \(\text{nouvelleColonne}=\left[\;\right]\text{;}\)</li>
 <li>
 <p>pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n-j}\text{,}\)</p>
 <ul class="disc">
@@ -39,21 +39,21 @@
 <p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
 <div class="displaymath">
 \begin{equation*}
-\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;
+\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]};
 \end{equation*}
 </div>
 </li>
-<li><p>ajouter la nouvelle différence divisée \(\text{nouvelleDiffDiv}\) à la liste \(\text{nouvelleColonne}\) ;</p></li>
+<li>ajouter la nouvelle différence divisée \(\text{nouvelleDiffDiv}\) à la liste \(\text{nouvelleColonne}\text{;}\)</li>
 </ul>
 </li>
-<li><p>ajouter \(\text{nouvelleColonne}\) à la liste \(\text{diffDiv}\text{.}\)</p></li>
+<li>ajouter \(\text{nouvelleColonne}\) à la liste \(\text{diffDiv}\text{.}\)</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
 <p>Sortie : Pour \(\text{j}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
-<ul class="circle"><li><p>afficher \(\text{diffDiv}[j][0]\text{.}\)</p></li></ul>
+<ul class="circle"><li>afficher \(\text{diffDiv}[j][0]\text{.}\)</li></ul>
 </li>
 </ul></article><span class="incontext"><a href="algorithmediffdiv.html#algorithm-4">Contexte</a></span>
 </body>

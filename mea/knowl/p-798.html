@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:49-05:00    *-->
+<!--*    on 2021-03-08T11:44:01-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\((2;5),(3;7)\) et \((6;7)\text{.}\)</p>
-<span class="incontext"><a href="exerciceslagrange.html#p-798">Contexte</a></span>
+<p>Commençons donc par l'étape 1. Pour un point (\(n=0\)), la propriété est triviale. Supposons-la donc vérifiée pour \(n\) points et notons alors \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{,}\) et \(B(t)\) le polynôme interpolateur des \(n\) derniers \(A_1,\ldots,A_n\text{.}\) Par unicité du polynôme interpolateur, on a</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=\frac{(t-x_0)B(t)-(t-x_n)A(t)}{x_n-x_0},
+\end{equation*}
+</div>
+<p data-braille="continuation">puisque le terme de droite est un polynôme de degré \(n\) au plus valant \(y_k\) en \(t=x_k\) pour tout \(0\le k\le n\text{.}\) Par hypothèse de récurrence appliquée à \(A(t)\) et à \(B(t)\text{,}\) on en déduit que le coefficent de degré \(n\) dans \(P(t)\) vaut</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\left[A_1,\ldots,A_n\right]-\left[A_0,\ldots,A_{n-1}\right]}{x_n-x_0},
+\end{equation*}
+</div>
+<p data-braille="continuation">i.e. \(\left[A_0,\ldots,A_n\right]\text{,}\) d'après la formule de récurrence définissant les différences divisées.</p>
+<span class="incontext"><a href="presentationdiffdiv.html#p-798">Contexte</a></span>
 </body>
 </html>

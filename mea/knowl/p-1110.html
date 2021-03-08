@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:19-05:00    *-->
+<!--*    on 2021-03-08T11:44:36-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,30 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Par la méthode des rectangles à gauche, on a trouvé</p>
+<p>Voici la subdivision régulière de l'intervalle \([0;1]\) en six sous-intervalles de même longueur :</p>
 <div class="displaymath">
 \begin{equation*}
-\text{Approximation}\approx 0{,}821\,999\,167\,653\,951
+0&lt;\frac{1}{6}&lt;\frac{1}{3}&lt;\frac{1}{2}&lt;\frac{2}{3}&lt;\frac{5}{6}&lt;1.
 \end{equation*}
 </div>
-<p data-braille="continuation">d'où</p>
+<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
 <div class="displaymath">
-\begin{equation*}
-0{,}82\leq\text{Approximation}\leq 0{,}83.
-\end{equation*}
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f\left(\frac{1}{6}\right)+2f\left(\frac{1}{3}\right)+2f\left(\frac{1}{2}\right)\right.\\
+&amp;\qquad\qquad\left.+2f\left(\frac{2}{3}\right)+2f\left(\frac{5}{6}\right)+f(1)\right)\\
+=\;&amp;\frac{1}{12}\cdot\left(e^{0^2}+2e^{\left(\frac{1}{6}\right)^2}+2e^{\left(\frac{1}{3}\right)^2}+2e^{\left(\frac{1}{2}\right)^2}+2e^{\left(\frac{2}{3}\right)^2}+2e^{\left(\frac{5}{6}\right)^2}+e^{1^2}\right)\\
+\approx\;&amp;1{,}475.
+\end{align*}
 </div>
-<p data-braille="continuation">En ajoutant l'encadrement de l'erreur, on obtient</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}82-0{,}25\leq\text{Approximation}+\text{Erreur}\leq 0{,}83+0{,}25
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}57\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 1{,}08.
-\end{equation*}
-</div>
-<span class="incontext"><a href="presentationrectangles.html#p-1110">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#p-1110">Contexte</a></span>
 </body>
 </html>

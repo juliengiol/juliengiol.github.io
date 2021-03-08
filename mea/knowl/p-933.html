@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:03-05:00    *-->
+<!--*    on 2021-03-08T11:44:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Terminologie : On appelle \(d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)\) la forme de Newton du polynôme interpolateur des points \(A_0,A_1,\ldots,A_n\text{.}\) Il s'agit du même polynôme que celui obtenu par interpolation de Lagrange, mais écrit différemment.</p>
-<span class="incontext"><a href="presentationdiffdiv.html#p-933">Contexte</a></span>
+<p>L'idée fondamentale de la preuve repose sur l'observation suivante :</p>
+<div class="displaymath">
+\begin{align*}
+\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-f(a)(b-a)\\
+&amp;=\int_a^bf(x)\mathrm{d}x-f(a)\int_a^b\mathrm{d}x\\
+&amp;=\int_a^bf(x)\mathrm{d}x-\int_a^bf(a)\mathrm{d}x\\
+&amp;=\int_a^b(f(x)-f(a))\mathrm{d}x.
+\end{align*}
+</div>
+<p data-braille="continuation">Ceci entraîne</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\int_a^b(f(x)-f(a))\mathrm{d}x\right|\\
+&amp;\leq\int_a^b|f(x)-f(a)|\mathrm{d}x.
+\end{align*}
+</div>
+<span class="incontext"><a href="presentationrectangles.html#p-933">Contexte</a></span>
 </body>
 </html>

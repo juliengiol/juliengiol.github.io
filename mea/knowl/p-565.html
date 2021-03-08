@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:27-05:00    *-->
+<!--*    on 2021-03-08T11:43:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,23 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Soit \(n\ge 0\) un entier et \(f:[a;b]\longrightarrow\mathbb{R}\) une fonction telle que</p>
-<ul class="disc">
-<li>\(f^{(n+1)}\) existe sur \(]a,b[\text{,}\)</li>
-<li>et que \(f^{(n)}\) soit continue sur \([a,b]\text{.}\)</li>
-</ul>
-<p data-braille="continuation">Le but de cet exercice est de montrer que pour tous \(x,x_0\in[a;b]\text{,}\) il existe \(\xi\in\;]a;b[\) tel que</p>
+<p>Grâce à cette formule de nature télescopique, on voit que</p>
 <div class="displaymath">
-\begin{equation*}
-f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^n,
-\end{equation*}
+\begin{align*}
+g'(t)&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\left(f(x)-f(t)-\sum_{k=1}^n\frac{f^{(k)}(t)}{k!}(x-t)^k-\frac{A}{(n+1)!}(x-t)^{n+1}\right)\\
+&amp;=-f'(t)-\sum_{k=1}^n\left(\frac{f^{(k+1)}(t)}{k!}(x-t)^k-\frac{f^{(k)}(t)}{(k-1)!}(x-t)^{k-1}\right)\\
+&amp;\quad+\frac{A}{n!}(x-t)^n\\
+&amp;=-f'(t)-\cdots-\frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1}-\frac{f^{(n+1)}(t)}{n!}(x-t)^n\\
+&amp;\quad+f'(t)+\cdots+\frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1}\\
+&amp;\quad+\frac{A}{n!}(x-t)^n\\
+&amp;=\frac{A}{n!}(x-t)^n-\frac{f^{(n+1)}(t)}{n!}(x-t)^n
+\end{align*}
 </div>
-<p data-braille="continuation">i.e.</p>
-<div class="displaymath">
-\begin{equation*}
-f(x)=f(x_0)+f'(x_0)(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^n.
-\end{equation*}
-</div>
+<p data-braille="continuation">pour tout \(t\in\;]a;b[\text{.}\)</p>
 <span class="incontext"><a href="exercicesnewton.html#p-565">Contexte</a></span>
 </body>
 </html>

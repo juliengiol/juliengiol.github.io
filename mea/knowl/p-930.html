@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:03-05:00    *-->
+<!--*    on 2021-03-08T11:44:14-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,38 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li><p>Objectif : Étant donné \(n+1\) points \(A_0=(x_0;y_0),\ldots,A_n=(x_n;y_n)\) d'abscisses distinctes deux à deux, déterminer le seul polynôme \(N(t)\) de degré \(n\) au plus qui passe par tous ces points.</p></li>
-<li>
-<p>Principe : Construire \(N(t)\) comme combinaison linéaire des polynômes</p>
+<p>Alors pour tout choix de points \(\xi_k\text{,}\) la méthode des rectangles conduit à l'erreur d'approximation</p>
 <div class="displaymath">
 \begin{equation*}
-N_i(t)=(t-x_0)(t-x_1)\cdots(t-x_{i-1})
+\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\Delta x\cdot\sum_{k=1}^nf(\xi_k)}_{\text{Approximation}}
 \end{equation*}
 </div>
-<p data-braille="continuation">en posant</p>
+<p data-braille="continuation">qui vérifie</p>
 <div class="displaymath">
 \begin{equation*}
-N(t)=d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)
+|\text{Erreur}|\leq\frac{M(b-a)^2}{2n}
 \end{equation*}
 </div>
-<p data-braille="continuation">où le coefficient \(d_i\) est la différence divisée associée aux points \(A_0=(x_0;y_0),\ldots,A_i=(x_i;y_i)\text{,}\) c'est-à-dire</p>
+<p data-braille="continuation">où \(M\) est n'importe quel nombre tel que</p>
 <div class="displaymath">
 \begin{equation*}
-d_i=\left[A_0,\ldots,A_i\right]
+|f'(x)|\leq M\quad\text{pour tout }x\in[a;b].
 \end{equation*}
 </div>
-</li>
-<li><p>Terminologie : On appelle \(d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)\) la forme de Newton du polynôme interpolateur des points \(A_0,A_1,\ldots,A_n\text{.}\) Il s'agit du même polynôme que celui obtenu par interpolation de Lagrange, mais écrit différemment.</p></li>
-<li>
-<p>Avantages :</p>
-<ul class="circle">
-<li><p>À la différence de la forme de Lagrange, la forme de Newton permet d'ajouter un point d'interpolation sans avoir à reprendre tous les calculs.</p></li>
-<li><p>Grâce à la technique des différences divisées, le calcul de la forme de Newton nécessite moins d'opérations que celui de la forme de Lagrange.</p></li>
-</ul>
-</li>
-<li><p>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1ANZ409wB1DjcOVes1jWh2KRhu0FaUaad/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
-</ul>
-<span class="incontext"><a href="presentationdiffdiv.html#p-930">Contexte</a></span>
+<span class="incontext"><a href="presentationrectangles.html#p-930">Contexte</a></span>
 </body>
 </html>

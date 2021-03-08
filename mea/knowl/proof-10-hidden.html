@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:37-05:00    *-->
+<!--*    on 2021-03-08T11:43:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,16 +11,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>La définition du polynôme \(L_i(t)\) se traduit ainsi :</p>
+<body><article class="hiddenproof"><p>Par définition, on a</p>
 <div class="displaymath">
 \begin{equation*}
 L_i(t)=\frac{(t-x_0)\cdots (t-x_{i-1})(t-x_{i+1})\cdots(t-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}.
 \end{equation*}
 </div>
-<p>Le numérateur est le produit de \(n\) facteurs de degré \(1\text{.}\) Il s'agit donc d'un polynôme de degré \(n\text{.}\)</p>
-<p>Comme les \(x_j\) sont distincts deux à deux, le dénominateur est un nombre réel non nul.</p>
-<p>Chaque polynôme \(L_i(t)\) est donc un polynôme de degré \(n\text{.}\)</p>
-<p>Si \(k\neq i\text{,}\) alors \(t-x_k\) est l'un de facteurs du numérateur de \(L_i(t)\text{.}\) Donc</p>
+<p>Le numérateur est le produit de \(n\) facteurs de degré \(1\) : il s'agit donc d'un polynôme de degré \(n\text{.}\) Comme les \(x_j\) sont distincts deux à deux, le dénominateur est un nombre réel non nul. Chaque polynôme \(L_i(t)\) est donc un polynôme de degré \(n\text{.}\)</p>
+<ul class="disc">
+<li>
+<p>En ce qui concerne \(L_i(x_i)\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+L_i(x_i)&amp;=\frac{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=1.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Pour tout \(k\neq i\text{,}\) on voit que \(t-x_k\) est l'un de facteurs du numérateur de \(L_i(t)\text{,}\) d'où</p>
 <div class="displaymath">
 \begin{align*}
 L_i(x_k)&amp;=\frac{(x_k-x_0)\cdots (x_k-x_k)\cdots(x_k-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
@@ -28,11 +37,6 @@ L_i(x_k)&amp;=\frac{(x_k-x_0)\cdots (x_k-x_k)\cdots(x_k-x_n)}{(x_i-x_0)\cdots (x
 &amp;=0.
 \end{align*}
 </div>
-<p>Enfin, il reste à évaluer \(L_i(x_i)\text{,}\) ce qui donne</p>
-<div class="displaymath">
-\begin{align*}
-L_i(x_i)&amp;=\frac{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
-&amp;=1.
-\end{align*}
-</div></article></body>
+</li>
+</ul></article></body>
 </html>

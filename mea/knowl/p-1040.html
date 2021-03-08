@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:14-05:00    *-->
+<!--*    on 2021-03-08T11:44:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,10 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li><p>Déterminez la forme de Newton du polynôme interpolateur des quatre points pour lesquels les données sont connues.</p></li>
-<li><p>Utilisez le polynôme interpolateur pour estimer la donnée manquante.</p></li>
-</ol>
-<span class="incontext"><a href="exercicesdiffdiv.html#p-1040">Contexte</a></span>
+<p>La méthode des trapèzes consiste à remplacer chacun de ces \(n\) rectangles par le trapèze de bases \(f(x_{k-1})\) et \(f(x_k)\text{,}\) et de hauteur \(\Delta x\text{,}\) ce qui donne</p>
+<div class="displaymath">
+\begin{align*}
+\text{Aire trapèze}&amp;=\frac{(\text{Base 1 + Base 2})\cdot\text{Hauteur}}{2}\\
+&amp; =\frac{(f(x_{k-1})+f(x_k))\cdot\Delta x}{2}\\
+&amp; =\frac{\Delta x}{2}\cdot (f(x_{k-1})+f(x_k))
+\end{align*}
+</div>
+<span class="incontext"><a href="presentationtrapezes.html#p-1040">Contexte</a></span>
 </body>
 </html>

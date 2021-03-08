@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:21-05:00    *-->
+<!--*    on 2021-03-08T11:44:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,86 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Appliquons la méthode des rectangles à gauche à l'intégrale</p>
+<p>On s'intéresse à l'intégrale définie suivante :</p>
 <div class="displaymath">
 \begin{equation*}
-\int_0^1e^{-x^2}\mathrm{d}x
+\int_0^1\sin(x^2)\mathrm{d}x.
 \end{equation*}
 </div>
-<p data-braille="continuation">avec cent mille rectangles.</p>
-<ul class="disc">
-<li><p>Notons \(f(x)=e^{-x^2}\text{.}\)</p></li>
-<li><p>Soit \(n=100\,000=10^5\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{10^5}=10^{-5}\text{.}\)</p></li>
-<li><p>Alors \(x_k=a+k\cdot\Delta x=k\cdot 10^{-5}\) pour \(k=0,\ldots,10^5\text{.}\)</p></li>
-<li>
-<p>La subdivision régulière de l'intervalle \([0;1]\) à considérer est donc la suivante :</p>
-<div class="displaymath">
-\begin{equation*}
-0&lt;10^{-5}&lt;2\cdot 10^{-5}&lt;3\cdot 10^{-5}&lt;\ldots&lt;99\,999\cdot 10^{-5}&lt;1
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Par la méthode des rectangles à gauche, on obtient</p>
-<div class="displaymath">
-\begin{align*}
-\text{Approximation}&amp;=10^{-5}\cdot\left(f(0)+f\left(10^{-5}\right)+\cdots+f\left(99\,999\cdot 10^{-5}\right)\right)\\
-&amp;=0{,}746\,830\,972\,20\ldots
-\end{align*}
-</div>
-<p data-braille="continuation">en utilisant l'algorithme de la section <a href="algorithmerectangles.html" class="internal" title="Section 8.2: Algorithme">8.2</a>.</p>
-<p>On a donc</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}746\,83\leq\text{Approximation}\leq 0{,}746\,84.
-\end{equation*}
-</div>
-</li>
-<li><p>Comme on l'a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_rectangles.html" title="Exemple 8.1.12">8.1.12</a>, on peut prendre \(M=2\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>.</p></li>
-<li>
-<p>Comme on l'a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_nombre_minimum_rectangles.html" title="Exemple 8.1.14">8.1.14</a>, on obtient alors l'estimation suivante :</p>
-<div class="displaymath">
-\begin{equation*}
-|\text{Erreur}|\leq 10^{-5}=0{,}000\,01\quad\Leftrightarrow\quad -0{,}000\,01\leq\text{Erreur}\leq 0{,}000\,01.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>En additionnant les inéquations qui précèdent, on obtient</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}746\,83-0{,}000\,01\leq\text{Approximation}+\text{Erreur}\leq 0{,}746\,84+0{,}000\,01
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}746\,82\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 0{,}746\,84.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>On en conclut que</p>
-<div class="displaymath">
-\begin{equation*}
-\int_0^1e^{-x^2}\mathrm{d}x=0{,}746\,8\ldots
-\end{equation*}
-</div>
-<p data-braille="continuation">ainsi que</p>
-<div class="displaymath">
-\begin{equation*}
-\int_0^1e^{-x^2}\mathrm{d}x\approx 0{,}746\,8.
-\end{equation*}
-</div>
-<p>Sachant que la valeur exacte est</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}746\,824\,132\ldots
-\end{equation*}
-</div>
-<p data-braille="continuation">les quatre décimales obtenues sont correctes.</p>
-</li>
-</ul>
-<span class="incontext"><a href="presentationrectangles.html#p-1126">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#p-1126">Contexte</a></span>
 </body>
 </html>

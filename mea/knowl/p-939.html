@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:04-05:00    *-->
+<!--*    on 2021-03-08T11:44:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,17 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</p>
-<span class="incontext"><a href="algorithmediffdiv.html#p-939">Contexte</a></span>
+<p>Ainsi</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
+&amp;\leq\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(x_{k-1}))\mathrm{d}x\right|\\
+&amp;=\sum_{k=1}^n\frac{M(\Delta x)^2}{2}\\
+&amp;=\sum_{k=1}^n\frac{M(b-a)^2}{2n^2}\\
+&amp;=n\cdot\frac{M(b-a)^2}{2n^2}\\
+&amp;=\frac{M(b-a)^2}{2n}.
+\end{align*}
+</div>
+<span class="incontext"><a href="presentationrectangles.html#p-939">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:35-05:00    *-->
+<!--*    on 2021-03-08T11:43:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Comme la dérivée de la fonction</p>
+<p>Par la méthode de Cramer, on obtient</p>
 <div class="displaymath">
 \begin{equation*}
-g(t)=2t+1-e^t
+a_0=\frac{\begin{vmatrix}-3&amp;1\\7&amp;2\end{vmatrix}}{\begin{vmatrix}1&amp;1\\1&amp;2\end{vmatrix}}=\frac{-13}{1}=-13
+\quad\text{et}\quad
+a_1=\frac{\begin{vmatrix}1&amp;-3\\1&amp;7\end{vmatrix}}{\begin{vmatrix}1&amp;1\\1&amp;2\end{vmatrix}}=\frac{10}{1}=10,
 \end{equation*}
 </div>
-<p data-braille="continuation">vaut \(g'(t)=2-e^t\text{,}\) on a le tableau de variations qui suit.</p>
+<p data-braille="continuation">et on en conclut que l'unique solution de ce problème est le polynôme</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{c|ccccccc}
-x&amp;0&amp;&amp;&amp;&amp;\ln(2)&amp;&amp;&amp;&amp;1&amp;\\
-\hline
-g'(t)&amp;&amp;&amp;+&amp;&amp;0&amp;&amp;-&amp;&amp;+&amp;\\
-\hline
-g(t)&amp;0&amp;&amp;\nearrow&amp;&amp;&amp;&amp;\searrow&amp;&amp;3-e&amp;
-\end{array}
+P(t)=-13+10t.
 \end{equation*}
 </div>
-<p data-braille="continuation">On en déduit que \(g(t)\ge 0\text{,}\) d'où \(2t\ge e^t-1\) pour tout \(t\in[0;1]\text{.}\)</p>
-<span class="incontext"><a href="exercicesnewton.html#p-648">Contexte</a></span>
+<span class="incontext"><a href="presentationlagrange.html#p-648">Contexte</a></span>
 </body>
 </html>

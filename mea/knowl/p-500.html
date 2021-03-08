@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:20-05:00    *-->
+<!--*    on 2021-03-08T11:43:25-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Comme \(\sqrt{2}=1{,}414\,213\,562\ldots\text{,}\) trois itérations ont suffi pour obtenir cinq décimales correctes du zéro \(c=\sqrt{2}\) de \(f(x)=x^2-2\text{.}\)</p>
+<ul class="disc">
+<li>Objectif : Obtenir des approximations d'un zéro \(c\) de la fonction \(f\text{.}\)</li>
+<li>
+<p>Hypothèses : On suppose que la fonction \(f\) est deux fois dérivable et que \(f''\) est continue autour de \(c\text{,}\) ainsi que</p>
+<div class="displaymath">
+\begin{equation*}
+f'(c)\neq 0.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Principe : Choisir une valeur initiale \(x_0\) assez proche de \(c\text{,}\) et appliquer la formule de récurrence</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}
+\end{equation*}
+</div>
+<p data-braille="continuation">autant de fois que désiré.</p>
+</li>
+<li>Précision : Le nombre de décimales exactes obtenues via l'approximation de \(c\) par \(x_n\) double grosso modo à chaque itération.</li>
+<li>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1rn77nSLrjoZnc63BLKJmpv4pwiL2fYJc/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
+</ul>
 <span class="incontext"><a href="presentationnewton.html#p-500">Contexte</a></span>
 </body>
 </html>

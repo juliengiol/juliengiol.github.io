@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:36-05:00    *-->
+<!--*    on 2021-03-08T11:43:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,10 +13,38 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Alors il existe un unique polynôme réel \(P(t)\) de degré \(n\) au plus qui passe par tous ces points, c'est-à-dire tel que</p>
+<p>Par la méthode de Gauss-Jordan, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+\begin{bmatrix}
+1&amp;1&amp;1&amp;-3\\
+1&amp;2&amp;4&amp;7\\
+1&amp;3&amp;9&amp;0
+\end{bmatrix}
+&amp;\sim
+\begin{bmatrix}
+1&amp;1&amp;1&amp;-3\\
+0&amp;1&amp;3&amp;10\\
+0&amp;2&amp;8&amp;3
+\end{bmatrix}\\
+&amp;\sim
+\begin{bmatrix}
+1&amp;0&amp;-2&amp;-13\\
+0&amp;1&amp;3&amp;10\\
+0&amp;0&amp;2&amp;-17
+\end{bmatrix}\\
+&amp;\sim
+\begin{bmatrix}
+1&amp;0&amp;0&amp;-30\\
+0&amp;1&amp;0&amp;71/2\\
+0&amp;0&amp;1&amp;-17/2
+\end{bmatrix}
+\end{align*}
+</div>
+<p data-braille="continuation">et on en conclut que l'unique solution de ce problème est le polynôme</p>
 <div class="displaymath">
 \begin{equation*}
-P(x_i)=y_i\qquad\text{pour tout}\; i=0,1,\ldots,n.
+P(t)=-30+\frac{71}{2}t-\frac{17}{2}t^2.
 \end{equation*}
 </div>
 <span class="incontext"><a href="presentationlagrange.html#p-651">Contexte</a></span>

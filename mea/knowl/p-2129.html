@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:38:07-05:00    *-->
+<!--*    on 2021-03-08T11:46:40-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,15 +10,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>En général, la théorie nous permet d'obtenir une estimation du genre suivant :</p>
-<div class="displaymath">
-\begin{equation*}
-\left|\text{Erreur}\right|\leq M\qquad\Leftrightarrow\qquad -M\leq\text{Erreur}\leq M.
-\end{equation*}
-</div>
-<span class="incontext"><a href="intervalle_encadrement.html#p-2129">Contexte</a></span>
+<p>Parcourir les éléments d'une liste avec <code class="code-inline tex2jax_ignore">for</code> ... <code class="code-inline tex2jax_ignore">in</code> : <div class="sagecell-python" id="sage-81"><script type="text/x-sage">maListe = [3, -7, 'chat', True, 3.14]
+for element in maListe:
+    print(element)
+</script></div></p>
+<span class="incontext"><a href="python_types.html#p-2129">Contexte</a></span>
 </body>
 </html>

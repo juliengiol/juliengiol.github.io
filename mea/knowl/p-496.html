@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:20-05:00    *-->
+<!--*    on 2021-03-08T11:43:25-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,49 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Raisonnons par l'absurde et supposons que \(c&lt;\ell\text{.}\) Notons alors que</p>
+<p>on obtient :</p>
 <div class="displaymath">
-\begin{equation*}
-\lim_{n\rightarrow+\infty}x_{n+1}=\lim_{n\rightarrow+\infty}x_n=\ell,
-\end{equation*}
+\begin{align*}
+x_0&amp;=-2;\\
+x_1&amp;=\frac{x_0}{2}+\frac{3}{2x_0}=-1-\frac{3}{4}=-\frac{7}{4}=-1{,}75;\\
+x_2&amp;=\frac{x_1}{2}+\frac{3}{2x_1}=-\frac{7}{8}-\frac{6}{7}=-\frac{97}{56}=-1{,}732\,142\,857\,142\,8\ldots;\\
+x_3&amp;=\frac{x_2}{2}+\frac{3}{2x_2}=-\frac{97}{112}-\frac{84}{97}=-\frac{18817}{10864}=-1{,}732\,050\,810\,014\,7\ldots.
+\end{align*}
 </div>
-<p data-braille="continuation">puis que</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{n\rightarrow+\infty}f(x_n)=f(\ell)
-\end{equation*}
-</div>
-<p data-braille="continuation">par la continuité de \(f\) en \(\ell\) (qui découle de sa dérivabilité en ce point), et enfin que</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{n\rightarrow+\infty}f'(x_n)=f'(\ell)&gt;0
-\end{equation*}
-</div>
-<p data-braille="continuation">par la continuité de \(f'\) en \(\ell\) (qui découle de sa dérivabilité en ce point). En faisant tendre \(n\) vers l'infini dans la relation de récurrence</p>
-<div class="displaymath">
-\begin{equation*}
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)},
-\end{equation*}
-</div>
-<p data-braille="continuation">on obtient donc</p>
-<div class="displaymath">
-\begin{equation*}
-\ell=\ell-\frac{f(\ell)}{f'(\ell)},
-\end{equation*}
-</div>
-<p data-braille="continuation">d'où</p>
-<div class="displaymath">
-\begin{equation*}
-f(\ell)=0.
-\end{equation*}
-</div>
-<p data-braille="continuation">Mais par ailleurs, la formule de Taylor-Lagrange pour \(n=0\) (voir exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>) entraîne l'existence de \(\xi\in\;]c;\ell[\) tel que</p>
-<div class="displaymath">
-\begin{equation*}
-f(\ell)=\cancel{f(c)}+f'(\xi)(\ell-c)&gt;0,
-\end{equation*}
-</div>
-<p data-braille="continuation">d'où la contradiction.</p>
 <span class="incontext"><a href="presentationnewton.html#p-496">Contexte</a></span>
 </body>
 </html>

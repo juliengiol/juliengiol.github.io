@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:21-05:00    *-->
+<!--*    on 2021-03-08T11:43:26-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Principe : Choisir une valeur initiale \(x_0\) assez proche de \(c\text{,}\) et appliquer la formule de récurrence</p>
+<p>On vérifie que la dérivée de \(\phi\) vaut</p>
 <div class="displaymath">
 \begin{equation*}
-x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}
+\phi'(s)=\frac{f''(s)}{f'(s)}\cdot\frac{f(s)}{f'(s)}
 \end{equation*}
 </div>
-<p data-braille="continuation">autant de fois que désiré.</p>
+<p data-braille="continuation">pour déduire du point précédent et de l'hypothèse sur \(M\) que</p>
+<div class="displaymath">
+\begin{align*}
+|\phi'(s)|&amp;=\frac{|f''(s)|}{|f'(s)|}\cdot\frac{f(s)}{f'(s)}\\
+&amp;\le 2M\cdot (s-c)
+\end{align*}
+</div>
+<p data-braille="continuation">pour tout \(s\in\;]c;c+r]\text{.}\)</p>
 <span class="incontext"><a href="presentationnewton.html#p-511">Contexte</a></span>
 </body>
 </html>

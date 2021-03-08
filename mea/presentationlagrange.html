@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:34:15-05:00    *-->
+<!--*    on 2021-03-08T11:42:01-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -218,26 +218,27 @@ MathJax.Hub.Config({
 <a href="presentationlagrange.html" class="permalink">¶</a><article class="theorem theorem-like" id="basedelinterpolation"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-650">Soit \(n\geq 0\) un entier et</p>
+<p id="p-640">Soit \(n\geq 0\) un entier et</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(x_0;y_0),\;A_1=(x_1;y_1),\;\ldots,\;A_n=(x_n;y_n)\;\in\mathbb{R}^2
 \end{equation*}
 </div>
 <p data-braille="continuation">\(n+1\) points d'abscisses distinctes deux à deux.</p>
-<p id="p-651">Alors il existe un unique polynôme réel \(P(t)\) de degré \(n\) au plus qui passe par tous ces points, c'est-à-dire tel que</p>
+<p id="p-641">Alors il existe un unique polynôme réel \(P(t)\) de degré \(n\) au plus qui passe par tous ces points, i.e.</p>
 <div class="displaymath">
 \begin{equation*}
-P(x_i)=y_i\qquad\text{pour tout}\; i=0,1,\ldots,n.
+P(x_k)=y_k\quad\text{pour tout}\;k=0,1,\ldots,n.
 \end{equation*}
 </div>
-<p id="p-652">On appelle ce polynôme le polynôme interpolateur des points \(A_0,A_1,\ldots,A_n\text{.}\)</p></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref original" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-653">Un polynôme réel \(P(t)\) de degré \(n\) au plus s'écrit</p>
+<p id="p-642">On appelle ce polynôme le <em class="emphasis">polynôme interpolateur</em> des points \(A_0,A_1,\ldots,A_n\text{.}\)</p></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref original" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-643">Un polynôme réel \(P(t)\) de degré \(n\) au plus s'écrit</p>
 <div class="displaymath">
 \begin{equation*}
-P(t)=a_0+a_1t+\cdots+a_nt^n\qquad\text{où}\; a_0,a_1,\ldots,a_n\in\mathbb{R}.
+P(t)=a_0+a_1t+\cdots+a_nt^n
 \end{equation*}
 </div>
-<p id="p-654">Les conditions \(P(x_i)=y_i\) pour tout \(i=0,1,\ldots,n\) sont alors équivalentes au système linéaire de \(n+1\) équations suivant, où les \(n+1\) inconnues sont les coefficients \(a_0,\ldots,a_n\) du polynôme cherché.</p>
+<p data-braille="continuation">avec \(a_0,a_1,\ldots,a_n\in\mathbb{R}\text{.}\)</p>
+<p id="p-644">Les conditions \(P(x_k)=y_k\) pour tout \(k=0,1,\ldots,n\) sont alors équivalentes au système linéaire de \(n+1\) équations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{cases}
@@ -249,7 +250,8 @@ a_0&amp;+&amp;a_1x_n&amp;+&amp;a_2x_n^2&amp;+&amp;\cdots&amp;+&amp;a_nx_n^n&amp;
 \end{cases}
 \end{equation*}
 </div>
-<p id="p-655">La matrice des coefficients de ce système est une <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde" target="_blank">matrice de Vandermonde</a> \((n+1)\times(n+1)\) :</p>
+<p data-braille="continuation">où les \(n+1\) inconnues sont les coefficients \(a_0,\ldots,a_n\) du polynôme cherché.</p>
+<p id="p-645">La matrice des coefficients de ce système</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -261,34 +263,22 @@ a_0&amp;+&amp;a_1x_n&amp;+&amp;a_2x_n^2&amp;+&amp;\cdots&amp;+&amp;a_nx_n^n&amp;
 \end{bmatrix}
 \end{equation*}
 </div>
-<p id="p-656">Son <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde#D%C3%A9terminant" target="_blank">déterminant</a> vaut</p>
+<p data-braille="continuation">est une <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde" target="_blank">matrice de Vandermonde</a> de taille \((n+1)\times(n+1)\text{,}\) dont le <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde#D%C3%A9terminant" target="_blank">déterminant</a> vaut</p>
 <div class="displaymath">
 \begin{equation*}
-\prod_{0\leq i&lt;j\leq n}(x_j-x_i).
+\prod_{0\le i&lt;j\leq n}(x_j-x_i).
 \end{equation*}
 </div>
-<p id="p-657">Comme les \(x_i\) sont distincts deux à deux, on a \(x_i\neq x_j\) et donc</p>
-<div class="displaymath">
-\begin{equation*}
-x_j-x_i\neq 0\qquad\text{pour tout}\; 0\leq i&lt;j\leq n.
-\end{equation*}
-</div>
-<p id="p-658">On en déduit que le déterminant du système est non nul, c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-\prod_{0\leq i&lt;j\leq n}(x_j-x_i)\neq 0.
-\end{equation*}
-</div>
-<p id="p-659">Il en découle que la matrice du système est inversible. Par conséquent, le système admet une unique solution \((a_0,\ldots,a_n)\text{.}\)</p></article></div>
+<p data-braille="continuation">Comme les \(x_k\) sont supposés distincts deux à deux, i.e. \(x_i\ne x_j\) pour tous \(i\ne j\text{,}\) on voit que ce déterminant est non nul, ce qui entraîne que le système admet une unique solution \((a_0,\ldots,a_n)\text{.}\)</p></article></div>
 <article class="example example-like" id="avantlagrange1"><a data-knowl="" class="id-ref original" data-refid="hk-avantlagrange1"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-avantlagrange1"><article class="example example-like"><p id="p-660">Déterminons le polynôme interpolateur \(P(t)\) des deux points suivants :</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-avantlagrange1"><article class="example example-like"><p id="p-646">Déterminons le polynôme interpolateur \(P(t)\) des deux points suivants :</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(1;-3)\;\text{et}\; A_1=(2;7).
 \end{equation*}
 </div>
-<p id="p-661">On cherche donc deux nombres réels \(a_0,a_1\) tels que</p>
+<p id="p-647">On cherche donc deux nombres réels \(a_0,a_1\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
 P(t)=a_0+a_1t
@@ -297,24 +287,27 @@ P(t)=a_0+a_1t
 <p data-braille="continuation">et</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{cases}
-P(1)=-3\\
-P(2)=7
-\end{cases}
-\Leftrightarrow
-\begin{cases}
-a_0&amp;+&amp;a_1&amp;=&amp;-3\\
-a_0&amp;+&amp;2a_1&amp;=&amp;7
-\end{cases}
+\begin{cases}P(1)=-3,\\P(2)=7,\end{cases}
 \end{equation*}
 </div>
-<p id="p-662">Ce système peut se résoudre par la méthode de Cramer :</p>
+<p data-braille="continuation">ce qui équivaut à résoudre le système</p>
 <div class="displaymath">
 \begin{equation*}
-a_0=\frac{\begin{vmatrix}-3&amp;1\\7&amp;2\end{vmatrix}}{\begin{vmatrix}1&amp;1\\1&amp;2\end{vmatrix}}=\frac{-13}{1}=-13\qquad\text{et}\qquad a_1=\frac{\begin{vmatrix}1&amp;-3\\1&amp;7\end{vmatrix}}{\begin{vmatrix}1&amp;1\\1&amp;2\end{vmatrix}}=\frac{10}{1}=10.
+\begin{cases}
+a_0&amp;+&amp;a_1&amp;=&amp;-3,\\
+a_0&amp;+&amp;2a_1&amp;=&amp;7.
+\end{cases}
 \end{equation*}
 </div>
-<p id="p-663">Comme annoncé par le théorème <a class="xref" data-knowl="./knowl/basedelinterpolation.html" title="Théorème 6.1.1">6.1.1</a>, il y a bien une unique solution :</p>
+<p id="p-648">Par la méthode de Cramer, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+a_0=\frac{\begin{vmatrix}-3&amp;1\\7&amp;2\end{vmatrix}}{\begin{vmatrix}1&amp;1\\1&amp;2\end{vmatrix}}=\frac{-13}{1}=-13
+\quad\text{et}\quad
+a_1=\frac{\begin{vmatrix}1&amp;-3\\1&amp;7\end{vmatrix}}{\begin{vmatrix}1&amp;1\\1&amp;2\end{vmatrix}}=\frac{10}{1}=10,
+\end{equation*}
+</div>
+<p data-braille="continuation">et on en conclut que l'unique solution de ce problème est le polynôme</p>
 <div class="displaymath">
 \begin{equation*}
 P(t)=-13+10t.
@@ -322,13 +315,13 @@ P(t)=-13+10t.
 </div></article></div>
 <article class="example example-like" id="avantlagrange2"><a data-knowl="" class="id-ref original" data-refid="hk-avantlagrange2"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-avantlagrange2"><article class="example example-like"><p id="p-664">Déterminons le polynôme interpolateur \(P(t)\) des trois points suivants :</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-avantlagrange2"><article class="example example-like"><p id="p-649">Déterminons le polynôme interpolateur \(P(t)\) des trois points suivants :</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(1;-3),\; A_1=(2;7)\;\text{et}\; A_2=(3;0).
 \end{equation*}
 </div>
-<p id="p-665">On cherche donc trois nombres réels \(a_0,a_1,a_2\) tels que</p>
+<p id="p-650">On cherche donc trois nombres réels \(a_0,a_1,a_2\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
 P(t)=a_0+a_1t+a_2t^2
@@ -337,20 +330,20 @@ P(t)=a_0+a_1t+a_2t^2
 <p data-braille="continuation">et</p>
 <div class="displaymath">
 \begin{equation*}
+\begin{cases}P(1)=-3,\\P(2)=7,\\P(3)=0,\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">ce qui équivaut à résoudre le système</p>
+<div class="displaymath">
+\begin{equation*}
 \begin{cases}
-P(1)=-3\\
-P(2)=7\\
-P(3)=0
-\end{cases}
-\Leftrightarrow
-\begin{cases}
-a_0&amp;+&amp;a_1&amp;+&amp;a_2&amp;=&amp;-3\\
-a_0&amp;+&amp;2a_1&amp;+&amp;4a_2&amp;=&amp;7\\
-a_0&amp;+&amp;3a_1&amp;+&amp;9a_2&amp;=&amp;0\\
+a_0&amp;+&amp;a_1&amp;+&amp;a_2&amp;=&amp;-3,\\
+a_0&amp;+&amp;2a_1&amp;+&amp;4a_2&amp;=&amp;7,\\
+a_0&amp;+&amp;3a_1&amp;+&amp;9a_2&amp;=&amp;0.\\
 \end{cases}
 \end{equation*}
 </div>
-<p id="p-666">Résolvons ce système par la méthode de Gauss-Jordan.</p>
+<p id="p-651">Par la méthode de Gauss-Jordan, on obtient</p>
 <div class="displaymath">
 \begin{align*}
 \begin{bmatrix}
@@ -378,45 +371,53 @@ a_0&amp;+&amp;3a_1&amp;+&amp;9a_2&amp;=&amp;0\\
 \end{bmatrix}
 \end{align*}
 </div>
-<p id="p-667">L'unique solution de ce problème est donc le polynôme suivant :</p>
+<p data-braille="continuation">et on en conclut que l'unique solution de ce problème est le polynôme</p>
 <div class="displaymath">
 \begin{equation*}
 P(t)=-30+\frac{71}{2}t-\frac{17}{2}t^2.
 \end{equation*}
 </div></article></div>
-<p id="p-668">Nous allons maintenant voir une autre façon de traiter ces problèmes qui évite d'avoir à résoudre un système linéaire : l'interpolation de Lagrange.</p>
-<p id="p-669">Toute la subtilité de cette méthode réside dans le lemme technique suivant.</p>
+<p id="p-652">Nous allons maintenant voir une façon de calculer un polynôme interpolateur qui évite d'avoir à résoudre un système linéaire : l'interpolation de Lagrange. Cette méthode astucieuse repose sur le lemme technique suivant.</p>
 <article class="lemma theorem-like" id="basedelagrange"><h6 class="heading">
 <span class="type">Lemme</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span>
 </h6>
-<p id="p-670">Soit \(n\geq 0\) un entier et</p>
+<p id="p-653">Soit \(n\geq 0\) un entier et</p>
 <div class="displaymath">
 \begin{equation*}
 x_0,\;x_1,\;\ldots,\;x_n\;\in\mathbb{R}
 \end{equation*}
 </div>
 <p data-braille="continuation">\(n+1\) nombres réels distincts deux à deux.</p>
-<p id="p-671">Considérons les \(n+1\) polynômes réels \(L_i(t)\) de degré \(n\) définis pour \(0\leq i\leq n\) par</p>
+<p id="p-654">Considérons les \(n+1\) polynômes réels \(L_i(t)\) de degré \(n\) définis pour \(0\leq i\leq n\) par</p>
 <div class="displaymath">
 \begin{equation*}
-L_i(t)=\prod_{j\neq i}\frac{t-x_j}{x_i-x_j}.
+L_i(t):=\prod_{j\neq i}\frac{t-x_j}{x_i-x_j}.
 \end{equation*}
 </div>
-<p id="p-672">Pour \(0\leq i,k\leq n\) on a alors</p>
+<p id="p-655">Pour \(0\leq i,k\leq n\text{,}\) on a alors</p>
 <div class="displaymath">
 \begin{equation*}
-L_i(x_k)=\begin{cases}1&amp;\text{si}\;k=i\;;\\0&amp;\text{si}\;k\neq i.\end{cases}
+L_i(x_k)=\begin{cases}1&amp;\text{si}\;k=i\;;\\0&amp;\text{si}\;k\ne i.\end{cases}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref original" data-refid="hk-proof-10"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><p id="p-673">La définition du polynôme \(L_i(t)\) se traduit ainsi :</p>
+</div></article><article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref original" data-refid="hk-proof-10"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><p id="p-656">Par définition, on a</p>
 <div class="displaymath">
 \begin{equation*}
 L_i(t)=\frac{(t-x_0)\cdots (t-x_{i-1})(t-x_{i+1})\cdots(t-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}.
 \end{equation*}
 </div>
-<p id="p-674">Le numérateur est le produit de \(n\) facteurs de degré \(1\text{.}\) Il s'agit donc d'un polynôme de degré \(n\text{.}\)</p>
-<p id="p-675">Comme les \(x_j\) sont distincts deux à deux, le dénominateur est un nombre réel non nul.</p>
-<p id="p-676">Chaque polynôme \(L_i(t)\) est donc un polynôme de degré \(n\text{.}\)</p>
-<p id="p-677">Si \(k\neq i\text{,}\) alors \(t-x_k\) est l'un de facteurs du numérateur de \(L_i(t)\text{.}\) Donc</p>
+<p id="p-657">Le numérateur est le produit de \(n\) facteurs de degré \(1\) : il s'agit donc d'un polynôme de degré \(n\text{.}\) Comme les \(x_j\) sont distincts deux à deux, le dénominateur est un nombre réel non nul. Chaque polynôme \(L_i(t)\) est donc un polynôme de degré \(n\text{.}\)</p>
+<ul class="disc">
+<li id="li-443">
+<p id="p-658">En ce qui concerne \(L_i(x_i)\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+L_i(x_i)&amp;=\frac{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
+&amp;=1.
+\end{align*}
+</div>
+</li>
+<li id="li-444">
+<p id="p-659">Pour tout \(k\neq i\text{,}\) on voit que \(t-x_k\) est l'un de facteurs du numérateur de \(L_i(t)\text{,}\) d'où</p>
 <div class="displaymath">
 \begin{align*}
 L_i(x_k)&amp;=\frac{(x_k-x_0)\cdots (x_k-x_k)\cdots(x_k-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
@@ -424,16 +425,11 @@ L_i(x_k)&amp;=\frac{(x_k-x_0)\cdots (x_k-x_k)\cdots(x_k-x_n)}{(x_i-x_0)\cdots (x
 &amp;=0.
 \end{align*}
 </div>
-<p id="p-678">Enfin, il reste à évaluer \(L_i(x_i)\text{,}\) ce qui donne</p>
-<div class="displaymath">
-\begin{align*}
-L_i(x_i)&amp;=\frac{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}{(x_i-x_0)\cdots (x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}\\
-&amp;=1.
-\end{align*}
-</div></article></div>
+</li>
+</ul></article></div>
 <article class="example example-like" id="polysdelagrange1"><a data-knowl="" class="id-ref original" data-refid="hk-polysdelagrange1"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-polysdelagrange1"><article class="example example-like"><p id="p-679">Si \(x_0=1\) et \(x_1=2\text{,}\) alors le lemme <a class="xref" data-knowl="./knowl/basedelagrange.html" title="Lemme 6.1.4">6.1.4</a> définit les deux polynômes</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-polysdelagrange1"><article class="example example-like"><p id="p-660">Si \(x_0=1\) et \(x_1=2\text{,}\) alors le lemme <a class="xref" data-knowl="./knowl/basedelagrange.html" title="Lemme 6.1.4">6.1.4</a> définit les deux polynômes</p>
 <div class="displaymath">
 \begin{equation*}
 L_0(t)=\frac{t-x_1}{x_0-x_1}=\frac{t-2}{1-2}=(-1)(t-2)
@@ -442,17 +438,17 @@ L_0(t)=\frac{t-x_1}{x_0-x_1}=\frac{t-2}{1-2}=(-1)(t-2)
 <p data-braille="continuation">et</p>
 <div class="displaymath">
 \begin{equation*}
-L_1(t)=\frac{t-x_0}{x_1-x_0}=\frac{t-1}{2-1}=t-1.
+L_1(t)=\frac{t-x_0}{x_1-x_0}=\frac{t-1}{2-1}=t-1,
 \end{equation*}
 </div>
-<p id="p-680">On vérifie bien que</p>
+<p data-braille="continuation">et on a bien</p>
 <ul class="disc">
-<li id="li-443"><p id="p-681">\(L_0(x_0)=L_0(1)=1\) et \(L_0(x_1)=L_0(2)=0\text{;}\)</p></li>
-<li id="li-444"><p id="p-682">\(L_1(x_0)=L_1(1)=0\) et \(L_1(x_1)=L_1(2)=1\text{.}\)</p></li>
+<li id="li-445">\(L_0(x_0)=L_0(1)=1\) et \(L_0(x_1)=L_0(2)=0\text{;}\)</li>
+<li id="li-446">\(L_1(x_0)=L_1(1)=0\) et \(L_1(x_1)=L_1(2)=1\text{.}\)</li>
 </ul></article></div>
 <article class="example example-like" id="polysdelagrange2"><a data-knowl="" class="id-ref original" data-refid="hk-polysdelagrange2"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">6.1.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-polysdelagrange2"><article class="example example-like"><p id="p-683">Si \(x_0=1\text{,}\) \(x_1=2\) et \(x_2=3\text{,}\) alors le lemme <a class="xref" data-knowl="./knowl/basedelagrange.html" title="Lemme 6.1.4">6.1.4</a> définit les trois polynômes</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-polysdelagrange2"><article class="example example-like"><p id="p-661">Si \(x_0=1\text{,}\) \(x_1=2\) et \(x_2=3\text{,}\) alors le lemme <a class="xref" data-knowl="./knowl/basedelagrange.html" title="Lemme 6.1.4">6.1.4</a> définit les trois polynômes</p>
 <div class="displaymath">
 \begin{equation*}
 L_0(t)=\frac{(t-x_1)(t-x_2)}{(x_0-x_1)(x_0-x_2)}=\frac{(t-2)(t-3)}{(1-2)(1-3)}=\frac{1}{2}(t-2)(t-3),
@@ -466,29 +462,29 @@ L_1(t)=\frac{(t-x_0)(t-x_2)}{(x_1-x_0)(x_1-x_2)}=\frac{(t-1)(t-3)}{(2-1)(2-3)}=(
 <p data-braille="continuation">et</p>
 <div class="displaymath">
 \begin{equation*}
-L_2(t)=\frac{(t-x_0)(t-x_1)}{(x_2-x_0)(x_2-x_1)}=\frac{(t-1)(t-2)}{(3-1)(3-2)}=\frac{1}{2}(t-1)(t-2).
+L_2(t)=\frac{(t-x_0)(t-x_1)}{(x_2-x_0)(x_2-x_1)}=\frac{(t-1)(t-2)}{(3-1)(3-2)}=\frac{1}{2}(t-1)(t-2),
 \end{equation*}
 </div>
-<p id="p-684">On vérifie bien que</p>
+<p data-braille="continuation">et on a bien</p>
 <ul class="disc">
-<li id="li-445"><p id="p-685">\(L_0(x_0)=L_0(1)=1\text{,}\) \(L_0(x_1)=L_0(2)=0\) et \(L_0(x_2)=L_0(3)=0\text{;}\)</p></li>
-<li id="li-446"><p id="p-686">\(L_1(x_0)=L_1(1)=0\text{,}\) \(L_1(x_1)=L_1(2)=1\) et \(L_1(x_2)=L_1(3)=0\text{;}\)</p></li>
-<li id="li-447"><p id="p-687">\(L_2(x_0)=L_2(1)=0\text{,}\) \(L_2(x_1)=L_2(2)=0\) et \(L_2(x_2)=L_2(3)=1\text{.}\)</p></li>
+<li id="li-447">\(L_0(x_0)=L_0(1)=1\text{,}\) \(L_0(x_1)=L_0(2)=0\) et \(L_0(x_2)=L_0(3)=0\text{;}\)</li>
+<li id="li-448">\(L_1(x_0)=L_1(1)=0\text{,}\) \(L_1(x_1)=L_1(2)=1\) et \(L_1(x_2)=L_1(3)=0\text{;}\)</li>
+<li id="li-449">\(L_2(x_0)=L_2(1)=0\text{,}\) \(L_2(x_1)=L_2(2)=0\) et \(L_2(x_2)=L_2(3)=1\text{.}\)</li>
 </ul></article></div>
 <article class="theorem theorem-like" id="interpolationdelagrange"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">6.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Forme de Lagrange du polynôme interpolateur.</span>
 </h6>
-<p id="p-688">Soit \(n\geq 0\) un entier et</p>
+<p id="p-662">Soit \(n\geq 0\) un entier et</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(x_0;y_0),\;A_1=(x_1;y_1),\;\ldots,\;A_n=(x_n;y_n)\;\in\mathbb{R}^2
 \end{equation*}
 </div>
 <p data-braille="continuation">\(n+1\) points d'abscisses distinctes deux à deux.</p>
-<p id="p-689">Alors le polynôme interpolateur de ces points est donné par la formule</p>
+<p id="p-663">Alors le polynôme interpolateur de ces points est donnée par la formule</p>
 <div class="displaymath">
 \begin{equation*}
-L(t)=y_0\,L_0(t)+\cdots+y_n\,L_n(t)
+L(t):=y_0\,L_0(t)+\cdots+y_n\,L_n(t)
 \end{equation*}
 </div>
 <p data-braille="continuation">où</p>
@@ -498,37 +494,37 @@ L_i(t)=\prod_{j\neq i}\frac{t-x_j}{x_i-x_j}
 \end{equation*}
 </div>
 <p data-braille="continuation">pour \(0\leq i\leq n\text{.}\)</p>
-<p id="p-690">On appelle cela la forme de Lagrange du polynôme interpolateur.</p></article><article class="hiddenproof" id="proof-11"><a data-knowl="" class="id-ref original" data-refid="hk-proof-11"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><p id="p-691">Soit \(L(t)=L(t)=y_0\,L_0(t)+\cdots+y_n\,L_n(t)\text{.}\) Nous devons montrer que le polynôme \(L(t)\) est de degré \(n\) au plus, et que \(L(x_i)=y_i\) pour \(i=0,1,\dots,n\text{.}\)</p>
-<p id="p-692">D'après le lemme <a class="xref" data-knowl="./knowl/basedelagrange.html" title="Lemme 6.1.4">6.1.4</a>, les polynômes \(L_i\) sont de degré \(n\) et vérifient</p>
+<p id="p-664">On appelle cela la <em class="emphasis">forme de Lagrange</em> du polynôme interpolateur.</p></article><article class="hiddenproof" id="proof-11"><a data-knowl="" class="id-ref original" data-refid="hk-proof-11"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><p id="p-665">Soit \(L(t):=y_0\,L_0(t)+\cdots+y_n\,L_n(t)\text{.}\) Nous devons montrer que le polynôme \(L(t)\) est de degré \(n\) au plus, et que \(L(x_i)=y_i\) pour \(i=0,1,\dots,n\text{.}\)</p>
+<p id="p-666">D'après le lemme <a class="xref" data-knowl="./knowl/basedelagrange.html" title="Lemme 6.1.4">6.1.4</a>, les polynômes \(L_i\) sont de degré \(n\) et vérifient</p>
 <div class="displaymath">
 \begin{equation*}
-L_i(x_i)=1\qquad\text{et}\qquad L_i(x_k)=0\quad\text{pour tout}\;k\neq i.
+L_i(x_i)=1\quad\text{et}\quad L_i(x_k)=0\quad\text{pour tout}\;k\ne i.
 \end{equation*}
 </div>
-<p id="p-693">Il en découle immédiatement que le polynôme \(L\) est de degré \(n\) au plus, comme combinaison linéaire de polynômes de degré \(n\text{.}\)</p>
-<p id="p-694">Fixons maintenant un indice \(i\text{.}\) Alors</p>
+<p id="p-667">Il en découle immédiatement que le polynôme \(L\) est de degré \(n\) au plus, comme combinaison linéaire de polynômes de degré \(n\text{.}\)</p>
+<p id="p-668">Fixons ensuite un indice \(k\text{,}\) et notons que</p>
 <div class="displaymath">
 \begin{align*}
-L(x_i)&amp;=y_0\,L_0(x_i)+\cdots+y_i\,L_i(x_i)+\cdots+y_n\,L_n(x_i)\\
-&amp;=y_0\cdot 0+\cdots+y_i\cdot 1+\cdots+y_n\cdot 0\\
-&amp;=y_i.
+L(x_k)&amp;=y_0\,L_0(x_k)+\cdots+y_k\,L_k(x_k)+\cdots+y_n\,L_n(x_k)\\
+&amp;=y_0\cdot 0+\cdots+y_k\cdot 1+\cdots+y_n\cdot 0\\
+&amp;=y_k.
 \end{align*}
 </div></article></div>
 <article class="example example-like" id="example-15"><a data-knowl="" class="id-ref original" data-refid="hk-example-15"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">6.1.8</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-15"><article class="example example-like"><p id="p-695">Refaisons l'exemple <a class="xref" data-knowl="./knowl/avantlagrange1.html" title="Exemple 6.1.2">6.1.2</a> en utilisant la forme de Lagrange du polynôme interpolateur des points</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-15"><article class="example example-like"><p id="p-669">Refaisons l'exemple <a class="xref" data-knowl="./knowl/avantlagrange1.html" title="Exemple 6.1.2">6.1.2</a> en utilisant la forme de Lagrange du polynôme interpolateur des points</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(1;-3)\;\text{et}\; A_1=(2;7).
 \end{equation*}
 </div>
-<p id="p-696">D'après l'exemple <a class="xref" data-knowl="./knowl/polysdelagrange1.html" title="Exemple 6.1.5">6.1.5</a>, on a</p>
+<p id="p-670">D'après l'exemple <a class="xref" data-knowl="./knowl/polysdelagrange1.html" title="Exemple 6.1.5">6.1.5</a>, on a</p>
 <div class="displaymath">
 \begin{equation*}
-L_0(t)=(-1)(t-2)\;\text{et}\; L_1(t)=t-1.
+L_0(t)=(-1)(t-2)\;\text{et}\; L_1(t)=t-1,
 \end{equation*}
 </div>
-<p id="p-697">La forme de Lagrange du polynôme interpolateur de \(A_0,A_1\) est donc</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{align*}
 L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)\\
@@ -537,31 +533,31 @@ L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)\\
 &amp;=3(t-2)+7(t-1).
 \end{align*}
 </div>
-<p id="p-698">Notons qu'en développant cette dernière expression, on obtient</p>
+<p id="p-671">Notons qu'en développant cette dernière expression, on retrouve le polynôme</p>
 <div class="displaymath">
 \begin{align*}
 L(t)&amp;=3t-6+7t-7\\
 &amp;=-13+10t
 \end{align*}
 </div>
-<p data-braille="continuation">comme à l'exemple <a class="xref" data-knowl="./knowl/avantlagrange1.html" title="Exemple 6.1.2">6.1.2</a>.</p></article></div>
+<p data-braille="continuation">trouvé à l'exemple <a class="xref" data-knowl="./knowl/avantlagrange1.html" title="Exemple 6.1.2">6.1.2</a>.</p></article></div>
 <article class="example example-like" id="aveclagrange2"><a data-knowl="" class="id-ref original" data-refid="hk-aveclagrange2"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">6.1.9</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-aveclagrange2"><article class="example example-like"><p id="p-699">Refaisons l'exemple <a class="xref" data-knowl="./knowl/avantlagrange2.html" title="Exemple 6.1.3">6.1.3</a> en utilisant la forme de Lagrange du polynôme interpolateur des points</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-aveclagrange2"><article class="example example-like"><p id="p-672">Refaisons l'exemple <a class="xref" data-knowl="./knowl/avantlagrange2.html" title="Exemple 6.1.3">6.1.3</a> en utilisant la forme de Lagrange du polynôme interpolateur des points</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(1;-3),\; A_1=(2;7)\quad\text{et}\; A_2=(3;0).
 \end{equation*}
 </div>
-<p id="p-700">D'après l'exemple <a class="xref" data-knowl="./knowl/polysdelagrange2.html" title="Exemple 6.1.6">6.1.6</a>, on a</p>
+<p id="p-673">D'après l'exemple <a class="xref" data-knowl="./knowl/polysdelagrange2.html" title="Exemple 6.1.6">6.1.6</a>, on a</p>
 <div class="displaymath">
 \begin{align*}
-L_0(t)&amp;=\frac{1}{2}(t-2)(t-3)\;,\\
-L_1(t)&amp;=(-1)(t-1)(t-3)\;,\\
-L_2(t)&amp;=\frac{1}{2}(t-1)(t-2).
+L_0(t)&amp;=\frac{1}{2}(t-2)(t-3),\\
+L_1(t)&amp;=(-1)(t-1)(t-3),\\
+L_2(t)&amp;=\frac{1}{2}(t-1)(t-2),
 \end{align*}
 </div>
-<p id="p-701">La forme de Lagrange du polynôme interpolateur de \(A_0,A_1,\ldots,A_n\) est donc</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{align*}
 L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
@@ -570,7 +566,7 @@ L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
 &amp;=-\frac{3}{2}(t-2)(t-3)-7(t-1)(t-3).
 \end{align*}
 </div>
-<p id="p-702">Notons qu'en développant cette dernière expression, on obtient</p>
+<p id="p-674">Notons qu'en développant cette dernière expression, on retouve le polynôme</p>
 <div class="displaymath">
 \begin{align*}
 L(t)&amp;=-\frac{3}{2}(t^2-5t+6)-7(t^2-4t+3)\\
@@ -578,28 +574,28 @@ L(t)&amp;=-\frac{3}{2}(t^2-5t+6)-7(t^2-4t+3)\\
 &amp;=-30+\frac{71}{2}t-\frac{17}{2}t^2
 \end{align*}
 </div>
-<p data-braille="continuation">comme à l'exemple <a class="xref" data-knowl="./knowl/avantlagrange2.html" title="Exemple 6.1.3">6.1.3</a>.</p></article></div>
-<article class="assemblage assemblage-like" id="assemblage-3"><h6 class="heading"><span class="title">Interpolation de Lagrange : Faire passer un polynôme de degré inférieur ou égal à \(n\) par \(n+1\) points d'abscisses distinctes deux à deux.</span></h6>
-<ul id="p-703" class="disc">
-<li id="li-448"><p id="p-704">Objectif : Étant donné \(n+1\) points \(A_0=(x_0;y_0),\ldots,A_n=(x_n;y_n)\) d'abscisses distinctes deux à deux, déterminer le seul polynôme \(L(t)\) de degré \(n\) au plus qui passe par tous ces points.</p></li>
-<li id="li-449">
-<p id="p-705">Principe : Construire ce polynôme comme combinaison linéaire des polynômes</p>
+<p data-braille="continuation">trouvé à l'exemple <a class="xref" data-knowl="./knowl/avantlagrange2.html" title="Exemple 6.1.3">6.1.3</a>.</p></article></div>
+<article class="assemblage assemblage-like" id="assemblage-3"><h6 class="heading"><span class="title">Interpolation de Lagrange : Faire passer un polynôme de degré \(n\) au plus par \(n+1\) points d'abscisses distinctes deux à deux.</span></h6>
+<ul id="p-675" class="disc">
+<li id="li-450">Objectif : Étant donné \(n+1\) points \(A_0=(x_0;y_0),\ldots,A_n=(x_n;y_n)\) d'abscisses distinctes deux à deux, déterminer le seul polynôme \(L(t)\) de degré \(n\) au plus qui passe par tous ces points.</li>
+<li id="li-451">
+<p id="p-676">Principe : Construire ce polynôme comme combinaison linéaire des polynômes</p>
 <div class="displaymath">
 \begin{equation*}
-L_i(t)=\prod_{j\neq i}\frac{t-x_j}{x_i-x_j}
+L_i(t):=\prod_{j\neq i}\frac{t-x_j}{x_i-x_j}
 \end{equation*}
 </div>
 <p data-braille="continuation">en posant</p>
 <div class="displaymath">
 \begin{equation*}
-L(t)=y_0\,L_0(t)+\cdots+y_n\,L_n(t).
+L(t):=y_0\,L_0(t)+\cdots+y_n\,L_n(t).
 \end{equation*}
 </div>
 </li>
-<li id="li-450"><p id="p-706">Terminologie : On appelle \(L(t)\) le polynôme interpolateur des points \(A_0,\ldots,A_n\text{.}\) Et on dit que \(y_0\,L_0(t)+\cdots+y_n\,L_n(t)\) est sa forme de Lagrange.</p></li>
-<li id="li-451"><p id="p-707">Estimations : L'interpolation polynomiale est souvent utilisée pour estimer les valeurs prises par une fonction continue dont on ne connaît qu'un nombre fini de valeurs.</p></li>
-<li id="li-452"><p id="p-708">Erreur d'interpolation : Quand on effectue l'approximation d'une fonction suffisamment régulière par un polynôme interpolateur, on dispose d'une formule permettant de contrôler l'erreur commise (voir l'exercice <a class="xref" data-knowl="./knowl/erreurdinterpolation.html" title="Exercice 6.3.12">6.3.12</a>).</p></li>
-<li id="li-453"><p id="p-709">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1LtbMWNA5Xxb4Jvql9o3q_nzE0l9T2oGY/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
+<li id="li-452">Terminologie : On appelle \(L(t)\) le polynôme interpolateur des points \(A_0,\ldots,A_n\text{.}\) Et on dit que \(y_0\,L_0(t)+\cdots+y_n\,L_n(t)\) est sa forme de Lagrange.</li>
+<li id="li-453">Estimations : L'interpolation polynomiale est souvent utilisée pour estimer les valeurs prises par une fonction continue dont on ne connaît qu'un nombre fini de valeurs.</li>
+<li id="li-454">Formule d'erreur : Quand on effectue l'approximation d'une fonction suffisamment régulière par un polynôme interpolant certains points de son graphe, on dispose d'une formule permettant de contrôler l'erreur commise (voir l'exercice <a class="xref" data-knowl="./knowl/erreurdinterpolation.html" title="Exercice 6.3.12: Formule d'erreur pour l'interpolation">6.3.12</a>).</li>
+<li id="li-455">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1LtbMWNA5Xxb4Jvql9o3q_nzE0l9T2oGY/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
 </ul></article></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>

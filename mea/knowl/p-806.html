@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:50-05:00    *-->
+<!--*    on 2021-03-08T11:44:01-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Déterminez \(L(t)\) le polynôme interpolateur des points du graphe de \(f\) suivants :</p>
+<p>Voici sa forme de Lagrange :</p>
 <div class="displaymath">
-\begin{equation*}
-A_0=(0;f(0)),\; A_1=\left(\frac{\pi}{6};f\left(\frac{\pi}{6}\right)\right)\;\text{et}\; A_2=\left(\frac{\pi}{3};f\left(\frac{\pi}{3}\right)\right)
-\end{equation*}
+\begin{align*}
+L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
+&amp;=y_0\frac{(t-x_1)(t-x_2)}{(x_0-x_1)(x_0-x_2)}+y_1\frac{(t-x_0)(t-x_2)}{(x_1-x_0)(x_1-x_2)}+y_2\frac{(t-x_0)(t-x_1)}{(x_2-x_0)(x_2-x_1)}.
+\end{align*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-A_0=(0;1),\; A_1=\left(\frac{\pi}{6};\frac{\sqrt{3}}{2}\right)\;\text{et}\; A_2=\left(\frac{\pi}{3};\frac{1}{2}\right).
-\end{equation*}
-</div>
-<span class="incontext"><a href="exerciceslagrange.html#p-806">Contexte</a></span>
+<span class="incontext"><a href="presentationdiffdiv.html#p-806">Contexte</a></span>
 </body>
 </html>

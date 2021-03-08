@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:20-05:00    *-->
+<!--*    on 2021-03-08T11:43:24-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>En appliquant la formule de Taylor-Lagrange pour \(n=0\) à la fonction \(f\text{,}\) on trouve \(\xi_1\in\;]c;b[\) tel que</p>
+<p>Quel que soit le point de départ \(x_0\) choisi dans l'intervalle \(]c;b]\text{,}\) la formule de récurrence</p>
 <div class="displaymath">
 \begin{equation*}
-f(x_0)=f(c)+f'(\xi_1)(x_0-c).
+x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}
 \end{equation*}
 </div>
-<p data-braille="continuation">Comme \(f(c)=0\text{,}\) \(f'(\xi_1)&gt;0\) et \(x_0&gt;c\text{,}\) on en déduit que \(f(x_0)&gt;0\text{.}\)</p>
+<p data-braille="continuation">définit une suite strictement décroissante \(\{x_n\}\) telle que</p>
+<div class="displaymath">
+\begin{equation*}
+c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0\le b
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(n\geq 0\) avec</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}x_n=c.
+\end{equation*}
+</div>
 <span class="incontext"><a href="presentationnewton.html#p-485">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-02-28T11:13:25-05:00    *-->
+<!--*    on 2021-03-08T11:40:53-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,18 +11,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="exercise exercise-like"><p>On s'intéresse à la suite \(\{s_n\}\) définie par récurrence de la façon suivante :</p>
+<body><article class="exercise exercise-like"><p>On veut déterminer la quantité de chaleur nécessaire pour porter l'eau d'une bouilloire à ébullition alors qu'elle est à <span class="quantity">61 °C</span>.</p>
+<p>Pour cela, on doit connaître la capacité thermique de l'eau à cette température, mais on ne dispose que des données suivantes :</p>
 <div class="displaymath">
 \begin{equation*}
-s_0=14\quad\text{et}\quad s_{n+1}
-=
-\begin{cases}
-s_n/2&amp;\text{si}\;s_n\;\text{est pair,}\\
-3s_n+1&amp;\text{sinon,}
-\end{cases}
-\quad\text{pour tout}\;n\geq 0.
+\begin{array}{|c|c|}
+\hline
+\text{Température }T&amp;\text{Capacité thermique }C\\
+\hline
+22&amp;4181\\
+42&amp;4179\\
+52&amp;4186\\
+82&amp;4199\\
+100&amp;4217\\
+\hline
+\end{array}
 \end{equation*}
 </div>
-<p>Calculez les \(21\) premiers termes de cette suite à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>.</p>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-6-hidden.html" title="Solution 1.4.10.1"><span class="type">Solution</span></a></div></article></body>
+<p data-braille="continuation">où \(T\) est en <span class="quantity"> °C</span> et \(C\) est en <span class="quantity"> <sup>J</sup>⁄<sub>kg·°C</sub></span>.</p>
+<p>Estimez la valeur de \(C\) à <span class="quantity">61 °C</span> à l'aide du polynôme interpolateur du degré spécifié en choisissant vos points \((T;C)\) grâce aux données ci-dessus, de façon à ce que les valeurs de \(T\) soient les plus proches possible de <span class="quantity">61 °C</span> tout en l'encadrant :</p>
+<ol class="decimal">
+<li>avec un polynôme interpolateur de degré un;</li>
+<li>avec un polynôme interpolateur de degré deux.</li>
+</ol>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-10-hidden.html" title="Solution 1.3.10.1"><span class="type">Solution</span></a></div></article></body>
 </html>

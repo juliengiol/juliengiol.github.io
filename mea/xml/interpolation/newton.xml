@@ -57,80 +57,74 @@
 <section xml:id="presentationdiffdiv">
 <title>Présentation</title>
 
-<p>Au chapitre <xref ref="lagrange"/>, on a vu comment calculer la forme de Lagrange
-  <me>L(t)=y_0\,L_0(t)+y_1\,L_1(t)+\cdots+y_n\,L_n(t)</me>
+<p>
+  Au chapitre <xref ref="lagrange"/>, on a vu comment calculer la forme de Lagrange
+  <me>y_0\,L_0(t)+y_1\,L_1(t)+\cdots+y_n\,L_n(t)</me>
   du polynôme interpolateur de <m>n+1</m> points d'abscisses distinctes deux à deux
   <me>A_0=(x_0;y_0),\;A_1=(x_1;y_1),\;\ldots,\;A_n=(x_n;y_n)\;\in\mathbb{R}^2.</me>
-  C'est une technique très simple d'un point de vue théorique, mais elle présente deux inconvénients majeurs.
-   <ul>
-     <li><p>Elle nécessite trop de calculs quand le nombre de points à interpoler augmente.</p></li>
-     <li><p>Il faut refaire tous les calculs chaque fois qu'on ajoute un point à interpoler.</p></li>
-  </ul>
+  C'est une technique très simple d'un point de vue théorique, mais elle présente un inconvénient majeur : il faut refaire tous les calculs chaque fois qu'on ajoute un point à interpoler.
 </p>
-<p>Dans ce chapitre, nous nous intéressons à la forme de Newton du polynôme interpolateur
-  <me>N(t)=d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)</me>
+<p>
+  Dans ce chapitre, nous nous intéressons à la forme de Newton du polynôme interpolateur
+  <me>d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)</me>
   où
   <me>N_i(t)=(t-x_0)(t-x_1)\cdots(t-x_{i-1})</me>
   est un polynôme de degré <m>i</m> pour <m>i=1,2,\ldots,n</m>.
 </p>
-<p>Ici, toute la difficulté réside dans le calcul des coefficients <m>d_i</m>.</p>
+<p>Comment calculer les coefficients <m>d_i</m>?</p>
 
 <example xml:id="exemple1newton">
-  <p>Déterminons la forme de Newton du polynôme interpolateur des trois points
+  <p>
+    Déterminons la forme de Newton du polynôme interpolateur des trois points
     <me>A_0=(1;-3),\; A_1=(2;7)\;\text{et}\; A_2=(3;0).</me>
   </p>
-  <p>On a
+  <p>
+    On a
     <md>
       <mrow>N(t)&amp;=d_0+d_1\,N_1(t)+d_2\,N_2(t)</mrow>
       <mrow>&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)</mrow>
-      <mrow>&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2).</mrow>
+      <mrow>&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2)</mrow>
     </md>
-  </p>
-  <p>On cherche donc trois nombres réels <m>d_0,d_1,d_2</m> tels que
+    et on cherche donc trois nombres réels <m>d_0,d_1,d_2</m> tels que
+    <me>\begin{cases}N(1)=-3,\\N(2)=7,\\N(3)=0,\end{cases}</me>
+    ce qui équivaut à résoudre le système triangulaire
     <me>
       \begin{cases}
-      N(1)=-3\\
-      N(2)=7\\
-      N(3)=0
-      \end{cases}
-      \Leftrightarrow
-      \begin{cases}
-      d_0&amp;&amp;&amp;&amp;&amp;=&amp;-3\\
-      d_0&amp;+&amp;d_1&amp;&amp;&amp;=&amp;7\\
-      d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;0\\
+      d_0&amp;&amp;&amp;&amp;&amp;=&amp;-3,\\
+      d_0&amp;+&amp;d_1&amp;&amp;&amp;=&amp;7,\\
+      d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;0.\\
       \end{cases}
     </me>
   </p>
-  <p>Ce système linéaire est déjà triangulé.
-    <ul>
-      <li>
-        <p>La première équation donne
-        <me>d_0=-3.</me>
-        </p>
-      </li>
-      <li>
-        <p>Alors la deuxième équation donne
-          <md>
-            <mrow>d_0+d_1=7&amp;\quad\Rightarrow\quad -3+d_1=7</mrow>
-            <mrow>&amp;\quad\Rightarrow\quad d_1=7+3=10.</mrow>
-          </md>
-        </p>
-      </li>
-      <li>
-        <p>Enfin la troisième équation donne
-          <md>
-            <mrow>d_0+2d_1+2d_2=0&amp;\quad\Rightarrow\quad -3+2\cdot 10+2d_2=0</mrow>
-            <mrow>&amp;\quad\Rightarrow\quad 2d_2=3-20=-17</mrow>
-            <mrow>&amp;\quad\Rightarrow\quad d_2=-\frac{17}{2}.</mrow>
-          </md>
-        </p>
-      </li>
-    </ul>
-  </p>
-  <p>La forme de Newton du polynôme interpolateur de ces trois points est donc
+  <ul>
+    <li>La première équation donne tout de suite <m>d_0=-3</m>.</li>
+    <li>
+      <p>
+        La deuxième équation donne <m>d_0+d_1=7</m>, d'où
+        <md>
+          <mrow>-3+d_1&amp;=7,</mrow>
+          <mrow>d_1&amp;=7+3=10.</mrow>
+        </md>
+      </p>
+    </li>
+    <li>
+      <p>
+        La troisième équation donne <m>d_0+2d_1+2d_2=0</m>, d'où
+        <md>
+          <mrow>-3+2\cdot 10+2d_2&amp;=0,</mrow>
+          <mrow>2d_2&amp;=3-20=-17,</mrow>
+          <mrow>d_2&amp;=-\frac{17}{2}.</mrow>
+        </md>
+      </p>
+    </li>
+  </ul>
+  <p>
+    La forme de Newton du polynôme interpolateur de ces trois points est donc
     <me>N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2).</me>
   </p>
-  <p>Notons pour finir qu'il s'agit bien du même polynôme que celui déjà calculé à l'exemple <xref ref="avantlagrange2"/> et à l'exemple <xref ref="aveclagrange2"/>. En effet
+  <p>
+    Notons pour finir qu'il s'agit bien du même polynôme que celui déjà calculé aux exemples <xref ref="avantlagrange2"/> et <xref ref="aveclagrange2"/>.
+    En effet, on a
     <md>
       <mrow>N(t)&amp;=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)</mrow>
       <mrow>&amp;=-3+10(t-1)-\frac{17}{2}(t^2-3t+2)</mrow>
@@ -140,20 +134,23 @@
   </p>
 </example>
 
-<p>Il existe un outil qui permet de calculer les coefficients <m>d_i</m> de la forme de Newton de manière systématique : les différences divisées.</p>
+<p>Il existe un outil qui permet de calculer les coefficients <m>d_i</m> de la forme de Newton de manière systématique : les <url href="https://fr.wikipedia.org/wiki/Diff%C3%A9rences_divis%C3%A9es">différences divisées</url>.</p>
 
 <definition>
   <title>Différences divisées</title>
-  <p>Soit <m>n\geq 0</m> un entier et
+  <p>
+    Soit <m>n\geq 0</m> un entier et
     <me>A_0=(x_0;y_0),\; A_1=(x_1;y_1),\;\ldots,\; A_n=(x_n;y_n)\;\in\mathbb{R}^2</me>
     <m>n+1</m> points d'abscisses distinctes deux à deux.
   </p>
-  <p>Voici comment on calcule les différences divisées associées à ces <m>n+1</m> points, quand on en sélectionne un, deux, trois, et plus généralement <m>k</m> parmi eux.
+  <p>
+    Voici comment on calcule les différences divisées associées à ces <m>n+1</m> points quand on sélectionne un, deux, trois, et, plus généralement, <m>k</m> points parmi ces derniers.
     <ul>
       <li>
-        <p>Un point :
-        <me>\left[A_i\right]=y_i</me>
-        pour <m>0\leq i\leq n</m>.
+        <p>
+          Un point :
+          <me>\left[A_i\right]=y_i</me>
+          pour <m>0\leq i\leq n</m>.
         </p>
       </li>
       <li>
@@ -176,8 +173,9 @@
       </li>
     </ul>
   </p>
-  <p>Notez que cette définition est récursive : pour calculer une différence divisée de <m>k</m> points, il faut déjà savoir le faire pour <m>k-1</m> points.</p>
 </definition>
+
+<p>Notez que cette définition est récursive : pour calculer une différence divisée de <m>k</m> points, il faut déjà savoir le faire pour <m>k-1</m> points.</p>
 
 <example xml:id="exemple1diffdiv">
   <p>Soit <m>A_0=(1;-3),\;A_1=(2;7)</m> et <m>A_2=(3;0)</m> les trois points de l'exemple <xref ref="exemple1newton"/>. Calculons les différences divisées suivantes :
@@ -213,7 +211,8 @@
       </li>
     </ul>
   </p>
-  <p>Afin d'exploiter la nature récursive des différences divisées, voici la façon classique de présenter ces mêmes calculs dans un tableau :
+  <p>
+    Afin d'exploiter la nature récursive des différences divisées, on peut utiliser la présentation classique qui suit :
     <me>
       \begin{array}{c|ccc}
       x_i&amp;y_i=\left[A_i\right]&amp;\left[A_{i_1},A_{i_2}\right]&amp;\left[A_{i_1},A_{i_2},A_{i_3}\right]\\
@@ -225,7 +224,7 @@
       3&amp;0&amp;&amp;
       \end{array}
     </me>
-    c'est-à-dire
+    i.e.
     <me>
       \begin{array}{c|ccc}
       x_i&amp;y_i&amp;&amp;\\
@@ -241,64 +240,75 @@
 </example>
 
 <remark>
-  <p>Les trois différences divisées calculées à l'exemple  <xref ref="exemple1diffdiv"/> correspondent aux trois coefficients de la forme de Newton calculés à l'exemple <xref ref="exemple1newton"/> :
+  <p>
+    Les trois différences divisées de l'exemple  <xref ref="exemple1diffdiv"/> correspondent aux trois coefficients de la forme de Newton calculés à l'exemple <xref ref="exemple1newton"/>, i.e.
     <me>d_0=\left[A_0\right],\; d_1=\left[A_0,A_1\right]\;\text{et}\; d_2=\left[A_0,A_1,A_2\right].</me>
   </p>
-  <p>Autrement dit, la forme de Newton du polynôme interpolateur des trois points <m>A_0,A_1,A_2</m> est donnée par
+  <p>
+    Autrement dit, la forme de Newton du polynôme interpolateur des trois points <m>A_0,A_1,A_2</m> est donnée par
     <me>N(t)=\left[A_0\right]+\left[A_0,A_1\right](t-1)+\left[A_0,A_1,A_2\right](t-1)(t-2).</me>
   </p>
-  <p>Ce n'est pas un hasard.</p>
+  <p>Ce n'est pas un hasard, c'est toute la force de l'<url href="https://fr.wikipedia.org/wiki/Interpolation_newtonienne">interpolation newtonienne</url>.</p>
 </remark>
 
 <theorem xml:id="newtonavecdiffdiv">
   <title>Forme de Newton du polynôme interpolateur</title>
   <statement>
-    <p>Soit <m>n\geq 0</m> un entier et
+    <p>
+      Soit <m>n\geq 0</m> un entier et
       <me>A_0=(x_0;y_0),\;A_1=(x_1;y_1),\;\ldots,\;A_n=(x_n;y_n)\;\in\mathbb{R}^2</me>
       <m>n+1</m> points d'abscisses distinctes deux à deux.
     </p>
-    <p>Alors le polynôme interpolateur de ces points est donné par la formule
-      <me>N(t)=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\cdots+\left[A_0,\ldots,A_n\right](t-x_0)\cdots(t-x_{n-1}).</me>
+    <p>
+      Alors le polynôme interpolateur de ces points est donné par la formule
+      <me>N(t):=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\cdots+\left[A_0,\ldots,A_n\right](t-x_0)\cdots(t-x_{n-1}).</me>
     </p>
-    <p>On appelle cela la forme de Newton du polynôme interpolateur.</p>
+    <p>On appelle cela la <em>forme de Newton</em> du polynôme interpolateur.</p>
   </statement>
   <proof>
-    <p>Notons <m>P(t)</m> le polynôme interpolateur de ces <m>n+1</m> points et <m>N(t)</m> le polynôme défini par la formule ci-dessus. Nous allons scinder cette preuve en deux étapes.</p>
-    <ul>
-      <li><p>Étape 1 : Montrer par récurrence sur <m>n</m> que le coefficient de degré <m>n</m> de <m>P(t)</m> est égal à la différence divisée <m>\left[A_0,\ldots,A_n\right]</m>.</p></li>
-      <li><p>Étape 2 : Montrer par récurrence sur <m>n</m> que <m>P(t)=N(t)</m>.</p>
-      </li>
-    </ul>
-    <p>Commençons donc par l'étape 1.</p>
-    <p>Pour un point (<m>n=0</m>), la propriété est triviale.</p>
-    <p>Supposons-la vérifiée pour <m>n</m> points.
-      Notons alors <m>A(t)</m> le polynôme interpolateur des <m>n</m> premiers points <m>A_0,\ldots,A_{n-1}</m>, et <m>B(t)</m> le polynôme interpolateur des <m>n</m> derniers <m>A_1,\ldots,A_n</m>.
-      Des calculs sans mystère montrent ensuite qu'on a forcément
-      <me>P(t)=\frac{(t-x_0)B(t)-(t-x_n)A(t)}{x_n-x_0}</me>
-      par unicité du polynôme interpolateur. Par hypothèse de récurrence appliquée à <m>A(t)</m> et <m>B(t)</m>, on en déduit que le coefficent de degré <m>n</m> dans <m>P(t)</m> vaut
-      <me>\frac{\left[A_1,\ldots,A_n\right]-\left[A_0,\ldots,A_{n-1}\right]}{x_n-x_0}</me>
-      c'est-à-dire <m>\left[A_0,\ldots,A_n\right]</m>, par la formule de récurrence définissant les différences divisées.
+    <p>
+      Notons <m>P(t)</m> le polynôme interpolateur de ces <m>n+1</m> points et <m>N(t)</m> le polynôme défini par la formule ci-dessus.
+      Nous allons scinder cette preuve en deux étapes.
     </p>
-    <p>Passons maintenant à l'étape 2.</p>
-    <p>Pour un point (<m>n=0</m>), la propriété est à nouveau triviale.</p>
-    <p>Supposons-la vérifiée pour <m>n</m> points.
-    Notons encore <m>A(t)</m> le polynôme interpolateur des <m>n</m> premiers points <m>A_0,\ldots,A_{n-1}</m>.
-    Alors le polynôme <m>P(t)-A(t)</m> est de degré <m>n</m> au plus, et il s'annule au moins <m>n</m> fois en <m>x_0,\ldots,x_{n-1}</m>. On a donc la factorisation
-    <me>P(t)-A(t)=\lambda(t-x_0)\cdots(t-x_n)</me>
-    où le coefficent <m>\lambda</m> et égal à <m>\left[A_0,\ldots,A_n\right]</m> par le résultat de l'étape 1.
-    En appliquant enfin l'étape 1 à <m>A(t)</m>, on obtient bien la formule <m>P(t)=N(t)</m>.
+    <ul>
+      <li>Étape 1 : Montrer par récurrence sur <m>n</m> que le coefficient de degré <m>n</m> de <m>P(t)</m> est égal à la différence divisée <m>\left[A_0,\ldots,A_n\right]</m>.</li>
+      <li>Étape 2 : Montrer par récurrence sur <m>n</m> que <m>P(t)=N(t)</m>.</li>
+    </ul>
+    <p>
+      Commençons donc par l'étape 1.
+      Pour un point (<m>n=0</m>), la propriété est triviale.
+      Supposons-la donc vérifiée pour <m>n</m> points et notons alors <m>A(t)</m> le polynôme interpolateur des <m>n</m> premiers points <m>A_0,\ldots,A_{n-1}</m>, et <m>B(t)</m> le polynôme interpolateur des <m>n</m> derniers <m>A_1,\ldots,A_n</m>.
+      Par unicité du polynôme interpolateur, on a
+      <me>P(t)=\frac{(t-x_0)B(t)-(t-x_n)A(t)}{x_n-x_0},</me>
+      puisque le terme de droite est un polynôme de degré <m>n</m> au plus valant <m>y_k</m> en <m>t=x_k</m> pour tout <m>0\le k\le n</m>.
+      Par hypothèse de récurrence appliquée à <m>A(t)</m> et à <m>B(t)</m>, on en déduit que le coefficent de degré <m>n</m> dans <m>P(t)</m> vaut
+      <me>\frac{\left[A_1,\ldots,A_n\right]-\left[A_0,\ldots,A_{n-1}\right]}{x_n-x_0},</me>
+      i.e. <m>\left[A_0,\ldots,A_n\right]</m>, d'après la formule de récurrence définissant les différences divisées.
+    </p>
+    <p>
+      Passons maintenant à l'étape 2.
+      Pour un point (<m>n=0</m>), la propriété est à nouveau triviale.
+      Supposons-la donc vérifiée pour <m>n</m> points et notons encore <m>A(t)</m> le polynôme interpolateur des <m>n</m> premiers points <m>A_0,\ldots,A_{n-1}</m>.
+      Alors le polynôme <m>P(t)-A(t)</m> est de degré <m>n</m> au plus, et il s'annule au moins <m>n</m> fois, en <m>x_0,\ldots,x_{n-1}</m>.
+      On a donc la factorisation
+      <me>P(t)-A(t)=\lambda(t-x_0)\cdots(t-x_{n-1})</me>
+      où, d'après l'étape 1, le coefficient <m>\lambda</m> et égal à <m>\left[A_0,\ldots,A_n\right]</m>.
+      En appliquant enfin l'hypothèse de récurrence à <m>A(t)</m>, i.e. aux <m>n</m> premiers points <m>A_0,\ldots,A_{n-1}</m>, on obtient bien la formule <m>P(t)=N(t)</m> pour <m>n+1</m> points.
     </p>
   </proof>
 </theorem>
 
 <example xml:id="exemple2diffdiv">
-  <p>Déterminons la forme de Newton <m>N(t)</m> du polynôme interpolateur des quatre points suivants :
+  <p>
+    Déterminons la forme de Newton <m>N(t)</m> du polynôme interpolateur des quatre points suivants :
     <me>A_0=(1;-3),\; A_1=(2;7),\; A_2=(3;0)\;\text{et}\; A_3=(4;5).</me>
   </p>
-  <p>Nous devons calculer les différences divisées suivantes :
+  <p>
+    Nous devons calculer les différences divisées suivantes :
     <me>\left[A_0\right],\;\left[A_0,A_1\right],\;\left[A_0,A_1,A_2\right]\;\text{et}\;\left[A_0,A_1,A_2,A_3\right].</me>
   </p>
-  <p>Présentons nos calculs dans un tableau :
+  <p>
+    Présentons nos calculs dans un tableau :
     <me>
       \begin{array}{c|cccc}
       x_i&amp;y_i&amp;&amp;&amp;\\
@@ -313,38 +323,44 @@
       \end{array}
     </me>
   </p>
-  <p>On a donc
+  <p>
+    On a donc
     <me>N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)+\frac{29}{6}(t-1)(t-2)(t-3).</me>
   </p>
 </example>
 
 <remark>
-  <p>À l'exemple <xref ref="exemple2diffdiv"/>, on a ajouté le point <m>A_3=(4;5)</m> aux trois points <m>A_0=(1;-3),A_1=(2;7)</m> et <m>A_2=(3;0)</m> de l'exemple <xref ref="exemple1newton"/>.</p>
-  <p>La forme de Newton du polynôme interpolateur est alors passée de
+  <p>
+    À l'exemple <xref ref="exemple2diffdiv"/>, on a ajouté le point <m>A_3=(4;5)</m> aux trois points <m>A_0=(1;-3),A_1=(2;7)</m> et <m>A_2=(3;0)</m> de l'exemple <xref ref="exemple1newton"/>.
+    La forme de Newton du polynôme interpolateur est alors passée de
     <me>N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)</me>
     à
     <me>N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)+\frac{29}{6}(t-1)(t-2)(t-3).</me>
+    Seul le coefficient <m>29/6</m> correspondant au terme de degré <m>3</m> s'est ajouté : à la différence de la forme de Lagrange, la forme de Newton permet d'ajouter un point à interpoler sans avoir à reprendre tous les calculs.
   </p>
-  <p>Seul le coefficient <m>\displaystyle\frac{29}{6}</m> correspondant au terme de degré <m>3</m> s'est ajouté : à la différence de la forme de Lagrange, la forme de Newton permet d'ajouter un point à interpoler sans avoir à reprendre tous les calculs.</p>
 </remark>
 
 <remark xml:id="lagrangeEtNewtonTroisPoints">
-  <p>Comparons la forme de Lagrange et la forme de Newton pour le polynôme interpolateur de trois points d'abscisses distinctes deux à deux
+  <p>
+    Comparons la forme de Lagrange et la forme de Newton pour le polynôme interpolateur de trois points d'abscisses distinctes deux à deux
     <me>A_0=(x_0;y_0),\: A_1=(x_1;y_1)\;\text{et}\; A_2=(x_2;y_2).</me>
   </p>
-  <p>Voici sa forme de Lagrange :
+  <p>
+    Voici sa forme de Lagrange :
     <md>
       <mrow>L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)</mrow>
       <mrow>&amp;=y_0\frac{(t-x_1)(t-x_2)}{(x_0-x_1)(x_0-x_2)}+y_1\frac{(t-x_0)(t-x_2)}{(x_1-x_0)(x_1-x_2)}+y_2\frac{(t-x_0)(t-x_1)}{(x_2-x_0)(x_2-x_1)}.</mrow>
     </md>
   </p>
-  <p>Et voilà sa forme de Newton :
+  <p>
+    Et voilà sa forme de Newton :
     <md>
       <mrow>N(t)&amp;=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\left[A_0,A_1,A_2\right](t-x_0)(t-x_1)</mrow>
       <mrow>&amp;=y_0+\frac{y_1-y_0}{x_1-x_0}\cdot(t-x_0)+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0}}{x_2-x_0}\cdot(t-x_0)(t-x_1).</mrow>
     </md>
   </p>
-  <p>Pour évaluer la forme de Lagrange, on a besoin de <m>14</m> additions / soustractions et de <m>12</m> multiplications / divisions.
+  <p>
+    Pour évaluer la forme de Lagrange écrite ainsi, on a besoin de <m>14</m> additions / soustractions et de <m>12</m> multiplications / divisions.
     Quant à la forme de Newton, elle requiert <m>13</m> additions / soustractions et <m>7</m> multiplications / divisions.
     C'est nettement mieux, et cela peut encore être amélioré en appliquant la méthode de Horner :
     <me>N(t)=y_0+(t-x_0)\cdot\left(\frac{y_1-y_0}{x_1-x_0}+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0}}{x_2-x_0}\cdot(t-x_1)\right).</me>
@@ -357,30 +373,32 @@
   <title>Forme de Newton et différences divisées : Calculer efficacement un polynôme interpolateur</title>
   <p>
     <ul>
-      <li><p>Objectif : Étant donné <m>n+1</m> points <m>A_0=(x_0;y_0),\ldots,A_n=(x_n;y_n)</m> d'abscisses distinctes deux à deux, déterminer le seul polynôme <m>N(t)</m> de degré <m>n</m> au plus qui passe par tous ces points.</p></li>
+      <li>Objectif : Étant donné <m>n+1</m> points <m>A_0=(x_0;y_0),\ldots,A_n=(x_n;y_n)</m> d'abscisses distinctes deux à deux, déterminer le seul polynôme <m>N(t)</m> de degré <m>n</m> au plus qui passe par tous ces points.</li>
       <li>
-        <p>Principe : Construire <m>N(t)</m> comme combinaison linéaire des polynômes
-          <me>N_i(t)=(t-x_0)(t-x_1)\cdots(t-x_{i-1})</me>
+        <p>
+          Principe : Construire <m>N(t)</m> comme combinaison linéaire des polynômes
+          <me>N_i(t):=(t-x_0)(t-x_1)\cdots(t-x_{i-1})</me>
           en posant
-          <me>N(t)=d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)</me>
+          <me>N(t):=d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)</me>
           où le coefficient <m>d_i</m> est la différence divisée associée aux points <m>A_0=(x_0;y_0),\ldots,A_i=(x_i;y_i)</m>, c'est-à-dire
           <me>d_i=\left[A_0,\ldots,A_i\right]</me>
         </p>
       </li>
       <li>
-        <p>Terminologie : On appelle <m>d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)</m> la forme de Newton du polynôme interpolateur des points <m>A_0,A_1,\ldots,A_n</m>.
+        <p>
+          Terminologie : On appelle <m>d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)</m> la forme de Newton du polynôme interpolateur des points <m>A_0,A_1,\ldots,A_n</m>.
           Il s'agit du même polynôme que celui obtenu par interpolation de Lagrange, mais écrit différemment.
         </p>
       </li>
       <li>
         <p>Avantages :
           <ul>
-            <li><p>À la différence de la forme de Lagrange, la forme de Newton permet d'ajouter un point d'interpolation sans avoir à reprendre tous les calculs.</p></li>
-            <li><p>Grâce à la technique des différences divisées, le calcul de la forme de Newton nécessite moins d'opérations que celui de la forme de Lagrange.</p></li>
+            <li>À la différence de la forme de Lagrange, la forme de Newton permet d'ajouter un point d'interpolation sans avoir à reprendre tous les calculs.</li>
+            <li>Grâce à la technique des différences divisées, le calcul de la forme de Newton nécessite moins d'opérations que celui de la forme de Lagrange.</li>
           </ul>
         </p>
       </li>
-      <li><p>Voir aussi : <url href="https://drive.google.com/file/d/1ANZ409wB1DjcOVes1jWh2KRhu0FaUaad/view?usp=sharing">Notes de cours de Jérôme</url>.</p></li>
+      <li>Voir aussi : <url href="https://drive.google.com/file/d/1ANZ409wB1DjcOVes1jWh2KRhu0FaUaad/view?usp=sharing">Notes de cours de Jérôme</url>.</li>
     </ul>
   </p>
 </assemblage>
@@ -395,35 +413,40 @@
   <statement>
     <ul>
       <li>
-        <p>Entrées :
+        <p>
+          Entrées :
           <ul>
-            <li><p>Assigner à <m>\text{n}</m> le degré maximal du polynôme interpolateur.</p></li>
-            <li><p>Assigner à <m>\text{x0},\text{x1},\ldots,\text{xn}</m> les abscisses des points à interpoler.</p></li>
-            <li><p>Assigner à <m>\text{y0},\text{y1},\ldots,\text{yn}</m> les ordonnées des points à interpoler.</p></li>
+            <li>Assigner à <m>\text{n}</m> le degré maximal du polynôme interpolateur.</li>
+            <li>Assigner à <m>\text{x0},\text{x1},\ldots,\text{xn}</m> les abscisses des points à interpoler.</li>
+            <li>Assigner à <m>\text{y0},\text{y1},\ldots,\text{yn}</m> les ordonnées des points à interpoler.</li>
           </ul>
         </p>
       </li>
       <li>
-        <p>Instructions :
+        <p>
+          Instructions :
           <ul>
-            <li><p>Assigner la liste <m>\text{y}</m> comme premier élément de la liste <m>\text{diffDiv}</m> qui contiendra toutes les différences divisées.</p></li>
+            <li>Assigner la liste <m>\text{y}</m> comme premier élément de la liste <m>\text{diffDiv}</m> qui contiendra toutes les différences divisées.</li>
             <li>
-              <p>Pour <m>\text{j}</m> allant de <m>\text{1}</m> à <m>\text{n}</m>,
+              <p>
+                Pour <m>\text{j}</m> allant de <m>\text{1}</m> à <m>\text{n}</m>,
                 <ul>
-                  <li><p>initialiser <m>\text{nouvelleColonne}</m>, la liste qui contiendra toutes les différences divisées calculées à l'étape <m>j</m> : <m>\text{nouvelleColonne}=\left[\;\right]</m> ;</p></li>
+                  <li>initialiser <m>\text{nouvelleColonne}</m>, la liste qui contiendra toutes les différences divisées calculées à l'étape <m>j</m> : <m>\text{nouvelleColonne}=\left[\;\right]</m>;</li>
                   <li>
-                    <p>pour <m>\text{i}</m> allant de <m>\text{0}</m> à <m>\text{n-j}</m>,
+                    <p>
+                      pour <m>\text{i}</m> allant de <m>\text{0}</m> à <m>\text{n-j}</m>,
                       <ul>
                         <li>
-                          <p>calculer la différence divisée <m>\left[A_i,A_{i+1},\ldots,A_{i+j}\right]</m> en utilisant la récursivité et l'assigner à <m>\text{nouvelleDiffDiv}</m> :
-                            <me>\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]}\;;</me>
+                          <p>
+                            calculer la différence divisée <m>\left[A_i,A_{i+1},\ldots,A_{i+j}\right]</m> en utilisant la récursivité et l'assigner à <m>\text{nouvelleDiffDiv}</m> :
+                            <me>\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]};</me>
                           </p>
                         </li>
-                        <li><p>ajouter la nouvelle différence divisée <m>\text{nouvelleDiffDiv}</m> à la liste <m>\text{nouvelleColonne}</m> ;</p></li>
+                        <li>ajouter la nouvelle différence divisée <m>\text{nouvelleDiffDiv}</m> à la liste <m>\text{nouvelleColonne}</m>;</li>
                       </ul>
                     </p>
                   </li>
-                  <li><p>ajouter <m>\text{nouvelleColonne}</m> à la liste <m>\text{diffDiv}</m>.</p></li>
+                  <li>ajouter <m>\text{nouvelleColonne}</m> à la liste <m>\text{diffDiv}</m>.</li>
                 </ul>
               </p>
             </li>
@@ -431,9 +454,10 @@
         </p>
       </li>
       <li>
-        <p>Sortie : Pour <m>\text{j}</m> allant de <m>\text{0}</m> à <m>\text{n}</m>,
+        <p>
+          Sortie : Pour <m>\text{j}</m> allant de <m>\text{0}</m> à <m>\text{n}</m>,
           <ul>
-            <li><p>afficher <m>\text{diffDiv}[j][0]</m>.</p></li>
+            <li>afficher <m>\text{diffDiv}[j][0]</m>.</li>
           </ul>
         </p>
       </li>
@@ -445,12 +469,11 @@
 
 <sage language='python'>
   <input>
-    # entrées
+    # entrées :
     n = 2
     x = [1.0, 2.0, 3.0]
     y = [-3.0, 7.0, 0.0]
-
-    # instructions
+    # instructions :
     diffDiv = [y]
     for j in range(1, n+1):
         nouvelleColonne = []
@@ -458,8 +481,7 @@
             nouvelleDiffDiv = (diffDiv[j-1][i+1] - diffDiv[j-1][i]) / (x[i+j] - x[i])
             nouvelleColonne.append(nouvelleDiffDiv)
         diffDiv.append(nouvelleColonne)
-
-    # sortie
+    # sortie :
     for j in range(0, n+1):
         print(diffDiv[j][0])
   </input>
@@ -472,7 +494,8 @@
 
 <exercise>
   <statement>
-    <p>On a commencé à remplir la table de différences divisées suivante :
+    <p>
+      On a commencé à remplir la table de différences divisées suivante :
       <me>
         \begin{array}{c|cccc}
         x_i&amp;y_i&amp;&amp;&amp;\\
@@ -491,24 +514,34 @@
     </p>
     <p>
       <ol>
-        <li><p>Combien vaut <m>\left[A_2\right]</m>?</p></li>
-        <li><p>Combien vaut <m>\left[A_2,A_3\right]</m>?</p></li>
-        <li><p>Combien vaut <m>\left[A_0,A_1,A_2\right]</m>?</p></li>
-        <li><p>Complétez la table.</p></li>
+        <li>Combien vaut <m>\left[A_2\right]</m>?</li>
+        <li>Combien vaut <m>\left[A_2,A_3\right]</m>?</li>
+        <li>Combien vaut <m>\left[A_0,A_1,A_2\right]</m>?</li>
+        <li>Complétez la table.</li>
       </ol>
     </p>
   </statement>
   <solution>
     <p>
       <ol>
-        <li><p><m>\left[A_2\right]=-2</m>.</p></li>
-        <li><p><m>\displaystyle\left[A_2,A_3\right]=\frac{\left[A_3\right]-\left[A_2\right]}{x_3-x_2}=\frac{4+2}{7-4}=2</m>.</p></li>
+        <li>On a <m>\left[A_2\right]=-2</m>.</li>
         <li>
-          <p>On connait déjà <m>\displaystyle\left[A_0,A_1\right]=\frac{1}{2}</m> et <m>\displaystyle=\left[A_1,A_2\right]=-9</m>.</p>
-          <p>Donc <m>\displaystyle\left[A_0,A_1,A_2\right]=\frac{\left[A_1,A_2\right]-\left[A_0,A_1\right]}{x_2-x_0}=\frac{-9-\frac{1}{2}}{4+1}=-\frac{19}{10}</m>.</p>
+          <p>
+            On calcule
+            <me>\left[A_2,A_3\right]=\frac{\left[A_3\right]-\left[A_2\right]}{x_3-x_2}=\frac{4+2}{7-4}=2.</me>
+          </p>
         </li>
         <li>
           <p>
+            On connait déjà
+            <me>\left[A_0,A_1\right]=\frac{1}{2}\quad\text{et}\quad=\left[A_1,A_2\right]=-9.</me>
+            On calcule alors
+            <me>\displaystyle\left[A_0,A_1,A_2\right]=\frac{\left[A_1,A_2\right]-\left[A_0,A_1\right]}{x_2-x_0}=\frac{-9-\frac{1}{2}}{4+1}=-\frac{19}{10}.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            On a
             <me>
               \begin{array}{c|cccc}
               x_i&amp;y_i&amp;&amp;&amp;\\
@@ -531,18 +564,22 @@
 
 <exercise>
   <statement>
-    <p>Soit <m>A,B</m> deux points d'abscisses distinctes. Il est facile de voir que
+    <p>
+      Soit <m>A,B</m> deux points d'abscisses distinctes.
+      Il est facile de voir que
       <me>\left[A,B\right]=\left[B,A\right].</me>
     </p>
     <p>Plus généralement, les différences divisées ne dépendent pas de l'ordre des points : on dit qu'elles sont invariantes par permutation.</p>
-    <p>Par exemple, vérifiez que
+    <p>
+      Par exemple, vérifiez que
       <me>\left[A,B,C\right]=\left[C,A,B\right]</me>
       avec
       <me>A=(1;3),\; B=(3;-5)\;\text{et}\; C=(4;2).</me>
     </p>
   </statement>
   <solution>
-    <p>Commençons par calculer <m>\left[A,B,C\right]</m> :
+    <p>
+      Commençons par calculer <m>\left[A,B,C\right]</m> :
       <me>
         \begin{array}{c|ccc}
         x&amp;y\\
@@ -555,7 +592,8 @@
         \end{array}
       </me>
     </p>
-    <p>Calculons ensuite <m>\left[C,A,B\right]</m> :
+    <p>
+      Calculons ensuite <m>\left[C,A,B\right]</m> :
       <me>
         \begin{array}{c|ccc}
         x&amp;y\\
@@ -568,13 +606,17 @@
         \end{array}
       </me>
     </p>
-    <p>On a bien <m>\displaystyle\left[A,B,C\right]=\left[C,A,B\right]=\frac{11}{3}</m>.</p>
+    <p>
+      On a bien
+      <me>\left[A,B,C\right]=\left[C,A,B\right]=\frac{11}{3}.</me>
+    </p>
   </solution>
 </exercise>
 
 <exercise>
   <statement>
-    <p>Déterminez la forme de Newton du polynôme interpolateur des trois points suivants :
+    <p>
+      Déterminez la forme de Newton du polynôme interpolateur des trois points suivants :
       <me>A_0=(0;4),\;A_1=(2;-1)\;\text{et}\; A_2=(5;12).</me>
       <ol>
         <li>En résolvant un système linéaire.</li>
@@ -583,87 +625,83 @@
     </p>
   </statement>
   <solution>
-    <p>
-      <ol>
-        <li>
-          <p>La forme de Newton du polynôme interpolateur de ces trois points s'écrit
-            <md>
-              <mrow>N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)</mrow>
-              <mrow>&amp;=d_0+d_1t+d_2t(t-2).</mrow>
-            </md>
-          </p>
-          <p>On cherche donc trois nombres réels <m>d_0,d_1,d_2</m> tels que
-            <me>
-              \begin{cases}
-              N(0)=4\\
-              N(2)=-1\\
-              N(5)=12
-              \end{cases}
-              \Leftrightarrow
-              \begin{cases}
-              d_0&amp;&amp;&amp;&amp;&amp;=&amp;4\\
-              d_0&amp;+&amp;2d_1&amp;&amp;&amp;=&amp;-1\\
-              d_0&amp;+&amp;5d_1&amp;+&amp;15d_2&amp;=&amp;12\\
-              \end{cases}
-            </me>
-          </p>
-          <p>Ce système linéaire est déjà triangulé.
-            <ul>
-              <li>
-                <p>La première équation donne
-                <me>d_0=4.</me>
-                </p>
-              </li>
-              <li>
-                <p>Alors la deuxième équation donne
-                  <md>
-                    <mrow>d_0+2d_1=-1&amp;\Rightarrow\quad 4+2d_1=-1</mrow>
-                    <mrow>&amp;\Rightarrow\quad 2d_1=-5</mrow>
-                    <mrow>&amp;\Rightarrow\quad d_1=-\frac{5}{2}.</mrow>
-                  </md>
-                </p>
-              </li>
-              <li>
-                <p>Enfin la troisième équation donne
-                  <md>
-                    <mrow>d_0+5d_1+5d_2=0&amp;\Rightarrow\quad 4-\frac{25}{2}+15d_2=12</mrow>
-                    <mrow>&amp;\Rightarrow\quad 15d_2=12-4+\frac{25}{2}=\frac{41}{2}</mrow>
-                    <mrow>&amp;\Rightarrow\quad d_2=\frac{41}{30}.</mrow>
-                  </md>
-                </p>
-              </li>
-            </ul>
-          </p>
-          <p>La forme de Newton du polynôme interpolateur de ces trois points est donc
-            <me>N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).</me>
-          </p>
-        </li>
-        <li>
-          <p>Calculons les différences divisées des trois points :
-            <me>
-              \begin{array}{c|ccc}
-              x_i&amp;y_i\\
-              \hline\\
-              0&amp;\left[A_0\right]=4&amp;&amp;\\
-              &amp;&amp;\left[A_0,A_1\right]=-\frac{5}{2}&amp;\\
-              2&amp;\left[A_1\right]=-1&amp;&amp;\left[A_0,A_1,A_2\right]=\frac{41}{30}\\
-              &amp;&amp;\left[A_1,A_2\right]=\frac{13}{3}&amp;\\
-              5&amp;\left[A_2\right]=12&amp;&amp;
-              \end{array}
-            </me>
-          </p>
-          <p>On trouve donc les mêmes coefficients qu'à la question 1, soit
-            <me>N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).</me>
-          </p>
-        </li>
-      </ol>
-    </p>
+    <ol>
+      <li>
+        <p>
+          La forme de Newton du polynôme interpolateur de ces trois points s'écrit
+          <md>
+            <mrow>N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)</mrow>
+            <mrow>&amp;=d_0+d_1t+d_2t(t-2).</mrow>
+          </md>
+        </p>
+        <p>
+          On cherche donc trois nombres réels <m>d_0,d_1,d_2</m> tels que
+          <me>\begin{cases}N(0)=4,\\N(2)=-1,\\N(5)=12,\end{cases}</me>
+          i.e.
+          <me>
+            \begin{cases}
+            d_0&amp;&amp;&amp;&amp;&amp;=&amp;4,\\
+            d_0&amp;+&amp;2d_1&amp;&amp;&amp;=&amp;-1,\\
+            d_0&amp;+&amp;5d_1&amp;+&amp;15d_2&amp;=&amp;12.
+            \end{cases}
+          </me>
+        </p>
+        <p>
+          Ce système linéaire est déjà triangulé.
+          <ul>
+            <li>La première équation donne <m>d_0=4</m>.</li>
+            <li>
+              <p>
+                La deuxième équation donne <me>d_0+2d_1=-1</me>, d'où
+                <md>
+                  <mrow>4+2d_1&amp;=-1,</mrow>
+                  <mrow>2d_1&amp;=-5,</mrow>
+                  <mrow>d_1&amp;=-\frac{5}{2}.</mrow>
+                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                La troisième équation donne <me>d_0+5d_1+5d_2=0</me>, d'où
+                <md>
+                  <mrow>4-\frac{25}{2}+15d_2&amp;=12,</mrow>
+                  <mrow>15d_2&amp;=12-4+\frac{25}{2}=\frac{41}{2},</mrow>
+                  <mrow>d_2&amp;=\frac{41}{30}.</mrow>
+                </md>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          La forme de Newton du polynôme interpolateur de ces trois points est donc
+          <me>N(t)=4-\frac{5}{2}t+\frac{41}{30}t(t-2).</me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Calculons les différences divisées des trois points :
+          <me>
+            \begin{array}{c|ccc}
+            x_i&amp;y_i\\
+            \hline\\
+            0&amp;\left[A_0\right]=4&amp;&amp;\\
+            &amp;&amp;\left[A_0,A_1\right]=-\frac{5}{2}&amp;\\
+            2&amp;\left[A_1\right]=-1&amp;&amp;\left[A_0,A_1,A_2\right]=\frac{41}{30}\\
+            &amp;&amp;\left[A_1,A_2\right]=\frac{13}{3}&amp;\\
+            5&amp;\left[A_2\right]=12&amp;&amp;
+            \end{array}
+          </me>
+        </p>
+        <p>On trouve donc les mêmes coefficients qu'à la question précédente.</p>
+      </li>
+    </ol>
   </solution>
 </exercise>
 
 <exercise xml:id="newtontroispointsalignes">
   <statement>
-    <p>Déterminez la forme de Newton du polynôme interpolateur des trois points suivants :
+    <p>
+      Déterminez la forme de Newton du polynôme interpolateur des trois points suivants :
       <me>A_0=(1;3),\; A_1=(2;6)\;\text{et}\; A_2=(3;9).</me>
       <ol>
         <li>En résolvant un système linéaire.</li>
@@ -675,59 +713,58 @@
     <p>
       <ol>
         <li>
-          <p>La forme de Newton du polynôme interpolateur de ces trois points s'écrit
+          <p>
+            La forme de Newton du polynôme interpolateur de ces trois points s'écrit
             <md>
               <mrow>N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)</mrow>
               <mrow>&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2).</mrow>
             </md>
           </p>
-          <p>On cherche donc trois nombres réels <m>d_0,d_1,d_2</m> tels que
+          <p>
+            On cherche donc trois nombres réels <m>d_0,d_1,d_2</m> tels que
+            <me>\begin{cases}N(1)=3,\\N(2)=6,\\N(3)=9\end{cases}</me>
+            i.e.
             <me>
               \begin{cases}
-              N(1)=3\\
-              N(2)=6\\
-              N(3)=9
-              \end{cases}
-              \Leftrightarrow
-              \begin{cases}
-              d_0&amp;&amp;&amp;&amp;&amp;=&amp;3\\
-              d_0&amp;+&amp;d_1&amp;&amp;&amp;=&amp;6\\
-              d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;9\\
+              d_0&amp;&amp;&amp;&amp;&amp;=&amp;3,\\
+              d_0&amp;+&amp;d_1&amp;&amp;&amp;=&amp;6,\\
+              d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;9.
               \end{cases}
             </me>
           </p>
-          <p>Ce système linéaire est déjà triangulé.
+          <p>
+            Ce système linéaire est déjà triangulé.
             <ul>
+              <li>La première équation donne <m>d_0=3</m>.</li>
               <li>
-                <p>La première équation donne
-                <me>d_0=3.</me>
-                </p>
-              </li>
-              <li>
-                <p>Alors la deuxième équation donne
+                <p>
+                  La deuxième équation donne <m>d_0+d_1=6</m>, d'où
                   <md>
-                    <mrow>d_0+d_1=6&amp;\Rightarrow\quad 3+d_1=6</mrow>
-                    <mrow>&amp;\Rightarrow\quad d_1=3.</mrow>
+                    <mrow>3+d_1&amp;=6,</mrow>
+                    <mrow>d_1&amp;=3.</mrow>
                   </md>
                 </p>
               </li>
               <li>
-                <p>Enfin la troisième équation donne
+                <p>
+                  La troisième équation donne <m>d_0+2d_1+2d_2=0</m>, d'où
                   <md>
-                    <mrow>d_0+2d_1+2d_2=0&amp;\Rightarrow\quad 3+6+2d_2=9</mrow>
-                    <mrow>&amp;\Rightarrow\quad 2d_2=0</mrow>
-                    <mrow>&amp;\Rightarrow\quad d_2=0.</mrow>
+                    <mrow>3+6+2d_2&amp;=9,</mrow>
+                    <mrow>2d_2&amp;=0,</mrow>
+                    <mrow>d_2&amp;=0.</mrow>
                   </md>
                 </p>
               </li>
             </ul>
           </p>
-          <p>La forme de Newton du polynôme interpolateur de ces trois points est donc
+          <p>
+            La forme de Newton du polynôme interpolateur de ces trois points est donc
             <me>N(t)=3+3(t-1)+0(t-1)(t-2)=3+3(t-1).</me>
           </p>
         </li>
         <li>
-          <p>Calculons les différences divisées des trois points :
+          <p>
+            Calculons les différences divisées des trois points :
             <me>
               \begin{array}{c|ccc}
               x_i&amp;y_i\\
@@ -740,13 +777,12 @@
               \end{array}
             </me>
           </p>
-          <p>On trouve donc les mêmes coefficients qu'à la question 1, soit
-            <me>N(t)=3+3(t-1)+0(t-1)(t-2)=3+3(t-1).</me>
-          </p>
+          <p>On trouve donc les mêmes coefficients qu'à la question précédente.</p>
         </li>
       </ol>
     </p>
-    <p>Remarque : En regardant les trois points à interpoler de plus près, on s'aperçoit qu'il sont alignés car ils appartiennent tous les trois à la droite d'équation
+    <p>
+      Remarque : En regardant les trois points à interpoler de plus près, on s'aperçoit qu'il sont alignés car ils appartiennent tous les trois à la droite d'équation
       <me>y=3x.</me>
       Leur polynôme interpolateur est donc le polynôme dont le graphe correspond à cette droite, c'est-à-dire
       <me>P(x)=3x.</me>
@@ -759,44 +795,43 @@
 <exercise>
   <statement>
     <p>Ajoutez le point <m>A_3=(4;0)</m> aux points <m>A_0=(1;3),A_1=(2;6)</m> et <m>A_2=(3;9)</m> de l'exercice <xref ref="newtontroispointsalignes"/>.</p>
-    <p>Déterminez la forme de Newton du polynôme interpolateur de ces quatre points en faisant le moins de calculs possible.
-    </p>
+    <p>Déterminez la forme de Newton du polynôme interpolateur de ces quatre points en faisant le moins de calculs possible.</p>
   </statement>
   <solution>
-    <p>La forme de Newton du polynôme interpolateur de ces quatre points s'écrit
+    <p>
+      La forme de Newton du polynôme interpolateur de ces quatre points s'écrit
       <md>
         <mrow>N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)+d_3(t-x_0)(t-x_1)(t-x_2)</mrow>
         <mrow>&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2)+d_3(t-1)(t-2)(t-3).</mrow>
       </md>
     </p>
-    <p>On cherche donc quatre nombres réels <m>d_0,d_1,d_2,d_3</m> tels que
+    <p>
+      On cherche donc quatre nombres réels <m>d_0,d_1,d_2,d_3</m> tels que
+      <me>\begin{cases}N(1)=3,\\N(2)=6,\\N(3)=9,\\N(4)=0,\end{cases}</me>
+      i.e.
       <me>
         \begin{cases}
-        N(1)=3\\
-        N(2)=6\\
-        N(3)=9\\
-        N(4)=0
-        \end{cases}
-        \Leftrightarrow
-        \begin{cases}
-        d_0&amp;&amp;&amp;&amp;&amp;&amp;&amp;=&amp;3\\
-        d_0&amp;+&amp;d_1&amp;&amp;&amp;&amp;&amp;=&amp;6\\
-        d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;&amp;&amp;=&amp;9\\
-        d_0&amp;+&amp;3d_1&amp;+&amp;6d_2&amp;+&amp;6d_3&amp;=&amp;0\\
+        d_0&amp;&amp;&amp;&amp;&amp;&amp;&amp;=&amp;3,\\
+        d_0&amp;+&amp;d_1&amp;&amp;&amp;&amp;&amp;=&amp;6,\\
+        d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;&amp;&amp;=&amp;9,\\
+        d_0&amp;+&amp;3d_1&amp;+&amp;6d_2&amp;+&amp;6d_3&amp;=&amp;0.\\
         \end{cases}
       </me>
     </p>
-    <p>Le système correspondant aux trois premières équations a déjà été résolu à l'exercice <xref ref="newtontroispointsalignes"/> :
+    <p>
+      Le système correspondant aux trois premières équations a déjà été résolu à l'exercice <xref ref="newtontroispointsalignes"/>, donc
       <me>d_0=3,\; d_1=3,\; d_2=0.</me>
     </p>
-    <p>Alors la quatrième équation donne
+    <p>
+      La quatrième équation donne <m>d_0+3d_1+6d_2+6d_3=0</m>, d'où
       <md>
-        <mrow>d_0+3d_1+6d_2+6d_3=0&amp;\Rightarrow\quad 3+9+0+6d_3=0</mrow>
-        <mrow>&amp;\Rightarrow\quad 6d_3=-12</mrow>
-        <mrow>&amp;\Rightarrow\quad d_3=-2.</mrow>
+        <mrow>3+9+0+6d_3&amp;=0,</mrow>
+        <mrow>6d_3&amp;=-12,</mrow>
+        <mrow>d_3&amp;=-2.</mrow>
       </md>
     </p>
-    <p>La forme de Newton du polynôme interpolateur de ces quatre points est donc
+    <p>
+      La forme de Newton du polynôme interpolateur de ces quatre points est donc
       <me>N(t)=3+3(t-1)-2(t-1)(t-2)(t-3).</me>
     </p>
   </solution>
@@ -804,69 +839,75 @@
 
 <exercise>
   <statement>
-    <p>On s'intéresse au polynôme interpolateur des quatre points suivants :
+    <p>
+      On s'intéresse au polynôme interpolateur des quatre points suivants :
       <me>A_0=(-2;0),\; A_1=(-1;3),\; A_2=(2;-1)\;\text{et}\; A_3=(3;7).</me>
     </p>
-    <p>
-      <ol>
-        <li><p>Donnez sa forme de Lagrange <m>L(t)</m>.</p></li>
-        <li><p>Donnez sa forme de Newton <m>N(t)</m>.</p></li>
-        <li><p>Vérifiez que ces deux formes correspondent bien au même polynôme, c'est-à-dire que <m>L(t)=N(t)</m>.</p></li>
-      </ol>
-    </p>
+    <ol>
+      <li>Donnez sa forme de Lagrange <m>L(t)</m>.</li>
+      <li>Donnez sa forme de Newton <m>N(t)</m>.</li>
+      <li>Vérifiez que ces deux formes correspondent bien au même polynôme, c'est-à-dire que <m>L(t)=N(t)</m>.</li>
+    </ol>
   </statement>
   <solution>
-    <p>
-      <ol>
-        <li>
-          <p>On a
-            <md>
-              <mrow>L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)+y_3\,L_3(t)</mrow>
-              <mrow>&amp;=0\,L_0(t)+3\,L_1(t)-L_2(t)+7\,L_3(t)</mrow>
-              <mrow>&amp;=3\frac{(t+2)(t-2)(t-3)}{(-1+2)(-1-2)(-1-3)}-\frac{(t+2)(t+1)(t-3)}{(2+2)(2+1)(2-3)}</mrow>
-              <mrow>&amp;\qquad +7\frac{(t+2)(t+1)(t-2)}{(3+2)(3+1)(3-2)}</mrow>
-              <mrow>&amp;=\frac{1}{4}(t+2)(t-2)(t-3)+\frac{1}{12}(t+2)(t+1)(t-3)</mrow>
-              <mrow>&amp;\qquad +\frac{7}{20}(t+2)(t+1)(t-2).</mrow>
-            </md>
-          </p>
-        </li>
-        <li>
-          <p>Calculons les différences divisées de ces quatre points :
-            <me>
-              \begin{array}{c|cccc}
-              x_i&amp;y_i&amp;&amp;&amp;\\
-              \hline\\
-              -2&amp;0&amp;&amp;&amp;\\
-              &amp;&amp;3&amp;&amp;\\
-              -1&amp;3&amp;&amp;-\frac{13}{12}&amp;\\
-              &amp;&amp;-\frac{4}{3}&amp;&amp;\frac{41}{60}\\
-              2&amp;-1&amp;&amp;\frac{28}{12}&amp;\\
-              &amp;&amp;8&amp;&amp;\\
-              3&amp;7&amp;&amp;&amp;\\
-              \end{array}
-            </me>
-          </p>
-          <p>La forme de Newton de leur polynôme interpolateur est donc
-            <md>
-              <mrow>N(t)&amp;=0+3(t+2)-\frac{13}{12}(t+2)(t+1)+\frac{41}{60}(t+2)(t+1)(t-2)</mrow>
-              <mrow>&amp;=3(t+2)-\frac{13}{12}(t+2)(t+1)+\frac{41}{60}(t+2)(t+1)(t-2).</mrow>
-            </md>
-          </p>
-        </li>
-        <li><p>C'est fastidieux. Voici une preuve visuelle avec Desmos : <url href="https://www.desmos.com/calculator/5py2k0qwww">https://www.desmos.com/calculator/5py2k0qwww</url>.</p></li>
-      </ol>
-    </p>
+    <ol>
+      <li>
+        <p>
+          On a
+          <md>
+            <mrow>L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)+y_3\,L_3(t)</mrow>
+            <mrow>&amp;=0\,L_0(t)+3\,L_1(t)-L_2(t)+7\,L_3(t)</mrow>
+            <mrow>&amp;=3\frac{(t+2)(t-2)(t-3)}{(-1+2)(-1-2)(-1-3)}-\frac{(t+2)(t+1)(t-3)}{(2+2)(2+1)(2-3)}</mrow>
+            <mrow>&amp;\qquad +7\frac{(t+2)(t+1)(t-2)}{(3+2)(3+1)(3-2)}</mrow>
+            <mrow>&amp;=\frac{1}{4}(t+2)(t-2)(t-3)+\frac{1}{12}(t+2)(t+1)(t-3)</mrow>
+            <mrow>&amp;\qquad +\frac{7}{20}(t+2)(t+1)(t-2).</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>
+          Calculons les différences divisées de ces quatre points :
+          <me>
+            \begin{array}{c|cccc}
+            x_i&amp;y_i&amp;&amp;&amp;\\
+            \hline\\
+            -2&amp;0&amp;&amp;&amp;\\
+            &amp;&amp;3&amp;&amp;\\
+            -1&amp;3&amp;&amp;-\frac{13}{12}&amp;\\
+            &amp;&amp;-\frac{4}{3}&amp;&amp;\frac{41}{60}\\
+            2&amp;-1&amp;&amp;\frac{28}{12}&amp;\\
+            &amp;&amp;8&amp;&amp;\\
+            3&amp;7&amp;&amp;&amp;\\
+            \end{array}
+          </me>
+        </p>
+        <p>
+          La forme de Newton de leur polynôme interpolateur est donc
+          <md>
+            <mrow>N(t)&amp;=0+3(t+2)-\frac{13}{12}(t+2)(t+1)+\frac{41}{60}(t+2)(t+1)(t-2)</mrow>
+            <mrow>&amp;=3(t+2)-\frac{13}{12}(t+2)(t+1)+\frac{41}{60}(t+2)(t+1)(t-2).</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>
+          C'est fastidieux.
+          <url href="https://www.desmos.com/calculator/5py2k0qwww">Cliquez ici</url> pour une preuve visuelle avec Desmos.
+        </p>
+      </li>
+    </ol>
   </solution>
 </exercise>
 
 <exercise>
   <statement>
-    <p>Déterminez le polynôme interpolateur <m>P(t)</m> des points donnés en utilisant la technique des différences divisées.
+    <p>
+      Déterminez le polynôme interpolateur <m>P(t)</m> des points donnés en utilisant la technique des différences divisées :
       <ol>
-        <li><p><m>(-2;3),(1;-3),(7;2)</m>.</p></li>
-        <li><p><m>(-2;-2),(-1;2),(5;7)</m>.</p></li>
-        <li><p><m>(1;3),(2;-3),(4;-5),(5;8)</m>.</p></li>
-        <li><p><m>(-1;3),(4;7),(6;-3),(10;2)</m>.</p></li>
+        <li><m>(-2;3),(1;-3),(7;2)</m>;</li>
+        <li><m>(-2;-2),(-1;2),(5;7)</m>;</li>
+        <li><m>(1;3),(2;-3),(4;-5),(5;8)</m>;</li>
+        <li><m>(-1;3),(4;7),(6;-3),(10;2)</m>.</li>
       </ol>
     </p>
   </statement>
@@ -874,7 +915,8 @@
     <p>
       <ol>
         <li>
-          <p>Calculons les différences divisées des trois points :
+          <p>
+            Calculons les différences divisées des trois points :
             <me>
               \begin{array}{c|ccc}
               x_i&amp;y_i\\
@@ -891,7 +933,8 @@
           </p>
         </li>
         <li>
-          <p>Calculons les différences divisées des trois points :
+          <p>
+            Calculons les différences divisées des trois points :
             <me>
               \begin{array}{c|ccc}
               x_i&amp;y_i\\
@@ -908,7 +951,8 @@
           </p>
         </li>
         <li>
-          <p>Calculons les différences divisées de ces quatre points :
+          <p>
+            Calculons les différences divisées de ces quatre points :
             <me>
               \begin{array}{c|cccc}
               x_i&amp;y_i&amp;&amp;&amp;\\
@@ -922,8 +966,7 @@
               5&amp;8&amp;&amp;&amp;\\
               \end{array}
             </me>
-          </p>
-          <p>Donc
+            Donc
             <me>P(t)=3-6(t-1)+\frac{5}{3}(t-1)(t-2)+\frac{3}{4}(t-1)(t-2)(t-4).</me>
           </p>
         </li>
@@ -942,8 +985,7 @@
               10&amp;2&amp;&amp;&amp;\\
               \end{array}
             </me>
-          </p>
-          <p>Donc
+            Donc
             <me>P(t)=3+\frac{4}{5}(t+1)-\frac{29}{35}(t+1)(t-4)+\frac{1571}{9240}(t+1)(t-4)(t-6).</me>
           </p>
         </li>
@@ -954,7 +996,8 @@
 
 <exercise>
   <statement>
-    <p>On a commencé à remplir la table de différences divisées suivante :
+    <p>
+      On a commencé à remplir la table de différences divisées suivante :
       <me>
         \begin{array}{c|cccc}
         x_i&amp;y_i&amp;&amp;&amp;\\
@@ -969,77 +1012,80 @@
         \end{array}
       </me>
       On note
-      <me>A_0=(0{,}8;0{,}717\,356)\quad A_1=(1{,}1;0{,}891\,207)</me>
-      <me>A_2=(1{,}5;0{,}997\,495)\quad A_3=(1{,}7;0{,}991\,665)</me>
+      <me>A_0=(0{,}8;0{,}717\,356),\quad A_1=(1{,}1;0{,}891\,207),</me>
+      <me>A_2=(1{,}5;0{,}997\,495),\quad A_3=(1{,}7;0{,}991\,665).</me>
     </p>
     <p>Au besoin, tous les nombres seront arrondis à la sixième décimale.</p>
-    <p>
-      <ol>
-        <li><p>Complétez la table.</p></li>
-        <li><p>Déterminez <m>P(t)</m> le polynôme interpolateur des points <m>A_0,A_1</m> et <m>A_2</m>.</p></li>
-        <li><p>Déterminez <m>Q(t)</m> le polynôme interpolateur des points <m>A_1,A_2</m> et <m>A_3</m>.</p></li>
-        <li><p>Sachant que les points de départ sont pris sur le graphe de la fonction <m>\sin(t)</m>, comparez les nombres <m>P(1{,3})</m> et <m>Q(1{,}3)</m> à la valeur dont ils sont une approximation.</p></li>
-      </ol>
-    </p>
+    <ol>
+      <li>Complétez la table.</li>
+      <li>Déterminez <m>P(t)</m> le polynôme interpolateur des points <m>A_0,A_1</m> et <m>A_2</m>.</li>
+      <li>Déterminez <m>Q(t)</m> le polynôme interpolateur des points <m>A_1,A_2</m> et <m>A_3</m>.</li>
+      <li>Sachant que les points de départ sont pris sur le graphe de la fonction <m>\sin(t)</m>, comparez les nombres <m>P(1{,3})</m> et <m>Q(1{,}3)</m> à la valeur dont ils sont une approximation.</li>
+    </ol>
   </statement>
   <solution>
-    <p>
-      <ol>
-        <li>
-          <p>
-            <me>
-              \begin{array}{c|cccc}
-              x_i&amp;y_i&amp;&amp;&amp;\\
-              \hline\\
-              0{,}8&amp;0{,}717\,356&amp;&amp;&amp;\\
-              &amp;&amp;0{,}579\,503&amp;&amp;\\
-              1{,}1&amp;0{,}891\,207&amp;&amp;-0{,}448\,261&amp;\\
-              &amp;&amp;0{,}265\,720&amp;&amp;-0{,}047\,988\\
-              1{,}5&amp;0{,}997\,495&amp;&amp;-0{,}491\;450&amp;\\
-              &amp;&amp;-0{,}029\,150&amp;&amp;\\
-              1{,}7&amp;0{,}991\,665&amp;&amp;&amp;\\
-              \end{array}
-            </me>
-          </p>
-        </li>
-        <li>
-          <p>On a
-            <me>P(t)=0{,}717\,356+0{,}579\,503(t-0{,}8)-0{,}448\,261(t-0{,}8)(t-1{,}1).</me>
-          </p>
-        </li>
-        <li>
-          <p>On a
-            <me>Q(t)=0{,}891\,207+0{,}265\,720(t-1{,}1)-0{,}491\;450(t-1{,}1)(t-1{,}5).</me>
-          </p>
-        </li>
-        <li>
-          <p>D'une part
-            <md>
-              <mrow>P(1{,}3)&amp;=0{,}717\,356+0{,}579\,503(1{,}3</mrow>
-              <mrow>&amp;\qquad-0{,}8)-0{,}448\,261(1{,}3-0{,}8)(1{,}3-1{,}1)</mrow>
-              <mrow>&amp;\approx 0{,}962\,281.</mrow>
-            </md>
-          </p>
-          <p>D'autre part
-            <md>
-              <mrow>Q(1{,}3)&amp;=0{,}891\,207+0{,}265\,720(1{,}3-1{,}1)</mrow>
-              <mrow>&amp;\qquad-0{,}491\;450(1{,}3-1{,}1)(1{,}3-1{,}5)</mrow>
-              <mrow>&amp;\approx 0{,}964\,009.</mrow>
-            </md>
-          </p>
-          <p>Et par ailleurs
-            <me>\sin(1{,}3)\approx 0{,}963\,558.</me>
-          </p>
-          <p>Donc <m>P(1{,}3)</m> constitue une approximation de <m>\sin(1{,}3)</m> qui lui est inférieure, tandis que <m>Q(1{,}3)</m> est une approximation supérieure.</p>
-        </li>
-      </ol>
-    </p>
+    <ol>
+      <li>
+        <p>
+          On a
+          <me>
+            \begin{array}{c|cccc}
+            x_i&amp;y_i&amp;&amp;&amp;\\
+            \hline\\
+            0{,}8&amp;0{,}717\,356&amp;&amp;&amp;\\
+            &amp;&amp;0{,}579\,503&amp;&amp;\\
+            1{,}1&amp;0{,}891\,207&amp;&amp;-0{,}448\,261&amp;\\
+            &amp;&amp;0{,}265\,720&amp;&amp;-0{,}047\,988\\
+            1{,}5&amp;0{,}997\,495&amp;&amp;-0{,}491\;450&amp;\\
+            &amp;&amp;-0{,}029\,150&amp;&amp;\\
+            1{,}7&amp;0{,}991\,665&amp;&amp;&amp;\\
+            \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          On déduit de la question 1 que
+          <me>P(t)=0{,}717\,356+0{,}579\,503(t-0{,}8)-0{,}448\,261(t-0{,}8)(t-1{,}1).</me>
+        </p>
+      </li>
+      <li>
+        <p>
+          On déduit de la question 1 que
+          <me>Q(t)=0{,}891\,207+0{,}265\,720(t-1{,}1)-0{,}491\;450(t-1{,}1)(t-1{,}5).</me>
+        </p>
+      </li>
+      <li>
+        <p>
+          D'une part, on a
+          <md>
+            <mrow>P(1{,}3)&amp;=0{,}717\,356+0{,}579\,503(1{,}3</mrow>
+            <mrow>&amp;\qquad-0{,}8)-0{,}448\,261(1{,}3-0{,}8)(1{,}3-1{,}1)</mrow>
+            <mrow>&amp;\approx 0{,}962\,281.</mrow>
+          </md>
+        </p>
+        <p>
+          D'autre part, on a
+          <md>
+            <mrow>Q(1{,}3)&amp;=0{,}891\,207+0{,}265\,720(1{,}3-1{,}1)</mrow>
+            <mrow>&amp;\qquad-0{,}491\;450(1{,}3-1{,}1)(1{,}3-1{,}5)</mrow>
+            <mrow>&amp;\approx 0{,}964\,009.</mrow>
+          </md>
+        </p>
+        <p>
+          Par ailleurs, on a
+          <me>\sin(1{,}3)\approx 0{,}963\,558.</me>
+        </p>
+        <p>Donc <m>P(1{,}3)</m> constitue une approximation de <m>\sin(1{,}3)</m> qui lui est inférieure, tandis que <m>Q(1{,}3)</m> est une approximation supérieure.</p>
+      </li>
+    </ol>
   </solution>
 </exercise>
 
 <exercise>
   <statement>
-    <p>Selon Statistique Canada, la quantité de cheddar (en grammes par personne par année) disponible au Canada a suivi l'évolution suivante de 2014 à 2018.
+    <p>
+      Selon Statistique Canada, la quantité de cheddar (en grammes par personne par année) disponible au Canada a suivi l'évolution suivante de 2014 à 2018 :
       <me>
         \begin{array}{|c|c|}
         \hline
@@ -1055,55 +1101,55 @@
       </me>
     </p>
     <p>Malheureusement, il nous manque une donnée pour l'année 2016.</p>
-    <p>
-      <ol>
-        <li><p>Déterminez la forme de Newton du polynôme interpolateur des quatre points pour lesquels les données sont connues.</p></li>
-        <li><p>Utilisez le polynôme interpolateur pour estimer la donnée manquante.</p></li>
-      </ol>
-    </p>
+    <ol>
+      <li>Déterminez la forme de Newton du polynôme interpolateur des quatre points pour lesquels les données sont connues.</li>
+      <li>Utilisez le polynôme interpolateur pour estimer la donnée manquante.</li>
+    </ol>
   </statement>
   <solution>
-    <p>
-      <ol>
-        <li>
-          <p>Voici la table des différences divisées :
-            <me>
-              \begin{array}{c|cccc}
-              x_i&amp;y_i&amp;&amp;&amp;\\
-              \hline\\
-              2014&amp;3310&amp;&amp;&amp;\\
-              &amp;&amp;-90&amp;&amp;\\
-              2015&amp;3220&amp;&amp;\frac{235}{3}&amp;\\
-              &amp;&amp;145&amp;&amp;20\\
-              2017&amp;3510&amp;&amp;\frac{475}{3}&amp;\\
-              &amp;&amp;620&amp;&amp;\\
-              2018&amp;4130&amp;&amp;&amp;\\
-              \end{array}
-            </me>
-          </p>
-          <p>La forme de Newton du polynôme interpolateur est donc
-            <md>
-              <mrow>P(t)&amp;=3310-90(t-2014)+\frac{235}{3}(t-2014)(t-2015)</mrow>
-              <mrow>&amp;\qquad +20(t-2014)(t-2015)(t-2017).</mrow>
-            </md>
-          </p>
-        </li>
-        <li>
-          <p>On en déduit l'estimation suivante pour la donnée manquante :
-            <md>
-              <mrow>P(2016)&amp;=3310-90\cdot 2+\frac{235}{3}\cdot 2-20\cdot 2</mrow>
-              <mrow>&amp;\approx 3247.</mrow>
-            </md>
-          </p>
-        </li>
-      </ol>
-    </p>
+    <ol>
+      <li>
+        <p>
+          Voici la table des différences divisées :
+          <me>
+            \begin{array}{c|cccc}
+            x_i&amp;y_i&amp;&amp;&amp;\\
+            \hline\\
+            2014&amp;3310&amp;&amp;&amp;\\
+            &amp;&amp;-90&amp;&amp;\\
+            2015&amp;3220&amp;&amp;\frac{235}{3}&amp;\\
+            &amp;&amp;145&amp;&amp;20\\
+            2017&amp;3510&amp;&amp;\frac{475}{3}&amp;\\
+            &amp;&amp;620&amp;&amp;\\
+            2018&amp;4130&amp;&amp;&amp;\\
+            \end{array}
+          </me>
+        </p>
+        <p>
+          La forme de Newton du polynôme interpolateur est donc
+          <md>
+            <mrow>P(t)&amp;=3310-90(t-2014)+\frac{235}{3}(t-2014)(t-2015)</mrow>
+            <mrow>&amp;\qquad +20(t-2014)(t-2015)(t-2017).</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>
+          On en déduit l'estimation suivante pour la donnée manquante :
+          <md>
+            <mrow>P(2016)&amp;=3310-90\cdot 2+\frac{235}{3}\cdot 2\cdot 1+20\cdot 2\cdot 1\cdot(-1)</mrow>
+            <mrow>&amp;\approx 3247.</mrow>
+          </md>
+        </p>
+      </li>
+    </ol>
   </solution>
 </exercise>
 
 <exercise>
   <statement>
-    <p>Voici les temps de course de Victor en fonction des distances sur lesquelles il a déjà été chronométré :
+    <p>
+      Voici les temps de course de Victor en fonction des distances sur lesquelles il a déjà été chronométré :
       <me>
         \begin{array}{|c|c|}
         \hline
@@ -1120,7 +1166,8 @@
     <p>Utilisez ces données pour prédire par interpolation polynomiale le temps qu'il mettra lors de la prochaine course de <m>15</m> kilomètres à laquelle il participera.</p>
   </statement>
   <solution>
-    <p>En utilisant le code donné à la section <xref ref="algorithmediffdiv"/>, on obtient les différences divisées de ces quatre points, dont on déduit le polynôme interpolateur sous sa forme de Newton :
+    <p>
+      En utilisant le code donné à la section <xref ref="algorithmediffdiv"/>, on obtient les différences divisées de ces quatre points et on en déduit la forme de Newton de son polynôme interpolateur :
       <md>
         <mrow>P(t)&amp;\approx 362</mrow>
         <mrow>&amp;\qquad+0{,}260857142857(t-1500)</mrow>
@@ -1128,12 +1175,14 @@
         <mrow>&amp;\qquad-1{,}71438966056\cdot 10^{-10}(t-1500)(t-5000)(t-10000).</mrow>
       </md>
     </p>
-    <p>On calcule alors <m>P(15000)</m> et on trouve
+    <p>
+      On calcule alors <m>P(15000)</m> et on trouve
       <me>P(15000)\approx 4216.</me>
     </p>
-    <p>On estime ainsi que Victor mettra <m>4216</m> secondes environ, soit
+    <p>
+      On estime ainsi que Victor mettra <m>4216</m> secondes, i.e.
       <me>1\,\text{heure}\;10\,\text{minutes}\;16\,\text{secondes}</me>
-      pour courir son prochain <m>15</m> kilomètres.
+      environ pour courir son prochain <m>15</m> kilomètres.
     </p>
 <!--
     <p>Étant donné que la dernière différence divisée est vraiment petite, on est tenté d'éliminer le premier point correspondant au <m>1500</m> mètres.
@@ -1160,61 +1209,58 @@
     <p>Démontrez le théorème <xref ref="newtonavecdiffdiv"/> dans le cas <m>n=2</m>.</p>
   </statement>
   <solution>
-    <p>Soit <m>A_0=(x_0;y_0),A_1=(x_1;y_1)</m> et <m>A_2=(x_2;y_2)</m> trois points d'abscisses distinctes deux à deux.
+    <p>
+      Soit <m>A_0=(x_0;y_0),A_1=(x_1;y_1)</m> et <m>A_2=(x_2;y_2)</m> trois points d'abscisses distinctes deux à deux.
       La forme de Newton de leur polynôme annulateur s'écrit
       <me>N(t)=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1).</me>
     </p>
-    <p>On cherche donc trois nombres réels <m>d_0,d_1,d_2</m> tels que
+    <p>
+      On cherche donc trois nombres réels <m>d_0,d_1,d_2</m> tels que
+      <me>\begin{cases}N(x_0)=y_0,\\N(x_1)=y_1,\\N(x_2)=y_2,\end{cases}</me>
+      i.e.
       <me>
         \begin{cases}
-        N(x_0)=y_0\\
-        N(x_1)=y_1\\
-        N(x_2)=y_2
-        \end{cases}
-        \Leftrightarrow
-        \begin{cases}
-        d_0&amp;=&amp;y_0\\
-        d_0+(x_1-x_0)d_1&amp;=&amp;y_1\\
-        d_0+(x_2-x_0)d_1+(x_2-x_0)(x_2-x_1)d_2&amp;=&amp;y_2\\
+        d_0&amp;=&amp;y_0,\\
+        d_0+(x_1-x_0)d_1&amp;=&amp;y_1,\\
+        d_0+(x_2-x_0)d_1+(x_2-x_0)(x_2-x_1)d_2&amp;=&amp;y_2.\\
         \end{cases}
       </me>
     </p>
-    <p>Ce système linéaire est déjà triangulé.
+    <p>
+      Ce système linéaire est déjà triangulé.
       <ul>
+        <li>La première équation donne <m>d_0=y_0</m>.</li>
         <li>
-          <p>La première équation donne
-          <me>d_0=y_0.</me>
-          </p>
-        </li>
-        <li>
-          <p>Alors la deuxième équation donne
+          <p>
+            La deuxième équation donne <m>d_0+(x_1-x_0)d_1=y_1</m>, d'où
             <md>
-              <mrow>d_0+(x_1-x_0)d_1=y_1&amp;\quad\Rightarrow\quad y_0+(x_1-x_0)d_1=y_1</mrow>
-              <mrow>&amp;\quad\Rightarrow\quad (x_1-x_0)d_1=y_1-y_0</mrow>
-              <mrow>&amp;\quad\Rightarrow\quad d_1=\frac{y_1-y_0}{x_1-x_0}.</mrow>
+              <mrow>y_0+(x_1-x_0)d_1&amp;=y_1,</mrow>
+              <mrow>(x_1-x_0)d_1&amp;=y_1-y_0,</mrow>
+              <mrow>d_1&amp;=\frac{y_1-y_0}{x_1-x_0}.</mrow>
             </md>
           </p>
         </li>
         <li>
-          <p>Enfin la troisième équation donne
+          <p>
+            La troisième équation donne <m>d_0+(x_2-x_0)d_1+(x_2-x_0)(x_2-x_1)d_2=y_2</m>, d'où
             <md>
-              <mrow>&amp;d_0+(x_2-x_0)d_1+(x_2-x_0)(x_2-x_1)d_2=y_2</mrow>
-              <mrow>\Rightarrow\quad&amp;y_0+(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}+(x_2-x_0)(x_2-x_1)d_2=y_2</mrow>
-              <mrow>\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_0-(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}</mrow>
-              <mrow>\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+y_1-y_0-(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}</mrow>
-              <mrow>\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+\left(x_1-x_0-(x_2-x_0)\right)\frac{y_1-y_0}{x_1-x_0}</mrow>
-              <mrow>\Rightarrow\quad&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+\left(x_1-x_2\right)\frac{y_1-y_0}{x_1-x_0}</mrow>
-              <mrow>\Rightarrow\quad&amp;d_2=\frac{y_2-y_1}{(x_2-x_0)(x_2-x_1)}+\left(x_1-x_2\right)\frac{y_1-y_0}{(x_1-x_0)(x_2-x_0)(x_2-x_1)}</mrow>
-              <mrow>\Rightarrow\quad&amp;d_2=\frac{y_2-y_1}{(x_2-x_0)(x_2-x_1)}-\frac{y_1-y_0}{(x_1-x_0)(x_2-x_0)}</mrow>
-              <mrow>\Rightarrow\quad&amp;d_2=\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}.</mrow>
+              <mrow>&amp;y_0+(x_2-x_0)\frac{y_1-y_0}{x_1-x_0}+(x_2-x_0)(x_2-x_1)d_2=y_2,</mrow>
+              <mrow>&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_0-(x_2-x_0)\frac{y_1-y_0}{x_1-x_0},</mrow>
+              <mrow>&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+y_1-y_0-(x_2-x_0)\frac{y_1-y_0}{x_1-x_0},</mrow>
+              <mrow>&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+\left(x_1-x_0-(x_2-x_0)\right)\frac{y_1-y_0}{x_1-x_0},</mrow>
+              <mrow>&amp;(x_2-x_0)(x_2-x_1)d_2=y_2-y_1+\left(x_1-x_2\right)\frac{y_1-y_0}{x_1-x_0},</mrow>
+              <mrow>&amp;d_2=\frac{y_2-y_1}{(x_2-x_0)(x_2-x_1)}+\left(x_1-x_2\right)\frac{y_1-y_0}{(x_1-x_0)(x_2-x_0)(x_2-x_1)},</mrow>
+              <mrow>&amp;d_2=\frac{y_2-y_1}{(x_2-x_0)(x_2-x_1)}-\frac{y_1-y_0}{(x_1-x_0)(x_2-x_0)},</mrow>
+              <mrow>&amp;d_2=\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}.</mrow>
             </md>
           </p>
         </li>
       </ul>
     </p>
-    <p>La forme de Newton du polynôme interpolateur de ces trois points est donc
-      <me>N(t)=y_0+\frac{y_1-y_0}{x_1-x_0}(t-x_0)+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}(t-x_0)(t-x_1)</me>
-      c'est-à-dire
+    <p>
+      La forme de Newton du polynôme interpolateur de ces trois points est donc
+      <me>N(t)=y_0+\frac{y_1-y_0}{x_1-x_0}(t-x_0)+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0} }{x_2-x_0}(t-x_0)(t-x_1),</me>
+      i.e.
       <me>N(t)=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\left[A_0,A_1,A_2\right](t-x_0)(t-x_1).</me>
     </p>
   </solution>
@@ -1222,37 +1268,45 @@
 
 <exercise xml:id="formedenewton">
   <statement>
-    <p>Modifiez le code donné à la section <xref ref="algorithmenewton"/> afin qu'il affiche la forme de Newton du polynôme interpolateur.</p>
-    <p>Testez votre code avec l'exemple <xref ref="exemple2diffdiv"/> qui doit donner
-      <me>N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)+\frac{29}{6}(t-1)(t-2)(t-3).</me>
+    <p>Modifiez le code donné à la section <xref ref="algorithmediffdiv"/> afin qu'il affiche la forme de Newton du polynôme interpolateur.</p>
+    <p>
+      Testez votre code avec l'exemple <xref ref="exemple2diffdiv"/> qui doit donner
+      <me>N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)+\frac{29}{6}(t-1)(t-2)(t-3),</me>
+      i.e.
+      <pre>4.833333333333333*(t - 1.0)*(t - 2.0)*(t - 3.0) - 8.5*(t - 1.0)*(t - 2.0) + 10.0*t - 13.0</pre>
     </p>
   </statement>
+  <hint>
+    <p>Il faut essentiellement ajouter une boucle permettant de calculer les polynômes de base <m>N_j(t)</m> à l'intérieur d'une boucle additionnant les <m>d_j\cdot N_j(t)</m>.</p>
+  </hint>
   <solution>
-    <pre>
-      # entrées
-      n = 3
-      x = [1.0, 2.0, 3.0, 4.0]
-      y = [-3.0, 7.0, 0.0, 5.0]
-      var('t')
-
-      # instructions
-      diffDiv = [y]
-      for j in range(1, n+1):
-          nouvelleColonne = []
-          for i in range(0, n-j+1):
-              nouvelleDiffDiv = (diffDiv[j-1][i+1] - diffDiv[j-1][i]) / (x[i+j] - x[i])
-              nouvelleColonne.append(nouvelleDiffDiv)
-          diffDiv.append(nouvelleColonne)
-      N = diffDiv[0][0]
-      for j in range(1, n+1):
-          Nj = 1
-          for i in range(0, j):
-              Nj = Nj * (t - x[i])
-          N = N + diffDiv[j][0] * Nj
-
-      # sortie
-      print(N)
-    </pre>
+    <p>
+      Il faut essentiellement ajouter une boucle permettant de calculer les polynômes de base <m>N_j(t)</m> à l'intérieur d'une boucle additionnant les <m>d_j\cdot N_j(t)</m>.
+      Cela donne :
+      <pre>
+        # entrées :
+        n = 3
+        x = [1.0, 2.0, 3.0, 4.0]
+        y = [-3.0, 7.0, 0.0, 5.0]
+        var('t') # ligne ajoutée
+        # instructions :
+        diffDiv = [y]
+        for j in range(1, n+1):
+            nouvelleColonne = []
+            for i in range(0, n-j+1):
+                nouvelleDiffDiv = (diffDiv[j-1][i+1] - diffDiv[j-1][i]) / (x[i+j] - x[i])
+                nouvelleColonne.append(nouvelleDiffDiv)
+            diffDiv.append(nouvelleColonne)
+        N = diffDiv[0][0] # ligne ajoutée
+        for j in range(1, n+1): # ligne ajoutée
+            Nj = 1 # ligne ajoutée
+            for i in range(0, j): # ligne ajoutée
+                Nj = Nj * (t - x[i]) # ligne ajoutée
+            N = N + diffDiv[j][0] * Nj # ligne ajoutée
+        # sortie :
+        print(N) # ligne modifiée
+      </pre>
+    </p>
   </solution>
 </exercise>
 

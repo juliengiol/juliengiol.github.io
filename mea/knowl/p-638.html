@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:34-05:00    *-->
+<!--*    on 2021-03-08T11:43:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Partez de \(x_0=0\) et \(x_1=1\text{,}\) puis calculez \(x_2,x_3,x_4,x_5\) à l'aide de la méthode de la sécante. Tronquez tous vos résultats après la sixième décimale.</p>
+<p>Comme la dérivée de la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+g(t)=2t+1-e^t
+\end{equation*}
+</div>
+<p data-braille="continuation">vaut \(g'(t)=2-e^t\text{,}\) on a le tableau de variations qui suit.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|ccccccc}
+x&amp;0&amp;&amp;&amp;&amp;\ln(2)&amp;&amp;&amp;&amp;1&amp;\\
+\hline
+g'(t)&amp;&amp;&amp;+&amp;&amp;0&amp;&amp;-&amp;&amp;+&amp;\\
+\hline
+g(t)&amp;0&amp;&amp;\nearrow&amp;&amp;&amp;&amp;\searrow&amp;&amp;3-e&amp;
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">On en déduit que \(g(t)\ge 0\text{,}\) d'où \(2t\ge e^t-1\) pour tout \(t\in[0;1]\text{.}\)</p>
 <span class="incontext"><a href="exercicesnewton.html#p-638">Contexte</a></span>
 </body>
 </html>

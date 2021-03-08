@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:08-05:00    *-->
+<!--*    on 2021-03-08T11:44:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,91 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li>
-<p>La forme de Newton du polynôme interpolateur de ces trois points s'écrit</p>
-<div class="displaymath">
-\begin{align*}
-N(t)&amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
-&amp;=d_0+d_1(t-1)+d_2(t-1)(t-2).
-\end{align*}
-</div>
-<p>On cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{cases}
-N(1)=3\\
-N(2)=6\\
-N(3)=9
-\end{cases}
-\Leftrightarrow
-\begin{cases}
-d_0&amp;&amp;&amp;&amp;&amp;=&amp;3\\
-d_0&amp;+&amp;d_1&amp;&amp;&amp;=&amp;6\\
-d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;9\\
-\end{cases}
-\end{equation*}
-</div>
-<p>Ce système linéaire est déjà triangulé.</p>
-<ul class="disc">
-<li>
-<p>La première équation donne</p>
-<div class="displaymath">
-\begin{equation*}
-d_0=3.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Alors la deuxième équation donne</p>
-<div class="displaymath">
-\begin{align*}
-d_0+d_1=6&amp;\Rightarrow\quad 3+d_1=6\\
-&amp;\Rightarrow\quad d_1=3.
-\end{align*}
-</div>
-</li>
-<li>
-<p>Enfin la troisième équation donne</p>
-<div class="displaymath">
-\begin{align*}
-d_0+2d_1+2d_2=0&amp;\Rightarrow\quad 3+6+2d_2=9\\
-&amp;\Rightarrow\quad 2d_2=0\\
-&amp;\Rightarrow\quad d_2=0.
-\end{align*}
-</div>
-</li>
-</ul>
-<p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=3+3(t-1)+0(t-1)(t-2)=3+3(t-1).
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Calculons les différences divisées des trois points :</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{c|ccc}
-x_i&amp;y_i\\
-\hline\\
-1&amp;\left[A_0\right]=3&amp;&amp;\\
-&amp;&amp;\left[A_0,A_1\right]=3&amp;\\
-2&amp;\left[A_1\right]=6&amp;&amp;\left[A_0,A_1,A_2\right]=0\\
-&amp;&amp;\left[A_1,A_2\right]=3&amp;\\
-3&amp;\left[A_2\right]=9&amp;&amp;
-\end{array}
-\end{equation*}
-</div>
-<p>On trouve donc les mêmes coefficients qu'à la question 1, soit</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=3+3(t-1)+0(t-1)(t-2)=3+3(t-1).
-\end{equation*}
-</div>
-</li>
-</ol>
-<span class="incontext"><a href="exercicesdiffdiv.html#p-983">Contexte</a></span>
+<p>Assigner à \(\text{x}\) la valeur \(\text{a}\text{.}\)</p>
+<span class="incontext"><a href="algorithmerectangles.html#p-983">Contexte</a></span>
 </body>
 </html>

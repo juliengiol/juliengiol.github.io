@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:35:40-05:00    *-->
+<!--*    on 2021-03-08T11:43:48-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Instructions :</p>
-<ul class="circle">
-<li><p>Initialiser \(\text{L}\) la variable contenant la valeur du polynôme interpolateur : \(L=0\text{.}\)</p></li>
-<li>
-<p>Pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
-<ul class="square">
-<li><p>initialiser \(\text{Li}\) la variable contenant la valeur de \(L_i(t)\) : \(\text{Li}=1\) ;</p></li>
-<li>
-<p>pour \(\text{j}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
-<ul class="disc"><li><p>si \(\text{j}\neq\text{i}\text{,}\) assigner à \(\text{Li}\) la valeur de \(\displaystyle \text{Li}\cdot\frac{t-x_j}{x_i-x_j}\) ;</p></li></ul>
-</li>
-<li><p>assigner à \(\text{L}\) la valeur de \(\text{L}+y_i\cdot\text{Li}\text{.}\)</p></li>
-</ul>
-</li>
-</ul>
-<span class="incontext"><a href="algorithmelagrange.html#p-715">Contexte</a></span>
+<p>La forme de Lagrange du polynôme interpolateur est donnée par</p>
+<div class="displaymath">
+\begin{align*}
+L(t)&amp;=y_0L_0(t)+y_1L_1(t)+y_2L_2(t)\\
+&amp;=4\cdot L_0(t)+0\cdot L_1(t)+(-1)\cdot L_2(t)\\
+&amp;=4\cdot L_0(t)-L_2(t)
+\end{align*}
+</div>
+<p data-braille="continuation">où</p>
+<div class="displaymath">
+\begin{align*}
+L_0(t)&amp;=\frac{(t-x_1)(t-x_2)}{(x_0-x_1)(x_0-x_2)}\\
+&amp;=\frac{(t-2)(t-5)}{(-1-2)(-1-5)}\\
+&amp;=\frac{1}{18}(t-2)(t-5)
+\end{align*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+L_2(t)&amp;=\frac{(t-x_0)(t-x_1)}{(x_2-x_0)(x_2-x_1)}\\
+&amp;=\frac{(t+1)(t-2)}{(5+1)(5-2)}\\
+&amp;=\frac{1}{18}(t+1)(t-2).
+\end{align*}
+</div>
+<span class="incontext"><a href="exerciceslagrange.html#p-715">Contexte</a></span>
 </body>
 </html>

@@ -423,7 +423,8 @@
   <statement>
     <ul>
       <li>
-        <p>Entrées :
+        <p>
+          Entrées :
           <ul>
             <li>Assigner à <m>\text{f}</m> la fonction dont on cherche à approcher le zéro.</li>
             <li>Assigner à <m>\text{fPrime}</m> sa dérivée.</li>
@@ -433,21 +434,21 @@
         </p>
       </li>
       <li>
-        <p>Instructions :
+        <p>
+          Instructions :
           <ul>
             <li>
-              <p>Pour <m>\text{i}</m> allant de <m>\text{1}</m> à <m>\text{n}</m>,
+              <p>
+                Pour <m>\text{i}</m> allant de <m>\text{1}</m> à <m>\text{n}</m>,
                 <ul>
-                  <li><p>assigner à <m>\text{x0}</m> la valeur de <m>\displaystyle \text{x0}-\frac{\text{f}(\text{x0})}{\text{fPrime}(\text{x0})}</m>.</p></li>
+                  <li>assigner à <m>\text{x0}</m> la valeur de <m>\displaystyle \text{x0}-\frac{\text{f}(\text{x0})}{\text{fPrime}(\text{x0})}</m>.</li>
                 </ul>
               </p>
             </li>
           </ul>
         </p>
       </li>
-      <li>
-        <p>Sortie : Afficher <m>\text{x0}</m>.</p>
-      </li>
+      <li>Sortie : Afficher <m>\text{x0}</m>.</li>
     </ul>
   </statement>
 </algorithm>
@@ -1529,6 +1530,7 @@
 
 <exercise xml:id="unlemmepournewton">
   <statement>
+    <p>Le but de cet exercice est d'établir un résultat utilisé dans la démonstration du théorème <xref ref="convergence_quadratique_newton"/>.</p>
     <p>
       Montrez qu'on a
       <me>e^t-1\le 2t</me>

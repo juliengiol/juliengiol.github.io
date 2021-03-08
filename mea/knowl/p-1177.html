@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:36:27-05:00    *-->
+<!--*    on 2021-03-08T11:44:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Rectangles à droite : On prend \(\xi_k=x_k\) donc</p>
+<p>Alors l'erreur d'approximation par la méthode des trapèzes</p>
 <div class="displaymath">
-\begin{align*}
-\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+k\cdot 0{,}1)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(20+55\cdot 0{,}1\right)\\
-&amp;=2{,}55.
-\end{align*}
+\begin{equation*}
+\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)}_{\text{Approximation}}
+\end{equation*}
 </div>
-<span class="incontext"><a href="exercicesrectangles.html#p-1177">Contexte</a></span>
+<p data-braille="continuation">vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\leq\frac{M(b-a)^5}{2880n^4}
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(M\) est n'importe quel nombre tel que</p>
+<div class="displaymath">
+\begin{equation*}
+|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\end{equation*}
+</div>
+<span class="incontext"><a href="presentationsimpson.html#p-1177">Contexte</a></span>
 </body>
 </html>
