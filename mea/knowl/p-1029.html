@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:26-05:00    *-->
+<!--*    on 2021-03-13T13:52:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Combien faudrait-il utiliser de rectangles au minimum pour être certains que la valeur absolue de l'erreur d'approximation ne dépasse pas \(10^{-6}\text{?}\)</p>
+<p>En reprenant les calculs de la question 5 et en utilisant l'estimation de la question 6, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+\left|\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=\int_c^\xi M\cdot|x-\xi|\mathrm{d}x+\int_\xi^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=-M\cdot\int_c^\xi(x-\xi)\mathrm{d}x+M\cdot\int_\xi^d(x-\xi)\mathrm{d}x\\
+&amp;=-M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_c^\xi+M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_\xi^d\\
+&amp;=-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}+M\cdot\frac{(c-\xi)^2}{2}\\
+&amp;\quad+M\cdot\frac{(d-\xi)^2}{2}-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}\\
+&amp;=M\cdot\left(\frac{(c-\xi)^2}{2}+\frac{(d-\xi)^2}{2}\right)\\
+&amp;=M\cdot g(\xi)\\
+&amp;\le M\cdot\frac{(\Delta x)^2}{2}.
+\end{align*}
+</div>
 <span class="incontext"><a href="exercicesrectangles.html#p-1029">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:38-05:00    *-->
+<!--*    on 2021-03-13T13:52:54-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,22 +11,66 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>On a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_trapezes.html" title="Exemple 9.1.4">9.1.4</a> qu'on pouvait appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=2\text{.}\)</p>
-<p>Donc</p>
+<body><div class="solution solution-like"><ol class="decimal">
+<li>
+<p>D'une part, on a</p>
+<div class="displaymath">
+\begin{align*}
+\int_a^bf(x)\mathrm{d}x&amp;=\int_a^b(\alpha_0+\alpha_1x)\mathrm{d}x\\
+&amp;=\alpha_0x+0{,}5\alpha_1x^2\,\Bigg\vert_a^b\\
+&amp;=\alpha_0b+0{,}5\alpha_1b^2-(\alpha_0a+0{,}5\alpha_1a^2)\\
+&amp;=\alpha_0(b-a)+0{,}5\alpha_1(b^2-a^2).
+\end{align*}
+</div>
+<p>D'autre part, notons que les calculs de l'exercice <a class="xref" data-knowl="./knowl/ordre_zero.html" title="Exercice 8.3.10: Ordre de la méthode des rectangles à droite">8.3.10</a> donnent</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{cccc}
-&amp;|\text{Erreur}|&amp;\leq&amp;10^{-5}\\
-\Leftrightarrow&amp;\frac{M(b-a)^3}{12n^2}&amp;\leq&amp;10^{-5}\\
-\Leftrightarrow&amp;\frac{2\cdot (1-0)^3}{12n^2}&amp;\leq&amp;10^{-5}\\
-\Leftrightarrow&amp;\frac{1}{6n^2}&amp;\leq&amp;10^{-5}\\
-\Leftrightarrow&amp;\frac{10^5}{6}&amp;\leq&amp;n^2\\
-\Leftrightarrow&amp;\sqrt{\frac{10^5}{6}}&amp;\leq&amp;n\\
-\Leftrightarrow&amp;129{,}09\ldots&amp;\leq&amp;n
-\end{array}
+A:=\Delta x\cdot\sum_{k=1}^n(\alpha_0-0{,}5\alpha_1\Delta x)=(\alpha_0-0{,}5\alpha_1\Delta x)(b-a)
 \end{equation*}
 </div>
-<p>Il faut donc prendre \(130\) trapèzes au moins.</p>
-</div></body>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+B:=\Delta x\cdot\sum_{k=1}^n(a+k\Delta x)=0{,}5(b^2-a^2)+0{,}5(b-a)\Delta x,
+\end{equation*}
+</div>
+<p data-braille="continuation">de sorte que, par linéarité, on a</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\Delta x\cdot\sum_{k=1}^nf\left(a+(k-0{,}5)\cdot\Delta x\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left(\alpha_0+\alpha_1\left(a+(k-0{,}5)\cdot\Delta x\right)\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left(\alpha_0-0{,}5\alpha_1\Delta x\right)+\alpha_1\Delta x\cdot\sum_{k=1}^n\left(a+k\cdot\Delta x\right)\\
+=\;&amp;A+\alpha_1B\\
+=\;&amp;(\alpha_0-0{,}5\alpha_1\Delta x)(b-a)+0{,}5\alpha_1(b^2-a^2)+0{,}5\alpha_1(b-a)\Delta x\\
+=\;&amp;\alpha_0(b-a)-\cancel{0{,}5\alpha_1\Delta x(b-a)}+0{,}5\alpha_1(b^2-a^2)+\cancel{0{,}5\alpha_1(b-a)\Delta x}\\
+=\;&amp;\alpha_0(b-a)+0{,}5\alpha_1(b^2-a^2).
+\end{align*}
+</div>
+</li>
+<li>
+<p>D'une part, on a</p>
+<div class="displaymath">
+\begin{align*}
+\int_a^bg(x)\mathrm{d}x&amp;=\int_a^b(x-a)^2\mathrm{d}x\\
+&amp;=\frac{(x-a)^3}{3}\,\Bigg\vert_a^b\\
+&amp;=\frac{(b-a)^3}{3}-\frac{(a-a)^3}{3}\\
+&amp;=\frac{(b-a)^3}{3}.
+\end{align*}
+</div>
+<p>D'autre part, on a</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\Delta x\cdot\sum_{k=1}^ng\left(a+(k-0{,}5)\cdot\Delta x\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left((k-0{,}5)\cdot\Delta x\right)^2\\
+=\;&amp;(\Delta x)^3\cdot\sum_{k=1}^n(k^2-k+0{,}25)\\
+=\;&amp;(\Delta x)^3\left(\frac{n(n+1)(2n+1)}{6}-\frac{n(n+1)}{2}+0{,}25n\right)\\
+=\;&amp;\frac{(\Delta x)^3}{12}(2n(n+1)(2n+1)-6n(n+1)+3n)\\
+=\;&amp;\frac{(\Delta x)^3}{12}(4n^3+6n^2+2n-6n^2-6n+3n)\\
+=\;&amp;\frac{(b-a)^3}{12n^3}(4n^3-n)\\
+=\;&amp;\frac{(b-a)^3}{3}-\frac{(b-a)^3}{12n^2}\\
+&lt;\;&amp;\frac{(b-a)^3}{3}.
+\end{align*}
+</div>
+</li>
+</ol></div></body>
 </html>

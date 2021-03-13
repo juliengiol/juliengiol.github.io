@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:45:43-05:00    *-->
+<!--*    on 2021-03-13T13:52:55-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,5 +11,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="hint solution-like"><p>Utilisez des combinaisons linéaires appropriées.</p></div></body>
+<body><div class="hint solution-like"><ol class="decimal">
+<li>Utilisez la relation de Chasles.</li>
+<li>Appliquez la formule de Taylor-Lagrange <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a> avec \(n:=1\text{.}\)</li>
+<li>
+<p>Notez que</p>
+<div class="displaymath">
+\begin{equation*}
+x_k-\xi_k=\xi_k-x_{k-1}=\frac{\Delta x}{2}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Déduisez de la question 2 que</p>
+<div class="displaymath">
+\begin{equation*}
+|g_k(x)|\le\frac{M}{2}(x-\xi_k)^2
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[x_{k-1};x_k]\text{,}\) puis intégrez.</p>
+</li>
+<li>
+<p>Appliquez \(k\) fois l'inégalité triangulaire</p>
+<div class="displaymath">
+\begin{equation*}
+|A+B|\le|A|+|B|
+\end{equation*}
+</div>
+<p data-braille="continuation">à la formule de la question 1, puis utilisez l'estimation établie à la question précédente.</p>
+</li>
+</ol></div></body>
 </html>

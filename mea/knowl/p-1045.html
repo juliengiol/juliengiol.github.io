@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:28-05:00    *-->
+<!--*    on 2021-03-13T13:52:54-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Alors l'erreur d'approximation par la méthode des trapèzes</p>
+<p>D'une part, on a</p>
 <div class="displaymath">
-\begin{equation*}
-\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right)}_{\text{Approximation}}
-\end{equation*}
+\begin{align*}
+\int_a^bf(x)\mathrm{d}x&amp;=\int_a^b(\alpha_0+\alpha_1x)\mathrm{d}x\\
+&amp;=\alpha_0x+0{,}5\alpha_1x^2\,\Bigg\vert_a^b\\
+&amp;=\alpha_0b+0{,}5\alpha_1b^2-(\alpha_0a+0{,}5\alpha_1a^2)\\
+&amp;=\alpha_0(b-a)+0{,}5\alpha_1(b^2-a^2).
+\end{align*}
 </div>
-<p data-braille="continuation">vérifie</p>
-<div class="displaymath">
-\begin{equation*}
-|\text{Erreur}|\leq\frac{M(b-a)^3}{12n^2}
-\end{equation*}
-</div>
-<p data-braille="continuation">où \(M\) est n'importe quel nombre tel que</p>
-<div class="displaymath">
-\begin{equation*}
-|f''(x)|\leq M\quad\text{pour tout }x\in[a;b].
-\end{equation*}
-</div>
-<span class="incontext"><a href="presentationtrapezes.html#p-1045">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#p-1045">Contexte</a></span>
 </body>
 </html>

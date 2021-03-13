@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:15-05:00    *-->
+<!--*    on 2021-03-13T13:52:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,29 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>L'idée fondamentale de la preuve repose sur l'observation suivante :</p>
+<p>Par la méthode des rectangles à gauche, on a trouvé</p>
 <div class="displaymath">
-\begin{align*}
-\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-f(a)(b-a)\\
-&amp;=\int_a^bf(x)\mathrm{d}x-f(a)\int_a^b\mathrm{d}x\\
-&amp;=\int_a^bf(x)\mathrm{d}x-\int_a^bf(a)\mathrm{d}x\\
-&amp;=\int_a^b(f(x)-f(a))\mathrm{d}x.
-\end{align*}
+\begin{equation*}
+\text{Approximation}\approx 0{,}821\,999\,167\,653\,951
+\end{equation*}
 </div>
-<p data-braille="continuation">Ceci entraîne</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
-\begin{align*}
-|\text{Erreur}|&amp;=\left|\int_a^b(f(x)-f(a))\mathrm{d}x\right|\\
-&amp;\leq\int_a^b|f(x)-f(a)|\mathrm{d}x.
-\end{align*}
+\begin{equation*}
+0{,}82\leq\text{Approximation}\leq 0{,}83.
+\end{equation*}
+</div>
+<p data-braille="continuation">En ajoutant l'encadrement de l'erreur, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}82-0{,}25\leq\text{Approximation}+\text{Erreur}\leq 0{,}83+0{,}25
+\end{equation*}
+</div>
+<p data-braille="continuation">i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}57\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 1{,}08.
+\end{equation*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#p-933">Contexte</a></span>
 </body>

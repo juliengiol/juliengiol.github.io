@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:46:11-05:00    *-->
+<!--*    on 2021-03-13T13:54:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,84 +14,56 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.3.10.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.3.6.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
-<li><p>On a \(a=a+m\cdot 0\text{,}\) donc \(a\equiv a\:\mathrm{mod}\;m\text{.}\)</p></li>
-<li>
-<p>Supposons que \(a\equiv b\;\mathrm{mod}\;m\text{,}\) de sorte qu'il existe un entier relatif \(k\) tel que</p>
-<div class="displaymath">
+<li><div class="displaymath">
 \begin{equation*}
-a=b+mk.
+\begin{array}{|c|*{5}{c}|}
+\hline
+k&amp;1&amp;2&amp;3&amp;4&amp;5\\
+\hline
+\text{reste de }2^k/5&amp;2&amp;4&amp;3&amp;1&amp;2\\
+\hline
+\end{array}
 \end{equation*}
-</div>
-<p>Alors on a</p>
-<div class="displaymath">
+</div></li>
+<li><div class="displaymath">
 \begin{equation*}
-b=a-mk=a+m(-k)=a+mk'
+\begin{array}{|c|*{11}{c}|}
+\hline
+k&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11\\
+\hline
+\text{reste de }2^k/11&amp;2&amp;4&amp;8&amp;5&amp;10&amp;9&amp;7&amp;3&amp;6&amp;1&amp;2\\
+\hline
+\end{array}
 \end{equation*}
-</div>
-<p data-braille="continuation">en posant \(k':=-k\in\mathbb{Z}\text{.}\)</p>
-<p>Donc \(b\equiv a\;\mathrm{mod}\;m\text{.}\)</p>
-<p>La réciproque s'obtient par symétrie en échangeant les lettres \(a\) et \(b\text{.}\)</p>
-</li>
-<li>
-<p>Supposons que \(a\equiv b\;\mathrm{mod}\;m\) et \(b\equiv c\;\mathrm{mod}\;m\text{,}\) de sorte qu'il existe deux entiers relatifs \(k_1,k_2\) tels que</p>
-<div class="displaymath">
+</div></li>
+<li><div class="displaymath">
 \begin{equation*}
-a=b+mk_1\quad\text{et}\quad b=c+mk_2.
+\begin{array}{|c|*{11}{c}|}
+\hline
+k&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11\\
+\hline
+\text{reste de }3^k/11&amp;3&amp;9&amp;5&amp;4&amp;1&amp;3&amp;9&amp;5&amp;4&amp;1&amp;3\\
+\hline
+\end{array}
 \end{equation*}
-</div>
-<p>Alors on a</p>
-<div class="displaymath">
+</div></li>
+<li><div class="displaymath">
 \begin{equation*}
-a=b+mk_1=(c+mk_2)+mk_1=c+m(\underbrace{k_2+k_1}_{=k_3\in\mathbb{Z}}).
+\begin{array}{|c|*{11}{c}|}
+\hline
+k&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11\\
+\hline
+\text{reste de }(-1)^k/11&amp;10&amp;1&amp;10&amp;1&amp;10&amp;1&amp;10&amp;1&amp;10&amp;1&amp;10\\
+\hline
+\end{array}
 \end{equation*}
-</div>
-<p>Donc \(a\equiv c\;\mathrm{mod}\;m\text{.}\)</p>
-</li>
-<li>
-<p>Supposons que \(a\equiv b\;\mathrm{mod}\;m\) et \(c\equiv d\;\mathrm{mod}\;m\text{,}\) de sorte qu'il existe deux entiers relatifs \(k_1,k_2\) tels que</p>
-<div class="displaymath">
-\begin{equation*}
-a=b+mk_1\quad\text{et}\quad c=d+mk_2.
-\end{equation*}
-</div>
-<p>Alors on a</p>
-<div class="displaymath">
-\begin{equation*}
-a+c=(b+mk_1)+(d+mk_2)=b+d+m(\underbrace{k_1+k_2}_{=k_3\in\mathbb{Z}}).
-\end{equation*}
-</div>
-<p>Donc \(a+c\equiv b+d\;\mathrm{mod}\;m\text{.}\)</p>
-<p>Le cas de la soustraction se démontre de manière semblable.</p>
-</li>
-<li>
-<p>Supposons que \(a\equiv b\;\mathrm{mod}\;m\) et \(c\equiv d\;\mathrm{mod}\;m\text{,}\) de sorte qu'il existe deux entiers relatifs \(k_1,k_2\) tels que</p>
-<div class="displaymath">
-\begin{equation*}
-a=b+mk_1\quad\text{et}\quad c=d+mk_2.
-\end{equation*}
-</div>
-<p>Alors on a</p>
-<div class="displaymath">
-\begin{align*}
-ac&amp;=(b+mk_1)\cdot(d+mk_2)\\
-&amp;=bd+bmk_2+mk_1d+mk_1mk_2\\
-&amp;=bd+m(\underbrace{bk_2+k_1d+k_1mk_2}_{=k_3\in\mathbb{Z}}).
-\end{align*}
-</div>
-<p>Donc \(ac\equiv bd\;\mathrm{mod}\;m\text{.}\)</p>
-</li>
-<li>
-<p>Pour \(k=2\text{,}\) cette propriété découle de la précédente dans le cas particulier où \(b=a\text{.}\)</p>
-<p>Établissons le cas général \(k\geq 2\) par récurrence. Le passage de \(k-1\) à \(k\) s'obtient à nouveau grâce à la propriété précédente. En effet, on a</p>
-<div class="displaymath">
-\begin{equation*}
-a\equiv b\;\mathrm{mod}\;m\text{ et }a^{k-1}\equiv b^{k-1}\;\mathrm{mod}\;m\quad\Rightarrow\quad \underbrace{a\cdot a^{k-1}}_{a^k}\equiv\underbrace{b\cdot b^{k-1}}_{b^k}\;\mathrm{mod}\;m.
-\end{equation*}
-</div>
-</li>
+</div></li>
+<li><p>Comme \(a=38\equiv 1\;\mathrm{mod}\;37\text{,}\) on a \(a^k\equiv 1^k=1\;\mathrm{mod}\;37\) pour tout entier \(k\geq 1\text{.}\)</p></li>
+<li><p>Comme \(a=260\equiv 0\;\mathrm{mod}\;13\text{,}\) on a \(a^k\equiv 0^k=0\;\mathrm{mod}\;13\) pour tout entier \(k\geq 1\text{.}\)</p></li>
+<li><p>Comme \(a=-23\equiv 2\;\mathrm{mod}\;5\text{,}\) on a la même liste de restes que pour \(a=2\) à la première question ci-dessus.</p></li>
 </ol>
 </div>
 <span class="incontext"><a href="exerciceschinois.html#solution-127">Contexte</a></span>

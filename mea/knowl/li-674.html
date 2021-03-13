@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:19-05:00    *-->
+<!--*    on 2021-03-13T13:52:36-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,6 +15,23 @@
 <article class="li"><h6 class="heading">
 <span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>Soit \(n=100\,000=10^5\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{10^5}=10^{-5}\text{.}\)</p></article><span class="incontext"><a href="presentationrectangles.html#li-674">Contexte</a></span>
+<p>Précision : Si la fonction \(f\) est dérivable avec une dérivée continue sur \([a;b]\) de sorte qu'il existe une constante \(M\) telle que</p>
+<div class="displaymath">
+\begin{equation*}
+|f'(x)|\leq M\quad\text{pour tout }x\in[a;b],
+\end{equation*}
+</div>
+<p data-braille="continuation">alors on a</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\text{Erreur}\right|\leq \frac{M(b-a)^2}{2n}
+\end{equation*}
+</div>
+<p data-braille="continuation">où l'on définit l'erreur commise par</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Erreur}:=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\Delta x\cdot\sum_{k=1}^nf(\xi_k)}_{\text{Approximation}}.
+\end{equation*}
+</div></article><span class="incontext"><a href="presentationrectangles.html#li-674">Contexte</a></span>
 </body>
 </html>

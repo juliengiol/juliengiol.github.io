@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:45-05:00    *-->
+<!--*    on 2021-03-13T13:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,32 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.3.1</span><span class="period">.</span>
 </h6>
-<p>La méthode de Simpson donne alors</p>
+<p>Pour \(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec six trapèzes, posons \(f(x)=e^{x^2}\text{.}\) Alors</p>
+<div class="displaymath">
+\begin{equation*}
+f'(x)=e^{x^2}\cdot 2x\quad\text{et}\quad f''(x)=e^{x^2}\cdot(4x^2+2).
+\end{equation*}
+</div>
+<p data-braille="continuation">Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 4x^2+2\) sont croissantes sur \([0;1]\text{,}\) on a</p>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^4\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)\\
-&amp;=\frac{0{,}25}{6}\cdot(A_1+A_2+A_3+A_4)
+|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|\\
+&amp;=e^{x^2}(4x^2+2)\\
+&amp;\leq e^{1^2}(4\cdot 1^2+2)\\
+&amp;=6e
 \end{align*}
 </div>
-<p data-braille="continuation">où</p>
-<ul class="circle">
-<li><p>\(A_1=f(0)+4f(0{,}125)+f(0{,}25)\)</p></li>
-<li><p>\(A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)\)</p></li>
-<li><p>\(A_3=f(0{,}5)+4f(0{,}625)+f(0{,}75)\)</p></li>
-<li><p>\(A_4=f(0{,}75)+4f(0{,}875)+f(1)\)</p></li>
-</ul></article><span class="incontext"><a href="presentationsimpson.html#li-817">Contexte</a></span>
+<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\) Donc on peut prendre \(M=6e\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
+&amp;=\frac{e}{72}\\
+&amp;=0{,}037\,7\ldots\\
+&amp;\leq 0{,}038.
+\end{align*}
+</div></article><span class="incontext"><a href="exercicestrapezes.html#li-817">Contexte</a></span>
 </body>
 </html>

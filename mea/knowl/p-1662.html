@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:45:40-05:00    *-->
+<!--*    on 2021-03-13T13:53:47-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,41 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Supposons que \(a\vert bc\) et que \(\text{PGCD}(a;b)=1\text{.}\)</p>
+<p>On a</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+r&amp;u&amp;v&amp;\text{Division euclidienne}&amp;q\\
+\hline
+1975&amp;1&amp;0&amp;\\
+\hline
+225&amp;0&amp;1&amp;1975=225\cdot 8+175&amp;8\\
+\hline
+175&amp;1-0\cdot 8&amp;0-1\cdot 8&amp;225=175\cdot 1+50&amp;1\\
+&amp;=1&amp;=-8&amp;&amp;\\
+\hline
+50&amp;0-1\cdot 1&amp;1-(-8)\cdot 1&amp;175=50\cdot 3+25&amp;3\\
+&amp;=-1&amp;=9&amp;&amp;\\
+\hline
+25&amp;1-(-1)\cdot 3&amp;-8-9\cdot 3&amp;50=25\cdot 2+0&amp;\\
+&amp;=4&amp;=-35&amp;\text{Stop}&amp;\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">On déduit de la dernière ligne la valeur du PGCD</p>
+<div class="displaymath">
+\begin{equation*}
+\text{PGCD}(1975;225)=25
+\end{equation*}
+</div>
+<p data-braille="continuation">ainsi que la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+25=1975\cdot 4+225\cdot (-35).
+\end{equation*}
+</div>
 <span class="incontext"><a href="exercicesbezout.html#p-1662">Contexte</a></span>
 </body>
 </html>

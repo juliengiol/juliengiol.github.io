@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:37-05:00    *-->
+<!--*    on 2021-03-13T13:52:54-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,11 +14,15 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{96{,}96\cdot(4-2)^3}{12\cdot 4^2}\\
-&amp;=4{,}04.
+&amp;\Delta x\cdot\sum_{k=1}^nf\left(a+(k-0{,}5)\cdot\Delta x\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left(\alpha_0+\alpha_1\left(a+(k-0{,}5)\cdot\Delta x\right)\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left(\alpha_0-0{,}5\alpha_1\Delta x\right)+\alpha_1\Delta x\cdot\sum_{k=1}^n\left(a+k\cdot\Delta x\right)\\
+=\;&amp;A+\alpha_1B\\
+=\;&amp;(\alpha_0-0{,}5\alpha_1\Delta x)(b-a)+0{,}5\alpha_1(b^2-a^2)+0{,}5\alpha_1(b-a)\Delta x\\
+=\;&amp;\alpha_0(b-a)-\cancel{0{,}5\alpha_1\Delta x(b-a)}+0{,}5\alpha_1(b^2-a^2)+\cancel{0{,}5\alpha_1(b-a)\Delta x}\\
+=\;&amp;\alpha_0(b-a)+0{,}5\alpha_1(b^2-a^2).
 \end{align*}
 </div>
-<span class="incontext"><a href="exercicestrapezes.html#mjx-eqn-mrow-557">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#mjx-eqn-mrow-557">Contexte</a></span>
 </body>
 </html>

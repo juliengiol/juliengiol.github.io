@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:45:48-05:00    *-->
+<!--*    on 2021-03-13T13:53:48-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,26 +13,41 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">12.3.4.2</span><span class="period">.</span>
 </h6>
-<p>On a</p>
+<p>L'algorithme fourni donne</p>
 <div class="displaymath">
 \begin{equation*}
-3\equiv -1\;\mathrm{mod}\;4
+\text{PGCD}(377;234)=13\quad\text{et}\quad 13=377\cdot 5+234\cdot (-8).
 \end{equation*}
 </div>
-<p data-braille="continuation">car \(4\vert (3-(-1))=4\) et</p>
+<p>Notons \((u_0;v_0)=(13;-8)\) cette solution particulière de l'équation</p>
+<div class="displaymath">
+\begin{equation}
+au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 377\cdot u+234\cdot v=13.\tag{12.3.4}
+\end{equation}
+</div>
+<p>Si on pose, par exemple,</p>
 <div class="displaymath">
 \begin{equation*}
--1\equiv 7\;\mathrm{mod}\;4
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;-&amp;b&amp;=&amp;13&amp;-&amp;234&amp;=&amp;-221\\
+v&amp;=&amp;v_0&amp;+&amp;a&amp;=&amp;-8&amp;+&amp;377&amp;=&amp;369
+\end{array}\right.
 \end{equation*}
 </div>
-<p data-braille="continuation">car \(4\vert (-1-7)=-8\text{.}\)</p>
-<p>Donc</p>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(-221;369)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout2.html" title="Équation 12.3.4">(12.3.4)</a>.</p>
+<p>Et si on pose, par exemple,</p>
 <div class="displaymath">
 \begin{equation*}
-3\equiv 7\;\mathrm{mod}\;4.
+\left\{
+\begin{array}{rcccccccccc}
+u&amp;=&amp;u_0&amp;+&amp;5b&amp;=&amp;13&amp;+&amp;5\cdot 234&amp;=&amp;1183\\
+v&amp;=&amp;v_0&amp;-&amp;5a&amp;=&amp;-8&amp;-&amp;5\cdot 377&amp;=&amp;-1893
+\end{array}\right.
 \end{equation*}
-</div></article><span class="incontext"><a href="presentationchinois.html#li-1094">Contexte</a></span>
+</div>
+<p data-braille="continuation">on obtient une autre solution \((u;v)=(1183;-1893)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout2.html" title="Équation 12.3.4">(12.3.4)</a>.</p></article><span class="incontext"><a href="exercicesbezout.html#li-1094">Contexte</a></span>
 </body>
 </html>

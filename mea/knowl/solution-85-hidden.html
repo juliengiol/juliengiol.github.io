@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:24-05:00    *-->
+<!--*    on 2021-03-13T13:52:40-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,22 +12,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Notons \(f(x)=x\text{,}\) \(n=10\) et</p>
+<p>Notons \(f(x):=x\text{,}\) \(n:=10\) et</p>
 <div class="displaymath">
 \begin{equation*}
-\Delta x=\frac{b-a}{n}=\frac{3-2}{10}=0{,}1.
+\Delta x:=\frac{3-2}{10}=0{,}1.
 \end{equation*}
 </div>
-<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([2;3]\) en dix sous-intervalles de même longueur est donnée par</p>
+<p data-braille="continuation">La subdivision régulière de l'intervalle d'intégration \([2;3]\) en dix sous-intervalles donne</p>
 <div class="displaymath">
 \begin{equation*}
-x_k=a+k\cdot\Delta x=2+k\cdot 0{,}1\quad\text{pour }k=0,1,\ldots,10,
+2&lt;2{,}1&lt;2{,}2&lt;\ldots&lt;2{,}9&lt;3
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p data-braille="continuation">après avoir posé</p>
 <div class="displaymath">
 \begin{equation*}
-2&lt;2{,}1&lt;2{,}2&lt;\ldots&lt;2{,}9&lt;3.
+x_k:=2+k\cdot 0{,}1.
 \end{equation*}
 </div>
 <p data-braille="continuation">Comme il y a beaucoup de valeurs, nous allons utiliser la notation sigma pour exprimer l'approximation cherchée :</p>
@@ -39,7 +39,7 @@ x_k=a+k\cdot\Delta x=2+k\cdot 0{,}1\quad\text{pour }k=0,1,\ldots,10,
 </div>
 <ol class="decimal">
 <li>
-<p>Rectangles à gauche : On prend \(\xi_k=x_{k-1}\) donc</p>
+<p>Rectangles à gauche : On prend \(\xi_k:=x_{k-1}\) et alors</p>
 <div class="displaymath">
 \begin{align*}
 \text{Approximation}&amp;= 0{,}1\cdot\sum_{k=1}^{10}(2+(k-1)\cdot 0{,}1)\\
@@ -52,7 +52,7 @@ x_k=a+k\cdot\Delta x=2+k\cdot 0{,}1\quad\text{pour }k=0,1,\ldots,10,
 </div>
 </li>
 <li>
-<p>Rectangles à droite : On prend \(\xi_k=x_k\) donc</p>
+<p>Rectangles à droite : On prend \(\xi_k:=x_k\) et alors</p>
 <div class="displaymath">
 \begin{align*}
 \text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+k\cdot 0{,}1)\\
@@ -64,7 +64,7 @@ x_k=a+k\cdot\Delta x=2+k\cdot 0{,}1\quad\text{pour }k=0,1,\ldots,10,
 </div>
 </li>
 <li>
-<p>Rectangles au milieu : On prend \(\xi_k=\frac{x_{k-1}+x_k}{2}=2+(k-0{,}5)\cdot 0{,1}\) donc</p>
+<p>Rectangles au milieu : On prend \(\xi_k:=\frac{x_{k-1}+x_k}{2}=2+(k-0{,}5)\cdot 0{,1}\) et alors</p>
 <div class="displaymath">
 \begin{align*}
 \text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+(k-0{,}5)\cdot 0{,}1)\\

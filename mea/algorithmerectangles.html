@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:42:10-05:00    *-->
+<!--*    on 2021-03-13T13:50:54-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,47 +235,46 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">8.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode des rectangles à gauche.</span>
 </h6>
 <ul class="disc">
-<li id="li-682">
-<p id="p-976">Entrées :</p>
+<li id="li-684">
+<p id="p-957">Entrées :</p>
 <ul class="circle">
-<li id="li-683"><p id="p-977">Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
-<li id="li-684"><p id="p-978">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
-<li id="li-685"><p id="p-979">Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
+<li id="li-685"><p id="p-958">Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
+<li id="li-686"><p id="p-959">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
+<li id="li-687"><p id="p-960">Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
 </ul>
 </li>
-<li id="li-686">
-<p id="p-980">Instructions :</p>
+<li id="li-688">
+<p id="p-961">Instructions :</p>
 <ul class="circle">
-<li id="li-687"><p id="p-981">Initialiser \(\text{approximation}\text{,}\) la variable qui donnera la somme des aires des rectangles : \(\text{approximation}=0\text{.}\)</p></li>
-<li id="li-688"><p id="p-982">Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
-<li id="li-689"><p id="p-983">Assigner à \(\text{x}\) la valeur \(\text{a}\text{.}\)</p></li>
-<li id="li-690">
-<p id="p-984">Tant que \(\text{x}&lt;\text{b}\text{,}\)</p>
+<li id="li-689"><p id="p-962">Initialiser \(\text{approximation}\text{,}\) la variable qui donnera la somme des aires des rectangles : \(\text{approximation}=0\text{.}\)</p></li>
+<li id="li-690"><p id="p-963">Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
+<li id="li-691"><p id="p-964">Assigner à \(\text{x}\) la valeur \(\text{a}\text{.}\)</p></li>
+<li id="li-692">
+<p id="p-965">Tant que \(\text{x}&lt;\text{b}\text{,}\)</p>
 <ul class="square">
-<li id="li-691"><p id="p-985">assigner à \(\text{approximation}\) la valeur de \(\text{approximation}+\text{f}(\text{x})\) ;</p></li>
-<li id="li-692"><p id="p-986">assigner à \(\text{x}\) la valeur de \(\text{x}+\text{deltaX}\text{.}\)</p></li>
+<li id="li-693"><p id="p-966">assigner à \(\text{approximation}\) la valeur de \(\text{approximation}+\text{f}(\text{x})\text{;}\)</p></li>
+<li id="li-694"><p id="p-967">assigner à \(\text{x}\) la valeur de \(\text{x}+\text{deltaX}\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-693"><p id="p-987">Assigner à \(\text{approximation}\) la valeur de \(\text{deltaX}\cdot\text{approximation}\text{.}\)</p></li>
+<li id="li-695"><p id="p-968">Assigner à \(\text{approximation}\) la valeur de \(\text{deltaX}\cdot\text{approximation}\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-694"><p id="p-988">Sortie : Afficher \(\text{approximation}\text{.}\)</p></li>
-</ul></article><p id="p-989">Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
+<li id="li-696"><p id="p-969">Sortie : Afficher \(\text{approximation}\text{.}\)</p></li>
+</ul></article><p id="p-970">Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^14\sqrt{1-x^2}\,\mathrm{d}x=\pi
 \end{equation*}
 </div>
 <p data-braille="continuation">fournie par la méthode des rectangles à gauche pour \(32\) rectangles.</p>
-<div class="sagecell-python" id="sage-54"><script type="text/x-sage"># entrées
+<div class="sagecell-python" id="sage-54"><script type="text/x-sage"># entrées :
 import numpy as np
 def f(x):
     return 4 * np.sqrt(1 - x ** 2)
 a = 0.0
 b = 1.0
 n = 32
-
-# instructions
+# instructions :
 approximation = 0
 deltaX = (b - a) / n
 x = a
@@ -283,8 +282,7 @@ while x < b:
     approximation = approximation + f(x)
     x = x + deltaX
 approximation = deltaX * approximation
-
-# sortie
+# sortie :
 print(approximation)
 </script></div></section></div></main>
 </div>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:42-05:00    *-->
+<!--*    on 2021-03-13T13:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,50 +11,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><ol class="decimal">
-<li>
-<p>Les différences divisées sont</p>
+<body><div class="solution solution-like">
+<p>On a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_trapezes.html" title="Exemple 9.1.4">9.1.4</a> qu'on pouvait appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=2\text{.}\)</p>
+<p>Donc</p>
 <div class="displaymath">
 \begin{equation*}
-[A_0]=f(x_{k-1})\;\text{et}\; [A_0,A_1]=\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}.
+\begin{array}{cccc}
+&amp;|\text{Erreur}|&amp;\leq&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{M(b-a)^3}{12n^2}&amp;\leq&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{2\cdot (1-0)^3}{12n^2}&amp;\leq&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{1}{6n^2}&amp;\leq&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{10^5}{6}&amp;\leq&amp;n^2\\
+\Leftrightarrow&amp;\sqrt{\frac{10^5}{6}}&amp;\leq&amp;n\\
+\Leftrightarrow&amp;129{,}09\ldots&amp;\leq&amp;n
+\end{array}
 \end{equation*}
 </div>
-<p>La forme de Newton du polynôme interpolateur est donc</p>
-<div class="displaymath">
-\begin{align*}
-p(t)&amp;=[A_0]+[A_0,A_1](t-x_{k-1})\\
-&amp;=f(x_{k-1})+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}(t-x_{k-1}).
-\end{align*}
-</div>
-</li>
-<li>
-<p>On a donc</p>
-<div class="displaymath">
-\begin{align*}
-\int_{x_{k-1}}^{x_k}p(t)\mathrm{d}t&amp;=\int_{x_{k-1}}^{x_k}\left(f(x_{k-1})+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}(t-x_{k-1})\right)\mathrm{d}t\\
-&amp;=f(x_{k-1})t+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(t-x_{k-1})^2}{2}\Bigg\vert_{x_{k-1}}^{x_k}\\
-&amp;=f(x_{k-1})x_k+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(x_k-x_{k-1})^2}{2}\\
-&amp;\qquad -f(x_{k-1})x_{k-1}+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\cdot\frac{(x_{k-1}-x_{k-1})^2}{2}\\
-&amp;=f(x_{k-1})(x_k-x_{k-1})+(f(x_k)-f(x_{k-1}))\cdot\frac{(x_k-x_{k-1})}{2}\\
-&amp;=\frac{1}{2}\left(2f(x_{k-1})+f(x_k)-f(x_{k-1})\right)\cdot(x_k-x_{k-1})\\
-&amp;=\frac{1}{2}\left(f(x_{k-1})+f(x_k)\right)\cdot(x_k-x_{k-1}).
-\end{align*}
-</div>
-</li>
-<li>
-<p>Nous venons de démontrer qu'en remplaçant la fonction \(f\text{,}\) sur l'intervalle \([x_{k-1};x_k]\text{,}\) par le polynôme de degré un au plus qui interpole les points \((x_{k-1};f(x_{k-1}))\) et \((x_k;f(x_k))\text{,}\) on remplace</p>
-<div class="displaymath">
-\begin{equation*}
-\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x
-\end{equation*}
-</div>
-<p data-braille="continuation">par</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{1}{2}\left(f(x_{k-1})+f(x_k)\right)\cdot\underbrace{(x_k-x_{k-1})}_{\Delta x}=\frac{\Delta x}{2}\cdot\left(f(x_{k-1})+f(x_k))\right).
-\end{equation*}
-</div>
-<p>Ceci explique rigoureusement d'où sort la formule donnant l'approximation dans la méthode des trapèzes.</p>
-</li>
-</ol></div></body>
+<p>Il faut donc prendre \(130\) trapèzes au moins.</p>
+</div></body>
 </html>

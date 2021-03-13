@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:43-05:00    *-->
+<!--*    on 2021-03-13T13:52:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,15 +14,17 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
-&amp;=\int_c^d(t-c)\left(t-c-\frac{\Delta x}{2}\right)\mathrm{d}t\\
-&amp;=\int_c^d\left((t-c)^2-\frac{\Delta x}{2}\cdot(t-c)\right)\mathrm{d}t\\
-&amp;=\frac{(t-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
-&amp;=\frac{(d-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(d-c)^2}{2}-0\\
-&amp;=\frac{(\Delta x)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(\Delta x)^2}{2}\\
-&amp;=\frac{(\Delta x)^3}{12}.
+\left|\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|&amp;=\left|\int_{x_{k-1}}^{x_k}g_k(x)\mathrm{d}x\right|\\
+&amp;\le\int_{x_{k-1}}^{x_k}|g_k(x)|\mathrm{d}x\\
+&amp;\le\int_{x_{k-1}}^{x_k}\frac{M}{2}(x-\xi_k)^2\mathrm{d}x\\
+&amp;=\frac{M}{2}\cdot\frac{(x-\xi_k)^3}{3}\,\Bigg\vert_{x_{k-1}}^{x_k}\\
+&amp;=\frac{M}{6}\cdot\left((x_k-\xi_k)^3-(x_{k-1}-\xi_k)^3\right)\\
+&amp;=\frac{M}{6}\cdot\left(\left(\frac{\Delta x}{2}\right)^3-\left(-\frac{\Delta x}{2}\right)^3\right)\\
+&amp;=\frac{M}{6}\cdot\left(\frac{(\Delta x)^3}{8}+\frac{(\Delta x)^3}{8}\right)\\
+&amp;=\frac{M(\Delta x)^3}{24}\\
+&amp;=\frac{M(b-a)^3}{24n^3}.
 \end{align*}
 </div>
-<span class="incontext"><a href="presentationsimpson.html#mjx-eqn-mrow-598">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#mjx-eqn-mrow-598">Contexte</a></span>
 </body>
 </html>

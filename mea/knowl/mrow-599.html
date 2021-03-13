@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:43-05:00    *-->
+<!--*    on 2021-03-13T13:52:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,14 +14,17 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\int_c^dN(t)\mathrm{d}t&amp;=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3\\
-&amp;=f(c)\cdot\Delta x+\frac{2(f(m)-f(c))}{\Delta x}\cdot\frac{(\Delta x)^2}{2}\\
-&amp;\qquad+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot\frac{(\Delta x)^3}{12}\\
-&amp;=f(c)\cdot\Delta x+(f(m)-f(c))\cdot\Delta x+(f(c)-2f(m)+f(d))\cdot\frac{\Delta x}{6}\\
-&amp;=\frac{\Delta x}{6}\cdot\left(6f(c)+6(f(m)-f(c))+f(c)-2f(m)+f(d)\right)\\
-&amp;=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).
+\left|\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|&amp;=\left|\int_{x_{k-1}}^{x_k}g_k(x)\mathrm{d}x\right|\\
+&amp;\le\int_{x_{k-1}}^{x_k}|g_k(x)|\mathrm{d}x\\
+&amp;\le\int_{x_{k-1}}^{x_k}\frac{M}{2}(x-\xi_k)^2\mathrm{d}x\\
+&amp;=\frac{M}{2}\cdot\frac{(x-\xi_k)^3}{3}\,\Bigg\vert_{x_{k-1}}^{x_k}\\
+&amp;=\frac{M}{6}\cdot\left((x_k-\xi_k)^3-(x_{k-1}-\xi_k)^3\right)\\
+&amp;=\frac{M}{6}\cdot\left(\left(\frac{\Delta x}{2}\right)^3-\left(-\frac{\Delta x}{2}\right)^3\right)\\
+&amp;=\frac{M}{6}\cdot\left(\frac{(\Delta x)^3}{8}+\frac{(\Delta x)^3}{8}\right)\\
+&amp;=\frac{M(\Delta x)^3}{24}\\
+&amp;=\frac{M(b-a)^3}{24n^3}.
 \end{align*}
 </div>
-<span class="incontext"><a href="presentationsimpson.html#mjx-eqn-mrow-599">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#mjx-eqn-mrow-599">Contexte</a></span>
 </body>
 </html>

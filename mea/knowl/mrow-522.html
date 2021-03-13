@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:31-05:00    *-->
+<!--*    on 2021-03-13T13:52:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,11 +14,17 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-f''(x)&amp;=-2\cdot e^{-x^2}-2x\cdot\cdot e^{-x^2}\cdot(-2x)\\
-&amp;=-2\cdot e^{-x^2}+4x^2\cdot e^{-x^2}\\
-&amp;=2\cdot(2x^2-1)\cdot e^{-x^2}.
+\left|\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=\int_c^\xi M\cdot|x-\xi|\mathrm{d}x+\int_\xi^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=-M\cdot\int_c^\xi(x-\xi)\mathrm{d}x+M\cdot\int_\xi^d(x-\xi)\mathrm{d}x\\
+&amp;=-M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_c^\xi+M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_\xi^d\\
+&amp;=-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}+M\cdot\frac{(c-\xi)^2}{2}\\
+&amp;\quad+M\cdot\frac{(d-\xi)^2}{2}-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}\\
+&amp;=\frac{M(\Delta x)^2}{8}+\frac{M(\Delta x)^2}{8}\\
+&amp;=\frac{M(\Delta x)^2}{4}
 \end{align*}
 </div>
-<span class="incontext"><a href="presentationtrapezes.html#mjx-eqn-mrow-522">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#mjx-eqn-mrow-522">Contexte</a></span>
 </body>
 </html>

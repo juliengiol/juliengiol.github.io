@@ -381,7 +381,7 @@
           pour tout <m>x\in\;]c;c+r]</m>.
         </p>
       </li>
-      <li>Le cas <m>x\in\;[c-r;c[</m> se traite de manière symétrique, et il n'y a rien à prouver pour <m>x=c</m>, ce qui achève la démonstration.</li>
+      <li>Le cas <m>x\in [c-r;c[</m> se traite de manière symétrique, et il n'y a rien à prouver pour <m>x=c</m>, ce qui achève la démonstration.</li>
     </ol>
   </proof>
 </theorem>
@@ -856,8 +856,8 @@
     <p>
       Soit <m>n\ge 0</m> un entier et <m>f:[a;b]\longrightarrow\mathbb{R}</m> une fonction telle que
       <ul>
-        <li><m>f^{(n+1)}</m> existe sur <m>]a,b[</m>,</li>
-        <li>et que <m>f^{(n)}</m> soit continue sur <m>[a,b]</m>.</li>
+        <li><m>f^{(n+1)}</m> existe sur <m>]a;b[</m>,</li>
+        <li>et que <m>f^{(n)}</m> soit continue sur <m>[a;b]</m>.</li>
       </ul>
       Le but de cet exercice est de montrer que pour tous <m>x,x_0\in[a;b]</m>, il existe <m>\xi\in\;]a;b[</m> tel que
       <me>f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^n,</me>
@@ -1549,7 +1549,7 @@
         \begin{array}{c|ccccccc}
         x&amp;0&amp;&amp;&amp;&amp;\ln(2)&amp;&amp;&amp;&amp;1&amp;\\
         \hline
-        g'(t)&amp;&amp;&amp;+&amp;&amp;0&amp;&amp;-&amp;&amp;+&amp;\\
+        g'(t)&amp;&amp;&amp;+&amp;&amp;0&amp;&amp;-&amp;&amp;&amp;\\
         \hline
         g(t)&amp;0&amp;&amp;\nearrow&amp;&amp;&amp;&amp;\searrow&amp;&amp;3-e&amp;
         \end{array}

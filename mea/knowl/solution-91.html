@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:36-05:00    *-->
+<!--*    on 2021-03-13T13:52:49-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,79 +14,153 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.3.2.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.3.9.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
 <li>
-<p>Notons \(f(x)=e^{x^2}\text{,}\) \(n=6\) et</p>
+<p>Comme on l'a vu dans l'énoncé du Principe <a class="xref" data-knowl="./knowl/principe_rectangles.html" title="Principe 8.1.7">8.1.7</a>, on a</p>
 <div class="displaymath">
 \begin{equation*}
-\Delta x=\frac{b-a}{n}=\frac{1-0}{6}=\frac{1}{6}.
+f(\xi)\cdot\Delta x=\int_c^df(\xi)\mathrm{d}x,
 \end{equation*}
 </div>
-<p>Voici la subdivision régulière de l'intervalle \([0;1]\) en six sous-intervalles de même longueur :</p>
-<div class="displaymath">
-\begin{equation*}
-0&lt;\frac{1}{6}&lt;\frac{1}{3}&lt;\frac{1}{2}&lt;\frac{2}{3}&lt;\frac{5}{6}&lt;1.
-\end{equation*}
-</div>
-<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f\left(\frac{1}{6}\right)+2f\left(\frac{1}{3}\right)+2f\left(\frac{1}{2}\right)\right.\\
-&amp;\qquad\qquad\left.+2f\left(\frac{2}{3}\right)+2f\left(\frac{5}{6}\right)+f(1)\right)\\
-=\;&amp;\frac{1}{12}\cdot\left(e^{0^2}+2e^{\left(\frac{1}{6}\right)^2}+2e^{\left(\frac{1}{3}\right)^2}+2e^{\left(\frac{1}{2}\right)^2}+2e^{\left(\frac{2}{3}\right)^2}+2e^{\left(\frac{5}{6}\right)^2}+e^{1^2}\right)\\
-\approx\;&amp;1{,}475.
+E:&amp;=\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\\
+&amp;=\int_c^df(x)\mathrm{d}x-\int_c^df(\xi)\mathrm{d}x\\
+&amp;=\int_c^d(f(x)-f(\xi))\mathrm{d}x.
+\end{align*}
+</div>
+<p>On observe ensuite qu'on a</p>
+<div class="displaymath">
+\begin{equation*}
+-|f(x)-f(\xi)|\le f(x)-f(\xi)\le|f(x)-f(\xi)|
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[c;d]\text{,}\) d'où</p>
+<div class="displaymath">
+\begin{equation*}
+-\int_c^d|f(x)-f(\xi)|\mathrm{d}x\le E\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x
+\end{equation*}
+</div>
+<p data-braille="continuation">et finalement</p>
+<div class="displaymath">
+\begin{equation*}
+|E|\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Pour tout \(x\in[c;d]\text{,}\) la formule de Taylor-Lagrange (voir l'exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>) entraîne l'existence d'un nombre \(c\) compris entre \(x\) et \(\xi\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)-f(\xi)=f'(c)(x-\xi),
+\end{equation*}
+</div>
+<p data-braille="continuation">de sorte que</p>
+<div class="displaymath">
+\begin{align*}
+|f(x)-f(\xi)|&amp;=|f'(c)\cdot (x-\xi)|\\
+&amp;=|f'(c)|\cdot|x-\xi|\\
+&amp;\le M\cdot|x-\xi|.
 \end{align*}
 </div>
 </li>
 <li>
-<p>Notons \(g(x)=\cos\left(\frac{x^3}{5}\right)\text{,}\) \(n=4\) et</p>
-<div class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}=\frac{4-2}{4}=0{,}5.
-\end{equation*}
-</div>
-<p>Voici la subdivision régulière de l'intervalle \([2;4]\) en quatre sous-intervalles de même longueur :</p>
-<div class="displaymath">
-\begin{equation*}
-2&lt;2{,}5&lt;3&lt;3{,}5&lt;4.
-\end{equation*}
-</div>
-<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
+<p>Grâce aux deux premières questions, on a</p>
 <div class="displaymath">
 \begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(g(2)+2g(2{,}5)+2g(3)+2g(3{,}5)+g(4)\right)\\
-=\;&amp;0{,}25\cdot\left(\cos\left(\frac{2^3}{5}\right)+2\cos\left(\frac{2{,}5^3}{5}\right)+2\cos\left(\frac{3^3}{5}\right)\right.\\
-&amp;\qquad\qquad\left.+2\cos\left(\frac{3{,}5^3}{5}\right)+\cos\left(\frac{4^3}{5}\right)\right)\\
-\approx\;&amp;-0{,}277.
+\left|\int_c^df(x)\mathrm{d}x-f(c)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(c)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-c|\mathrm{d}x\\
+&amp;=M\cdot\int_c^d(x-c)\mathrm{d}x\\
+&amp;=M\cdot\frac{(x-c)^2}{2}\,\Bigg\vert_c^d\\
+&amp;=M\cdot\frac{(d-c)^2}{2}-M\cdot\frac{(c-c)^2}{2}\\
+&amp;=\frac{M(\Delta x)^2}{2}.
 \end{align*}
 </div>
 </li>
 <li>
-<p>Notons \(h(x)=\ln(\ln(x^2+1)+1)\text{,}\) \(n=3\) et</p>
-<div class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}=\frac{2+1}{3}=1.
-\end{equation*}
-</div>
-<p>Voici la subdivision régulière de l'intervalle \([-1;2]\) en trois sous-intervalles de même longueur :</p>
-<div class="displaymath">
-\begin{equation*}
--1&lt;0&lt;1&lt;2.
-\end{equation*}
-</div>
-<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
+<p>Grâce aux deux premières questions, on a</p>
 <div class="displaymath">
 \begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(h(-1)+2h(0)+2h(1)+h(2)\right)\\
-=\;&amp;0{,}5\cdot\left(\ln(\ln(2)+1)+2\cdot 0+2\ln(\ln(2)+1)+\ln(\ln(5)+1)\right)\\
-\approx\;&amp;1{,}269.
+\left|\int_c^df(x)\mathrm{d}x-f(d)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(d)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-d|\mathrm{d}x\\
+&amp;=-M\cdot\int_c^d(x-d)\mathrm{d}x\\
+&amp;=-M\cdot\frac{(x-d)^2}{2}\,\Bigg\vert_c^d\\
+&amp;=-M\cdot\frac{(d-d)^2}{2}+M\cdot\frac{(c-d)^2}{2}\\
+&amp;=\frac{M(\Delta x)^2}{2}.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Grâce aux deux premières questions, à la relation de Chasles, et au fait que</p>
+<div class="displaymath">
+\begin{equation*}
+(c-\xi)^2=(\xi-d)^2=\frac{(\Delta x)^2}{4},
+\end{equation*}
+</div>
+<p data-braille="continuation">on a</p>
+<div class="displaymath">
+\begin{align*}
+\left|\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=\int_c^\xi M\cdot|x-\xi|\mathrm{d}x+\int_\xi^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=-M\cdot\int_c^\xi(x-\xi)\mathrm{d}x+M\cdot\int_\xi^d(x-\xi)\mathrm{d}x\\
+&amp;=-M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_c^\xi+M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_\xi^d\\
+&amp;=-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}+M\cdot\frac{(c-\xi)^2}{2}\\
+&amp;\quad+M\cdot\frac{(d-\xi)^2}{2}-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}\\
+&amp;=\frac{M(\Delta x)^2}{8}+\frac{M(\Delta x)^2}{8}\\
+&amp;=\frac{M(\Delta x)^2}{4}
+\end{align*}
+</div>
+</li>
+<li>
+<p>Comme la dérivée de \(g\) vaut</p>
+<div class="displaymath">
+\begin{equation*}
+g'(\xi)=2\xi-c-d
+\end{equation*}
+</div>
+<p data-braille="continuation">et ne s'annule qu'au milieu \((c+d)/2\) de l'intervalle \([c;d]\text{,}\) on a les variations suivantes :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|ccccccc}
+\xi&amp;c&amp;&amp;&amp;&amp;(c+d)/2)&amp;&amp;&amp;&amp;d&amp;\\
+\hline
+g'(\xi)&amp;&amp;&amp;-&amp;&amp;0&amp;&amp;+&amp;&amp;&amp;\\
+\hline
+g(\xi)&amp;(\Delta x)^2/2&amp;&amp;\searrow&amp;&amp;(\Delta x)^2/4&amp;&amp;\nearrow&amp;&amp;(\Delta x)^2/2&amp;
+\end{array}
+\end{equation*}
+</div>
+<p>On en déduit que le maximum de \(g\) sur \([c;d]\) est égal à \((\Delta x)^2/2\text{,}\) d'où</p>
+<div class="displaymath">
+\begin{equation*}
+g(\xi)\le\frac{(\Delta x)^2}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(\xi\in[c;d]\text{.}\)</p>
+</li>
+<li>
+<p>En reprenant les calculs de la question 5 et en utilisant l'estimation de la question 6, on obtient</p>
+<div class="displaymath">
+\begin{align*}
+\left|\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=\int_c^\xi M\cdot|x-\xi|\mathrm{d}x+\int_\xi^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=-M\cdot\int_c^\xi(x-\xi)\mathrm{d}x+M\cdot\int_\xi^d(x-\xi)\mathrm{d}x\\
+&amp;=-M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_c^\xi+M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_\xi^d\\
+&amp;=-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}+M\cdot\frac{(c-\xi)^2}{2}\\
+&amp;\quad+M\cdot\frac{(d-\xi)^2}{2}-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}\\
+&amp;=M\cdot\left(\frac{(c-\xi)^2}{2}+\frac{(d-\xi)^2}{2}\right)\\
+&amp;=M\cdot g(\xi)\\
+&amp;\le M\cdot\frac{(\Delta x)^2}{2}.
 \end{align*}
 </div>
 </li>
 </ol>
 </div>
-<span class="incontext"><a href="exercicestrapezes.html#solution-91">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#solution-91">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:23-05:00    *-->
+<!--*    on 2021-03-13T13:52:46-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Approximation par les rectangles au milieu :</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\Delta x\cdot\left(f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)+f(\pi)\right)\\
-=\;&amp;\frac{\pi}{4}\cdot\left(\sin\left(\frac{\pi}{8}\right)+\sin\left(\frac{3\pi}{8}\right)+\sin\left(\frac{5\pi}{8}\right)+\sin\left(\frac{7\pi}{8}\right)\right)\\
-\approx\;&amp;2{,}052.
-\end{align*}
-</div>
+<p>Voici une façon de faire :<pre class="code-block tex2jax_ignore"># entrées :
+import numpy as np
+def f(x):
+    return 4 * np.sqrt(1 - x ** 2)
+a = 0.0
+b = 1.0
+n = 32
+# instructions :
+approximation = 0
+deltaX = (b - a) / n
+for k in range(1, n+1): # nouvelle ligne
+    x = a + (k - 1) * deltaX # nouvelle ligne
+    approximation = approximation + f(x)
+approximation = deltaX * approximation
+# sortie :
+print(approximation)
+</pre></p>
 <span class="incontext"><a href="exercicesrectangles.html#p-1007">Contexte</a></span>
 </body>
 </html>

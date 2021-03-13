@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:54-05:00    *-->
+<!--*    on 2021-03-13T13:53:08-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,10 +14,29 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">10.3.4.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.3.7.1</span><span class="period">.</span>
 </h6>
-<p>Y aller un pas à la fois, comme pour grimper une montagne.</p>
+<pre class="code-block tex2jax_ignore">import numpy as np
+def f(x):
+    return 4 * np.sqrt(1 - x ** 2)
+a = 0.0
+b = 1.0
+n = 32
+
+# instructions
+approximation = 0
+deltaX = (b - a) / n
+xi1 = a
+while xi1 &lt; b:
+    xi2 = xi1 + deltaX
+    approximation = approximation + f(xi1) + f(xi2)
+    xi1 = xi1 + deltaX
+approximation = approximation * deltaX / 2
+
+# sortie
+print(approximation)
+</pre>
 </div>
-<span class="incontext"><a href="exercicessimpson.html#solution-100">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#solution-100">Contexte</a></span>
 </body>
 </html>

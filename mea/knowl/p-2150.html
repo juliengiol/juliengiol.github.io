@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-04T13:38:08-05:00    *-->
+<!--*    on 2021-03-13T13:54:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,14 +10,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li><p>\(\text{Erreur}=0{,}3\quad\) et \(\quad\text{Erreur relative}=4\;\%\text{.}\)</p></li>
-<li><p>\(\text{Erreur}=0{,}21\quad\) et \(\quad\text{Erreur relative}\approx 0{,}17\;\%\text{.}\)</p></li>
-<li><p>\(\text{Erreur}=-0{,}21\quad\) et \(\quad\text{Erreur relative}\approx -0{,}17\;\%\text{.}\)</p></li>
-</ol>
-<span class="incontext"><a href="exercicesapproximation.html#p-2150">Contexte</a></span>
+<p>Troncature de la partie décimale avec <code class="code-inline tex2jax_ignore">int()</code> : <div class="sagecell-python" id="sage-76"><script type="text/x-sage">x = int(-3.7825089)
+print(x)
+</script></div></p>
+<span class="incontext"><a href="python_types.html#p-2150">Contexte</a></span>
 </body>
 </html>

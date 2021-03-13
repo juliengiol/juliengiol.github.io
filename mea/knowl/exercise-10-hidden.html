@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:40:53-05:00    *-->
+<!--*    on 2021-03-12T16:29:18-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,28 +11,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="exercise exercise-like"><p>On veut déterminer la quantité de chaleur nécessaire pour porter l'eau d'une bouilloire à ébullition alors qu'elle est à <span class="quantity">61 °C</span>.</p>
-<p>Pour cela, on doit connaître la capacité thermique de l'eau à cette température, mais on ne dispose que des données suivantes :</p>
+<body><article class="exercise exercise-like"><p>On s'intéresse à la méthode des rectangles <a class="xref" data-knowl="./knowl/def_methode_rectangles.html" title="Définition 1.1.8: Méthode des rectangles">1.1.8</a> à droite pour \(n\) rectangles sur un intervalle \([a;b]\text{.}\) Pour toute fonction \(f:[a:b]\longrightarrow\mathbb{R}\) intégrable, elle renvoie</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{|c|c|}
-\hline
-\text{Température }T&amp;\text{Capacité thermique }C\\
-\hline
-22&amp;4181\\
-42&amp;4179\\
-52&amp;4186\\
-82&amp;4199\\
-100&amp;4217\\
-\hline
-\end{array}
+\Delta x\cdot\sum_{k=1}^nf(x_k)
 \end{equation*}
 </div>
-<p data-braille="continuation">où \(T\) est en <span class="quantity"> °C</span> et \(C\) est en <span class="quantity"> <sup>J</sup>⁄<sub>kg·°C</sub></span>.</p>
-<p>Estimez la valeur de \(C\) à <span class="quantity">61 °C</span> à l'aide du polynôme interpolateur du degré spécifié en choisissant vos points \((T;C)\) grâce aux données ci-dessus, de façon à ce que les valeurs de \(T\) soient les plus proches possible de <span class="quantity">61 °C</span> tout en l'encadrant :</p>
+<p data-braille="continuation">en guise d'approximation de l'intégrale</p>
+<div class="displaymath">
+\begin{equation*}
+\int_a^bf(x)\mathrm{d}x.
+\end{equation*}
+</div>
+<p>Le but de cet exercice est de montrer que cette méthode d'intégration numérique est d'<a class="external" href="https://tinyurl.com/fk4kjruw" target="_blank">ordre</a> zéro.</p>
 <ol class="decimal">
-<li>avec un polynôme interpolateur de degré un;</li>
-<li>avec un polynôme interpolateur de degré deux.</li>
+<li>
+<p>Montrez que pour toute fonction constante \(f(x)=c\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x\cdot\sum_{k=1}^nf(x_k)=\int_a^bf(x)\mathrm{d}x.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Montrez que pour la fonction affine \(f(x)=x\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x\cdot\sum_{k=1}^nf(x_k)\ne\int_a^bf(x)\mathrm{d}x.
+\end{equation*}
+</div>
+</li>
 </ol>
+<p>Remarque : La question 1 montre que la méthode est <em class="emphasis">exacte</em> sur les polynômes de degré zéro, tandis que la question 2 montre qu'elle ne l'est pas sur les polynômes de degré un.</p>
 <div class="solutions"><a class="original" data-knowl="./knowl/solution-10-hidden.html" title="Solution 1.3.10.1"><span class="type">Solution</span></a></div></article></body>
 </html>

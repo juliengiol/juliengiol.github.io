@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:15-05:00    *-->
+<!--*    on 2021-03-13T13:52:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,10 +14,14 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\text{Erreur}&amp;=\int_a^bf(x)\mathrm{d}x-f(a)(b-a)\\
-&amp;=\int_a^bf(x)\mathrm{d}x-f(a)\int_a^b\mathrm{d}x\\
-&amp;=\int_a^bf(x)\mathrm{d}x-\int_a^bf(a)\mathrm{d}x\\
-&amp;=\int_a^b(f(x)-f(a))\mathrm{d}x.
+|\text{Erreur}|&amp;=\left|\int_a^bf(x)\mathrm{d}x-\sum_{k=1}^nf(\xi_k)\cdot\Delta x\right|\\
+&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(\xi_k)\cdot\Delta x\right|\\
+&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right|\\
+&amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right|\\
+&amp;\le\sum_{k=1}^n\frac{M(\Delta x)^2}{2}\\
+&amp;=n\cdot\frac{M(\Delta x)^2}{2}\\
+&amp;=n\cdot\frac{M(b-a)^2}{2n^2}\\
+&amp;=\frac{M(b-a)^2}{2n}.
 \end{align*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#mjx-eqn-mrow-439">Contexte</a></span>

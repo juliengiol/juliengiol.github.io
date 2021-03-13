@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:25-05:00    *-->
+<!--*    on 2021-03-13T13:52:50-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,11 +14,12 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+(k-0{,}5)\cdot 0{,}1)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k-\sum_{k=1}^{10}0{,}5\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}-10\cdot 0{,}5\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(20+55-5\cdot 0{,}1\right)\\
-&amp;=2{,}5.
+\left|\int_c^df(x)\mathrm{d}x-f(c)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(c)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-c|\mathrm{d}x\\
+&amp;=M\cdot\int_c^d(x-c)\mathrm{d}x\\
+&amp;=M\cdot\frac{(x-c)^2}{2}\,\Bigg\vert_c^d\\
+&amp;=M\cdot\frac{(d-c)^2}{2}-M\cdot\frac{(c-c)^2}{2}\\
+&amp;=\frac{M(\Delta x)^2}{2}.
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#mjx-eqn-mrow-502">Contexte</a></span>

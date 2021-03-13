@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:46:10-05:00    *-->
+<!--*    on 2021-03-13T13:54:06-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,68 +12,91 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like"><ol class="decimal">
+<li><p>Non, car \(\text{PGCD}(4;26)=2\neq 1\text{.}\)</p></li>
 <li>
-<p>Comme les entiers \(4\) et \(9\) sont premiers entre eux, on peut appliquer le théorème des restes chinois :</p>
+<p>Oui, car \(\text{PGCD}(4;25)=1\text{.}\)</p>
+<p>Grâce à l'algorithme d'Euclide étendu, on obtient la combinaison linéaire</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
-\hline
-3&amp;4&amp;9&amp;1=9\cdot 1+4\cdot(-2)&amp;1&amp;27\\
-\hline
-7&amp;9&amp;4&amp;1=4\cdot(-2)+9\cdot 1&amp;-2&amp;-56\\
-\hline
-M=&amp;36&amp;&amp;&amp;x_0=&amp;-29\\
-\hline
-\end{array}
+1=4\cdot (-6)+25\cdot 1.
 \end{equation*}
 </div>
-<p>Les solutions sont donc caractérisées par</p>
+<p data-braille="continuation">Donc \(u_0=-6\) est un inverse de \(4\) modulo \(25\text{.}\)</p>
+<p>De plus, l'ensemble des inverses de \(4\) modulo \(25\) correspond à la progression arithmétique</p>
 <div class="displaymath">
 \begin{equation*}
-x\equiv -29\;\mathrm{mod}\;36
+\left\{-6+25k\,|\,k\in\mathbb{Z}\right\}
 \end{equation*}
 </div>
-<p data-braille="continuation">ou encore, si on préfère,</p>
+<p data-braille="continuation">soit</p>
 <div class="displaymath">
 \begin{equation*}
-x\equiv 7\;\mathrm{mod}\;36.
+\left\{\ldots,\;-6-25,\;-6,\;-6+25,\;-6+25\cdot 2,\;\ldots\right\}.
+\end{equation*}
+</div>
+<p>Le plus petit inverse positif de \(4\) modulo \(25\) est donc</p>
+<div class="displaymath">
+\begin{equation*}
+-6+25=19.
 \end{equation*}
 </div>
 </li>
 <li>
-<p>Comme les entiers \(2, 5\) et \(7\) sont premiers entre eux, on peut appliquer le théorème des restes chinois :</p>
+<p>Oui, car \(\text{PGCD}(-34;9)=1\text{.}\)</p>
+<p>Grâce à l'algorithme d'Euclide étendu, on obtient la combinaison linéaire</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
-\hline
-1&amp;2&amp;35&amp;1=35\cdot 1+2\cdot(-17)&amp;1&amp;35\\
-\hline
-2&amp;5&amp;14&amp;1=14\cdot(-1)+5\cdot 3&amp;-1&amp;-28\\
-\hline
-6&amp;7&amp;10&amp;1=10\cdot(-2)+7\cdot 3&amp;-2&amp;-120\\
-\hline
-M=&amp;70&amp;&amp;&amp;x_0=&amp;-113\\
-\hline
-\end{array}
+1=(-34)\cdot(-4)+9\cdot(-15).
 \end{equation*}
 </div>
-<p>Les solutions sont donc caractérisées par</p>
+<p data-braille="continuation">Donc \(u_0=-4\) est un inverse de \(-34\) modulo \(9\text{.}\)</p>
+<p>De plus, l'ensemble des inverses de \(-34\) modulo \(9\) correspond à la progression arithmétique</p>
 <div class="displaymath">
 \begin{equation*}
-x\equiv -113\;\mathrm{mod}\;70
+\left\{-4+9k\,|\,k\in\mathbb{Z}\right\}
 \end{equation*}
 </div>
-<p data-braille="continuation">ou encore, si on préfère,</p>
+<p data-braille="continuation">soit</p>
 <div class="displaymath">
 \begin{equation*}
-x\equiv 27\;\mathrm{mod}\;70.
+\left\{\ldots,\;-4-9,\;-4,\;-4+9,\;-4+9\cdot 2,\;\ldots\right\}.
+\end{equation*}
+</div>
+<p>Le plus petit inverse positif de \(4\) modulo \(25\) est donc</p>
+<div class="displaymath">
+\begin{equation*}
+-4+9=5.
 \end{equation*}
 </div>
 </li>
-<li><p>Comme les entiers \(2\) et \(8\) ne sont pas premiers entre eux, on ne peut pas appliquer le théorème des restes chinois.</p></li>
+<li>
+<p>Oui, car \(\text{PGCD}(1954;205)=1\text{.}\)</p>
+<p>Grâce à l'algorithme d'Euclide étendu, on obtient la combinaison linéaire</p>
+<div class="displaymath">
+\begin{equation*}
+1=1954\cdot 79+205\cdot(-753).
+\end{equation*}
+</div>
+<p data-braille="continuation">Donc \(u_0=79\) est un inverse de \(1954\) modulo \(205\text{.}\)</p>
+<p>De plus, l'ensemble des inverses de \(1954\) modulo \(205\) correspond à la progression arithmétique</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{79+205k\,|\,k\in\mathbb{Z}\right\}
+\end{equation*}
+</div>
+<p data-braille="continuation">soit</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{\ldots,\;79-205,\;79,\;79+205,\;79+205\cdot 2,\;\ldots\right\}.
+\end{equation*}
+</div>
+<p>Le plus petit inverse positif de \(1954\) modulo \(205\) est donc</p>
+<div class="displaymath">
+\begin{equation*}
+79.
+\end{equation*}
+</div>
+</li>
+<li><p>Non, car \(\text{PGCD}(0;5)=5\neq 1\text{.}\)</p></li>
 </ol></div></body>
 </html>

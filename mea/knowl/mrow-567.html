@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:40-05:00    *-->
+<!--*    on 2021-03-13T13:52:54-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,11 +14,17 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}000\,1)+\cdots+2f(0,999\,9)+f(1)\right)\\
-=\;&amp;\text{ à vous de jouer avec l'algorithme fourni}\\
-=\;&amp;0{,}310\,268\,302\,623\ldots
+&amp;\Delta x\cdot\sum_{k=1}^ng\left(a+(k-0{,}5)\cdot\Delta x\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left((k-0{,}5)\cdot\Delta x\right)^2\\
+=\;&amp;(\Delta x)^3\cdot\sum_{k=1}^n(k^2-k+0{,}25)\\
+=\;&amp;(\Delta x)^3\left(\frac{n(n+1)(2n+1)}{6}-\frac{n(n+1)}{2}+0{,}25n\right)\\
+=\;&amp;\frac{(\Delta x)^3}{12}(2n(n+1)(2n+1)-6n(n+1)+3n)\\
+=\;&amp;\frac{(\Delta x)^3}{12}(4n^3+6n^2+2n-6n^2-6n+3n)\\
+=\;&amp;\frac{(b-a)^3}{12n^3}(4n^3-n)\\
+=\;&amp;\frac{(b-a)^3}{3}-\frac{(b-a)^3}{12n^2}\\
+&lt;\;&amp;\frac{(b-a)^3}{3}.
 \end{align*}
 </div>
-<span class="incontext"><a href="exercicestrapezes.html#mjx-eqn-mrow-567">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#mjx-eqn-mrow-567">Contexte</a></span>
 </body>
 </html>

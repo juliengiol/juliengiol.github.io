@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:27-05:00    *-->
+<!--*    on 2021-03-13T13:52:46-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,24 +11,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># entrées
+<body><div class="solution solution-like"><p>Voici une façon de faire :<pre class="code-block tex2jax_ignore"># entrées :
 import numpy as np
 def f(x):
     return 4 * np.sqrt(1 - x ** 2)
 a = 0.0
 b = 1.0
-n = 1000
-
-# instructions
+n = 1000 # ligne modifiée
+# instructions :
 approximation = 0
 deltaX = (b - a) / n
-x = b
-while x &gt; a:
+x = b # ligne modifiée
+while x &gt; a: # ligne modifiée
     approximation = approximation + f(x)
-    x = x - deltaX
+    x = x - deltaX # ligne modifiée
 approximation = deltaX * approximation
-
-# sortie
+# sortie :
 print(approximation)
-</pre></div></body>
+</pre></p></div></body>
 </html>

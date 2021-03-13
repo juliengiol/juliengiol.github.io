@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:13-05:00    *-->
+<!--*    on 2021-03-13T13:52:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Avec la subdivision de l'exemple <a class="xref" data-knowl="./knowl/subdivision_01.html" title="Exemple 8.1.2">8.1.2</a>, on a</p>
+<p>Remplacer la fonction \(x\mapsto f(x)\) par la fonction constante \(x\mapsto f(\xi)\) conduit à remplacer l'intégrale définie</p>
 <div class="displaymath">
 \begin{equation*}
-\int_0^1f(x)\mathrm{d}x=\int_{0}^{0{,}25}f(x)\mathrm{d}x+\int_{0{,}25}^{0{,}5}f(x)\mathrm{d}x+\int_{0{,}5}^{0{,}75}f(x)\mathrm{d}x+\int_{0{,}75}^{1}f(x)\mathrm{d}x.
+\int_c^df(x)\mathrm{d}x
 \end{equation*}
 </div>
+<p data-braille="continuation">par le nombre</p>
+<div class="displaymath">
+\begin{align*}
+\int_c^df(\xi)\mathrm{d}x&amp;=f(\xi)\cdot x\,\Bigg\vert_c^d\\
+&amp;=f(\xi)\cdot d-f(\xi)\cdot c\\
+&amp;=f(\xi)\cdot (d-c)\\
+&amp;=f(\xi)\cdot \Delta x
+\end{align*}
+</div>
+<p data-braille="continuation">qui est l'aire algébrique du rectangle de côtés \(\Delta x\) et \(f(\xi)\text{.}\)</p>
 <span class="incontext"><a href="presentationrectangles.html#p-913">Contexte</a></span>
 </body>
 </html>

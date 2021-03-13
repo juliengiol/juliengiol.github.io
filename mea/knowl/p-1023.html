@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:26-05:00    *-->
+<!--*    on 2021-03-13T13:52:50-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La subdivision régulière de l'intervalle \([0;1]\) à considérer est donc la suivante :</p>
+<p>Pour tout \(x\in[c;d]\text{,}\) la formule de Taylor-Lagrange (voir l'exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>) entraîne l'existence d'un nombre \(c\) compris entre \(x\) et \(\xi\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
+f(x)-f(\xi)=f'(c)(x-\xi),
 \end{equation*}
+</div>
+<p data-braille="continuation">de sorte que</p>
+<div class="displaymath">
+\begin{align*}
+|f(x)-f(\xi)|&amp;=|f'(c)\cdot (x-\xi)|\\
+&amp;=|f'(c)|\cdot|x-\xi|\\
+&amp;\le M\cdot|x-\xi|.
+\end{align*}
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#p-1023">Contexte</a></span>
 </body>

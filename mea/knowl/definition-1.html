@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:40:55-05:00    *-->
+<!--*    on 2021-03-13T13:49:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,53 +13,27 @@
 </head>
 <body>
 <article class="definition definition-like"><h6 class="heading">
-<span class="type">Définition</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Différences divisées.</span>
+<span class="type">Définition</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
 </h6>
-<p>Soit \(n\geq 0\) un entier et</p>
+<p>Soit \(a&lt;b\) deux nombres réels et \(n\geq 1\) un entier.</p>
+<p>On appelle <em class="emphasis">subdivision régulière</em> de l'intervalle \([a;b]\) en \(n\) sous-intervalles de longueur</p>
 <div class="displaymath">
 \begin{equation*}
-A_0=(x_0;y_0),\; A_1=(x_1;y_1),\;\ldots,\; A_n=(x_n;y_n)\;\in\mathbb{R}^2
+\Delta x:=\frac{b-a}{n}
 \end{equation*}
 </div>
-<p data-braille="continuation">\(n+1\) points d'abscisses distinctes deux à deux.</p>
-<p>Voici comment on calcule les différences divisées associées à ces \(n+1\) points quand on sélectionne un, deux, trois, et, plus généralement, \(k\) points parmi ces derniers.</p>
-<ul class="disc">
-<li>
-<p>Un point :</p>
+<p data-braille="continuation">la suite</p>
 <div class="displaymath">
 \begin{equation*}
-\left[A_i\right]=y_i
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
 \end{equation*}
 </div>
-<p data-braille="continuation">pour \(0\leq i\leq n\text{.}\)</p>
-</li>
-<li>
-<p>Deux points :</p>
+<p data-braille="continuation">où l'on pose</p>
 <div class="displaymath">
 \begin{equation*}
-\left[A_{i_1},A_{i_2}\right]=\frac{\left[A_{i_2}\right]-\left[A_{i_1}\right]}{x_{i_2}-x_{i_1}}=\frac{y_{i_2}-y_{i_1}}{x_{i_2}-x_{i_1}}
+x_k:=a+k\cdot\Delta x
 \end{equation*}
 </div>
-<p data-braille="continuation">pour \(0\leq i_1&lt;i_2\leq n\text{.}\)</p>
-</li>
-<li>
-<p>Trois points :</p>
-<div class="displaymath">
-\begin{equation*}
-\left[A_{i_1},A_{i_2},A_{i_3}\right]=\frac{\left[A_{i_2},A_{i_3}\right]-\left[A_{i_1},A_{i_2}\right]}{x_{i_3}-x_{i_1}}=\frac{\frac{y_{i_3}-y_{i_2}}{x_{i_3}-x_{i_2}}-\frac{y_{i_2}-y_{i_1}}{x_{i_2}-x_{i_1}}}{x_{i_3}-x_{i_1}}
-\end{equation*}
-</div>
-<p data-braille="continuation">pour \(0\leq i_1&lt;i_2&lt;i_3\leq n\text{.}\)</p>
-</li>
-<li>
-<p>\(k\) points :</p>
-<div class="displaymath">
-\begin{equation*}
-\left[A_{i_1},\ldots,A_{i_k}\right]=\frac{\left[A_{i_2},\ldots,A_{i_k}\right]-\left[A_{i_1},\ldots,A_{i_{k-1}}\right]}{x_{i_k}-x_{i_1}}
-\end{equation*}
-</div>
-<p data-braille="continuation">pour \(0\leq i_1&lt;\ldots&lt;i_k\leq n\text{.}\)</p>
-</li>
-</ul></article><span class="incontext"><a href="presentationdiffdiv.html#definition-1">Contexte</a></span>
+<p data-braille="continuation">pour \(k=0,1,\ldots,n\text{.}\)</p></article><span class="incontext"><a href="presentationrectangles.html#definition-1">Contexte</a></span>
 </body>
 </html>

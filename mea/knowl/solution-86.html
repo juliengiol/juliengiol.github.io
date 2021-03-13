@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:25-05:00    *-->
+<!--*    on 2021-03-13T13:52:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -17,11 +17,18 @@
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.3.4.1</span><span class="period">.</span>
 </h6>
 <ul class="disc">
-<li><p>Notons \(f(x)=\frac{1}{1+x}\text{.}\)</p></li>
-<li><p>Soit \(n=5\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2\text{.}\)</p></li>
-<li><p>Alors \(x_k=a+k\cdot\Delta x=k\cdot 0{,}2\) pour \(k=0,\ldots,5\text{.}\)</p></li>
+<li>Notons \(f(x):=\frac{1}{1+x}\text{.}\)</li>
 <li>
-<p>La subdivision régulière de l'intervalle \([0;1]\) à considérer est donc la suivante :</p>
+<p>Soit \(n:=5\text{,}\) \(\Delta x:=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2\) et</p>
+<div class="displaymath">
+\begin{equation*}
+x_k:=a+k\cdot\Delta x=k\cdot 0{,}2
+\end{equation*}
+</div>
+<p data-braille="continuation">pour \(k=0,\ldots,5\text{.}\)</p>
+</li>
+<li>
+<p>La subdivision régulière de l'intervalle \([0;1]\) à considérer est</p>
 <div class="displaymath">
 \begin{equation*}
 0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
@@ -37,7 +44,7 @@
 &amp;=0{,}745\ldots
 \end{align*}
 </div>
-<p data-braille="continuation">On a donc</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{equation*}
 0{,}745\leq\text{Approximation}\leq 0{,}746.
@@ -45,18 +52,23 @@
 </div>
 </li>
 <li>
-<p>Notons que \(|f'(x)|=\frac{1}{(1+x)^2}\text{.}\) Pour tout \(x\in[0;1]\text{,}\) on a</p>
+<p>Pour tout \(x\in[0;1]\text{,}\) on a \(1+x\ge 1\text{,}\) d'où</p>
+<div class="displaymath">
+\begin{equation*}
+(1+x)^2\le 1^2=1
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
 \begin{align*}
-&amp;&amp;1+x&amp;\geq 1\\
-&amp;\Rightarrow&amp;(1+x)^2&amp;\geq 1\\
-&amp;\Rightarrow&amp;\frac{1}{(1+x)^2}&amp;\leq 1.
+|f'(x)|&amp;=\left|-\frac{1}{(1+x)^2}\right|\\
+&amp;=\frac{1}{(1+x)^2}\\
+&amp;\le 1.
 \end{align*}
 </div>
-<p data-braille="continuation">Donc \(|f'(x)|\leq 1\) pour tout \(x\in[0;1]\) et on peut prendre \(M=1\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>.</p>
 </li>
 <li>
-<p>On a donc</p>
+<p>On peut donc appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a> avec \(M:=1\text{,}\) d'où</p>
 <div class="displaymath">
 \begin{align*}
 |\text{Erreur}|&amp;\leq\frac{M(b-a)^2}{2n}\\
@@ -64,7 +76,7 @@
 &amp;=0{,}1
 \end{align*}
 </div>
-<p data-braille="continuation">d'où</p>
+<p data-braille="continuation">i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 -0{,}1\leq\text{Erreur}\leq 0{,}1.
@@ -78,7 +90,7 @@
 0{,}745-0{,}1\leq\text{Approximation}+\text{Erreur}\leq 0{,}746+0{,}1
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p data-braille="continuation">i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 0{,}645\leq\int_0^1\frac{1}{1+x}\mathrm{d}x\leq 0{,}846.

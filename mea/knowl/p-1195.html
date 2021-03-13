@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:46-05:00    *-->
+<!--*    on 2021-03-13T13:53:09-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,46 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li>
-<p>On a \(f(x)=e^{-x^2}\) et, après des calculs fastidieux ou <a class="external" href="https://tinyurl.com/y6dbszyo" target="_blank">avec l'aide d'un logiciel de calcul formel</a>,</p>
-<div class="displaymath">
-\begin{equation*}
-f^{(4)}(x)=4e^{-x^2}\left(4x^4-12x^2+3\right).
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Donc</p>
+<p>D'après la remarque <a class="xref" data-knowl="./knowl/lagrangeEtNewtonTroisPoints.html" title="Remarque 7.1.8">7.1.8</a>, on a</p>
 <div class="displaymath">
 \begin{align*}
-|f^{(4)}(x)|&amp;=4e^{-x^2}\cdot \left|4x^4-12x^2+3\right|\\
-&amp;\leq 4e^{-x^2}\cdot\left(4x^4+12x^2+3\right)\\
-&amp;\leq 4\cdot\left(4+12+3\right)\\
-&amp;=76
+N(t)&amp;=f(c)+\frac{f(m)-f(c)}{m-c}(t-c)+\frac{\frac{f(d)-f(m)}{d-m}-\frac{f(m)-f(c)}{m-c}}{d-c}(t-c)(t-m)\\
+&amp;=f(c)+\frac{f(m)-f(c)}{\frac{\Delta x}{2}}(t-c)+\frac{\frac{f(d)-f(m)}{\frac{\Delta x}{2}}-\frac{f(m)-f(c)}{\frac{\Delta x}{2}}}{\Delta x}(t-c)(t-m)\\
+&amp;=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}(t-c)(t-m).
 \end{align*}
 </div>
-<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\)</p>
-</li>
-<li>
-<p>Il en découle qu'on peut prendre \(M=76\) en appliquant le théorème <a class="xref" data-knowl="./knowl/erreur_simpson.html" title="Théorème 10.1.3">10.1.3</a> :</p>
-<div class="displaymath">
-\begin{align*}
-\left|\text{Erreur}\right|&amp;\leq\frac{M(b-a)^5}{2880n^4}\\
-&amp;=\frac{76\cdot(1-0)^5}{2880\cdot 4^4}\\
-&amp;=\frac{76}{2880\cdot 4^4}\\
-&amp;=0{,}000\,103\ldots\\
-&amp;\leq 0{,}000\,11
-\end{align*}
-</div>
-<p data-braille="continuation">d'où</p>
-<div class="displaymath">
-\begin{equation*}
--0{,}000\,11\leq\text{Erreur}\leq 0{,}000\,11.
-\end{equation*}
-</div>
-</li>
-</ul>
 <span class="incontext"><a href="presentationsimpson.html#p-1195">Contexte</a></span>
 </body>
 </html>

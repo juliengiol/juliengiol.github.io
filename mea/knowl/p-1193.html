@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:45-05:00    *-->
+<!--*    on 2021-03-13T13:53:09-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,10 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Après des calculs fastidieux à la calculatrice ou <a class="external" href="https://juliengiol.github.io/mea/algorithmesimpson.html" target="_blank">avec l'aide de notre application</a>, on obtient</p>
+<p>La forme de Newton du polynôme interpolateur des points</p>
 <div class="displaymath">
 \begin{equation*}
-\text{Approximation}=0{,}746\,826\,120\,527\,46\ldots
+(c;f(c)),\;(m;f(m))\;\text{et}\;(d;f(d))
+\end{equation*}
+</div>
+<p data-braille="continuation">est donnée par</p>
+<div class="displaymath">
+\begin{equation*}
+N(t)=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}(t-c)(t-m)
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+\int_c^dN(t)\mathrm{d}t=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).
 \end{equation*}
 </div>
 <span class="incontext"><a href="presentationsimpson.html#p-1193">Contexte</a></span>

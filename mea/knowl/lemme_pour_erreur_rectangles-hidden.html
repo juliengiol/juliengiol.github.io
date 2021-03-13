@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2021-03-13T13:52:47-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="exercise exercise-like"><p>Le but de cet exercice est d'établir des résultats techniques utilisés pour démontrer le Théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>.</p>
+<p>Soit \(f:[c;d]\longrightarrow\mathbb{R}\) une fonction intégrable et soit \(\xi\in[c;d]\text{.}\) On note</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x:=d-c
+\end{equation*}
+</div>
+<p data-braille="continuation">la longueur de l'intervalle \([c;d]\text{.}\)</p>
+<ol class="decimal">
+<li>
+<p>Montrez que</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\right|\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Pour cette question et les suivantes, on suppose que \(f\) est dérivable avec une dérivée continue sur \([c;d]\text{,}\) de sorte qu'il existe une constante \(M\) telle que</p>
+<div class="displaymath">
+\begin{equation*}
+|f'(x)|\le M
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[c;d]\text{.}\)</p>
+<p>Montrez que</p>
+<div class="displaymath">
+\begin{equation*}
+|f(x)-f(\xi)|\le M\cdot |x-\xi|
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[c;d]\text{.}\)</p>
+</li>
+<li>
+<p>Montrez que le choix du point de gauche \(\xi:=c\) conduit à l'estimation</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\int_c^df(x)\mathrm{d}x-f(c)\cdot\Delta x\right|\le\frac{M(\Delta x)^2}{2}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Montrez que le choix du point de droite \(\xi:=d\) conduit à l'estimation</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\int_c^df(x)\mathrm{d}x-f(d)\cdot\Delta x\right|\le\frac{M(\Delta x)^2}{2}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Montrez que le choix du point du milieu \(\xi:=(c+d)/2\) conduit à l'estimation</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\right|\le\frac{M(\Delta x)^2}{4}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Étudiez les variations de la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+g(\xi):=\frac{(\xi-c)^2}{2}+\frac{(\xi-d)^2}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">afin de montrer que</p>
+<div class="displaymath">
+\begin{equation*}
+g(\xi)\le\frac{(\Delta x)^2}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(\xi\in[c;d]\text{.}\)</p>
+</li>
+<li>
+<p>Montrez que n'importe quel choix de \(\xi\in[c;d]\text{,}\) on a</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\right|\le\frac{M(\Delta x)^2}{2}.
+\end{equation*}
+</div>
+</li>
+</ol>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-91-hidden.html" title="Solution 8.3.9.1"><span class="type">Solution</span></a></div></article></body>
+</html>

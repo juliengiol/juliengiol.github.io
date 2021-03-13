@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:37-05:00    *-->
+<!--*    on 2021-03-13T13:52:53-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,12 +14,16 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|\\
-&amp;=e^{x^2}(4x^2+2)\\
-&amp;\leq e^{1^2}(4\cdot 1^2+2)\\
-&amp;=6e
+\Delta x\cdot\sum_{k=1}^ng\left(a+k\cdot\Delta x\right)&amp;=\frac{b-a}{n}\cdot\sum_{k=1}^n\left(a+k\cdot\frac{b-a}{n}\right)\\
+&amp;=\frac{b-a}{n}\cdot\sum_{k=1}^na+\frac{(b-a)^2}{n^2}\cdot\sum_{k=1}^nk\\
+&amp;=\frac{b-a}{n}\cdot na+\frac{(b-a)^2}{n^2}\cdot\frac{n(n+1)}{2}\\
+&amp;=(b-a)a+0{,}5(b-a)^2\left(1+\frac{1}{n}\right)\\
+&amp;=0{,}5(b-a)\left(2a+b-a+\frac{b-a}{n}\right)\\
+&amp;=0{,}5(b-a)\left(b+a+\Delta x\right)\\
+&amp;=0{,}5(b^2-a^2)+0{,}5(b-a)\Delta x\\
+&amp;&gt;0{,}5(b^2-a^2).
 \end{align*}
 </div>
-<span class="incontext"><a href="exercicestrapezes.html#mjx-eqn-mrow-549">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#mjx-eqn-mrow-549">Contexte</a></span>
 </body>
 </html>

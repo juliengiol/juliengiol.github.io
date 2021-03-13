@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:14-05:00    *-->
+<!--*    on 2021-03-13T13:52:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La méthode des rectangles à gauche donne</p>
+<p>Alors pour tout choix de points \(\xi_k\in[x_{k-1};x_k]\text{,}\) la méthode des rectangles engendre une erreur d'approximation</p>
 <div class="displaymath">
-\begin{align*}
-\text{Approximation}&amp;=\Delta x\cdot\left(f(0)+f(0{,}25)+f(0{,}5)+f(0{,}75)\right)\\
-&amp;=0{,}25\cdot\left(e^{-0^2}+e^{-0{,}25^2}+e^{-0{,}5^2}+e^{-0{,}75^2}\right)\\
-&amp;\approx 0{,}821\,999\,167\,653\,951.
-\end{align*}
+\begin{equation*}
+\text{Erreur}:=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\Delta x\cdot\sum_{k=1}^nf(\xi_k)}_{\text{Approximation}}
+\end{equation*}
+</div>
+<p data-braille="continuation">vérifiant</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\leq\frac{M(b-a)^2}{2n}
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(M\) est n'importe quel nombre tel que</p>
+<div class="displaymath">
+\begin{equation*}
+|f'(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\end{equation*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#p-924">Contexte</a></span>
 </body>

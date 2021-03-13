@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:38-05:00    *-->
+<!--*    on 2021-03-13T13:52:55-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,166 +14,87 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.3.5.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.3.12.1</span><span class="period">.</span>
 </h6>
-<p>Notons \(f(x)=\sin(x^2)\text{.}\) Alors</p>
-<div class="displaymath">
-\begin{equation*}
-f'(x)=\cos(x^2)\cdot 2x\quad\text{et}\quad f''(x)=-\sin(x^2)\cdot 4x^2+\cos(x^2)\cdot 2.
-\end{equation*}
-</div>
-<p data-braille="continuation">Donc, pour tout \(x\in[0;1]\text{,}\) on a</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{ccl}
-|f''(x)|&amp;=&amp;\left|-\sin(x^2)\cdot 4x^2+\cos(x^2)\cdot 2\right|\\
-&amp;\leq&amp;\left|\sin(x^2)\cdot 4x^2\right|+\left|\cos(x^2)\cdot 2\right|\\
-&amp;=&amp;\left|\sin(x^2)\right|\cdot 4x^2+\left|\cos(x^2)\right|\cdot 2\\
-&amp;\leq&amp;1\cdot 4x^2+1\cdot 2\\
-&amp;\leq&amp;1\cdot 4\cdot 1^2+1\cdot 2\\
-&amp;=&amp;6.
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">On pourra donc prendre \(M=6\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> quand on estimera l'erreur commise.</p>
 <ol class="decimal">
-<li><ul class="disc">
-<li><p>Ici \(n=5\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{5}=0{,}2\text{.}\)</p></li>
 <li>
-<p>Subdivision régulière de \([0;1]\) en cinq sous-intervalles de même longueur :</p>
-<div class="displaymath">
-\begin{equation*}
-0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>L'approximation fournie par la méthode des trapèzes est alors</p>
+<p>Grâce à la relation de Chasles, on a</p>
 <div class="displaymath">
 \begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}2)+2f(0{,}4)+2f(0{,}6)+2f(0{,}8)+f(1)\right)\\
-=\;&amp;\text{ à vous de jouer avec votre calculatrice}\\
-=\;&amp;0{,}313\,902\ldots
+\text{Ereur}&amp;=\int_a^bf(x)\,\mathrm{d}x-\Delta x\cdot\sum_{k=1}^nf(\xi_k)\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\,\mathrm{d}x-f(\xi_k)(x_k-x_{k-1})\\
+&amp;=\sum_{k=1}^n\left(\int_{x_{k-1}}^{x_k}f(x)\,\mathrm{d}x-\int_{x_{k-1}}^{x_k}f(\xi_k)\,\mathrm{d}x\right)\\
+&amp;=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x.
 \end{align*}
 </div>
-<p data-braille="continuation">En gardant trois décimales, on a donc l'encadrement suivant :</p>
+</li>
+<li><p>Comme \(f\) vérifie les hypothèses de la formule de Taylor-Lagrange <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a> avec \(n:=1\) et \(\xi_k\) à la place de \(x_0\text{,}\) il existe bien un tel \(\xi\text{.}\)</p></li>
+<li>
+<p>Comme \(\xi_k\) est le milieu de l'intervalle \([x_{k-1};x_k]\text{,}\) on a</p>
 <div class="displaymath">
 \begin{equation*}
-0{,}313\leq\text{Approximation}\leq 0{,}314.
+x_k-\xi_k=\xi_k-x_{k-1}=\frac{\Delta x}{2}
 \end{equation*}
 </div>
-</li>
-<li>
-<p>D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=6\text{,}\) on a</p>
+<p data-braille="continuation">et</p>
 <div class="displaymath">
 \begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{6\cdot(1-0)^3}{12\cdot 5^2}\\
-&amp;=0{,}02
+\int_{x_{k-1}}^{x_k}(x-\xi_k)\mathrm{d}x&amp;=\frac{(x-\xi_k)^2}{2}\,\Bigg\vert_{x_{k-1}}^{x_k}\\
+&amp;=\frac{(x_k-\xi_k)^2}{2}-\frac{(x_{k-1}-\xi_k)^2}{2}\\
+&amp;=\frac{1}{2}\cdot\left(\left(\frac{\Delta x}{2}\right)^2-\left(-\frac{\Delta x}{2}\right)^2\right)\\
+&amp;=\frac{1}{2}\cdot\left(\frac{(\Delta x)^2}{4}-\frac{(\Delta x)^2}{4}\right)\\
+&amp;=0,
 \end{align*}
 </div>
 <p data-braille="continuation">d'où</p>
 <div class="displaymath">
-\begin{equation*}
--0{,}020\leq\text{Erreur}\leq 0{,}020.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>On obtient donc l'encadrement</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}313-0{,}020\leq\text{Approximation}+\text{Erreur}\leq 0{,}314+0{,}020
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}293\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}334.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Le meilleur arrondissement qu'on peut en déduire est donc</p>
-<div class="displaymath">
-\begin{equation*}
-\int_0^1\sin(x^2)\mathrm{d}x\approx 0{,}3.
-\end{equation*}
-</div>
-</li>
-</ul></li>
-<li><ul class="disc">
-<li><p>Ici \(n=10\,000=10^4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{10^4}=0{,}000\,1\text{.}\)</p></li>
-<li>
-<p>Subdivision régulière de \([0;1]\) en dix mille sous-intervalles de même longueur :</p>
-<div class="displaymath">
-\begin{equation*}
-0&lt;0{,}000\,1&lt;0{,}000\,2&lt;\ldots&lt;0,999\,9&lt;1.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>L'approximation fournie par la méthode des trapèzes est alors</p>
-<div class="displaymath">
 \begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}000\,1)+\cdots+2f(0,999\,9)+f(1)\right)\\
-=\;&amp;\text{ à vous de jouer avec l'algorithme fourni}\\
-=\;&amp;0{,}310\,268\,302\,623\ldots
+\int_{x_{k-1}}^{x_k}g_k(x)\mathrm{d}x&amp;=\int_{x_{k-1}}^{x_k}\left(f(x)-f(\xi_k)-f'(\xi_k)(x-\xi_k)\right)\mathrm{d}x\\
+&amp;=\int_{x_{k-1}}^{x_k}\left(f(x)-f(\xi_k)\right)\mathrm{d}x-f'(\xi_k)\cdot\cancel{\int_{x_{k-1}}^{x_k}(x-\xi_k)\mathrm{d}x}\\
+&amp;=\int_{x_{k-1}}^{x_k}\left(f(x)-f(\xi_k)\right)\mathrm{d}x.
 \end{align*}
 </div>
-<p data-braille="continuation">En gardant neuf décimales, on a donc l'encadrement</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}310\,268\,302\leq\text{Approximation}\leq 0{,}310\,268\,303.
-\end{equation*}
-</div>
 </li>
 <li>
-<p>D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M=6\text{,}\) on a</p>
+<p>Grâce à la question 2, on a</p>
 <div class="displaymath">
 \begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{6\cdot(1-0)^3}{12\cdot (10^4)^2}\\
-&amp;=0{,}5\cdot 10^{-8}\\
-&amp;=0{,}000\,000\,005
+|g_k(x)|&amp;=\left|f(x)-f(\xi_k)-f'(\xi_k)(x-\xi_k)\right|\\
+&amp;=\left|\frac{f''(\xi)}{2}(x-\xi_k)^2\right|\\
+&amp;=\frac{|f''(\xi)|}{2}(x-\xi_k)^2\\
+&amp;\le\frac{M}{2}(x-\xi_k)^2
 \end{align*}
 </div>
-<p data-braille="continuation">d'où</p>
+<p data-braille="continuation">pour tout \(x\in[x_{k-1};x_k]\text{.}\)</p>
+<p>Grâce à la question 3 et à l'inégalité triangulaire pour l'intégrale, on en déduit que</p>
 <div class="displaymath">
-\begin{equation*}
--0{,}000\,000\,005\leq\text{Erreur}\leq 0{,}000\,000\,005.
-\end{equation*}
+\begin{align*}
+\left|\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|&amp;=\left|\int_{x_{k-1}}^{x_k}g_k(x)\mathrm{d}x\right|\\
+&amp;\le\int_{x_{k-1}}^{x_k}|g_k(x)|\mathrm{d}x\\
+&amp;\le\int_{x_{k-1}}^{x_k}\frac{M}{2}(x-\xi_k)^2\mathrm{d}x\\
+&amp;=\frac{M}{2}\cdot\frac{(x-\xi_k)^3}{3}\,\Bigg\vert_{x_{k-1}}^{x_k}\\
+&amp;=\frac{M}{6}\cdot\left((x_k-\xi_k)^3-(x_{k-1}-\xi_k)^3\right)\\
+&amp;=\frac{M}{6}\cdot\left(\left(\frac{\Delta x}{2}\right)^3-\left(-\frac{\Delta x}{2}\right)^3\right)\\
+&amp;=\frac{M}{6}\cdot\left(\frac{(\Delta x)^3}{8}+\frac{(\Delta x)^3}{8}\right)\\
+&amp;=\frac{M(\Delta x)^3}{24}\\
+&amp;=\frac{M(b-a)^3}{24n^3}.
+\end{align*}
 </div>
 </li>
 <li>
-<p>On obtient donc l'encadrement</p>
+<p>En appliquant \(k\) fois l'inégalité triangulaire à la formule de la question 1 et en utilisant pour chaque morceau l'estimation de la question 4, on obtient</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{array}{cc}
-&amp;0{,}310\,268\,302-0{,}000\,000\,005\\
-\leq&amp;\text{Approximation}+\text{Erreur}\\
-\leq&amp;0{,}310\,268\,303+0{,}000\,000\,005
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}310\,268\,297\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}310\,268\,308.
-\end{equation*}
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|\\
+&amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|\\
+&amp;\le\sum_{k=1}^n\frac{M(b-a)^3}{24n^3}\\
+&amp;=\frac{M(b-a)^3}{24n^3}\cdot n\\
+&amp;=\frac{M(b-a)^3}{24n^2}.
+\end{align*}
 </div>
 </li>
-<li>
-<p>Le meilleur arrondissement qu'on peut en déduire est donc</p>
-<div class="displaymath">
-\begin{equation*}
-\int_0^1\sin(x^2)\mathrm{d}x\approx 0{,}310\,268\,3.
-\end{equation*}
-</div>
-</li>
-</ul></li>
 </ol>
 </div>
-<span class="incontext"><a href="exercicestrapezes.html#solution-94">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#solution-94">Contexte</a></span>
 </body>
 </html>

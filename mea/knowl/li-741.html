@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:31-05:00    *-->
+<!--*    on 2021-03-13T13:52:50-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,18 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">8.3.9.4</span><span class="period">.</span>
 </h6>
-<p>En passant à la valeur absolue, on obtient</p>
+<p>Grâce aux deux premières questions, on a</p>
 <div class="displaymath">
-\begin{equation*}
-|f''(x)|=2\cdot|2x^2-1|\cdot e^{-x^2}.
-\end{equation*}
-</div></article><span class="incontext"><a href="presentationtrapezes.html#li-741">Contexte</a></span>
+\begin{align*}
+\left|\int_c^df(x)\mathrm{d}x-f(d)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(d)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-d|\mathrm{d}x\\
+&amp;=-M\cdot\int_c^d(x-d)\mathrm{d}x\\
+&amp;=-M\cdot\frac{(x-d)^2}{2}\,\Bigg\vert_c^d\\
+&amp;=-M\cdot\frac{(d-d)^2}{2}+M\cdot\frac{(c-d)^2}{2}\\
+&amp;=\frac{M(\Delta x)^2}{2}.
+\end{align*}
+</div></article><span class="incontext"><a href="exercicesrectangles.html#li-741">Contexte</a></span>
 </body>
 </html>

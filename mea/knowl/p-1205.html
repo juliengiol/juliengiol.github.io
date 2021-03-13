@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:47-05:00    *-->
+<!--*    on 2021-03-13T13:53:10-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p>
-<span class="incontext"><a href="algorithmesimpson.html#p-1205">Contexte</a></span>
+<p>Alors l'erreur d'approximation par la méthode des trapèzes</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)}_{\text{Approximation}}
+\end{equation*}
+</div>
+<p data-braille="continuation">vérifie</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\leq\frac{M(b-a)^5}{2880n^4}
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(M\) est n'importe quel nombre tel que</p>
+<div class="displaymath">
+\begin{equation*}
+|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\end{equation*}
+</div>
+<span class="incontext"><a href="presentationsimpson.html#p-1205">Contexte</a></span>
 </body>
 </html>

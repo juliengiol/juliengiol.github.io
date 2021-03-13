@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:45:23-05:00    *-->
+<!--*    on 2021-03-13T13:53:36-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,78 +13,14 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 class="heading">
-<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">11.3.10</span><span class="period">.</span>
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">11.3.6</span><span class="period">.</span>
 </h6>
-<p>Le but de cet exercice est d'apprendre à appliquer l'algorithme d'Euclide de façon matricielle, et de découvrir au passage l'objet du chapitre suivant qui est consacré à l'algorithme d'Euclide étendu.</p>
+<p>Calculez \(\text{PGCD}(a;b)\) à l'aide de l'algorithme d'Euclide.</p>
 <ol class="decimal">
-<li>
-<p>Soit \(a,b,q,r\) quatre nombres tels que</p>
-<div class="displaymath">
-\begin{equation*}
-a=b\cdot q+r.
-\end{equation*}
-</div>
-<p data-braille="continuation">Vérifiez qu'on a</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}0&amp;1\\1&amp;-q\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}b\\r\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>La première étape de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(2589;234)\) consiste en la division euclidienne</p>
-<div class="displaymath">
-\begin{equation*}
-2589=234\cdot 11+15.
-\end{equation*}
-</div>
-<p data-braille="continuation">Donnez une matrice \(2\times 2\) \(M_1\) telle que</p>
-<div class="displaymath">
-\begin{equation*}
-M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}234\\15\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>La deuxième étape de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(2589;234)\) consiste en la division euclidienne</p>
-<div class="displaymath">
-\begin{equation*}
-234=15\cdot 15+9.
-\end{equation*}
-</div>
-<p data-braille="continuation">Donnez une matrice \(2\times 2\) \(M_2\) telle que</p>
-<div class="displaymath">
-\begin{equation*}
-M_2\begin{bmatrix}234\\15\end{bmatrix}=\begin{bmatrix}15\\9\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Vérifiez qu'on a</p>
-<div class="displaymath">
-\begin{equation*}
-M_2M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}15\\9\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Continuez ainsi afin d'obtenir des matrices \(2\times 2\) \(M_3,M_4,M_5\) telles que</p>
-<div class="displaymath">
-\begin{equation*}
-M_5M_4M_3M_2M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}3\\0\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li><p>Déterminez la matrice \(M=M_5M_4M_3M_2M_1\text{.}\)</p></li>
-<li>
-<p>En déduire un couple d'entiers relatifs \((u;v)\in\mathbb{Z}^2\) tels que</p>
-<div class="displaymath">
-\begin{equation*}
-2589u+234v=3.
-\end{equation*}
-</div>
-</li>
+<li><p>Pour \(a=363\) et \(b=198\text{.}\)</p></li>
+<li><p>Pour \(a=2784\) et \(b=3410\text{.}\)</p></li>
+<li><p>Pour \(a=2784\) et \(b=1180\text{.}\)</p></li>
 </ol>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-109-hidden.html" title="Solution 11.3.10.1"><span class="type">Solution</span></a></div></article><span class="incontext"><a href="exerciceseuclide.html#exercise-120">Contexte</a></span>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-109-hidden.html" title="Solution 11.3.6.1"><span class="type">Solution</span></a></div></article><span class="incontext"><a href="exerciceseuclide.html#exercise-120">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-08T11:44:39-05:00    *-->
+<!--*    on 2021-03-13T13:52:54-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,11 +14,15 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}2)+2f(0{,}4)+2f(0{,}6)+2f(0{,}8)+f(1)\right)\\
-=\;&amp;\text{ à vous de jouer avec votre calculatrice}\\
-=\;&amp;0{,}313\,902\ldots
+&amp;\Delta x\cdot\sum_{k=1}^nf\left(a+(k-0{,}5)\cdot\Delta x\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left(\alpha_0+\alpha_1\left(a+(k-0{,}5)\cdot\Delta x\right)\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left(\alpha_0-0{,}5\alpha_1\Delta x\right)+\alpha_1\Delta x\cdot\sum_{k=1}^n\left(a+k\cdot\Delta x\right)\\
+=\;&amp;A+\alpha_1B\\
+=\;&amp;(\alpha_0-0{,}5\alpha_1\Delta x)(b-a)+0{,}5\alpha_1(b^2-a^2)+0{,}5\alpha_1(b-a)\Delta x\\
+=\;&amp;\alpha_0(b-a)-\cancel{0{,}5\alpha_1\Delta x(b-a)}+0{,}5\alpha_1(b^2-a^2)+\cancel{0{,}5\alpha_1(b-a)\Delta x}\\
+=\;&amp;\alpha_0(b-a)+0{,}5\alpha_1(b^2-a^2).
 \end{align*}
 </div>
-<span class="incontext"><a href="exercicestrapezes.html#mjx-eqn-mrow-560">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#mjx-eqn-mrow-560">Contexte</a></span>
 </body>
 </html>
