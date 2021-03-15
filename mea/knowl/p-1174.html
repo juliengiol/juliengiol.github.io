@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:08-05:00    *-->
+<!--*    on 2021-03-15T15:27:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Modifiez le code donné à la section <a href="algorithmetrapezes.html" class="internal" title="Section 9.2: Algorithme">9.2</a> afin de remplacer la boucle <code class="code-inline tex2jax_ignore">for</code> par une boucle <code class="code-inline tex2jax_ignore">while</code> semblable à celle utilisée à la section <a href="algorithmerectangles.html" class="internal" title="Section 8.2: Algorithme">8.2</a>.</p>
+<p>On fixe \(t\in\;]c;d[\) et on introduit la fonction</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(s):=f(s)-p(s)-\frac{f(t)-p(t)}{(t-c)(t-d)}(s-c)(s-d)
+\end{equation*}
+</div>
+<p data-braille="continuation">où</p>
+<div class="displaymath">
+\begin{equation*}
+p(s):=f(c)+\frac{f(d)-f(c)}{d-c}(s-c)
+\end{equation*}
+</div>
+<p data-braille="continuation">est le polynôme interpolateur des points \((c;f(c))\) et \((d;f(d))\text{.}\)</p>
 <span class="incontext"><a href="exercicestrapezes.html#p-1174">Contexte</a></span>
 </body>
 </html>

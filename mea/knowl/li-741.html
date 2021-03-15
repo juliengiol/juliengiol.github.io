@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:50-05:00    *-->
+<!--*    on 2021-03-15T15:26:25-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,39 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">8.3.9.4</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">8.3.9.1</span><span class="period">.</span>
 </h6>
-<p>Grâce aux deux premières questions, on a</p>
+<p>Comme on l'a vu dans l'énoncé du Principe <a class="xref" data-knowl="./knowl/principe_rectangles.html" title="Principe 8.1.7">8.1.7</a>, on a</p>
+<div class="displaymath">
+\begin{equation*}
+f(\xi)\cdot\Delta x=\int_c^df(\xi)\mathrm{d}x,
+\end{equation*}
+</div>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{align*}
-\left|\int_c^df(x)\mathrm{d}x-f(d)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(d)|\mathrm{d}x\\
-&amp;\le\int_c^dM\cdot|x-d|\mathrm{d}x\\
-&amp;=-M\cdot\int_c^d(x-d)\mathrm{d}x\\
-&amp;=-M\cdot\frac{(x-d)^2}{2}\,\Bigg\vert_c^d\\
-&amp;=-M\cdot\frac{(d-d)^2}{2}+M\cdot\frac{(c-d)^2}{2}\\
-&amp;=\frac{M(\Delta x)^2}{2}.
+E:&amp;=\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\\
+&amp;=\int_c^df(x)\mathrm{d}x-\int_c^df(\xi)\mathrm{d}x\\
+&amp;=\int_c^d(f(x)-f(\xi))\mathrm{d}x.
 \end{align*}
+</div>
+<p>On observe ensuite qu'on a</p>
+<div class="displaymath">
+\begin{equation*}
+-|f(x)-f(\xi)|\le f(x)-f(\xi)\le|f(x)-f(\xi)|
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[c;d]\text{,}\) d'où</p>
+<div class="displaymath">
+\begin{equation*}
+-\int_c^d|f(x)-f(\xi)|\mathrm{d}x\le E\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x
+\end{equation*}
+</div>
+<p data-braille="continuation">et finalement</p>
+<div class="displaymath">
+\begin{equation*}
+|E|\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x.
+\end{equation*}
 </div></article><span class="incontext"><a href="exercicesrectangles.html#li-741">Contexte</a></span>
 </body>
 </html>

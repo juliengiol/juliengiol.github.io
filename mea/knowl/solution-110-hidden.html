@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:37-05:00    *-->
+<!--*    on 2021-03-15T15:27:27-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,14 +11,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># fonction
-def pgcd(a, b):
-    if b == 0:
-        return a
-    else:
-        return pgcd(b, a % b)
+<body><div class="solution solution-like"><pre class="code-block tex2jax_ignore"># entrées
+import numpy as np
+def f(x):
+    return 4 * np.sqrt(1 - x ** 2)
+a = 0.0
+b = 1.0
+n = 32
 
-# test
-print(pgcd(43569, 28476))
+# instructions
+approximation = 0
+deltaX = (b - a) / n
+xi1 = a
+while xi1 &lt; b:
+    xi2 = xi1 + deltaX / 2
+    xi3 = xi1 + deltaX
+    approximation = approximation + f(xi1) + 4 * f(xi2) + f(xi3)
+    xi1 = xi1 + deltaX
+approximation = approximation * deltaX / 6
+
+# sortie
+print(approximation)
 </pre></div></body>
 </html>

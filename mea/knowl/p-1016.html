@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:48-05:00    *-->
+<!--*    on 2021-03-15T15:26:25-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,10 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Montrez que le choix du point de gauche \(\xi:=c\) conduit à l'estimation</p>
+<p>On observe ensuite qu'on a</p>
 <div class="displaymath">
 \begin{equation*}
-\left|\int_c^df(x)\mathrm{d}x-f(c)\cdot\Delta x\right|\le\frac{M(\Delta x)^2}{2}.
+-|f(x)-f(\xi)|\le f(x)-f(\xi)\le|f(x)-f(\xi)|
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[c;d]\text{,}\) d'où</p>
+<div class="displaymath">
+\begin{equation*}
+-\int_c^d|f(x)-f(\xi)|\mathrm{d}x\le E\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x
+\end{equation*}
+</div>
+<p data-braille="continuation">et finalement</p>
+<div class="displaymath">
+\begin{equation*}
+|E|\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x.
 \end{equation*}
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#p-1016">Contexte</a></span>

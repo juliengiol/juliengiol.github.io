@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:03-05:00    *-->
+<!--*    on 2021-03-15T15:26:42-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,29 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Comme la fonction \(f(x)=\frac{10}{x}\) a une dérivée seconde \(f''(x)=\frac{20}{x^3}\) positive sur \([2;4]\text{,}\) elle est convexe (concave vers le haut) sur cet intervalle.</p>
+<p>Comme on a</p>
+<div class="displaymath">
+\begin{equation*}
+|\cos(t)|\le 1\quad\text{et}\quad |\sin(t)|\le 1
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(t\text{,}\) et comme les fonctions</p>
+<div class="displaymath">
+\begin{equation*}
+x\longmapsto\frac{6|x|}{5}\quad\text{et}\quad x\longmapsto\frac{9x^4}{25}
+\end{equation*}
+</div>
+<p data-braille="continuation">sont positives et croissantes sur l'intervalle \([2;4]\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+|g''(x)|&amp;=\left|-\frac{6x}{5}\sin\left(\frac{x^3}{5}\right)-\frac{9x^4}{25}\cos\left(\frac{x^3}{5}\right)\right|\\
+&amp;\le\left|\frac{6x}{5}\sin\left(\frac{x^3}{5}\right)\right|+\left|\frac{9x^4}{25}\cos\left(\frac{x^3}{5}\right)\right|\\
+&amp;=\frac{6|x|}{5}\cdot\left|\sin\left(\frac{x^3}{5}\right)\right|+\frac{9x^4}{25}\cdot\left|\cos\left(\frac{x^3}{5}\right)\right|\\
+&amp;\le\frac{6\cdot 4}{5}\cdot 1+\frac{9\cdot 4^4}{25}\cdot 1\\
+&amp;=96{,}96
+\end{align*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[2;4]\text{.}\)</p>
 <span class="incontext"><a href="exercicestrapezes.html#p-1125">Contexte</a></span>
 </body>
 </html>

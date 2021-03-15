@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:07-05:00    *-->
+<!--*    on 2021-03-15T15:26:41-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,48 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.3.1</span><span class="period">.</span>
 </h6>
-<p>On obtient donc l'encadrement</p>
+<p>On s'occupe ici de l'intégrale</p>
 <div class="displaymath">
 \begin{equation*}
-0{,}313-0{,}020\leq\text{Approximation}+\text{Erreur}\leq 0{,}314+0{,}020
+\int_0^1e^{x^2}\mathrm{d}x
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p data-braille="continuation">avec six trapèzes.</p>
+<p>La fonction \(f(x):=e^{x^2}\) vérifie</p>
 <div class="displaymath">
 \begin{equation*}
-0{,}293\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}334.
+f'(x)=2xe^{x^2}
 \end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{align*}
+f''(x)&amp;=2\cdot e^{x^2}+2x\cdot 2xe^{x^2}\\
+&amp;=(2+4x^2)e^{x^2}.
+\end{align*}
+</div>
+<p>Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 2+4x^2\) sont positives et croissantes sur \([0;1]\text{,}\) on a</p>
+<div class="displaymath">
+\begin{align*}
+|f''(x)|&amp;=\left|(2+4x^2)\cdot e^{x^2}\right|\\
+&amp;=\left|2+4x^2\right|\cdot\left|e^{x^2}\right|\\
+&amp;=(2+4x^2)\cdot e^{x^2}\\
+&amp;\le (2+4\cdot 1^2)\cdot e^{1^2}\\
+&amp;=6e
+\end{align*}
+</div>
+<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\)</p>
+<p>On peut donc prendre \(M:=6e\) pour appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> :</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
+&amp;=\frac{e}{72}\\
+&amp;=0{,}037\,753\ldots\\
+&amp;\le 0{,}038.
+\end{align*}
 </div></article><span class="incontext"><a href="exercicestrapezes.html#li-827">Contexte</a></span>
 </body>
 </html>

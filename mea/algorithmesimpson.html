@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:51:01-05:00    *-->
+<!--*    on 2021-03-15T15:24:33-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,33 +235,33 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">10.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Méthode de Simpson.</span>
 </h6>
 <ul class="disc">
-<li id="li-864">
-<p id="p-1230">Entrées :</p>
+<li id="li-883">
+<p id="p-1246">Entrées :</p>
 <ul class="circle">
-<li id="li-865"><p id="p-1231">Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
-<li id="li-866"><p id="p-1232">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
-<li id="li-867"><p id="p-1233">Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
+<li id="li-884"><p id="p-1247">Assigner à \(\text{f}\) la fonction dont on veut approcher l'intégrale.</p></li>
+<li id="li-885"><p id="p-1248">Assigner à \(\text{a}\) et \(\text{b}\) les bornes de l'intervalle d'intégration.</p></li>
+<li id="li-886"><p id="p-1249">Assigner à \(\text{n}\) le nombre de sous-intervalles de la subdivision.</p></li>
 </ul>
 </li>
-<li id="li-868">
-<p id="p-1234">Instructions :</p>
+<li id="li-887">
+<p id="p-1250">Instructions :</p>
 <ul class="circle">
-<li id="li-869"><p id="p-1235">Initialiser \(\text{approximation}\text{,}\) la variable qui donnera la somme des aires des rectangles : \(\text{approximation}=0\text{.}\)</p></li>
-<li id="li-870"><p id="p-1236">Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
-<li id="li-871">
-<p id="p-1237">Pour \(\text{k}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
+<li id="li-888"><p id="p-1251">Initialiser \(\text{approximation}\text{,}\) la variable qui donnera la somme des aires des rectangles : \(\text{approximation}=0\text{.}\)</p></li>
+<li id="li-889"><p id="p-1252">Assigner à \(\text{deltaX}\) la valeur \((\text{b}-\text{a})/\text{n}\text{.}\)</p></li>
+<li id="li-890">
+<p id="p-1253">Pour \(\text{k}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
 <ul class="square">
-<li id="li-872"><p id="p-1238">assigner à \(\text{xi1}\) la valeur \(\text{a}+(\text{k-1})\cdot\text{deltaX}\) ;</p></li>
-<li id="li-873"><p id="p-1239">assigner à \(\text{xi2}\) la valeur \(\text{xi1}+\text{deltaX}/\text{2}\) ;</p></li>
-<li id="li-874"><p id="p-1240">assigner à \(\text{xi3}\) la valeur \(\text{xi1}+\text{deltaX}\) ;</p></li>
-<li id="li-875"><p id="p-1241">assigner à \(\text{approximation}\) la valeur de \(\text{f}(\text{xi1})+\text{4}\text{f}(\text{xi2})+\text{f}(\text{xi3})\text{.}\)</p></li>
+<li id="li-891"><p id="p-1254">assigner à \(\text{xi1}\) la valeur \(\text{a}+(\text{k-1})\cdot\text{deltaX}\) ;</p></li>
+<li id="li-892"><p id="p-1255">assigner à \(\text{xi2}\) la valeur \(\text{xi1}+\text{deltaX}/\text{2}\) ;</p></li>
+<li id="li-893"><p id="p-1256">assigner à \(\text{xi3}\) la valeur \(\text{xi1}+\text{deltaX}\) ;</p></li>
+<li id="li-894"><p id="p-1257">assigner à \(\text{approximation}\) la valeur de \(\text{f}(\text{xi1})+\text{4}\text{f}(\text{xi2})+\text{f}(\text{xi3})\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-876"><p id="p-1242">Assigner à \(\text{approximation}\) la valeur de \(\text{approximation}\cdot\text{deltaX}/6\text{.}\)</p></li>
+<li id="li-895"><p id="p-1258">Assigner à \(\text{approximation}\) la valeur de \(\text{approximation}\cdot\text{deltaX}/6\text{.}\)</p></li>
 </ul>
 </li>
-<li id="li-877"><p id="p-1243">Résultat : Afficher \(\text{approximation}\text{.}\)</p></li>
-</ul></article><p id="p-1244">Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
+<li id="li-896"><p id="p-1259">Résultat : Afficher \(\text{approximation}\text{.}\)</p></li>
+</ul></article><p id="p-1260">Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^14\sqrt{1-x^2}\,\mathrm{d}x=\pi

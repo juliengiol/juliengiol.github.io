@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:39-05:00    *-->
+<!--*    on 2021-03-15T15:26:22-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Approximation par les rectangles à gauche :</p>
+<p>Rectangles à gauche : On prend \(\xi_k:=x_{k-1}\) et alors</p>
 <div class="displaymath">
 \begin{align*}
-&amp;\Delta x\cdot\left(f(0)+f\left(\frac{\pi}{4}\right)+f\left(\frac{\pi}{2}\right)+f\left(\frac{3\pi}{4}\right)\right)\\
-=\;&amp;\frac{\pi}{4}\cdot\left(\sin(0)+\sin\left(\frac{\pi}{4}\right)+\sin\left(\frac{\pi}{2}\right)+\sin\left(\frac{3\pi}{4}\right)\right)\\
-\approx\;&amp;1{,}896.
+\text{Approximation}&amp;= 0{,}1\cdot\sum_{k=1}^{10}(2+(k-1)\cdot 0{,}1)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}(k-1)\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^9k\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{9\cdot(9+1)}{2}\right)\cdot 0{,}1\right)\\
+&amp;=0{,}1\cdot\left(20+45\cdot 0{,}1\right)\\
+&amp;=2{,}45.
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#p-980">Contexte</a></span>

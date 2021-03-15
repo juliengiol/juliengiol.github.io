@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:48-05:00    *-->
+<!--*    on 2021-03-15T15:26:25-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Montrez que le choix du point de droite \(\xi:=d\) conduit à l'estimation</p>
+<p>Pour tout \(x\in[c;d]\text{,}\) la formule de Taylor-Lagrange (voir l'exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>) entraîne l'existence d'un nombre \(c\) compris entre \(x\) et \(\xi\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
-\left|\int_c^df(x)\mathrm{d}x-f(d)\cdot\Delta x\right|\le\frac{M(\Delta x)^2}{2}.
+f(x)-f(\xi)=f'(c)(x-\xi),
 \end{equation*}
+</div>
+<p data-braille="continuation">de sorte que</p>
+<div class="displaymath">
+\begin{align*}
+|f(x)-f(\xi)|&amp;=|f'(c)\cdot (x-\xi)|\\
+&amp;=|f'(c)|\cdot|x-\xi|\\
+&amp;\le M\cdot|x-\xi|.
+\end{align*}
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#p-1017">Contexte</a></span>
 </body>

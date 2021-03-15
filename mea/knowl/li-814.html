@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:04-05:00    *-->
+<!--*    on 2021-03-15T15:26:36-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,25 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.2.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.1.3</span><span class="period">.</span>
 </h6>
-<p>Notons \(f(x)=e^{x^2}\text{,}\) \(n=6\) et</p>
-<div class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}=\frac{1-0}{6}=\frac{1}{6}.
-\end{equation*}
-</div>
-<p>Voici la subdivision régulière de l'intervalle \([0;1]\) en six sous-intervalles de même longueur :</p>
-<div class="displaymath">
-\begin{equation*}
-0&lt;\frac{1}{6}&lt;\frac{1}{3}&lt;\frac{1}{2}&lt;\frac{2}{3}&lt;\frac{5}{6}&lt;1.
-\end{equation*}
-</div>
-<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
+<p>L'aire du trapèze au-dessus du sous intervalle \([x_{k-1};x_k]\) vaut</p>
 <div class="displaymath">
 \begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f\left(\frac{1}{6}\right)+2f\left(\frac{1}{3}\right)+2f\left(\frac{1}{2}\right)\right.\\
-&amp;\qquad\qquad\left.+2f\left(\frac{2}{3}\right)+2f\left(\frac{5}{6}\right)+f(1)\right)\\
-=\;&amp;\frac{1}{12}\cdot\left(e^{0^2}+2e^{\left(\frac{1}{6}\right)^2}+2e^{\left(\frac{1}{3}\right)^2}+2e^{\left(\frac{1}{2}\right)^2}+2e^{\left(\frac{2}{3}\right)^2}+2e^{\left(\frac{5}{6}\right)^2}+e^{1^2}\right)\\
-\approx\;&amp;1{,}475.
+\frac{\Delta x}{2}\cdot\left(f(x_{k-1})+f(x_k)\right)&amp;=\frac{0{,}5}{2}\cdot\left(\frac{10}{x_{k-1}}+\frac{10}{x_k}\right)\\
+&amp;=2{,}5\cdot\left(\frac{1}{x_{k-1}}+\frac{1}{x_k}\right).
 \end{align*}
+</div>
+<p data-braille="continuation">Cela donne</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ccc}
+\text{Aire du trapèze 1}&amp;=&amp;2{,}25,\\
+\text{Aire du trapèze 2}&amp;\approx&amp;1{,}833\,3,\\
+\text{Aire du trapèze 3}&amp;\approx&amp;1{,}547\,6,\\
+\text{Aire du trapèze 4}&amp;\approx&amp;1{,}339\,3.
+\end{array}
+\end{equation*}
 </div></article><span class="incontext"><a href="exercicestrapezes.html#li-814">Contexte</a></span>
 </body>
 </html>

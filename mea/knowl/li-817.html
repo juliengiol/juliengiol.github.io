@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:05-05:00    *-->
+<!--*    on 2021-03-15T15:26:36-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,32 +13,36 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.3.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.1.6</span><span class="period">.</span>
 </h6>
-<p>Pour \(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec six trapèzes, posons \(f(x)=e^{x^2}\text{.}\) Alors</p>
+<p>Comme la fonction \(f(x)=\frac{10}{x}\) a une dérivée seconde</p>
 <div class="displaymath">
 \begin{equation*}
-f'(x)=e^{x^2}\cdot 2x\quad\text{et}\quad f''(x)=e^{x^2}\cdot(4x^2+2).
+f''(x)=\frac{20}{x^3}
 \end{equation*}
 </div>
-<p data-braille="continuation">Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 4x^2+2\) sont croissantes sur \([0;1]\text{,}\) on a</p>
+<p data-braille="continuation">positive sur \([2;4]\text{,}\) elle est convexe (concave vers le haut) sur cet intervalle.</p>
+<p>Sur chaque sous-intervalle \([x_{k-1};x_k]\text{,}\) la valeur de l'intégrale de \(f\) est donc inférieure à l'aire du trapèze correspondant, i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x&lt;\frac{\Delta x}{2}\cdot\left(f(x_{k-1})+f(x_k)\right)
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(k=1,2,3,4\text{.}\)</p>
+<p>On a donc</p>
 <div class="displaymath">
 \begin{align*}
-|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|\\
-&amp;=e^{x^2}(4x^2+2)\\
-&amp;\leq e^{1^2}(4\cdot 1^2+2)\\
-&amp;=6e
+\int_2^4f(x)\mathrm{d}x&amp;=\sum_{k=1}^4\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\\
+&amp;&lt;\sum_{k=1}^4\frac{\Delta x}{2}\cdot\left(f(x_{k-1})+f(x_k)\right)\\
+&amp;=\frac{\Delta x}{2}\cdot\sum_{k=1}^4\left(f(x_{k-1})+f(x_k)\right)\\
+&amp;=\text{Approximation},
 \end{align*}
 </div>
-<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\) Donc on peut prendre \(M=6e\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
-\begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
-&amp;=\frac{e}{72}\\
-&amp;=0{,}037\,7\ldots\\
-&amp;\leq 0{,}038.
-\end{align*}
+\begin{equation*}
+\int_2^4f(x)\mathrm{d}x-\text{Approximation}&lt;0.
+\end{equation*}
 </div></article><span class="incontext"><a href="exercicestrapezes.html#li-817">Contexte</a></span>
 </body>
 </html>

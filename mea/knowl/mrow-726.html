@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:17-05:00    *-->
+<!--*    on 2021-03-15T15:27:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,14 +14,19 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-|g^{(4)}(x)|&amp;=\left|\frac{81}{625}x^8\cos\left(\frac{x^3}{5}\right)+\frac{324}{125}x^5\sin\left(\frac{x^3}{5}\right)-\frac{36}{5}x^2\cos\left(\frac{x^3}{5}\right)\right|\\
-&amp;\leq\frac{81}{625}x^8\left|\cos\left(\frac{x^3}{5}\right)\right|+\frac{324}{125}x^5\left|\sin\left(\frac{x^3}{5}\right)\right|+\frac{36}{5}x^2\left|\cos\left(\frac{x^3}{5}\right)\right|\\
-&amp;\leq\frac{81}{625}x^8+\frac{324}{125}x^5+\frac{36}{5}x^2\\
-&amp;\leq\frac{81}{625}4^8+\frac{324}{125}4^5+\frac{36}{5}4^2\\
-&amp;=11\,262{,}8\ldots\\
-&amp;\leq 11\,263
+\int_c^d|t-c||d-t|\mathrm{d}t&amp;=\int_c^d(t-c)(d-t)\mathrm{d}t\\
+&amp;=\int_c^d((c+d)t-cd-t^2))\mathrm{d}t\\
+&amp;=(c+d)\frac{t^2}{2}-cdt-\frac{t^3}{3}\,\Bigg\vert_c^d\\
+&amp;=\frac{(c+d)}{2}\cdot t^2\,\Bigg\vert_c^d-cd\cdot t\,\Bigg\vert_c^d-\frac{1}{3}\cdot t^3\,\Bigg\vert_c^d\\
+&amp;=\frac{(c+d)}{2}(d^2-c^2)-cd(d-c)-\frac{1}{3}(d^3-c^3)\\
+&amp;=(d-c)\left(\frac{(c+d)}{2}(c+d)-cd-\frac{1}{3}(c^2+cd+d^2)\right)\\
+&amp;=\frac{(d-c)}{6}\left(3(c+d)^2-6cd-2(c^2+cd+d^2)\right)\\
+&amp;=\frac{(d-c)}{6}\left(3c^2+6cd+3d^2-6cd-2c^2-2cd-2d^2)\right)\\
+&amp;=\frac{(d-c)}{6}\left(c^2-2cd+d^2\right)\\
+&amp;=\frac{(d-c)}{6}(c-d)^2\\
+&amp;=\frac{(d-c)^3}{6}.
 \end{align*}
 </div>
-<span class="incontext"><a href="exercicessimpson.html#mjx-eqn-mrow-726">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#mjx-eqn-mrow-726">Contexte</a></span>
 </body>
 </html>

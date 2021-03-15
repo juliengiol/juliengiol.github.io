@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:48-05:00    *-->
+<!--*    on 2021-03-15T15:26:25-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,17 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Étudiez les variations de la fonction</p>
+<p>Grâce aux deux premières questions, on a</p>
 <div class="displaymath">
-\begin{equation*}
-g(\xi):=\frac{(\xi-c)^2}{2}+\frac{(\xi-d)^2}{2}
-\end{equation*}
+\begin{align*}
+\left|\int_c^df(x)\mathrm{d}x-f(d)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(d)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-d|\mathrm{d}x\\
+&amp;=-M\cdot\int_c^d(x-d)\mathrm{d}x\\
+&amp;=-M\cdot\frac{(x-d)^2}{2}\,\Bigg\vert_c^d\\
+&amp;=-M\cdot\frac{(d-d)^2}{2}+M\cdot\frac{(c-d)^2}{2}\\
+&amp;=\frac{M(\Delta x)^2}{2}.
+\end{align*}
 </div>
-<p data-braille="continuation">afin de montrer que</p>
-<div class="displaymath">
-\begin{equation*}
-g(\xi)\le\frac{(\Delta x)^2}{2}
-\end{equation*}
-</div>
-<p data-braille="continuation">pour tout \(\xi\in[c;d]\text{.}\)</p>
 <span class="incontext"><a href="exercicesrectangles.html#p-1019">Contexte</a></span>
 </body>
 </html>

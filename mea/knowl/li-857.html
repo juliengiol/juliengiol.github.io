@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:11-05:00    *-->
+<!--*    on 2021-03-15T15:27:09-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,8 +13,42 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.11.4</span><span class="period">.</span>
 </h6>
-<p>\(A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)\)</p></article><span class="incontext"><a href="presentationsimpson.html#li-857">Contexte</a></span>
+<p>Concentrons-nous sur la fonction \(g:[c;d]\longrightarrow\mathbb{R}\) définie par</p>
+<div class="displaymath">
+\begin{equation*}
+g(t):=f(t)-p(t).
+\end{equation*}
+</div>
+<p>D'après les hypothèses et la question précédente, on a</p>
+<div class="displaymath">
+\begin{align*}
+|g(t)|&amp;=\left|f(t)-p(t)\right|\\
+&amp;=\left|\frac{f''(\xi)}{2}(t-c)(t-d)\right|\\
+&amp;=\frac{|f''(\xi)|}{2}\cdot|t-c|\cdot|t-d|\\
+&amp;\le\frac{M}{2}\cdot|t-c|\cdot|t-d|
+\end{align*}
+</div>
+<p data-braille="continuation">pour tout \(t\in\;]c;d[\text{,}\) ce qui s'étend trivialement à tout \(t\in[c;d]\) puisque \(g(c)=g(d)=0\text{.}\)</p>
+<p>Grâce à l'inégalité triangulaire pour l'intégrale, on déduit de cette majoration et de la formule établie à l'exercice <a class="xref" data-knowl="./knowl/exercice_formule_integration_trapezes.html" title="Exercice 9.3.10">9.3.10</a> que</p>
+<div class="displaymath">
+\begin{align*}
+\left|\int_c^dg(t)\mathrm{d}t\right|&amp;\le\int_c^d|g(t)|\mathrm{d}t\\
+&amp;\le\int_c^d\frac{M}{2}|t-c||t-d|\mathrm{d}t\\
+&amp;=\frac{M}{2}\cdot\int_c^d|t-c||t-d|\mathrm{d}t\\
+&amp;=\frac{M}{2}\cdot\frac{(\Delta x)^3}{6}\\
+&amp;=\frac{M(\Delta x)^3}{12}.
+\end{align*}
+</div>
+<p>Ceci achève bien la démonstration, puisque la question 2 de l'exercice <a class="xref" data-knowl="./knowl/exercice_formule_trapezes.html" title="Exercice 9.3.9">9.3.9</a> entraîne</p>
+<div class="displaymath">
+\begin{align*}
+\int_c^dg(t)\mathrm{d}t&amp;=\int_c^d(f(t)-p(t))\mathrm{d}t\\
+&amp;=\int_c^df(t)\mathrm{d}t-\int_c^dp(t)\mathrm{d}t\\
+&amp;=\int_c^df(t)\mathrm{d}t-\frac{1}{2}(f(c)+f(d))(d-c)\\
+&amp;=\int_c^df(t)\mathrm{d}t-\frac{\Delta x}{2}\cdot(f(c)+f(d)).
+\end{align*}
+</div></article><span class="incontext"><a href="exercicestrapezes.html#li-857">Contexte</a></span>
 </body>
 </html>

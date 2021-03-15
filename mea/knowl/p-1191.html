@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:09-05:00    *-->
+<!--*    on 2021-03-15T15:27:09-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Cela revient à remplacer</p>
+<p>D'après les hypothèses et la question précédente, on a</p>
 <div class="displaymath">
-\begin{equation*}
-\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad ?
-\end{equation*}
+\begin{align*}
+|g(t)|&amp;=\left|f(t)-p(t)\right|\\
+&amp;=\left|\frac{f''(\xi)}{2}(t-c)(t-d)\right|\\
+&amp;=\frac{|f''(\xi)|}{2}\cdot|t-c|\cdot|t-d|\\
+&amp;\le\frac{M}{2}\cdot|t-c|\cdot|t-d|
+\end{align*}
 </div>
-<span class="incontext"><a href="presentationsimpson.html#p-1191">Contexte</a></span>
+<p data-braille="continuation">pour tout \(t\in\;]c;d[\text{,}\) ce qui s'étend trivialement à tout \(t\in[c;d]\) puisque \(g(c)=g(d)=0\text{.}\)</p>
+<span class="incontext"><a href="exercicestrapezes.html#p-1191">Contexte</a></span>
 </body>
 </html>

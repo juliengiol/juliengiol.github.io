@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:41-05:00    *-->
+<!--*    on 2021-03-15T15:26:23-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Rectangles au milieu : On prend \(\xi_k:=\frac{x_{k-1}+x_k}{2}=2+(k-0{,}5)\cdot 0{,1}\) et alors</p>
+<p>Par la méthode des rectangles à gauche, on obtient</p>
 <div class="displaymath">
 \begin{align*}
-\text{Approximation}&amp;=0{,}1\cdot\sum_{k=1}^{10}(2+(k-0{,}5)\cdot 0{,}1)\\
-&amp;=0{,}1\cdot\left(\sum_{k=1}^{10}2+\left(\sum_{k=1}^{10}k-\sum_{k=1}^{10}0{,}5\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(10\cdot 2+\left(\frac{10\cdot(10+1)}{2}-10\cdot 0{,}5\right)\cdot 0{,}1\right)\\
-&amp;=0{,}1\cdot\left(20+55-5\cdot 0{,}1\right)\\
-&amp;=2{,}5.
+\text{Approximation}&amp;=0{,}2\cdot\left(f(0)+f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)\right)\\
+&amp;=0{,}2\cdot\left(1+\frac{1}{1{,}2}+\frac{1}{1{,}4}+\frac{1}{1{,}6}+\frac{1}{1{,}8}\right)\\
+&amp;=0{,}745\ldots
 \end{align*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}745\leq\text{Approximation}\leq 0{,}746.
+\end{equation*}
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#p-988">Contexte</a></span>
 </body>

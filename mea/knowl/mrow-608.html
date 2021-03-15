@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:57-05:00    *-->
+<!--*    on 2021-03-15T15:26:30-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,9 +14,14 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\text{Aire trapèze}&amp;=\frac{(\text{Base 1 + Base 2})\cdot\text{Hauteur}}{2}\\
-&amp; =\frac{(f(x_{k-1})+f(x_k))\cdot\Delta x}{2}\\
-&amp; =\frac{\Delta x}{2}\cdot (f(x_{k-1})+f(x_k))
+|\text{Erreur}|&amp;=\left|\int_a^bf(x)\mathrm{d}x-\frac{\Delta x}{2}\cdot\sum_{k=1}^n(f(x_{k-1})+f(x_k))\right|\\
+&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^n\frac{\Delta x}{2}\cdot(f(x_{k-1})+f(x_k))\right|\\
+&amp;=\left|\sum_{k=1}^n\left(\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\frac{\Delta x}{2}\cdot(f(x_{k-1})+f(x_k))\right)\right|\\
+&amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\frac{\Delta x}{2}\cdot(f(x_{k-1})+f(x_k))\right|\\
+&amp;\le\sum_{k=1}^n\frac{M(\Delta x)^3}{12}\\
+&amp;=n\cdot\frac{M(\Delta x)^3}{12}\\
+&amp;=n\cdot\frac{M(b-a)^3}{12n^3}\\
+&amp;=\frac{M(b-a)^3}{12n^2}.
 \end{align*}
 </div>
 <span class="incontext"><a href="presentationtrapezes.html#mjx-eqn-mrow-608">Contexte</a></span>

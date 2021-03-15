@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:51:15-05:00    *-->
+<!--*    on 2021-03-15T15:24:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -217,27 +217,27 @@ MathJax.Hub.Config({
 </h2>
 <a href="presentationchinois.html" class="permalink">¶</a><article class="problem example-like" id="pirates"><a data-knowl="" class="id-ref original" data-refid="hk-pirates"><h6 class="heading">
 <span class="type">Problème</span><span class="space"> </span><span class="codenumber">13.1.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-pirates"><article class="problem example-like"><p id="p-1726">Une bande de dix-sept pirates possède un trésor constitué de pièces d'or d'égale valeur. Ils projettent de les partager également entre eux, et de donner le reste au cuisinier qui recevrait alors trois pièces. Mais les pirates se querellent, et six d'entre eux sont tués. Désormais, le partage des pirates laisserait quatre pièces au cuisinier. Oui mais voilà, ils font naufrage et seuls le trésor, six pirates et le cuisinier sont sauvés. Le partage donnerait alors cinq pièces d'or à ce dernier. Finalement, le cuisinier décide d'empoisonner le reste des pirates et de garder le trésor pour lui. Sur combien de pièces d'or au minimum peut-il espérer mettre la main?</p></article></div>
-<p id="p-1727">Si on note \(x\) le nombre de pièces d'or de ce trésor, l'énigme précédente se traduit mathématiquement de la façon suivante.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-pirates"><article class="problem example-like"><p id="p-1742">Une bande de dix-sept pirates possède un trésor constitué de pièces d'or d'égale valeur. Ils projettent de les partager également entre eux, et de donner le reste au cuisinier qui recevrait alors trois pièces. Mais les pirates se querellent, et six d'entre eux sont tués. Désormais, le partage des pirates laisserait quatre pièces au cuisinier. Oui mais voilà, ils font naufrage et seuls le trésor, six pirates et le cuisinier sont sauvés. Le partage donnerait alors cinq pièces d'or à ce dernier. Finalement, le cuisinier décide d'empoisonner le reste des pirates et de garder le trésor pour lui. Sur combien de pièces d'or au minimum peut-il espérer mettre la main?</p></article></div>
+<p id="p-1743">Si on note \(x\) le nombre de pièces d'or de ce trésor, l'énigme précédente se traduit mathématiquement de la façon suivante.</p>
 <article class="problem example-like" id="pirates2"><a data-knowl="" class="id-ref original" data-refid="hk-pirates2"><h6 class="heading">
 <span class="type">Problème</span><span class="space"> </span><span class="codenumber">13.1.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-pirates2"><article class="problem example-like"><p id="p-1728">Trouvez le plus petit entier positif \(x\) tel que</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-pirates2"><article class="problem example-like"><p id="p-1744">Trouvez le plus petit entier positif \(x\) tel que</p>
 <ul class="disc">
-<li id="li-1110"><p id="p-1729">le reste de la division euclidienne de \(x\) par \(17\) vaut \(3\text{,}\)</p></li>
-<li id="li-1111"><p id="p-1730">le reste de la division euclidienne de \(x\) par \(11\) vaut \(4\text{,}\)</p></li>
-<li id="li-1112"><p id="p-1731">le reste de la division euclidienne de \(x\) par \(6\) vaut \(5\text{.}\)</p></li>
+<li id="li-1129"><p id="p-1745">le reste de la division euclidienne de \(x\) par \(17\) vaut \(3\text{,}\)</p></li>
+<li id="li-1130"><p id="p-1746">le reste de la division euclidienne de \(x\) par \(11\) vaut \(4\text{,}\)</p></li>
+<li id="li-1131"><p id="p-1747">le reste de la division euclidienne de \(x\) par \(6\) vaut \(5\text{.}\)</p></li>
 </ul></article></div>
-<p id="p-1732">Pour résoudre ce problème de façon moderne, il faut un minimum de connaissances en <a class="external" href="https://fr.wikipedia.org/wiki/Arithm%C3%A9tique_modulaire" target="_blank">arithmétique modulaire</a>. Commençons par introduire le concept de congruence.</p>
+<p id="p-1748">Pour résoudre ce problème de façon moderne, il faut un minimum de connaissances en <a class="external" href="https://fr.wikipedia.org/wiki/Arithm%C3%A9tique_modulaire" target="_blank">arithmétique modulaire</a>. Commençons par introduire le concept de congruence.</p>
 <article class="definition definition-like" id="defcongruence"><h6 class="heading">
 <span class="type">Définition</span><span class="space"> </span><span class="codenumber">13.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Congruence dans \(\mathbb{Z}\).</span>
 </h6>
-<p id="p-1733">Soit \(a, b\in\mathbb{Z}\) et \(m\in\mathbb{N}^*\text{.}\)</p>
-<p id="p-1734">Alors les assertions suivantes sont équivalentes :</p>
+<p id="p-1749">Soit \(a, b\in\mathbb{Z}\) et \(m\in\mathbb{N}^*\text{.}\)</p>
+<p id="p-1750">Alors les assertions suivantes sont équivalentes :</p>
 <ol class="decimal">
-<li id="li-1113"><p id="p-1735">\(a\) et \(b\) donnent le même reste quand on les divise par \(m\text{;}\)</p></li>
-<li id="li-1114"><p id="p-1736">\(a-b\) est un multiple de \(m\text{;}\)</p></li>
-<li id="li-1115"><p id="p-1737">\(m\vert (a-b)\text{;}\)</p></li>
-<li id="li-1116"><p id="p-1738">\(\exists k\in\mathbb{Z},\; a=b+mk\text{.}\)</p></li>
+<li id="li-1132"><p id="p-1751">\(a\) et \(b\) donnent le même reste quand on les divise par \(m\text{;}\)</p></li>
+<li id="li-1133"><p id="p-1752">\(a-b\) est un multiple de \(m\text{;}\)</p></li>
+<li id="li-1134"><p id="p-1753">\(m\vert (a-b)\text{;}\)</p></li>
+<li id="li-1135"><p id="p-1754">\(\exists k\in\mathbb{Z},\; a=b+mk\text{.}\)</p></li>
 </ol>
 <p data-braille="continuation">Dans ce cas, on dit que <a class="external" href="https://fr.wikipedia.org/wiki/Congruence_sur_les_entiers" target="_blank">\(a\) et \(b\) sont congrus modulo \(m\)</a> et on note</p>
 <div class="displaymath">
@@ -247,8 +247,8 @@ a\equiv b\;\mathrm{mod}\;m.
 </div></article><article class="example example-like" id="example-56"><a data-knowl="" class="id-ref original" data-refid="hk-example-56"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">13.1.4</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-56"><article class="example example-like"><ol class="decimal">
-<li id="li-1117">
-<p id="p-1739">Les divisions euclidiennes de \(38\) et \(-107\) par \(5\) donnent respectivement</p>
+<li id="li-1136">
+<p id="p-1755">Les divisions euclidiennes de \(38\) et \(-107\) par \(5\) donnent respectivement</p>
 <div class="displaymath">
 \begin{equation*}
 38=5\cdot 7+3\quad\text{et}\quad -107=5\cdot(-22)+3.
@@ -256,14 +256,14 @@ a\equiv b\;\mathrm{mod}\;m.
 </div>
 <p data-braille="continuation">On a donc \(38\equiv -107\;\mathrm{mod}\;5\text{.}\)</p>
 </li>
-<li id="li-1118"><p id="p-1740">On a \(8\equiv 2\;\mathrm{mod}\;3\) car \((8-2)=6=2\cdot 3\) est un multiple de \(3\text{.}\)</p></li>
-<li id="li-1119"><p id="p-1741">Comme \(12\vert (84-36)=48=12\cdot 4\text{,}\) on a \(84\equiv 36\;\mathrm{mod}\;12\text{.}\)</p></li>
-<li id="li-1120"><p id="p-1742">Puisque \(55=-17+9\cdot 8\text{,}\) on a \(55\equiv -17\;\mathrm{mod}\;8\) ainsi que \(55\equiv -17\;\mathrm{mod}\;9\text{.}\)</p></li>
+<li id="li-1137"><p id="p-1756">On a \(8\equiv 2\;\mathrm{mod}\;3\) car \((8-2)=6=2\cdot 3\) est un multiple de \(3\text{.}\)</p></li>
+<li id="li-1138"><p id="p-1757">Comme \(12\vert (84-36)=48=12\cdot 4\text{,}\) on a \(84\equiv 36\;\mathrm{mod}\;12\text{.}\)</p></li>
+<li id="li-1139"><p id="p-1758">Puisque \(55=-17+9\cdot 8\text{,}\) on a \(55\equiv -17\;\mathrm{mod}\;8\) ainsi que \(55\equiv -17\;\mathrm{mod}\;9\text{.}\)</p></li>
 </ol></article></div>
-<p id="p-1743">On peut maintenant reformuler les problèmes <a class="xref" data-knowl="./knowl/pirates.html" title="Problème 13.1.1">13.1.1</a> et <a class="xref" data-knowl="./knowl/pirates2.html" title="Problème 13.1.2">13.1.2</a> comme suit.</p>
+<p id="p-1759">On peut maintenant reformuler les problèmes <a class="xref" data-knowl="./knowl/pirates.html" title="Problème 13.1.1">13.1.1</a> et <a class="xref" data-knowl="./knowl/pirates2.html" title="Problème 13.1.2">13.1.2</a> comme suit.</p>
 <article class="problem example-like" id="pirates3"><a data-knowl="" class="id-ref original" data-refid="hk-pirates3"><h6 class="heading">
 <span class="type">Problème</span><span class="space"> </span><span class="codenumber">13.1.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-pirates3"><article class="problem example-like"><p id="p-1744">Trouvez le plus petit entier positif \(x\) tel que</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-pirates3"><article class="problem example-like"><p id="p-1760">Trouvez le plus petit entier positif \(x\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
 \left\{
@@ -279,8 +279,8 @@ x&amp;\equiv&amp;5&amp;\text{mod}\; 6.
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">13.1.6</span><span class="period">.</span>
 </h6>
 <ul class="disc">
-<li id="li-1121">
-<p id="p-1745">Les solutions de l'équation</p>
+<li id="li-1140">
+<p id="p-1761">Les solutions de l'équation</p>
 <div class="displaymath">
 \begin{equation*}
 x\equiv 3\;\mathrm{mod}\;17
@@ -293,8 +293,8 @@ x\equiv 3\;\mathrm{mod}\;17
 \end{equation*}
 </div>
 </li>
-<li id="li-1122">
-<p id="p-1746">Les solutions de l'équation</p>
+<li id="li-1141">
+<p id="p-1762">Les solutions de l'équation</p>
 <div class="displaymath">
 \begin{equation*}
 x\equiv 4\;\mathrm{mod}\;11
@@ -307,8 +307,8 @@ x\equiv 4\;\mathrm{mod}\;11
 \end{equation*}
 </div>
 </li>
-<li id="li-1123">
-<p id="p-1747">Les solutions de l'équation</p>
+<li id="li-1142">
+<p id="p-1763">Les solutions de l'équation</p>
 <div class="displaymath">
 \begin{equation*}
 x\equiv 5\;\mathrm{mod}\;6
@@ -322,55 +322,55 @@ x\equiv 5\;\mathrm{mod}\;6
 </div>
 </li>
 </ul>
-<p id="p-1748">Le problème étudié consiste donc à trouver le plus petit entier positif qui appartienne à chacune de ces trois progressions arithmétiques.</p>
-<p id="p-1749">Il est loin d'être évident qu'un tel nombre existe! Nous avons besoin d'aller plus loin dans notre compréhension de l'arithmétique modulaire pour le trouver de manière efficace.</p></article><article class="theorem theorem-like" id="theoproparithmodulaire"><h6 class="heading">
+<p id="p-1764">Le problème étudié consiste donc à trouver le plus petit entier positif qui appartienne à chacune de ces trois progressions arithmétiques.</p>
+<p id="p-1765">Il est loin d'être évident qu'un tel nombre existe! Nous avons besoin d'aller plus loin dans notre compréhension de l'arithmétique modulaire pour le trouver de manière efficace.</p></article><article class="theorem theorem-like" id="theoproparithmodulaire"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">13.1.7</span><span class="period">.</span>
 </h6>
-<p id="p-1750">Soit \(m\in\mathbb{N}^*\) et \(a, b, c, d\in\mathbb{Z}\text{.}\)</p>
-<p id="p-1751">Alors on a les propriétés suivantes.</p>
+<p id="p-1766">Soit \(m\in\mathbb{N}^*\) et \(a, b, c, d\in\mathbb{Z}\text{.}\)</p>
+<p id="p-1767">Alors on a les propriétés suivantes.</p>
 <ol class="decimal">
-<li id="li-1124">
-<p id="p-1752">Réflexivité :</p>
+<li id="li-1143">
+<p id="p-1768">Réflexivité :</p>
 <div class="displaymath">
 \begin{equation*}
 a\equiv a\;\mathrm{mod}\;m.
 \end{equation*}
 </div>
 </li>
-<li id="li-1125">
-<p id="p-1753">Symétrie :</p>
+<li id="li-1144">
+<p id="p-1769">Symétrie :</p>
 <div class="displaymath">
 \begin{equation*}
 a\equiv b\;\mathrm{mod}\;m\quad\Leftrightarrow\quad b\equiv a\;\mathrm{mod}\;m.
 \end{equation*}
 </div>
 </li>
-<li id="li-1126">
-<p id="p-1754">Transitivité :</p>
+<li id="li-1145">
+<p id="p-1770">Transitivité :</p>
 <div class="displaymath">
 \begin{equation*}
 a\equiv b\;\mathrm{mod}\;m\quad\text{et}\quad b\equiv c\;\mathrm{mod}\;m\quad\Rightarrow\quad a\equiv c\;\mathrm{mod}\;m.
 \end{equation*}
 </div>
 </li>
-<li id="li-1127">
-<p id="p-1755">Addition / Soustraction :</p>
+<li id="li-1146">
+<p id="p-1771">Addition / Soustraction :</p>
 <div class="displaymath">
 \begin{equation*}
 a\equiv b\;\mathrm{mod}\;m\quad\text{et}\quad c\equiv d\;\mathrm{mod}\;m\quad\Rightarrow\quad a\pm c\equiv b\pm d\;\mathrm{mod}\;m.
 \end{equation*}
 </div>
 </li>
-<li id="li-1128">
-<p id="p-1756">Multiplication :</p>
+<li id="li-1147">
+<p id="p-1772">Multiplication :</p>
 <div class="displaymath">
 \begin{equation*}
 a\equiv b\;\mathrm{mod}\;m\quad\text{et}\quad c\equiv d\;\mathrm{mod}\;m\quad\Rightarrow\quad a\cdot c\equiv b\cdot d\;\mathrm{mod}\;m.
 \end{equation*}
 </div>
 </li>
-<li id="li-1129">
-<p id="p-1757">Exponentiation :</p>
+<li id="li-1148">
+<p id="p-1773">Exponentiation :</p>
 <div class="displaymath">
 \begin{equation*}
 a\equiv b\;\mathrm{mod}\;m\quad\Rightarrow\quad a^k\equiv b^k\;\mathrm{mod}\;m
@@ -378,36 +378,36 @@ a\equiv b\;\mathrm{mod}\;m\quad\Rightarrow\quad a^k\equiv b^k\;\mathrm{mod}\;m
 </div>
 <p data-braille="continuation">pour tout entier positif \(k\text{.}\)</p>
 </li>
-</ol></article><article class="hiddenproof" id="proof-22"><a data-knowl="" class="id-ref original" data-refid="hk-proof-22"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-22"><article class="hiddenproof"><p id="p-1758">C'est un bon exercice de démontrer ces propriétés et c'est l'objet de l'exercice <a class="xref" data-knowl="./knowl/exoproparithmodulaire.html" title="Exercice 13.3.10">13.3.10</a>.</p></article></div>
+</ol></article><article class="hiddenproof" id="proof-24"><a data-knowl="" class="id-ref original" data-refid="hk-proof-24"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-24"><article class="hiddenproof"><p id="p-1774">C'est un bon exercice de démontrer ces propriétés et c'est l'objet de l'exercice <a class="xref" data-knowl="./knowl/exoproparithmodulaire.html" title="Exercice 13.3.10">13.3.10</a>.</p></article></div>
 <article class="example example-like" id="example-57"><a data-knowl="" class="id-ref original" data-refid="hk-example-57"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">13.1.8</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-57"><article class="example example-like"><p id="p-1759">Mettons en application les six propriétés ci-dessus.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-57"><article class="example example-like"><p id="p-1775">Mettons en application les six propriétés ci-dessus.</p>
 <ol class="decimal">
-<li id="li-1130">
-<p id="p-1760">On a</p>
+<li id="li-1149">
+<p id="p-1776">On a</p>
 <div class="displaymath">
 \begin{equation*}
 154\equiv 154\;\mathrm{mod}\;28.
 \end{equation*}
 </div>
 </li>
-<li id="li-1131">
-<p id="p-1761">On a</p>
+<li id="li-1150">
+<p id="p-1777">On a</p>
 <div class="displaymath">
 \begin{equation*}
 417\equiv 17\;\mathrm{mod}\;10
 \end{equation*}
 </div>
 <p data-braille="continuation">car \(417-17=400\) est divisible par \(10\text{.}\)</p>
-<p id="p-1762">Donc</p>
+<p id="p-1778">Donc</p>
 <div class="displaymath">
 \begin{equation*}
 17\equiv 417\;\mathrm{mod}\;10.
 \end{equation*}
 </div>
 </li>
-<li id="li-1132">
-<p id="p-1763">On a</p>
+<li id="li-1151">
+<p id="p-1779">On a</p>
 <div class="displaymath">
 \begin{equation*}
 3\equiv -1\;\mathrm{mod}\;4
@@ -420,15 +420,15 @@ a\equiv b\;\mathrm{mod}\;m\quad\Rightarrow\quad a^k\equiv b^k\;\mathrm{mod}\;m
 \end{equation*}
 </div>
 <p data-braille="continuation">car \(4\vert (-1-7)=-8\text{.}\)</p>
-<p id="p-1764">Donc</p>
+<p id="p-1780">Donc</p>
 <div class="displaymath">
 \begin{equation*}
 3\equiv 7\;\mathrm{mod}\;4.
 \end{equation*}
 </div>
 </li>
-<li id="li-1133">
-<p id="p-1765">On a</p>
+<li id="li-1152">
+<p id="p-1781">On a</p>
 <div class="displaymath">
 \begin{equation*}
 -12\equiv 8\;\mathrm{mod}\;5
@@ -441,7 +441,7 @@ a\equiv b\;\mathrm{mod}\;m\quad\Rightarrow\quad a^k\equiv b^k\;\mathrm{mod}\;m
 \end{equation*}
 </div>
 <p data-braille="continuation">car \(5\vert (33-23)=10\text{.}\)</p>
-<p id="p-1766">Donc</p>
+<p id="p-1782">Donc</p>
 <div class="displaymath">
 \begin{equation*}
 -12+33\equiv 8+23\;\mathrm{mod}\;5,
@@ -454,8 +454,8 @@ a\equiv b\;\mathrm{mod}\;m\quad\Rightarrow\quad a^k\equiv b^k\;\mathrm{mod}\;m
 \end{equation*}
 </div>
 </li>
-<li id="li-1134">
-<p id="p-1767">On a</p>
+<li id="li-1153">
+<p id="p-1783">On a</p>
 <div class="displaymath">
 \begin{equation*}
 -12\equiv 8\;\mathrm{mod}\;5
@@ -468,7 +468,7 @@ a\equiv b\;\mathrm{mod}\;m\quad\Rightarrow\quad a^k\equiv b^k\;\mathrm{mod}\;m
 \end{equation*}
 </div>
 <p data-braille="continuation">car \(5\vert (33-23)=10\text{.}\)</p>
-<p id="p-1768">Donc</p>
+<p id="p-1784">Donc</p>
 <div class="displaymath">
 \begin{equation*}
 (-12)\cdot 33\equiv 8\cdot 23\;\mathrm{mod}\;5,
@@ -481,15 +481,15 @@ a\equiv b\;\mathrm{mod}\;m\quad\Rightarrow\quad a^k\equiv b^k\;\mathrm{mod}\;m
 \end{equation*}
 </div>
 </li>
-<li id="li-1135">
-<p id="p-1769">On a</p>
+<li id="li-1154">
+<p id="p-1785">On a</p>
 <div class="displaymath">
 \begin{equation*}
 417\equiv 7\;\mathrm{mod}\;10
 \end{equation*}
 </div>
 <p data-braille="continuation">car \(10\vert(417-17)=400\text{.}\)</p>
-<p id="p-1770">Donc</p>
+<p id="p-1786">Donc</p>
 <div class="displaymath">
 \begin{equation*}
 417^2\equiv 7^2\;\mathrm{mod}\;10,
@@ -506,44 +506,44 @@ a\equiv b\;\mathrm{mod}\;m\quad\Rightarrow\quad a^k\equiv b^k\;\mathrm{mod}\;m
 <article class="remark remark-like" id="remark-34"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">13.1.9</span><span class="period">.</span>
 </h6>
-<p id="p-1771">Comme pour les matrices, il y a une multiplication mais (pas vraiment) de division.</p>
-<p id="p-1772">Avec les matrices, on définit néammoins le concept d'inverse à l'aide du théorème qui suit.</p>
-<p id="p-1773">Diviser revient alors à multiplier par la matrice inverse, quand elle existe, de même que diviser un nombre réel par \(5\) revient à le multiplier par \(0{,}2\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-18"><h6 class="heading">
+<p id="p-1787">Comme pour les matrices, il y a une multiplication mais (pas vraiment) de division.</p>
+<p id="p-1788">Avec les matrices, on définit néammoins le concept d'inverse à l'aide du théorème qui suit.</p>
+<p id="p-1789">Diviser revient alors à multiplier par la matrice inverse, quand elle existe, de même que diviser un nombre réel par \(5\) revient à le multiplier par \(0{,}2\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-18"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">13.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse d'une matrice.</span>
 </h6>
-<p id="p-1774">Soit \(A\in M_n(\mathbb{R})\) une matrice carrée \(n\times n\) à coefficients réels. Alors les propriétés suivantes sont équivalentes :</p>
+<p id="p-1790">Soit \(A\in M_n(\mathbb{R})\) une matrice carrée \(n\times n\) à coefficients réels. Alors les propriétés suivantes sont équivalentes :</p>
 <ol class="decimal">
-<li id="li-1136"><p id="p-1775">\(\exists B\in M_n(\mathbb{R}),\;AB=I_n;\)</p></li>
-<li id="li-1137"><p id="p-1776">\(\exists B\in M_n(\mathbb{R}),\;BA=I_n;\)</p></li>
-<li id="li-1138"><p id="p-1777">\(\det(A)\neq 0\text{.}\)</p></li>
+<li id="li-1155"><p id="p-1791">\(\exists B\in M_n(\mathbb{R}),\;AB=I_n;\)</p></li>
+<li id="li-1156"><p id="p-1792">\(\exists B\in M_n(\mathbb{R}),\;BA=I_n;\)</p></li>
+<li id="li-1157"><p id="p-1793">\(\det(A)\neq 0\text{.}\)</p></li>
 </ol>
-<p id="p-1778">Dans ce cas, une telle matrice \(B\) est unique et on l'appelle l'inverse de \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref original" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-1779">Voir votre cours d'algèbre linéaire favori.</p></article></div>
-<p id="p-1780">Avec les congruences, on va utiliser le résultat suivant.</p>
+<p id="p-1794">Dans ce cas, une telle matrice \(B\) est unique et on l'appelle l'inverse de \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-25"><a data-knowl="" class="id-ref original" data-refid="hk-proof-25"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-25"><article class="hiddenproof"><p id="p-1795">Voir votre cours d'algèbre linéaire favori.</p></article></div>
+<p id="p-1796">Avec les congruences, on va utiliser le résultat suivant.</p>
 <article class="theorem theorem-like" id="theorem-19"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">13.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse d'un entier modulo un entier positif.</span>
 </h6>
-<p id="p-1781">Soit \(a\in\mathbb{Z}\) et \(m\in\mathbb{N}^*\text{.}\) Alors les assertions suivantes sont équivalentes :</p>
+<p id="p-1797">Soit \(a\in\mathbb{Z}\) et \(m\in\mathbb{N}^*\text{.}\) Alors les assertions suivantes sont équivalentes :</p>
 <ol class="decimal">
-<li id="li-1139"><p id="p-1782">\(\exists u\in\mathbb{Z},\;au\equiv 1\;\mathrm{mod}\;m\text{;}\)</p></li>
-<li id="li-1140"><p id="p-1783">\(\exists(u;v)\in\mathbb{Z}^2,\;au+mv=1\text{;}\)</p></li>
-<li id="li-1141"><p id="p-1784">\(\text{PGCD}(a;m)=1\text{.}\)</p></li>
+<li id="li-1158"><p id="p-1798">\(\exists u\in\mathbb{Z},\;au\equiv 1\;\mathrm{mod}\;m\text{;}\)</p></li>
+<li id="li-1159"><p id="p-1799">\(\exists(u;v)\in\mathbb{Z}^2,\;au+mv=1\text{;}\)</p></li>
+<li id="li-1160"><p id="p-1800">\(\text{PGCD}(a;m)=1\text{.}\)</p></li>
 </ol>
-<p id="p-1785">Dans ce cas, on dit que \(a\) est inversible modulo \(m\text{,}\) on appelle \(u\) un inverse de \(a\) modulo \(m\text{,}\) et il en existe une infinité.</p>
-<p id="p-1786">Quand on dispose d'un inverse particulier \(u_0\text{,}\) les autres s'obtiennent comme suit :</p>
+<p id="p-1801">Dans ce cas, on dit que \(a\) est inversible modulo \(m\text{,}\) on appelle \(u\) un inverse de \(a\) modulo \(m\text{,}\) et il en existe une infinité.</p>
+<p id="p-1802">Quand on dispose d'un inverse particulier \(u_0\text{,}\) les autres s'obtiennent comme suit :</p>
 <div class="displaymath">
 \begin{equation*}
 u\text{ est un inverse de }a \text{ modulo }m \quad\Leftrightarrow\quad u\equiv u_0\;\mathrm{mod}\;m.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-24"><a data-knowl="" class="id-ref original" data-refid="hk-proof-24"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-24"><article class="hiddenproof"><p id="p-1787">Commençons par établir l'équivalence des trois propriétés indiquées en montrant que</p>
+</div></article><article class="hiddenproof" id="proof-26"><a data-knowl="" class="id-ref original" data-refid="hk-proof-26"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-26"><article class="hiddenproof"><p id="p-1803">Commençons par établir l'équivalence des trois propriétés indiquées en montrant que</p>
 <div class="displaymath">
 \begin{equation*}
 1\;\Rightarrow\;2\;\Rightarrow\;3\;\Rightarrow\;1.
 \end{equation*}
 </div>
 <ul class="disc">
-<li id="li-1142">
-<p id="p-1788">1 \(\Rightarrow\) 2 :</p>
-<p id="p-1789">Soit \(u\in\mathbb{Z}\) tel que \(au\equiv 1\;\mathrm{mod}\;m\text{.}\) Par la définition <a class="xref" data-knowl="./knowl/defcongruence.html" title="Définition 13.1.3: Congruence dans \(\mathbb{Z}\)">13.1.3</a> de la congruence, il existe \(k\in\mathbb{Z}\) tel que</p>
+<li id="li-1161">
+<p id="p-1804">1 \(\Rightarrow\) 2 :</p>
+<p id="p-1805">Soit \(u\in\mathbb{Z}\) tel que \(au\equiv 1\;\mathrm{mod}\;m\text{.}\) Par la définition <a class="xref" data-knowl="./knowl/defcongruence.html" title="Définition 13.1.3: Congruence dans \(\mathbb{Z}\)">13.1.3</a> de la congruence, il existe \(k\in\mathbb{Z}\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
 au=1+km\quad\Rightarrow\quad au+(-k)m=1.
@@ -551,13 +551,13 @@ au=1+km\quad\Rightarrow\quad au+(-k)m=1.
 </div>
 <p data-braille="continuation">La propriété 2 est donc vérifiée, avec \(v=-k\text{.}\)</p>
 </li>
-<li id="li-1143">
-<p id="p-1790">2 \(\Rightarrow\) 3 :</p>
-<p id="p-1791">Soit \((u;v)\in\mathbb{Z}^2\) tel que \(au+mv=1\text{.}\) Par le théorème de Bézout <a class="xref" data-knowl="./knowl/thmbezout.html" title="Théorème 12.1.9: Bézout">12.1.9</a>, on en déduit que \(\text{PGCD}(a;m)=1\text{.}\)</p>
+<li id="li-1162">
+<p id="p-1806">2 \(\Rightarrow\) 3 :</p>
+<p id="p-1807">Soit \((u;v)\in\mathbb{Z}^2\) tel que \(au+mv=1\text{.}\) Par le théorème de Bézout <a class="xref" data-knowl="./knowl/thmbezout.html" title="Théorème 12.1.9: Bézout">12.1.9</a>, on en déduit que \(\text{PGCD}(a;m)=1\text{.}\)</p>
 </li>
-<li id="li-1144">
-<p id="p-1792">3 \(\Rightarrow\) 1 :</p>
-<p id="p-1793">Supposons que  \(\text{PGCD}(a;m)=1\text{.}\) Par le théorème de Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a>, on en déduit qu'il existe \((u;v)\in\mathbb{Z}^2\) tel que</p>
+<li id="li-1163">
+<p id="p-1808">3 \(\Rightarrow\) 1 :</p>
+<p id="p-1809">Supposons que  \(\text{PGCD}(a;m)=1\text{.}\) Par le théorème de Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a>, on en déduit qu'il existe \((u;v)\in\mathbb{Z}^2\) tel que</p>
 <div class="displaymath">
 \begin{equation*}
 au+mv=1\quad\Rightarrow\quad au=1+(-v)m
@@ -566,7 +566,7 @@ au+mv=1\quad\Rightarrow\quad au=1+(-v)m
 <p data-braille="continuation">donc \(au\equiv 1\;\mathrm{mod}\;m\) par la définition <a class="xref" data-knowl="./knowl/defcongruence.html" title="Définition 13.1.3: Congruence dans \(\mathbb{Z}\)">13.1.3</a> de la congruence.</p>
 </li>
 </ul>
-<p id="p-1794">Supposons maintenant que ces propriétés sont vérifiées et fixons \(u_0\in\mathbb{Z}\) un inverse de \(a\) modulo \(m\text{,}\) c'est-à-dire tel que</p>
+<p id="p-1810">Supposons maintenant que ces propriétés sont vérifiées et fixons \(u_0\in\mathbb{Z}\) un inverse de \(a\) modulo \(m\text{,}\) c'est-à-dire tel que</p>
 <div class="displaymath">
 \begin{equation*}
 au_0\equiv 1\;\mathrm{mod}\;m.
@@ -600,14 +600,14 @@ u\equiv u_0\;\mathrm{mod}\;m&amp;\Rightarrow&amp;au\equiv au_0\;\mathrm{mod}\;m\
 </div></article></div>
 <article class="example example-like" id="exempleinversemodulo1"><a data-knowl="" class="id-ref original" data-refid="hk-exempleinversemodulo1"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">13.1.12</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exempleinversemodulo1"><article class="example example-like"><p id="p-1795">L'entier \(453\) est-il inversible modulo \(222\text{?}\)</p>
-<p id="p-1796">Non, car l'algorithme d'Euclide montre que \(\text{PGCD}(453;222)=3\neq 1\text{.}\)</p></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exempleinversemodulo1"><article class="example example-like"><p id="p-1811">L'entier \(453\) est-il inversible modulo \(222\text{?}\)</p>
+<p id="p-1812">Non, car l'algorithme d'Euclide montre que \(\text{PGCD}(453;222)=3\neq 1\text{.}\)</p></article></div>
 <article class="remark remark-like" id="remark-35"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">13.1.13</span><span class="period">.</span>
 </h6>
-<p id="p-1797">Supposons que \(a\) soit inversible modulo \(m\text{.}\)</p>
-<p id="p-1798">Pour trouver un inverse particulier, il suffit d'appliquer l'algorithme d'Euclide étendu.</p>
-<p id="p-1799">En effet, comme \(\text{PGCD}(a;m)=1\text{,}\) ce dernier fournit un couple de coefficients \((u;v)\in\mathbb{Z}^2\) tels que</p>
+<p id="p-1813">Supposons que \(a\) soit inversible modulo \(m\text{.}\)</p>
+<p id="p-1814">Pour trouver un inverse particulier, il suffit d'appliquer l'algorithme d'Euclide étendu.</p>
+<p id="p-1815">En effet, comme \(\text{PGCD}(a;m)=1\text{,}\) ce dernier fournit un couple de coefficients \((u;v)\in\mathbb{Z}^2\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
 au+mv=1\quad\Rightarrow\quad au=1+(-v)m\quad\Rightarrow\quad au\equiv 1\;\mathrm{mod}\;m
@@ -615,20 +615,20 @@ au+mv=1\quad\Rightarrow\quad au=1+(-v)m\quad\Rightarrow\quad au\equiv 1\;\mathrm
 </div>
 <p data-braille="continuation">donc le coefficient \(u\) est un inverse de \(a\) modulo \(m\text{.}\)</p></article><article class="example example-like" id="exempleinversemodulo2"><a data-knowl="" class="id-ref original" data-refid="hk-exempleinversemodulo2"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">13.1.14</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exempleinversemodulo2"><article class="example example-like"><p id="p-1800">L'entier \(453\) est-il inversible modulo \(221\text{?}\)</p>
-<p id="p-1801">En appliquant l'algorithme d'Euclide étendu, on obtient</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exempleinversemodulo2"><article class="example example-like"><p id="p-1816">L'entier \(453\) est-il inversible modulo \(221\text{?}\)</p>
+<p id="p-1817">En appliquant l'algorithme d'Euclide étendu, on obtient</p>
 <div class="displaymath">
 \begin{equation*}
 \text{PGCD}(453;221)=1\quad\text{et}\quad 1=453\cdot(-20)+221\cdot 41.
 \end{equation*}
 </div>
-<p id="p-1802">Donc \(453\) est inversible modulo \(221\) et \(-20\) est un inverse car</p>
+<p id="p-1818">Donc \(453\) est inversible modulo \(221\) et \(-20\) est un inverse car</p>
 <div class="displaymath">
 \begin{equation*}
 453\cdot (-20)=1+221\cdot(-41)\equiv 1\;\mathrm{mod}\;221.
 \end{equation*}
 </div>
-<p id="p-1803">L'ensemble des inverses \(u\) de \(453\) modulo \(221\) est caractérisé par</p>
+<p id="p-1819">L'ensemble des inverses \(u\) de \(453\) modulo \(221\) est caractérisé par</p>
 <div class="displaymath">
 \begin{equation*}
 u\equiv -20\;\mathrm{mod}\;221.
@@ -640,17 +640,17 @@ u\equiv -20\;\mathrm{mod}\;221.
 \ldots,\;\underbrace{-20-221\cdot 2}_{-662},\;\underbrace{-20-221}_{-241},\;-20,\;\underbrace{-20+221}_{201},\;\underbrace{-20+221\cdot 2}_{422},\;\underbrace{-20+221\cdot 3}_{643},\;\ldots
 \end{equation*}
 </div></article></div>
-<p id="p-1804">Nous sommes maintenant en mesure d'énoncer le théorème qui va nous permettre de résoudre le problème <a class="xref" data-knowl="./knowl/pirates3.html" title="Problème 13.1.5">13.1.5</a>.</p>
+<p id="p-1820">Nous sommes maintenant en mesure d'énoncer le théorème qui va nous permettre de résoudre le problème <a class="xref" data-knowl="./knowl/pirates3.html" title="Problème 13.1.5">13.1.5</a>.</p>
 <article class="theorem theorem-like" id="theochinois"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">13.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Restes chinois.</span>
 </h6>
-<p id="p-1805">Soit \(a_1,\ldots,a_n\in\mathbb{Z}\) et \(m_1,\ldots,m_n\in\mathbb{N}^*\) tels que</p>
+<p id="p-1821">Soit \(a_1,\ldots,a_n\in\mathbb{Z}\) et \(m_1,\ldots,m_n\in\mathbb{N}^*\) tels que</p>
 <div class="displaymath">
 \begin{equation*}
 \text{PGCD}(m_i;m_j)=1\quad\text{pour tous } 1\leq i\neq j\leq n.
 \end{equation*}
 </div>
-<p id="p-1806">Alors le système de congruences</p>
+<p id="p-1822">Alors le système de congruences</p>
 <div class="displaymath">
 \begin{equation*}
 \left\{
@@ -685,21 +685,21 @@ x_0=a_1M_1u_1+a_2M_2u_2+\cdots+a_nM_nu_n
 \begin{equation*}
 M_i=\frac{M}{m_i}=\prod_{j\neq i}m_j\quad\text{et}\quad M_iu_i\equiv 1\;\mathrm{mod}\;m_i.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-25"><a data-knowl="" class="id-ref original" data-refid="hk-proof-25"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-25"><article class="hiddenproof"><p id="p-1807">À venir.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-27"><a data-knowl="" class="id-ref original" data-refid="hk-proof-27"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-27"><article class="hiddenproof"><p id="p-1823">À venir.</p></article></div>
 <article class="example example-like" id="example-60"><a data-knowl="" class="id-ref original" data-refid="hk-example-60"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">13.1.16</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-60"><article class="example example-like"><p id="p-1808">Résolvons le problème <a class="xref" data-knowl="./knowl/pirates3.html" title="Problème 13.1.5">13.1.5</a> à l'aide du théorème <a class="xref" data-knowl="./knowl/theochinois.html" title="Théorème 13.1.15: Restes chinois">13.1.15</a>.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-60"><article class="example example-like"><p id="p-1824">Résolvons le problème <a class="xref" data-knowl="./knowl/pirates3.html" title="Problème 13.1.5">13.1.5</a> à l'aide du théorème <a class="xref" data-knowl="./knowl/theochinois.html" title="Théorème 13.1.15: Restes chinois">13.1.15</a>.</p>
 <ul class="disc">
-<li id="li-1145">
-<p id="p-1809">On a</p>
+<li id="li-1164">
+<p id="p-1825">On a</p>
 <div class="displaymath">
 \begin{equation*}
 a_1=3,\;a_2=4\text{ et }a_3=5.
 \end{equation*}
 </div>
 </li>
-<li id="li-1146">
-<p id="p-1810">On note que</p>
+<li id="li-1165">
+<p id="p-1826">On note que</p>
 <div class="displaymath">
 \begin{equation*}
 m_1=17,\;m_2=11\text{ et }m_3=6
@@ -707,8 +707,8 @@ m_1=17,\;m_2=11\text{ et }m_3=6
 </div>
 <p data-braille="continuation">sont premiers entre eux deux à deux, donc on peut appliquer le théorème <a class="xref" data-knowl="./knowl/theochinois.html" title="Théorème 13.1.15: Restes chinois">13.1.15</a>.</p>
 </li>
-<li id="li-1147">
-<p id="p-1811">Puis on calcule</p>
+<li id="li-1166">
+<p id="p-1827">Puis on calcule</p>
 <div class="displaymath">
 \begin{equation*}
 M=m_1\cdot m_2\cdot m_3=17\cdot 11\cdot 6=1122,
@@ -723,27 +723,27 @@ M_3&amp;=m_1m_2=17\cdot 11=187.
 \end{align*}
 </div>
 </li>
-<li id="li-1148">
-<p id="p-1812">Grâce à l'algorithme d'Euclide étendu, on trouve que</p>
+<li id="li-1167">
+<p id="p-1828">Grâce à l'algorithme d'Euclide étendu, on trouve que</p>
 <ul class="circle">
-<li id="li-1149">
-<p id="p-1813">\(1=66\cdot 8+17\cdot (-31)\) donc</p>
+<li id="li-1168">
+<p id="p-1829">\(1=66\cdot 8+17\cdot (-31)\) donc</p>
 <div class="displaymath">
 \begin{equation*}
 \underbrace{66}_{M_1}\cdot\underbrace{8}_{u_1}\equiv 1\;\mathrm{mod}\;\underbrace{17}_{m_1};
 \end{equation*}
 </div>
 </li>
-<li id="li-1150">
-<p id="p-1814">\(1=102\cdot 4+11\cdot (-37)\) donc</p>
+<li id="li-1169">
+<p id="p-1830">\(1=102\cdot 4+11\cdot (-37)\) donc</p>
 <div class="displaymath">
 \begin{equation*}
 \underbrace{102}_{M_2}\cdot\underbrace{4}_{u_2}\equiv 1\;\mathrm{mod}\;\underbrace{11}_{m_2};
 \end{equation*}
 </div>
 </li>
-<li id="li-1151">
-<p id="p-1815">\(1=187\cdot 1+6\cdot (-31)\) donc</p>
+<li id="li-1170">
+<p id="p-1831">\(1=187\cdot 1+6\cdot (-31)\) donc</p>
 <div class="displaymath">
 \begin{equation*}
 \underbrace{187}_{M_3}\cdot\underbrace{1}_{u_3}\equiv 1\;\mathrm{mod}\;\underbrace{6}_{m_3}.
@@ -752,8 +752,8 @@ M_3&amp;=m_1m_2=17\cdot 11=187.
 </li>
 </ul>
 </li>
-<li id="li-1152">
-<p id="p-1816">On calcule maintenant la solution particulière</p>
+<li id="li-1171">
+<p id="p-1832">On calcule maintenant la solution particulière</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{ccccccc}
@@ -764,8 +764,8 @@ x_0&amp;=&amp;a_1M_1u_1&amp;+&amp;a_2M_2u_2&amp;+&amp;a_3M_3u_3\\
 \end{equation*}
 </div>
 </li>
-<li id="li-1153">
-<p id="p-1817">L'ensemble des solutions est alors caractérisé par l'équation</p>
+<li id="li-1172">
+<p id="p-1833">L'ensemble des solutions est alors caractérisé par l'équation</p>
 <div class="displaymath">
 \begin{equation*}
 x\equiv x_0\;\mathrm{mod}\;M
@@ -784,8 +784,8 @@ x\equiv 4151\;\mathrm{mod}\;1122.
 \end{equation*}
 </div>
 </li>
-<li id="li-1154">
-<p id="p-1818">Il ne reste plus qu'à trouver la plus petite solution positive en soustrayant le bon nombre de multiples de \(1122\) à \(4151\text{,}\) ce qui revient à effectuer la division euclidienne de \(4151\) par \(1122\) :</p>
+<li id="li-1173">
+<p id="p-1834">Il ne reste plus qu'à trouver la plus petite solution positive en soustrayant le bon nombre de multiples de \(1122\) à \(4151\text{,}\) ce qui revient à effectuer la division euclidienne de \(4151\) par \(1122\) :</p>
 <div class="displaymath">
 \begin{equation*}
 4151=1122\cdot 3+785.
@@ -793,11 +793,11 @@ x\equiv 4151\;\mathrm{mod}\;1122.
 </div>
 </li>
 </ul>
-<p id="p-1819">Nous avons finalement résolu le problème <a class="xref" data-knowl="./knowl/pirates.html" title="Problème 13.1.1">13.1.1</a>: s'il empoisonne les six pirates qui restent, le cuisinier peut espérer s'emparer de \(785\) pièces d'or au minimum.</p></article></div>
-<p id="p-1820">Nous allons maintenant présenter de manière plus synthétique les calculs qui permettent d'appliquer le théorème des restes chinois.</p>
+<p id="p-1835">Nous avons finalement résolu le problème <a class="xref" data-knowl="./knowl/pirates.html" title="Problème 13.1.1">13.1.1</a>: s'il empoisonne les six pirates qui restent, le cuisinier peut espérer s'emparer de \(785\) pièces d'or au minimum.</p></article></div>
+<p id="p-1836">Nous allons maintenant présenter de manière plus synthétique les calculs qui permettent d'appliquer le théorème des restes chinois.</p>
 <article class="example example-like" id="exemplechinoistableau"><a data-knowl="" class="id-ref original" data-refid="hk-exemplechinoistableau"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">13.1.17</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemplechinoistableau"><article class="example example-like"><p id="p-1821">Les calculs nécessaires pour résoudre le système</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemplechinoistableau"><article class="example example-like"><p id="p-1837">Les calculs nécessaires pour résoudre le système</p>
 <div class="displaymath">
 \begin{equation*}
 \left\{
@@ -827,16 +827,16 @@ M=&amp;1122&amp;&amp;&amp;x_0=&amp;4151\\
 \end{array}
 \end{equation*}
 </div>
-<p id="p-1822">Et les solutions sont caractérisées par</p>
+<p id="p-1838">Et les solutions sont caractérisées par</p>
 <div class="displaymath">
 \begin{equation*}
 x\equiv 4151\;\mathrm{mod}\;1122.
 \end{equation*}
 </div></article></div>
 <article class="assemblage assemblage-like" id="assemblage-10"><h6 class="heading"><span class="title">Théorème des restes chinois : Résoudre un système de congruences à l'aide de l'algorithme d'Euclide étendu.</span></h6>
-<ul id="p-1823" class="disc">
-<li id="li-1155">
-<p id="p-1824">Objectif : Résoudre un système de congruences du type</p>
+<ul id="p-1839" class="disc">
+<li id="li-1174">
+<p id="p-1840">Objectif : Résoudre un système de congruences du type</p>
 <div class="displaymath">
 \begin{equation*}
 \left\{
@@ -849,9 +849,9 @@ x&amp;\equiv&amp;a_n&amp;\mathrm{mod}\;m_n.
 \end{equation*}
 </div>
 </li>
-<li id="li-1156"><p id="p-1825">Hypothèse : Il faut que les entiers \(m_i\) soient premiers entre eux deux à deux.</p></li>
-<li id="li-1157">
-<p id="p-1826">Principe : Remplir le tableau suivant</p>
+<li id="li-1175"><p id="p-1841">Hypothèse : Il faut que les entiers \(m_i\) soient premiers entre eux deux à deux.</p></li>
+<li id="li-1176">
+<p id="p-1842">Principe : Remplir le tableau suivant</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{|c|c|c|c|c|c|}
@@ -869,15 +869,15 @@ M=&amp;\prod m_i&amp;&amp;&amp;x_0=&amp;\sum a_iM_iu_i\\
 \end{array}
 \end{equation*}
 </div>
-<p id="p-1827">Les solutions constituent alors la progression arithmétique caractérisée par</p>
+<p id="p-1843">Les solutions constituent alors la progression arithmétique caractérisée par</p>
 <div class="displaymath">
 \begin{equation*}
 x\equiv x_0\;\mathrm{mod}\;M\quad\Leftrightarrow\quad \exists k\in\mathbb{Z}, x=x_0+Mk.
 \end{equation*}
 </div>
 </li>
-<li id="li-1158"><p id="p-1828">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1XWykGbip4SFK4R56YgqRahgaxohTo-bp/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
-<li id="li-1159"><p id="p-1829">Pour aller plus loin : <a class="external" href="http://accromath.uqam.ca/2014/10/les-entiers-ces-fonctions-qui-signorent/" target="_blank">Les entiers, ces fonctions qui s'ignorent</a> ou comment tisser des liens entre le théorème des restes chinois et l'interpolation de Lagrange - un excellent article de Jimmy Dillies, dans la revue de vulgarisation mathématique québécoise <a class="external" href="http://accromath.uqam.ca/" target="_blank">Accromath</a>.</p></li>
+<li id="li-1177"><p id="p-1844">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1XWykGbip4SFK4R56YgqRahgaxohTo-bp/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
+<li id="li-1178"><p id="p-1845">Pour aller plus loin : <a class="external" href="http://accromath.uqam.ca/2014/10/les-entiers-ces-fonctions-qui-signorent/" target="_blank">Les entiers, ces fonctions qui s'ignorent</a> ou comment tisser des liens entre le théorème des restes chinois et l'interpolation de Lagrange - un excellent article de Jimmy Dillies, dans la revue de vulgarisation mathématique québécoise <a class="external" href="http://accromath.uqam.ca/" target="_blank">Accromath</a>.</p></li>
 </ul></article></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>

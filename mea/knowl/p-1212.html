@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:11-05:00    *-->
+<!--*    on 2021-03-15T15:27:11-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,47 +13,48 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Déterminons l'approximation obtenue pour l'intégrale définie</p>
+<p>Notons ensuite que par linéarité de l'intégrale, on a</p>
 <div class="displaymath">
 \begin{equation*}
-\int_0^1e^{-x^2}\mathrm{d}x
+\int_c^dN(t)\mathrm{d}t=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3
 \end{equation*}
-</div>
-<p data-braille="continuation">si on applique la méthode de Simpson en subdivisant \([0;1]\) en quatre sous-intervalles de même longueur.</p>
-<ul class="disc">
-<li><p>Notons \(f(x)=e^{-x^2}\text{.}\)</p></li>
-<li><p>On a \(n=4\) et \(\Delta x=\frac{b-a}{n}=\frac{1-0}{4}=0{,}25\text{.}\)</p></li>
-<li>
-<p>Alors \(x_k=a+k\cdot\Delta x=k\cdot 0{,}25\) pour \(k=0,\ldots,4\) donne la subdivision régulière</p>
-<div class="displaymath">
-\begin{equation*}
-0&lt;0{,}25&lt;0{,}5&lt;0{,}75&lt;1
-\end{equation*}
-</div>
-<p data-braille="continuation">de l'intervalle d'intégration \([0;1]\text{.}\)</p>
-</li>
-<li>
-<p>La méthode de Simpson donne alors</p>
-<div class="displaymath">
-\begin{align*}
-\text{Approximation}&amp;=\frac{\Delta x}{6}\cdot\sum_{k=1}^4\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)\\
-&amp;=\frac{0{,}25}{6}\cdot(A_1+A_2+A_3+A_4)
-\end{align*}
 </div>
 <p data-braille="continuation">où</p>
-<ul class="circle">
-<li><p>\(A_1=f(0)+4f(0{,}125)+f(0{,}25)\)</p></li>
-<li><p>\(A_2=f(0{,}25)+4f(0{,}375)+f(0{,}5)\)</p></li>
-<li><p>\(A_3=f(0{,}5)+4f(0{,}625)+f(0{,}75)\)</p></li>
-<li><p>\(A_4=f(0{,}75)+4f(0{,}875)+f(1)\)</p></li>
-</ul>
+<ul class="disc">
+<li>
+<p>la première intégrale vaut</p>
+<div class="displaymath">
+\begin{align*}
+I_1&amp;=\int_c^d1\mathrm{d}t\\
+&amp;=t\,\Bigg\vert_c^d\\
+&amp;d-c\\
+&amp;=\Delta x\;,
+\end{align*}
+</div>
 </li>
 <li>
-<p>Après des calculs fastidieux à la calculatrice ou <a class="external" href="https://juliengiol.github.io/mea/algorithmesimpson.html" target="_blank">avec l'aide de notre application</a>, on obtient</p>
+<p>la deuxième intégrale vaut</p>
 <div class="displaymath">
-\begin{equation*}
-\text{Approximation}=0{,}746\,826\,120\,527\,46\ldots
-\end{equation*}
+\begin{align*}
+I_2&amp;=\int_c^d(t-c)\mathrm{d}t\\
+&amp;=\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
+&amp;=\frac{(d-c)^2}{2}-0\\
+&amp;=\frac{(\Delta x)^2}{2}
+\end{align*}
+</div>
+</li>
+<li>
+<p>et la troisième intégrale vaut</p>
+<div class="displaymath">
+\begin{align*}
+I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
+&amp;=\int_c^d(t-c)\left(t-c-\frac{\Delta x}{2}\right)\mathrm{d}t\\
+&amp;=\int_c^d\left((t-c)^2-\frac{\Delta x}{2}\cdot(t-c)\right)\mathrm{d}t\\
+&amp;=\frac{(t-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
+&amp;=\frac{(d-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(d-c)^2}{2}-0\\
+&amp;=\frac{(\Delta x)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(\Delta x)^2}{2}\\
+&amp;=\frac{(\Delta x)^3}{12}.
+\end{align*}
 </div>
 </li>
 </ul>

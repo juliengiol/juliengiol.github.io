@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:35-05:00    *-->
+<!--*    on 2021-03-15T15:26:14-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,28 +15,22 @@
 <article class="li"><h6 class="heading">
 <span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>Par la méthode des rectangles au milieu, on a trouvé</p>
+<p>En appliquant ce qui précède à chaque sous-intervalle \([x_{k-1};x_k]\) de la subdivision régulière</p>
 <div class="displaymath">
 \begin{equation*}
-\text{Approximation}\approx 0{,}748\,747\,131\,891\,009
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
 \end{equation*}
 </div>
-<p data-braille="continuation">d'où</p>
+<p data-braille="continuation">et en faisant la somme de ces \(n\) morceaux, on obtient</p>
 <div class="displaymath">
 \begin{equation*}
-0{,}74\leq\text{Approximation}\leq 0{,}75.
+\int_a^bf(x)\mathrm{d}x=\text{Approximation}+\text{Erreur}
 \end{equation*}
 </div>
-<p data-braille="continuation">En ajoutant l'encadrement de l'erreur, on obtient</p>
+<p data-braille="continuation">avec l'approximation mentionnée ci-dessus <a class="xref" data-knowl="./knowl/def_methode_rectangles.html" title="Définition 8.1.8: Méthode des rectangles">8.1.8</a> et</p>
 <div class="displaymath">
 \begin{equation*}
-0{,}74-0{,}25\leq\text{Approximation}+\text{Erreur}\leq 0{,}75+0{,}25
-\end{equation*}
-</div>
-<p data-braille="continuation">i.e.</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}49\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 1{,}00.
+|\text{Erreur}|\le n\cdot\frac{M(\Delta x)^2}{2}.
 \end{equation*}
 </div></article><span class="incontext"><a href="presentationrectangles.html#li-664">Contexte</a></span>
 </body>

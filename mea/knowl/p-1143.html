@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:04-05:00    *-->
+<!--*    on 2021-03-15T15:26:51-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,75 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Quand c'est possible, estimez l'erreur commise pour chaque intégrale de l'exercice précédent <a class="xref" data-knowl="./knowl/exercices_approx_trapezes.html" title="Exercice 9.3.2">9.3.2</a>.</p>
+<ul class="disc">
+<li>
+<p>On pose \(n:=5\) et</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x:=\frac{1-0}{5}=0{,}2
+\end{equation*}
+</div>
+<p data-braille="continuation">et on considère la subdivision régulière de \([0;1]\) en cinq sous-intervalles :</p>
+<div class="displaymath">
+\begin{equation*}
+0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Grâce à une calculatrice ou à l'algorithme fourni (<a class="external" href="https://tinyurl.com/5bt97ya4" target="_blank">cliquez ici</a>), on obtient l'approximation</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}2)+2f(0{,}4)+2f(0{,}6)+2f(0{,}8)+f(1)\right)\\
+=\;&amp;0{,}313\,902\ldots
+\end{align*}
+</div>
+<p data-braille="continuation">qui vérifie l'encadrement</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}313\le\text{Approximation}\le 0{,}314.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a>, on a</p>
+<div class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\le\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6\cdot(1-0)^3}{12\cdot 5^2}\\
+&amp;=0{,}02
+\end{align*}
+</div>
+<p data-braille="continuation">d'où</p>
+<div class="displaymath">
+\begin{equation*}
+-0{,}020\le\text{Erreur}\le 0{,}020.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>On obtient donc l'encadrement</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}313-0{,}020\leq\text{Approximation}+\text{Erreur}\leq 0{,}314+0{,}020
+\end{equation*}
+</div>
+<p data-braille="continuation">i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+0{,}293\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}334.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Le meilleur arrondissement qu'on peut en déduire est donc</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^1\sin(x^2)\mathrm{d}x\approx 0{,}3.
+\end{equation*}
+</div>
+</li>
+</ul>
 <span class="incontext"><a href="exercicestrapezes.html#p-1143">Contexte</a></span>
 </body>
 </html>

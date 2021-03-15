@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:36-05:00    *-->
+<!--*    on 2021-03-15T15:26:17-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,67 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Cas particuliers : les choix</p>
+<ul class="disc">
+<li>Objectif : Obtenir des approximations de \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</li>
+<li>
+<p>Principe :</p>
+<ul class="circle">
+<li>
+<p>Prendre la subdivision régulière</p>
+<div class="displaymath">
+\begin{equation*}
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
+\end{equation*}
+</div>
+<p data-braille="continuation">de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de longueur</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x:=\frac{b-a}{n}.
+\end{equation*}
+</div>
+</li>
+<li>Choisir un point \(\xi_k\in[x_{k-1};x_k]\) pour tout \(k=1,\ldots,n\)</li>
+<li>
+<p>Calculer la somme de Riemann correspondante, i.e. poser</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Approximation}:=\Delta x\cdot\sum_{k=1}^nf(\xi_k).
+\end{equation*}
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p>Cas particuliers : Les choix</p>
 <ul class="circle">
 <li>\(\xi_k:=x_{k-1}=a+(k-1)\cdot\Delta x\text{,}\)</li>
 <li>\(\xi_k:=x_k=a+k\cdot\Delta x\text{,}\)</li>
 <li>\(\xi_k:=\frac{x_{k-1}+x_k}{2}=a+(k-0{,}5)\cdot\Delta x\text{,}\)</li>
 </ul>
 <p data-braille="continuation">donnent respectivement des rectangles <em class="emphasis">à gauche</em>, <em class="emphasis">à droite</em>, et <em class="emphasis">au milieu</em>.</p>
+</li>
+<li>
+<p>Précision : Si la fonction \(f\) est dérivable avec une dérivée continue sur \([a;b]\) de sorte qu'il existe une constante \(M\) telle que</p>
+<div class="displaymath">
+\begin{equation*}
+|f'(x)|\leq M\quad\text{pour tout }x\in[a;b],
+\end{equation*}
+</div>
+<p data-braille="continuation">alors on a</p>
+<div class="displaymath">
+\begin{equation*}
+\left|\text{Erreur}\right|\leq \frac{M(b-a)^2}{2n}
+\end{equation*}
+</div>
+<p data-braille="continuation">où l'on définit l'erreur commise par</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Erreur}:=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\Delta x\cdot\sum_{k=1}^nf(\xi_k)}_{\text{Approximation}}.
+\end{equation*}
+</div>
+</li>
+<li>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
+</ul>
 <span class="incontext"><a href="presentationrectangles.html#p-944">Contexte</a></span>
 </body>
 </html>

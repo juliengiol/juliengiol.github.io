@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:53-05:00    *-->
+<!--*    on 2021-03-15T15:26:27-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Montrez que pour toute fonction affine \(f(x):=\alpha_0+\alpha_1x\text{,}\) on a</p>
+<p>D'une part, on a</p>
 <div class="displaymath">
-\begin{equation*}
-\Delta x\cdot\sum_{k=1}^nf\left(a+(k-0{,}5)\cdot\Delta x\right)=\int_a^bf(x)\mathrm{d}x.
-\end{equation*}
+\begin{align*}
+\int_a^bg(x)\mathrm{d}x&amp;=\int_a^b(x-a)^2\mathrm{d}x\\
+&amp;=\frac{(x-a)^3}{3}\,\Bigg\vert_a^b\\
+&amp;=\frac{(b-a)^3}{3}-\frac{(a-a)^3}{3}\\
+&amp;=\frac{(b-a)^3}{3}.
+\end{align*}
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#p-1041">Contexte</a></span>
 </body>

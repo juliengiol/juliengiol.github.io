@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:34-05:00    *-->
+<!--*    on 2021-03-15T15:26:14-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,26 +12,64 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="hiddenproof"><h6 class="heading"><span class="type">Démonstration</span></h6>
-<p>L'ingrédient principal de notre démonstration est l'estimation</p>
+<article class="hiddenproof"><h6 class="heading"><span class="title">Résumé de la démonstration.</span></h6>
+<p>L'idée de la démonstration qu'on donne ici peut se résumer grossièrement comme suit.</p>
+<ul class="disc">
+<li>
+<p>Sur un seul intervalle \([c;d]\)de largeur</p>
 <div class="displaymath">
 \begin{equation*}
-\left|\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right|\le\frac{M(\Delta x)^2}{2}
+\Delta x:=d-c,
 \end{equation*}
 </div>
-<p data-braille="continuation">qui découle, pour tout \(k=1,\ldots,n\text{,}\) de la question 7 de l'exercice <a class="xref" data-knowl="./knowl/lemme_pour_erreur_rectangles.html" title="Exercice 8.3.9">8.3.9</a>.</p>
-<p>Grâce à la relation de Chasles et à l'inégalité triangulaire de la valeur absolue, on en déduit que</p>
+<p data-braille="continuation">on peut toujours écrire</p>
 <div class="displaymath">
-\begin{align*}
-|\text{Erreur}|&amp;=\left|\int_a^bf(x)\mathrm{d}x-\sum_{k=1}^nf(\xi_k)\cdot\Delta x\right|\\
-&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(\xi_k)\cdot\Delta x\right|\\
-&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right|\\
-&amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right|\\
-&amp;\le\sum_{k=1}^n\frac{M(\Delta x)^2}{2}\\
-&amp;=n\cdot\frac{M(\Delta x)^2}{2}\\
-&amp;=n\cdot\frac{M(b-a)^2}{2n^2}\\
-&amp;=\frac{M(b-a)^2}{2n}.
-\end{align*}
-</div></article><span class="incontext"><a href="presentationrectangles.html#proof-13">Contexte</a></span>
+\begin{equation*}
+f(t)=f(\xi)+e(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(\xi\in[c;d]\) est quelconque.</p>
+</li>
+<li>
+<p>Si la fonction est suffisamment régulière, on peut contrôler l'erreur d'interpolation (voir exercice <a class="xref" data-knowl="./knowl/erreurdinterpolation.html" title="Exercice 6.3.12: Formule d'erreur pour l'interpolation">6.3.12</a>) par la majoration</p>
+<div class="displaymath">
+\begin{equation*}
+|e(t)|\le M|t-\xi|
+\end{equation*}
+</div>
+<p data-braille="continuation">qui donne</p>
+<div class="displaymath">
+\begin{equation*}
+\int_c^d|e(t)|\mathrm{d}t\le\frac{M(\Delta x)^2}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">après intégration, tandis que</p>
+<div class="displaymath">
+\begin{equation*}
+\int_c^df(\xi)\mathrm{d}t=\Delta x\cdot f(\xi).
+\end{equation*}
+</div>
+</li>
+<li>
+<p>En appliquant ce qui précède à chaque sous-intervalle \([x_{k-1};x_k]\) de la subdivision régulière</p>
+<div class="displaymath">
+\begin{equation*}
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
+\end{equation*}
+</div>
+<p data-braille="continuation">et en faisant la somme de ces \(n\) morceaux, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\int_a^bf(x)\mathrm{d}x=\text{Approximation}+\text{Erreur}
+\end{equation*}
+</div>
+<p data-braille="continuation">avec l'approximation mentionnée ci-dessus <a class="xref" data-knowl="./knowl/def_methode_rectangles.html" title="Définition 8.1.8: Méthode des rectangles">8.1.8</a> et</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\le n\cdot\frac{M(\Delta x)^2}{2}.
+\end{equation*}
+</div>
+</li>
+</ul></article><span class="incontext"><a href="presentationrectangles.html#proof-13">Contexte</a></span>
 </body>
 </html>

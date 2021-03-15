@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:52-05:00    *-->
+<!--*    on 2021-03-15T15:26:25-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,27 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">8.3.10.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">8.3.9.5</span><span class="period">.</span>
 </h6>
-<p>Montrez que pour toute fonction constante \(f(x):=c\text{,}\) on a</p>
+<p>Grâce aux deux premières questions, à la relation de Chasles, et au fait que</p>
 <div class="displaymath">
 \begin{equation*}
-\Delta x\cdot\sum_{k=1}^nf\left(a+k\cdot\Delta x\right)=\int_a^bf(x)\mathrm{d}x.
+(c-\xi)^2=(\xi-d)^2=\frac{(\Delta x)^2}{4},
 \end{equation*}
+</div>
+<p data-braille="continuation">on a</p>
+<div class="displaymath">
+\begin{align*}
+\left|\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=\int_c^\xi M\cdot|x-\xi|\mathrm{d}x+\int_\xi^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=-M\cdot\int_c^\xi(x-\xi)\mathrm{d}x+M\cdot\int_\xi^d(x-\xi)\mathrm{d}x\\
+&amp;=-M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_c^\xi+M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_\xi^d\\
+&amp;=-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}+M\cdot\frac{(c-\xi)^2}{2}\\
+&amp;\quad+M\cdot\frac{(d-\xi)^2}{2}-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}\\
+&amp;=\frac{M(\Delta x)^2}{8}+\frac{M(\Delta x)^2}{8}\\
+&amp;=\frac{M(\Delta x)^2}{4}
+\end{align*}
 </div></article><span class="incontext"><a href="exercicesrectangles.html#li-745">Contexte</a></span>
 </body>
 </html>

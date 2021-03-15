@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:53-05:00    *-->
+<!--*    on 2021-03-15T15:26:27-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Le but de cet exercice est de montrer que cette méthode d'intégration numérique est d'<a class="external" href="https://tinyurl.com/fk4kjruw" target="_blank">ordre</a> un.</p>
+<p>D'autre part, notons que les calculs de l'exercice <a class="xref" data-knowl="./knowl/ordre_zero.html" title="Exercice 8.3.10: Ordre de la méthode des rectangles à droite">8.3.10</a> donnent</p>
+<div class="displaymath">
+\begin{equation*}
+A:=\Delta x\cdot\sum_{k=1}^n(\alpha_0-0{,}5\alpha_1\Delta x)=(\alpha_0-0{,}5\alpha_1\Delta x)(b-a)
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+B:=\Delta x\cdot\sum_{k=1}^n(a+k\Delta x)=0{,}5(b^2-a^2)+0{,}5(b-a)\Delta x,
+\end{equation*}
+</div>
+<p data-braille="continuation">de sorte que, par linéarité, on a</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\Delta x\cdot\sum_{k=1}^nf\left(a+(k-0{,}5)\cdot\Delta x\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left(\alpha_0+\alpha_1\left(a+(k-0{,}5)\cdot\Delta x\right)\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left(\alpha_0-0{,}5\alpha_1\Delta x\right)+\alpha_1\Delta x\cdot\sum_{k=1}^n\left(a+k\cdot\Delta x\right)\\
+=\;&amp;A+\alpha_1B\\
+=\;&amp;(\alpha_0-0{,}5\alpha_1\Delta x)(b-a)+0{,}5\alpha_1(b^2-a^2)+0{,}5\alpha_1(b-a)\Delta x\\
+=\;&amp;\alpha_0(b-a)-\cancel{0{,}5\alpha_1\Delta x(b-a)}+0{,}5\alpha_1(b^2-a^2)+\cancel{0{,}5\alpha_1(b-a)\Delta x}\\
+=\;&amp;\alpha_0(b-a)+0{,}5\alpha_1(b^2-a^2).
+\end{align*}
+</div>
 <span class="incontext"><a href="exercicesrectangles.html#p-1040">Contexte</a></span>
 </body>
 </html>

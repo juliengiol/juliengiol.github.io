@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:50-05:00    *-->
+<!--*    on 2021-03-15T15:28:00-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,38 +14,25 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.3.7.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.3.3.1</span><span class="period">.</span>
 </h6>
-<ol class="decimal">
-<li>
-<p>Supposons que \(a\) et \(b\) sont premiers entre eux, et qu'ils divisent \(x\) tous les deux. Alors, d'une part, il existe \(k\in\mathbb{Z}\) tel que</p>
+<p>Par hypothèses, on a</p>
+<div class="displaymath">
+\begin{equation}
+au_0+bv_0=\text{PGCD}(a;b)\tag{12.3.2}
+\end{equation}
+</div>
+<p>donc</p>
 <div class="displaymath">
 \begin{equation*}
-x=ka.
+\begin{array}{cccc}
+au+bv&amp;=&amp;a\cdot (u_0+kb)+b\cdot (v_0-ka)&amp;\\
+&amp;=&amp;au_0+akb+bv_0-bka&amp;\\
+&amp;=&amp;\underbrace{au_0+bv_0}_{\text{PGCD}(a;b)}+\underbrace{kab-bka}_{0}&amp;\\
+&amp;=&amp;\text{PGCD}(a;b).
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">D'autre part, on a donc</p>
-<div class="displaymath">
-\begin{equation*}
-b\vert ka\quad\text{et}\quad\text{PGCD}(a;b)=1.
-\end{equation*}
-</div>
-<p data-braille="continuation">Par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>, on en déduit que \(b\) divise \(k\text{,}\) de sorte qu'il existe \(m\in\mathbb{Z}\) tel que</p>
-<div class="displaymath">
-\begin{equation*}
-k=mb.
-\end{equation*}
-</div>
-<p data-braille="continuation">Finalement, on obtient</p>
-<div class="displaymath">
-\begin{equation*}
-x=ka=(mb)\cdot a=m\cdot(ab)
-\end{equation*}
-</div>
-<p data-braille="continuation">ce qui montre que \(ab\) divise \(x\text{.}\)</p>
-</li>
-<li><p>Ce résultat découle du précédent par récurrence sur \(n\text{.}\)</p></li>
-</ol>
 </div>
 <span class="incontext"><a href="exercicesbezout.html#solution-120">Contexte</a></span>
 </body>

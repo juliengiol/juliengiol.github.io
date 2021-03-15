@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:04-05:00    *-->
+<!--*    on 2021-03-15T15:26:48-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voici la subdivision régulière de l'intervalle \([0;1]\) en six sous-intervalles de même longueur :</p>
+<p>On a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_trapezes.html" title="Exemple 9.1.4">9.1.4</a> qu'on pouvait appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M:=2\text{.}\) Alors</p>
 <div class="displaymath">
 \begin{equation*}
-0&lt;\frac{1}{6}&lt;\frac{1}{3}&lt;\frac{1}{2}&lt;\frac{2}{3}&lt;\frac{5}{6}&lt;1.
+\begin{array}{crcl}
+&amp;|\text{Erreur}|&amp;\le&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{M(b-a)^3}{12n^2}&amp;\le&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{2\cdot (1-0)^3}{12n^2}&amp;\le&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{1}{6n^2}&amp;\le&amp;10^{-5}\\
+\Leftrightarrow&amp;\frac{10^5}{6}&amp;\le&amp;n^2\\
+\Leftrightarrow&amp;\sqrt{\frac{10^5}{6}}&amp;\le&amp;n\\
+\Leftrightarrow&amp;129{,}09\ldots&amp;\le&amp;n.
+\end{array}
 \end{equation*}
-</div>
-<p data-braille="continuation">La méthode des trapèzes donne alors l'approximation suivante :</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f\left(\frac{1}{6}\right)+2f\left(\frac{1}{3}\right)+2f\left(\frac{1}{2}\right)\right.\\
-&amp;\qquad\qquad\left.+2f\left(\frac{2}{3}\right)+2f\left(\frac{5}{6}\right)+f(1)\right)\\
-=\;&amp;\frac{1}{12}\cdot\left(e^{0^2}+2e^{\left(\frac{1}{6}\right)^2}+2e^{\left(\frac{1}{3}\right)^2}+2e^{\left(\frac{1}{2}\right)^2}+2e^{\left(\frac{2}{3}\right)^2}+2e^{\left(\frac{5}{6}\right)^2}+e^{1^2}\right)\\
-\approx\;&amp;1{,}475.
-\end{align*}
 </div>
 <span class="incontext"><a href="exercicestrapezes.html#p-1138">Contexte</a></span>
 </body>

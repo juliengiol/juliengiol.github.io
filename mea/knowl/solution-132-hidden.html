@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:54:24-05:00    *-->
+<!--*    on 2021-03-15T15:28:23-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,42 +12,48 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<ol class="decimal">
-<li>
-<p>Commençons par encadrer l'approximation.</p>
+<p>Il s'agit de trouver un entier \(x\) égal environ à \(667\) et tel que</p>
 <div class="displaymath">
 \begin{equation*}
-3{,}339\,682\leq\text{Approximation}\leq 3{,}339\,683.
+\left\{
+\begin{array}{cccl}
+x&amp;\equiv&amp;2&amp;\text{mod}\; 5,\\
+x&amp;\equiv&amp;4&amp;\text{mod}\; 6,\\
+x&amp;\equiv&amp;3&amp;\text{mod}\; 11.
+\end{array}
+\right.
 \end{equation*}
 </div>
-<p>Encadrons ensuite l'erreur, sachant que \(\frac{4}{11}=0{,}363\,636\,363\ldots\text{,}\)</p>
+<p data-braille="continuation">Comme les entiers \(5, 6\) et \(11\) sont premiers entre eux deux à deux, on peut appliquer le théorème des restes chinois :</p>
 <div class="displaymath">
 \begin{equation*}
--0{,}363\,637\leq\text{Erreur}\leq 0.
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
+\hline
+2&amp;5&amp;66&amp;1=66\cdot 1+5\cdot(-13)&amp;1&amp;132\\
+\hline
+4&amp;6&amp;55&amp;1=55\cdot 1+6\cdot(-9)&amp;1&amp;220\\
+\hline
+3&amp;11&amp;30&amp;1=30\cdot (-4)+11\cdot 11&amp;-4&amp;-360\\
+\hline
+M=&amp;330&amp;&amp;&amp;x_0=&amp;-8\\
+\hline
+\end{array}
 \end{equation*}
 </div>
-<p>On a donc</p>
+<p>Les solutions sont donc caractérisées par</p>
 <div class="displaymath">
 \begin{equation*}
-3{,}339\,682-0{,}363\,637\leq\text{Approximation}+\text{Erreur}\leq 3{,}339\,683+0
+x\equiv -8\;\mathrm{mod}\;330.
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
+<p>La solution qui se rapproche le plus de \(667\) est donc</p>
 <div class="displaymath">
 \begin{equation*}
-2{,}976\,045\leq\text{Valeur exacte}\leq 3{,}339\,683.
+-8+2\cdot 330=652.
 \end{equation*}
 </div>
-</li>
-<li>
-<p>L'arrondissement le plus précis qu'on puisse en déduire est le suivant :</p>
-<div class="displaymath">
-\begin{equation*}
-\text{Valeur exacte}\approx 3.
-\end{equation*}
-</div>
-</li>
-</ol>
-<p>La somme de cette série bien connue vaut \(\pi\text{.}\) Mais il faut prendre beaucoup plus de termes dans la somme partielle pour obtenir un nombre intéressant de décimales de \(\pi\text{.}\)</p>
+<p>Réponse : Il restait six cent cinquante-deux soldats dans l'armée du général.</p>
 </div></body>
 </html>

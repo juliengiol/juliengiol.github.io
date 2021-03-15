@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:17-05:00    *-->
+<!--*    on 2021-03-15T15:27:09-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,9 +13,33 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 class="heading">
-<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">10.3.4</span><span class="period">.</span>
+<span class="type">Exercice</span><span class="space"> </span><span class="codenumber">9.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Méthodes de Newton-Cotes.</span>
 </h6>
-<p>Étudier et comprendre la démonstration de la proposition <a class="xref" data-knowl="./knowl/theorieSimpson.html" title="Proposition 10.1.1">10.1.1</a>.</p>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-104-hidden.html" title="Solution 10.3.4.1"><span class="type">Solution</span></a></div></article><span class="incontext"><a href="exercicessimpson.html#exercise-111">Contexte</a></span>
+<p>Cet exercice est une introduction aux méthodes de Newton-Cotes \(\mathrm{NC}_l\) qui généralisent la méthode des trapèzes (\(l=1\)).</p>
+<p>Soit \(a&lt;b\text{,}\) \(n\ge 1\text{,}\) et</p>
+<div class="displaymath">
+\begin{equation*}
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
+\end{equation*}
+</div>
+<p data-braille="continuation">une subdivision quelconque de l'intervalle \([a;b]\) en \(n\) sous-intervalles.</p>
+<p>Pour tout \(k=1,\ldots,n\text{,}\) on considère la subdvision régulière</p>
+<div class="displaymath">
+\begin{equation*}
+x_{k-1}=\xi_{k,0}&lt;\xi_{k,1}&lt;\ldots&lt;\xi_{k,l}=x_k
+\end{equation*}
+</div>
+<p data-braille="continuation">de \([x_{k-1},x_k]\) en \(l\) sous-intervalles.</p>
+<p>La <em class="emphasis">méthode de Newton-Cotes</em> \(\mathrm{NC}_l\) consiste à remplacer une fonction \(f:[a;b]\longrightarrow\) par la fonction dont la restriction à chaque sous-intervalle \([x_{k-1},x_k]\) coïncide avec le polynôme interpolateur des \(l+1\) points</p>
+<div class="displaymath">
+\begin{equation*}
+A_0=(\xi_{k,0},f(\xi_{k,0})),\;\ldots,\;A_l(\xi_{k,l},f(\xi_{k,l})).
+\end{equation*}
+</div>
+<ol class="decimal">
+<li>Pourquoi cela permet-il de généraliser la méthode des trapèzes étudiée dans ce chapitre?</li>
+<li><p>Dans le cas \([a;b]:=[1;5]\) et \(n:=2\text{,}\) déterminez l'approximation de la fonction \(f(x):=x^3+5\) fournie par la méthode \(\mathrm{NC}_1\text{.}\)</p></li>
+<li><p>Dans le cas \([a;b]:=[1;5]\) et \(n:=2\text{,}\) déterminez l'approximation de la fonction \(f(x):=x^3+5\) fournie par la méthode \(\mathrm{NC}_2\text{.}\)</p></li>
+</ol></article><span class="incontext"><a href="exercicestrapezes.html#exercise-111">Contexte</a></span>
 </body>
 </html>

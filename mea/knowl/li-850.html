@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:10-05:00    *-->
+<!--*    on 2021-03-15T15:27:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,33 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.11.1</span><span class="period">.</span>
 </h6>
-<p>Hypothèses : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable quatre fois avec une dérivée quatrième continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
+<p>On fixe \(t\in\;]c;d[\) et on introduit la fonction</p>
 <div class="displaymath">
 \begin{equation*}
-|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\phi(s):=f(s)-p(s)-\frac{f(t)-p(t)}{(t-c)(t-d)}(s-c)(s-d)
 \end{equation*}
 </div>
-<p data-braille="continuation">On a alors</p>
+<p data-braille="continuation">où</p>
 <div class="displaymath">
 \begin{equation*}
-\left|\text{Erreur}\right|\leq \frac{M(b-a)^5}{2880n^4}.
+p(s):=f(c)+\frac{f(d)-f(c)}{d-c}(s-c)
 \end{equation*}
-</div></article><span class="incontext"><a href="presentationsimpson.html#li-850">Contexte</a></span>
+</div>
+<p data-braille="continuation">est le polynôme interpolateur des points \((c;f(c))\) et \((d;f(d))\text{.}\)</p>
+<p>Vérifiez que</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(c)=\phi(d)=\phi(t)=0
+\end{equation*}
+</div>
+<p data-braille="continuation">et que</p>
+<div class="displaymath">
+\begin{equation*}
+\phi''(s)=f''(s)-\frac{2(f(t)-p(t))}{(t-c)(t-d)}
+\end{equation*}
+</div>
+<p data-braille="continuation">pour tout \(s\in\;]c;d[\text{.}\)</p></article><span class="incontext"><a href="exercicestrapezes.html#li-850">Contexte</a></span>
 </body>
 </html>

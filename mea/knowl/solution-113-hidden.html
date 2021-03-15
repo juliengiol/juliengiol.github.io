@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:39-05:00    *-->
+<!--*    on 2021-03-15T15:27:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,83 +13,64 @@
 </head>
 <body><div class="solution solution-like"><ol class="decimal">
 <li>
-<p>Par définition du produit matriciel, on a</p>
+<p>On a</p>
 <div class="displaymath">
-\begin{align*}
-\begin{bmatrix}0&amp;1\\1&amp;-q\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}&amp;=\begin{bmatrix}0\cdot a+1\cdot b\\1\cdot a-q\cdot b\end{bmatrix}\\
-&amp;=\begin{bmatrix}b\\r\end{bmatrix}.
-\end{align*}
+\begin{equation*}
+\begin{array}{|c|c|c|c|}
+\hline
+a&amp;b&amp;\text{Division euclidienne}&amp;r\\
+\hline
+363&amp;198&amp;363=198\cdot 1+165&amp;165\\
+198&amp;165&amp;198=165\cdot 1+33&amp;33\\
+165&amp;33&amp;165=33\cdot 5+0&amp;0\\
+\hline
+\end{array}
+\end{equation*}
 </div>
+<p data-braille="continuation">Donc \(\text{PGCD}(363;198)=33\text{.}\)</p>
 </li>
 <li>
-<p>D'après ce qui précède, il suffit de prendre</p>
+<p>On a</p>
 <div class="displaymath">
 \begin{equation*}
-M_1=\begin{bmatrix}0&amp;1\\1&amp;-11\end{bmatrix}.
+\begin{array}{|c|c|c|c|}
+\hline
+a&amp;b&amp;\text{Division euclidienne}&amp;r\\
+\hline
+3410&amp;2784&amp;3410=2784\cdot 1+626&amp;626\\
+2784&amp;626&amp;2784=626\cdot 4+280&amp;280\\
+626&amp;280&amp;626=280\cdot 2+66&amp;66\\
+280&amp;66&amp;280=66\cdot 4+16&amp;16\\
+66&amp;16&amp;66=16\cdot 4+2&amp;2\\
+16&amp;2&amp;16=2\cdot 8+0&amp;0\\
+\hline
+\end{array}
 \end{equation*}
 </div>
+<p data-braille="continuation">Donc \(\text{PGCD}(2784;3410)=2\text{.}\)</p>
 </li>
 <li>
-<p>Il suffit de prendre</p>
+<p>On a</p>
 <div class="displaymath">
 \begin{equation*}
-M_2=\begin{bmatrix}0&amp;1\\1&amp;-15\end{bmatrix}.
+\begin{array}{|c|c|c|c|}
+\hline
+a&amp;b&amp;\text{Division euclidienne}&amp;r\\
+\hline
+2784&amp;1180&amp;2784=1180\cdot 2+424&amp;424\\
+1180&amp;424&amp;1180=424\cdot 2+332&amp;332\\
+424&amp;332&amp;424=332\cdot 1+92&amp;92\\
+332&amp;92&amp;332=92\cdot 3+56&amp;56\\
+92&amp;56&amp;92=56\cdot 1+36&amp;36\\
+56&amp;36&amp;56=36\cdot 1+20&amp;20\\
+36&amp;20&amp;36=20\cdot 1+16&amp;16\\
+20&amp;16&amp;20=16\cdot 1+4&amp;4\\
+16&amp;4&amp;16=4\cdot 4+0&amp;0\\
+\hline
+\end{array}
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Par associativité, on a</p>
-<div class="displaymath">
-\begin{equation*}
-(M_2M_1)\begin{bmatrix}2589\\234\end{bmatrix}=M_2\left(M_1\begin{bmatrix}2589\\234\end{bmatrix}\right)=M_2\begin{bmatrix}234\\15\end{bmatrix}=\begin{bmatrix}15\\9\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>En observant les quotients des trois dernières étapes de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(2589;234)\text{,}\) on voit qu'il suffit de prendre</p>
-<div class="displaymath">
-\begin{equation*}
-M_3=\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}, M_4=\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\text{ et }M_5=\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Un peu de calcul matriciel montre que \(M_5M_4M_3M_2M_1\) donne la matrice</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-15\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-11\end{bmatrix}\\
-=&amp;\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}1&amp;-11\\-15&amp;166\end{bmatrix}\\
-=&amp;\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}-15&amp;166\\16&amp;-177\end{bmatrix}\\
-=&amp;\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}\begin{bmatrix}16&amp;-177\\-31&amp;343\end{bmatrix}\\
-=&amp;\begin{bmatrix}-31&amp;343\\78&amp;-863\end{bmatrix}.
-\end{align*}
-</div>
-</li>
-<li>
-<p>D'après ce qui précède, on sait que</p>
-<div class="displaymath">
-\begin{equation*}
-M_5M_4M_3M_2M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}3\\0\end{bmatrix},
-\end{equation*}
-</div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}-31&amp;343\\78&amp;-863\end{bmatrix}\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}3\\0\end{bmatrix}.
-\end{equation*}
-</div>
-<p>La première ligne de cette identité matricielle donne</p>
-<div class="displaymath">
-\begin{equation*}
-(-31)\cdot 2589+343\cdot 234=3,
-\end{equation*}
-</div>
-<p data-braille="continuation">soit</p>
-<div class="displaymath">
-\begin{equation*}
-2589u+234v=3\quad\text{avec }(u;v)=(-31;343).
-\end{equation*}
-</div>
+<p data-braille="continuation">Donc \(\text{PGCD}(2784;1180)=4\text{.}\)</p>
 </li>
 </ol></div></body>
 </html>

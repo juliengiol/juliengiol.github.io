@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:35-05:00    *-->
+<!--*    on 2021-03-15T15:26:15-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,29 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Par la méthode des rectangles à gauche, on a trouvé</p>
+<p>Commençons par déterminer quel nombre \(M\) nous pouvons prendre. Pour tout \(x\in[0;1]\text{,}\) on a</p>
 <div class="displaymath">
 \begin{equation*}
-\text{Approximation}\approx 0{,}821\,999\,167\,653\,951
+\begin{array}{ccl}
+|f'(x)|&amp;=&amp;\left|-2xe^{-x^2}\right|\\
+&amp;=&amp;2\cdot\left|x\right|\cdot\left|e^{-x^2}\right|\\
+&amp;\leq&amp;2\cdot 1\cdot 1\\
+&amp;=&amp;2.
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">d'où</p>
+<p data-braille="continuation">On pose donc \(M:=2\) et on a</p>
 <div class="displaymath">
-\begin{equation*}
-0{,}82\leq\text{Approximation}\leq 0{,}83.
-\end{equation*}
-</div>
-<p data-braille="continuation">En ajoutant l'encadrement de l'erreur, on obtient</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}82-0{,}25\leq\text{Approximation}+\text{Erreur}\leq 0{,}83+0{,}25
-\end{equation*}
-</div>
-<p data-braille="continuation">i.e.</p>
-<div class="displaymath">
-\begin{equation*}
-0{,}57\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 1{,}08.
-\end{equation*}
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^2}{2n}\\
+&amp;=\frac{2\cdot(1-0)^2}{2\cdot 4}\\
+&amp;=0{,}25.
+\end{align*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#p-933">Contexte</a></span>
 </body>

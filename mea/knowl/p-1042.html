@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:53-05:00    *-->
+<!--*    on 2021-03-15T15:26:27-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Montrez que pour la fonction quadratique \(g(x):=(x-a)^2\text{,}\) on a</p>
+<p>D'autre part, on a</p>
 <div class="displaymath">
-\begin{equation*}
-\Delta x\cdot\sum_{k=1}^ng\left(a+(k-0{,}5)\cdot\Delta x\right)\ne\int_a^bg(x)\mathrm{d}x.
-\end{equation*}
+\begin{align*}
+&amp;\Delta x\cdot\sum_{k=1}^ng\left(a+(k-0{,}5)\cdot\Delta x\right)\\
+=\;&amp;\Delta x\cdot\sum_{k=1}^n\left((k-0{,}5)\cdot\Delta x\right)^2\\
+=\;&amp;(\Delta x)^3\cdot\sum_{k=1}^n(k^2-k+0{,}25)\\
+=\;&amp;(\Delta x)^3\left(\frac{n(n+1)(2n+1)}{6}-\frac{n(n+1)}{2}+0{,}25n\right)\\
+=\;&amp;\frac{(\Delta x)^3}{12}(2n(n+1)(2n+1)-6n(n+1)+3n)\\
+=\;&amp;\frac{(\Delta x)^3}{12}(4n^3+6n^2+2n-6n^2-6n+3n)\\
+=\;&amp;\frac{(b-a)^3}{12n^3}(4n^3-n)\\
+=\;&amp;\frac{(b-a)^3}{3}-\frac{(b-a)^3}{12n^2}\\
+&lt;\;&amp;\frac{(b-a)^3}{3}.
+\end{align*}
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#p-1042">Contexte</a></span>
 </body>

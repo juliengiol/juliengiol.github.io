@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:16-05:00    *-->
+<!--*    on 2021-03-15T15:27:00-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,10 +14,15 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-&amp;\frac{\Delta x}{6}\cdot\sum_{k=1}^4\left(g(x_{k-1})+4g(m_k)+g(x_k)\right)\\
-=\;&amp;\frac{0{,}5}{6}\cdot\left(A_1+A_2+A_3+A_4\right)
+\int_c^dp(t)\mathrm{d}t&amp;=\int_c^d\left(f(c)+\frac{f(d)-f(c)}{d-c}(t-c)\right)\mathrm{d}t\\
+&amp;=f(c)t+\frac{f(d)-f(c)}{d-c}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
+&amp;=f(c)d+\frac{f(d)-f(c)}{d-c}\cdot\frac{(d-c)^2}{2}\\
+&amp;\qquad -f(c)c+\frac{f(d)-f(c)}{d-c}\cdot\frac{(c-c)^2}{2}\\
+&amp;=f(c)(d-c)+(f(d)-f(c))\cdot\frac{(d-c)}{2}\\
+&amp;=\frac{1}{2}\left(2f(c)+f(d)-f(c)\right)\cdot(d-c)\\
+&amp;=\frac{1}{2}\left(f(c)+f(d)\right)\cdot(d-c).
 \end{align*}
 </div>
-<span class="incontext"><a href="exercicessimpson.html#mjx-eqn-mrow-713">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#mjx-eqn-mrow-713">Contexte</a></span>
 </body>
 </html>

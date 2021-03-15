@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:45-05:00    *-->
+<!--*    on 2021-03-15T15:26:23-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On a déjà vu à l'exercice précédent qu'on pouvait appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a> avec \(M:=1\text{,}\) alors on cherche le plus petit entier \(n\) tel que</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{crcl}
-&amp;|\text{Erreur}|&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{M(b-a)^2}{2n}&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{1\cdot(1-0)^2}{2n}&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{1}{2n}&amp;\leq&amp;10^{-6}\\
-\Leftrightarrow&amp;\frac{10^6}{2}&amp;\leq&amp;n\\
-\Leftrightarrow&amp;500\,000&amp;\leq&amp;n.
-\end{array}
-\end{equation*}
-</div>
+<p>Voici une façon de faire :<pre class="code-block tex2jax_ignore"># entrées :
+import numpy as np
+def f(x):
+    return 4 * np.sqrt(1 - x ** 2)
+a = 0.0
+b = 1.0
+n = 32
+# instructions :
+approximation = 0
+deltaX = (b - a) / n
+for k in range(1, n+1):
+    x = a + (k - 1) * deltaX
+    approximation = approximation + f(x)
+approximation = deltaX * approximation
+# sortie :
+print(approximation)
+</pre></p>
 <span class="incontext"><a href="exercicesrectangles.html#p-1001">Contexte</a></span>
 </body>
 </html>

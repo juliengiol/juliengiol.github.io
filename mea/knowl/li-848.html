@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:10-05:00    *-->
+<!--*    on 2021-03-15T15:27:00-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,8 +13,19 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.9.2</span><span class="period">.</span>
 </h6>
-<p>Objectif : Obtenir des approximations de la valeur d'une intégrale \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</p></article><span class="incontext"><a href="presentationsimpson.html#li-848">Contexte</a></span>
+<p>On a donc</p>
+<div class="displaymath">
+\begin{align*}
+\int_c^dp(t)\mathrm{d}t&amp;=\int_c^d\left(f(c)+\frac{f(d)-f(c)}{d-c}(t-c)\right)\mathrm{d}t\\
+&amp;=f(c)t+\frac{f(d)-f(c)}{d-c}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
+&amp;=f(c)d+\frac{f(d)-f(c)}{d-c}\cdot\frac{(d-c)^2}{2}\\
+&amp;\qquad -f(c)c+\frac{f(d)-f(c)}{d-c}\cdot\frac{(c-c)^2}{2}\\
+&amp;=f(c)(d-c)+(f(d)-f(c))\cdot\frac{(d-c)}{2}\\
+&amp;=\frac{1}{2}\left(2f(c)+f(d)-f(c)\right)\cdot(d-c)\\
+&amp;=\frac{1}{2}\left(f(c)+f(d)\right)\cdot(d-c).
+\end{align*}
+</div></article><span class="incontext"><a href="exercicestrapezes.html#li-848">Contexte</a></span>
 </body>
 </html>

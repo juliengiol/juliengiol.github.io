@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:54:03-05:00    *-->
+<!--*    on 2021-03-15T15:28:03-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,16 +14,37 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.3.1.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.3.5.1</span><span class="period">.</span>
 </h6>
-<ol class="decimal">
-<li><p>Vrai car \(14-2=12=6\cdot 2\) est divisible par \(6\text{.}\)</p></li>
-<li><p>Vrai car \(14-0=14=7\cdot 2\) est divisible par \(7\text{.}\)</p></li>
-<li><p>Faux car \(14-(-22)=36=8\cdot 4+4\) n'est pas divisible par \(8\text{.}\)</p></li>
-<li><p>Vrai car \(14-(-13)=27=9\cdot 3\) est divisible par \(9\text{.}\)</p></li>
-<li><p>Faux car \(25040432829023\equiv 3\;\mathrm{mod}\;10\) tandis que \(13907346592457\equiv 7\;\mathrm{mod}\;10\text{.}\)</p></li>
-</ol>
+<p>Supposons que \(a\vert bc\) et que \(\text{PGCD}(a;b)=1\text{.}\)</p>
+<p>Comme \(a\vert bc\text{,}\) il existe \(d\in\mathbb{Z}\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+bc=ad.
+\end{equation*}
 </div>
-<span class="incontext"><a href="exerciceschinois.html#solution-122">Contexte</a></span>
+<p data-braille="continuation">Et comme \(\text{PGCD}(a;b)=1\text{,}\) il existe \((u;v)\in\mathbb{Z}^2\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+au+bv=1.
+\end{equation*}
+</div>
+<p>On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ccc}
+c&amp;=&amp;1\cdot c\\
+&amp;=&amp;(au+bv)\cdot c\\
+&amp;=&amp;auc+bvc\\
+&amp;=&amp;auc+(bc)v\\
+&amp;=&amp;auc+(ad)v\\
+&amp;=&amp;a(uc+dv)\\
+&amp;=&amp;ae
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">avec \(e=uc+dv\in\mathbb{Z}\text{,}\)d'où \(a\vert c\text{.}\)</p>
+</div>
+<span class="incontext"><a href="exercicesbezout.html#solution-122">Contexte</a></span>
 </body>
 </html>

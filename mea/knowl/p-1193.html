@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:09-05:00    *-->
+<!--*    on 2021-03-15T15:27:09-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La forme de Newton du polynôme interpolateur des points</p>
+<p>Ceci achève bien la démonstration, puisque la question 2 de l'exercice <a class="xref" data-knowl="./knowl/exercice_formule_trapezes.html" title="Exercice 9.3.9">9.3.9</a> entraîne</p>
 <div class="displaymath">
-\begin{equation*}
-(c;f(c)),\;(m;f(m))\;\text{et}\;(d;f(d))
-\end{equation*}
+\begin{align*}
+\int_c^dg(t)\mathrm{d}t&amp;=\int_c^d(f(t)-p(t))\mathrm{d}t\\
+&amp;=\int_c^df(t)\mathrm{d}t-\int_c^dp(t)\mathrm{d}t\\
+&amp;=\int_c^df(t)\mathrm{d}t-\frac{1}{2}(f(c)+f(d))(d-c)\\
+&amp;=\int_c^df(t)\mathrm{d}t-\frac{\Delta x}{2}\cdot(f(c)+f(d)).
+\end{align*}
 </div>
-<p data-braille="continuation">est donnée par</p>
-<div class="displaymath">
-\begin{equation*}
-N(t)=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}(t-c)(t-m)
-\end{equation*}
-</div>
-<p data-braille="continuation">et</p>
-<div class="displaymath">
-\begin{equation*}
-\int_c^dN(t)\mathrm{d}t=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).
-\end{equation*}
-</div>
-<span class="incontext"><a href="presentationsimpson.html#p-1193">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#p-1193">Contexte</a></span>
 </body>
 </html>

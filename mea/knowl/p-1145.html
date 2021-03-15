@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:05-05:00    *-->
+<!--*    on 2021-03-15T15:26:52-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,30 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour \(\displaystyle\int_0^1e^{x^2}\mathrm{d}x\) avec six trapèzes, posons \(f(x)=e^{x^2}\text{.}\) Alors</p>
+<p>Grâce à une calculatrice ou à l'algorithme fourni (<a class="external" href="https://tinyurl.com/5bt97ya4" target="_blank">cliquez ici</a>), on obtient l'approximation</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}2)+2f(0{,}4)+2f(0{,}6)+2f(0{,}8)+f(1)\right)\\
+=\;&amp;0{,}313\,902\ldots
+\end{align*}
+</div>
+<p data-braille="continuation">qui vérifie l'encadrement</p>
 <div class="displaymath">
 \begin{equation*}
-f'(x)=e^{x^2}\cdot 2x\quad\text{et}\quad f''(x)=e^{x^2}\cdot(4x^2+2).
+0{,}313\le\text{Approximation}\le 0{,}314.
 \end{equation*}
-</div>
-<p data-braille="continuation">Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 4x^2+2\) sont croissantes sur \([0;1]\text{,}\) on a</p>
-<div class="displaymath">
-\begin{align*}
-|f''(x)|&amp;=\left|e^{x^2}(4x^2+2)\right|\\
-&amp;=e^{x^2}(4x^2+2)\\
-&amp;\leq e^{1^2}(4\cdot 1^2+2)\\
-&amp;=6e
-\end{align*}
-</div>
-<p data-braille="continuation">pour tout \(x\in[0;1]\text{.}\) Donc on peut prendre \(M=6e\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> et on a</p>
-<div class="displaymath">
-\begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
-&amp;=\frac{e}{72}\\
-&amp;=0{,}037\,7\ldots\\
-&amp;\leq 0{,}038.
-\end{align*}
 </div>
 <span class="incontext"><a href="exercicestrapezes.html#p-1145">Contexte</a></span>
 </body>

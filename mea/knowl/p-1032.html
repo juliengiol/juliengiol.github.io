@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:52-05:00    *-->
+<!--*    on 2021-03-15T15:26:26-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Montrez que pour toute fonction constante \(f(x):=c\text{,}\) on a</p>
+<p>D'autre part, on a</p>
 <div class="displaymath">
-\begin{equation*}
-\Delta x\cdot\sum_{k=1}^nf\left(a+k\cdot\Delta x\right)=\int_a^bf(x)\mathrm{d}x.
-\end{equation*}
+\begin{align*}
+\Delta x\cdot\sum_{k=1}^ng\left(a+k\cdot\Delta x\right)&amp;=\frac{b-a}{n}\cdot\sum_{k=1}^n\left(a+k\cdot\frac{b-a}{n}\right)\\
+&amp;=\frac{b-a}{n}\cdot\sum_{k=1}^na+\frac{(b-a)^2}{n^2}\cdot\sum_{k=1}^nk\\
+&amp;=\frac{b-a}{n}\cdot na+\frac{(b-a)^2}{n^2}\cdot\frac{n(n+1)}{2}\\
+&amp;=(b-a)a+0{,}5(b-a)^2\left(1+\frac{1}{n}\right)\\
+&amp;=0{,}5(b-a)\left(2a+b-a+\frac{b-a}{n}\right)\\
+&amp;=0{,}5(b-a)\left(b+a+\Delta x\right)\\
+&amp;=0{,}5(b^2-a^2)+0{,}5(b-a)\Delta x\\
+&amp;&gt;0{,}5(b^2-a^2).
+\end{align*}
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#p-1032">Contexte</a></span>
 </body>

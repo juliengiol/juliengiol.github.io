@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:50:54-05:00    *-->
+<!--*    on 2021-03-15T15:24:22-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -322,7 +322,7 @@ x_k-x_{k-1}=\frac{b-a}{n}.
 <p data-braille="continuation">et soit</p>
 <div class="displaymath">
 \begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
 \end{equation*}
 </div>
 <p data-braille="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\ge 1\) sous-intervalles.</p>
@@ -386,14 +386,14 @@ a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
 \Delta x:=\frac{b-a}{n}.
 \end{equation*}
 </div>
-<p id="p-915">Approcher la valeur de cette intégrale par la <em class="emphasis">méthode des rectangles</em> à l'aide de cette subdivision consiste à choisir un point \(\xi_k\) dans chacun des sous-intervalles \([x_{k-1};x_k]\) et à considérer l'approximation suivante :</p>
+<p id="p-915">Approcher la valeur de cette intégrale par la <em class="emphasis">méthode des rectangles</em> à l'aide de cette subdivision consiste à choisir un point \(\xi_k\) dans chacun des sous-intervalles \([x_{k-1};x_k]\) et à poser</p>
 <div class="displaymath">
 \begin{align*}
 \text{Approximation}&amp;:=\sum_{k=1}^nf(\xi_k)\cdot\Delta x\\
 &amp;=\Delta x\cdot\sum_{k=1}^nf(\xi_k).
 \end{align*}
 </div>
-<p id="p-916">On distingue trois cas particuliers : si pour tout \(k=1,\ldots,n\) on choisit</p>
+<p id="p-916">On distingue trois cas particuliers : Si pour tout \(k=1,\ldots,n\) on choisit</p>
 <ul class="disc">
 <li id="li-656">\(\xi_k:=x_{k-1}\text{,}\) on parle de méthode des rectangles <em class="emphasis">à gauche</em>;</li>
 <li id="li-657">\(\xi_k:=x_k\text{,}\) on parle de méthode des rectangles <em class="emphasis">à droite</em>;</li>
@@ -460,7 +460,7 @@ a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
 <p id="p-923">Soit \(f:[a;b]\longrightarrow\mathbb{R}\) dérivable telle que \(f'\) soit continue sur \([a;b]\text{.}\) Soit \(n\geq 1\) un entier et soit</p>
 <div class="displaymath">
 \begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
 \end{equation*}
 </div>
 <p data-braille="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de longueur</p>
@@ -486,19 +486,77 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 \begin{equation*}
 |f'(x)|\leq M\quad\text{pour tout }x\in[a;b].
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref original" data-refid="hk-proof-13"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-925">L'ingrédient principal de notre démonstration est l'estimation</p>
+</div></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref original" data-refid="hk-proof-13"><h6 class="heading"><span class="title">Résumé de la démonstration.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-925">L'idée de la démonstration qu'on donne ici peut se résumer grossièrement comme suit.</p>
+<ul class="disc">
+<li id="li-662">
+<p id="p-926">Sur un seul intervalle \([c;d]\)de largeur</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta x:=d-c,
+\end{equation*}
+</div>
+<p data-braille="continuation">on peut toujours écrire</p>
+<div class="displaymath">
+\begin{equation*}
+f(t)=f(\xi)+e(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(\xi\in[c;d]\) est quelconque.</p>
+</li>
+<li id="li-663">
+<p id="p-927">Si la fonction est suffisamment régulière, on peut contrôler l'erreur d'interpolation (voir exercice <a class="xref" data-knowl="./knowl/erreurdinterpolation.html" title="Exercice 6.3.12: Formule d'erreur pour l'interpolation">6.3.12</a>) par la majoration</p>
+<div class="displaymath">
+\begin{equation*}
+|e(t)|\le M|t-\xi|
+\end{equation*}
+</div>
+<p data-braille="continuation">qui donne</p>
+<div class="displaymath">
+\begin{equation*}
+\int_c^d|e(t)|\mathrm{d}t\le\frac{M(\Delta x)^2}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">après intégration, tandis que</p>
+<div class="displaymath">
+\begin{equation*}
+\int_c^df(\xi)\mathrm{d}t=\Delta x\cdot f(\xi).
+\end{equation*}
+</div>
+</li>
+<li id="li-664">
+<p id="p-928">En appliquant ce qui précède à chaque sous-intervalle \([x_{k-1};x_k]\) de la subdivision régulière</p>
+<div class="displaymath">
+\begin{equation*}
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
+\end{equation*}
+</div>
+<p data-braille="continuation">et en faisant la somme de ces \(n\) morceaux, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\int_a^bf(x)\mathrm{d}x=\text{Approximation}+\text{Erreur}
+\end{equation*}
+</div>
+<p data-braille="continuation">avec l'approximation mentionnée ci-dessus <a class="xref" data-knowl="./knowl/def_methode_rectangles.html" title="Définition 8.1.8: Méthode des rectangles">8.1.8</a> et</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\le n\cdot\frac{M(\Delta x)^2}{2}.
+\end{equation*}
+</div>
+</li>
+</ul></article></div>
+<article class="hiddenproof" id="proof-14"><a data-knowl="" class="id-ref original" data-refid="hk-proof-14"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><p id="p-929">L'ingrédient principal de notre démonstration est l'estimation</p>
 <div class="displaymath">
 \begin{equation*}
 \left|\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right|\le\frac{M(\Delta x)^2}{2}
 \end{equation*}
 </div>
 <p data-braille="continuation">qui découle, pour tout \(k=1,\ldots,n\text{,}\) de la question 7 de l'exercice <a class="xref" data-knowl="./knowl/lemme_pour_erreur_rectangles.html" title="Exercice 8.3.9">8.3.9</a>.</p>
-<p id="p-926">Grâce à la relation de Chasles et à l'inégalité triangulaire de la valeur absolue, on en déduit que</p>
+<p id="p-930">Grâce à la relation de Chasles et à l'inégalité triangulaire de la valeur absolue, on en déduit que</p>
 <div class="displaymath">
 \begin{align*}
-|\text{Erreur}|&amp;=\left|\int_a^bf(x)\mathrm{d}x-\sum_{k=1}^nf(\xi_k)\cdot\Delta x\right|\\
+|\text{Erreur}|&amp;=\left|\int_a^bf(x)\mathrm{d}x-\Delta x\cdot\sum_{k=1}^nf(\xi_k)\right|\\
 &amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(\xi_k)\cdot\Delta x\right|\\
-&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right|\\
+&amp;=\left|\sum_{k=1}^n\left(\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right)\right|\\
 &amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right|\\
 &amp;\le\sum_{k=1}^n\frac{M(\Delta x)^2}{2}\\
 &amp;=n\cdot\frac{M(\Delta x)^2}{2}\\
@@ -508,20 +566,21 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 </div></article></div>
 <article class="example example-like" id="exemple_erreur_rectangles"><a data-knowl="" class="id-ref original" data-refid="hk-exemple_erreur_rectangles"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">8.1.12</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_erreur_rectangles"><article class="example example-like"><p id="p-927">Revenons à l'exemple <a class="xref" data-knowl="./knowl/exemple_approximation_rectangles.html" title="Exemple 8.1.10">8.1.10</a> concernant l'intégrale définie</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_erreur_rectangles"><article class="example example-like"><p id="p-931">Revenons à l'exemple <a class="xref" data-knowl="./knowl/exemple_approximation_rectangles.html" title="Exemple 8.1.10">8.1.10</a> concernant l'intégrale définie</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^1e^{-x^2}\mathrm{d}x
 \end{equation*}
 </div>
-<p data-braille="continuation">à laquelle nous avons appliqué la méthode des rectangles pour \(n=4\) rectangles. Ici la fonction \(f(x)=e^{-x^2}\) est dérivable sur \(\mathbb{R}\) avec une dérivée</p>
+<p data-braille="continuation">à laquelle nous avons appliqué la méthode des rectangles pour \(n:=4\) rectangles.</p>
+<p id="p-932">Comme la fonction \(f(x)=e^{-x^2}\) est dérivable sur \(\mathbb{R}\) avec une dérivée</p>
 <div class="displaymath">
 \begin{equation*}
 f'(x)=-2xe^{-x^2}
 \end{equation*}
 </div>
-<p data-braille="continuation">qui est continue sur \(\mathbb{R}\) : on peut donc appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>.</p>
-<p id="p-928">Commençons par déterminer quel nombre \(M\) nous pouvons prendre. Pour tout \(x\in[0;1]\text{,}\) on a</p>
+<p data-braille="continuation">qui est continue sur \(\mathbb{R}\text{,}\) on va pouvoir appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>.</p>
+<p id="p-933">Commençons par déterminer quel nombre \(M\) nous pouvons prendre. Pour tout \(x\in[0;1]\text{,}\) on a</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{ccl}
@@ -532,8 +591,7 @@ f'(x)=-2xe^{-x^2}
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">On peut donc prendre \(M=2\text{.}\)</p>
-<p id="p-929">On a alors</p>
+<p data-braille="continuation">On pose donc \(M:=2\) et on a</p>
 <div class="displaymath">
 \begin{align*}
 |\text{Erreur}|&amp;\leq\frac{M(b-a)^2}{2n}\\
@@ -541,7 +599,7 @@ f'(x)=-2xe^{-x^2}
 &amp;=0{,}25.
 \end{align*}
 </div>
-<p id="p-930">Pour chacune des trois approximations calculées à l'exemple <a class="xref" data-knowl="./knowl/exemple_approximation_rectangles.html" title="Exemple 8.1.10">8.1.10</a>, on a donc</p>
+<p id="p-934">Pour chacune des trois approximations calculées à l'exemple <a class="xref" data-knowl="./knowl/exemple_approximation_rectangles.html" title="Exemple 8.1.10">8.1.10</a>, on a donc</p>
 <div class="displaymath">
 \begin{equation*}
 |\text{Erreur}|\leq 0{,}25
@@ -553,10 +611,10 @@ f'(x)=-2xe^{-x^2}
 -0{,}25\leq\text{Erreur}\leq 0{,}25.
 \end{equation*}
 </div></article></div>
-<p id="p-931">Une fois qu'on dispose d'une approximation de la valeur exacte de l'intégrale et d'une estimation de l'erreur commise, on est en mesure d'encadrer cette valeur exacte.</p>
+<p id="p-935">Une fois qu'on dispose d'une approximation de la valeur exacte de l'intégrale et d'une estimation de l'erreur commise, on est en mesure d'encadrer cette valeur exacte.</p>
 <article class="example example-like" id="example-25"><a data-knowl="" class="id-ref original" data-refid="hk-example-25"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">8.1.13</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-25"><article class="example example-like"><p id="p-932">Poursuivons les exemples <a class="xref" data-knowl="./knowl/exemple_approximation_rectangles.html" title="Exemple 8.1.10">8.1.10</a> et <a class="xref" data-knowl="./knowl/exemple_erreur_rectangles.html" title="Exemple 8.1.12">8.1.12</a>. Comme</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-25"><article class="example example-like"><p id="p-936">Poursuivons les exemples <a class="xref" data-knowl="./knowl/exemple_approximation_rectangles.html" title="Exemple 8.1.10">8.1.10</a> et <a class="xref" data-knowl="./knowl/exemple_erreur_rectangles.html" title="Exemple 8.1.12">8.1.12</a>. Comme</p>
 <div class="displaymath">
 \begin{equation*}
 -0{,}25\leq\text{Erreur}\leq 0{,}25
@@ -564,8 +622,8 @@ f'(x)=-2xe^{-x^2}
 </div>
 <p data-braille="continuation">on se contentera de deux décimales.</p>
 <ul class="disc">
-<li id="li-662">
-<p id="p-933">Par la méthode des rectangles à gauche, on a trouvé</p>
+<li id="li-665">
+<p id="p-937">Par la méthode des rectangles à gauche, on a trouvé</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Approximation}\approx 0{,}821\,999\,167\,653\,951
@@ -590,8 +648,8 @@ f'(x)=-2xe^{-x^2}
 \end{equation*}
 </div>
 </li>
-<li id="li-663">
-<p id="p-934">Par la méthode des rectangles à droite, on a trouvé</p>
+<li id="li-666">
+<p id="p-938">Par la méthode des rectangles à droite, on a trouvé</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Approximation}\approx 0{,}663\,969\,027\,946\,812
@@ -616,8 +674,8 @@ f'(x)=-2xe^{-x^2}
 \end{equation*}
 </div>
 </li>
-<li id="li-664">
-<p id="p-935">Par la méthode des rectangles au milieu, on a trouvé</p>
+<li id="li-667">
+<p id="p-939">Par la méthode des rectangles au milieu, on a trouvé</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Approximation}\approx 0{,}748\,747\,131\,891\,009
@@ -643,7 +701,7 @@ f'(x)=-2xe^{-x^2}
 </div>
 </li>
 </ul>
-<p id="p-936">Remarque : En fait, comme la fonction \(f(x)=e^{-x^2}\) est décroissante sur \([0;1]\text{,}\) on a</p>
+<p id="p-940">Remarque : En fait, comme la fonction \(f(x)=e^{-x^2}\) est décroissante sur \([0;1]\text{,}\) on a</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Aire des rectangles à droite}\leq\int_0^1e^{-x^2}\mathrm{d}x\leq\text{Aire des rectangles à gauche}
@@ -656,10 +714,10 @@ f'(x)=-2xe^{-x^2}
 \end{equation*}
 </div>
 <p data-braille="continuation">C'est mieux que tout ce qui précède, sans même avoir à estimer l'erreur.</p></article></div>
-<p id="p-937">Grâce à l'estimation d'erreur du théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>, on peut déterminer a priori le nombre de rectangles à considérer pour que la valeur absolue de l'erreur ne dépasse pas une valeur donnée.</p>
+<p id="p-941">Et si on veut obtenir un encadrement plus précis? Grâce à l'estimation d'erreur du théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>, on peut déterminer le nombre minimal de rectangles à considérer pour que la valeur absolue de l'erreur commise ne dépasse pas une valeur donnée.</p>
 <article class="example example-like" id="exemple_nombre_minimum_rectangles"><a data-knowl="" class="id-ref original" data-refid="hk-exemple_nombre_minimum_rectangles"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">8.1.14</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_nombre_minimum_rectangles"><article class="example example-like"><p id="p-938">Revenons à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_rectangles.html" title="Exemple 8.1.12">8.1.12</a> et cherchons combien de rectangles \(n\) il faudrait au minimum pour que la valeur absolue de l'erreur commise par la méthode des rectangles ne dépasse pas \(10^{-5}\text{,}\) i.e.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_nombre_minimum_rectangles"><article class="example example-like"><p id="p-942">Revenons à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_rectangles.html" title="Exemple 8.1.12">8.1.12</a> et cherchons combien de rectangles \(n\) il faudrait au minimum pour que la valeur absolue de l'erreur commise par la méthode des rectangles ne dépasse pas \(10^{-5}\text{,}\) i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 |\text{Erreur}|\leq 10^{-5}.
@@ -676,18 +734,18 @@ f'(x)=-2xe^{-x^2}
 \end{array}
 \end{equation*}
 </div>
-<p id="p-939">Cela prendrait donc \(n=10^5\) rectangles au moins pour obtenir une telle précision.</p></article></div>
+<p id="p-943">Cela prendrait donc \(n=10^5\) rectangles au moins pour obtenir une telle précision.</p></article></div>
 <article class="assemblage assemblage-like" id="assemblage-5"><h6 class="heading"><span class="title">Méthode des rectangles : Approcher la valeur de l'intégrale d'une fonction en la remplaçant par des morceaux constants.</span></h6>
-<ul id="p-940" class="disc">
-<li id="li-665">Objectif : Obtenir des approximations de la valeur d'une intégrale définie \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</li>
-<li id="li-666">
-<p id="p-941">Principe :</p>
+<ul id="p-944" class="disc">
+<li id="li-668">Objectif : Obtenir des approximations de \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</li>
+<li id="li-669">
+<p id="p-945">Principe :</p>
 <ul class="circle">
-<li id="li-667">
-<p id="p-942">Prendre la subdivision régulière</p>
+<li id="li-670">
+<p id="p-946">Prendre la subdivision régulière</p>
 <div class="displaymath">
 \begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
 \end{equation*}
 </div>
 <p data-braille="continuation">de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de longueur</p>
@@ -697,9 +755,9 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 \end{equation*}
 </div>
 </li>
-<li id="li-668">Choisir un point \(\xi_k\in[x_{k-1};x_k]\) pour tout \(k=1,\ldots,n\)</li>
-<li id="li-669">
-<p id="p-943">Calculer la somme de Riemann correspondante, i.e. poser</p>
+<li id="li-671">Choisir un point \(\xi_k\in[x_{k-1};x_k]\) pour tout \(k=1,\ldots,n\)</li>
+<li id="li-672">
+<p id="p-947">Calculer la somme de Riemann correspondante, i.e. poser</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Approximation}:=\Delta x\cdot\sum_{k=1}^nf(\xi_k).
@@ -708,17 +766,17 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 </li>
 </ul>
 </li>
-<li id="li-670">
-<p id="p-944">Cas particuliers : les choix</p>
+<li id="li-673">
+<p id="p-948">Cas particuliers : Les choix</p>
 <ul class="circle">
-<li id="li-671">\(\xi_k:=x_{k-1}=a+(k-1)\cdot\Delta x\text{,}\)</li>
-<li id="li-672">\(\xi_k:=x_k=a+k\cdot\Delta x\text{,}\)</li>
-<li id="li-673">\(\xi_k:=\frac{x_{k-1}+x_k}{2}=a+(k-0{,}5)\cdot\Delta x\text{,}\)</li>
+<li id="li-674">\(\xi_k:=x_{k-1}=a+(k-1)\cdot\Delta x\text{,}\)</li>
+<li id="li-675">\(\xi_k:=x_k=a+k\cdot\Delta x\text{,}\)</li>
+<li id="li-676">\(\xi_k:=\frac{x_{k-1}+x_k}{2}=a+(k-0{,}5)\cdot\Delta x\text{,}\)</li>
 </ul>
 <p data-braille="continuation">donnent respectivement des rectangles <em class="emphasis">à gauche</em>, <em class="emphasis">à droite</em>, et <em class="emphasis">au milieu</em>.</p>
 </li>
-<li id="li-674">
-<p id="p-945">Précision : Si la fonction \(f\) est dérivable avec une dérivée continue sur \([a;b]\) de sorte qu'il existe une constante \(M\) telle que</p>
+<li id="li-677">
+<p id="p-949">Précision : Si la fonction \(f\) est dérivable avec une dérivée continue sur \([a;b]\) de sorte qu'il existe une constante \(M\) telle que</p>
 <div class="displaymath">
 \begin{equation*}
 |f'(x)|\leq M\quad\text{pour tout }x\in[a;b],
@@ -737,11 +795,11 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 \end{equation*}
 </div>
 </li>
-<li id="li-675">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
+<li id="li-678">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
 </ul></article><article class="remark remark-like" id="remark-21"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">8.1.15</span><span class="period">.</span>
 </h6>
-<p id="p-946">Lorsqu'on fait tendre \(n\) vers l'infini, l'estimation du théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a> entraîne</p>
+<p id="p-950">Lorsqu'on fait tendre \(n\) vers l'infini, l'estimation du théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a> entraîne</p>
 <div class="displaymath">
 \begin{equation*}
 \lim_{n\rightarrow+\infty}|\text{Erreur}|=0,
@@ -753,10 +811,10 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 \lim_{n\rightarrow+\infty}\sum_{k=1}^nf(\xi_k)\cdot\Delta x=\int_a^bf(x)\mathrm{d}x.
 \end{equation*}
 </div>
-<p id="p-947">Il est alors naturel de définir, plus généralement, l'intégrale d'une fonction comme limite de ses sommes de Riemann, quand cette dernière existe.</p></article><p id="p-948">Pour finir cette présentation, voici comment utiliser le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a> et l'algorithme fourni à la section suivante pour déterminer la valeur exacte d'une intégrale définie.</p>
+<p id="p-951">Il est alors naturel de définir, plus généralement, l'intégrale d'une fonction comme limite de ses sommes de Riemann, quand cette dernière existe.</p></article><p id="p-952">Pour finir cette présentation, voici comment utiliser le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a> et l'algorithme fourni à la section suivante pour encadrer la valeur exacte d'une intégrale définie.</p>
 <article class="example example-like" id="exemple_rectangles_recapitulatif"><a data-knowl="" class="id-ref original" data-refid="hk-exemple_rectangles_recapitulatif"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">8.1.16</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_rectangles_recapitulatif"><article class="example example-like"><p id="p-949">Nous allons appliquer la méthode des rectangles à gauche à l'intégrale</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_rectangles_recapitulatif"><article class="example example-like"><p id="p-953">Nous allons appliquer la méthode des rectangles à gauche à l'intégrale</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^1e^{-x^2}\mathrm{d}x
@@ -764,9 +822,9 @@ a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 </div>
 <p data-braille="continuation">avec cent mille rectangles.</p>
 <ul class="disc">
-<li id="li-676">Notons \(f(x):=e^{-x^2}\text{.}\)</li>
-<li id="li-677">
-<p id="p-950">Soit \(n:=100\,000=10^5\text{,}\) \(\Delta x:=\frac{b-a}{n}=\frac{1-0}{10^5}=10^{-5}\text{,}\) et</p>
+<li id="li-679">Notons \(f(x):=e^{-x^2}\text{.}\)</li>
+<li id="li-680">
+<p id="p-954">Soit \(n:=100\,000=10^5\text{,}\) \(\Delta x:=\frac{1-0}{10^5}=10^{-5}\) et</p>
 <div class="displaymath">
 \begin{equation*}
 x_k:=0+k\cdot\Delta x=k\cdot 10^{-5}
@@ -774,16 +832,16 @@ x_k:=0+k\cdot\Delta x=k\cdot 10^{-5}
 </div>
 <p data-braille="continuation">pour \(k=0,\ldots,10^5\text{.}\)</p>
 </li>
-<li id="li-678">
-<p id="p-951">La subdivision régulière de l'intervalle \([0;1]\) à considérer est donc</p>
+<li id="li-681">
+<p id="p-955">La subdivision régulière de l'intervalle \([0;1]\) à considérer est donc</p>
 <div class="displaymath">
 \begin{equation*}
-0&lt;10^{-5}&lt;2\cdot 10^{-5}&lt;3\cdot 10^{-5}&lt;\ldots&lt;99\,999\cdot 10^{-5}&lt;1
+0&lt;10^{-5}&lt;2\cdot 10^{-5}&lt;3\cdot 10^{-5}&lt;\ldots&lt;99\,999\cdot 10^{-5}&lt;1.
 \end{equation*}
 </div>
 </li>
-<li id="li-679">
-<p id="p-952">Par la méthode des rectangles à gauche, on obtient</p>
+<li id="li-682">
+<p id="p-956">Par la méthode des rectangles à gauche, on obtient alors</p>
 <div class="displaymath">
 \begin{align*}
 \text{Approximation}&amp;=10^{-5}\cdot\left(f(0)+f\left(10^{-5}\right)+\cdots+f\left(99\,999\cdot 10^{-5}\right)\right)\\
@@ -797,9 +855,9 @@ x_k:=0+k\cdot\Delta x=k\cdot 10^{-5}
 \end{equation*}
 </div>
 </li>
-<li id="li-680"><p id="p-953">Comme on l'a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_rectangles.html" title="Exemple 8.1.12">8.1.12</a>, on peut prendre \(M=2\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>.</p></li>
-<li id="li-681">
-<p id="p-954">Comme on l'a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_nombre_minimum_rectangles.html" title="Exemple 8.1.14">8.1.14</a>, on obtient alors l'estimation</p>
+<li id="li-683"><p id="p-957">Comme on l'a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_erreur_rectangles.html" title="Exemple 8.1.12">8.1.12</a>, on peut prendre \(M:=2\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>.</p></li>
+<li id="li-684">
+<p id="p-958">Comme on l'a vu à l'exemple <a class="xref" data-knowl="./knowl/exemple_nombre_minimum_rectangles.html" title="Exemple 8.1.14">8.1.14</a>, on obtient alors l'estimation</p>
 <div class="displaymath">
 \begin{equation*}
 |\text{Erreur}|\leq 10^{-5}=0{,}000\,01
@@ -812,8 +870,8 @@ x_k:=0+k\cdot\Delta x=k\cdot 10^{-5}
 \end{equation*}
 </div>
 </li>
-<li id="li-682">
-<p id="p-955">En additionnant les inéquations qui précèdent, on obtient</p>
+<li id="li-685">
+<p id="p-959">En additionnant les inéquations qui précèdent, on obtient</p>
 <div class="displaymath">
 \begin{equation*}
 0{,}746\,83-0{,}000\,01\leq\text{Approximation}+\text{Erreur}\leq 0{,}746\,84+0{,}000\,01
@@ -826,8 +884,8 @@ x_k:=0+k\cdot\Delta x=k\cdot 10^{-5}
 \end{equation*}
 </div>
 </li>
-<li id="li-683">
-<p id="p-956">On en conclut que</p>
+<li id="li-686">
+<p id="p-960">On en conclut que</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^1e^{-x^2}\mathrm{d}x=0{,}746\,8\ldots

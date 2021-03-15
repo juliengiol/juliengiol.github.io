@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:58-05:00    *-->
+<!--*    on 2021-03-15T15:26:29-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,17 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">8.3.12.5</span><span class="period">.</span>
 </h6>
-<p>Précision : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable deux fois avec une dérivée seconde continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
+<p>En appliquant \(k\) fois l'inégalité triangulaire à la formule de la question 1 et en utilisant pour chaque morceau l'estimation de la question 4, on obtient</p>
 <div class="displaymath">
-\begin{equation*}
-|f''(x)|\leq M\quad\text{pour tout }x\in[a;b].
-\end{equation*}
-</div>
-<p data-braille="continuation">On a alors</p>
-<div class="displaymath">
-\begin{equation*}
-\left|\text{Erreur}\right|\leq \frac{M(b-a)^3}{12n^2}.
-\end{equation*}
-</div></article><span class="incontext"><a href="presentationtrapezes.html#li-770">Contexte</a></span>
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|\\
+&amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|\\
+&amp;\le\sum_{k=1}^n\frac{M(b-a)^3}{24n^3}\\
+&amp;=\frac{M(b-a)^3}{24n^3}\cdot n\\
+&amp;=\frac{M(b-a)^3}{24n^2}.
+\end{align*}
+</div></article><span class="incontext"><a href="exercicesrectangles.html#li-770">Contexte</a></span>
 </body>
 </html>

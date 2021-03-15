@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:34-05:00    *-->
+<!--*    on 2021-03-15T15:26:14-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Commençons par déterminer quel nombre \(M\) nous pouvons prendre. Pour tout \(x\in[0;1]\text{,}\) on a</p>
+<p>En appliquant ce qui précède à chaque sous-intervalle \([x_{k-1};x_k]\) de la subdivision régulière</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{ccl}
-|f'(x)|&amp;=&amp;\left|-2xe^{-x^2}\right|\\
-&amp;=&amp;2\cdot\left|x\right|\cdot\left|e^{-x^2}\right|\\
-&amp;\leq&amp;2\cdot 1\cdot 1\\
-&amp;=&amp;2.
-\end{array}
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
 \end{equation*}
 </div>
-<p data-braille="continuation">On peut donc prendre \(M=2\text{.}\)</p>
+<p data-braille="continuation">et en faisant la somme de ces \(n\) morceaux, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\int_a^bf(x)\mathrm{d}x=\text{Approximation}+\text{Erreur}
+\end{equation*}
+</div>
+<p data-braille="continuation">avec l'approximation mentionnée ci-dessus <a class="xref" data-knowl="./knowl/def_methode_rectangles.html" title="Définition 8.1.8: Méthode des rectangles">8.1.8</a> et</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\le n\cdot\frac{M(\Delta x)^2}{2}.
+\end{equation*}
+</div>
 <span class="incontext"><a href="presentationrectangles.html#p-928">Contexte</a></span>
 </body>
 </html>

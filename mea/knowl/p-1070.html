@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:57-05:00    *-->
+<!--*    on 2021-03-15T15:26:30-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,10 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Approcher la valeur de cette intégrale par la méthode des trapèzes à l'aide de cette subdivision revient à considérer l'approximation suivante :</p>
+<p>Si la fonction est suffisamment régulière, on peut contrôler l'erreur d'interpolation (voir exercice <a class="xref" data-knowl="./knowl/erreurdinterpolation.html" title="Exercice 6.3.12: Formule d'erreur pour l'interpolation">6.3.12</a>) par la majoration</p>
 <div class="displaymath">
 \begin{equation*}
-\text{Approximation}=\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right).
+|e(t)|\le\frac{M}{2}|t-c||d-c|
+\end{equation*}
+</div>
+<p data-braille="continuation">qui donne</p>
+<div class="displaymath">
+\begin{equation*}
+\int_c^d|e(t)|\mathrm{d}t\le\frac{M(\Delta x)^3}{12}
+\end{equation*}
+</div>
+<p data-braille="continuation">après intégration, tandis que</p>
+<div class="displaymath">
+\begin{equation*}
+\int_c^dp(t)\mathrm{d}t=\frac{\Delta x}{2}\cdot(f(c)+f(d)).
 \end{equation*}
 </div>
 <span class="incontext"><a href="presentationtrapezes.html#p-1070">Contexte</a></span>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:52:55-05:00    *-->
+<!--*    on 2021-03-15T15:26:28-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Notez que</p>
+<p>Grâce à la question 2, on a</p>
 <div class="displaymath">
-\begin{equation*}
-x_k-\xi_k=\xi_k-x_{k-1}=\frac{\Delta x}{2}.
-\end{equation*}
+\begin{align*}
+|g_k(x)|&amp;=\left|f(x)-f(\xi_k)-f'(\xi_k)(x-\xi_k)\right|\\
+&amp;=\left|\frac{f''(\xi)}{2}(x-\xi_k)^2\right|\\
+&amp;=\frac{|f''(\xi)|}{2}(x-\xi_k)^2\\
+&amp;\le\frac{M}{2}(x-\xi_k)^2
+\end{align*}
 </div>
+<p data-braille="continuation">pour tout \(x\in[x_{k-1};x_k]\text{.}\)</p>
 <span class="incontext"><a href="exercicesrectangles.html#p-1058">Contexte</a></span>
 </body>
 </html>

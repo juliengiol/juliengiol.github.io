@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:09-05:00    *-->
+<!--*    on 2021-03-15T15:27:09-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Soit \(\displaystyle m=\frac{c+d}{2}\) le milieu de l'intervalle \([c;d]\) et soit \(\Delta x=d-c\) sa longueur.</p>
-<span class="incontext"><a href="presentationsimpson.html#p-1192">Contexte</a></span>
+<p>Grâce à l'inégalité triangulaire pour l'intégrale, on déduit de cette majoration et de la formule établie à l'exercice <a class="xref" data-knowl="./knowl/exercice_formule_integration_trapezes.html" title="Exercice 9.3.10">9.3.10</a> que</p>
+<div class="displaymath">
+\begin{align*}
+\left|\int_c^dg(t)\mathrm{d}t\right|&amp;\le\int_c^d|g(t)|\mathrm{d}t\\
+&amp;\le\int_c^d\frac{M}{2}|t-c||t-d|\mathrm{d}t\\
+&amp;=\frac{M}{2}\cdot\int_c^d|t-c||t-d|\mathrm{d}t\\
+&amp;=\frac{M}{2}\cdot\frac{(\Delta x)^3}{6}\\
+&amp;=\frac{M(\Delta x)^3}{12}.
+\end{align*}
+</div>
+<span class="incontext"><a href="exercicestrapezes.html#p-1192">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-13T13:53:09-05:00    *-->
+<!--*    on 2021-03-15T15:26:29-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,71 +12,64 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="hiddenproof"><h6 class="heading"><span class="type">Démonstration</span></h6>
-<p>Commençons par vérifier que le polynôme interpolateur est bien celui annoncé.</p>
-<p>D'après la remarque <a class="xref" data-knowl="./knowl/lagrangeEtNewtonTroisPoints.html" title="Remarque 7.1.8">7.1.8</a>, on a</p>
-<div class="displaymath">
-\begin{align*}
-N(t)&amp;=f(c)+\frac{f(m)-f(c)}{m-c}(t-c)+\frac{\frac{f(d)-f(m)}{d-m}-\frac{f(m)-f(c)}{m-c}}{d-c}(t-c)(t-m)\\
-&amp;=f(c)+\frac{f(m)-f(c)}{\frac{\Delta x}{2}}(t-c)+\frac{\frac{f(d)-f(m)}{\frac{\Delta x}{2}}-\frac{f(m)-f(c)}{\frac{\Delta x}{2}}}{\Delta x}(t-c)(t-m)\\
-&amp;=f(c)+\frac{2(f(m)-f(c))}{\Delta x}(t-c)+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}(t-c)(t-m).
-\end{align*}
-</div>
-<p>Notons ensuite que par linéarité de l'intégrale, on a</p>
-<div class="displaymath">
-\begin{equation*}
-\int_c^dN(t)\mathrm{d}t=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3
-\end{equation*}
-</div>
-<p data-braille="continuation">où</p>
+<article class="hiddenproof"><h6 class="heading"><span class="title">Résumé de la démonstration.</span></h6>
+<p>L'idée de la démonstration qu'on donne ici peut se résumer grossièrement comme suit.</p>
 <ul class="disc">
 <li>
-<p>la première intégrale vaut</p>
+<p>Sur un seul intervalle \([c;d]\)de largeur</p>
 <div class="displaymath">
-\begin{align*}
-I_1&amp;=\int_c^d1\mathrm{d}t\\
-&amp;=t\,\Bigg\vert_c^d\\
-&amp;d-c\\
-&amp;=\Delta x\;,
-\end{align*}
+\begin{equation*}
+\Delta x:=d-c,
+\end{equation*}
+</div>
+<p data-braille="continuation">on peut toujours écrire</p>
+<div class="displaymath">
+\begin{equation*}
+f(t)=p(t)+e(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(p(t)\) est le polynôme de degré un au plus qui interpole les points \((c;f(c))\) et \((d;f(d))\text{.}\)</p>
+</li>
+<li>
+<p>Si la fonction est suffisamment régulière, on peut contrôler l'erreur d'interpolation (voir exercice <a class="xref" data-knowl="./knowl/erreurdinterpolation.html" title="Exercice 6.3.12: Formule d'erreur pour l'interpolation">6.3.12</a>) par la majoration</p>
+<div class="displaymath">
+\begin{equation*}
+|e(t)|\le\frac{M}{2}|t-c||d-c|
+\end{equation*}
+</div>
+<p data-braille="continuation">qui donne</p>
+<div class="displaymath">
+\begin{equation*}
+\int_c^d|e(t)|\mathrm{d}t\le\frac{M(\Delta x)^3}{12}
+\end{equation*}
+</div>
+<p data-braille="continuation">après intégration, tandis que</p>
+<div class="displaymath">
+\begin{equation*}
+\int_c^dp(t)\mathrm{d}t=\frac{\Delta x}{2}\cdot(f(c)+f(d)).
+\end{equation*}
 </div>
 </li>
 <li>
-<p>la deuxième intégrale vaut</p>
+<p>En appliquant ce qui précède à chaque sous-intervalle \([x_{k-1};x_k]\) de la subdivision régulière</p>
 <div class="displaymath">
-\begin{align*}
-I_2&amp;=\int_c^d(t-c)\mathrm{d}t\\
-&amp;=\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
-&amp;=\frac{(d-c)^2}{2}-0\\
-&amp;=\frac{(\Delta x)^2}{2}
-\end{align*}
+\begin{equation*}
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
+\end{equation*}
+</div>
+<p data-braille="continuation">et en faisant la somme de ces \(n\) morceaux, on obtient</p>
+<div class="displaymath">
+\begin{equation*}
+\int_a^bf(x)\mathrm{d}x=\text{Approximation}+\text{Erreur}
+\end{equation*}
+</div>
+<p data-braille="continuation">avec l'approximation mentionnée ci-dessus <a class="xref" data-knowl="./knowl/def_methode_trapezes.html" title="Définition 9.1.1: Méthode des trapèzes">9.1.1</a> et</p>
+<div class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\le n\cdot\frac{M(\Delta x)^3}{12}.
+\end{equation*}
 </div>
 </li>
-<li>
-<p>et la troisième intégrale vaut</p>
-<div class="displaymath">
-\begin{align*}
-I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
-&amp;=\int_c^d(t-c)\left(t-c-\frac{\Delta x}{2}\right)\mathrm{d}t\\
-&amp;=\int_c^d\left((t-c)^2-\frac{\Delta x}{2}\cdot(t-c)\right)\mathrm{d}t\\
-&amp;=\frac{(t-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
-&amp;=\frac{(d-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(d-c)^2}{2}-0\\
-&amp;=\frac{(\Delta x)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(\Delta x)^2}{2}\\
-&amp;=\frac{(\Delta x)^3}{12}.
-\end{align*}
-</div>
-</li>
-</ul>
-<p>On a donc</p>
-<div class="displaymath">
-\begin{align*}
-\int_c^dN(t)\mathrm{d}t&amp;=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3\\
-&amp;=f(c)\cdot\Delta x+\frac{2(f(m)-f(c))}{\Delta x}\cdot\frac{(\Delta x)^2}{2}\\
-&amp;\qquad+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot\frac{(\Delta x)^3}{12}\\
-&amp;=f(c)\cdot\Delta x+(f(m)-f(c))\cdot\Delta x+(f(c)-2f(m)+f(d))\cdot\frac{\Delta x}{6}\\
-&amp;=\frac{\Delta x}{6}\cdot\left(6f(c)+6(f(m)-f(c))+f(c)-2f(m)+f(d)\right)\\
-&amp;=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).
-\end{align*}
-</div></article><span class="incontext"><a href="presentationsimpson.html#proof-15">Contexte</a></span>
+</ul></article><span class="incontext"><a href="presentationtrapezes.html#proof-15">Contexte</a></span>
 </body>
 </html>
