@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:28:04-04:00    *-->
+<!--*    on 2021-03-15T20:53:30-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,34 +11,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><ol class="decimal">
+<body><div class="solution solution-like">
+<p>Rappel : Comme \(p\) est premier, ses seuls diviseurs positifs sont \(1\) et \(p\text{.}\)</p>
+<p>Supposons que \(p\vert bc\text{.}\)</p>
+<ul class="disc">
+<li><p>Si \(p\) divise \(b\text{,}\) on a fini.</p></li>
 <li>
-<p>Supposons que \(a\) et \(b\) sont premiers entre eux, et qu'ils divisent \(x\) tous les deux. Alors, d'une part, il existe \(k\in\mathbb{Z}\) tel que</p>
+<p>Si \(p\) ne divise pas \(b\text{,}\) alors le plus grand diviseur commun à \(p\) et à \(b\) est forcément \(1\text{.}\) On a donc</p>
 <div class="displaymath">
 \begin{equation*}
-x=ka.
+p\vert bc\quad\text{et}\quad\text{PGCD}(p;b)=1
 \end{equation*}
 </div>
-<p data-braille="continuation">D'autre part, on a donc</p>
+<p data-braille="continuation">d'où</p>
 <div class="displaymath">
 \begin{equation*}
-b\vert ka\quad\text{et}\quad\text{PGCD}(a;b)=1.
+p\vert c
 \end{equation*}
 </div>
-<p data-braille="continuation">Par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>, on en déduit que \(b\) divise \(k\text{,}\) de sorte qu'il existe \(m\in\mathbb{Z}\) tel que</p>
-<div class="displaymath">
-\begin{equation*}
-k=mb.
-\end{equation*}
-</div>
-<p data-braille="continuation">Finalement, on obtient</p>
-<div class="displaymath">
-\begin{equation*}
-x=ka=(mb)\cdot a=m\cdot(ab)
-\end{equation*}
-</div>
-<p data-braille="continuation">ce qui montre que \(ab\) divise \(x\text{.}\)</p>
+<p data-braille="continuation">par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>.</p>
 </li>
-<li><p>Ce résultat découle du précédent par récurrence sur \(n\text{.}\)</p></li>
-</ol></div></body>
+</ul>
+</div></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:27:30-04:00    *-->
+<!--*    on 2021-03-15T20:52:57-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,8 +13,22 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">10.3.7.3</span><span class="period">.</span>
 </h6>
-<p>\(a\) est divisible par \(b\text{,}\)</p></article><span class="incontext"><a href="presentationeuclide.html#li-935">Contexte</a></span>
+<p>On cherche le plus petit \(n\) tel que</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccc}
+&amp;|\text{Erreur}|&amp;\leq&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{M(b-a)^5}{2880n^4}&amp;\leq&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{65\cdot (6-1)^5}{2880n^4}&amp;\leq&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{65\cdot 5^5}{2880n^4}&amp;\leq&amp;\frac{1}{10^9}\\
+\Leftrightarrow&amp;\frac{65\cdot 5^5\cdot 10^9}{2880}&amp;\leq&amp;n^4\\
+\Leftrightarrow&amp;\sqrt[4]{\frac{65\cdot 5^5\cdot 10^9}{2880}}&amp;\leq&amp;n\\
+\Leftrightarrow&amp;515{,}3\ldots&amp;\leq&amp;n.
+\end{array}
+\end{equation*}
+</div>
+<p>Il s'agit donc de \(n=516\text{.}\)</p></article><span class="incontext"><a href="exercicessimpson.html#li-935">Contexte</a></span>
 </body>
 </html>

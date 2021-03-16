@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:27:42-04:00    *-->
+<!--*    on 2021-03-15T20:53:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,10 +15,19 @@
 <article class="li"><h6 class="heading">
 <span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>Entrées :</p>
+<p>Principe :</p>
 <ul class="circle">
-<li><p>Assigner à \(\text{a}\) et \(\text{b}\) les deux entiers positifs dont on veut calculer le PGCD.</p></li>
-<li><p>S'assurer qu'on a \(\text{a}\geq\text{b}\) si on ne veut pas faire une itération inutile.</p></li>
-</ul></article><span class="incontext"><a href="algorithmeeuclide.html#li-992">Contexte</a></span>
+<li>
+<p>Effectuer la division euclidienne de \(a\) par \(b\)</p>
+<div class="displaymath">
+\begin{equation*}
+a=b\cdot q+r\qquad\text{où}\qquad 0\leq r&lt;b
+\end{equation*}
+</div>
+<p data-braille="continuation">et remplacer \((a;b)\) par \((b;r)\text{.}\)</p>
+</li>
+<li><p>Recommencer jusqu'à ce que \(r=0\text{.}\)</p></li>
+<li><p>Le PGCD est alors le dernier \(r\neq 0\text{,}\) ou le dernier \(b\text{.}\)</p></li>
+</ul></article><span class="incontext"><a href="presentationeuclide.html#li-992">Contexte</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:24:44-04:00    *-->
+<!--*    on 2021-03-15T20:51:08-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -235,28 +235,28 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">12.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Algorithme d'Euclide étendu.</span>
 </h6>
 <ul class="disc">
-<li id="li-1076">
-<p id="p-1636">Entrées :</p>
-<ul class="circle">
-<li id="li-1077"><p id="p-1637">Assigner à \(\text{a}\) et \(\text{b}\) les deux entiers positifs dont on veut calculer le PGCD et un couple de coefficients de Bézout.</p></li>
-<li id="li-1078"><p id="p-1638">S'assurer qu'on a \(\text{a}\geq\text{b}\) si on ne veut pas faire une itération inutile.</p></li>
-</ul>
-</li>
-<li id="li-1079">
-<p id="p-1639">Instructions :</p>
-<ul class="circle">
-<li id="li-1080"><p id="p-1640">Assigner simultanément à \(\text{r0}\text{,}\) \(\text{u0}\text{,}\) \(\text{v0}\text{,}\) \(\text{r1}\text{,}\) \(\text{u1}\text{,}\) \(\text{v1}\) les valeurs \(\text{a}\text{,}\) \(\text{1}\text{,}\) \(\text{0}\text{,}\) \(\text{b}\text{,}\) \(\text{0}\text{,}\) \(\text{1}\text{.}\)</p></li>
 <li id="li-1081">
-<p id="p-1641">Tant que \(\text{r1}\neq 0\text{,}\)</p>
+<p id="p-1644">Entrées :</p>
+<ul class="circle">
+<li id="li-1082"><p id="p-1645">Assigner à \(\text{a}\) et \(\text{b}\) les deux entiers positifs dont on veut calculer le PGCD et un couple de coefficients de Bézout.</p></li>
+<li id="li-1083"><p id="p-1646">S'assurer qu'on a \(\text{a}\geq\text{b}\) si on ne veut pas faire une itération inutile.</p></li>
+</ul>
+</li>
+<li id="li-1084">
+<p id="p-1647">Instructions :</p>
+<ul class="circle">
+<li id="li-1085"><p id="p-1648">Assigner simultanément à \(\text{r0}\text{,}\) \(\text{u0}\text{,}\) \(\text{v0}\text{,}\) \(\text{r1}\text{,}\) \(\text{u1}\text{,}\) \(\text{v1}\) les valeurs \(\text{a}\text{,}\) \(\text{1}\text{,}\) \(\text{0}\text{,}\) \(\text{b}\text{,}\) \(\text{0}\text{,}\) \(\text{1}\text{.}\)</p></li>
+<li id="li-1086">
+<p id="p-1649">Tant que \(\text{r1}\neq 0\text{,}\)</p>
 <ul class="square">
-<li id="li-1082"><p id="p-1642">assigner à \(\text{q}\) le quotient de la division euclidienne de \(\text{r0}\) par \(\text{r1}\) ;</p></li>
-<li id="li-1083"><p id="p-1643">assigner simultanément à \(\text{r0}\text{,}\) \(\text{u0}\text{,}\) \(\text{v0}\text{,}\) \(\text{r1}\text{,}\) \(\text{u1}\text{,}\) \(\text{v1}\) les valeurs \(\text{r1}\text{,}\) \(\text{u1}\text{,}\) \(\text{v1}\text{,}\) \(\text{r0}-\text{q}\cdot\text{r1}\text{,}\) \(\text{u0}-\text{q}\cdot\text{u1}\text{,}\) \(\text{v0}-\text{q}\cdot\text{v1}\text{.}\)</p></li>
+<li id="li-1087"><p id="p-1650">assigner à \(\text{q}\) le quotient de la division euclidienne de \(\text{r0}\) par \(\text{r1}\) ;</p></li>
+<li id="li-1088"><p id="p-1651">assigner simultanément à \(\text{r0}\text{,}\) \(\text{u0}\text{,}\) \(\text{v0}\text{,}\) \(\text{r1}\text{,}\) \(\text{u1}\text{,}\) \(\text{v1}\) les valeurs \(\text{r1}\text{,}\) \(\text{u1}\text{,}\) \(\text{v1}\text{,}\) \(\text{r0}-\text{q}\cdot\text{r1}\text{,}\) \(\text{u0}-\text{q}\cdot\text{u1}\text{,}\) \(\text{v0}-\text{q}\cdot\text{v1}\text{.}\)</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li id="li-1084"><p id="p-1644">Sortie : Afficher \(\text{r0}\text{,}\) \(\text{u0}\text{,}\) \(\text{v0}\text{.}\)</p></li>
-</ul></article><p id="p-1645">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/exemplebachetbezout.html" title="Exemple 12.1.3">12.1.3</a>.</p>
+<li id="li-1089"><p id="p-1652">Sortie : Afficher \(\text{r0}\text{,}\) \(\text{u0}\text{,}\) \(\text{v0}\text{.}\)</p></li>
+</ul></article><p id="p-1653">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/exemplebachetbezout.html" title="Exemple 12.1.3">12.1.3</a>.</p>
 <div class="sagecell-python" id="sage-61"><script type="text/x-sage"># entrées
 a = 2589
 b = 234

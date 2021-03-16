@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:28:23-04:00    *-->
+<!--*    on 2021-03-15T20:53:50-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,51 +14,57 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.3.7.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.3.6.1</span><span class="period">.</span>
 </h6>
-<p>Il s'agit de trouver un entier \(x\) égal environ à \(667\) et tel que</p>
-<div class="displaymath">
+<ol class="decimal">
+<li><div class="displaymath">
 \begin{equation*}
-\left\{
-\begin{array}{cccl}
-x&amp;\equiv&amp;2&amp;\text{mod}\; 5,\\
-x&amp;\equiv&amp;4&amp;\text{mod}\; 6,\\
-x&amp;\equiv&amp;3&amp;\text{mod}\; 11.
-\end{array}
-\right.
-\end{equation*}
-</div>
-<p data-braille="continuation">Comme les entiers \(5, 6\) et \(11\) sont premiers entre eux deux à deux, on peut appliquer le théorème des restes chinois :</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{|c|c|c|c|c|c|}
+\begin{array}{|c|*{5}{c}|}
 \hline
-a_i&amp;m_i&amp;M_i&amp;\text{Euclide étendu}&amp;u_i&amp;a_iM_iu_i\\
+k&amp;1&amp;2&amp;3&amp;4&amp;5\\
 \hline
-2&amp;5&amp;66&amp;1=66\cdot 1+5\cdot(-13)&amp;1&amp;132\\
-\hline
-4&amp;6&amp;55&amp;1=55\cdot 1+6\cdot(-9)&amp;1&amp;220\\
-\hline
-3&amp;11&amp;30&amp;1=30\cdot (-4)+11\cdot 11&amp;-4&amp;-360\\
-\hline
-M=&amp;330&amp;&amp;&amp;x_0=&amp;-8\\
+\text{reste de }2^k/5&amp;2&amp;4&amp;3&amp;1&amp;2\\
 \hline
 \end{array}
 \end{equation*}
-</div>
-<p>Les solutions sont donc caractérisées par</p>
-<div class="displaymath">
+</div></li>
+<li><div class="displaymath">
 \begin{equation*}
-x\equiv -8\;\mathrm{mod}\;330.
+\begin{array}{|c|*{11}{c}|}
+\hline
+k&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11\\
+\hline
+\text{reste de }2^k/11&amp;2&amp;4&amp;8&amp;5&amp;10&amp;9&amp;7&amp;3&amp;6&amp;1&amp;2\\
+\hline
+\end{array}
 \end{equation*}
-</div>
-<p>La solution qui se rapproche le plus de \(667\) est donc</p>
-<div class="displaymath">
+</div></li>
+<li><div class="displaymath">
 \begin{equation*}
--8+2\cdot 330=652.
+\begin{array}{|c|*{11}{c}|}
+\hline
+k&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11\\
+\hline
+\text{reste de }3^k/11&amp;3&amp;9&amp;5&amp;4&amp;1&amp;3&amp;9&amp;5&amp;4&amp;1&amp;3\\
+\hline
+\end{array}
 \end{equation*}
-</div>
-<p>Réponse : Il restait six cent cinquante-deux soldats dans l'armée du général.</p>
+</div></li>
+<li><div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|*{11}{c}|}
+\hline
+k&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11\\
+\hline
+\text{reste de }(-1)^k/11&amp;10&amp;1&amp;10&amp;1&amp;10&amp;1&amp;10&amp;1&amp;10&amp;1&amp;10\\
+\hline
+\end{array}
+\end{equation*}
+</div></li>
+<li><p>Comme \(a=38\equiv 1\;\mathrm{mod}\;37\text{,}\) on a \(a^k\equiv 1^k=1\;\mathrm{mod}\;37\) pour tout entier \(k\geq 1\text{.}\)</p></li>
+<li><p>Comme \(a=260\equiv 0\;\mathrm{mod}\;13\text{,}\) on a \(a^k\equiv 0^k=0\;\mathrm{mod}\;13\) pour tout entier \(k\geq 1\text{.}\)</p></li>
+<li><p>Comme \(a=-23\equiv 2\;\mathrm{mod}\;5\text{,}\) on a la même liste de restes que pour \(a=2\) à la première question ci-dessus.</p></li>
+</ol>
 </div>
 <span class="incontext"><a href="exerciceschinois.html#solution-132">Contexte</a></span>
 </body>

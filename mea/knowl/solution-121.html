@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:28:01-04:00    *-->
+<!--*    on 2021-03-15T20:53:27-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,118 +14,25 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.3.4.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.3.3.1</span><span class="period">.</span>
 </h6>
-<ol class="decimal">
-<li>
-<p>L'algorithme fourni donne</p>
-<div class="displaymath">
-\begin{equation*}
-\text{PGCD}(377;233)=1\quad\text{et}\quad 1=377\cdot 89+233\cdot (-144).
-\end{equation*}
-</div>
-<p>Notons \((u_0;v_0)=(89;-144)\) cette solution particulière de l'équation</p>
+<p>Par hypothèses, on a</p>
 <div class="displaymath">
 \begin{equation}
-au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 377\cdot u+233\cdot v=1.\tag{12.3.3}
+au_0+bv_0=\text{PGCD}(a;b)\tag{12.3.2}
 \end{equation}
 </div>
-<p>Si on pose, par exemple,</p>
+<p>donc</p>
 <div class="displaymath">
 \begin{equation*}
-\left\{
-\begin{array}{rcccccccccc}
-u&amp;=&amp;u_0&amp;+&amp;b&amp;=&amp;89&amp;+&amp;233&amp;=&amp;322\\
-v&amp;=&amp;v_0&amp;-&amp;a&amp;=&amp;-144&amp;-&amp;377&amp;=&amp;-521
-\end{array}\right.
+\begin{array}{cccc}
+au+bv&amp;=&amp;a\cdot (u_0+kb)+b\cdot (v_0-ka)&amp;\\
+&amp;=&amp;au_0+akb+bv_0-bka&amp;\\
+&amp;=&amp;\underbrace{au_0+bv_0}_{\text{PGCD}(a;b)}+\underbrace{kab-bka}_{0}&amp;\\
+&amp;=&amp;\text{PGCD}(a;b).
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">on obtient une autre solution \((u;v)=(322;-521)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout1.html" title="Équation 12.3.3">(12.3.3)</a>.</p>
-<p>Et si on pose, par exemple,</p>
-<div class="displaymath">
-\begin{equation*}
-\left\{
-\begin{array}{rcccccccccc}
-u&amp;=&amp;u_0&amp;+&amp;2b&amp;=&amp;89&amp;+&amp;2\cdot 233&amp;=&amp;555\\
-v&amp;=&amp;v_0&amp;-&amp;2a&amp;=&amp;-144&amp;-&amp;2\cdot 377&amp;=&amp;-898
-\end{array}\right.
-\end{equation*}
-</div>
-<p data-braille="continuation">on obtient une autre solution \((u;v)=(555;-898)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout1.html" title="Équation 12.3.3">(12.3.3)</a>.</p>
-</li>
-<li>
-<p>L'algorithme fourni donne</p>
-<div class="displaymath">
-\begin{equation*}
-\text{PGCD}(377;234)=13\quad\text{et}\quad 13=377\cdot 5+234\cdot (-8).
-\end{equation*}
-</div>
-<p>Notons \((u_0;v_0)=(13;-8)\) cette solution particulière de l'équation</p>
-<div class="displaymath">
-\begin{equation}
-au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 377\cdot u+234\cdot v=13.\tag{12.3.4}
-\end{equation}
-</div>
-<p>Si on pose, par exemple,</p>
-<div class="displaymath">
-\begin{equation*}
-\left\{
-\begin{array}{rcccccccccc}
-u&amp;=&amp;u_0&amp;-&amp;b&amp;=&amp;13&amp;-&amp;234&amp;=&amp;-221\\
-v&amp;=&amp;v_0&amp;+&amp;a&amp;=&amp;-8&amp;+&amp;377&amp;=&amp;369
-\end{array}\right.
-\end{equation*}
-</div>
-<p data-braille="continuation">on obtient une autre solution \((u;v)=(-221;369)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout2.html" title="Équation 12.3.4">(12.3.4)</a>.</p>
-<p>Et si on pose, par exemple,</p>
-<div class="displaymath">
-\begin{equation*}
-\left\{
-\begin{array}{rcccccccccc}
-u&amp;=&amp;u_0&amp;+&amp;5b&amp;=&amp;13&amp;+&amp;5\cdot 234&amp;=&amp;1183\\
-v&amp;=&amp;v_0&amp;-&amp;5a&amp;=&amp;-8&amp;-&amp;5\cdot 377&amp;=&amp;-1893
-\end{array}\right.
-\end{equation*}
-</div>
-<p data-braille="continuation">on obtient une autre solution \((u;v)=(1183;-1893)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout2.html" title="Équation 12.3.4">(12.3.4)</a>.</p>
-</li>
-<li>
-<p>L'algorithme fourni donne</p>
-<div class="displaymath">
-\begin{equation*}
-\text{PGCD}(356002;18954)=2\quad\text{et}\quad 2=356002\cdot (-694)+18954\cdot 13035.
-\end{equation*}
-</div>
-<p>Notons \((u_0;v_0)=(-694;13035)\) cette solution particulière de l'équation</p>
-<div class="displaymath">
-\begin{equation}
-au+bv=\text{PGCD}(a;b)\quad\Leftrightarrow\quad 356002\cdot u+18954\cdot v=2.\tag{12.3.5}
-\end{equation}
-</div>
-<p>Si on pose, par exemple,</p>
-<div class="displaymath">
-\begin{equation*}
-\left\{
-\begin{array}{rccccc}
-u&amp;=&amp;u_0&amp;+&amp;7b&amp;=&amp;131984\\
-v&amp;=&amp;v_0&amp;-&amp;7a&amp;=&amp;-2478979
-\end{array}\right.
-\end{equation*}
-</div>
-<p data-braille="continuation">on obtient une autre solution \((u;v)=(131\,984;-2\,278\,979)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout3.html" title="Équation 12.3.5">(12.3.5)</a>.</p>
-<p>Et si on pose, par exemple,</p>
-<div class="displaymath">
-\begin{equation*}
-\left\{
-\begin{array}{rccccc}
-u&amp;=&amp;u_0&amp;-&amp;3b&amp;=&amp;-57556\\
-v&amp;=&amp;v_0&amp;+&amp;3a&amp;=&amp;1081041
-\end{array}\right.
-\end{equation*}
-</div>
-<p data-braille="continuation">on obtient une autre solution \((u;v)=(-57\,556;1\,081\,041)\) de l'équation <a class="xref" data-knowl="./knowl/eqbezout3.html" title="Équation 12.3.5">(12.3.5)</a>.</p>
-</li>
-</ol>
 </div>
 <span class="incontext"><a href="exercicesbezout.html#solution-121">Contexte</a></span>
 </body>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:27:10-04:00    *-->
+<!--*    on 2021-03-15T20:52:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Cela revient à remplacer</p>
+<p>Puis on subdivise \([3;5]\) en</p>
 <div class="displaymath">
 \begin{equation*}
-\displaystyle\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x\quad\text{par}\quad\frac{\Delta x}{2}\cdot (f(x_{k-1}+f(x_k)).
+\xi_{1,0}=3&lt;\xi_{1,1}=4&lt;\xi_{1,2}=5
 \end{equation*}
 </div>
-<span class="incontext"><a href="presentationsimpson.html#p-1205">Contexte</a></span>
+<p data-braille="continuation">et on y remplace \(f(t)\) par</p>
+<div class="displaymath">
+\begin{align*}
+&amp;f(3)+\frac{f(4)-f(3)}{4-3}(t-3)+\frac{\frac{f(5)-f(4)}{5-4}-\frac{f(4)-f(3)}{4-3}}{5-3}(t-3)(t-4)\\
+=\;&amp;32+37(t-3)+12(t-3)(t-3-1)\\
+=\;&amp;32+37(t-3)+12(t-3)^2-12(t-3)\\
+=\;&amp;32+25(t-3)+12(t-3)^2.
+\end{align*}
+</div>
+<span class="incontext"><a href="exercicestrapezes.html#p-1205">Contexte</a></span>
 </body>
 </html>

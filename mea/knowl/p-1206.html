@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:27:10-04:00    *-->
+<!--*    on 2021-03-15T20:52:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Avec la méthode de Simpson, on remplace la fonction \(f\) par les morceaux polynomiaux de degré deux au plus qui interpolent les points</p>
+<p>Ceci conduit à l'approximation de \(\int_1^5f(t)\mathrm{d}t\) par</p>
 <div class="displaymath">
-\begin{equation*}
-(x_{k-1};f(x_{k-1})),\; (m_k;f(m_k))\;\text{et}\; (x_k;f(x_k))
-\end{equation*}
+\begin{align*}
+&amp;\int_1^3(6+t-1+6(t-1)^2)\mathrm{d}t+\int_3^5(32+25(t-3)+12(t-3)^2)\mathrm{d}t\\
+=\;&amp;\left(6t+\frac{(t-1)^2}{2}+2(t-1)^3\right)\,\Bigg\vert_1^3\\
+&amp;\quad+\left(32t+25\frac{(t-3)^2}{2}+4(t-3)^3\right)\,\Bigg\vert_3^5\\
+=\;&amp;6\cdot t\,\Bigg\vert_1^3+\frac{1}{2}\cdot(t-1)^2\,\Bigg\vert_1^3+2\cdot(t-1)^3\,\Bigg\vert_1^3\\
+&amp;\quad+32\cdot t\,\Bigg\vert_3^5+\frac{25}{2}\cdot(t-3)^2\,\Bigg\vert_3^5+4\cdot(t-3)^3\,\Bigg\vert_3^5\\
+=\;&amp;6\cdot 2+\frac{1}{2}\cdot 2^2+2\cdot 2^3+32\cdot 2+\frac{25}{2}\cdot 2^2+4\cdot 2^3\\
+=\;&amp;176.
+\end{align*}
 </div>
-<p data-braille="continuation">où \(m_k\) est le milieu de l'intervalle \([x_{k-1};x_k]\text{,}\) c'est-à-dire</p>
-<div class="displaymath">
-\begin{equation*}
-m_k=\frac{x_{k-1}+x_k}{2}.
-\end{equation*}
-</div>
-<span class="incontext"><a href="presentationsimpson.html#p-1206">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#p-1206">Contexte</a></span>
 </body>
 </html>

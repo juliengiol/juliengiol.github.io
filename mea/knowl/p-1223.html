@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:27:12-04:00    *-->
+<!--*    on 2021-03-15T20:52:47-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,45 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li><p>Objectif : Obtenir des approximations de la valeur d'une intégrale \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</p></li>
-<li>
-<p>Principe : Prendre</p>
+<p>et la troisième intégrale vaut</p>
 <div class="displaymath">
-\begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
-\end{equation*}
+\begin{align*}
+I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
+&amp;=\int_c^d(t-c)\left(t-c-\frac{\Delta x}{2}\right)\mathrm{d}t\\
+&amp;=\int_c^d\left((t-c)^2-\frac{\Delta x}{2}\cdot(t-c)\right)\mathrm{d}t\\
+&amp;=\frac{(t-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
+&amp;=\frac{(d-c)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(d-c)^2}{2}-0\\
+&amp;=\frac{(\Delta x)^3}{3}-\frac{\Delta x}{2}\cdot\frac{(\Delta x)^2}{2}\\
+&amp;=\frac{(\Delta x)^3}{12}.
+\end{align*}
 </div>
-<p data-braille="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
-<div class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Puis effectuer le calcul suivant :</p>
-<div class="displaymath">
-\begin{equation*}
-\text{Approximation}=\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)
-\end{equation*}
-</div>
-<p data-braille="continuation">où \(m_k=\frac{x_{k-1}+x_k}{2}\) désigne le milieu de l'intervalle \([x_{k-1};x_k]\) pour tout \(k=1,\ldots,n\text{.}\)</p>
-</li>
-<li>
-<p>Hypothèses : Afin de pouvoir estimer l'erreur commise, on suppose que la fonction est dérivable quatre fois avec une dérivée quatrième continue sur \([a;b]\text{,}\) de sorte qu'il existe \(M\) tel que</p>
-<div class="displaymath">
-\begin{equation*}
-|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
-\end{equation*}
-</div>
-<p data-braille="continuation">On a alors</p>
-<div class="displaymath">
-\begin{equation*}
-\left|\text{Erreur}\right|\leq \frac{M(b-a)^5}{2880n^4}.
-\end{equation*}
-</div>
-</li>
-<li><p>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</p></li>
-</ul>
 <span class="incontext"><a href="presentationsimpson.html#p-1223">Contexte</a></span>
 </body>
 </html>

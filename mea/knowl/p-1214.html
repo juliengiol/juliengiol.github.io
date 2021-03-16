@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:27:11-04:00    *-->
+<!--*    on 2021-03-15T20:52:47-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,17 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>la deuxième intégrale vaut</p>
+<p>Avec la méthode de Simpson, on remplace la fonction \(f\) par les morceaux polynomiaux de degré deux au plus qui interpolent les points</p>
 <div class="displaymath">
-\begin{align*}
-I_2&amp;=\int_c^d(t-c)\mathrm{d}t\\
-&amp;=\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
-&amp;=\frac{(d-c)^2}{2}-0\\
-&amp;=\frac{(\Delta x)^2}{2}
-\end{align*}
+\begin{equation*}
+(x_{k-1};f(x_{k-1})),\; (m_k;f(m_k))\;\text{et}\; (x_k;f(x_k))
+\end{equation*}
+</div>
+<p data-braille="continuation">où \(m_k\) est le milieu de l'intervalle \([x_{k-1};x_k]\text{,}\) c'est-à-dire</p>
+<div class="displaymath">
+\begin{equation*}
+m_k=\frac{x_{k-1}+x_k}{2}.
+\end{equation*}
 </div>
 <span class="incontext"><a href="presentationsimpson.html#p-1214">Contexte</a></span>
 </body>

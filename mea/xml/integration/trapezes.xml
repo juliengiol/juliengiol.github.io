@@ -1217,7 +1217,7 @@ def _(f = input_box(label = html(r'\(f(x)\)'), default = 3*sin(x)+5, width = 30)
 <exercise>
   <title>Méthodes de Newton-Cotes</title>
   <statement>
-    <p>Cet exercice est une introduction aux méthodes de Newton-Cotes <m>\mathrm{NC}_l</m> qui généralisent la méthode des trapèzes (<m>l=1</m>).</p>
+    <p>Cet exercice est une introduction aux méthodes de Newton-Cotes dont la méthode des trapèzes peut être considérée comme un cas particulier.</p>
     <p>
       Soit <m>a&lt;b</m>, <m>n\ge 1</m>, et
       <me>a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b</me>
@@ -1229,23 +1229,114 @@ def _(f = input_box(label = html(r'\(f(x)\)'), default = 3*sin(x)+5, width = 30)
       de <m>[x_{k-1},x_k]</m> en <m>l</m> sous-intervalles.
     </p>
     <p>
-      La <em>méthode de Newton-Cotes</em> <m>\mathrm{NC}_l</m> consiste à remplacer une fonction <m>f:[a;b]\longrightarrow</m> par la fonction dont la restriction à chaque sous-intervalle <m>[x_{k-1},x_k]</m> coïncide avec le polynôme interpolateur des <m>l+1</m> points
+      La <em>méthode de Newton-Cotes</em> <m>\mathrm{NC}_l</m> consiste à remplacer, avant de l'intégrer sur <m>[a;b]</m>, une fonction <m>f:[a;b]\longrightarrow</m> par la fonction dont la restriction à chaque sous-intervalle <m>[x_{k-1},x_k]</m> coïncide avec le polynôme interpolateur des <m>l+1</m> points
       <me>A_0=(\xi_{k,0},f(\xi_{k,0})),\;\ldots,\;A_l(\xi_{k,l},f(\xi_{k,l})).</me>
     </p>
     <ol>
       <li>Pourquoi cela permet-il de généraliser la méthode des trapèzes étudiée dans ce chapitre?</li>
       <li>
         <p>
-          Dans le cas <m>[a;b]:=[1;5]</m> et <m>n:=2</m>, déterminez l'approximation de la fonction <m>f(x):=x^3+5</m> fournie par la méthode <m>\mathrm{NC}_1</m>.
+          En partant de la subdivision régulière de <m>[a;b]:=[1;5]</m> en <m>n:=2</m> sous-intervalles, déterminez l'approximation de l'intégrale de la fonction <m>f(x):=x^3+5</m> fournie par la méthode <m>\mathrm{NC}_1</m>.
         </p>
       </li>
       <li>
         <p>
-          Dans le cas <m>[a;b]:=[1;5]</m> et <m>n:=2</m>, déterminez l'approximation de la fonction <m>f(x):=x^3+5</m> fournie par la méthode <m>\mathrm{NC}_2</m>.
+          En partant de la subdivision régulière de <m>[a;b]:=[1;5]</m> en <m>n:=2</m> sous-intervalles, déterminez l'approximation de l'intégrale de la fonction <m>f(x):=x^3+5</m> fournie par la méthode <m>\mathrm{NC}_2</m>.
+        </p>
+      </li>
+      <li>
+        <p>Vérifiez que l'approximation obtenue à la question précédente est égale à la valeur exacte de l'intégrale considérée.</p>
+        <p>
+          Remarque : Ce n'est pas un hasard.
+          La méthode de Newton-Cotes <m>\mathrm{NC}_2</m> est aussi connue sous le nom de méthode de Simpson.
+          On l'étudie au chapitre suivant et on y montre notamment qu'elle est d'ordre 3, ce qui signifie qu'elle est exacte sur les polynômes de degré 3 au plus, et qu'il existe au moins un polynôme de degré 4 sur lequel elle n'est pas exacte.
         </p>
       </li>
     </ol>
   </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>
+          Dans le cas <m>l:=1</m>, le graphe du polynôme interpolateur <m>p(t)</m> des deux points
+          <me>A_0=(\xi_{k,0},f(\xi_{k,0}))=(x_{k-1},f(x_{k-1}))</me>
+          et
+          <me>A_1(\xi_{k,1},f(\xi_{k,1}))=(x_k,f(x_k))</me>
+          coïncide avec le segment les reliant, ce qui donne bien le trapèze de la méthode des trapèzes.
+        </p>
+      </li>
+      <li>
+        <p>
+          Sur <m>[1;3]</m>, on remplace <m>f(t)</m> par
+          <md>
+            <mrow>f(1)+\frac{f(3)-f(1)}{3-1}(t-1)&amp;=6+\frac{32-6}{2}(t-1)</mrow>
+            <mrow>&amp;=6+13(t-1),</mrow>
+          </md>
+          et sur <m>[3;5]</m>, on la remplace par
+          <md>
+            <mrow>f(3)+\frac{f(5)-f(3)}{5-3}(t-3)&amp;=32+\frac{130-32}{5-3}(t-3)</mrow>
+            <mrow>&amp;=32+49(t-3).</mrow>
+          </md>
+          Ceci conduit à l'approximation de <m>\int_1^5f(t)\mathrm{d}t</m> par
+          <md>
+            <mrow>&amp;\int_1^3(6+13(t-1))\mathrm{d}t+\int_3^5(32+49(t-3))\mathrm{d}t</mrow>
+            <mrow>=\;&amp;\left(6t+13\frac{(t-1)^2}{2}\right)\,\Bigg\vert_1^3+\left(32t+49\frac{(t-3)^2}{2}\right)\,\Bigg\vert_3^5</mrow>
+            <mrow>=\;&amp;6\cdot t\,\Bigg\vert_1^3+\frac{13}{2}\cdot(t-1)^2\,\Bigg\vert_1^3+32\cdot t\,\Bigg\vert_3^5+\frac{49}{2}\cdot(t-3)^2\,\Bigg\vert_3^5</mrow>
+            <mrow>=\;&amp;6\cdot 2+\frac{13}{2}\cdot 2^2+32\cdot 2+\frac{49}{2}\cdot2^2</mrow>
+            <mrow>=\;&amp;200.</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>
+          On commence par subdiviser <m>[1;3]</m> en
+          <me>\xi_{0,0}=1&lt;\xi_{0,1}=2&lt;\xi_{0,2}=3</me>
+          et on y remplace <m>f(t)</m> par
+          <md>
+            <mrow>&amp;f(1)+\frac{f(2)-f(1)}{2-1}(t-1)+\frac{\frac{f(3)-f(2)}{3-2}-\frac{f(2)-f(1)}{2-1}}{3-1}(t-1)(t-2)</mrow>
+            <mrow>=\;&amp;6+7(t-1)+6(t-1)(t-1-1)</mrow>
+            <mrow>=\;&amp;6+7(t-1)+6(t-1)^2-6(t-1)</mrow>
+            <mrow>=\;&amp;6+t-1+6(t-1)^2.</mrow>
+          </md>
+        </p>
+        <p>
+          Puis on subdivise <m>[3;5]</m> en
+          <me>\xi_{1,0}=3&lt;\xi_{1,1}=4&lt;\xi_{1,2}=5</me>
+          et on y remplace <m>f(t)</m> par
+          <md>
+            <mrow>&amp;f(3)+\frac{f(4)-f(3)}{4-3}(t-3)+\frac{\frac{f(5)-f(4)}{5-4}-\frac{f(4)-f(3)}{4-3}}{5-3}(t-3)(t-4)</mrow>
+            <mrow>=\;&amp;32+37(t-3)+12(t-3)(t-3-1)</mrow>
+            <mrow>=\;&amp;32+37(t-3)+12(t-3)^2-12(t-3)</mrow>
+            <mrow>=\;&amp;32+25(t-3)+12(t-3)^2.</mrow>
+          </md>
+        </p>
+        <p>
+          Ceci conduit à l'approximation de <m>\int_1^5f(t)\mathrm{d}t</m> par
+          <md>
+            <mrow>&amp;\int_1^3(6+t-1+6(t-1)^2)\mathrm{d}t+\int_3^5(32+25(t-3)+12(t-3)^2)\mathrm{d}t</mrow>
+            <mrow>=\;&amp;\left(6t+\frac{(t-1)^2}{2}+2(t-1)^3\right)\,\Bigg\vert_1^3</mrow>
+            <mrow>&amp;\quad+\left(32t+25\frac{(t-3)^2}{2}+4(t-3)^3\right)\,\Bigg\vert_3^5</mrow>
+            <mrow>=\;&amp;6\cdot t\,\Bigg\vert_1^3+\frac{1}{2}\cdot(t-1)^2\,\Bigg\vert_1^3+2\cdot(t-1)^3\,\Bigg\vert_1^3</mrow>
+            <mrow>&amp;\quad+32\cdot t\,\Bigg\vert_3^5+\frac{25}{2}\cdot(t-3)^2\,\Bigg\vert_3^5+4\cdot(t-3)^3\,\Bigg\vert_3^5</mrow>
+            <mrow>=\;&amp;6\cdot 2+\frac{1}{2}\cdot 2^2+2\cdot 2^3+32\cdot 2+\frac{25}{2}\cdot 2^2+4\cdot 2^3</mrow>
+            <mrow>=\;&amp;176.</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>
+          On a en effet
+          <md>
+            <mrow>\int_1^5f(t)\mathrm{d}t&amp;=\int_1^5(t^3+5)\mathrm{d}t</mrow>
+            <mrow>&amp;=\left(\frac{t^4}{4}+5t\right)\,\Bigg\vert_1^5</mrow>
+            <mrow>&amp;=\frac{1}{4}\cdot t^4\,\Bigg\vert_1^5+5\cdot t\,\Bigg\vert_1^5</mrow>
+            <mrow>&amp;=\frac{1}{4}(5^4-1^4)+5\cdot(5-1)</mrow>
+            <mrow>&amp;=176.</mrow>
+          </md>
+        </p>
+      </li>
+    </ol>
+  </solution>
 </exercise>
 
 </section>

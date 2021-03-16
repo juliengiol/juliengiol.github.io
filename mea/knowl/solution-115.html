@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:27:50-04:00    *-->
+<!--*    on 2021-03-15T20:53:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,15 +14,18 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.3.8.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.3.7.1</span><span class="period">.</span>
 </h6>
-<ol class="decimal">
-<li><p>L'algorithme d'Euclide nécessite \(7\) divisions, nombre qui est bien majoré par \(5\times 2=10\text{.}\)</p></li>
-<li><p>L'algorithme d'Euclide nécessite \(10\) divisions, nombre qui est bien majoré par \(5\times 2=10\text{.}\)</p></li>
-<li><p>L'algorithme d'Euclide nécessite \(16\) divisions, nombre qui est bien majoré par \(5\times 4=20\text{.}\)</p></li>
-<li><p>L'algorithme d'Euclide nécessite \(19\) divisions, nombre qui est bien majoré par \(5\times 4=20\text{.}\)</p></li>
-</ol>
-<p>Remarque : Dans les trois derniers cas, il s'agit de <a class="external" href="https://oeis.org/A000045" target="_blank">nombres de Fibonacci</a> consécutifs, lesquels sont connus pour fournir les cas limites du théorème de Lamé.</p>
+<pre class="code-block tex2jax_ignore"># fonction
+def pgcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return pgcd(b, a % b)
+
+# test
+print(pgcd(43569, 28476))
+</pre>
 </div>
 <span class="incontext"><a href="exerciceseuclide.html#solution-115">Contexte</a></span>
 </body>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:27:58-04:00    *-->
+<!--*    on 2021-03-15T20:53:25-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Commençons par exécuter l'algorithme d'Euclide, tout en isolant les restes :</p>
+<p>On en déduit d'abord que</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{rclcrclr}
-30&amp;=&amp;4\cdot 7+2&amp;\quad\Rightarrow\quad&amp;2&amp;=&amp;30-4\cdot 7&amp;(\text{E}_1)\\
-4&amp;=&amp;2\cdot 2+0&amp;\text{Stop.}&amp;&amp;&amp;&amp;
+\text{PGCD}(1975;225)=25.
+\end{equation*}
+</div>
+<p data-braille="continuation">Puis on remonte :</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclr}
+25&amp;=&amp;175-50\cdot 3&amp;(\text{E}_3)\\
+&amp;=&amp;175-(225-175\cdot 1)\cdot 3&amp;\text{grâce à }(\text{E}_2)\\
+&amp;=&amp;175-225\cdot 3+175\cdot 3&amp;\\
+&amp;=&amp;175\cdot 4-225\cdot 3&amp;\\
+&amp;=&amp;(1975-225\cdot 8)\cdot 4-225\cdot 3&amp;\text{grâce à }(\text{E}_1)\\
+&amp;=&amp;1975\cdot 4-225\cdot 32-225\cdot 3&amp;\\
+&amp;=&amp;1975\cdot 4-225\cdot 35.&amp;
 \end{array}
 \end{equation*}
 </div>

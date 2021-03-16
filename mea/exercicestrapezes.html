@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T15:24:31-04:00    *-->
+<!--*    on 2021-03-15T20:50:58-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -1140,7 +1140,7 @@ g(t):=f(t)-p(t).
 </div></article></div>
 <article class="exercise exercise-like" id="exercise-111"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-111"><h6 class="heading">
 <span class="type">Exercice</span><span class="space"> </span><span class="codenumber">9.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Méthodes de Newton-Cotes.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-111"><article class="exercise exercise-like"><p id="p-1194">Cet exercice est une introduction aux méthodes de Newton-Cotes \(\mathrm{NC}_l\) qui généralisent la méthode des trapèzes (\(l=1\)).</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-111"><article class="exercise exercise-like"><p id="p-1194">Cet exercice est une introduction aux méthodes de Newton-Cotes dont la méthode des trapèzes peut être considérée comme un cas particulier.</p>
 <p id="p-1195">Soit \(a&lt;b\text{,}\) \(n\ge 1\text{,}\) et</p>
 <div class="displaymath">
 \begin{equation*}
@@ -1155,7 +1155,7 @@ x_{k-1}=\xi_{k,0}&lt;\xi_{k,1}&lt;\ldots&lt;\xi_{k,l}=x_k
 \end{equation*}
 </div>
 <p data-braille="continuation">de \([x_{k-1},x_k]\) en \(l\) sous-intervalles.</p>
-<p id="p-1197">La <em class="emphasis">méthode de Newton-Cotes</em> \(\mathrm{NC}_l\) consiste à remplacer une fonction \(f:[a;b]\longrightarrow\) par la fonction dont la restriction à chaque sous-intervalle \([x_{k-1},x_k]\) coïncide avec le polynôme interpolateur des \(l+1\) points</p>
+<p id="p-1197">La <em class="emphasis">méthode de Newton-Cotes</em> \(\mathrm{NC}_l\) consiste à remplacer, avant de l'intégrer sur \([a;b]\text{,}\) une fonction \(f:[a;b]\longrightarrow\) par la fonction dont la restriction à chaque sous-intervalle \([x_{k-1},x_k]\) coïncide avec le polynôme interpolateur des \(l+1\) points</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(\xi_{k,0},f(\xi_{k,0})),\;\ldots,\;A_l(\xi_{k,l},f(\xi_{k,l})).
@@ -1163,9 +1163,114 @@ A_0=(\xi_{k,0},f(\xi_{k,0})),\;\ldots,\;A_l(\xi_{k,l},f(\xi_{k,l})).
 </div>
 <ol class="decimal">
 <li id="li-858">Pourquoi cela permet-il de généraliser la méthode des trapèzes étudiée dans ce chapitre?</li>
-<li id="li-859"><p id="p-1198">Dans le cas \([a;b]:=[1;5]\) et \(n:=2\text{,}\) déterminez l'approximation de la fonction \(f(x):=x^3+5\) fournie par la méthode \(\mathrm{NC}_1\text{.}\)</p></li>
-<li id="li-860"><p id="p-1199">Dans le cas \([a;b]:=[1;5]\) et \(n:=2\text{,}\) déterminez l'approximation de la fonction \(f(x):=x^3+5\) fournie par la méthode \(\mathrm{NC}_2\text{.}\)</p></li>
-</ol></article></div></section></div></main>
+<li id="li-859"><p id="p-1198">En partant de la subdivision régulière de \([a;b]:=[1;5]\) en \(n:=2\) sous-intervalles, déterminez l'approximation de l'intégrale de la fonction \(f(x):=x^3+5\) fournie par la méthode \(\mathrm{NC}_1\text{.}\)</p></li>
+<li id="li-860"><p id="p-1199">En partant de la subdivision régulière de \([a;b]:=[1;5]\) en \(n:=2\) sous-intervalles, déterminez l'approximation de l'intégrale de la fonction \(f(x):=x^3+5\) fournie par la méthode \(\mathrm{NC}_2\text{.}\)</p></li>
+<li id="li-861">
+<p id="p-1200">Vérifiez que l'approximation obtenue à la question précédente est égale à la valeur exacte de l'intégrale considérée.</p>
+<p id="p-1201">Remarque : Ce n'est pas un hasard. La méthode de Newton-Cotes \(\mathrm{NC}_2\) est aussi connue sous le nom de méthode de Simpson. On l'étudie au chapitre suivant et on y montre notamment qu'elle est d'ordre 3, ce qui signifie qu'elle est exacte sur les polynômes de degré 3 au plus, et qu'il existe au moins un polynôme de degré 4 sur lequel elle n'est pas exacte.</p>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like"><ol class="decimal">
+<li id="li-862">
+<p id="p-1202">Dans le cas \(l:=1\text{,}\) le graphe du polynôme interpolateur \(p(t)\) des deux points</p>
+<div class="displaymath">
+\begin{equation*}
+A_0=(\xi_{k,0},f(\xi_{k,0}))=(x_{k-1},f(x_{k-1}))
+\end{equation*}
+</div>
+<p data-braille="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+A_1(\xi_{k,1},f(\xi_{k,1}))=(x_k,f(x_k))
+\end{equation*}
+</div>
+<p data-braille="continuation">coïncide avec le segment les reliant, ce qui donne bien le trapèze de la méthode des trapèzes.</p>
+</li>
+<li id="li-863">
+<p id="p-1203">Sur \([1;3]\text{,}\) on remplace \(f(t)\) par</p>
+<div class="displaymath">
+\begin{align*}
+f(1)+\frac{f(3)-f(1)}{3-1}(t-1)&amp;=6+\frac{32-6}{2}(t-1)\\
+&amp;=6+13(t-1),
+\end{align*}
+</div>
+<p data-braille="continuation">et sur \([3;5]\text{,}\) on la remplace par</p>
+<div class="displaymath">
+\begin{align*}
+f(3)+\frac{f(5)-f(3)}{5-3}(t-3)&amp;=32+\frac{130-32}{5-3}(t-3)\\
+&amp;=32+49(t-3).
+\end{align*}
+</div>
+<p data-braille="continuation">Ceci conduit à l'approximation de \(\int_1^5f(t)\mathrm{d}t\) par</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\int_1^3(6+13(t-1))\mathrm{d}t+\int_3^5(32+49(t-3))\mathrm{d}t\\
+=\;&amp;\left(6t+13\frac{(t-1)^2}{2}\right)\,\Bigg\vert_1^3+\left(32t+49\frac{(t-3)^2}{2}\right)\,\Bigg\vert_3^5\\
+=\;&amp;6\cdot t\,\Bigg\vert_1^3+\frac{13}{2}\cdot(t-1)^2\,\Bigg\vert_1^3+32\cdot t\,\Bigg\vert_3^5+\frac{49}{2}\cdot(t-3)^2\,\Bigg\vert_3^5\\
+=\;&amp;6\cdot 2+\frac{13}{2}\cdot 2^2+32\cdot 2+\frac{49}{2}\cdot2^2\\
+=\;&amp;200.
+\end{align*}
+</div>
+</li>
+<li id="li-864">
+<p id="p-1204">On commence par subdiviser \([1;3]\) en</p>
+<div class="displaymath">
+\begin{equation*}
+\xi_{0,0}=1&lt;\xi_{0,1}=2&lt;\xi_{0,2}=3
+\end{equation*}
+</div>
+<p data-braille="continuation">et on y remplace \(f(t)\) par</p>
+<div class="displaymath">
+\begin{align*}
+&amp;f(1)+\frac{f(2)-f(1)}{2-1}(t-1)+\frac{\frac{f(3)-f(2)}{3-2}-\frac{f(2)-f(1)}{2-1}}{3-1}(t-1)(t-2)\\
+=\;&amp;6+7(t-1)+6(t-1)(t-1-1)\\
+=\;&amp;6+7(t-1)+6(t-1)^2-6(t-1)\\
+=\;&amp;6+t-1+6(t-1)^2.
+\end{align*}
+</div>
+<p id="p-1205">Puis on subdivise \([3;5]\) en</p>
+<div class="displaymath">
+\begin{equation*}
+\xi_{1,0}=3&lt;\xi_{1,1}=4&lt;\xi_{1,2}=5
+\end{equation*}
+</div>
+<p data-braille="continuation">et on y remplace \(f(t)\) par</p>
+<div class="displaymath">
+\begin{align*}
+&amp;f(3)+\frac{f(4)-f(3)}{4-3}(t-3)+\frac{\frac{f(5)-f(4)}{5-4}-\frac{f(4)-f(3)}{4-3}}{5-3}(t-3)(t-4)\\
+=\;&amp;32+37(t-3)+12(t-3)(t-3-1)\\
+=\;&amp;32+37(t-3)+12(t-3)^2-12(t-3)\\
+=\;&amp;32+25(t-3)+12(t-3)^2.
+\end{align*}
+</div>
+<p id="p-1206">Ceci conduit à l'approximation de \(\int_1^5f(t)\mathrm{d}t\) par</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\int_1^3(6+t-1+6(t-1)^2)\mathrm{d}t+\int_3^5(32+25(t-3)+12(t-3)^2)\mathrm{d}t\\
+=\;&amp;\left(6t+\frac{(t-1)^2}{2}+2(t-1)^3\right)\,\Bigg\vert_1^3\\
+&amp;\quad+\left(32t+25\frac{(t-3)^2}{2}+4(t-3)^3\right)\,\Bigg\vert_3^5\\
+=\;&amp;6\cdot t\,\Bigg\vert_1^3+\frac{1}{2}\cdot(t-1)^2\,\Bigg\vert_1^3+2\cdot(t-1)^3\,\Bigg\vert_1^3\\
+&amp;\quad+32\cdot t\,\Bigg\vert_3^5+\frac{25}{2}\cdot(t-3)^2\,\Bigg\vert_3^5+4\cdot(t-3)^3\,\Bigg\vert_3^5\\
+=\;&amp;6\cdot 2+\frac{1}{2}\cdot 2^2+2\cdot 2^3+32\cdot 2+\frac{25}{2}\cdot 2^2+4\cdot 2^3\\
+=\;&amp;176.
+\end{align*}
+</div>
+</li>
+<li id="li-865">
+<p id="p-1207">On a en effet</p>
+<div class="displaymath">
+\begin{align*}
+\int_1^5f(t)\mathrm{d}t&amp;=\int_1^5(t^3+5)\mathrm{d}t\\
+&amp;=\left(\frac{t^4}{4}+5t\right)\,\Bigg\vert_1^5\\
+&amp;=\frac{1}{4}\cdot t^4\,\Bigg\vert_1^5+5\cdot t\,\Bigg\vert_1^5\\
+&amp;=\frac{1}{4}(5^4-1^4)+5\cdot(5-1)\\
+&amp;=176.
+\end{align*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div></section></div></main>
 </div>
 <!--Start: StatCounter code--><script>
 var sc_project=12152300;
