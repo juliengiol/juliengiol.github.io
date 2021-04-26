@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="fr-FR">
+
+  <docinfo>
+
+      <brandlogo url="https://fr.wikipedia.org/wiki/Algèbre_linéaire" source="images/matrice.png" />
+
+      <latex-preamble>
+          <package>amsmath</package>
+          <package>cancel</package>
+      </latex-preamble>
+
+      <macros>
+      \newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} % this comment will be stripped
+      \newcommand{\myequation}[2]{#1\amp =#2} % testing alignment override
+      % comments anywhere get stripped, with or without faux % comment \% characters
+      \newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+      \newcommand{\testingescapedpercent}{ \% } % just testing
+      </macros>
+
+      <cross-references text="global" />
+
+      <initialism>DAP</initialism>
+
+      <rename element="frontmatter" xml:lang="fr-FR">Accueil</rename>
+      <rename element="acknowledgement" xml:lang="fr-FR">Remerciements</rename>
+      <rename element="incontext" xml:lang="fr-FR">Contexte</rename>
+      <rename element="inlineexercise" xml:lang="fr-FR">Exercice</rename>
+      <rename element="biblio" xml:lang="fr-FR">Biblio</rename>
+
+  </docinfo>
+
+  <book xml:id="DAP">
+    <title>Démarrer avec PreTeXt</title>
+
+    <frontmatter xml:id="accueil">
+      <title>Accueil</title>
+
+      <titlepage>
+
+        <author>
+          <personname>Julien Giol</personname>
+          <department>Département des constantes rationnelles</department>
+          <institution>
+              <line>Université à la menthe</line>
+              <line>En ligne, dans les nuages</line>
+          </institution>
+        </author>
+
+        <date>&#169; 2021</date>
+
+      </titlepage>
+
+      <abstract>
+        <p>
+          Pourquoi ce document?
+          Pour
+          <ul>
+            <li>
+              <p>illustrer les principales possibilités offertes par <pretext />, et</p>
+            </li>
+            <li>
+              <p>fournir un premier exemple en Français comme base pour</p>
+            </li>
+            <li>
+              <p>s'initier à ce système gratuit d'édition de documents numériques dynamiques.</p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Quelle est la marche à suivre?
+          En suivant les instructions de l'appendice <xref ref="instructions"/> sur votre Mac, vous devriez être capable de reproduire sans peine les pages html que vous êtes précisément en train de consulter.</p>
+        <p>
+          Quoi faire après?
+          Ce document ne donne qu'un bref aperçu des possibilités offertes par <pretext />.
+          Vous pouvez maintenant consulter les très nombreuses ressources disponibles sur le <url href="https://pretextbook.org">site du projet PreTeXt</url>
+        </p>
+        <p>
+          Des questions?
+          N'hésitez pas à m'écrire à julien.giol@gmail.com, ni à consulter le forum de soutien <url href="https://groups.google.com/g/pretext-support">PreTeXt support</url>.
+        </p>
+      </abstract>
+
+<!--
+      <preface>
+          <p>Pour l'instant, cette partie n'est pas compilée et elle n'apparaît donc pas dans le document final.</p>
+          <p>Cette astuce permet de travailler sur une partie du document sans perdre de temps à compiler le reste.</p>
+      </preface>
+-->
+
+    </frontmatter>
+
+    <xi:include href="./determinant.xml" />
+
+    <xi:include href="./gaussjordan.xml" />
+
+    <backmatter xml:id="backmatter">
+        <title>Appendices</title>
+
+        <appendix xml:id="instructions">
+            <title>Instructions pour Mac</title>
+            <p>Voici la marche à suivre pour reproduire ces pages html sur votre Mac.</p>
+            <ol>
+              <li>
+                <p>Assurez-vous que xsltproc soit bien installé sur votre ordinateur. Pour cela, ouvrez un terminal et exécutez la commande <c>xsltproc --version</c>.</p>
+              </li>
+              <li>
+                <p>Téléchargez le dossier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> qui se trouve sur le comptes GitHub de Rob Beezer, décompressez-le, et renommez le dossier obtenu mathbook.</p>
+              </li>
+              <li>
+                <p>Téléchargez le <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dossier dap</url> disponible au bout du lien précédent.</p>
+              </li>
+              <li>
+                <p>Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.</p>
+              </li>
+              <li>
+                <p>Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.</p>
+              </li>
+              <li>
+                <p>
+                  Ouvrez un terminal à partir du dossier dap : faites un clic secondaire sur dap et choisissez l'option <em>Nouveau terminal au dossier</em>.
+                  Si cette option n'est pas déjà activée, suivez d'abord le chemin Préférences Système <m>\rightarrow</m> Clavier <m>\rightarrow</m> Raccourcis <m>\rightarrow</m> Services <m>\rightarrow</m> Nouveau terminal au dossier, et cochez la case.
+                </p>
+              </li>
+              <li>
+                <p>Dans ce terminal, exécutez la commande <c>xsltproc -stringparam publisher publication.xml --xinclude ../../mathbook/xsl/pretext-html.xsl xml/principal.xml</c>.</p>
+              </li>
+              <li>
+                <p>
+                  Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.
+                </p>
+              </li>
+            </ol>
+            <p>Félicitations!</p>
+        </appendix>
+
+        <appendix xml:id="curieux">
+            <title>Pour les curieux</title>
+            <p>
+              Cette étape n'est pas facultative.
+              Avec <pretext />, il est nécessaire d'être curieux.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  Dans le dossier dap/xml, trouvez le fichier principal.xml et ouvrez-le avec votre éditeur de texte favori.
+                  Si vous n'en avez pas, je recommande <url href="https://atom.io/">Atom</url>.
+                </p>
+              </li>
+              <li>
+                <p>Cherchez et effacez <c>&lt;!--</c> et <c>--&gt;</c></p>
+              </li>
+              <li>
+                <p>Sauvegardez le fichier principal.xml.</p>
+              </li>
+              <li>
+                <p>Compilez à nouveau à partir du terminal.</p>
+              </li>
+              <li>
+                <p>Observez ce qui vient de se passer sur les pages html.</p>
+              </li>
+            </ol>
+            <p>Bravo!</p>
+        </appendix>
+
+        <acknowledgement>
+          <p>Merci mille fois à <url href="http://buzzard.ups.edu/">Rob Beezer</url> et à ses collaborateurs pour la création et le développement de <url href="https://pretextbook.org">PreTeXt</url>.</p>
+        </acknowledgement>
+
+        <references xml:id="references-backmatter">
+            <title>Références</title>
+
+            <biblio type="raw" xml:id="biblio-many-PTXSC">Many Contributors, <title>PreTeXt Showcase</title>.
+            <note xml:id="note-many-PTXSC"><p>Une ressource disponible gratuitement en ligne à <url href="https://pretextbook.org/examples/showcase/html/">cette adresse</url>, et dont le code source se trouve dans le dossier <em>mathbook</em> que vous utilisez déjà pour compiler votre code.</p></note>
+            </biblio>
+
+            <biblio type="raw" xml:id="biblio-giol-MEA">Julien Giol, <title>Mathématiques et algorithmique</title>.
+            <note xml:id="note-giol-MEA"><p>Une ressource disponible gratuitement en ligne à <url href="https://juliengiol.github.io/mea">cette adresse</url>.</p></note>
+            </biblio>
+
+            <biblio type="raw" xml:id="biblio-turcotte-ALIR">Jean-Sébastien Turcotte et Philémon Turcotte, <title>Algèbre Linéaire : Intuition et rigueur</title>.
+            <note xml:id="note-turcotte-ALIR"><p>Une ressource disponible gratuitement en ligne à <url href="https://alir-jsturcotte.profweb.ca/alir.html">cette adresse</url>.</p></note>
+            </biblio>
+
+            <biblio type="raw" xml:id="biblio-riss-article">Matt Riss, <title>Le décomposition en valeurs non régulières</title>. <journal>Annales d'algèbre linéaire</journal>, Janvier 2021, <volume>5</volume> <number>2</number>, 57<ndash />62.
+            <note xml:id="note-riss-article">L'article de recherche dans lequel vous trouverez toute la théorie nécessaire à la compréhension de ce document.</note>
+            </biblio>
+
+            <p>Pour finir, vous pourriez visionner <url href="https://www.youtube.com/watch?v=_c45HP8F108">en cliquant ici</url> une vidéo de 47 minutes dans laquelle Jean-Sébastien Turcotte et Philémon Turcotte présentent leur livre numérique <xref ref="biblio-turcotte-ALIR"/>, ainsi que le projet <pretext/> en général.</p>
+
+        </references>
+
+    </backmatter>
+
+  </book>
+
+</pretext>

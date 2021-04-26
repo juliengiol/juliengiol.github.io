@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="determinant" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Déterminant d'une matrice</title>
+
+<introduction>
+  <p>
+    À en croire <url href="https://fr.wikipedia.org/wiki/Déterminant_(mathématiques)#Premiers_calculs_de_déterminants">cette page Wikipédia</url>, le Japonais Seki Kowa fut le premier à introduire des déterminants de taille 3 et 4.
+    <figure xml:id="figure-seki">
+        <caption>Image de Seki Kowa dans le domaine public.</caption>
+        <image width="50%" source="images/seki.jpeg">
+            <description>Le Japonais Seki Kowa.</description>
+        </image>
+    </figure>
+  </p>
+  <p>
+    Plus récemment, l'Anglais <url href="https://fr.wikipedia.org/wiki/Timothy_Gowers">Tim Gowers</url> a enregistré ses réflexions sur le déterminant des <url href="https://wikimonde.com/article/Matrice_de_Pascal">matrices de Pascal symétriques</url> dans une série de trois vidéos dont voici la dernière :
+    <aside>Tim Gowers a reçu la <url href="https://fr.wikipedia.org/wiki/M%C3%A9daille_Fields">médaille Fields</url> en 1998 pour ses travaux en analyse fonctionnelle et en combinatoire.</aside>
+    <figure>
+        <caption>Tim Gower - Pascal's determinant III.</caption>
+        <video xml:id="pascal-determinant-III" youtube="m8R9rVb0M5o" />
+    </figure>
+  </p>
+</introduction>
+
+<section>
+  <title>Théorie</title>
+
+  <proposition xml:id="prop-deux-par-deux">
+    <statement>
+      <p>
+        Quelle que soit la façon dont on définisse le déterminant d'une matrice carrée, on a
+        <me>\det\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}=a\times d-b\times c.</me>
+      </p>
+    </statement>
+  </proposition>
+
+  <definition>
+    <p>
+      Une matrice carrée <m>A</m> de taille <m>n\times n</m> est dite <em>inversible</em> s'il existe une matrice carrée <m>B</m> de même taille telle que
+      <me>AB=BA=\mathrm{I}_n.</me>
+    </p>
+  </definition>
+
+  <theorem xml:id="theo-inversible">
+    <statement>
+      <p>Une matrice carrée est inversible si et seulement si son déterminant n'est pas nul.</p>
+    </statement>
+    <proof>
+      <p>
+        Soit <m>A</m> une matrice <m>n\times n</m> inversible et <m>B</m> sa matrice inverse, de sorte que
+        <me>AB=BA=\mathrm{I}_n.</me>
+        Raisonnons par l'absurde et supposons que <m>\det(A)</m> soit nul.
+        On a alors
+        <md>
+          <mrow>0&amp;=0\times\det(B)</mrow>
+          <mrow>&amp;=\det(A)\times\det(B)</mrow>
+          <mrow>&amp;=\det(AB)</mrow>
+          <mrow>&amp;=\det(\mathrm{I}_n)</mrow>
+          <mrow>&amp;=1\times\cdots\times 1</mrow>
+          <mrow>&amp;=1.</mrow>
+        </md>
+        Il découle de cette contradiction que le nombre <m>\det(A)</m> n'est pas nul.
+      </p>
+      <p>Je vous laisse le soin de démontrer la réciproque.</p>
+    </proof>
+  </theorem>
+</section>
+
+<section>
+  <title>Calcul</title>
+
+  <p>
+    Voici comment calculer le déterminant de la matrice
+    <me>\begin{bmatrix}5&amp;3&amp;1\\0&amp;-7&amp;5\\-8&amp;9&amp;0\end{bmatrix}</me>
+    à l'aide de la fonction <c>det</c> du module <url href="https://numpy.org/doc/stable/reference/routines.linalg.html">linalg</url> de <url href="https://numpy.org/">NumPy</url> :
+
+    <sage language="python">
+      <input>
+        import numpy as np
+        M = np.array([[5,3,1], [0,-7,5], [-8,9,0]])
+        d = np.linalg.det(M)
+        print(d)
+      </input>
+    </sage>
+  </p>
+  <p>
+    Et voilà comment faire la même chose avec <url href="https://www.sagemath.org/">Sage</url> :
+
+    <sage language="sage">
+      <input>
+        M = matrix([[5,3,1], [0,-7,5], [-8,9,0]])
+        d = M.det()
+        show(d)
+      </input>
+    </sage>
+  </p>
+  <p>
+    Le code suivant vous permet de vérifier une propriété du déterminant.
+    Laquelle ?
+
+    <sage language="sage">
+      <input>
+        k = 15
+        propriete = det(M ** k) == det(M) ** k
+        show(propriete)
+      </input>
+    </sage>
+  </p>
+</section>
+
+<section>
+  <title>Exercices</title>
+
+  <exercise>
+    <statement>
+      <p>
+        On s'intéresse à la matrice
+        <me>A:=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix}.</me>
+      </p>
+      <ol>
+        <li>
+          <p>Calculez le déterminant de <m>A</m>.</p>
+        </li>
+        <li>
+          <p>Déduisez-en le déterminant de <m>A^5</m>.</p>
+        </li>
+      </ol>
+    </statement>
+    <hint>
+      <p>
+        Vous n'avez pas besoin de connaître le théorème <xref ref="theo-inversible"/>.
+        En revanche, la proposition <xref ref="prop-deux-par-deux"/> pourrait vous être utile.
+      </p>
+    </hint>
+    <answer>
+      <ol>
+        <li>
+          <p><m>-2</m>.</p>
+        </li>
+        <li>
+          <p><m>-32</m>.</p>
+        </li>
+      </ol>
+    </answer>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Grâce à la règle de calcul d'un déterminant <m>2\times 2</m>, on a
+            <me>\det(A)=1\times 4-2\times 3=-2.</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Par multiplicativité du déterminant, on a
+            <me>\det(A^5)=\left(\det(A)\right)^5=(-2)^5=-32.</me>
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Utilisez <url href="https://www.desmos.com/calculator?lang=fr">Desmos</url> pour illustrer le déterminant de deux vecteurs.</p>
+    </statement>
+    <answer>
+      <figure>
+          <caption>Déterminant de deux vecteurs</caption>
+          <interactive xml:id="desmos-det-deux-vecteurs" desmos="j9r39aibdf" width="96%" aspect="8:7"/>
+      </figure>
+    </answer>
+    <answer>
+      <p>Je préfère cette <url href="https://stage.geogebra.org/m/rsfuwyur">application GeoGebra</url> de Brian Sterr.</p>
+    </answer>
+  </exercise>
+
+</section>
+
+</chapter>
