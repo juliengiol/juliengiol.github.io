@@ -40,10 +40,10 @@
       <titlepage>
 
         <author>
-          <personname>Julien Giol</personname>
+          <personname>Matt Riss</personname>
           <department>Département des constantes rationnelles</department>
           <institution>
-              <line>Université à la menthe</line>
+              <line>Université Alamante</line>
               <line>En ligne, dans les nuages</line>
           </institution>
         </author>
@@ -68,45 +68,79 @@
             </li>
           </ul>
         </p>
+        <assemblage>
+          <title>Marche à suivre</title>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  Suivez les instructions de l'appendice <xref ref="instructions-mac"/> pour Mac ou de l'appendice <xref ref="instructions-windows"/> pour Windows, selon le système d'exploitation de votre ordinateur.
+                  Si vous utilisez Linux, vous n'avez pas besoin de mon aide et vous pouvez vous rendre directement à l'étape 4.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Parcourez les pages html que vous venez de créer et qui correspondent précisément à ce que vous êtes en train de lire.
+                  Essayez de faire le lien entre le résultat (fichiers html) et la source (fichiers ptx) qui se trouvent dans le dossier dap.
+                  Pour ouvrir les fichiers ptx, prenez votre éditeur de texte préféré.
+                  Si vous n'en avez pas, je recommande <url href="https://atom.io/">Atom</url>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Si vous êtes curieux ou curieuse, suivez les instructions de l'appendice <xref ref="curieux"/>.
+                  Sinon<fn><p>Attention, ceci est un piège!</p></fn>, passez directement à l'étape suivante.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Ce document ne donne qu'un bref aperçu.
+                  Je vous suggère ensuite de consulter les très nombreuses ressources disponibles sur le <url href="https://pretextbook.org">site du projet PreTeXt</url>, ainsi que le forum de soutien <url href="https://groups.google.com/g/pretext-support">PreTeXt support</url>.
+                </p>
+              </li>
+              <li>
+                <p>Lancez-vous et créez votre propre document <pretext/>!</p>
+              </li>
+            </ol>
+          </p>
+        </assemblage>
         <p>
-          Quelle est la marche à suivre?
-          En suivant les instructions de l'appendice <xref ref="instructions"/> sur votre Mac, vous devriez être capable de reproduire sans peine les pages html que vous êtes précisément en train de consulter.</p>
-        <p>
-          Quoi faire après?
-          Ce document ne donne qu'un bref aperçu des possibilités offertes par <pretext />.
-          Vous pouvez maintenant consulter les très nombreuses ressources disponibles sur le <url href="https://pretextbook.org">site du projet PreTeXt</url>
-        </p>
-        <p>
-          Des questions?
-          N'hésitez pas à m'écrire à julien.giol@gmail.com, ni à consulter le forum de soutien <url href="https://groups.google.com/g/pretext-support">PreTeXt support</url>.
+          Des questions, des commentaires, des suggestions?
+          N'hésitez pas à m'écrire à julien.giol@gmail.com<fn><p>Et non! Je ne m'appelle pas Matt Riss.</p></fn>.
         </p>
       </abstract>
 
 <!--
       <preface>
-          <p>Pour l'instant, cette partie n'est pas compilée et elle n'apparaît donc pas dans le document final.</p>
-          <p>Cette astuce permet de travailler sur une partie du document sans perdre de temps à compiler le reste.</p>
+          <p>Au départ, cette partie n'était pas compilée et elle n'apparaissait donc pas dans le document html final.</p>
+          <p>Les balises que vous avez effacées permettent d'exclure momentanément une partie du code de la compilation et de la ramener au rang de commentaire.</p>
+          <p>Cette astuce permet notamment de ne compiler que la partie du document sur laquelle on travaille, ce qui finir par sauver beaucoup de temps quand le document grossit.</p>
       </preface>
 -->
 
     </frontmatter>
 
-    <xi:include href="./determinant.xml" />
+    <xi:include href="./determinant.ptx" />
 
-    <xi:include href="./gaussjordan.xml" />
+    <xi:include href="./gaussjordan.ptx" />
 
     <backmatter xml:id="backmatter">
         <title>Appendices</title>
 
-        <appendix xml:id="instructions">
+        <appendix xml:id="instructions-mac">
             <title>Instructions pour Mac</title>
             <p>Voici la marche à suivre pour reproduire ces pages html sur votre Mac.</p>
             <ol>
               <li>
-                <p>Assurez-vous que xsltproc soit bien installé sur votre ordinateur. Pour cela, ouvrez un terminal et exécutez la commande <c>xsltproc --version</c>.</p>
+                <p>
+                  Assurez-vous que xsltproc soit bien installé sur votre ordinateur : ouvrez un terminal et exécutez la commande <c>xsltproc --version</c>.
+                  À ma connaissance, xsltproc est installé par défaut sur tous les Mac.
+                </p>
               </li>
               <li>
-                <p>Téléchargez le dossier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> qui se trouve sur le comptes GitHub de Rob Beezer, décompressez-le, et renommez le dossier obtenu mathbook.</p>
+                <p>
+                  En cliquant sur le bouton intitulé Code, téléchargez le dossier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> qui se trouve sur le compte GitHub de Rob Beezer.
+                  Décompressez ce fichier et renommez le dossier obtenu mathbook.</p>
               </li>
               <li>
                 <p>Téléchargez le <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dossier dap</url> disponible au bout du lien précédent.</p>
@@ -124,7 +158,10 @@
                 </p>
               </li>
               <li>
-                <p>Dans ce terminal, exécutez la commande <c>xsltproc -stringparam publisher publication.xml --xinclude ../../mathbook/xsl/pretext-html.xsl xml/principal.xml</c>.</p>
+                <p>
+                  Dans ce terminal, exécutez la très longue commande
+                  <c>xsltproc -stringparam publisher publication.ptx --xinclude ../../mathbook/xsl/pretext-html.xsl ptx/principal.ptx</c> en un seul morceau.
+                </p>
               </li>
               <li>
                 <p>
@@ -135,27 +172,36 @@
             <p>Félicitations!</p>
         </appendix>
 
+        <appendix xml:id="instructions-windows">
+            <title>Instructions pour Mac</title>
+            <p>Voici la marche à suivre pour reproduire ces pages html sur votre PC Windows.</p>
+            <p>En cours de construction.</p>
+        </appendix>
+
         <appendix xml:id="curieux">
             <title>Pour les curieux</title>
             <p>
-              Cette étape n'est pas facultative.
+              Cette étape n'est pas vraiment facultative.
               Avec <pretext />, il est nécessaire d'être curieux.
             </p>
             <ol>
               <li>
                 <p>
-                  Dans le dossier dap/xml, trouvez le fichier principal.xml et ouvrez-le avec votre éditeur de texte favori.
+                  Dans le dossier dap/ptx, trouvez le fichier principal.ptx et ouvrez-le avec votre éditeur de texte favori.
                   Si vous n'en avez pas, je recommande <url href="https://atom.io/">Atom</url>.
                 </p>
               </li>
               <li>
-                <p>Cherchez et effacez <c>&lt;!--</c> et <c>--&gt;</c></p>
+                <p>Cherchez et effacez les instructions <c>&lt;!--</c> et <c>--&gt;</c>.</p>
               </li>
               <li>
-                <p>Sauvegardez le fichier principal.xml.</p>
+                <p>Sauvegardez le fichier principal.ptx.</p>
               </li>
               <li>
-                <p>Compilez à nouveau à partir du terminal.</p>
+                <p>
+                  Exécutez la très longue commande xsltproc à partir du terminal déjà ouvert.
+                  Il n'est pas nécessaire de l'entrer à nouveau : sur votre clavier, la flèche vers le haut vous permet de parcourir les dernières instructions passées par le terminal.
+                </p>
               </li>
               <li>
                 <p>Observez ce qui vient de se passer sur les pages html.</p>
@@ -184,7 +230,7 @@
             </biblio>
 
             <biblio type="raw" xml:id="biblio-riss-article">Matt Riss, <title>Le décomposition en valeurs non régulières</title>. <journal>Annales d'algèbre linéaire</journal>, Janvier 2021, <volume>5</volume> <number>2</number>, 57<ndash />62.
-            <note xml:id="note-riss-article">L'article de recherche dans lequel vous trouverez toute la théorie nécessaire à la compréhension de ce document.</note>
+            <note xml:id="note-riss-article"><p>L'article de recherche dans lequel vous trouverez toute la théorie nécessaire à la compréhension de ce document.</p></note>
             </biblio>
 
             <p>Pour finir, vous pourriez visionner <url href="https://www.youtube.com/watch?v=_c45HP8F108">en cliquant ici</url> une vidéo de 47 minutes dans laquelle Jean-Sébastien Turcotte et Philémon Turcotte présentent leur livre numérique <xref ref="biblio-turcotte-ALIR"/>, ainsi que le projet <pretext/> en général.</p>
