@@ -89,7 +89,7 @@
               <li>
                 <p>
                   Si vous êtes curieux ou curieuse, suivez les instructions de l'appendice <xref ref="curieux"/>.
-                  Sinon<fn><p>Attention, ceci est un piège!</p></fn>, passez directement à l'étape suivante.
+                  Sinon<fn><p>Sinon? Vraiment?</p></fn>, passez directement à l'étape suivante.
                 </p>
               </li>
               <li>
@@ -105,7 +105,9 @@
           </p>
         </assemblage>
         <p>
-          Des questions, des commentaires, des suggestions?
+          Des questions?
+          Des commentaires?
+          Des suggestions?
           N'hésitez pas à m'écrire à julien.giol@gmail.com<fn><p>Et non! Je ne m'appelle pas Matt Riss.</p></fn>.
         </p>
       </abstract>
@@ -173,9 +175,102 @@
         </appendix>
 
         <appendix xml:id="instructions-windows">
-            <title>Instructions pour Mac</title>
+            <title>Instructions pour Windows</title>
             <p>Voici la marche à suivre pour reproduire ces pages html sur votre PC Windows.</p>
             <p>En cours de construction.</p>
+            <ol>
+              <li>
+                <p>
+                  Le logiciel xsltproc est-il installé?
+                  Pour le savoir, ouvrez un terminal <url href="https://fr.wikipedia.org/wiki/Cmd">Command Prompt</url> et exécutez la commande <c>xsltproc --version</c>.
+                  À ma connaissance, xsltproc n'est jamais installé par défaut sur un PC Windows.
+                  Si vous avez de la chance et qu'il est installé, rendez-vous directement à l'étape 3.
+                  Sinon, passez à l'étape suivante.
+                </p>
+              </li>
+              <li>
+                <p>Voici une façon d'installer xsltproc pour Windows.</p>
+                <ol>
+                  <li>
+                    <p>
+                      Téléchargez le dossier  <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">xsltproc</url> disponible au bout du lien précédent.
+                      Vérifiez que vous obtenez bien un dossier intitulé xsltproc à l'intérieur duquel se trouvent cinq fichier dll et deux fichier exe, dont xsltproc.exe.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Placez le dossier xsltproc à la <url href="https://fr.wikipedia.org/wiki/R%C3%A9pertoire_racine">racine</url> de votre disque dur.
+                      Il devrait alors côtoyer des dossiers comme Program Files, Users, et Windows.
+                      Vous pouvez le placer ailleurs si vous préférez, mais vous devrez alors adapter ce qui suit en fonction de votre choix.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Il reste à expliquer à Windows où se trouve ce nouveau logiciel pour pouvoir l'utiliser à partir de l'invite de commande.
+                      À la fin des quatre étapes suivantes, vous devriez voir la chose suivante sur une partie de votre écran.
+                      Notez le <c>;</c> après <c>C:\xsltproc</c>.
+                      <figure xml:id="figure-path">
+                          <caption>Création de la variable d'environnement PATH.</caption>
+                          <image width="100%" source="images/PATH_Zoom.png">
+                              <description>Création de la variable d'environnement PATH.</description>
+                          </image>
+                      </figure>
+                    </p>
+                    <ol>
+                      <li>
+                        <p>Cliquez sur la loupe, puis cherchez et sélectionnez <em>Edit the system environment variables</em>.</p>
+                      </li>
+                      <li>
+                        <p>En bas à droite de la fenêtre qui vient de s'ouvrir, cliquez sur <em>Environment Variables</em>.</p>
+                      </li>
+                      <li>
+                        <p>En bas à droite de la fenêtre qui vient de s'ouvrir, utilisez <em>New</em> ou <em>Edit</em> de façon à créer ou éditer une variable intitulée PATH.</p>
+                      </li>
+                      <li>
+                        <p>Dans la fenêtre qui vient de s'ouvrir, entrez <c>C:\xsltproc</c> puis cliquez sur <em>OK</em>.</p>
+                      </li>
+                    </ol>
+                    <p>Retournez maintenant à l'étape 1.</p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p>
+                  En cliquant sur le bouton intitulé Code, téléchargez <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> qui se trouve sur le compte GitHub de Rob Beezer.
+                  Décompressez ce fichier et renommez le dossier obtenu mathbook.</p>
+              </li>
+              <li>
+                <p>Téléchargez le dossier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dap</url> disponible au bout du lien précédent.</p>
+              </li>
+              <li>
+                <p>Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.</p>
+              </li>
+              <li>
+                <p>Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.</p>
+              </li>
+              <li>
+                <p>
+                  Rendez-vous dans le dossier dap : vous devriez voir un dossier images et un dossier ptx.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Dans la barre de chemin du dossier dap, cliquez sur la flèche vers le bas et remplacez le chemin par les trois lettres cmd : ceci devrait ouvrir une invite de commande Command Prompt agissant au niveau de \localPreTeXt\mesLivres\dap.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Dans cette invite de commande, exécutez la très longue commande
+                  <c>xsltproc -stringparam publisher publication.ptx --xinclude ..\..\mathbook\xsl\pretext-html.xsl ptx\principal.ptx</c> en un seul morceau.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.
+                </p>
+              </li>
+            </ol>
+            <p>Félicitations!</p>
         </appendix>
 
         <appendix xml:id="curieux">
