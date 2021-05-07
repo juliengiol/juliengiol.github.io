@@ -131,7 +131,15 @@
 
         <appendix xml:id="instructions-mac">
             <title>Instructions pour Mac</title>
-            <p>Voici la marche à suivre pour reproduire ces pages html sur votre Mac.</p>
+            <p>
+              Voici la marche à suivre pour reproduire ces pages html sur votre Mac, conformément au schéma suivant :
+              <figure xml:id="figure-schema">
+                  <caption>Principe de PreTeXt.</caption>
+                  <image width="80%" source="images/schema.jpg">
+                      <description>Principe de PreTeXt.</description>
+                  </image>
+              </figure>
+            </p>
             <ol>
               <li>
                 <p>
@@ -141,11 +149,15 @@
               </li>
               <li>
                 <p>
-                  En cliquant sur le bouton intitulé Code, téléchargez le dossier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> qui se trouve sur le compte GitHub de Rob Beezer.
-                  Décompressez ce fichier et renommez le dossier obtenu mathbook.</p>
+                  En cliquant sur le bouton intitulé Code, téléchargez le fichier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> qui se trouve sur le compte GitHub de Rob Beezer.
+                  Décompressez ce fichier et renommez le dossier obtenu mathbook.
+                </p>
               </li>
               <li>
-                <p>Téléchargez le <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dossier dap</url> disponible au bout du lien précédent.</p>
+                <p>
+                  Téléchargez le fichier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dap.zip</url> disponible au bout du lien précédent.
+                  Décompressez ce fichier et assurez-vous que le dossier obtenu s'appelle bien dap.
+                </p>
               </li>
               <li>
                 <p>Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.</p>
@@ -155,7 +167,7 @@
               </li>
               <li>
                 <p>
-                  Ouvrez un terminal à partir du dossier dap : faites un clic secondaire sur dap et choisissez l'option <em>Nouveau terminal au dossier</em>.
+                  Ouvrez un terminal à partir du dossier dap : faites un clic secondaire sur dap et choisissez l'option <em>Nouveau terminal au dossier</em> qui pourrait être cachée dans Services.
                   Si cette option n'est pas déjà activée, suivez d'abord le chemin Préférences Système <m>\rightarrow</m> Clavier <m>\rightarrow</m> Raccourcis <m>\rightarrow</m> Services <m>\rightarrow</m> Nouveau terminal au dossier, et cochez la case.
                 </p>
               </li>
@@ -176,8 +188,15 @@
 
         <appendix xml:id="instructions-windows">
             <title>Instructions pour Windows</title>
-            <p>Voici la marche à suivre pour reproduire ces pages html sur votre PC Windows.</p>
-            <p>En cours de construction.</p>
+            <p>
+              Voici la marche à suivre pour reproduire ces pages html sur votre PC Windows, conformément au schéma suivant :
+              <figure xml:id="figure-schema2">
+                  <caption>Principe de PreTeXt.</caption>
+                  <image width="80%" source="images/schema.jpg">
+                      <description>Principe de PreTeXt.</description>
+                  </image>
+              </figure>
+            </p>
             <ol>
               <li>
                 <p>
@@ -193,8 +212,8 @@
                 <ol>
                   <li>
                     <p>
-                      Téléchargez le dossier  <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">xsltproc</url> disponible au bout du lien précédent.
-                      Vérifiez que vous obtenez bien un dossier intitulé xsltproc à l'intérieur duquel se trouvent cinq fichier dll et deux fichier exe, dont xsltproc.exe.
+                      Téléchargez le fichier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">xsltproc.zip</url> disponible au bout du lien précédent.
+                      Décompressez ce fichier et vérifiez que vous obtenez bien un dossier intitulé xsltproc à l'intérieur duquel se trouvent cinq fichier dll et deux fichier exe, dont xsltproc.exe.
                     </p>
                   </li>
                   <li>
@@ -206,7 +225,7 @@
                   </li>
                   <li>
                     <p>
-                      Il reste à expliquer à Windows où se trouve ce nouveau logiciel pour pouvoir l'utiliser à partir de l'invite de commande.
+                      Il reste à expliquer à Windows où se trouve ce nouveau logiciel pour pouvoir l'utiliser à partir d'un terminal Command Prompt.
                       À la fin des quatre étapes suivantes, vous devriez voir la chose suivante sur une partie de votre écran.
                       Notez le <c>;</c> après <c>C:\xsltproc</c>.
                       <figure xml:id="figure-path">
@@ -236,11 +255,15 @@
               </li>
               <li>
                 <p>
-                  En cliquant sur le bouton intitulé Code, téléchargez <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> qui se trouve sur le compte GitHub de Rob Beezer.
-                  Décompressez ce fichier et renommez le dossier obtenu mathbook.</p>
+                  En cliquant sur le bouton intitulé Code, téléchargez le fichier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> qui se trouve sur le compte GitHub de Rob Beezer.
+                  Décompressez ce fichier et renommez le dossier obtenu mathbook.
+                </p>
               </li>
               <li>
-                <p>Téléchargez le dossier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dap</url> disponible au bout du lien précédent.</p>
+                <p>
+                  Téléchargez le fichier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dap.zip</url> disponible au bout du lien précédent.
+                  Décompressez ce fichier et assurez-vous que le dossier obtenu s'appelle bien dap.
+                </p>
               </li>
               <li>
                 <p>Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.</p>
@@ -255,12 +278,12 @@
               </li>
               <li>
                 <p>
-                  Dans la barre de chemin du dossier dap, cliquez sur la flèche vers le bas et remplacez le chemin par les trois lettres cmd : ceci devrait ouvrir une invite de commande Command Prompt agissant au niveau de \localPreTeXt\mesLivres\dap.
+                  Dans la barre de chemin du dossier dap, cliquez sur la flèche vers le bas et remplacez le chemin par les trois lettres cmd : ceci devrait ouvrir un terminal Command Prompt agissant au niveau de \localPreTeXt\mesLivres\dap.
                 </p>
               </li>
               <li>
                 <p>
-                  Dans cette invite de commande, exécutez la très longue commande
+                  Dans ce terminal, exécutez la très longue commande
                   <c>xsltproc -stringparam publisher publication.ptx --xinclude ..\..\mathbook\xsl\pretext-html.xsl ptx\principal.ptx</c> en un seul morceau.
                 </p>
               </li>
@@ -316,15 +339,23 @@
             <note xml:id="note-many-PTXSC"><p>Une ressource disponible gratuitement en ligne à <url href="https://pretextbook.org/examples/showcase/html/">cette adresse</url>, et dont le code source se trouve dans le dossier <em>mathbook</em> que vous utilisez déjà pour compiler votre code.</p></note>
             </biblio>
 
+            <biblio type="raw" xml:id="biblio-robetal-PTXG">Robert A. Beezer, David Farmer, Alex Jordan, Mitchel T. Keller, <title>The PreTeXt Guide</title>.
+            <note xml:id="note-robetal-PTXG"><p>Une ressource disponible gratuitement en ligne à <url href="https://pretextbook.org/doc/guide/html/guide-toc.html">cette adresse</url>.</p></note>
+            </biblio>
+
             <biblio type="raw" xml:id="biblio-giol-MEA">Julien Giol, <title>Mathématiques et algorithmique</title>.
             <note xml:id="note-giol-MEA"><p>Une ressource disponible gratuitement en ligne à <url href="https://juliengiol.github.io/mea">cette adresse</url>.</p></note>
+            </biblio>
+
+            <biblio type="raw" xml:id="biblio-keller-PTXCS">Mitchel T. Keller, <title>PreTeXt Cheatsheet</title>.
+            <note xml:id="note-keller-PTXCS"><p>Une ressource disponible gratuitement en ligne à <url href="https://rellek.net/ptx/cheatsheet/cheatsheet.html">cette adresse</url>.</p></note>
             </biblio>
 
             <biblio type="raw" xml:id="biblio-turcotte-ALIR">Jean-Sébastien Turcotte et Philémon Turcotte, <title>Algèbre Linéaire : Intuition et rigueur</title>.
             <note xml:id="note-turcotte-ALIR"><p>Une ressource disponible gratuitement en ligne à <url href="https://alir-jsturcotte.profweb.ca/alir.html">cette adresse</url>.</p></note>
             </biblio>
 
-            <biblio type="raw" xml:id="biblio-riss-article">Matt Riss, <title>Le décomposition en valeurs non régulières</title>. <journal>Annales d'algèbre linéaire</journal>, Janvier 2021, <volume>5</volume> <number>2</number>, 57<ndash />62.
+            <biblio type="raw" xml:id="biblio-riss-article">Matt Riss, <title>La décomposition en valeurs non régulières</title>. <journal>Annales d'algèbre linéaire</journal>, Janvier 2021, <volume>5</volume> <number>2</number>, 57<ndash />62.
             <note xml:id="note-riss-article"><p>L'article de recherche dans lequel vous trouverez toute la théorie nécessaire à la compréhension de ce document.</p></note>
             </biblio>
 

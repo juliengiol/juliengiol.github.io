@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-29T09:57:54-04:00       *-->
+<!--*       on 2021-05-07T15:41:56-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -117,38 +117,38 @@ true);
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="appendix" id="instructions-windows"><h2 class="heading hide-type">
 <span class="type">Appendice</span> <span class="codenumber">B</span> <span class="title">Instructions pour Windows</span>
 </h2>
-<p id="p-45">Voici la marche à suivre pour reproduire ces pages html sur votre PC Windows.</p>
-<p id="p-46">En cours de construction.</p>
+<p id="p-45">Voici la marche à suivre pour reproduire ces pages html sur votre PC Windows, conformément au schéma suivant : <figure class="figure figure-like" id="figure-schema2"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/schema.jpg" class="contained" alt="Principe de PreTeXt."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">B.0.1<span class="period">.</span></span><span class="space"> </span>Principe de PreTeXt.</figcaption></figure></p>
 <ol class="decimal">
-<li id="li-23"><p id="p-47">Le logiciel xsltproc est-il installé? Pour le savoir, ouvrez un terminal <a class="external" href="https://fr.wikipedia.org/wiki/Cmd" target="_blank">Command Prompt</a> et exécutez la commande <code class="code-inline tex2jax_ignore">xsltproc --version</code>. À ma connaissance, xsltproc n'est jamais installé par défaut sur un PC Windows. Si vous avez de la chance et qu'il est installé, rendez-vous directement à l'étape 3. Sinon, passez à l'étape suivante.</p></li>
+<li id="li-23"><p id="p-46">Le logiciel xsltproc est-il installé? Pour le savoir, ouvrez un terminal <a class="external" href="https://fr.wikipedia.org/wiki/Cmd" target="_blank">Command Prompt</a> et exécutez la commande <code class="code-inline tex2jax_ignore">xsltproc --version</code>. À ma connaissance, xsltproc n'est jamais installé par défaut sur un PC Windows. Si vous avez de la chance et qu'il est installé, rendez-vous directement à l'étape 3. Sinon, passez à l'étape suivante.</p></li>
 <li id="li-24">
-<p id="p-48">Voici une façon d'installer xsltproc pour Windows.</p>
+<p id="p-47">Voici une façon d'installer xsltproc pour Windows.</p>
 <ol class="lower-alpha">
-<li id="li-25"><p id="p-49">Téléchargez le dossier  <a class="external" href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing" target="_blank">xsltproc</a> disponible au bout du lien précédent. Vérifiez que vous obtenez bien un dossier intitulé xsltproc à l'intérieur duquel se trouvent cinq fichier dll et deux fichier exe, dont xsltproc.exe.</p></li>
-<li id="li-26"><p id="p-50">Placez le dossier xsltproc à la <a class="external" href="https://fr.wikipedia.org/wiki/R%C3%A9pertoire_racine" target="_blank">racine</a> de votre disque dur. Il devrait alors côtoyer des dossiers comme Program Files, Users, et Windows. Vous pouvez le placer ailleurs si vous préférez, mais vous devrez alors adapter ce qui suit en fonction de votre choix.</p></li>
+<li id="li-25"><p id="p-48">Téléchargez le fichier <a class="external" href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing" target="_blank">xsltproc.zip</a> disponible au bout du lien précédent. Décompressez ce fichier et vérifiez que vous obtenez bien un dossier intitulé xsltproc à l'intérieur duquel se trouvent cinq fichier dll et deux fichier exe, dont xsltproc.exe.</p></li>
+<li id="li-26"><p id="p-49">Placez le dossier xsltproc à la <a class="external" href="https://fr.wikipedia.org/wiki/R%C3%A9pertoire_racine" target="_blank">racine</a> de votre disque dur. Il devrait alors côtoyer des dossiers comme Program Files, Users, et Windows. Vous pouvez le placer ailleurs si vous préférez, mais vous devrez alors adapter ce qui suit en fonction de votre choix.</p></li>
 <li id="li-27">
-<p id="p-51">Il reste à expliquer à Windows où se trouve ce nouveau logiciel pour pouvoir l'utiliser à partir de l'invite de commande. À la fin des quatre étapes suivantes, vous devriez voir la chose suivante sur une partie de votre écran. Notez le <code class="code-inline tex2jax_ignore">;</code> après <code class="code-inline tex2jax_ignore">C:\xsltproc</code>. <figure class="figure figure-like" id="figure-path"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/PATH_Zoom.png" class="contained" alt="Création de la variable d'environnement PATH."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">B.0.1<span class="period">.</span></span><span class="space"> </span>Création de la variable d'environnement PATH.</figcaption></figure></p>
+<p id="p-50">Il reste à expliquer à Windows où se trouve ce nouveau logiciel pour pouvoir l'utiliser à partir d'un terminal Command Prompt. À la fin des quatre étapes suivantes, vous devriez voir la chose suivante sur une partie de votre écran. Notez le <code class="code-inline tex2jax_ignore">;</code> après <code class="code-inline tex2jax_ignore">C:\xsltproc</code>. <figure class="figure figure-like" id="figure-path"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/PATH_Zoom.png" class="contained" alt="Création de la variable d'environnement PATH."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">B.0.2<span class="period">.</span></span><span class="space"> </span>Création de la variable d'environnement PATH.</figcaption></figure></p>
 <ol class="lower-roman">
-<li id="li-28"><p id="p-52">Cliquez sur la loupe, puis cherchez et sélectionnez <em class="emphasis">Edit the system environment variables</em>.</p></li>
-<li id="li-29"><p id="p-53">En bas à droite de la fenêtre qui vient de s'ouvrir, cliquez sur <em class="emphasis">Environment Variables</em>.</p></li>
-<li id="li-30"><p id="p-54">En bas à droite de la fenêtre qui vient de s'ouvrir, utilisez <em class="emphasis">New</em> ou <em class="emphasis">Edit</em> de façon à créer ou éditer une variable intitulée PATH.</p></li>
-<li id="li-31"><p id="p-55">Dans la fenêtre qui vient de s'ouvrir, entrez <code class="code-inline tex2jax_ignore">C:\xsltproc</code> puis cliquez sur <em class="emphasis">OK</em>.</p></li>
+<li id="li-28"><p id="p-51">Cliquez sur la loupe, puis cherchez et sélectionnez <em class="emphasis">Edit the system environment variables</em>.</p></li>
+<li id="li-29"><p id="p-52">En bas à droite de la fenêtre qui vient de s'ouvrir, cliquez sur <em class="emphasis">Environment Variables</em>.</p></li>
+<li id="li-30"><p id="p-53">En bas à droite de la fenêtre qui vient de s'ouvrir, utilisez <em class="emphasis">New</em> ou <em class="emphasis">Edit</em> de façon à créer ou éditer une variable intitulée PATH.</p></li>
+<li id="li-31"><p id="p-54">Dans la fenêtre qui vient de s'ouvrir, entrez <code class="code-inline tex2jax_ignore">C:\xsltproc</code> puis cliquez sur <em class="emphasis">OK</em>.</p></li>
 </ol>
-<p id="p-56">Retournez maintenant à l'étape 1.</p>
+<p id="p-55">Retournez maintenant à l'étape 1.</p>
 </li>
 </ol>
 </li>
-<li id="li-32"><p id="p-57">En cliquant sur le bouton intitulé Code, téléchargez <a class="external" href="https://github.com/rbeezer/mathbook" target="_blank">mathbook-dev.zip</a> qui se trouve sur le compte GitHub de Rob Beezer. Décompressez ce fichier et renommez le dossier obtenu mathbook.</p></li>
-<li id="li-33"><p id="p-58">Téléchargez le dossier <a class="external" href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing" target="_blank">dap</a> disponible au bout du lien précédent.</p></li>
-<li id="li-34"><p id="p-59">Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.</p></li>
-<li id="li-35"><p id="p-60">Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.</p></li>
-<li id="li-36"><p id="p-61">Rendez-vous dans le dossier dap : vous devriez voir un dossier images et un dossier ptx.</p></li>
-<li id="li-37"><p id="p-62">Dans la barre de chemin du dossier dap, cliquez sur la flèche vers le bas et remplacez le chemin par les trois lettres cmd : ceci devrait ouvrir une invite de commande Command Prompt agissant au niveau de \localPreTeXt\mesLivres\dap.</p></li>
-<li id="li-38"><p id="p-63">Dans cette invite de commande, exécutez la très longue commande <code class="code-inline tex2jax_ignore">xsltproc -stringparam publisher publication.ptx --xinclude ..\..\mathbook\xsl\pretext-html.xsl ptx\principal.ptx</code> en un seul morceau.</p></li>
-<li id="li-39"><p id="p-64">Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.</p></li>
+<li id="li-32"><p id="p-56">En cliquant sur le bouton intitulé Code, téléchargez le fichier <a class="external" href="https://github.com/rbeezer/mathbook" target="_blank">mathbook-dev.zip</a> qui se trouve sur le compte GitHub de Rob Beezer. Décompressez ce fichier et renommez le dossier obtenu mathbook.</p></li>
+<li id="li-33"><p id="p-57">Téléchargez le fichier <a class="external" href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing" target="_blank">dap.zip</a> disponible au bout du lien précédent. Décompressez ce fichier et assurez-vous que le dossier obtenu s'appelle bien dap.</p></li>
+<li id="li-34"><p id="p-58">Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.</p></li>
+<li id="li-35"><p id="p-59">Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.</p></li>
+<li id="li-36"><p id="p-60">Rendez-vous dans le dossier dap : vous devriez voir un dossier images et un dossier ptx.</p></li>
+<li id="li-37"><p id="p-61">Dans la barre de chemin du dossier dap, cliquez sur la flèche vers le bas et remplacez le chemin par les trois lettres cmd : ceci devrait ouvrir un terminal Command Prompt agissant au niveau de \localPreTeXt\mesLivres\dap.</p></li>
+<li id="li-38"><p id="p-62">Dans ce terminal, exécutez la très longue commande <code class="code-inline tex2jax_ignore">xsltproc -stringparam publisher publication.ptx --xinclude ..\..\mathbook\xsl\pretext-html.xsl ptx\principal.ptx</code> en un seul morceau.</p></li>
+<li id="li-39"><p id="p-63">Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.</p></li>
 </ol>
-<p id="p-65">Félicitations!</p></section></div></main>
+<p id="p-64">Félicitations!</p></section></div></main>
 </div>
 </body>
 </html>
