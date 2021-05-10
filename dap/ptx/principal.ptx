@@ -326,6 +326,12 @@
               </li>
             </ol>
             <p>Bravo!</p>
+            <p>
+              Profitez-en pour noter que si vous voulez utiliser une esperluette (&amp;) ou un plus petit que (&lt;) dans un fichier ptx pour autre chose que ce à quoi ils servent en <url href="https://fr.wikipedia.org/wiki/Extensible_Markup_Language">XML</url> (le langage utilisé dans les fichiers ptx), vous devrez les remplacer par <c>&amp;amp;</c> et <c>&amp;lt;</c>.
+              Ceci se produit typiquement quand on entre du code <url href="https://fr.wikipedia.org/wiki/LaTeX">LaTeX</url> tel que
+              <me>A=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix}</me>
+              ou <m>x&lt;5</m>.
+            </p>
         </appendix>
 
         <acknowledgement>
