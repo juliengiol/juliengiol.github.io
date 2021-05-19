@@ -68,7 +68,7 @@
             </li>
           </ul>
         </p>
-        <assemblage>
+        <assemblage xml:id="marcheasuivre">
           <title>Marche à suivre</title>
           <p>
             <ol>
@@ -183,7 +183,10 @@
                 </p>
               </li>
             </ol>
-            <p>Félicitations!</p>
+            <p>
+              Félicitations!
+              Vous pouvez maintenant vous rendre à l'étape 2 de la marche à suivre indiquée sur la <url href="accueil">page d'accueil</url>.
+            </p>
         </appendix>
 
         <appendix xml:id="instructions-windows">
@@ -293,7 +296,10 @@
                 </p>
               </li>
             </ol>
-            <p>Félicitations!</p>
+            <p>
+              Félicitations!
+              Vous pouvez maintenant vous rendre à l'étape 2 de la marche à suivre indiquée sur la <url href="accueil">page d'accueil</url>.
+            </p>
         </appendix>
 
         <appendix xml:id="curieux">
