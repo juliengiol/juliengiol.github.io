@@ -149,8 +149,9 @@
               </li>
               <li>
                 <p>
-                  En cliquant sur le bouton intitulé Code, téléchargez le fichier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> qui se trouve sur le compte GitHub de Rob Beezer.
+                  Téléchargez le fichier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> en cliquant sur le bouton intitulé Code sur la page qui se trouve au bout du lien précédent.
                   Décompressez ce fichier et renommez le dossier obtenu mathbook.
+                  <aside><pretext/> est en constant développement : pensez à mettre à jour votre dossier mathbook régulièrement!</aside>
                 </p>
               </li>
               <li>
@@ -178,9 +179,7 @@
                 </p>
               </li>
               <li>
-                <p>
-                  Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.
-                </p>
+                <p>Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.</p>
               </li>
             </ol>
             <p>
@@ -204,10 +203,10 @@
               <li>
                 <p>
                   Le logiciel xsltproc est-il installé?
-                  Pour le savoir, ouvrez un terminal <url href="https://fr.wikipedia.org/wiki/Cmd">Command Prompt</url> et exécutez la commande <c>xsltproc --version</c>.
+                  Pour le savoir, ouvrez un terminal <em>Invite de commandes</em> / <em>Command Prompt</em> et exécutez la commande <c>xsltproc --version</c>.
                   À ma connaissance, xsltproc n'est jamais installé par défaut sur un PC Windows.
                   Si vous avez de la chance et qu'il est installé, rendez-vous directement à l'étape 3.
-                  Sinon, passez à l'étape suivante.
+                  Sinon, respirez un bon coup et passez à l'étape suivante.
                 </p>
               </li>
               <li>
@@ -227,39 +226,48 @@
                     </p>
                   </li>
                   <li>
-                    <p>
-                      Il reste à expliquer à Windows où se trouve ce nouveau logiciel pour pouvoir l'utiliser à partir d'un terminal Command Prompt.
-                      À la fin des quatre étapes suivantes, vous devriez voir la chose suivante sur une partie de votre écran.
-                      Notez le <c>;</c> après <c>C:\xsltproc</c>.
-                      <figure xml:id="figure-path">
-                          <caption>Création de la variable d'environnement PATH.</caption>
-                          <image width="100%" source="images/PATH_Zoom.png">
-                              <description>Création de la variable d'environnement PATH.</description>
-                          </image>
-                      </figure>
-                    </p>
+                    <p>Il reste à expliquer à Windows où se trouve ce nouveau logiciel pour pouvoir l'utiliser à partir d'un terminal.</p>
                     <ol>
                       <li>
-                        <p>Cliquez sur la loupe, puis cherchez et sélectionnez <em>Edit the system environment variables</em>.</p>
+                        <p>Cliquez sur la loupe en bas à gauche, puis cherchez et sélectionnez <em>Modifier les variables d’environnement système</em> / <em>Edit the system environment variables</em>.</p>
                       </li>
                       <li>
-                        <p>En bas à droite de la fenêtre qui vient de s'ouvrir, cliquez sur <em>Environment Variables</em>.</p>
+                        <p>En bas à droite de la fenêtre qui vient de s'ouvrir, cliquez sur <em>Variables d'environnement</em> / <em>Environment Variables</em>.</p>
                       </li>
                       <li>
-                        <p>En bas à droite de la fenêtre qui vient de s'ouvrir, utilisez <em>New</em> ou <em>Edit</em> de façon à créer ou éditer une variable intitulée PATH.</p>
+                        <p>En bas à droite de la fenêtre qui vient de s'ouvrir, utilisez <em>Nouvelle</em> / <em>New</em>,  ou <em>Modifier</em> / <em>Edit</em> de façon à créer ou modifier une variable intitulée PATH.</p>
                       </li>
                       <li>
                         <p>Dans la fenêtre qui vient de s'ouvrir, entrez <c>C:\xsltproc</c> puis cliquez sur <em>OK</em>.</p>
                       </li>
                     </ol>
-                    <p>Retournez maintenant à l'étape 1.</p>
+                    <p>
+                      Une fois les étapes i. à iv. complétées, vous devriez voir la chose suivante sur une partie de votre écran :
+                      <figure xml:id="figure-path">
+                          <caption>Création de la variable d'environnement PATH.</caption>
+                          <image width="90%" source="images/PATH_Zoom_fr.png">
+                              <description>Création de la variable d'environnement PATH.</description>
+                          </image>
+                      </figure>
+                      si votre système d'exploitation Windows est en Français, ou
+                      <figure xml:id="figure-path_fr">
+                          <caption>Création de la variable d'environnement PATH.</caption>
+                          <image width="90%" source="images/PATH_Zoom.png">
+                              <description>Création de la variable d'environnement PATH.</description>
+                          </image>
+                      </figure>
+                      si votre système d'exploitation Windows est en anglais.
+                    </p>
+                    <p>Notez le <c>;</c> à la fin de <c>C:\xsltproc</c>.</p>
+                    <p>Retournez maintenant à l'étape 1 ci-dessus.</p>
                   </li>
                 </ol>
               </li>
               <li>
                 <p>
-                  En cliquant sur le bouton intitulé Code, téléchargez le fichier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> qui se trouve sur le compte GitHub de Rob Beezer.
+                  Téléchargez le fichier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> en cliquant sur le bouton intitulé Code sur la page qui se trouve au bout du lien précédent.
                   Décompressez ce fichier et renommez le dossier obtenu mathbook.
+                  <aside><pretext/> est en constant développement : pensez à mettre à jour votre dossier mathbook régulièrement!</aside>
                 </p>
               </li>
               <li>
@@ -275,13 +283,11 @@
                 <p>Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.</p>
               </li>
               <li>
-                <p>
-                  Rendez-vous dans le dossier dap : vous devriez voir un dossier images et un dossier ptx.
-                </p>
+                <p>Rendez-vous dans le dossier dap : vous devriez voir un dossier images et un dossier ptx.</p>
               </li>
               <li>
                 <p>
-                  Dans la barre de chemin du dossier dap, cliquez sur la flèche vers le bas et remplacez le chemin par les trois lettres cmd : ceci devrait ouvrir un terminal Command Prompt agissant au niveau de \localPreTeXt\mesLivres\dap.
+                  Dans la barre de chemin du dossier dap, cliquez sur la flèche vers le bas, remplacez le chemin par les trois lettres cmd, puis tapez la touche Entrée : ceci devrait ouvrir un terminal <em>Invite de commandes</em> / <em>Command Prompt</em> agissant au niveau de \localPreTeXt\mesLivres\dap.
                 </p>
               </li>
               <li>
@@ -291,9 +297,7 @@
                 </p>
               </li>
               <li>
-                <p>
-                  Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.
-                </p>
+                <p>Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.</p>
               </li>
             </ol>
             <p>
@@ -344,7 +348,10 @@
         </appendix>
 
         <acknowledgement>
-          <p>Merci mille fois à <url href="http://buzzard.ups.edu/">Rob Beezer</url> et à ses collaborateurs pour la création et le développement de <url href="https://pretextbook.org">PreTeXt</url>.</p>
+          <p>
+            <idx><h>Personnes</h><h>Rob Beezer</h></idx>
+            Merci mille fois à <url href="http://buzzard.ups.edu/">Rob Beezer</url> et à ses collaborateurs pour la création et le développement de <url href="https://pretextbook.org">PreTeXt</url>.
+          </p>
         </acknowledgement>
 
         <references xml:id="references-backmatter">
@@ -358,12 +365,16 @@
             <note xml:id="note-robetal-PTXG"><p>Une ressource disponible gratuitement en ligne à <url href="https://pretextbook.org/doc/guide/html/guide-toc.html">cette adresse</url>.</p></note>
             </biblio>
 
-            <biblio type="raw" xml:id="biblio-giol-MEA">Julien Giol, <title>Mathématiques et algorithmique</title>.
-            <note xml:id="note-giol-MEA"><p>Une ressource disponible gratuitement en ligne à <url href="https://juliengiol.github.io/mea">cette adresse</url>.</p></note>
+            <biblio type="raw" xml:id="biblio-clontzlevin-PTXCLI">Steven Clontz et Oscar Levin, <title>PreTeXt-CLI</title>.
+            <note xml:id="note-clontzlevin-PTXCLI"><p>Une alternative à xsltproc en Python : plus de détails à <url href="https://pretextbook.github.io/pretext-cli/pretext-cli-documentation.html">cette adresse</url>.</p></note>
             </biblio>
 
             <biblio type="raw" xml:id="biblio-keller-PTXCS">Mitchel T. Keller, <title>PreTeXt Cheatsheet</title>.
             <note xml:id="note-keller-PTXCS"><p>Une ressource disponible gratuitement en ligne à <url href="https://rellek.net/ptx/cheatsheet/cheatsheet.html">cette adresse</url>.</p></note>
+            </biblio>
+
+            <biblio type="raw" xml:id="biblio-giol-MEA">Julien Giol, <title>Mathématiques et algorithmique</title>.
+            <note xml:id="note-giol-MEA"><p>Une ressource disponible gratuitement en ligne à <url href="https://juliengiol.github.io/mea">cette adresse</url>.</p></note>
             </biblio>
 
             <biblio type="raw" xml:id="biblio-turcotte-ALIR">Jean-Sébastien Turcotte et Philémon Turcotte, <title>Algèbre Linéaire : Intuition et rigueur</title>.
@@ -377,6 +388,12 @@
             <p>Pour finir, vous pourriez visionner <url href="https://www.youtube.com/watch?v=_c45HP8F108">en cliquant ici</url> une vidéo de 47 minutes dans laquelle Jean-Sébastien Turcotte et Philémon Turcotte présentent leur livre numérique <xref ref="biblio-turcotte-ALIR"/>, ainsi que le projet <pretext/> en général.</p>
 
         </references>
+
+        <index>
+          <title>Index</title>
+
+          <index-list />
+        </index>
 
     </backmatter>
 

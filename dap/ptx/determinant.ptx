@@ -5,6 +5,7 @@
 
 <introduction>
   <p>
+    <idx><h>Personnes</h><h>Seki Kowa</h></idx>
     À en croire <url href="https://fr.wikipedia.org/wiki/Déterminant_(mathématiques)#Premiers_calculs_de_déterminants">cette page Wikipédia</url>, le Japonais Seki Kowa fut le premier à introduire des déterminants de taille 3 et 4.
     <figure xml:id="figure-seki">
         <caption>Image de Seki Kowa dans le domaine public.</caption>
@@ -17,7 +18,7 @@
     Plus récemment, l'Anglais <url href="https://fr.wikipedia.org/wiki/Timothy_Gowers">Tim Gowers</url> a enregistré ses réflexions sur le déterminant des <url href="https://wikimonde.com/article/Matrice_de_Pascal">matrices de Pascal symétriques</url> dans une série de trois vidéos dont voici la dernière :
     <aside>Tim Gowers a reçu la <url href="https://fr.wikipedia.org/wiki/M%C3%A9daille_Fields">médaille Fields</url> en 1998 pour ses travaux en analyse fonctionnelle et en combinatoire.</aside>
     <figure>
-        <caption>Tim Gower - Pascal's determinant III.</caption>
+        <caption>Tim Gowers - Pascal's determinant III.</caption>
         <video xml:id="pascal-determinant-III" youtube="m8R9rVb0M5o" />
     </figure>
   </p>
@@ -37,7 +38,7 @@
 
   <definition>
     <p>
-      Une matrice carrée <m>A</m> de taille <m>n\times n</m> est dite <em>inversible</em> s'il existe une matrice carrée <m>B</m> de même taille telle que
+      Une matrice carrée <m>A</m> de taille <m>n\times n</m> est dite <term>inversible</term> s'il existe une matrice carrée <m>B</m> de même taille telle que
       <me>AB=BA=\mathrm{I}_n.</me>
     </p>
   </definition>
@@ -52,6 +53,7 @@
         <me>AB=BA=\mathrm{I}_n.</me>
         Raisonnons par l'absurde et supposons que <m>\det(A)</m> soit nul.
         On a alors
+        <idx><h>Mathématiques</h><h>équations alignées</h></idx>
         <md>
           <mrow>0&amp;=0\times\det(B)</mrow>
           <mrow>&amp;=\det(A)\times\det(B)</mrow>
@@ -72,8 +74,10 @@
 
   <p>
     Voici comment calculer le déterminant de la matrice
+    <idx><h>Mathématiques</h><h>équation centrée</h></idx>
     <me>\begin{bmatrix}5&amp;3&amp;1\\0&amp;-7&amp;5\\-8&amp;9&amp;0\end{bmatrix}</me>
     à l'aide de la fonction <c>det</c> du module <url href="https://numpy.org/doc/stable/reference/routines.linalg.html">linalg</url> de <url href="https://numpy.org/">NumPy</url> :
+    <idx><h>Code</h><h>cellule Python</h></idx>
 
     <sage language="python">
       <input>
@@ -86,6 +90,7 @@
   </p>
   <p>
     Et voilà comment faire la même chose avec <url href="https://www.sagemath.org/">Sage</url> :
+    <idx><h>Code</h><h>cellule SageMath</h></idx>
 
     <sage language="sage">
       <input>
@@ -115,6 +120,7 @@
   <exercise>
     <statement>
       <p>
+        <idx><h>Mathématiques</h><h>équation centrée</h></idx>
         On s'intéresse à la matrice
         <me>A:=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix}.</me>
       </p>
@@ -123,6 +129,7 @@
           <p>Calculez le déterminant de <m>A</m>.</p>
         </li>
         <li>
+          <idx><h>Mathématiques</h><h>équation au fil du texte</h></idx>
           <p>Déduisez-en le déterminant de <m>A^5</m>.</p>
         </li>
       </ol>

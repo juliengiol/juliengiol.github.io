@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-19T13:34:04-04:00       *-->
+<!--*       on 2021-05-26T16:36:27-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Table des matières</button><div class="tree-nav toolbar toolbar-divisor-3">
-<button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
 <script>
 var ggbApp = new GGBApplet({"appName": "3d",
     "width": 330,
@@ -128,19 +128,26 @@ true);
 <li class="link"><a href="curieux.html" data-scroll="curieux"><span class="codenumber">C</span> <span class="title">Pour les curieuses et les curieux</span></a></li>
 <li class="link"><a href="acknowledgement-1.html" data-scroll="acknowledgement-1"><span class="title">Remerciements</span></a></li>
 <li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">Références</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="determinant"><h2 class="heading">
 <span class="type">Chapitre</span> <span class="codenumber">1</span> <span class="title">Déterminant d'une matrice</span>
 </h2>
-<section class="introduction" id="introduction-1"><p id="p-14">À en croire <a class="external" href="https://fr.wikipedia.org/wiki/D%C3%A9terminant_(math%C3%A9matiques)#Premiers_calculs_de_d%C3%A9terminants" target="_blank">cette page Wikipédia</a>, le Japonais Seki Kowa fut le premier à introduire des déterminants de taille 3 et 4. <figure class="figure figure-like" id="figure-seki"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/seki.jpeg" class="contained" alt="Le Japonais Seki Kowa."></div>
+<section class="introduction" id="introduction-1"><p id="p-14"> À en croire <a class="external" href="https://fr.wikipedia.org/wiki/D%C3%A9terminant_(math%C3%A9matiques)#Premiers_calculs_de_d%C3%A9terminants" target="_blank">cette page Wikipédia</a>, le Japonais Seki Kowa fut le premier à introduire des déterminants de taille 3 et 4. <figure class="figure figure-like" id="figure-seki"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/seki.jpeg" class="contained" alt="Le Japonais Seki Kowa."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.0.1<span class="period">.</span></span><span class="space"> </span>Image de Seki Kowa dans le domaine public.</figcaption></figure></p>
 <p id="p-15">Plus récemment, l'Anglais <a class="external" href="https://fr.wikipedia.org/wiki/Timothy_Gowers" target="_blank">Tim Gowers</a> a enregistré ses réflexions sur le déterminant des <a class="external" href="https://wikimonde.com/article/Matrice_de_Pascal" target="_blank">matrices de Pascal symétriques</a> dans une série de trois vidéos dont voici la dernière : <aside class="aside aside-like" id="aside-1">Tim Gowers a reçu la <a class="external" href="https://fr.wikipedia.org/wiki/M%C3%A9daille_Fields" target="_blank">médaille Fields</a> en 1998 pour ses travaux en analyse fonctionnelle et en combinatoire.</aside> <figure class="figure figure-like" id="figure-2"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="pascal-determinant-III" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/m8R9rVb0M5o?&amp;modestbranding=1&amp;rel=0"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.0.2<span class="period">.</span></span><span class="space"> </span>Tim Gower - Pascal's determinant III.</figcaption></figure></p></section><nav class="summary-links"><ul>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.0.2<span class="period">.</span></span><span class="space"> </span>Tim Gowers - Pascal's determinant III.</figcaption></figure></p></section><nav class="summary-links"><ul>
 <li><a href="section-1.html"><span class="codenumber">1.1</span> <span class="title">Théorie</span></a></li>
 <li><a href="section-2.html"><span class="codenumber">1.2</span> <span class="title">Calcul</span></a></li>
 <li><a href="section-3.html"><span class="codenumber">1.3</span> <span class="title">Exercices</span></a></li>
 </ul></nav></section></div></main>
 </div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-59NNFZK0JK"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-59NNFZK0JK');
+</script><!--End: Google Global Site Tag code-->
 </body>
 </html>
