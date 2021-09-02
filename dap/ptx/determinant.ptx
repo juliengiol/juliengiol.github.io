@@ -126,11 +126,11 @@
       </p>
       <ol>
         <li>
-          <p>Calculez le déterminant de <m>A</m>.</p>
+          Calculez le déterminant de <m>A</m>.
         </li>
         <li>
           <idx><h>Mathématiques</h><h>équation au fil du texte</h></idx>
-          <p>Déduisez-en le déterminant de <m>A^5</m>.</p>
+          Déduisez-en le déterminant de <m>A^5</m>.
         </li>
       </ol>
     </statement>
@@ -143,26 +143,22 @@
     <answer>
       <ol>
         <li>
-          <p><m>-2</m>.</p>
+          <m>-2</m>.
         </li>
         <li>
-          <p><m>-32</m>.</p>
+          <m>-32</m>.
         </li>
       </ol>
     </answer>
     <solution>
       <ol>
         <li>
-          <p>
-            Grâce à la règle de calcul d'un déterminant <m>2\times 2</m>, on a
-            <me>\det(A)=1\times 4-2\times 3=-2.</me>
-          </p>
+          Grâce à la règle de calcul d'un déterminant <m>2\times 2</m>, on a
+          <me>\det(A)=1\times 4-2\times 3=-2.</me>
         </li>
         <li>
-          <p>
-            Par multiplicativité du déterminant, on a
-            <me>\det(A^5)=\left(\det(A)\right)^5=(-2)^5=-32.</me>
-          </p>
+          Par multiplicativité du déterminant, on a
+          <me>\det(A^5)=\left(\det(A)\right)^5=(-2)^5=-32.</me>
         </li>
       </ol>
     </solution>

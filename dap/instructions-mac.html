@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-26T16:36:27-04:00       *-->
+<!--*       on 2021-09-02T15:17:07-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -100,9 +100,9 @@ true);
 <li class="link frontmatter"><a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a></li>
 <li class="link">
 <a href="determinant.html" data-scroll="determinant"><span class="codenumber">1</span> <span class="title">Déterminant d'une matrice</span></a><ul>
-<li><a href="section-1.html" data-scroll="section-1">Théorie</a></li>
-<li><a href="section-2.html" data-scroll="section-2">Calcul</a></li>
-<li><a href="section-3.html" data-scroll="section-3">Exercices</a></li>
+<li><a href="determinant.html#section-1" data-scroll="section-1">Théorie</a></li>
+<li><a href="determinant.html#section-2" data-scroll="section-2">Calcul</a></li>
+<li><a href="determinant.html#section-3" data-scroll="section-3">Exercices</a></li>
 </ul>
 </li>
 <li class="link"><a href="gaussjordan.html" data-scroll="gaussjordan"><span class="codenumber">2</span> <span class="title">Méthode de Gauss-Jordan</span></a></li>
@@ -118,19 +118,20 @@ true);
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="appendix" id="instructions-mac"><h2 class="heading hide-type">
 <span class="type">Appendice</span> <span class="codenumber">A</span> <span class="title">Instructions pour Mac</span>
 </h2>
-<p id="p-35">Voici la marche à suivre pour reproduire ces pages html sur votre Mac, conformément au schéma suivant : <figure class="figure figure-like" id="figure-schema"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/schema.jpg" class="contained" alt="Principe de PreTeXt."></div>
+<p id="p-21">Voici la marche à suivre pour reproduire ces pages html sur votre Mac, conformément au schéma suivant : <figure class="figure figure-like" id="figure-schema"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/schema.jpg" class="contained" alt="Principe de PreTeXt."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.0.1<span class="period">.</span></span><span class="space"> </span>Principe de PreTeXt.</figcaption></figure></p>
 <ol class="decimal">
-<li id="li-15"><p id="p-36">Assurez-vous que xsltproc soit bien installé sur votre ordinateur : ouvrez un terminal et exécutez la commande <code class="code-inline tex2jax_ignore">xsltproc --version</code>. À ma connaissance, xsltproc est installé par défaut sur tous les Mac.</p></li>
-<li id="li-16"><p id="p-37">Téléchargez le fichier <a class="external" href="https://github.com/rbeezer/mathbook" target="_blank">mathbook-dev.zip</a> en cliquant sur le bouton intitulé Code sur la page qui se trouve au bout du lien précédent. Décompressez ce fichier et renommez le dossier obtenu mathbook. <aside class="aside aside-like" id="aside-2">PreTeXt est en constant développement : pensez à mettre à jour votre dossier mathbook régulièrement!</aside></p></li>
-<li id="li-17"><p id="p-38">Téléchargez le fichier <a class="external" href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing" target="_blank">dap.zip</a> disponible au bout du lien précédent. Décompressez ce fichier et assurez-vous que le dossier obtenu s'appelle bien dap.</p></li>
-<li id="li-18"><p id="p-39">Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.</p></li>
-<li id="li-19"><p id="p-40">Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.</p></li>
-<li id="li-20"><p id="p-41">Ouvrez un terminal à partir du dossier dap : faites un clic secondaire sur dap et choisissez l'option <em class="emphasis">Nouveau terminal au dossier</em> qui pourrait être cachée dans Services. Si cette option n'est pas déjà activée, suivez d'abord le chemin Préférences Système \(\rightarrow\) Clavier \(\rightarrow\) Raccourcis \(\rightarrow\) Services \(\rightarrow\) Nouveau terminal au dossier, et cochez la case.</p></li>
-<li id="li-21"><p id="p-42">Dans ce terminal, exécutez la très longue commande <code class="code-inline tex2jax_ignore">xsltproc -stringparam publisher publication.ptx --xinclude ../../mathbook/xsl/pretext-html.xsl ptx/principal.ptx</code> en un seul morceau.</p></li>
-<li id="li-22"><p id="p-43">Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.</p></li>
+<li id="li-15">Assurez-vous que xsltproc soit bien installé sur votre ordinateur : ouvrez un terminal et exécutez la commande <code class="code-inline tex2jax_ignore">xsltproc --version</code>. À ma connaissance, xsltproc est installé par défaut sur tous les Mac.</li>
+<li id="li-16">Téléchargez le fichier <a class="external" href="https://github.com/rbeezer/mathbook" target="_blank">mathbook-dev.zip</a> en cliquant sur le bouton intitulé Code sur la page qui se trouve au bout du lien précédent. Décompressez ce fichier et renommez le dossier obtenu mathbook. <aside class="aside aside-like" id="aside-2">PreTeXt est en constant développement : pensez à mettre à jour votre dossier mathbook régulièrement!</aside>
+</li>
+<li id="li-17">Téléchargez le fichier <a class="external" href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing" target="_blank">dap.zip</a> disponible au bout du lien précédent. Décompressez ce fichier et assurez-vous que le dossier obtenu s'appelle bien dap.</li>
+<li id="li-18">Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.</li>
+<li id="li-19">Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.</li>
+<li id="li-20">Ouvrez un terminal à partir du dossier dap : faites un clic secondaire sur dap et choisissez l'option <em class="emphasis">Nouveau terminal au dossier</em> qui pourrait être cachée dans Services. Si cette option n'est pas déjà activée, suivez d'abord le chemin Préférences Système \(\rightarrow\) Clavier \(\rightarrow\) Raccourcis \(\rightarrow\) Services \(\rightarrow\) Nouveau terminal au dossier, et cochez la case.</li>
+<li id="li-21">Dans ce terminal, exécutez la très longue commande <code class="code-inline tex2jax_ignore">xsltproc -stringparam publisher publication.ptx --xinclude ../../mathbook/xsl/pretext-html.xsl ptx/principal.ptx</code> en un seul morceau.</li>
+<li id="li-22">Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.</li>
 </ol>
-<p id="p-44">Félicitations! Vous pouvez maintenant vous rendre à l'étape 2 de la marche à suivre indiquée sur la <a class="external" href="accueil" target="_blank">page d'accueil</a>.</p></section></div></main>
+<p id="p-22">Félicitations! Vous pouvez maintenant vous rendre à l'étape 2 de la marche à suivre indiquée sur la <a class="external" href="accueil" target="_blank">page d'accueil</a>.</p></section></div></main>
 </div>
 <!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-59NNFZK0JK"></script><script>  window.dataLayer = window.dataLayer || [];

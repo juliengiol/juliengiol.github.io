@@ -58,13 +58,13 @@
           Pour
           <ul>
             <li>
-              <p>illustrer les principales possibilités offertes par <pretext />, et</p>
+              illustrer les principales possibilités offertes par <pretext />, et
             </li>
             <li>
-              <p>fournir un premier exemple en Français comme base pour</p>
+              fournir un premier exemple en Français comme base pour
             </li>
             <li>
-              <p>s'initier à ce système gratuit d'édition de documents numériques dynamiques.</p>
+              s'initier à ce système gratuit d'édition de documents numériques dynamiques.
             </li>
           </ul>
         </p>
@@ -73,33 +73,25 @@
           <p>
             <ol>
               <li>
-                <p>
-                  Suivez les instructions de l'appendice <xref ref="instructions-mac"/> pour Mac ou de l'appendice <xref ref="instructions-windows"/> pour Windows, selon le système d'exploitation de votre ordinateur.
-                  Si vous utilisez Linux, vous n'avez pas besoin de mon aide et vous pouvez vous rendre directement à l'étape 4.
-                </p>
+                Suivez les instructions de l'appendice <xref ref="instructions-mac"/> pour Mac ou de l'appendice <xref ref="instructions-windows"/> pour Windows, selon le système d'exploitation de votre ordinateur.
+                Si vous utilisez Linux, vous n'avez pas besoin de mon aide et vous pouvez vous rendre directement à l'étape 4.
               </li>
               <li>
-                <p>
-                  Parcourez les pages html que vous venez de créer et qui correspondent précisément à ce que vous êtes en train de lire.
-                  Essayez de faire le lien entre le résultat (fichiers html) et la source (fichiers ptx) qui se trouvent dans le dossier dap.
-                  Pour ouvrir les fichiers ptx, prenez votre éditeur de texte préféré.
-                  Si vous n'en avez pas, je recommande <url href="https://atom.io/">Atom</url>.
-                </p>
+                Parcourez les pages html que vous venez de créer et qui correspondent précisément à ce que vous êtes en train de lire.
+                Essayez de faire le lien entre le résultat (fichiers html) et la source (fichiers ptx) qui se trouvent dans le dossier dap.
+                Pour ouvrir les fichiers ptx, prenez votre éditeur de texte préféré.
+                Si vous n'en avez pas, je recommande <url href="https://atom.io/">Atom</url>.
               </li>
               <li>
-                <p>
-                  Si vous êtes curieux ou curieuse, suivez les instructions de l'appendice <xref ref="curieux"/>.
-                  Sinon<fn><p>Sinon? Vraiment?</p></fn>, passez directement à l'étape suivante.
-                </p>
+                Si vous êtes curieux ou curieuse, suivez les instructions de l'appendice <xref ref="curieux"/>.
+                Sinon<fn><p>Sinon? Vraiment?</p></fn>, passez directement à l'étape suivante.
               </li>
               <li>
-                <p>
-                  Ce document ne donne qu'un bref aperçu.
-                  Je vous suggère ensuite de consulter les très nombreuses ressources disponibles sur le <url href="https://pretextbook.org">site du projet PreTeXt</url>, ainsi que le forum de soutien <url href="https://groups.google.com/g/pretext-support">PreTeXt support</url>.
-                </p>
+                Ce document ne donne qu'un bref aperçu.
+                Je vous suggère ensuite de consulter les très nombreuses ressources disponibles sur le <url href="https://pretextbook.org">site du projet PreTeXt</url>, ainsi que le forum de soutien <url href="https://groups.google.com/g/pretext-support">PreTeXt support</url>.
               </li>
               <li>
-                <p>Lancez-vous et créez votre propre document <pretext/>!</p>
+                Lancez-vous et créez votre propre document <pretext/>!
               </li>
             </ol>
           </p>
@@ -142,44 +134,34 @@
             </p>
             <ol>
               <li>
-                <p>
-                  Assurez-vous que xsltproc soit bien installé sur votre ordinateur : ouvrez un terminal et exécutez la commande <c>xsltproc --version</c>.
-                  À ma connaissance, xsltproc est installé par défaut sur tous les Mac.
-                </p>
+                Assurez-vous que xsltproc soit bien installé sur votre ordinateur : ouvrez un terminal et exécutez la commande <c>xsltproc --version</c>.
+                À ma connaissance, xsltproc est installé par défaut sur tous les Mac.
               </li>
               <li>
-                <p>
-                  Téléchargez le fichier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> en cliquant sur le bouton intitulé Code sur la page qui se trouve au bout du lien précédent.
-                  Décompressez ce fichier et renommez le dossier obtenu mathbook.
-                  <aside><pretext/> est en constant développement : pensez à mettre à jour votre dossier mathbook régulièrement!</aside>
-                </p>
+                Téléchargez le fichier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> en cliquant sur le bouton intitulé Code sur la page qui se trouve au bout du lien précédent.
+                Décompressez ce fichier et renommez le dossier obtenu mathbook.
+                <aside><pretext/> est en constant développement : pensez à mettre à jour votre dossier mathbook régulièrement!</aside>
               </li>
               <li>
-                <p>
-                  Téléchargez le fichier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dap.zip</url> disponible au bout du lien précédent.
-                  Décompressez ce fichier et assurez-vous que le dossier obtenu s'appelle bien dap.
-                </p>
+                Téléchargez le fichier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dap.zip</url> disponible au bout du lien précédent.
+                Décompressez ce fichier et assurez-vous que le dossier obtenu s'appelle bien dap.
               </li>
               <li>
-                <p>Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.</p>
+                Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.
               </li>
               <li>
-                <p>Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.</p>
+                Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.
               </li>
               <li>
-                <p>
-                  Ouvrez un terminal à partir du dossier dap : faites un clic secondaire sur dap et choisissez l'option <em>Nouveau terminal au dossier</em> qui pourrait être cachée dans Services.
-                  Si cette option n'est pas déjà activée, suivez d'abord le chemin Préférences Système <m>\rightarrow</m> Clavier <m>\rightarrow</m> Raccourcis <m>\rightarrow</m> Services <m>\rightarrow</m> Nouveau terminal au dossier, et cochez la case.
-                </p>
+                Ouvrez un terminal à partir du dossier dap : faites un clic secondaire sur dap et choisissez l'option <em>Nouveau terminal au dossier</em> qui pourrait être cachée dans Services.
+                Si cette option n'est pas déjà activée, suivez d'abord le chemin Préférences Système <m>\rightarrow</m> Clavier <m>\rightarrow</m> Raccourcis <m>\rightarrow</m> Services <m>\rightarrow</m> Nouveau terminal au dossier, et cochez la case.
               </li>
               <li>
-                <p>
-                  Dans ce terminal, exécutez la très longue commande
-                  <c>xsltproc -stringparam publisher publication.ptx --xinclude ../../mathbook/xsl/pretext-html.xsl ptx/principal.ptx</c> en un seul morceau.
-                </p>
+                Dans ce terminal, exécutez la très longue commande
+                <c>xsltproc -stringparam publisher publication.ptx --xinclude ../../mathbook/xsl/pretext-html.xsl ptx/principal.ptx</c> en un seul morceau.
               </li>
               <li>
-                <p>Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.</p>
+                Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.
               </li>
             </ol>
             <p>
@@ -201,44 +183,38 @@
             </p>
             <ol>
               <li>
-                <p>
-                  Le logiciel xsltproc est-il installé?
-                  Pour le savoir, ouvrez un terminal <em>Invite de commandes</em> / <em>Command Prompt</em> et exécutez la commande <c>xsltproc --version</c>.
-                  À ma connaissance, xsltproc n'est jamais installé par défaut sur un PC Windows.
-                  Si vous avez de la chance et qu'il est installé, rendez-vous directement à l'étape 3.
-                  Sinon, respirez un bon coup et passez à l'étape suivante.
-                </p>
+                Le logiciel xsltproc est-il installé?
+                Pour le savoir, ouvrez un terminal <em>Invite de commandes</em> / <em>Command Prompt</em> et exécutez la commande <c>xsltproc --version</c>.
+                À ma connaissance, xsltproc n'est jamais installé par défaut sur un PC Windows.
+                Si vous avez de la chance et qu'il est installé, rendez-vous directement à l'étape 3.
+                Sinon, respirez un bon coup et passez à l'étape suivante.
               </li>
               <li>
                 <p>Voici une façon d'installer xsltproc pour Windows.</p>
                 <ol>
                   <li>
-                    <p>
-                      Téléchargez le fichier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">xsltproc.zip</url> disponible au bout du lien précédent.
-                      Décompressez ce fichier et vérifiez que vous obtenez bien un dossier intitulé xsltproc à l'intérieur duquel se trouvent cinq fichier dll et deux fichier exe, dont xsltproc.exe.
-                    </p>
+                    Téléchargez le fichier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">xsltproc.zip</url> disponible au bout du lien précédent.
+                    Décompressez ce fichier et vérifiez que vous obtenez bien un dossier intitulé xsltproc à l'intérieur duquel se trouvent cinq fichier dll et deux fichier exe, dont xsltproc.exe.
                   </li>
                   <li>
-                    <p>
-                      Placez le dossier xsltproc à la <url href="https://fr.wikipedia.org/wiki/R%C3%A9pertoire_racine">racine</url> de votre disque dur.
-                      Il devrait alors côtoyer des dossiers comme Program Files, Users, et Windows.
-                      Vous pouvez le placer ailleurs si vous préférez, mais vous devrez alors adapter ce qui suit en fonction de votre choix.
-                    </p>
+                    Placez le dossier xsltproc à la <url href="https://fr.wikipedia.org/wiki/R%C3%A9pertoire_racine">racine</url> de votre disque dur.
+                    Il devrait alors côtoyer des dossiers comme Program Files, Users, et Windows.
+                    Vous pouvez le placer ailleurs si vous préférez, mais vous devrez alors adapter ce qui suit en fonction de votre choix.
                   </li>
                   <li>
                     <p>Il reste à expliquer à Windows où se trouve ce nouveau logiciel pour pouvoir l'utiliser à partir d'un terminal.</p>
                     <ol>
                       <li>
-                        <p>Cliquez sur la loupe en bas à gauche, puis cherchez et sélectionnez <em>Modifier les variables d’environnement système</em> / <em>Edit the system environment variables</em>.</p>
+                        Cliquez sur la loupe en bas à gauche, puis cherchez et sélectionnez <em>Modifier les variables d’environnement système</em> / <em>Edit the system environment variables</em>.
                       </li>
                       <li>
-                        <p>En bas à droite de la fenêtre qui vient de s'ouvrir, cliquez sur <em>Variables d'environnement</em> / <em>Environment Variables</em>.</p>
+                        En bas à droite de la fenêtre qui vient de s'ouvrir, cliquez sur <em>Variables d'environnement</em> / <em>Environment Variables</em>.
                       </li>
                       <li>
-                        <p>En bas à droite de la fenêtre qui vient de s'ouvrir, utilisez <em>Nouvelle</em> / <em>New</em>,  ou <em>Modifier</em> / <em>Edit</em> de façon à créer ou modifier une variable intitulée PATH.</p>
+                        En bas à droite de la fenêtre qui vient de s'ouvrir, utilisez <em>Nouvelle</em> / <em>New</em>,  ou <em>Modifier</em> / <em>Edit</em> de façon à créer ou modifier une variable intitulée PATH.
                       </li>
                       <li>
-                        <p>Dans la fenêtre qui vient de s'ouvrir, entrez <c>C:\xsltproc</c> puis cliquez sur <em>OK</em>.</p>
+                        Dans la fenêtre qui vient de s'ouvrir, entrez <c>C:\xsltproc</c> puis cliquez sur <em>OK</em>.
                       </li>
                     </ol>
                     <p>
@@ -264,40 +240,32 @@
                 </ol>
               </li>
               <li>
-                <p>
-                  Téléchargez le fichier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> en cliquant sur le bouton intitulé Code sur la page qui se trouve au bout du lien précédent.
-                  Décompressez ce fichier et renommez le dossier obtenu mathbook.
-                  <aside><pretext/> est en constant développement : pensez à mettre à jour votre dossier mathbook régulièrement!</aside>
-                </p>
+                Téléchargez le fichier <url href="https://github.com/rbeezer/mathbook">mathbook-dev.zip</url> en cliquant sur le bouton intitulé Code sur la page qui se trouve au bout du lien précédent.
+                Décompressez ce fichier et renommez le dossier obtenu mathbook.
+                <aside><pretext/> est en constant développement : pensez à mettre à jour votre dossier mathbook régulièrement!</aside>
               </li>
               <li>
-                <p>
-                  Téléchargez le fichier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dap.zip</url> disponible au bout du lien précédent.
-                  Décompressez ce fichier et assurez-vous que le dossier obtenu s'appelle bien dap.
-                </p>
+                Téléchargez le fichier <url href="https://drive.google.com/drive/folders/1vFY045D0bnMgwKdaK3r8XHNze_ARE_5-?usp=sharing">dap.zip</url> disponible au bout du lien précédent.
+                Décompressez ce fichier et assurez-vous que le dossier obtenu s'appelle bien dap.
               </li>
               <li>
-                <p>Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.</p>
+                Créez un dossier intitulé localPreTeXt où vous voulez sur votre ordinateur, puis placez mathbook dans localPreTeXt.
               </li>
               <li>
-                <p>Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.</p>
+                Créez un dossier intitulé mesLivres à côté de mathbook dans localPreTeXt, puis placez dap dans mesLivres.
               </li>
               <li>
-                <p>Rendez-vous dans le dossier dap : vous devriez voir un dossier images et un dossier ptx.</p>
+                Rendez-vous dans le dossier dap : vous devriez voir un dossier images et un dossier ptx.
               </li>
               <li>
-                <p>
-                  Dans la barre de chemin du dossier dap, cliquez sur la flèche vers le bas, remplacez le chemin par les trois lettres cmd, puis tapez la touche Entrée : ceci devrait ouvrir un terminal <em>Invite de commandes</em> / <em>Command Prompt</em> agissant au niveau de \localPreTeXt\mesLivres\dap.
-                </p>
+                Dans la barre de chemin du dossier dap, cliquez sur la flèche vers le bas, remplacez le chemin par les trois lettres cmd, puis tapez la touche Entrée : ceci devrait ouvrir un terminal <em>Invite de commandes</em> / <em>Command Prompt</em> agissant au niveau de \localPreTeXt\mesLivres\dap.
               </li>
               <li>
-                <p>
-                  Dans ce terminal, exécutez la très longue commande
-                  <c>xsltproc -stringparam publisher publication.ptx --xinclude ..\..\mathbook\xsl\pretext-html.xsl ptx\principal.ptx</c> en un seul morceau.
-                </p>
+                Dans ce terminal, exécutez la très longue commande
+                <c>xsltproc -stringparam publisher publication.ptx --xinclude ..\..\mathbook\xsl\pretext-html.xsl ptx\principal.ptx</c> en un seul morceau.
               </li>
               <li>
-                <p>Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.</p>
+                Dans le dossier dap, cherchez le fichier index.html et ouvrez-le.
               </li>
             </ol>
             <p>
@@ -314,25 +282,21 @@
             </p>
             <ol>
               <li>
-                <p>
-                  Dans le dossier dap/ptx, trouvez le fichier principal.ptx et ouvrez-le avec votre éditeur de texte favori.
-                  Si vous n'en avez pas, je recommande <url href="https://atom.io/">Atom</url>.
-                </p>
+                Dans le dossier dap/ptx, trouvez le fichier principal.ptx et ouvrez-le avec votre éditeur de texte favori.
+                Si vous n'en avez pas, je recommande <url href="https://atom.io/">Atom</url>.
               </li>
               <li>
-                <p>Cherchez et effacez les instructions <c>&lt;!--</c> et <c>--&gt;</c>.</p>
+                Cherchez et effacez les instructions <c>&lt;!--</c> et <c>--&gt;</c>.
               </li>
               <li>
-                <p>Sauvegardez le fichier principal.ptx.</p>
+                Sauvegardez le fichier principal.ptx.
               </li>
               <li>
-                <p>
-                  Exécutez la très longue commande xsltproc à partir du terminal déjà ouvert.
-                  Il n'est pas nécessaire de l'entrer à nouveau : sur votre clavier, la flèche vers le haut vous permet de parcourir les dernières instructions passées par le terminal.
-                </p>
+                Exécutez la très longue commande xsltproc à partir du terminal déjà ouvert.
+                Il n'est pas nécessaire de l'entrer à nouveau : sur votre clavier, la flèche vers le haut vous permet de parcourir les dernières instructions passées par le terminal.
               </li>
               <li>
-                <p>Observez ce qui vient de se passer sur les pages html.</p>
+                Observez ce qui vient de se passer sur les pages html.
               </li>
             </ol>
             <p>
