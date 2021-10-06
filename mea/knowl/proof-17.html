@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:47-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:46-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="hiddenproof"><h6 class="heading"><span class="type">Démonstration</span></h6>
-<p>Commençons par vérifier que le polynôme interpolateur est bien celui annoncé.</p>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Démonstration</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Commençons par vérifier que le polynôme interpolateur est bien celui annoncé.</p>
 <p>D'après la remarque <a class="xref" data-knowl="./knowl/lagrangeEtNewtonTroisPoints.html" title="Remarque 7.1.8">7.1.8</a>, on a</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 N(t)&amp;=f(c)+\frac{f(m)-f(c)}{m-c}(t-c)+\frac{\frac{f(d)-f(m)}{d-m}-\frac{f(m)-f(c)}{m-c}}{d-c}(t-c)(t-m)\\
 &amp;=f(c)+\frac{f(m)-f(c)}{\frac{\Delta x}{2}}(t-c)+\frac{\frac{f(d)-f(m)}{\frac{\Delta x}{2}}-\frac{f(m)-f(c)}{\frac{\Delta x}{2}}}{\Delta x}(t-c)(t-m)\\
@@ -23,16 +25,16 @@ N(t)&amp;=f(c)+\frac{f(m)-f(c)}{m-c}(t-c)+\frac{\frac{f(d)-f(m)}{d-m}-\frac{f(m)
 \end{align*}
 </div>
 <p>Notons ensuite que par linéarité de l'intégrale, on a</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \int_c^dN(t)\mathrm{d}t=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3
 \end{equation*}
 </div>
-<p data-braille="continuation">où</p>
+<p class="continuation">où</p>
 <ul class="disc">
 <li>
 <p>la première intégrale vaut</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 I_1&amp;=\int_c^d1\mathrm{d}t\\
 &amp;=t\,\Bigg\vert_c^d\\
@@ -43,7 +45,7 @@ I_1&amp;=\int_c^d1\mathrm{d}t\\
 </li>
 <li>
 <p>la deuxième intégrale vaut</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 I_2&amp;=\int_c^d(t-c)\mathrm{d}t\\
 &amp;=\frac{(t-c)^2}{2}\Bigg\vert_c^d\\
@@ -54,7 +56,7 @@ I_2&amp;=\int_c^d(t-c)\mathrm{d}t\\
 </li>
 <li>
 <p>et la troisième intégrale vaut</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
 &amp;=\int_c^d(t-c)\left(t-c-\frac{\Delta x}{2}\right)\mathrm{d}t\\
@@ -68,7 +70,7 @@ I_3&amp;=\int_c^d(t-c)(t-m)\mathrm{d}t\\
 </li>
 </ul>
 <p>On a donc</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 \int_c^dN(t)\mathrm{d}t&amp;=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3\\
 &amp;=f(c)\cdot\Delta x+\frac{2(f(m)-f(c))}{\Delta x}\cdot\frac{(\Delta x)^2}{2}\\

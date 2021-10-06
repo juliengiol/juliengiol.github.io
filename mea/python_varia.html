@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:51:19-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:22:21-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="fr-FR">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>M&amp;A Affichage, commentaires et variables</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
@@ -57,20 +59,21 @@ MathJax.Hub.Config({
                            languages: ['python'],
                            evalButtonText: 'Évaluer (Python)'});
 });
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/colors_blue_green.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Évaluer (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_green.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+<a class="assistive" href="#content">Avancer</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
 \newcommand{\myequation}[2]{#1\amp =#2} 
 \newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
 \newcommand{\testingescapedpercent}{ \% } 
@@ -84,15 +87,15 @@ MathJax.Hub.Config({
 <p class="byline">Julien Giol</p>
 </div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="aide-memoire-python.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="aide-memoire-python.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="python_operateurs.html" title="Suivant">Suivant</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Table des matières</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="aide-memoire-python.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="aide-memoire-python.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="python_operateurs.html" title="Suivant">Suivant</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="aide-memoire-python.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="aide-memoire-python.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="python_operateurs.html" title="Suivant">Suivant</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Table des matières</button><a class="previous-button toolbar-item button" href="aide-memoire-python.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="aide-memoire-python.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="python_operateurs.html" title="Suivant">Suivant</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
 <a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
@@ -228,44 +231,44 @@ MathJax.Hub.Config({
 <li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">Bibliographie</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="python_varia"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="python_varia"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">C.1</span> <span class="title">Affichage, commentaires et variables</span>
 </h2>
-<a href="python_varia.html" class="permalink">¶</a><article class="paragraphs" id="paragraphs-11"><h5 class="heading"><span class="title">Affichage avec <code class="code-inline tex2jax_ignore">print()</code>.</span></h5>
+<section class="paragraphs" id="paragraphs-11"><h5 class="heading"><span class="title">Affichage avec <code class="code-inline tex2jax_ignore">print()</code>.</span></h5>
 <ul class="disc">
 <li id="li-1345">
-<p id="p-2159">Afficher un nombre :</p>
+<p id="p-2156">Afficher un nombre :</p>
 <div class="sagecell-python" id="sage-63"><script type="text/x-sage">print(55)
 </script></div>
 </li>
 <li id="li-1346">
-<p id="p-2160">Afficher une chaîne de caractères :</p>
+<p id="p-2157">Afficher une chaîne de caractères :</p>
 <div class="sagecell-python" id="sage-64"><script type="text/x-sage">print('Bonjour !')
 </script></div>
 </li>
-</ul></article><article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Commenter du code avec <code class="code-inline tex2jax_ignore">#</code>.</span></h5>
+</ul></section><section class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Commenter du code avec <code class="code-inline tex2jax_ignore">#</code>.</span></h5>
 <ul class="disc">
 <li id="li-1347">
-<p id="p-2161">Ajouter une ligne de commentaires :</p>
+<p id="p-2158">Ajouter une ligne de commentaires :</p>
 <div class="sagecell-python" id="sage-65"><script type="text/x-sage"># commentaire sans aucune influence sur la sortie
 print(55)
 </script></div>
 </li>
 <li id="li-1348">
-<p id="p-2162">Commenter à droite d'une ligne de code :</p>
+<p id="p-2159">Commenter à droite d'une ligne de code :</p>
 <div class="sagecell-python" id="sage-66"><script type="text/x-sage">print('Bonjour !') # commande pour afficher Bonjour !
 </script></div>
 </li>
-</ul></article><article class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Variables.</span></h5>
+</ul></section><section class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Variables.</span></h5>
 <ul class="disc">
 <li id="li-1349">
-<p id="p-2163">Assigner une valeur à une variable et l'afficher  :</p>
+<p id="p-2160">Assigner une valeur à une variable et l'afficher  :</p>
 <div class="sagecell-python" id="sage-67"><script type="text/x-sage">x = 5 # assigne la valeur 5 à la variable x
 print(x) # affiche x
 </script></div>
 </li>
 <li id="li-1350">
-<p id="p-2164">Modifier des variables :</p>
+<p id="p-2161">Modifier des variables :</p>
 <div class="sagecell-python" id="sage-68"><script type="text/x-sage">x, y = 5, 3 # assignation simultanée de 5 à x et de 3 à y
 somme = x + y # la variable somme contient 8
 print(somme)
@@ -274,16 +277,16 @@ print(somme)
 </script></div>
 </li>
 <li id="li-1351">
-<p id="p-2165">Échanger les contenus de deux variables :</p>
+<p id="p-2162">Échanger les contenus de deux variables :</p>
 <div class="sagecell-python" id="sage-69"><script type="text/x-sage">x, y = 5, 3
 print(x, y) # affichage simultané de x et de y
 x, y = y, x # échange simultané des contenus de x et de y
 print(x, y)
 </script></div>
 </li>
-</ul></article></section></div></main>
+</ul></section></section></div></main>
 </div>
-<!--Start: StatCounter code--><script>
+<!--Start: StatCounter code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***        GET YOUR OWN FROM STATCOUNTER           ***--><script>
 var sc_project=12152300;
 var sc_invisible=1;
 var sc_security="5132c4de";
@@ -291,7 +294,7 @@ var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "
 document.write("<sc"+"ript src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
 </script><noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12152300/0/5132c4de/1/" alt="web analytics"></a></div></noscript>
 <!--End: StatCounter code-->
-<!--Start: Google Global Site Tag code-->
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-8"></script><script>  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());

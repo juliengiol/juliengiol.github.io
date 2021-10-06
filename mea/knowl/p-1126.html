@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:39-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:39-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On peut donc prendre \(M:=96{,}96\) pour appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> :</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>Comme \(x^2\ge 0\) et comme la fonction \(\ln\) est croissante, on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x^2+1\ge 1\quad\text{et}\quad\ln(x^2+1)\ge\ln(1)=0,
+\end{equation*}
+</div>
+<p class="continuation">d'où</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{x^2+1}\le\frac{1}{0+1}=1\quad\text{et}\quad\frac{1}{\ln(x^2+1)+1}\le\frac{1}{0+1}=1
+\end{equation*}
+</div>
+<p class="continuation">pour tout \(x\text{.}\) On en déduit que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-|\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{96{,}96\cdot(4-2)^3}{12\cdot 4^2}\\
-&amp;=4{,}040.
+|h''(x)|&amp;=\left|\frac{2-2x^2}{(x^2+1)^2(\ln(x^2+1)+1))}-\frac{4x^2}{(x^2+1)^2(\ln(x^2+1)+1))^2}\right|\\
+&amp;\le\left|\frac{2-2x^2}{(x^2+1)^2(\ln(x^2+1)+1))}\right|+\left|\frac{4x^2}{(x^2+1)^2(\ln(x^2+1)+1))^2}\right|\\
+&amp;=\frac{|2-2x^2|}{(x^2+1)^2(\ln(x^2+1)+1))}+\frac{4x^2}{(x^2+1)^2(\ln(x^2+1)+1))^2}\\
+&amp;\le\frac{2+2x^2}{(x^2+1)^2(\ln(x^2+1)+1))}+\frac{4x^2}{(x^2+1)^2(\ln(x^2+1)+1))^2}\\
+&amp;\le\frac{2+2\cdot 2^2}{1^2\cdot 1}+\frac{4\cdot 2^2}{1^2\cdot 1^2}\\
+&amp;=26
 \end{align*}
 </div>
+<p class="continuation">pour tout \(x\in[-1;2]\text{.}\)</p>
 <span class="incontext"><a href="exercicestrapezes.html#p-1126">Contexte</a></span>
 </body>
 </html>

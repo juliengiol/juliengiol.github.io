@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:51:30-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:22:33-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>En utilisant une variable <code class="code-inline tex2jax_ignore">compteur</code> et une boucle <code class="code-inline tex2jax_ignore">while</code>, codez une fonction <code class="code-inline tex2jax_ignore">combienDeDeux1(n)</code> qui renvoie le nombre de fois que \(\text{n}\) est divisible par \(2\text{.}\)</p>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<ol class="decimal">
+<li><pre class="code-block tex2jax_ignore">def combienDeDeux1(n):
+    compteur = 0
+    while n % 2 == 0:
+        compteur = compteur + 1
+        n = n / 2
+    return compteur
+
+print(combienDeDeux1(45))
+print(combienDeDeux1(24))
+</pre></li>
+<li><pre class="code-block tex2jax_ignore">def combienDeDeux2(n):
+    if n % 2 != 0:
+        return 0
+    else:
+        return 1 + combienDeDeux2(n / 2)
+
+print(combienDeDeux2(45))
+print(combienDeDeux2(24))
+</pre></li>
+</ol>
 <span class="incontext"><a href="exercicesfonctions.html#p-224">Contexte</a></span>
 </body>
 </html>

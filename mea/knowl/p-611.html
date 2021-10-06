@@ -1,39 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:51:57-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:00-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Soit \(f(x)=x^4+2x^2-1\text{.}\)</p>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
 <ol class="decimal">
-<li>Montrez que la fonction \(f\) admet un unique zéro dans l'intervalle \(]0;1[\text{.}\)</li>
 <li>
-<p>Utilisez la méthode de la bissection pour montrer que</p>
-<div class="displaymath">
+<p>La fonction \(f\) est continue sur l'intervalle \([0;1]\) car c'est un polynôme. Comme</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-c\in\;]0{,}5;0{,}75[.
+f(0)\cdot f(1)=(-1)\cdot 2&lt;0,
+\end{equation*}
+</div>
+<p class="continuation">le théorème des valeurs intermédiaires implique que \(f\) admet un zéro \(c\) dans l'intervalle \(]0;1[\text{.}\)</p>
+<p>Par ailleurs, on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f'(x)=4x^3+4x=4x(x^2+1).
+\end{equation*}
+</div>
+<p class="continuation">Comme \(x&gt;0\) et \(x^2+1&gt;0\) pour tout \(x\in\;]0;1[\text{,}\) on voit que \(f'(x)&gt;0\) dans cet intervalle. Donc \(f\) est strictement croissante sur \(]0;1[\text{,}\) et elle ne peut pas s'y annuler plus qu'une fois.</p>
+</li>
+<li><ul class="disc">
+<li>
+<p>Itération 1 :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{ c&lt;{{}} c &gt;{{}}c }
+a=0 &amp; m=0{,}5 &amp; b=1\\
+f(a)=-1 &amp; f(m)=-0{,}4375 &amp; f(b)=2
+\end{array}
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{d'où}\quad c\in\;]0{,}5;1[.
 \end{equation*}
 </div>
 </li>
 <li>
-<p>À partir de cet encadrement, on souhaite affiner l'approximation de \(c\) en utlisant la méthode de Newton-Raphson. Quelle valeur de départ faut-il choisir :</p>
-<div class="displaymath">
+<p>Itération 2 :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-x_0=0{,}5\quad\text{ou}\quad x_0=0{,}75?
+\begin{array}{ c&lt;{{}} c &gt;{{}}c }
+a=0{,}5 &amp; m=0{,}75 &amp; b=1 \\
+f(a)=-0{,}4375 &amp; f(m)=0{,}441\,406\,25 &amp; f(b)=2
+\end{array}
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{d'où}\quad c\in\;]0{,}5;0{,}75[.
 \end{equation*}
 </div>
 </li>
-<li>Utilisez le code de l'exercice <a class="xref" data-knowl="./knowl/newtonaffichetout.html" title="Exercice 5.3.3">5.3.3</a> pour effectuer trois itérations de la méthode de Newton-Raphson en partant de la valeur \(x_0\) choisie à la question précédente.</li>
-<li>Quelles sont les deux premières décimales de \(c\text{?}\)</li>
+</ul></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">On a \(f''(x)=12x^2+4&gt;0\) pour tout \(x\in\mathbb{R}\) et on a déjà vu que \(f'(x)&gt;0\) pour tout \(x\in\;]0;1[\text{.}\) Les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.7: Méthode de Newton-Raphson">5.1.7</a> sont donc vérifiées avec \(b=1\) et c'est \(x_0=0{,}75\text{,}\) la valeur à droite du zéro, qu'il faut choisir.</p></li>
+<li>
+<p>Voici le <a class="external" href="https://tinyurl.com/fruwxm2a" target="_blank">code à utiliser</a>, et voilà les valeurs trouvées, après arrondissement :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+x_1&amp;\approx 0{,}655\,833\,333\,333;\\
+x_2&amp;\approx 0{,}643\,775\,873\,119;\\
+x_3&amp;\approx 0{,}643\,594\,293\,534.
+\end{align*}
+</div>
+</li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Comme \(f'(c)\ne 0\text{,}\) on s'attend à ce que le nombre de décimales exactes de \(c\) double grosso modo à chaque itération. Par ailleurs, d'après le théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.7: Méthode de Newton-Raphson">5.1.7</a>, la suite \(\{x_n\}\) est strictement décroissante. On déduit donc des calculs précédents que les deux premières décimales de \(c\) sont \(64\text{.}\)</p></li>
 </ol>
 <span class="incontext"><a href="exercicesnewton.html#p-611">Contexte</a></span>
 </body>

@@ -1,50 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:51:32-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:22:34-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Pour bien comprendre comment programmer cela, il suffit de penser à la façon dont on effectue le calcul de \(P(x)\) une paire de parenthèses après l'autre. Par exemple, pour le polynôme</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>La complexité de cet algorithme</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P(x)=10+7x+3x^2+5x^3,
+T(n)=2n
 \end{equation*}
 </div>
-<p data-braille="continuation">le calcul de</p>
-<div class="displaymath">
-\begin{align*}
-P(9)&amp;=10+7\cdot 9+3\cdot 9^2+5\cdot 9^3\\
-&amp;=10+9\cdot(7+3\cdot 9+5\cdot 9^2)\\
-&amp;=10+9\cdot(7+9\cdot(3+9\cdot 5))
-\end{align*}
-</div>
-<p data-braille="continuation">par la méthode de Horner revient à calculer les valeurs successives</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{llll}
-\text{Étape 0 :}&amp;valeur&amp;=&amp;5\\
-\text{Étape 1 :}&amp;valeur&amp;=&amp;3+9\cdot 5=48\\
-\text{Étape 2 :}&amp;valeur&amp;=&amp;7+9\cdot 48=439\\
-\text{Étape 3 :}&amp;valeur&amp;=&amp;10+9\cdot 439=3961
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">dont la dernière donne</p>
-<div class="displaymath">
-\begin{equation*}
-P(9)=3961
-\end{equation*}
-</div>
-<p data-braille="continuation">après trois additions et trois multiplications.</p>
+<p class="continuation">est linéaire, donc bien meilleure que la complexité quadratique obtenue par l'approche naïve, comme l'illustrent les graphes ci-après. <figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" src="https://www.desmos.com/calculator/qhvlpnvcmh" id="desmos-lineaire-quadratique" width="600" height="480"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Linéaire vs quadratique</figcaption></figure></p>
 <span class="incontext"><a href="horner.html#p-270">Contexte</a></span>
 </body>
 </html>

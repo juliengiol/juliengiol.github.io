@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:51:32-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:22:35-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
@@ -29,35 +31,35 @@
 </script>
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">Algorithme 1 : Formule de Binet.</span></h5>
-<p>Comme \((F_n)\) est une <a class="external" href="https://fr.wikipedia.org/wiki/Suite_r%C3%A9currente_lin%C3%A9aire" target="_blank">suite récurrente linéaire</a>, il est possible d'exprimer son terme général à l'aide d'une formule explicite.</p>
-<article class="theorem theorem-like"><h6 class="heading">
+<section class="paragraphs"><h5 class="heading"><span class="title">Algorithme 1 : Formule de Binet.</span></h5>
+<p xmlns:svg="http://www.w3.org/2000/svg">Comme \((F_n)\) est une <a class="external" href="https://fr.wikipedia.org/wiki/Suite_r%C3%A9currente_lin%C3%A9aire" target="_blank">suite récurrente linéaire</a>, il est possible d'exprimer son terme général à l'aide d'une formule explicite.</p>
+<article class="theorem theorem-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
 </h6>
 <p>Pour tout \(n\ge 3\text{,}\) on a</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 F_n=\frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}-\frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}.
 \end{equation*}
-</div></article><article class="hiddenproof"><a class="original" data-knowl="./knowl/proof-1-hidden.html" title="Démonstration 3.4.3.1"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><p>Dans cette formule, seul le premier terme importe vraiment. En effet, comme</p>
-<div class="displaymath">
+</div></article><article class="hiddenproof"><a class="proof-knowl original" data-knowl="./knowl/proof-1-hidden.html" title="Démonstration 3.4.3.1"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><p>Dans cette formule, seul le premier terme importe vraiment. En effet, comme</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \left|\frac{1-\sqrt{5}}{2}\right|\approx 0{,}62,
 \end{equation*}
 </div>
-<p data-braille="continuation">le terme</p>
-<div class="displaymath">
+<p class="continuation">le terme</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}
 \end{equation*}
 </div>
-<p data-braille="continuation">est assez petit pour que \(F_n\) soit égal à l'entier le plus proche de</p>
-<div class="displaymath">
+<p class="continuation">est assez petit pour que \(F_n\) soit égal à l'entier le plus proche de</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}.
 \end{equation*}
 </div>
-<p>Évaluez le code suivant pour calculer \(F_{50}\) à l'aide de la formule de Binet. <div class="sagecell-python" id="sage-48"><script type="text/x-sage"># entrée :
+<p xmlns:svg="http://www.w3.org/2000/svg">Évaluez le code suivant pour calculer \(F_{50}\) à l'aide de la formule de Binet. <div class="sagecell-python" id="sage-48"><script type="text/x-sage"># entrée :
 n = 50
 # instructions :
 from math import sqrt
@@ -65,6 +67,6 @@ x = (1 + sqrt(5)) ** n / (2 ** n * sqrt(5))
 # sortie :
 print(x)
 </script></div> On en déduit que \(F_{50}=12\,586\,269\,025\text{.}\)</p>
-<p>A priori, il n'y a pas mieux qu'une formule explicite. Pourtant, la nature de celle-ci fait en sorte que des erreurs d'arrondis liées à la présence de \(\sqrt{5}\) la rendent vite inutile pour obtenir la valeur exacte de l'entier \(F_n\text{.}\)</p></article><span class="incontext"><a href="fibonacci.html#paragraphs-9">Contexte</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">A priori, il n'y a pas mieux qu'une formule explicite. Pourtant, la nature de celle-ci fait en sorte que des erreurs d'arrondis liées à la présence de \(\sqrt{5}\) la rendent vite inutile pour obtenir la valeur exacte de l'entier \(F_n\text{.}\)</p></section><span class="incontext"><a href="fibonacci.html#paragraphs-9">Contexte</a></span>
 </body>
 </html>

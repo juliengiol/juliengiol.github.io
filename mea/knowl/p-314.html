@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:51:35-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:22:37-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On a</p>
-<div class="displaymath">
-\begin{align*}
-45&amp;=32+13,\\
-&amp;=32+8+5,\\
-&amp;=32+8+4+1,\\
-&amp;=1\cdot 2^5+1\cdot 2^3+1\cdot 2^2+1\cdot 2^0,\\
-&amp;=1\cdot 2^5+0\cdot 2^4+1\cdot 2^3+1\cdot 2^2+0\cdot 2^1+1\cdot 2^0.
-\end{align*}
-</div>
-<p data-braille="continuation">L'écriture en binaire de \(45\) est donc \(101101\) et les puissances de \(2\) qui apparaissent, à savoir \(1,4,8\) et \(32\text{,}\) sont les exposants utiles de la décomposition</p>
-<div class="displaymath">
-\begin{equation*}
-3^{45}=3\cdot 3^4\cdot 3^8\cdot 3^{32}.
-\end{equation*}
-</div>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Si on ne tient compte que du nombre de multiplications impliquées, on obtient la fonction qui suit.<pre class="code-block tex2jax_ignore">def complexitePuissanceRecursive(n):
+    if n == 1:
+        return 0
+    elif n % 2 == 0:
+        return 1 + complexitePuissanceRecursive(n / 2)
+    else:
+        return 2 + complexitePuissanceRecursive((n - 1) / 2)
+</pre></p>
 <span class="incontext"><a href="exercicescomplexite.html#p-314">Contexte</a></span>
 </body>
 </html>

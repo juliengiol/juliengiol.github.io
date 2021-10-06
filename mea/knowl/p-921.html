@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:21-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:22-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>La méthode des rectangles au milieu donne</p>
-<div class="displaymath">
-\begin{align*}
-\text{Approximation}&amp;=\Delta x\cdot\left(f(0{,}125)+f(0{,}375)+f(0{,}625)+f(0{,}875)\right)\\
-&amp;=0{,}25\cdot\left(e^{-0{,}125^2}+e^{-0{,}375^2}+e^{-0{,}625^2}+e^{-0{,}875^2}\right)\\
-&amp;\approx 0{,}748\,747\,131\,891\,009.
-\end{align*}
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>Alors pour tout choix de points \(\xi_k\in[x_{k-1};x_k]\text{,}\) la méthode des rectangles engendre une erreur d'approximation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{Erreur}:=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\Delta x\cdot\sum_{k=1}^nf(\xi_k)}_{\text{Approximation}}
+\end{equation*}
+</div>
+<p class="continuation">vérifiant</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|\text{Erreur}|\leq\frac{M(b-a)^2}{2n}
+\end{equation*}
+</div>
+<p class="continuation">où \(M\) est n'importe quel nombre tel que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|f'(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\end{equation*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#p-921">Contexte</a></span>
 </body>

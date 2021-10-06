@@ -1,40 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:33-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:33-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Comme \(\xi_k\) est le milieu de l'intervalle \([x_{k-1};x_k]\text{,}\) on a</p>
-<div class="displaymath">
-\begin{equation*}
-x_k-\xi_k=\xi_k-x_{k-1}=\frac{\Delta x}{2}
-\end{equation*}
-</div>
-<p data-braille="continuation">et</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>En appliquant \(k\) fois l'inégalité triangulaire à la formule de la question 1 et en utilisant pour chaque morceau l'estimation de la question 4, on obtient</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\int_{x_{k-1}}^{x_k}(x-\xi_k)\mathrm{d}x&amp;=\frac{(x-\xi_k)^2}{2}\,\Bigg\vert_{x_{k-1}}^{x_k}\\
-&amp;=\frac{(x_k-\xi_k)^2}{2}-\frac{(x_{k-1}-\xi_k)^2}{2}\\
-&amp;=\frac{1}{2}\cdot\left(\left(\frac{\Delta x}{2}\right)^2-\left(-\frac{\Delta x}{2}\right)^2\right)\\
-&amp;=\frac{1}{2}\cdot\left(\frac{(\Delta x)^2}{4}-\frac{(\Delta x)^2}{4}\right)\\
-&amp;=0,
-\end{align*}
-</div>
-<p data-braille="continuation">d'où</p>
-<div class="displaymath">
-\begin{align*}
-\int_{x_{k-1}}^{x_k}g_k(x)\mathrm{d}x&amp;=\int_{x_{k-1}}^{x_k}\left(f(x)-f(\xi_k)-f'(\xi_k)(x-\xi_k)\right)\mathrm{d}x\\
-&amp;=\int_{x_{k-1}}^{x_k}\left(f(x)-f(\xi_k)\right)\mathrm{d}x-f'(\xi_k)\cdot\cancel{\int_{x_{k-1}}^{x_k}(x-\xi_k)\mathrm{d}x}\\
-&amp;=\int_{x_{k-1}}^{x_k}\left(f(x)-f(\xi_k)\right)\mathrm{d}x.
+|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|\\
+&amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|\\
+&amp;\le\sum_{k=1}^n\frac{M(b-a)^3}{24n^3}\\
+&amp;=\frac{M(b-a)^3}{24n^3}\cdot n\\
+&amp;=\frac{M(b-a)^3}{24n^2}.
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicesrectangles.html#p-1057">Contexte</a></span>

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:53:19-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:24:17-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <div class="solution solution-like">
-<h6 class="heading">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.3.10.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
 <li>
 <p>Par définition du produit matriciel, on a</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 \begin{bmatrix}0&amp;1\\1&amp;-q\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}&amp;=\begin{bmatrix}0\cdot a+1\cdot b\\1\cdot a-q\cdot b\end{bmatrix}\\
 &amp;=\begin{bmatrix}b\\r\end{bmatrix}.
@@ -28,7 +30,7 @@
 </li>
 <li>
 <p>D'après ce qui précède, il suffit de prendre</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 M_1=\begin{bmatrix}0&amp;1\\1&amp;-11\end{bmatrix}.
 \end{equation*}
@@ -36,7 +38,7 @@ M_1=\begin{bmatrix}0&amp;1\\1&amp;-11\end{bmatrix}.
 </li>
 <li>
 <p>Il suffit de prendre</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 M_2=\begin{bmatrix}0&amp;1\\1&amp;-15\end{bmatrix}.
 \end{equation*}
@@ -44,7 +46,7 @@ M_2=\begin{bmatrix}0&amp;1\\1&amp;-15\end{bmatrix}.
 </li>
 <li>
 <p>Par associativité, on a</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 (M_2M_1)\begin{bmatrix}2589\\234\end{bmatrix}=M_2\left(M_1\begin{bmatrix}2589\\234\end{bmatrix}\right)=M_2\begin{bmatrix}234\\15\end{bmatrix}=\begin{bmatrix}15\\9\end{bmatrix}.
 \end{equation*}
@@ -52,7 +54,7 @@ M_2=\begin{bmatrix}0&amp;1\\1&amp;-15\end{bmatrix}.
 </li>
 <li>
 <p>En observant les quotients des trois dernières étapes de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(2589;234)\text{,}\) on voit qu'il suffit de prendre</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 M_3=\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}, M_4=\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\text{ et }M_5=\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}.
 \end{equation*}
@@ -60,7 +62,7 @@ M_3=\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}, M_4=\begin{bmatrix}0&amp;1\\1
 </li>
 <li>
 <p>Un peu de calcul matriciel montre que \(M_5M_4M_3M_2M_1\) donne la matrice</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 &amp;\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-15\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-11\end{bmatrix}\\
 =&amp;\begin{bmatrix}0&amp;1\\1&amp;-2\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}1&amp;-11\\-15&amp;166\end{bmatrix}\\
@@ -72,25 +74,25 @@ M_3=\begin{bmatrix}0&amp;1\\1&amp;-1\end{bmatrix}, M_4=\begin{bmatrix}0&amp;1\\1
 </li>
 <li>
 <p>D'après ce qui précède, on sait que</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 M_5M_4M_3M_2M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}3\\0\end{bmatrix},
 \end{equation*}
 </div>
-<p data-braille="continuation">c'est-à-dire</p>
-<div class="displaymath">
+<p class="continuation">c'est-à-dire</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \begin{bmatrix}-31&amp;343\\78&amp;-863\end{bmatrix}\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}3\\0\end{bmatrix}.
 \end{equation*}
 </div>
 <p>La première ligne de cette identité matricielle donne</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 (-31)\cdot 2589+343\cdot 234=3,
 \end{equation*}
 </div>
-<p data-braille="continuation">soit</p>
-<div class="displaymath">
+<p class="continuation">soit</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 2589u+234v=3\quad\text{avec }(u;v)=(-31;343).
 \end{equation*}

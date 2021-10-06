@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:39-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:39-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Quel est le nombre minimum de trapèzes nécessaire pour pouvoir garantir que la valeur absolue de l'erreur ne dépasse par \(10^{-9}\) lorsqu'on applique la méthode des trapèzes à l'intégrale définie</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>On a vu à la question 3 de l'exercice <a class="xref" data-knowl="./knowl/exercices_erreur_trapezes.html" title="Exercice 9.3.3">9.3.3</a> qu'on pouvait appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M:=26\text{.}\) Alors</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\int_{-1}^2\ln(\ln(x^2+1)+1)\mathrm{d}x?
+\begin{array}{crcl}
+&amp;|\text{Erreur}|&amp;\le&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{M(b-a)^3}{12n^2}&amp;\le&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{26\cdot (2+1)^3}{12n^2}&amp;\le&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{117}{2n^2}&amp;\le&amp;10^{-9}\\
+\Leftrightarrow&amp;\frac{10^9\cdot 117}{2}&amp;\le&amp;n^2\\
+\Leftrightarrow&amp;\sqrt{\frac{10^9\cdot 117}{2}}&amp;\le&amp;n\\
+\Leftrightarrow&amp;241\,867{,}732\ldots&amp;\le&amp;n.
+\end{array}
 \end{equation*}
 </div>
 <span class="incontext"><a href="exercicestrapezes.html#p-1131">Contexte</a></span>

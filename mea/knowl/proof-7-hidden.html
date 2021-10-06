@@ -1,76 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:51:46-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:22:49-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><article class="hiddenproof"><p>En itérant la proposition <a class="xref" data-knowl="./knowl/criterepournewton.html" title="Proposition 5.1.4">5.1.4</a>, on voit que la suite \(\{x_n\}\) est bien définie et qu'elle vérifie</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 c&lt;\ldots&lt;x_{n+1}&lt;x_n&lt;\ldots&lt;x_0\le b
 \end{equation*}
 </div>
-<p data-braille="continuation">pour tout \(n\geq 0\text{.}\) En particulier, \(\{x_n\}\) est décroissante et minorée par \(c\text{.}\) Par le <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_la_limite_monotone#%C3%89nonc%C3%A9_pour_les_suites" target="_blank">théorème de la limite monotone</a>, on en déduit que</p>
-<div class="displaymath">
+<p class="continuation">pour tout \(n\geq 0\text{.}\) En particulier, \(\{x_n\}\) est décroissante et minorée par \(c\text{.}\) Par le <a class="external" href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_la_limite_monotone#%C3%89nonc%C3%A9_pour_les_suites" target="_blank">théorème de la limite monotone</a>, on en déduit que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \ell:=\lim_{n\rightarrow+\infty}x_n
 \end{equation*}
 </div>
-<p data-braille="continuation">existe et vérifie</p>
-<div class="displaymath">
+<p class="continuation">existe et vérifie</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 c\le \ell\le b.
 \end{equation*}
 </div>
-<p data-braille="continuation">Il ne reste plus qu'à montrer que \(\ell=c\text{.}\)</p>
+<p class="continuation">Il ne reste plus qu'à montrer que \(\ell=c\text{.}\)</p>
 <p>Raisonnons par l'absurde et supposons que \(c&lt;\ell\text{.}\) Notons alors que</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \lim_{n\rightarrow+\infty}x_{n+1}=\lim_{n\rightarrow+\infty}x_n=\ell,
 \end{equation*}
 </div>
-<p data-braille="continuation">puis que</p>
-<div class="displaymath">
+<p class="continuation">puis que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \lim_{n\rightarrow+\infty}f(x_n)=f(\ell)
 \end{equation*}
 </div>
-<p data-braille="continuation">par la continuité de \(f\) en \(\ell\) (qui découle de sa dérivabilité en ce point), et enfin que</p>
-<div class="displaymath">
+<p class="continuation">par la continuité de \(f\) en \(\ell\) (qui découle de sa dérivabilité en ce point), et enfin que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \lim_{n\rightarrow+\infty}f'(x_n)=f'(\ell)&gt;0
 \end{equation*}
 </div>
-<p data-braille="continuation">par la continuité de \(f'\) en \(\ell\) (qui découle de sa dérivabilité en ce point). En faisant tendre \(n\) vers l'infini dans la relation de récurrence</p>
-<div class="displaymath">
+<p class="continuation">par la continuité de \(f'\) en \(\ell\) (qui découle de sa dérivabilité en ce point). En faisant tendre \(n\) vers l'infini dans la relation de récurrence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)},
 \end{equation*}
 </div>
-<p data-braille="continuation">on obtient donc</p>
-<div class="displaymath">
+<p class="continuation">on obtient donc</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \ell=\ell-\frac{f(\ell)}{f'(\ell)},
 \end{equation*}
 </div>
-<p data-braille="continuation">d'où</p>
-<div class="displaymath">
+<p class="continuation">d'où</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 f(\ell)=0.
 \end{equation*}
 </div>
-<p data-braille="continuation">Mais par ailleurs, la formule de Taylor-Lagrange pour \(n=0\) (voir exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>) entraîne l'existence de \(\xi\in\;]c;\ell[\) tel que</p>
-<div class="displaymath">
+<p class="continuation">Mais par ailleurs, la formule de Taylor-Lagrange pour \(n=0\) (voir exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>) entraîne l'existence de \(\xi\in\;]c;\ell[\) tel que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 f(\ell)=\cancel{f(c)}+f'(\xi)(\ell-c)&gt;0,
 \end{equation*}
 </div>
-<p data-braille="continuation">d'où la contradiction.</p></article></body>
+<p class="continuation">d'où la contradiction.</p></article></body>
 </html>

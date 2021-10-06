@@ -860,9 +860,9 @@
         <li>et que <m>f^{(n)}</m> soit continue sur <m>[a;b]</m>.</li>
       </ul>
       Le but de cet exercice est de montrer que pour tous <m>x,x_0\in[a;b]</m>, il existe <m>\xi\in\;]a;b[</m> tel que
-      <me>f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^n,</me>
+      <me>f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1},</me>
       i.e.
-      <me>f(x)=f(x_0)+f'(x_0)(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^n.</me>
+      <me>f(x)=f(x_0)+f'(x_0)(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}.</me>
     </p>
     <p>
       Ce théorème porte le nom de formule de Taylor-Lagrange : c'est une généralisation du <url href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Rolle">théorème de Rolle</url>, tout en étant une conséquence de ce dernier.

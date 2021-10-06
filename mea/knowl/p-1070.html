@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:34-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:34-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Si la fonction est suffisamment régulière, on peut contrôler l'erreur d'interpolation (voir exercice <a class="xref" data-knowl="./knowl/erreurdinterpolation.html" title="Exercice 6.3.12: Formule d'erreur pour l'interpolation">6.3.12</a>) par la majoration</p>
-<div class="displaymath">
-\begin{equation*}
-|e(t)|\le\frac{M}{2}|t-c||d-c|
-\end{equation*}
-</div>
-<p data-braille="continuation">qui donne</p>
-<div class="displaymath">
-\begin{equation*}
-\int_c^d|e(t)|\mathrm{d}t\le\frac{M(\Delta x)^3}{12}
-\end{equation*}
-</div>
-<p data-braille="continuation">après intégration, tandis que</p>
-<div class="displaymath">
-\begin{equation*}
-\int_c^dp(t)\mathrm{d}t=\frac{\Delta x}{2}\cdot(f(c)+f(d)).
-\end{equation*}
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>Grâce à la relation de Chasles et à l'inégalité triangulaire de la valeur absolue, on en déduit que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\int_a^bf(x)\mathrm{d}x-\frac{\Delta x}{2}\cdot\sum_{k=1}^n(f(x_{k-1})+f(x_k))\right|\\
+&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^n\frac{\Delta x}{2}\cdot(f(x_{k-1})+f(x_k))\right|\\
+&amp;=\left|\sum_{k=1}^n\left(\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\frac{\Delta x}{2}\cdot(f(x_{k-1})+f(x_k))\right)\right|\\
+&amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\frac{\Delta x}{2}\cdot(f(x_{k-1})+f(x_k))\right|\\
+&amp;\le\sum_{k=1}^n\frac{M(\Delta x)^3}{12}\\
+&amp;=n\cdot\frac{M(\Delta x)^3}{12}\\
+&amp;=n\cdot\frac{M(b-a)^3}{12n^3}\\
+&amp;=\frac{M(b-a)^3}{12n^2}.
+\end{align*}
 </div>
 <span class="incontext"><a href="presentationtrapezes.html#p-1070">Contexte</a></span>
 </body>

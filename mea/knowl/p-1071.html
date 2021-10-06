@@ -1,36 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:34-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:34-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>En appliquant ce qui précède à chaque sous-intervalle \([x_{k-1};x_k]\) de la subdivision régulière</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<ul class="disc">
+<li>Objectif : Obtenir des approximations de \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</li>
+<li>
+<p>Principe :</p>
+<ul class="circle">
+<li>
+<p>Prendre la subdivision régulière</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
 \end{equation*}
 </div>
-<p data-braille="continuation">et en faisant la somme de ces \(n\) morceaux, on obtient</p>
-<div class="displaymath">
+<p class="continuation">de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de longueur</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\int_a^bf(x)\mathrm{d}x=\text{Approximation}+\text{Erreur}
+\Delta x:=\frac{b-a}{n}.
 \end{equation*}
 </div>
-<p data-braille="continuation">avec l'approximation mentionnée ci-dessus <a class="xref" data-knowl="./knowl/def_methode_trapezes.html" title="Définition 9.1.1: Méthode des trapèzes">9.1.1</a> et</p>
-<div class="displaymath">
+</li>
+<li>
+<p>Poser</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-|\text{Erreur}|\le n\cdot\frac{M(\Delta x)^3}{12}.
+\text{Approximation}:=\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right).
 \end{equation*}
 </div>
+</li>
+</ul>
+</li>
+<li>
+<p>Précision : Si la fonction \(f\) est deux fois dérivable avec une dérivée seconde continue sur \([a;b]\) de sorte qu'il existe une constante \(M\) telle que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|f''(x)|\leq M\quad\text{pour tout }x\in[a;b],
+\end{equation*}
+</div>
+<p class="continuation">alors on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left|\text{Erreur}\right|\leq \frac{M(b-a)^3}{12n^2}
+\end{equation*}
+</div>
+<p class="continuation">où l'on définit l'erreur commise par</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{Erreur}:=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right)}_{\text{Approximation}}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Astuce de calcul : Notez que l'approximation s'obtient aussi par la formule</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{Approximation}=\frac{\Delta x}{2}\cdot\left(f(x_0)+2f(x_1)+\cdots+2f(x_{n-1})+f(x_n)\right).
+\end{equation*}
+</div>
+</li>
+<li>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
+</ul>
 <span class="incontext"><a href="presentationtrapezes.html#p-1071">Contexte</a></span>
 </body>
 </html>

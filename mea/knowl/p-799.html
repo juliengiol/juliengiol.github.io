@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:12-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:13-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Passons maintenant à l'étape 2. Pour un point (\(n=0\)), la propriété est à nouveau triviale. Supposons-la donc vérifiée pour \(n\) points et notons encore \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{.}\) Alors le polynôme \(P(t)-A(t)\) est de degré \(n\) au plus, et il s'annule au moins \(n\) fois, en \(x_0,\ldots,x_{n-1}\text{.}\) On a donc la factorisation</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>Présentons nos calculs dans un tableau :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P(t)-A(t)=\lambda(t-x_0)\cdots(t-x_{n-1})
+\begin{array}{c|cccc}
+x_i&amp;y_i&amp;&amp;&amp;\\
+\hline\\
+1&amp;\left[A_0\right]=-3&amp;&amp;&amp;\\
+&amp;&amp;\left[A_0,A_1\right]=10&amp;&amp;\\
+2&amp;\left[A_1\right]=7&amp;&amp;\left[A_0,A_1,A_2\right]=-\frac{17}{2}&amp;\\
+&amp;&amp;\left[A_1,A_2\right]=-7&amp;&amp;\left[A_0,A_1,A_2,A_3\right]=\frac{29}{6}\\
+3&amp;\left[A_2\right]=0&amp;&amp;\left[A_1,A_2,A_3\right]=6&amp;\\
+&amp;&amp;\left[A_2,A_3\right]=5&amp;&amp;\\
+4&amp;\left[A_3\right]=5&amp;&amp;&amp;\\
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">où, d'après l'étape 1, le coefficient \(\lambda\) et égal à \(\left[A_0,\ldots,A_n\right]\text{.}\) En appliquant enfin l'hypothèse de récurrence à \(A(t)\text{,}\) i.e. aux \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{,}\) on obtient bien la formule \(P(t)=N(t)\) pour \(n+1\) points.</p>
 <span class="incontext"><a href="presentationdiffdiv.html#p-799">Contexte</a></span>
 </body>
 </html>

@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:41-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:41-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a>, on a</p>
-<div class="displaymath">
-\begin{align*}
-|\text{Erreur}|&amp;\le\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{6\cdot(1-0)^3}{12\cdot 5^2}\\
-&amp;=0{,}02
-\end{align*}
-</div>
-<p data-braille="continuation">d'où</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<ul class="disc">
+<li>
+<p>On pose \(n:=10^4\) et</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
--0{,}020\le\text{Erreur}\le 0{,}020.
+\Delta x:=\frac{1-0}{10^4}=0{,}000\,1
 \end{equation*}
 </div>
+<p class="continuation">et on considère la subdivision régulière de \([0;1]\) en dix mille sous-intervalles :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+0&lt;0{,}000\,1&lt;0{,}000\,2&lt;\ldots&lt;0,999\,9&lt;1.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Grâce à l'algorithme fourni (<a class="external" href="https://tinyurl.com/mfu6w3zs" target="_blank">cliquez ici</a>), on obtient l'approximation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\frac{\Delta x}{2}\cdot\left(f(0)+2f(0{,}000\,1)+\cdots+2f(0,999\,9)+f(1)\right)\\
+=\;&amp;0{,}310\,268\,302\,623\ldots
+\end{align*}
+</div>
+<p class="continuation">qui vérifie l'encadrement</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+0{,}310\,268\,302\le\text{Approximation}\le 0{,}310\,268\,303.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>D'après le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a>, on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\le\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{6\cdot(1-0)^3}{12\cdot (10^4)^2}\\
+&amp;=0{,}5\cdot 10^{-8}\\
+&amp;=0{,}000\,000\,005
+\end{align*}
+</div>
+<p class="continuation">d'où</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+-0{,}000\,000\,005\le\text{Erreur}\le 0{,}000\,000\,005.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>On obtient donc l'encadrement</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{cc}
+&amp;0{,}310\,268\,302-0{,}000\,000\,005\\
+\leq&amp;\text{Approximation}+\text{Erreur}\\
+\leq&amp;0{,}310\,268\,303+0{,}000\,000\,005
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">i.e.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+0{,}310\,268\,297\leq\int_0^1\sin(x^2)\mathrm{d}x\leq 0{,}310\,268\,308.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Le meilleur arrondissement qu'on peut en déduire est donc</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int_0^1\sin(x^2)\mathrm{d}x\approx 0{,}310\,268\,3.
+\end{equation*}
+</div>
+</li>
+</ul>
 <span class="incontext"><a href="exercicestrapezes.html#p-1146">Contexte</a></span>
 </body>
 </html>

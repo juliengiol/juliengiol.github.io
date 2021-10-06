@@ -33,10 +33,6 @@
 
       <initialism>M&amp;A</initialism>
 
-      <html>
-          <baseurl href="https://juliengiol.github.io/mea" />
-      </html>
-
       <!--
       <analytics google-gst="UA-25018634-8"/>
       -->
@@ -72,8 +68,7 @@
           <abstract>
             <paragraphs>
               <title>Mathématiques (nom féminin pluriel)</title>
-              <p>Science qui étudie, par le moyen du raisonnement déductif, les propriétés d'êtres abstraits (nombres, figures géométriques, fonctions, espaces, etc.) ainsi que les relations qui s'établissent entre eux.
-              </p>
+              <p>Science qui étudie, par le moyen du raisonnement déductif, les propriétés d'êtres abstraits (nombres, figures géométriques, fonctions, espaces, etc.) ainsi que les relations qui s'établissent entre eux.</p>
             </paragraphs>
             <paragraphs>
               <title>Algorithme (nom masculin singulier)</title>
@@ -87,9 +82,9 @@
                 Ces pages constituent une initiation aux méthodes algorithmiques utilisées par les mathématiciens.
                 Loin d'être exhaustives, elles se concentrent sur des exemples et des propriétés accessibles à quiconque
                 <ul>
-                  <li><p>connaît le calcul différentiel et intégral de base,</p></li>
-                  <li><p>sait résoudre des systèmes d'équations linéaires par la méthode de Gauss,</p></li>
-                  <li><p>et maîtrise l'arithmétique élémentaire.</p></li>
+                  <li>connaît le calcul différentiel et intégral de base,</li>
+                  <li>sait résoudre des systèmes d'équations linéaires par la méthode de Gauss,</li>
+                  <li>et maîtrise l'arithmétique élémentaire.</li>
                 </ul>
               </p>
               <p>
@@ -101,7 +96,8 @@
 
           <preface>
             <title>Droits d'auteur</title>
-            <p>Les idées présentées ici sont anciennes, voire antiques.
+            <p>
+              Les idées présentées ici sont anciennes, voire antiques.
               En voici quelques auteurs :
               <sidebyside widths="22% 22% 22% 22%" margins="0%" valigns="bottom bottom bottom bottom">
                   <image source="images/euclide.jpg"/>
@@ -294,14 +290,14 @@
 
             <biblio type="raw" xml:id="biblio-fortin-ANPI">André Fortin, <title>Analyse numérique pour ingénieurs</title>.</biblio>
 
-            <biblio type="raw" xml:id="biblio-godefroy-ANPI">Laurent Godefroy, <title><url href="https://www.supinfo.com/cours/1ARI">Arithmétique et cryptographie</url></title>.</biblio>
+            <biblio type="raw" xml:id="biblio-godefroy-ANPI">Laurent Godefroy, <title>Arithmétique et cryptographie</title>.</biblio>
 
             <biblio type="raw" xml:id="biblio-zimmermann-CMAS">Paul Zimmermann et al., <title>Calcul mathématique avec Sage</title>.</biblio>
 
           </references>
 
         </backmatter>
-
+-->
     </book>
 
 </pretext>

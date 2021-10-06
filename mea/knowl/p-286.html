@@ -1,43 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:51:33-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:22:35-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Évaluez le code suivant pour calculer \(F_{50}\) à l'aide de la formule de Binet. <div class="sagecell-python" id="sage-48"><script type="text/x-sage"># entrée :
-n = 50
-# instructions :
-from math import sqrt
-x = (1 + sqrt(5)) ** n / (2 ** n * sqrt(5))
-# sortie :
-print(x)
-</script></div> On en déduit que \(F_{50}=12\,586\,269\,025\text{.}\)</p>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>Pour tout \(n\ge 3\text{,}\) on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}.
+\end{equation*}
+</div>
 <span class="incontext"><a href="fibonacci.html#p-286">Contexte</a></span>
 </body>
 </html>

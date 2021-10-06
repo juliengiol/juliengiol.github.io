@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:24-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:25-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Voici une implémentation de cet algorithme qui permet de calculer l'approximation de l'intégrale</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>Notons \(f(x):=\frac{1}{1+x^2}\text{,}\) \(n:=5\) et</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\int_0^14\sqrt{1-x^2}\,\mathrm{d}x=\pi
+\Delta x:=\frac{1-0}{5}=0{,}2.
 \end{equation*}
 </div>
-<p data-braille="continuation">fournie par la méthode des rectangles à gauche avec \(32\) rectangles.</p>
-<span class="incontext"><a href="algorithmerectangles.html#p-964">Contexte</a></span>
+<p class="continuation">La subdivision régulière de l'intervalle d'intégration \([0;1]\) en cinq sous-intervalles donne</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+0&lt;0{,}2&lt;0{,}4&lt;0{,}6&lt;0{,}8&lt;1.
+\end{equation*}
+</div>
+<ol class="decimal">
+<li>
+<p>Approximation par les rectangles à gauche :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\Delta x\cdot\left(f(0)+f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)\right)\\
+=\;&amp;0{,}2\cdot\left(\frac{1}{1+0^2}+\frac{1}{1+0{,}2^2}+\frac{1}{1+0{,}4^2}+\frac{1}{1+0{,}6^2}+\frac{1}{1+0{,}8^2}\right)\\
+\approx\;&amp;0{,}834.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Approximation par les rectangles à droite :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\Delta x\cdot\left(f(0{,}2)+f(0{,}4)+f(0{,}6)+f(0{,}8)+f(1)\right)\\
+=\;&amp;0{,}2\cdot\left(\frac{1}{1+0{,}2^2}+\frac{1}{1+0{,}4^2}+\frac{1}{1+0{,}6^2}+\frac{1}{1+0{,}8^2}+\frac{1}{1+1^2}\right)\\
+\approx\;&amp;0{,}734.
+\end{align*}
+</div>
+</li>
+<li>
+<p>Approximation par les rectangles au milieu :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\Delta x\cdot\left(f(0{,}1)+f(0{,}3)+f(0{,}5)+f(0{,}7)+f(0{,}9)\right)\\
+=\;&amp;0{,}2\cdot\left(\frac{1}{1+0{,}1^2}+\frac{1}{1+0{,}3^2}+\frac{1}{1+0{,}5^2}+\frac{1}{1+0{,}7^2}+\frac{1}{1+0{,}9^2}\right)\\
+\approx\;&amp;0{,}786.
+\end{align*}
+</div>
+</li>
+</ol>
+<span class="incontext"><a href="exercicesrectangles.html#p-964">Contexte</a></span>
 </body>
 </html>

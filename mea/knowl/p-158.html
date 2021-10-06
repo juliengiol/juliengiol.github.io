@@ -1,55 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:51:26-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:22:28-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Terminons cette section avec la fonction factorielle. Pour \(n\geq 1\text{,}\) on rappelle que</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>La fonction factorielle \(n!\) est un bon exemple de fonction pouvant être définie de manière récursive :</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-n!=1\cdot 2\cdot 3\cdots n.
+n!=
+\begin{cases}
+1&amp;\text{si}\;n=1,\\
+n\cdot(n-1)!&amp;\text{si}\;n\ge 2.
+\end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">La fonction <code class="code-inline tex2jax_ignore">factorielle(n)</code> ci-après calcule n! à l'aide d'une boucle <code class="code-inline tex2jax_ignore">for</code>. On la teste avec <code class="code-inline tex2jax_ignore">print(factorielle(5))</code> qui doit afficher \(\text{120}\) puisque</p>
-<div class="displaymath">
+<p class="continuation">Par exemple, on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-5!=1\cdot 2\cdot 3\cdot 4\cdot 5=120.
+5!=5\cdot\underbrace{4\cdot 3\cdot 2\cdot 1}_{4!}=5\cdot 4!
 \end{equation*}
 </div>
-<p data-braille="continuation"><div class="sagecell-python" id="sage-39"><script type="text/x-sage">def factorielle(n):
-    produit = 1
-    for k in range(2, n+1):
-        produit = produit * k
-    return produit
-
-print(factorielle(5))
-</script></div> Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/yxl77o2s" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
-<span class="incontext"><a href="syntaxefonctions.html#p-158">Contexte</a></span>
+<p class="continuation">de sorte que \(5!\) s'obtient par la multiplication de \(5\) avec la valeur de la fonction factorielle appliquée à 4, l'entier précédent 5.</p>
+<span class="incontext"><a href="recursivite.html#p-158">Contexte</a></span>
 </body>
 </html>

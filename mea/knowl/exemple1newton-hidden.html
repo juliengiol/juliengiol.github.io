@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:10-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:12-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><article class="example example-like"><p>Déterminons la forme de Newton du polynôme interpolateur des trois points</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 A_0=(1;-3),\; A_1=(2;7)\;\text{et}\; A_2=(3;0).
 \end{equation*}
 </div>
 <p>On a</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 N(t)&amp;=d_0+d_1\,N_1(t)+d_2\,N_2(t)\\
 &amp;=d_0+d_1(t-x_0)+d_2(t-x_0)(t-x_1)\\
 &amp;=d_0+d_1(t-1)+d_2(t-1)(t-2)
 \end{align*}
 </div>
-<p data-braille="continuation">et on cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
-<div class="displaymath">
+<p class="continuation">et on cherche donc trois nombres réels \(d_0,d_1,d_2\) tels que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \begin{cases}N(1)=-3,\\N(2)=7,\\N(3)=0,\end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">ce qui équivaut à résoudre le système triangulaire</p>
-<div class="displaymath">
+<p class="continuation">ce qui équivaut à résoudre le système triangulaire</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \begin{cases}
 d_0&amp;&amp;&amp;&amp;&amp;=&amp;-3,\\
@@ -45,7 +47,7 @@ d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;0.\\
 <li>La première équation donne tout de suite \(d_0=-3\text{.}\)</li>
 <li>
 <p>La deuxième équation donne \(d_0+d_1=7\text{,}\) d'où</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 -3+d_1&amp;=7,\\
 d_1&amp;=7+3=10.
@@ -54,7 +56,7 @@ d_1&amp;=7+3=10.
 </li>
 <li>
 <p>La troisième équation donne \(d_0+2d_1+2d_2=0\text{,}\) d'où</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 -3+2\cdot 10+2d_2&amp;=0,\\
 2d_2&amp;=3-20=-17,\\
@@ -64,13 +66,13 @@ d_2&amp;=-\frac{17}{2}.
 </li>
 </ul>
 <p>La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2).
 \end{equation*}
 </div>
 <p>Notons pour finir qu'il s'agit bien du même polynôme que celui déjà calculé aux exemples <a class="xref" data-knowl="./knowl/avantlagrange2.html" title="Exemple 6.1.3">6.1.3</a> et <a class="xref" data-knowl="./knowl/aveclagrange2.html" title="Exemple 6.1.9">6.1.9</a>. En effet, on a</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 N(t)&amp;=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)\\
 &amp;=-3+10(t-1)-\frac{17}{2}(t^2-3t+2)\\

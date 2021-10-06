@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:12-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:13-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="hiddenproof"><h6 class="heading"><span class="type">Démonstration</span></h6>
-<p>Notons \(P(t)\) le polynôme interpolateur de ces \(n+1\) points et \(N(t)\) le polynôme défini par la formule ci-dessus. Nous allons scinder cette preuve en deux étapes.</p>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Démonstration</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Notons \(P(t)\) le polynôme interpolateur de ces \(n+1\) points et \(N(t)\) le polynôme défini par la formule ci-dessus. Nous allons scinder cette preuve en deux étapes.</p>
 <ul class="disc">
 <li>Étape 1 : Montrer par récurrence sur \(n\) que le coefficient de degré \(n\) de \(P(t)\) est égal à la différence divisée \(\left[A_0,\ldots,A_n\right]\text{.}\)</li>
 <li>Étape 2 : Montrer par récurrence sur \(n\) que \(P(t)=N(t)\text{.}\)</li>
 </ul>
 <p>Commençons donc par l'étape 1. Pour un point (\(n=0\)), la propriété est triviale. Supposons-la donc vérifiée pour \(n\) points et notons alors \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{,}\) et \(B(t)\) le polynôme interpolateur des \(n\) derniers \(A_1,\ldots,A_n\text{.}\) Par unicité du polynôme interpolateur, on a</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 P(t)=\frac{(t-x_0)B(t)-(t-x_n)A(t)}{x_n-x_0},
 \end{equation*}
 </div>
-<p data-braille="continuation">puisque le terme de droite est un polynôme de degré \(n\) au plus valant \(y_k\) en \(t=x_k\) pour tout \(0\le k\le n\text{.}\) Par hypothèse de récurrence appliquée à \(A(t)\) et à \(B(t)\text{,}\) on en déduit que le coefficent de degré \(n\) dans \(P(t)\) vaut</p>
-<div class="displaymath">
+<p class="continuation">puisque le terme de droite est un polynôme de degré \(n\) au plus valant \(y_k\) en \(t=x_k\) pour tout \(0\le k\le n\text{.}\) Par hypothèse de récurrence appliquée à \(A(t)\) et à \(B(t)\text{,}\) on en déduit que le coefficent de degré \(n\) dans \(P(t)\) vaut</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \frac{\left[A_1,\ldots,A_n\right]-\left[A_0,\ldots,A_{n-1}\right]}{x_n-x_0},
 \end{equation*}
 </div>
-<p data-braille="continuation">i.e. \(\left[A_0,\ldots,A_n\right]\text{,}\) d'après la formule de récurrence définissant les différences divisées.</p>
+<p class="continuation">i.e. \(\left[A_0,\ldots,A_n\right]\text{,}\) d'après la formule de récurrence définissant les différences divisées.</p>
 <p>Passons maintenant à l'étape 2. Pour un point (\(n=0\)), la propriété est à nouveau triviale. Supposons-la donc vérifiée pour \(n\) points et notons encore \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{.}\) Alors le polynôme \(P(t)-A(t)\) est de degré \(n\) au plus, et il s'annule au moins \(n\) fois, en \(x_0,\ldots,x_{n-1}\text{.}\) On a donc la factorisation</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 P(t)-A(t)=\lambda(t-x_0)\cdots(t-x_{n-1})
 \end{equation*}
 </div>
-<p data-braille="continuation">où, d'après l'étape 1, le coefficient \(\lambda\) et égal à \(\left[A_0,\ldots,A_n\right]\text{.}\) En appliquant enfin l'hypothèse de récurrence à \(A(t)\text{,}\) i.e. aux \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{,}\) on obtient bien la formule \(P(t)=N(t)\) pour \(n+1\) points.</p></article><span class="incontext"><a href="presentationdiffdiv.html#proof-12">Contexte</a></span>
+<p class="continuation">où, d'après l'étape 1, le coefficient \(\lambda\) et égal à \(\left[A_0,\ldots,A_n\right]\text{.}\) En appliquant enfin l'hypothèse de récurrence à \(A(t)\text{,}\) i.e. aux \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{,}\) on obtient bien la formule \(P(t)=N(t)\) pour \(n+1\) points.</p></article><span class="incontext"><a href="presentationdiffdiv.html#proof-12">Contexte</a></span>
 </body>
 </html>

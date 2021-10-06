@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:46-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:45-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Sur \([1;3]\text{,}\) on remplace \(f(t)\) par</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>Ceci conduit à l'approximation de \(\int_1^5f(t)\mathrm{d}t\) par</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-f(1)+\frac{f(3)-f(1)}{3-1}(t-1)&amp;=6+\frac{32-6}{2}(t-1)\\
-&amp;=6+13(t-1),
-\end{align*}
-</div>
-<p data-braille="continuation">et sur \([3;5]\text{,}\) on la remplace par</p>
-<div class="displaymath">
-\begin{align*}
-f(3)+\frac{f(5)-f(3)}{5-3}(t-3)&amp;=32+\frac{130-32}{5-3}(t-3)\\
-&amp;=32+49(t-3).
-\end{align*}
-</div>
-<p data-braille="continuation">Ceci conduit à l'approximation de \(\int_1^5f(t)\mathrm{d}t\) par</p>
-<div class="displaymath">
-\begin{align*}
-&amp;\int_1^3(6+13(t-1))\mathrm{d}t+\int_3^5(32+49(t-3))\mathrm{d}t\\
-=\;&amp;\left(6t+13\frac{(t-1)^2}{2}\right)\,\Bigg\vert_1^3+\left(32t+49\frac{(t-3)^2}{2}\right)\,\Bigg\vert_3^5\\
-=\;&amp;6\cdot t\,\Bigg\vert_1^3+\frac{13}{2}\cdot(t-1)^2\,\Bigg\vert_1^3+32\cdot t\,\Bigg\vert_3^5+\frac{49}{2}\cdot(t-3)^2\,\Bigg\vert_3^5\\
-=\;&amp;6\cdot 2+\frac{13}{2}\cdot 2^2+32\cdot 2+\frac{49}{2}\cdot2^2\\
-=\;&amp;200.
+&amp;\int_1^3(6+t-1+6(t-1)^2)\mathrm{d}t+\int_3^5(32+25(t-3)+12(t-3)^2)\mathrm{d}t\\
+=\;&amp;\left(6t+\frac{(t-1)^2}{2}+2(t-1)^3\right)\,\Bigg\vert_1^3\\
+&amp;\quad+\left(32t+25\frac{(t-3)^2}{2}+4(t-3)^3\right)\,\Bigg\vert_3^5\\
+=\;&amp;6\cdot t\,\Bigg\vert_1^3+\frac{1}{2}\cdot(t-1)^2\,\Bigg\vert_1^3+2\cdot(t-1)^3\,\Bigg\vert_1^3\\
+&amp;\quad+32\cdot t\,\Bigg\vert_3^5+\frac{25}{2}\cdot(t-3)^2\,\Bigg\vert_3^5+4\cdot(t-3)^3\,\Bigg\vert_3^5\\
+=\;&amp;6\cdot 2+\frac{1}{2}\cdot 2^2+2\cdot 2^3+32\cdot 2+\frac{25}{2}\cdot 2^2+4\cdot 2^3\\
+=\;&amp;176.
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicestrapezes.html#p-1203">Contexte</a></span>

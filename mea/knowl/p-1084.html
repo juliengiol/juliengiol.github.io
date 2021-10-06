@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:35-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:35-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Par la méthode des trapèzes, on obtient alors</p>
-<div class="displaymath">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>On a \(f(x)=e^{-x^2}\text{,}\) donc</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f'(x)=e^{-x^2}\cdot(-2x)=-2x\cdot e^{-x^2}
+\end{equation*}
+</div>
+<p class="continuation">et</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\text{Approximation}:&amp;=\frac{\Delta x}{2}\cdot\sum_{k=1}^n\left(f(x_{k-1})+f(x_k)\right)\\
-&amp;=\frac{0{,}25}{2}\cdot((f(0)+f(0{,}25))+(f(0{,}25)+f(0{,}5))\\
-&amp;\qquad\qquad+(f(0{,}5)+f(0{,}75))+(f(0{,}75)+f(1)))\\
-&amp;=\frac{0{,}25}{2}\cdot(f(0)+2f(0{,}25)+2f(0{,}5)+2f(0{,}75)+f(1))\\
-&amp;\approx 0{,}742\,984\,097\,800\,38.
+f''(x)&amp;=-2\cdot e^{-x^2}-2x\cdot e^{-x^2}\cdot(-2x)\\
+&amp;=-2\cdot e^{-x^2}+4x^2\cdot e^{-x^2}\\
+&amp;=2\cdot(2x^2-1)\cdot e^{-x^2}.
 \end{align*}
 </div>
 <span class="incontext"><a href="presentationtrapezes.html#p-1084">Contexte</a></span>

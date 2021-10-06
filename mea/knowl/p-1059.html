@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:33-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:33-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Grâce à la question 3 et à l'inégalité triangulaire pour l'intégrale, on en déduit que</p>
-<div class="displaymath">
-\begin{align*}
-\left|\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|&amp;=\left|\int_{x_{k-1}}^{x_k}g_k(x)\mathrm{d}x\right|\\
-&amp;\le\int_{x_{k-1}}^{x_k}|g_k(x)|\mathrm{d}x\\
-&amp;\le\int_{x_{k-1}}^{x_k}\frac{M}{2}(x-\xi_k)^2\mathrm{d}x\\
-&amp;=\frac{M}{2}\cdot\frac{(x-\xi_k)^3}{3}\,\Bigg\vert_{x_{k-1}}^{x_k}\\
-&amp;=\frac{M}{6}\cdot\left((x_k-\xi_k)^3-(x_{k-1}-\xi_k)^3\right)\\
-&amp;=\frac{M}{6}\cdot\left(\left(\frac{\Delta x}{2}\right)^3-\left(-\frac{\Delta x}{2}\right)^3\right)\\
-&amp;=\frac{M}{6}\cdot\left(\frac{(\Delta x)^3}{8}+\frac{(\Delta x)^3}{8}\right)\\
-&amp;=\frac{M(\Delta x)^3}{24}\\
-&amp;=\frac{M(b-a)^3}{24n^3}.
-\end{align*}
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>La méthode des trapèzes consiste à remplacer chacun de ces \(n\) rectangles par le trapèze de bases \(f(x_{k-1})\) et \(f(x_k)\text{,}\) et de hauteur \(\Delta x\text{,}\) ce qui donne l'aire algébrique</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{\Delta x}{2}\cdot (f(x_{k-1})+f(x_k)).
+\end{equation*}
 </div>
-<span class="incontext"><a href="exercicesrectangles.html#p-1059">Contexte</a></span>
+<span class="incontext"><a href="presentationtrapezes.html#p-1059">Contexte</a></span>
 </body>
 </html>

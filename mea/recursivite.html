@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:50:35-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:21:31-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="fr-FR">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>M&amp;A Récursivité</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
@@ -57,20 +59,21 @@ MathJax.Hub.Config({
                            languages: ['python'],
                            evalButtonText: 'Évaluer (Python)'});
 });
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/colors_blue_green.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Évaluer (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_green.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Avancer</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+<a class="assistive" href="#content">Avancer</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
 \newcommand{\myequation}[2]{#1\amp =#2} 
 \newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
 \newcommand{\testingescapedpercent}{ \% } 
@@ -84,15 +87,15 @@ MathJax.Hub.Config({
 <p class="byline">Julien Giol</p>
 </div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sommaire</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="syntaxefonctions.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="fonctions.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="exercicesfonctions.html" title="Suivant">Suivant</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Table des matières</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="syntaxefonctions.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="fonctions.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="exercicesfonctions.html" title="Suivant">Suivant</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Sommaire</button><a class="previous-button toolbar-item button" href="syntaxefonctions.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="fonctions.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="exercicesfonctions.html" title="Suivant">Suivant</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Table des matières</button><a class="previous-button toolbar-item button" href="syntaxefonctions.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="fonctions.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="exercicesfonctions.html" title="Suivant">Suivant</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
 <a href="accueil.html" data-scroll="accueil"><span class="title">Accueil</span></a><ul>
@@ -228,12 +231,12 @@ MathJax.Hub.Config({
 <li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">Bibliographie</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="recursivite"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="recursivite"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Récursivité</span>
 </h2>
-<a href="recursivite.html" class="permalink">¶</a><p id="p-159">Une fonction est dite <em class="emphasis">récursive</em> lorsqu'elle contient un appel à elle-même.</p>
-<p id="p-160">Attention, une telle fonction doit prévoir au moins un cas de base sur lequel elle finisse par tomber.</p>
-<p id="p-161">La fonction factorielle \(n!\) est un bon exemple de fonction pouvant être définie de manière récursive :</p>
+<p id="p-156">Une fonction est dite <em class="emphasis">récursive</em> lorsqu'elle contient un appel à elle-même.</p>
+<p id="p-157">Attention, une telle fonction doit prévoir au moins un cas de base sur lequel elle finisse par tomber.</p>
+<p id="p-158">La fonction factorielle \(n!\) est un bon exemple de fonction pouvant être définie de manière récursive :</p>
 <div class="displaymath">
 \begin{equation*}
 n!=
@@ -243,14 +246,14 @@ n\cdot(n-1)!&amp;\text{si}\;n\ge 2.
 \end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">Par exemple, on a</p>
+<p class="continuation">Par exemple, on a</p>
 <div class="displaymath">
 \begin{equation*}
 5!=5\cdot\underbrace{4\cdot 3\cdot 2\cdot 1}_{4!}=5\cdot 4!
 \end{equation*}
 </div>
-<p data-braille="continuation">de sorte que \(5!\) s'obtient par la multiplication de \(5\) avec la valeur de la fonction factorielle appliquée à 4, l'entier précédent 5.</p>
-<p id="p-162">Le code qui suit définit une fonction <code class="code-inline tex2jax_ignore">factorielle(n)</code> adoptant ce point de vue récursif. On le teste avec <code class="code-inline tex2jax_ignore">print(factorielle(5))</code> qui doit afficher \(\text{120}\text{.}\)</p>
+<p class="continuation">de sorte que \(5!\) s'obtient par la multiplication de \(5\) avec la valeur de la fonction factorielle appliquée à 4, l'entier précédent 5.</p>
+<p id="p-159">Le code qui suit définit une fonction <code class="code-inline tex2jax_ignore">factorielle(n)</code> adoptant ce point de vue récursif. On le teste avec <code class="code-inline tex2jax_ignore">print(factorielle(5))</code> qui doit afficher \(\text{120}\text{.}\)</p>
 <div class="sagecell-python" id="sage-40"><script type="text/x-sage">def factorielle(n):
     if n == 1:  # si n = 1
         return 1  # renvoie 1
@@ -259,13 +262,13 @@ n\cdot(n-1)!&amp;\text{si}\;n\ge 2.
 
 print(factorielle(5))
 </script></div>
-<p id="p-163">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y235zy2h" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+<p id="p-160">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y235zy2h" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
 <article class="remark remark-like" id="remark-11"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-164">Notez que pour calculer <code class="code-inline tex2jax_ignore">factorielle(5)</code> avec la fonction récursive ci-dessus, il faut descendre jusqu'au cas de base <code class="code-inline tex2jax_ignore">factorielle(1)</code> avant de remonter pour calculer <code class="code-inline tex2jax_ignore">factorielle(2)</code>, <code class="code-inline tex2jax_ignore">factorielle(3)</code>, <code class="code-inline tex2jax_ignore">factorielle(4)</code> et enfin <code class="code-inline tex2jax_ignore">factorielle(5)</code> dans cet ordre.</p></article></section></div></main>
+<p id="p-161">Notez que pour calculer <code class="code-inline tex2jax_ignore">factorielle(5)</code> avec la fonction récursive ci-dessus, il faut descendre jusqu'au cas de base <code class="code-inline tex2jax_ignore">factorielle(1)</code> avant de remonter pour calculer <code class="code-inline tex2jax_ignore">factorielle(2)</code>, <code class="code-inline tex2jax_ignore">factorielle(3)</code>, <code class="code-inline tex2jax_ignore">factorielle(4)</code> et enfin <code class="code-inline tex2jax_ignore">factorielle(5)</code> dans cet ordre.</p></article></section></div></main>
 </div>
-<!--Start: StatCounter code--><script>
+<!--Start: StatCounter code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***        GET YOUR OWN FROM STATCOUNTER           ***--><script>
 var sc_project=12152300;
 var sc_invisible=1;
 var sc_security="5132c4de";
@@ -273,7 +276,7 @@ var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "
 document.write("<sc"+"ript src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
 </script><noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12152300/0/5132c4de/1/" alt="web analytics"></a></div></noscript>
 <!--End: StatCounter code-->
-<!--Start: Google Global Site Tag code-->
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-25018634-8"></script><script>  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());

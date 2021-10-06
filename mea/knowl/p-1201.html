@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:46-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:45-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Remarque : Ce n'est pas un hasard. La méthode de Newton-Cotes \(\mathrm{NC}_2\) est aussi connue sous le nom de méthode de Simpson. On l'étudie au chapitre suivant et on y montre notamment qu'elle est d'ordre 3, ce qui signifie qu'elle est exacte sur les polynômes de degré 3 au plus, et qu'il existe au moins un polynôme de degré 4 sur lequel elle n'est pas exacte.</p>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>On commence par subdiviser \([1;3]\) en</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\xi_{0,0}=1&lt;\xi_{0,1}=2&lt;\xi_{0,2}=3
+\end{equation*}
+</div>
+<p class="continuation">et on y remplace \(f(t)\) par</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;f(1)+\frac{f(2)-f(1)}{2-1}(t-1)+\frac{\frac{f(3)-f(2)}{3-2}-\frac{f(2)-f(1)}{2-1}}{3-1}(t-1)(t-2)\\
+=\;&amp;6+7(t-1)+6(t-1)(t-1-1)\\
+=\;&amp;6+7(t-1)+6(t-1)^2-6(t-1)\\
+=\;&amp;6+t-1+6(t-1)^2.
+\end{align*}
+</div>
 <span class="incontext"><a href="exercicestrapezes.html#p-1201">Contexte</a></span>
 </body>
 </html>

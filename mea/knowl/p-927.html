@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-15T20:52:21-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-06T14:23:22-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Si la fonction est suffisamment régulière, on peut contrôler l'erreur d'interpolation (voir exercice <a class="xref" data-knowl="./knowl/erreurdinterpolation.html" title="Exercice 6.3.12: Formule d'erreur pour l'interpolation">6.3.12</a>) par la majoration</p>
-<div class="displaymath">
-\begin{equation*}
-|e(t)|\le M|t-\xi|
-\end{equation*}
-</div>
-<p data-braille="continuation">qui donne</p>
-<div class="displaymath">
-\begin{equation*}
-\int_c^d|e(t)|\mathrm{d}t\le\frac{M(\Delta x)^2}{2}
-\end{equation*}
-</div>
-<p data-braille="continuation">après intégration, tandis que</p>
-<div class="displaymath">
-\begin{equation*}
-\int_c^df(\xi)\mathrm{d}t=\Delta x\cdot f(\xi).
-\end{equation*}
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>Grâce à la relation de Chasles et à l'inégalité triangulaire de la valeur absolue, on en déduit que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\int_a^bf(x)\mathrm{d}x-\Delta x\cdot\sum_{k=1}^nf(\xi_k)\right|\\
+&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-\sum_{k=1}^nf(\xi_k)\cdot\Delta x\right|\\
+&amp;=\left|\sum_{k=1}^n\left(\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right)\right|\\
+&amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}f(x)\mathrm{d}x-f(\xi_k)\cdot\Delta x\right|\\
+&amp;\le\sum_{k=1}^n\frac{M(\Delta x)^2}{2}\\
+&amp;=n\cdot\frac{M(\Delta x)^2}{2}\\
+&amp;=n\cdot\frac{M(b-a)^2}{2n^2}\\
+&amp;=\frac{M(b-a)^2}{2n}.
+\end{align*}
 </div>
 <span class="incontext"><a href="presentationrectangles.html#p-927">Contexte</a></span>
 </body>
