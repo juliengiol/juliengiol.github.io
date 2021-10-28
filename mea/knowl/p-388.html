@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:43-04:00       *-->
+<!--*       on 2021-10-28T12:22:00-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,26 +15,11 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>Remarques :</p>
 <ul class="disc">
-<li>Objectif : Encadrer un zéro de la fonction \(f\text{.}\)</li>
-<li>Hypothèses : On suppose que la fonction \(f\) est continue sur \([a;b]\text{,}\) qu'elle possède un unique zéro dans \(]a;b[\text{,}\) et que \(f(a)f(b)&lt;0\text{.}\)</li>
-<li>
-<p>Principe :</p>
-<ul class="circle">
-<li>Au départ, l'intervalle d'encadrement de \(c\) est \(]a;b[\text{.}\)</li>
-<li>
-<p>Ensuite, on compare les trois valeurs \(f(a), f(m)\) et \(f(b)\) où \(m:=\frac{a+b}{2}\) est le milieu de l'intervalle \([a;b]\text{.}\)</p>
-<ul class="square">
-<li><p xmlns:svg="http://www.w3.org/2000/svg">Si \(f(m)=0\text{,}\) on s'arrête car on vient de tomber sur le zéro.</p></li>
-<li><p xmlns:svg="http://www.w3.org/2000/svg">Si \(f(m)f(a)&lt;0\text{,}\) on remplace \(]a;b[\) par \(]a;m[\text{.}\)</p></li>
-<li><p xmlns:svg="http://www.w3.org/2000/svg">Si \(f(m)f(b)&lt;0\text{,}\) on remplace \(]a;b[\) par \(]m;b[\text{.}\)</p></li>
-</ul>
-</li>
-<li>On répète l'opération précédente jusqu'à ce qu'on tombe sur le zéro ou que la longueur de l'intervalle soit assez petite à notre goût.</li>
-</ul>
-</li>
-<li>Précision : Après \(n\) itérations, on obtient un intervalle d'encadrement du zéro \(c\) qui est de longueur \(\frac{b-a}{2^n}\text{.}\)</li>
-<li>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1PMzro1wU8GnyWj2TvhTAAgpjXazuDi2K/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
+<li>Au départ, \(c\) appartient à un intervalle de longueur \(2\text{.}\)</li>
+<li>À chaque itération, la longueur de l'intervalle auquel \(c\) appartient est divisée par \(2\text{,}\) puisqu'on remplace une de ses bornes par son milieu.</li>
+<li>Après trois itérations, on est donc capables de situer \(c\) dans un intervalle de longueur \(2/2^3=0{,}25\text{.}\)</li>
 </ul>
 <span class="incontext"><a href="presentationbissection.html#p-388">Contexte</a></span>
 </body>

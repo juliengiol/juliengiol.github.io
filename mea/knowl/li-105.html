@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:33-04:00       *-->
+<!--*       on 2021-10-28T12:21:48-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,8 +15,17 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">2.3.11.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">2.3.10.2</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">En utilisant une variable <code class="code-inline tex2jax_ignore">compteur</code> et une boucle <code class="code-inline tex2jax_ignore">while</code>, codez une fonction <code class="code-inline tex2jax_ignore">combienDeDeux1(n)</code> qui renvoie le nombre de fois que \(\text{n}\) est divisible par \(2\text{.}\)</p></article><span class="incontext"><a href="exercicesfonctions.html#li-105">Contexte</a></span>
+<pre class="code-block tex2jax_ignore">def syracuse2(s, n):
+    if n == 0:
+        return s
+    elif s % 2 == 0:
+        return syracuse2(s / 2, n-1)
+    else:
+        return syracuse2(3 * s + 1, n-1)
+
+print(syracuse2(14, 20))
+</pre></article><span class="incontext"><a href="exercicesfonctions.html#li-105">Contexte</a></span>
 </body>
 </html>

@@ -113,8 +113,8 @@
             Comme <m>f(c)=0</m>, <m>f'(\xi_1)&gt;0</m> et <m>x_0&gt;c</m>, on en déduit que <m>f(x_0)&gt;0</m>.
           </p>
           <p>
-            Comme par ailleurs <m>f''(x_0)&gt;0</m>, il en découle que
-            <me>x_1=x_0-\frac{f(x_0)}{f'(x_0)}&lt;x_0.</me>
+            Comme par ailleurs <m>f'(x_0)&gt;0</m>, il en découle que
+            <me>x_1=x_0-\underbrace{\frac{f(x_0)}{f'(x_0)}}_{\text{positif}}&lt;x_0.</me>
           </p>
         </li>
         <li>
@@ -124,11 +124,13 @@
             Comme <m>f(c)=0</m>, diviser par <m>f'(x_0)</m> conduit à
             <me>0=\frac{f(x_0)}{f'(x_0)}+c-x_0+\frac{f''(\xi_2)}{2f'(x_0)}(c-x_0)^2,</me>
             d'où
+            <me>x_0-\frac{f(x_0)}{f'(x_0)}=c+\frac{f''(\xi_2)}{2f'(x_0)}(c-x_0)^2,</me>
+            soit
             <me>x_1=c+\frac{f''(\xi_2)}{2f'(x_0)}(c-x_0)^2.</me>
           </p>
           <p>
             Comme par ailleurs <m>f''(\xi_2)&gt;0</m>, <m>f'(x_0)&gt;0</m> et <m>(c-x_0)^2&gt;0</m>, on en conclut que
-            <me>x_1&gt;c.</me>
+            <me>x_1=c+\underbrace{\frac{f''(\xi_2)}{2f'(x_0)}(c-x_0)^2}_{\text{positif}}&gt;c.</me>
           </p>
         </li>
       </ul>
@@ -933,7 +935,7 @@
             <mrow>&amp;=-f'(t)-\cdots-\frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1}-\frac{f^{(n+1)}(t)}{n!}(x-t)^n</mrow>
             <mrow>&amp;\quad+f'(t)+\cdots+\frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1}</mrow>
             <mrow>&amp;\quad+\frac{A}{n!}(x-t)^n</mrow>
-            <mrow>&amp;=\frac{A}{n!}(x-t)^n-\frac{f^{(n+1)}(t)}{n!}(x-t)^n</mrow>
+            <mrow>&amp;=-\frac{f^{(n+1)}(t)}{n!}(x-t)^n+\frac{A}{n!}(x-t)^n</mrow>
           </md>
           pour tout <m>t\in\;]a;b[</m>.
         </p>
@@ -947,7 +949,7 @@
         </p>
         <p>
           En isolant <m>f(x)</m> dans l'équation <m>g(x_0)=0</m>, on obtient alors la formule désirée, soit
-          <me>f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^n.</me>
+          <me>f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}.</me>
         </p>
       </li>
     </ol>
@@ -1017,7 +1019,7 @@
       <li>Vérifiez qu'on peut poser <m>M:=12</m> et <m>m:=3</m> et appliquer le résultat de l'exercice <xref ref="newtonestquadratique"/>.</li>
       <li>
         <p>
-          Pour tout <m>n</m> allant de <m>0</m> à <m>4</m>, calculez dix décimales de chacune des quantités suivantes :
+          Pour tout <m>n</m> allant de <m>0</m> à <m>4</m>, arrondissez chacune des quantités suivantes à la neuvième décimale :
           <me>x_n,\quad x_n-c,\quad\frac{\left|x_{n+1}-c\right|}{\left|x_n-c\right|^2}.</me>
         </p>
       </li>
@@ -1049,8 +1051,8 @@
             0&amp;2{,}000\,000\,000&amp;0{,}740\,078\,950&amp;0{,}438\,326\,754\\
             1&amp;1{,}500\,000\,000&amp;0{,}240\,078\,950&amp;0{,}631\,099\,415\\
             2&amp;1{,}296\,296\,296&amp;0{,}036\,375\,246&amp;0{,}764\,212\,910\\
-            3&amp;1{,}260\,932\,225&amp;0{,}001\,011\,175&amp;0{,}792\,852\,044\\
-            4&amp;1{,}259\,921\,861&amp;0{,}000\,000\,811&amp;0{,}793\,448\,496
+            3&amp;1{,}260\,932\,225&amp;0{,}001\,011\,175&amp;0{,}792\,852\,043\\
+            4&amp;1{,}259\,921\,861&amp;0{,}000\,000\,811&amp;0{,}793\,658\,937
             \end{array}
           </me>
         </p>

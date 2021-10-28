@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:22-04:00       *-->
+<!--*       on 2021-10-28T12:21:37-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -235,29 +235,29 @@ MathJax.Hub.Config({
 <span class="type">Section</span> <span class="codenumber">C.4</span> <span class="title">Principaux types</span>
 </h2>
 <section class="paragraphs" id="paragraphs-17"><h5 class="heading"><span class="title">Chaînes de caractères <code class="code-inline tex2jax_ignore">str</code>.</span></h5> Par exemple : <code class="code-inline tex2jax_ignore">'aHuntSic'</code>, <code class="code-inline tex2jax_ignore">'14426'</code>.</section><section class="paragraphs" id="paragraphs-18"><h5 class="heading"><span class="title">Booléens <code class="code-inline tex2jax_ignore">bool</code>.</span></h5> Il y en a deux : <code class="code-inline tex2jax_ignore">True</code> et <code class="code-inline tex2jax_ignore">False</code>.</section><section class="paragraphs" id="paragraphs-19"><h5 class="heading"><span class="title">Entiers <code class="code-inline tex2jax_ignore">int</code>.</span></h5> Par exemple : <code class="code-inline tex2jax_ignore">2</code>, <code class="code-inline tex2jax_ignore">0</code>, <code class="code-inline tex2jax_ignore">-5</code>, <code class="code-inline tex2jax_ignore">1234567890</code>.</section><section class="paragraphs" id="paragraphs-20"><h5 class="heading"><span class="title">Nombres à virgule flottante <code class="code-inline tex2jax_ignore">float</code>.</span></h5>
-<p id="p-2169">Par exemple : <code class="code-inline tex2jax_ignore">2.0</code>, <code class="code-inline tex2jax_ignore">-3.507</code>, <code class="code-inline tex2jax_ignore">9.0001</code>.</p>
-<ul id="p-2170" class="disc">
-<li id="li-1358"><p id="p-2171">Troncature de la partie décimale avec <code class="code-inline tex2jax_ignore">int()</code> : <div class="sagecell-python" id="sage-76"><script type="text/x-sage">x = int(-3.7825089)
+<p id="p-2170">Par exemple : <code class="code-inline tex2jax_ignore">2.0</code>, <code class="code-inline tex2jax_ignore">-3.507</code>, <code class="code-inline tex2jax_ignore">9.0001</code>.</p>
+<ul id="p-2171" class="disc">
+<li id="li-1359"><p id="p-2172">Troncature de la partie décimale avec <code class="code-inline tex2jax_ignore">int()</code> : <div class="sagecell-python" id="sage-76"><script type="text/x-sage">x = int(-3.7825089)
 print(x)
 </script></div></p></li>
-<li id="li-1359"><p id="p-2172">Valeur absolue avec <code class="code-inline tex2jax_ignore">abs()</code> : <div class="sagecell-python" id="sage-77"><script type="text/x-sage">y = abs(-3.7825089)
+<li id="li-1360"><p id="p-2173">Valeur absolue avec <code class="code-inline tex2jax_ignore">abs()</code> : <div class="sagecell-python" id="sage-77"><script type="text/x-sage">y = abs(-3.7825089)
 print(y)
 </script></div></p></li>
-<li id="li-1360"><p id="p-2173">Arrondis avec <code class="code-inline tex2jax_ignore">round()</code> : <div class="sagecell-python" id="sage-78"><script type="text/x-sage">z = round(-3.7825089, 3)
+<li id="li-1361"><p id="p-2174">Arrondis avec <code class="code-inline tex2jax_ignore">round()</code> : <div class="sagecell-python" id="sage-78"><script type="text/x-sage">z = round(-3.7825089, 3)
 print(z)
 </script></div></p></li>
 </ul></section><section class="paragraphs" id="paragraphs-21"><h5 class="heading"><span class="title">Listes <code class="code-inline tex2jax_ignore">list</code>.</span></h5>
-<p id="p-2174">Par exemple : <code class="code-inline tex2jax_ignore">[3, -7, 'chat', True, 3.14]</code>.</p>
-<ul id="p-2175" class="disc">
-<li id="li-1361"><p id="p-2176">Ajouter un élément à une liste avec <code class="code-inline tex2jax_ignore">.append()</code> : <div class="sagecell-python" id="sage-79"><script type="text/x-sage">maListe = [3, -7, 'chat', True, 3.14]
+<p id="p-2175">Par exemple : <code class="code-inline tex2jax_ignore">[3, -7, 'chat', True, 3.14]</code>.</p>
+<ul id="p-2176" class="disc">
+<li id="li-1362"><p id="p-2177">Ajouter un élément à une liste avec <code class="code-inline tex2jax_ignore">.append()</code> : <div class="sagecell-python" id="sage-79"><script type="text/x-sage">maListe = [3, -7, 'chat', True, 3.14]
 maListe.append('oubli')
 print(maListe)
 </script></div></p></li>
-<li id="li-1362"><p id="p-2177">Accéder à un élément d'une liste avec <code class="code-inline tex2jax_ignore">[j]</code> : <div class="sagecell-python" id="sage-80"><script type="text/x-sage">maListe = [3, -7, 'chat', True, 3.14]
+<li id="li-1363"><p id="p-2178">Accéder à un élément d'une liste avec <code class="code-inline tex2jax_ignore">[j]</code> : <div class="sagecell-python" id="sage-80"><script type="text/x-sage">maListe = [3, -7, 'chat', True, 3.14]
 troisiemeElement = maListe[2] # oui, c'est [2] et pas [3]...
 print(troisiemeElement)
 </script></div></p></li>
-<li id="li-1363"><p id="p-2178">Parcourir les éléments d'une liste avec <code class="code-inline tex2jax_ignore">for</code> ... <code class="code-inline tex2jax_ignore">in</code> : <div class="sagecell-python" id="sage-81"><script type="text/x-sage">maListe = [3, -7, 'chat', True, 3.14]
+<li id="li-1364"><p id="p-2179">Parcourir les éléments d'une liste avec <code class="code-inline tex2jax_ignore">for</code> ... <code class="code-inline tex2jax_ignore">in</code> : <div class="sagecell-python" id="sage-81"><script type="text/x-sage">maListe = [3, -7, 'chat', True, 3.14]
 for element in maListe:
     print(element)
 </script></div></p></li>

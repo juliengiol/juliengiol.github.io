@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:09-04:00       *-->
+<!--*       on 2021-10-28T12:22:27-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,11 +15,23 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Première approximation de \(\displaystyle\sqrt{1{,}1}= f(0{,}1)\) :</p>
+<p>On a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(t)=(1+t)^{1/2},\quad f'(t)=\frac{1}{2}(1+t)^{-1/2},\quad f''(t)=-\frac{1}{4}(1+t)^{-3/2},
+\end{equation*}
+</div>
+<p class="continuation">d'où</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(0)=1,\quad f'(0)=\frac{1}{2},\quad f''(0)=-\frac{1}{4}.
+\end{equation*}
+</div>
+<p class="continuation">Il s'agit donc de</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-T(0{,}1)&amp;=1+\frac{1}{2}\cdot 0{,}1-\frac{1}{8}\cdot 0{,}1^2\\
-&amp;=1{,}048\,705.
+T(t)&amp;=f(0)+f'(0)t+\frac{f''(0)}{2}t^2\\
+&amp;=1+\frac{1}{2}t-\frac{1}{8}t^2.
 \end{align*}
 </div>
 <span class="incontext"><a href="exerciceslagrange.html#p-735">Contexte</a></span>

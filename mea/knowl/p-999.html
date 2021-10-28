@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:28-04:00       *-->
+<!--*       on 2021-10-28T12:22:55-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,23 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Créez une fonction <code class="code-inline tex2jax_ignore">rectanglesAuMilieu(f, a, b, n)</code> qui donne l'approximation de l'intégrale \(\int_a^bf(x)\mathrm{d}x\) par la méthode des rectangles au milieu pour \(n\) rectangles.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Voici une façon de faire :<pre class="code-block tex2jax_ignore"># entrées :
+import numpy as np
+def f(x):
+    return 4 * np.sqrt(1 - x ** 2)
+a = 0.0
+b = 1.0
+n = 32
+# instructions :
+approximation = 0
+deltaX = (b - a) / n
+for k in range(1, n+1):
+    x = a + (k - 1) * deltaX
+    approximation = approximation + f(x)
+approximation = deltaX * approximation
+# sortie :
+print(approximation)
+</pre></p>
 <span class="incontext"><a href="exercicesrectangles.html#p-999">Contexte</a></span>
 </body>
 </html>

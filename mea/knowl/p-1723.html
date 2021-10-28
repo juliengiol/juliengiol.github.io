@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:24:28-04:00       *-->
+<!--*       on 2021-10-28T12:24:10-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,31 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Ce résultat découle du précédent par récurrence sur \(n\text{.}\)</p>
+<p>Supposons que \(a\) et \(b\) sont premiers entre eux, et qu'ils divisent \(x\) tous les deux. Alors, d'une part, il existe \(k\in\mathbb{Z}\) tel que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x=ka.
+\end{equation*}
+</div>
+<p class="continuation">D'autre part, on a donc</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+b\vert ka\quad\text{et}\quad\text{PGCD}(a;b)=1.
+\end{equation*}
+</div>
+<p class="continuation">Par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>, on en déduit que \(b\) divise \(k\text{,}\) de sorte qu'il existe \(m\in\mathbb{Z}\) tel que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+k=mb.
+\end{equation*}
+</div>
+<p class="continuation">Finalement, on obtient</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x=ka=(mb)\cdot a=m\cdot(ab)
+\end{equation*}
+</div>
+<p class="continuation">ce qui montre que \(ab\) divise \(x\text{.}\)</p>
 <span class="incontext"><a href="exercicesbezout.html#p-1723">Contexte</a></span>
 </body>
 </html>

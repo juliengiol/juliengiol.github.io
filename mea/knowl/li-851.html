@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:43-04:00       *-->
+<!--*       on 2021-10-28T12:23:18-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,19 +15,33 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.11.2</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.11.1</span><span class="period">.</span>
 </h6>
-<p>Montrez qu'il existe deux nombres \(s_1,s_2\) tels que</p>
+<p>On fixe \(t\in\;]c;d[\) et on introduit la fonction</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-c&lt;s_1&lt;t&lt;s_2&lt;d
+\phi(s):=f(s)-p(s)-\frac{f(t)-p(t)}{(t-c)(t-d)}(s-c)(s-d)
+\end{equation*}
+</div>
+<p class="continuation">où</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(s):=f(c)+\frac{f(d)-f(c)}{d-c}(s-c)
+\end{equation*}
+</div>
+<p class="continuation">est le polynôme interpolateur des points \((c;f(c))\) et \((d;f(d))\text{.}\)</p>
+<p>Vérifiez que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\phi(c)=\phi(d)=\phi(t)=0
 \end{equation*}
 </div>
 <p class="continuation">et que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\phi'(s_1)=\phi'(s_2)=0.
+\phi''(s)=f''(s)-\frac{2(f(t)-p(t))}{(t-c)(t-d)}
 \end{equation*}
-</div></article><span class="incontext"><a href="exercicestrapezes.html#li-851">Contexte</a></span>
+</div>
+<p class="continuation">pour tout \(s\in\;]c;d[\text{.}\)</p></article><span class="incontext"><a href="exercicestrapezes.html#li-851">Contexte</a></span>
 </body>
 </html>

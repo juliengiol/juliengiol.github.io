@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:46-04:00       *-->
+<!--*       on 2021-10-28T12:23:21-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,24 +15,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Nous voulons toujours approcher la valeur d'une intégrale</p>
+<p>On a en effet</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\displaystyle\int_a^bf(x)\mathrm{d}x
-\end{equation*}
+\begin{align*}
+\int_1^5f(t)\mathrm{d}t&amp;=\int_1^5(t^3+5)\mathrm{d}t\\
+&amp;=\left(\frac{t^4}{4}+5t\right)\,\Bigg\vert_1^5\\
+&amp;=\frac{1}{4}\cdot t^4\,\Bigg\vert_1^5+5\cdot t\,\Bigg\vert_1^5\\
+&amp;=\frac{1}{4}(5^4-1^4)+5\cdot(5-1)\\
+&amp;=176.
+\end{align*}
 </div>
-<p class="continuation">à l'aide de subdivisions régulières</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
-\end{equation*}
-</div>
-<p class="continuation">de l'intervalle \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}.
-\end{equation*}
-</div>
-<span class="incontext"><a href="presentationsimpson.html#p-1205">Contexte</a></span>
+<span class="incontext"><a href="exercicestrapezes.html#p-1205">Contexte</a></span>
 </body>
 </html>

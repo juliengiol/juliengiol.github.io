@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:52-04:00       *-->
+<!--*       on 2021-10-28T12:22:09-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -18,19 +18,19 @@
 <p>La relation de récurrence donne ici</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-\frac{e^{x_n}-1}{e^{x_n}}=x_n-1+e^{-x_n}.
+x_{n+1}=x_n-x_n\cdot\ln(x_n).
 \end{equation*}
 </div>
 <p class="continuation">On obtient :</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-x_0&amp;=5\\
-x_1&amp;=x_0-1+e^{-x_0}\approx 4{,}006\,738;\\
-x_2&amp;=x_1-1+e^{-x_1}\approx 3{,}024\,931;\\
-x_3&amp;=x_2-1+e^{-x_2}\approx 2{,}073\,492.
+x_0&amp;=2;\\
+x_1&amp;=x_0-x_0\cdot\ln(x_0)\approx 0{,}613\,706;\\
+x_2&amp;=x_1-x_1\cdot\ln(x_1)\approx 0{,}913\,341;\\
+x_3&amp;=x_2-x_2\cdot\ln(x_2)\approx 0{,}996\,132.
 \end{align*}
 </div>
-<p class="continuation">Comme \(c=0\text{,}\) l'approximation par \(x_3\) est très mauvaise : on est parti d'une valeur trop éloignée.</p>
+<p class="continuation">Comme \(c=1\text{,}\) l'approximation par \(x_3\) est assez bonne.</p>
 <span class="incontext"><a href="exercicesnewton.html#p-527">Contexte</a></span>
 </body>
 </html>

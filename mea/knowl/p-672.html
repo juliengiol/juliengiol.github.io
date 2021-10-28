@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:03-04:00       *-->
+<!--*       on 2021-10-28T12:22:21-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,27 +15,15 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<ul class="disc">
-<li>Objectif : Étant donné \(n+1\) points \(A_0=(x_0;y_0),\ldots,A_n=(x_n;y_n)\) d'abscisses distinctes deux à deux, déterminer le seul polynôme \(L(t)\) de degré \(n\) au plus qui passe par tous ces points.</li>
-<li>
-<p>Principe : Construire ce polynôme comme combinaison linéaire des polynômes</p>
+<p>Notons qu'en développant cette dernière expression, on retouve le polynôme</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-L_i(t):=\prod_{j\neq i}\frac{t-x_j}{x_i-x_j}
-\end{equation*}
+\begin{align*}
+L(t)&amp;=-\frac{3}{2}(t^2-5t+6)-7(t^2-4t+3)\\
+&amp;=-\frac{18}{2}-21+\frac{15}{2}t+28t-\frac{3}{2}t^2-7t^2\\
+&amp;=-30+\frac{71}{2}t-\frac{17}{2}t^2
+\end{align*}
 </div>
-<p class="continuation">en posant</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-L(t):=y_0\,L_0(t)+\cdots+y_n\,L_n(t).
-\end{equation*}
-</div>
-</li>
-<li>Terminologie : On appelle \(L(t)\) le polynôme interpolateur des points \(A_0,\ldots,A_n\text{.}\) Et on dit que \(y_0\,L_0(t)+\cdots+y_n\,L_n(t)\) est sa forme de Lagrange.</li>
-<li>Estimations : L'interpolation polynomiale est souvent utilisée pour estimer les valeurs prises par une fonction continue dont on ne connaît qu'un nombre fini de valeurs.</li>
-<li>Formule d'erreur : Quand on effectue l'approximation d'une fonction suffisamment régulière par un polynôme interpolant certains points de son graphe, on dispose d'une formule permettant de contrôler l'erreur commise (voir l'exercice <a class="xref" data-knowl="./knowl/erreurdinterpolation.html" title="Exercice 6.3.12: Formule d'erreur pour l'interpolation">6.3.12</a>).</li>
-<li>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1LtbMWNA5Xxb4Jvql9o3q_nzE0l9T2oGY/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
-</ul>
+<p class="continuation">trouvé à l'exemple <a class="xref" data-knowl="./knowl/avantlagrange2.html" title="Exemple 6.1.3">6.1.3</a>.</p>
 <span class="incontext"><a href="presentationlagrange.html#p-672">Contexte</a></span>
 </body>
 </html>

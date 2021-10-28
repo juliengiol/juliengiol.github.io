@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:28-04:00       *-->
+<!--*       on 2021-10-28T12:22:55-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,24 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Modifiez le code donné à la section <a href="algorithmerectangles.html" class="internal" title="Section 8.2: Algorithme">8.2</a> afin de remplacer la boucle <code class="code-inline tex2jax_ignore">while</code> par une boucle <code class="code-inline tex2jax_ignore">for</code> semblable à celle utilisée à la section <a href="algorithmetrapezes.html" class="internal" title="Section 9.2: Algorithme">9.2</a>.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Voici une façon de faire :<pre class="code-block tex2jax_ignore"># entrées :
+import numpy as np
+def f(x):
+    return 4 * np.sqrt(1 - x ** 2)
+a = 0.0
+b = 1.0
+n = 1000 # ligne modifiée
+# instructions :
+approximation = 0
+deltaX = (b - a) / n
+x = b # ligne modifiée
+while x &gt; a: # ligne modifiée
+    approximation = approximation + f(x)
+    x = x - deltaX # ligne modifiée
+approximation = deltaX * approximation
+# sortie :
+print(approximation)
+</pre></p>
 <span class="incontext"><a href="exercicesrectangles.html#p-997">Contexte</a></span>
 </body>
 </html>

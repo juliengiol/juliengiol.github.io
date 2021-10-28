@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:38-04:00       *-->
+<!--*       on 2021-10-28T12:21:55-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">C'est donc le calcul de \(M^{47}\) qui nécessite le plus de produits matriciels lorsqu'on applique l'algorithme d'exponentiation rapide.</p>
+<p>Dans les deux cas, il y a 5 produits matriciels à effectuer pour déterminer \(M^2,M^4,M^8,M^{16}\) et \(M^{32}\text{,}\) puis 4 autres por calculer</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+M^{47}=M\cdot M^2\cdot M^4\cdot M^8\cdot M^{32}
+\end{equation*}
+</div>
+<p class="continuation">et seulement 1 autre pour calculer</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+M^{48}=M^{16}\cdot M^{32}.
+\end{equation*}
+</div>
 <span class="incontext"><a href="exercicescomplexite.html#p-319">Contexte</a></span>
 </body>
 </html>

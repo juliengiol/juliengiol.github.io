@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:39-04:00       *-->
+<!--*       on 2021-10-28T12:23:12-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,29 +15,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Comme on a</p>
+<p>La fonction \(g(x):=\cos\left(\frac{x^3}{5}\right)\) vérifie</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-|\cos(t)|\le 1\quad\text{et}\quad |\sin(t)|\le 1
+g'(x)=-\frac{3x^2}{5}\sin\left(\frac{x^3}{5}\right)
 \end{equation*}
 </div>
-<p class="continuation">pour tout \(t\text{,}\) et comme les fonctions</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-x\longmapsto\frac{6|x|}{5}\quad\text{et}\quad x\longmapsto\frac{9x^4}{25}
-\end{equation*}
-</div>
-<p class="continuation">sont positives et croissantes sur l'intervalle \([2;4]\text{,}\) on a</p>
+<p class="continuation">et</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-|g''(x)|&amp;=\left|-\frac{6x}{5}\sin\left(\frac{x^3}{5}\right)-\frac{9x^4}{25}\cos\left(\frac{x^3}{5}\right)\right|\\
-&amp;\le\left|\frac{6x}{5}\sin\left(\frac{x^3}{5}\right)\right|+\left|\frac{9x^4}{25}\cos\left(\frac{x^3}{5}\right)\right|\\
-&amp;=\frac{6|x|}{5}\cdot\left|\sin\left(\frac{x^3}{5}\right)\right|+\frac{9x^4}{25}\cdot\left|\cos\left(\frac{x^3}{5}\right)\right|\\
-&amp;\le\frac{6\cdot 4}{5}\cdot 1+\frac{9\cdot 4^4}{25}\cdot 1\\
-&amp;=96{,}96
+g''(x)&amp;=-\frac{6x}{5}\sin\left(\frac{x^3}{5}\right)-\frac{3x^2}{5}\cdot\frac{3x^2}{5}\cos\left(\frac{x^3}{5}\right)\\
+&amp;=-\frac{6x}{5}\sin\left(\frac{x^3}{5}\right)-\frac{9x^4}{25}\cos\left(\frac{x^3}{5}\right).
 \end{align*}
 </div>
-<p class="continuation">pour tout \(x\in[2;4]\text{.}\)</p>
 <span class="incontext"><a href="exercicestrapezes.html#p-1122">Contexte</a></span>
 </body>
 </html>

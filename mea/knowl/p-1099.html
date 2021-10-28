@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:36-04:00       *-->
+<!--*       on 2021-10-28T12:23:10-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,16 +15,22 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>On a</p>
+<p>L'aire du trapèze au-dessus du sous intervalle \([x_{k-1};x_k]\) vaut</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-2{,}25+1{,}833\,3+1{,}547\,6+1{,}339\,3=6{,}970\,2
-\end{equation*}
+\begin{align*}
+\frac{\Delta x}{2}\cdot\left(f(x_{k-1})+f(x_k)\right)&amp;=\frac{0{,}5}{2}\cdot\left(\frac{10}{x_{k-1}}+\frac{10}{x_k}\right)\\
+&amp;=2{,}5\cdot\left(\frac{1}{x_{k-1}}+\frac{1}{x_k}\right).
+\end{align*}
 </div>
-<p class="continuation">donc</p>
+<p class="continuation">Cela donne</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\text{Approximation}\approx 6{,}97.
+\begin{array}{ccc}
+\text{Aire du trapèze 1}&amp;=&amp;2{,}25,\\
+\text{Aire du trapèze 2}&amp;\approx&amp;1{,}833\,3,\\
+\text{Aire du trapèze 3}&amp;\approx&amp;1{,}547\,6,\\
+\text{Aire du trapèze 4}&amp;\approx&amp;1{,}339\,3.
+\end{array}
 \end{equation*}
 </div>
 <span class="incontext"><a href="exercicestrapezes.html#p-1099">Contexte</a></span>

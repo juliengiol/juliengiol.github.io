@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:17-04:00       *-->
+<!--*       on 2021-10-28T12:21:33-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -218,21 +218,21 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="intervalle_encadrement"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">A.2</span> <span class="title">Intervalle d'encadrement</span>
 </h2>
-<p id="p-2014">Quand on applique une méthode numérique, c'est qu'on ignore la valeur exacte de la quantité qui nous intéresse.</p>
-<p id="p-2015">Il est alors essentiel de pouvoir estimer l'erreur.</p>
-<p id="p-2016">En général, la théorie nous permet d'obtenir une estimation du genre suivant :</p>
+<p id="p-2015">Quand on applique une méthode numérique, c'est qu'on ignore la valeur exacte de la quantité qui nous intéresse.</p>
+<p id="p-2016">Il est alors essentiel de pouvoir estimer l'erreur.</p>
+<p id="p-2017">En général, la théorie nous permet d'obtenir une estimation du genre suivant :</p>
 <div class="displaymath">
 \begin{equation*}
 \left|\text{Erreur}\right|\leq M\qquad\Leftrightarrow\qquad -M\leq\text{Erreur}\leq M.
 \end{equation*}
 </div>
-<p id="p-2017">En additionnant l'approximation à ce qui précède, on obtient les inéquations</p>
+<p id="p-2018">En additionnant l'approximation à ce qui précède, on obtient les inéquations</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Approximation}-M\;\leq\;\underbrace{\text{Approximation}+\text{Erreur}}_{\text{Valeur exacte}}\;\leq\;\text{Approximation}+M
 \end{equation*}
 </div>
-<p id="p-2018">Le plus souvent, il reste alors à effectuer des arrondissements pertinents de façon à obtenir les bornes de l'encadrement</p>
+<p id="p-2019">Le plus souvent, il reste alors à effectuer des arrondissements pertinents de façon à obtenir les bornes de l'encadrement</p>
 <div class="displaymath">
 \begin{equation*}
 a\leq\text{Valeur exacte}\leq b.
@@ -240,7 +240,7 @@ a\leq\text{Valeur exacte}\leq b.
 </div>
 <article class="example example-like" id="exemple1_encadrement"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-exemple1_encadrement"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">A.2.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple1_encadrement"><article class="example example-like"><p id="p-2019">Supposons qu'on s'intéresse à la valeur exacte d'une intégrale pour laquelle une méthode numérique donne l'approximation</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple1_encadrement"><article class="example example-like"><p id="p-2020">Supposons qu'on s'intéresse à la valeur exacte d'une intégrale pour laquelle une méthode numérique donne l'approximation</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Approximation}=17{,}315\,207
@@ -252,7 +252,7 @@ a\leq\text{Valeur exacte}\leq b.
 \left|\text{Erreur}\right|\leq 0{,}000\,004\qquad\Leftrightarrow\qquad -0{,}000\,004\leq\text{Erreur}\leq 0{,}000\,004.
 \end{equation*}
 </div>
-<p id="p-2020">On en déduit alors l'encadrement</p>
+<p id="p-2021">On en déduit alors l'encadrement</p>
 <div class="displaymath">
 \begin{equation*}
 17{,}315\,207-0{,}000\,004\leq\text{Approximation}+\text{Erreur}\leq 17{,}315\,207+0{,}000\,004
@@ -266,7 +266,7 @@ a\leq\text{Valeur exacte}\leq b.
 </div></article></div>
 <article class="example example-like" id="exemple2_encadrement"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-exemple2_encadrement"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">A.2.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple2_encadrement"><article class="example example-like"><p id="p-2021">Supposons qu'on s'intéresse à la valeur exacte d'une intégrale pour laquelle une méthode numérique donne l'approximation</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple2_encadrement"><article class="example example-like"><p id="p-2022">Supposons qu'on s'intéresse à la valeur exacte d'une intégrale pour laquelle une méthode numérique donne l'approximation</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Approximation}=17{,}315\,207\ldots
@@ -278,7 +278,7 @@ a\leq\text{Valeur exacte}\leq b.
 \left|\text{Erreur}\right|\leq 0{,}000\,357\ldots
 \end{equation*}
 </div>
-<p id="p-2022">Alors on commence par arrondir par excès l'estimation de l'erreur :</p>
+<p id="p-2023">Alors on commence par arrondir par excès l'estimation de l'erreur :</p>
 <div class="displaymath">
 \begin{equation*}
 \left|\text{Erreur}\right|\leq 0{,}000\,358\qquad\Leftrightarrow\qquad -0{,}000\,358\leq\text{Erreur}\leq 0{,}000\,358
@@ -290,7 +290,7 @@ a\leq\text{Valeur exacte}\leq b.
 17{,}315\,207\leq\text{Approximation}\leq 17{,}315\,208.
 \end{equation*}
 </div>
-<p id="p-2023">Et on en déduit finalement l'encadrement suivant :</p>
+<p id="p-2024">Et on en déduit finalement l'encadrement suivant :</p>
 <div class="displaymath">
 \begin{equation*}
 17{,}315\,207-0{,}000\,358\leq\text{Approximation}+\text{Erreur}\leq 17{,}315\,208+0{,}000\,358

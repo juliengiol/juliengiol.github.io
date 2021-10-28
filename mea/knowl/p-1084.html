@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:35-04:00       *-->
+<!--*       on 2021-10-28T12:23:08-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,6 +15,8 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<ul class="disc">
+<li>
 <p>On a \(f(x)=e^{-x^2}\text{,}\) donc</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
@@ -29,6 +31,72 @@ f''(x)&amp;=-2\cdot e^{-x^2}-2x\cdot e^{-x^2}\cdot(-2x)\\
 &amp;=2\cdot(2x^2-1)\cdot e^{-x^2}.
 \end{align*}
 </div>
+</li>
+<li>
+<p>En passant à la valeur absolue, on obtient</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|f''(x)|=2\cdot|2x^2-1|\cdot e^{-x^2}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>La fonction \(g(x):=2x^2-1\) est croissante sur l'intervalle \([0;1]\text{,}\) donc</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+g(0)\leq g(x)\leq g(1)
+\end{equation*}
+</div>
+<p class="continuation">i.e.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+-1\leq 2x^2-1\leq 1,
+\end{equation*}
+</div>
+<p class="continuation">d'où</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|2x^2-1|\leq 1
+\end{equation*}
+</div>
+<p class="continuation">pour tout \(x\in[0;1]\text{.}\)</p>
+</li>
+<li>
+<p>Comme par ailleurs</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+e^{-x^2}\leq e^0=1
+\end{equation*}
+</div>
+<p class="continuation">pour tout \(x\text{,}\) on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+|f''(x)|&amp;=2\cdot|2x^2-1|\cdot e^{-x^2}\\
+&amp;\leq 2\cdot 1\cdot 1\\
+&amp;=2
+\end{align*}
+</div>
+<p class="continuation">pour tout \(x\in[0;1]\text{.}\)</p>
+</li>
+<li>
+<p>On peut donc appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> avec \(M:=2\text{,}\) ce qui donne</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\left|\text{Erreur}\right|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
+&amp;=\frac{2\cdot(1-0)^3}{12\cdot 4^2}\\
+&amp;=\frac{1}{6\cdot 16}\\
+&amp;=0{,}010\,4\ldots\\
+&amp;\leq 0{,}011
+\end{align*}
+</div>
+<p class="continuation">d'où</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+-0{,}011\leq\text{Erreur}\leq 0{,}011.
+\end{equation*}
+</div>
+</li>
+</ul>
 <span class="incontext"><a href="presentationtrapezes.html#p-1084">Contexte</a></span>
 </body>
 </html>

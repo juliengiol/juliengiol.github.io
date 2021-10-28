@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:34-04:00       *-->
+<!--*       on 2021-10-28T12:21:50-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,36 +12,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Voici une implémentation de l'algorithme qui renvoie la valeur de \(x^n\) en suivant cette approche naïve. <div class="sagecell-python" id="sage-44"><script type="text/x-sage"># entrées :
-x = 2
-n = 5
-# instructions :
-produit = x
-for k in range(1, n):
-    produit = produit * x
-# sortie :
-print(produit)
-</script></div></p>
+<p>Plus généralement, on a besoin de \(n-1\) multiplications pour évaluer</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x^n=x\cdot x\cdot x\cdots x.
+\end{equation*}
+</div>
 <span class="incontext"><a href="exponentiation.html#p-250">Contexte</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:21:45-04:00       *-->
+<!--*       on 2021-10-28T12:20:57-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -238,34 +238,34 @@ MathJax.Hub.Config({
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Forme de Lagrange du polynôme interpolateur.</span>
 </h6>
 <ul class="disc">
-<li id="li-456">
-<p id="p-674">Entrées :</p>
+<li id="li-457">
+<p id="p-675">Entrées :</p>
 <ul class="circle">
-<li id="li-457">Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</li>
-<li id="li-458">Assigner à \(\text{x0},\text{x1},\ldots,\text{xn}\) les abscisses des points à interpoler.</li>
-<li id="li-459">Assigner à \(\text{y0},\text{y1},\ldots,\text{yn}\) les ordonnées des points à interpoler.</li>
-<li id="li-460">Déclarer \(\text{t}\) comme la variable du polynôme interpolateur.</li>
+<li id="li-458">Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</li>
+<li id="li-459">Assigner à \(\text{x0},\text{x1},\ldots,\text{xn}\) les abscisses des points à interpoler.</li>
+<li id="li-460">Assigner à \(\text{y0},\text{y1},\ldots,\text{yn}\) les ordonnées des points à interpoler.</li>
+<li id="li-461">Déclarer \(\text{t}\) comme la variable du polynôme interpolateur.</li>
 </ul>
 </li>
-<li id="li-461">
-<p id="p-675">Instructions :</p>
+<li id="li-462">
+<p id="p-676">Instructions :</p>
 <ul class="circle">
-<li id="li-462">Initialiser \(\text{L}\) la variable contenant la valeur du polynôme interpolateur : \(L=0\text{.}\)</li>
-<li id="li-463">
-<p id="p-676">Pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
+<li id="li-463">Initialiser \(\text{L}\) la variable contenant la valeur du polynôme interpolateur : \(L=0\text{.}\)</li>
+<li id="li-464">
+<p id="p-677">Pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
 <ul class="square">
-<li id="li-464">initialiser \(\text{Li}\) la variable contenant la valeur de \(L_i(t)\) : \(\text{Li}=1\text{;}\)</li>
-<li id="li-465">
-<p id="p-677">pour \(\text{j}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
-<ul class="disc"><li id="li-466">si \(\text{j}\neq\text{i}\text{,}\) assigner à \(\text{Li}\) la valeur de \(\displaystyle \text{Li}\cdot\frac{t-x_j}{x_i-x_j}\text{;}\)</li></ul>
+<li id="li-465">initialiser \(\text{Li}\) la variable contenant la valeur de \(L_i(t)\) : \(\text{Li}=1\text{;}\)</li>
+<li id="li-466">
+<p id="p-678">pour \(\text{j}\) allant de \(\text{0}\) à \(\text{n}\text{,}\)</p>
+<ul class="disc"><li id="li-467">si \(\text{j}\neq\text{i}\text{,}\) assigner à \(\text{Li}\) la valeur de \(\displaystyle \text{Li}\cdot\frac{t-x_j}{x_i-x_j}\text{;}\)</li></ul>
 </li>
-<li id="li-467">assigner à \(\text{L}\) la valeur de \(\text{L}+y_i\cdot\text{Li}\text{.}\)</li>
+<li id="li-468">assigner à \(\text{L}\) la valeur de \(\text{L}+y_i\cdot\text{Li}\text{.}\)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li id="li-468">Sortie : Afficher \(\text{L}\text{.}\)</li>
-</ul></article><p id="p-678">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/aveclagrange2.html" title="Exemple 6.1.9">6.1.9</a>.</p>
+<li id="li-469">Sortie : Afficher \(\text{L}\text{.}\)</li>
+</ul></article><p id="p-679">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/aveclagrange2.html" title="Exemple 6.1.9">6.1.9</a>.</p>
 <div class="sagecell-python" id="sage-52"><script type="text/x-sage"># entrées :
 n = 2
 x = [1.0, 2.0, 3.0]

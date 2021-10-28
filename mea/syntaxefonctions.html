@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:21:31-04:00       *-->
+<!--*       on 2021-10-28T12:20:44-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -234,18 +234,18 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="syntaxefonctions"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Syntaxe : def / return</span>
 </h2>
-<p id="p-146">En algorithmique comme en mathématiques, une fonction peut être vue comme une boîte noire qui renvoie un ou plusieurs résultats en sortie, dépendant des éléments qui lui ont été donnés en entrée.</p>
-<p id="p-147">En Python, les mots-clés qu'on utilise pour définir une fonction sont les suivants.</p>
+<p id="p-147">En algorithmique comme en mathématiques, une fonction peut être vue comme une boîte noire qui renvoie un ou plusieurs résultats en sortie, dépendant des éléments qui lui ont été donnés en entrée.</p>
+<p id="p-148">En Python, les mots-clés qu'on utilise pour définir une fonction sont les suivants.</p>
 <ul class="disc">
-<li id="li-69">
-<code class="code-inline tex2jax_ignore">def ... :</code> annonce le début de la définition.</li>
 <li id="li-70">
+<code class="code-inline tex2jax_ignore">def ... :</code> annonce le début de la définition.</li>
+<li id="li-71">
 <code class="code-inline tex2jax_ignore">return</code> annonce la chose à renvoyer.</li>
 </ul>
 <article class="remark remark-like" id="remark-9"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-148">Comme pour les boucles et les conditionnelles, les deux-points <code class="code-inline tex2jax_ignore"> :</code> annoncent une <a class="external" href="https://www.askpython.com/python/python-indentation" target="_blank">indentation</a> (4 espaces fortement recommandés). Notez aussi que le <code class="code-inline tex2jax_ignore">return</code> doit faire partie du bloc indenté.</p></article><p id="p-149">Voici un premier exemple permettant de définir la fonction quadratique</p>
+<p id="p-149">Comme pour les boucles et les conditionnelles, les deux-points <code class="code-inline tex2jax_ignore"> :</code> annoncent une <a class="external" href="https://www.askpython.com/python/python-indentation" target="_blank">indentation</a> (4 espaces fortement recommandés). Notez aussi que le <code class="code-inline tex2jax_ignore">return</code> doit faire partie du bloc indenté.</p></article><p id="p-150">Voici un premier exemple permettant de définir la fonction quadratique</p>
 <div class="displaymath">
 \begin{equation*}
 f(x) = x^2-4x+2.
@@ -265,18 +265,18 @@ print(y)
 <article class="remark remark-like" id="remark-10"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
 </h6>
-<p id="p-150">Une fonction Python sans <code class="code-inline tex2jax_ignore">return</code> peut quand même afficher des choses quand on l'appelle, même si elle ne renvoie rien à proprement parler.</p>
+<p id="p-151">Une fonction Python sans <code class="code-inline tex2jax_ignore">return</code> peut quand même afficher des choses quand on l'appelle, même si elle ne renvoie rien à proprement parler.</p>
 <div class="sagecell-python" id="sage-37"><script type="text/x-sage">def f(x):
     print(x ** 2 - 4 * x + 2)
 
 y = f(5)
 print(y)
 </script></div>
-<p id="p-151">Le code ci-dessus affiche</p>
+<p id="p-152">Le code ci-dessus affiche</p>
 <ul class="disc">
-<li id="li-71"><p id="p-152">\(\text{7}\) parce que la commande <code class="code-inline tex2jax_ignore">y = f(5)</code> fait appel à la fonction <code class="code-inline tex2jax_ignore">f(x)</code> et exécute donc <code class="code-inline tex2jax_ignore">print(x ** 2 - 4 * x + 2)</code> pour x valant 5;</p></li>
-<li id="li-72"><p id="p-153">et \(\text{None}\) parce que la fonction <code class="code-inline tex2jax_ignore">f(x)</code> ne renvoie rien, donc la variable <code class="code-inline tex2jax_ignore">y</code> reste vide, de sorte que <code class="code-inline tex2jax_ignore">print(y)</code> affiche \(\text{None}\text{.}\)</p></li>
-</ul></article><p id="p-154">Codons ensuite la fonction valeur absolue qui peut être définie comme suit :</p>
+<li id="li-72"><p id="p-153">\(\text{7}\) parce que la commande <code class="code-inline tex2jax_ignore">y = f(5)</code> fait appel à la fonction <code class="code-inline tex2jax_ignore">f(x)</code> et exécute donc <code class="code-inline tex2jax_ignore">print(x ** 2 - 4 * x + 2)</code> pour x valant 5;</p></li>
+<li id="li-73"><p id="p-154">et \(\text{None}\) parce que la fonction <code class="code-inline tex2jax_ignore">f(x)</code> ne renvoie rien, donc la variable <code class="code-inline tex2jax_ignore">y</code> reste vide, de sorte que <code class="code-inline tex2jax_ignore">print(y)</code> affiche \(\text{None}\text{.}\)</p></li>
+</ul></article><p id="p-155">Codons ensuite la fonction valeur absolue qui peut être définie comme suit :</p>
 <div class="displaymath">
 \begin{equation*}
 x\longmapsto
@@ -295,7 +295,7 @@ x&amp;\text{si}\;x\geq 0,\\
 print(valeurAbsolue(5))
 print(valeurAbsolue(-7))
 </script></div> Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y4dl5v7v" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
-<p id="p-155">Terminons cette section avec la fonction factorielle. Pour \(n\geq 1\text{,}\) on rappelle que</p>
+<p id="p-156">Terminons cette section avec la fonction factorielle. Pour \(n\geq 1\text{,}\) on rappelle que</p>
 <div class="displaymath">
 \begin{equation*}
 n!=1\cdot 2\cdot 3\cdots n.

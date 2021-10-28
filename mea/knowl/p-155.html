@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:28-04:00       *-->
+<!--*       on 2021-10-28T12:21:44-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,26 +32,25 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Terminons cette section avec la fonction factorielle. Pour \(n\geq 1\text{,}\) on rappelle que</p>
+<p>Codons ensuite la fonction valeur absolue qui peut être définie comme suit :</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-n!=1\cdot 2\cdot 3\cdots n.
+x\longmapsto
+\begin{cases}
+x&amp;\text{si}\;x\geq 0,\\
+-x&amp;\text{sinon.}
+\end{cases}
 \end{equation*}
 </div>
-<p class="continuation">La fonction <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">factorielle(n)</code> ci-après calcule n! à l'aide d'une boucle <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">for</code>. On la teste avec <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">print(factorielle(5))</code> qui doit afficher \(\text{120}\) puisque</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-5!=1\cdot 2\cdot 3\cdot 4\cdot 5=120.
-\end{equation*}
-</div>
-<p class="continuation"><div class="sagecell-python" id="sage-39"><script type="text/x-sage">def factorielle(n):
-    produit = 1
-    for k in range(2, n+1):
-        produit = produit * k
-    return produit
+<p class="continuation">Nous allons l'appeler <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">valeurAbsolue</code>, et la tester avec <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">print(valeurAbsolue(5))</code> et <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">print(valeurAbsolue(-7))</code> qui doivent afficher respectivement \(\text{5}\) et \(\text{7}\text{.}\) <div class="sagecell-python" id="sage-38"><script type="text/x-sage">def valeurAbsolue(x):
+    if x >= 0:
+        return x
+    else:
+        return -x
 
-print(factorielle(5))
-</script></div> Cliquez sur <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/yxl77o2s" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+print(valeurAbsolue(5))
+print(valeurAbsolue(-7))
+</script></div> Cliquez sur <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y4dl5v7v" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
 <span class="incontext"><a href="syntaxefonctions.html#p-155">Contexte</a></span>
 </body>
 </html>

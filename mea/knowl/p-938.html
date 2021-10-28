@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:23-04:00       *-->
+<!--*       on 2021-10-28T12:22:44-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Et si on veut obtenir un encadrement plus précis? Grâce à l'estimation d'erreur du théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>, on peut déterminer le nombre minimal de rectangles à considérer pour que la valeur absolue de l'erreur commise ne dépasse pas une valeur donnée.</p>
+<p>Remarque : En fait, comme la fonction \(f(x)=e^{-x^2}\) est décroissante sur \([0;1]\text{,}\) on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{Aire des rectangles à droite}\leq\int_0^1e^{-x^2}\mathrm{d}x\leq\text{Aire des rectangles à gauche}
+\end{equation*}
+</div>
+<p class="continuation">d'où</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+0{,}66\leq\int_0^1e^{-x^2}\mathrm{d}x\leq 0{,}82.
+\end{equation*}
+</div>
+<p class="continuation">C'est mieux que tout ce qui précède, sans même avoir à estimer l'erreur.</p>
 <span class="incontext"><a href="presentationrectangles.html#p-938">Contexte</a></span>
 </body>
 </html>

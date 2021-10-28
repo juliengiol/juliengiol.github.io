@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:33-04:00       *-->
+<!--*       on 2021-10-28T12:23:06-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,25 +15,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Rappelons que la méthode des rectangles <a class="xref" data-knowl="./knowl/def_methode_rectangles.html" title="Définition 8.1.8: Méthode des rectangles">8.1.8</a> consiste à approcher la valeur de l'intégrale définie</p>
+<p>En appliquant \(k\) fois l'inégalité triangulaire à la formule de la question 1 et en utilisant pour chaque morceau l'estimation de la question 4, on obtient</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\int_a^bf(x)\mathrm{d}x
-\end{equation*}
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|\\
+&amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|\\
+&amp;\le\sum_{k=1}^n\frac{M(b-a)^3}{24n^3}\\
+&amp;=\frac{M(b-a)^3}{24n^3}\cdot n\\
+&amp;=\frac{M(b-a)^3}{24n^2}.
+\end{align*}
 </div>
-<p class="continuation">par le nombre</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Delta x\cdot\sum_{k=1}^nf(\xi_k)=\sum_{k=1}^nf(\xi_k)\cdot\Delta x
-\end{equation*}
-</div>
-<p class="continuation">qui est égal à la somme des aires algébriques des \(n\) rectangles de côtés \(\Delta x=x_k-x_{k-1}\) et \(f(\xi_k)\text{,}\) dont l'aire</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Delta x\cdot f(\xi_k)
-\end{equation*}
-</div>
-<p class="continuation">est positive, négative, ou nulle, selon la valeur de \(f(\xi_k)\text{.}\)</p>
-<span class="incontext"><a href="presentationtrapezes.html#p-1058">Contexte</a></span>
+<span class="incontext"><a href="exercicesrectangles.html#p-1058">Contexte</a></span>
 </body>
 </html>

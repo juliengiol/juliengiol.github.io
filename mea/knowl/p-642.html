@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:02-04:00       *-->
+<!--*       on 2021-10-28T12:22:19-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,25 +15,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>La matrice des coefficients de ce système</p>
+<p>Les conditions \(P(x_k)=y_k\) pour tout \(k=0,1,\ldots,n\) sont alors équivalentes au système linéaire de \(n+1\) équations</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{bmatrix}
-1&amp;x_0&amp;x_0^2&amp;\cdots&amp;x_0^n\\
-1&amp;x_1&amp;x_1^2&amp;\cdots&amp;x_1^n\\
-1&amp;x_2&amp;x_2^2&amp;\cdots&amp;x_2^n\\
-\vdots&amp;\vdots&amp;\vdots&amp;&amp;\vdots\\
-1&amp;x_n&amp;x_n^2&amp;\cdots&amp;x_n^n
-\end{bmatrix}
+\begin{cases}
+a_0&amp;+&amp;a_1x_0&amp;+&amp;a_2x_0^2&amp;+&amp;\cdots&amp;+&amp;a_nx_0^n&amp;=&amp;y_0\\
+a_0&amp;+&amp;a_1x_1&amp;+&amp;a_2x_1^2&amp;+&amp;\cdots&amp;+&amp;a_nx_1^n&amp;=&amp;y_1\\
+a_0&amp;+&amp;a_1x_2&amp;+&amp;a_2x_2^2&amp;+&amp;\cdots&amp;+&amp;a_nx_2^n&amp;=&amp;y_2\\
+\vdots&amp;&amp;\vdots&amp;&amp;\vdots&amp;&amp;&amp;&amp;\vdots&amp;&amp;\vdots\\
+a_0&amp;+&amp;a_1x_n&amp;+&amp;a_2x_n^2&amp;+&amp;\cdots&amp;+&amp;a_nx_n^n&amp;=&amp;y_n
+\end{cases}
 \end{equation*}
 </div>
-<p class="continuation">est une <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde" target="_blank">matrice de Vandermonde</a> de taille \((n+1)\times(n+1)\text{,}\) dont le <a class="external" href="https://fr.wikipedia.org/wiki/Matrice_de_Vandermonde#D%C3%A9terminant" target="_blank">déterminant</a> vaut</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\prod_{0\le i&lt;j\leq n}(x_j-x_i).
-\end{equation*}
-</div>
-<p class="continuation">Comme les \(x_k\) sont supposés distincts deux à deux, i.e. \(x_i\ne x_j\) pour tous \(i\ne j\text{,}\) on voit que ce déterminant est non nul, ce qui entraîne que le système admet une unique solution \((a_0,\ldots,a_n)\text{.}\)</p>
+<p class="continuation">où les \(n+1\) inconnues sont les coefficients \(a_0,\ldots,a_n\) du polynôme cherché.</p>
 <span class="incontext"><a href="presentationlagrange.html#p-642">Contexte</a></span>
 </body>
 </html>

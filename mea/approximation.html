@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:17-04:00       *-->
+<!--*       on 2021-10-28T12:21:32-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -218,34 +218,34 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="appendix" id="approximation"><h2 class="heading hide-type">
 <span class="type">Appendice</span> <span class="codenumber">A</span> <span class="title">Approximations et erreurs</span>
 </h2>
-<section class="introduction" id="introduction-14"><p id="p-1996">Une méthode de calcul numérique permet souvent d'obtenir des approximations.</p>
+<section class="introduction" id="introduction-14"><p id="p-1997">Une méthode de calcul numérique permet souvent d'obtenir des approximations.</p>
 <article class="example example-like" id="exemple_approx_rectangles"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-exemple_approx_rectangles"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">A.0.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_approx_rectangles"><article class="example example-like"><p id="p-1997">La fonction \(f(x)=e^{-x^2}\) n'admet aucune primitive qui puisse s'exprimer à l'aide des fonctions usuelles.</p>
-<p id="p-1998">On a donc besoin de méthodes numériques pour estimer la valeur d'intégrales telles que</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_approx_rectangles"><article class="example example-like"><p id="p-1998">La fonction \(f(x)=e^{-x^2}\) n'admet aucune primitive qui puisse s'exprimer à l'aide des fonctions usuelles.</p>
+<p id="p-1999">On a donc besoin de méthodes numériques pour estimer la valeur d'intégrales telles que</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^1e^{-x^2}\,\mathrm{d}x.
 \end{equation*}
 </div>
-<p id="p-1999">Par exemple, lorsqu'on subdivise l'intervalle d'intégration \([0;1]\) en quatre sous-intervalles de même longueur, la méthode des rectangles à gauche fournit l'approximation qui suit.</p>
+<p id="p-2000">Par exemple, lorsqu'on subdivise l'intervalle d'intégration \([0;1]\) en quatre sous-intervalles de même longueur, la méthode des rectangles à gauche fournit l'approximation qui suit.</p>
 <div class="displaymath">
 \begin{align*}
 \text{Approximation}&amp;=e^{-0^2}\cdot 0{,}25+e^{-0{,}25^2}\cdot 0{,}25+e^{-0{,}5^2}\cdot 0{,}25+e^{-0{,}75^2}\cdot 0{,}25\\
 &amp;=0{,}821\,999\,167\ldots
 \end{align*}
 </div>
-<p id="p-2000">Qu'avons-nous appris sur la valeur exacte de cette intégrale?</p></article></div>
+<p id="p-2001">Qu'avons-nous appris sur la valeur exacte de cette intégrale?</p></article></div>
 <article class="example example-like" id="exemple_approx_somme_serie"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-exemple_approx_somme_serie"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">A.0.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_approx_somme_serie"><article class="example example-like"><p id="p-2001">Grâce au critère des séries alternées, on sait que la série suivante est convergente.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_approx_somme_serie"><article class="example example-like"><p id="p-2002">Grâce au critère des séries alternées, on sait que la série suivante est convergente.</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{n=0}^{+\infty}(-1)^n\frac{4}{2n+1}=4-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}-\frac{4}{11}+\cdots
 \end{equation*}
 </div>
-<p id="p-2002">Ses sommes partielles fournissent donc des approximations de la valeur de sa somme.</p>
-<p id="p-2003">Par exemple, en sommant les cinq premiers termes, on obtient l'approximation qui suit.</p>
+<p id="p-2003">Ses sommes partielles fournissent donc des approximations de la valeur de sa somme.</p>
+<p id="p-2004">Par exemple, en sommant les cinq premiers termes, on obtient l'approximation qui suit.</p>
 <div class="displaymath">
 \begin{align*}
 \text{Approximation}&amp;=\sum_{n=0}^4(-1)^n\frac{4}{2n+1}\\
@@ -253,9 +253,9 @@ MathJax.Hub.Config({
 &amp;=3{,}339\,682\,539\ldots
 \end{align*}
 </div>
-<p id="p-2004">Qu'avons-nous appris sur la valeur exacte de la somme de cette série?</p></article></div>
-<p id="p-2005">La réponse à la question soulevée dans chacun des exemples ci-dessus est la même : RIEN.</p>
-<p id="p-2006">Quand on effectue une approximation, on commet une erreur :</p>
+<p id="p-2005">Qu'avons-nous appris sur la valeur exacte de la somme de cette série?</p></article></div>
+<p id="p-2006">La réponse à la question soulevée dans chacun des exemples ci-dessus est la même : RIEN.</p>
+<p id="p-2007">Quand on effectue une approximation, on commet une erreur :</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Erreur}=\text{Valeur exacte}-\text{Approximation}.
@@ -267,12 +267,12 @@ MathJax.Hub.Config({
 \text{Valeur exacte}=\text{Approximation}+\text{Erreur}.
 \end{equation*}
 </div>
-<p id="p-2007">Une approximation toute seule ne veut rien dire tant qu'on ne dispose pas d'une estimation de l'erreur commise.</p></section><nav class="summary-links"><ul>
+<p id="p-2008">Une approximation toute seule ne veut rien dire tant qu'on ne dispose pas d'une estimation de l'erreur commise.</p></section><nav class="summary-links"><ul>
 <li><a href="erreur_abs_et_rel.html"><span class="codenumber">A.1</span> <span class="title">Erreur et erreur relative</span></a></li>
 <li><a href="intervalle_encadrement.html"><span class="codenumber">A.2</span> <span class="title">Intervalle d'encadrement</span></a></li>
 <li><a href="decimales.html"><span class="codenumber">A.3</span> <span class="title">Décimales exactes et arrondissements</span></a></li>
 <li><a href="exercicesapproximation.html"><span class="codenumber">A.4</span> <span class="title">Exercices</span></a></li>
-</ul></nav><section class="conclusion" id="conclusion-1"><p id="p-2077"></p></section></section></div></main>
+</ul></nav><section class="conclusion" id="conclusion-1"><p id="p-2078"></p></section></section></div></main>
 </div>
 <!--Start: StatCounter code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***        GET YOUR OWN FROM STATCOUNTER           ***--><script>
 var sc_project=12152300;

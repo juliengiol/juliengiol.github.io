@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:30-04:00       *-->
+<!--*       on 2021-10-28T12:23:00-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,13 +15,22 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">8.3.10.1</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">8.3.9.7</span><span class="period">.</span>
 </h6>
-<p>Montrez que pour toute fonction constante \(f(x):=c\text{,}\) on a</p>
+<p>En reprenant les calculs de la question 5 et en utilisant l'estimation de la question 6, on obtient</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Delta x\cdot\sum_{k=1}^nf\left(a+k\cdot\Delta x\right)=\int_a^bf(x)\mathrm{d}x.
-\end{equation*}
+\begin{align*}
+\left|\int_c^df(x)\mathrm{d}x-f(\xi)\cdot\Delta x\right|&amp;\le\int_c^d|f(x)-f(\xi)|\mathrm{d}x\\
+&amp;\le\int_c^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=\int_c^\xi M\cdot|x-\xi|\mathrm{d}x+\int_\xi^dM\cdot|x-\xi|\mathrm{d}x\\
+&amp;=-M\cdot\int_c^\xi(x-\xi)\mathrm{d}x+M\cdot\int_\xi^d(x-\xi)\mathrm{d}x\\
+&amp;=-M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_c^\xi+M\cdot\frac{(x-\xi)^2}{2}\,\Bigg\vert_\xi^d\\
+&amp;=-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}+M\cdot\frac{(c-\xi)^2}{2}\\
+&amp;\quad+M\cdot\frac{(d-\xi)^2}{2}-\cancel{M\cdot\frac{(\xi-\xi)^2}{2}}\\
+&amp;=M\cdot\left(\frac{(c-\xi)^2}{2}+\frac{(d-\xi)^2}{2}\right)\\
+&amp;=M\cdot g(\xi)\\
+&amp;\le M\cdot\frac{(\Delta x)^2}{2}.
+\end{align*}
 </div></article><span class="incontext"><a href="exercicesrectangles.html#li-748">Contexte</a></span>
 </body>
 </html>

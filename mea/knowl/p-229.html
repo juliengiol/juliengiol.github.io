@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:33-04:00       *-->
+<!--*       on 2021-10-28T12:21:49-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,22 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Non, cela prend trop de temps. Il vaut mieux s'en tenir à la méthode de l'exercice <a class="xref" data-knowl="./knowl/fibo_iterative.html" title="Exercice 1.4.12">1.4.12</a>.</p>
+<p>On obtient</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+F_{20}=6765
+\end{equation*}
+</div>
+<p class="continuation">à l'aide du code qui suit.<pre class="code-block tex2jax_ignore">def fibonacci(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(20))
+</pre></p>
 <span class="incontext"><a href="exercicesfonctions.html#p-229">Contexte</a></span>
 </body>
 </html>

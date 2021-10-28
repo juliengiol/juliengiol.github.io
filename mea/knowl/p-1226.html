@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:47-04:00       *-->
+<!--*       on 2021-10-28T12:23:22-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,22 +15,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Alors l'erreur d'approximation par la méthode des trapèzes</p>
+<p>Soit \(n\geq 1\) un entier et soit</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\text{Erreur}=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\frac{\Delta x}{6}\cdot\sum_{k=1}^n\left(f(x_{k-1})+4f(m_k)+f(x_k)\right)}_{\text{Approximation}}
+a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
 \end{equation*}
 </div>
-<p class="continuation">vérifie</p>
+<p class="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-|\text{Erreur}|\leq\frac{M(b-a)^5}{2880n^4}
-\end{equation*}
-</div>
-<p class="continuation">où \(M\) est n'importe quel nombre tel que</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-|f^{(4)}(x)|\leq M\quad\text{pour tout }x\in[a;b].
+\Delta x=\frac{b-a}{n}.
 \end{equation*}
 </div>
 <span class="incontext"><a href="presentationsimpson.html#p-1226">Contexte</a></span>

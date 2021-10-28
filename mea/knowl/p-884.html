@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:20-04:00       *-->
+<!--*       on 2021-10-28T12:22:38-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,11 +15,14 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>On calcule alors \(P(15000)\) et on trouve</p>
+<p>En utilisant le code donné à la section <a href="algorithmediffdiv.html" class="internal" title="Section 7.2: Algorithme">7.2</a>, on obtient les différences divisées de ces quatre points et on en déduit la forme de Newton de son polynôme interpolateur :</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P(15000)\approx 4216.
-\end{equation*}
+\begin{align*}
+P(t)&amp;\approx 362\\
+&amp;\qquad+0{,}260857142857(t-1500)\\
+&amp;\qquad+2{,}22857142857\cdot 10^{-6}(t-1500)(t-5000)\\
+&amp;\qquad-1{,}71438966056\cdot 10^{-10}(t-1500)(t-5000)(t-10000).
+\end{align*}
 </div>
 <span class="incontext"><a href="exercicesdiffdiv.html#p-884">Contexte</a></span>
 </body>

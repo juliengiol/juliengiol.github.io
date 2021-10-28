@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:19-04:00       *-->
+<!--*       on 2021-10-28T12:21:35-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -218,15 +218,15 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sage_mathcell"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">B.1</span> <span class="title">SageMathCell</span>
 </h2>
-<p id="p-2084">L'interface web <a class="external" href="https://sagecell.sagemath.org/" target="_blank">SageMathCell</a> permet notamment d'effectuer les tâches suivantes.</p>
+<p id="p-2085">L'interface web <a class="external" href="https://sagecell.sagemath.org/" target="_blank">SageMathCell</a> permet notamment d'effectuer les tâches suivantes.</p>
 <ul class="disc">
-<li id="li-1305"><p id="p-2085">Exécuter du code SageMath, Python, Maxima, R, etc. directement dans le fureteur, sans installation d'aucune sorte.</p></li>
-<li id="li-1306"><p id="p-2086">Partager son code sous la forme d'un bref lien temporaire, ou d'un lien plus long mais permanent.</p></li>
+<li id="li-1306"><p id="p-2086">Exécuter du code SageMath, Python, Maxima, R, etc. directement dans le fureteur, sans installation d'aucune sorte.</p></li>
+<li id="li-1307"><p id="p-2087">Partager son code sous la forme d'un bref lien temporaire, ou d'un lien plus long mais permanent.</p></li>
 </ul>
-<p id="p-2087">Voici un premier exemple montrant comment utiliser <a class="external" href="https://sagecell.sagemath.org/" target="_blank">SageMathCell</a> comme une super calculatrice.</p>
+<p id="p-2088">Voici un premier exemple montrant comment utiliser <a class="external" href="https://sagecell.sagemath.org/" target="_blank">SageMathCell</a> comme une super calculatrice.</p>
 <article class="example example-like" id="exemple_sage_systeme"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-exemple_sage_systeme"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">B.1.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_sage_systeme"><article class="example example-like"><p id="p-2088">Résolvons le système linéaire suivant avec SageMath.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_sage_systeme"><article class="example example-like"><p id="p-2089">Résolvons le système linéaire suivant avec SageMath.</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{cases}
@@ -236,7 +236,7 @@ a_0&amp;+&amp;3a_1&amp;+&amp;9a_2&amp;=&amp;0\\
 \end{cases}
 \end{equation*}
 </div>
-<p id="p-2089">Pour cela, il suffit d'appliquer la méthode de Gauss-Jordan à la matrice augmentée du système.</p>
+<p id="p-2090">Pour cela, il suffit d'appliquer la méthode de Gauss-Jordan à la matrice augmentée du système.</p>
 <div class="displaymath">
 \begin{equation*}
 \text{M} =
@@ -247,13 +247,13 @@ a_0&amp;+&amp;3a_1&amp;+&amp;9a_2&amp;=&amp;0\\
 \end{bmatrix}
 \end{equation*}
 </div>
-<p id="p-2090">Voici le code SageMath à exécuter :<pre class="code-block tex2jax_ignore">M = matrix(3, 4, [1,1,1,-3,1,2,4,7,1,3,9,0])
+<p id="p-2091">Voici le code SageMath à exécuter :<pre class="code-block tex2jax_ignore">M = matrix(3, 4, [1,1,1,-3,1,2,4,7,1,3,9,0])
 show(M)
 GJ = M.rref()
 show(GJ)
 </pre></p>
-<p id="p-2091"><a class="external" href="https://tinyurl.com/y58gkw26" target="_blank">Cliquez sur ce lien</a> pour voir ce code en action dans SageMathCell.</p>
-<p id="p-2092">À la sortie de ce bloc de code, on obtient \(\text{GJ}\text{,}\) la forme échelonnée réduite de \(\text{M}\text{.}\)</p>
+<p id="p-2092"><a class="external" href="https://tinyurl.com/y58gkw26" target="_blank">Cliquez sur ce lien</a> pour voir ce code en action dans SageMathCell.</p>
+<p id="p-2093">À la sortie de ce bloc de code, on obtient \(\text{GJ}\text{,}\) la forme échelonnée réduite de \(\text{M}\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \text{GJ} =
@@ -264,7 +264,7 @@ show(GJ)
 \end{bmatrix}
 \end{equation*}
 </div>
-<p id="p-2093">On en déduit qu'il y a une unique solution :</p>
+<p id="p-2094">On en déduit qu'il y a une unique solution :</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{cases}
@@ -274,23 +274,23 @@ a_2&amp;=&amp;-17/2\\
 \end{cases}
 \end{equation*}
 </div></article></div>
-<p id="p-2094">Voici maintenant un exemple montrant comment utiliser <a class="external" href="https://sagecell.sagemath.org/" target="_blank">SageMathCell</a> pour tester et partager du code Python.</p>
+<p id="p-2095">Voici maintenant un exemple montrant comment utiliser <a class="external" href="https://sagecell.sagemath.org/" target="_blank">SageMathCell</a> pour tester et partager du code Python.</p>
 <article class="example example-like" id="exemple_sage_euclide"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-exemple_sage_euclide"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">B.1.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_sage_euclide"><article class="example example-like"><p id="p-2095">Calculons le PGCD de \(57\) et \(42\) à l'aide de l'algorithme d'Euclide.</p>
-<p id="p-2096">Voici le code Python à exécuter :<pre class="code-block tex2jax_ignore">a = 57
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple_sage_euclide"><article class="example example-like"><p id="p-2096">Calculons le PGCD de \(57\) et \(42\) à l'aide de l'algorithme d'Euclide.</p>
+<p id="p-2097">Voici le code Python à exécuter :<pre class="code-block tex2jax_ignore">a = 57
 b = 42
 while a % b != 0:
     a, b = b, a % b
 print(b)
 </pre></p>
-<p id="p-2097"><a class="external" href="https://tinyurl.com/y5hlqk6q" target="_blank">Cliquez sur ce lien</a> pour voir ce code en action dans SageMathCell.</p>
+<p id="p-2098"><a class="external" href="https://tinyurl.com/y5hlqk6q" target="_blank">Cliquez sur ce lien</a> pour voir ce code en action dans SageMathCell.</p>
 <ul class="disc">
-<li id="li-1307"><p id="p-2098">Vérifiez que le langage sélectionné est bien <code class="code-inline tex2jax_ignore">Python</code>.</p></li>
-<li id="li-1308"><p id="p-2099">Sélectionnez le langage <code class="code-inline tex2jax_ignore">Sage</code> puis cliquez sur <code class="code-inline tex2jax_ignore">Evaluate</code> afin d'observer qu'on obtient le même résultat à la sortie de l'algorithme.</p></li>
-<li id="li-1309"><p id="p-2100">Notez aussi le bouton <code class="code-inline tex2jax_ignore">Share</code> grâce auquel le lien de partage a été obtenu.</p></li>
+<li id="li-1308"><p id="p-2099">Vérifiez que le langage sélectionné est bien <code class="code-inline tex2jax_ignore">Python</code>.</p></li>
+<li id="li-1309"><p id="p-2100">Sélectionnez le langage <code class="code-inline tex2jax_ignore">Sage</code> puis cliquez sur <code class="code-inline tex2jax_ignore">Evaluate</code> afin d'observer qu'on obtient le même résultat à la sortie de l'algorithme.</p></li>
+<li id="li-1310"><p id="p-2101">Notez aussi le bouton <code class="code-inline tex2jax_ignore">Share</code> grâce auquel le lien de partage a été obtenu.</p></li>
 </ul>
-<p id="p-2101">À la sortie de cet algorithme, on obtient la valeur du PGCD de \(57\) et \(42\) : c'est \(3\text{.}\)</p></article></div></section></div></main>
+<p id="p-2102">À la sortie de cet algorithme, on obtient la valeur du PGCD de \(57\) et \(42\) : c'est \(3\text{.}\)</p></article></div></section></div></main>
 </div>
 <!--Start: StatCounter code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***        GET YOUR OWN FROM STATCOUNTER           ***--><script>
 var sc_project=12152300;

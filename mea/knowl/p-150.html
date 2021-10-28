@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:28-04:00       *-->
+<!--*       on 2021-10-28T12:21:44-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,10 +12,43 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-python' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
+                           linked: true,
+                           languages: ['python'],
+                           evalButtonText: 'Évaluer (Python)'});
+});
+</script>
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Une fonction Python sans <code class="code-inline tex2jax_ignore">return</code> peut quand même afficher des choses quand on l'appelle, même si elle ne renvoie rien à proprement parler.</p>
+<p>Voici un premier exemple permettant de définir la fonction quadratique</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(x) = x^2-4x+2.
+\end{equation*}
+</div>
+<p class="continuation"><div class="sagecell-python" id="sage-35"><script type="text/x-sage">def f(x):  # début de la définition de la fonction
+    return x ** 2 - 4 * x + 2 # la chose à renvoyer
+</script></div> Évaluez la cellule précédente et vérifiez que rien ne s'affiche. Puis faites afficher la valeur de</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+y = f(5)
+\end{equation*}
+</div>
+<p class="continuation">en évaluant la cellule suivante. <div class="sagecell-python" id="sage-36"><script type="text/x-sage">y = f(5)
+print(y)
+</script></div></p>
 <span class="incontext"><a href="syntaxefonctions.html#p-150">Contexte</a></span>
 </body>
 </html>

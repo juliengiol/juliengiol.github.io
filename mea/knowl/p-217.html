@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:32-04:00       *-->
+<!--*       on 2021-10-28T12:21:48-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,28 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<ol class="decimal">
-<li><pre class="code-block tex2jax_ignore">def syracuse1(s, n):
-    for k in range(1, n+1):
-        if s % 2 == 0:
-              s = s / 2
-        else:
-            s = 3 * s + 1
-    return s
-
-print(syracuse1(14, 20))
-</pre></li>
-<li><pre class="code-block tex2jax_ignore">def syracuse2(s, n):
-    if n == 0:
-        return s
-    elif s % 2 == 0:
-        return syracuse2(s / 2, n-1)
-    else:
-        return syracuse2(3 * s + 1, n-1)
-
-print(syracuse2(14, 20))
-</pre></li>
-</ol>
+<p xmlns:svg="http://www.w3.org/2000/svg">Testez votre code avec <code class="code-inline tex2jax_ignore">print(syracusej(14, 20))</code> qui doit afficher \(\text{1}\text{.}\)</p>
 <span class="incontext"><a href="exercicesfonctions.html#p-217">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:52-04:00       *-->
+<!--*       on 2021-10-28T12:22:09-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -18,19 +18,19 @@
 <p>La relation de récurrence donne ici</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-x_{n+1}=x_n-x_n\cdot\ln(x_n).
+x_{n+1}=x_n-\frac{x_n^3-5}{3x_n^2}.
 \end{equation*}
 </div>
 <p class="continuation">On obtient :</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-x_0&amp;=2;\\
-x_1&amp;=x_0-x_0\cdot\ln(x_0)\approx 0{,}613\,706;\\
-x_2&amp;=x_1-x_1\cdot\ln(x_1)\approx 0{,}913\,341;\\
-x_3&amp;=x_2-x_2\cdot\ln(x_2)\approx 0{,}996\,132.
+x_0&amp;=1{,}5;\\
+x_1&amp;=x_0-\frac{x_0^3-5}{3x_0^2}\approx 1{,}740\,741;\\
+x_2&amp;=x_1-\frac{x_1^3-5}{3x_1^2}\approx 1{,}710\,516;\\
+x_3&amp;=x_2-\frac{x_2^3-5}{3x_2^2}\approx 1{,}709\,976.
 \end{align*}
 </div>
-<p class="continuation">Comme \(c=1\text{,}\) l'approximation par \(x_3\) est assez bonne.</p>
+<p class="continuation">Comme \(c=\sqrt[3]{5}\approx 1{,}709\,975\,947\text{,}\) l'approximation par \(x_3\) est excellente.</p>
 <span class="incontext"><a href="exercicesnewton.html#p-526">Contexte</a></span>
 </body>
 </html>

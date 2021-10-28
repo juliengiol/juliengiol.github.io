@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:22:50-04:00       *-->
+<!--*       on 2021-10-28T12:22:07-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,18 +15,37 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Nous allons donner ici les grandes lignes d'une démonstration basée sur la considération des fonctions</p>
+<p>Alors pour toute constante \(M&gt;0\) telle que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\phi(x):=x-\frac{f(x)}{f'(x)}
+\frac{|f''(x)|}{|f'(x)|}\leq M\quad\textit{pour tout }x\in[c-r;c+r],
 \end{equation*}
 </div>
-<p class="continuation">et</p>
+<p class="continuation">et pour tout point de départ \(x_0\) satisfaisant</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-v(x):=\frac{f(x)}{f'(x)}\cdot e^{-Mx}.
+|x_0-c|&lt;\min\left\{r;\frac{1}{M}\right\},
 \end{equation*}
 </div>
+<p class="continuation">la suite définie par la formule de récurrence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}
+\end{equation*}
+</div>
+<p class="continuation">converge vers \(c\) et vérifie</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|x_{n+1}-c|\leq M|x_n-c|^2
+\end{equation*}
+</div>
+<p class="continuation">ainsi que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|x_n-c|\leq\frac{1}{M}\left(M|x_0-c|\right)^{2^n}
+\end{equation*}
+</div>
+<p class="continuation">pour tout \(n\ge 0\text{.}\)</p>
 <span class="incontext"><a href="presentationnewton.html#p-503">Contexte</a></span>
 </body>
 </html>

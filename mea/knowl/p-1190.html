@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:44-04:00       *-->
+<!--*       on 2021-10-28T12:23:19-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,13 +15,14 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Ceci achève bien la démonstration, puisque la question 2 de l'exercice <a class="xref" data-knowl="./knowl/exercice_formule_trapezes.html" title="Exercice 9.3.9">9.3.9</a> entraîne</p>
+<p>Grâce à l'inégalité triangulaire pour l'intégrale, on déduit de cette majoration et de la formule établie à l'exercice <a class="xref" data-knowl="./knowl/exercice_formule_integration_trapezes.html" title="Exercice 9.3.10">9.3.10</a> que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\int_c^dg(t)\mathrm{d}t&amp;=\int_c^d(f(t)-p(t))\mathrm{d}t\\
-&amp;=\int_c^df(t)\mathrm{d}t-\int_c^dp(t)\mathrm{d}t\\
-&amp;=\int_c^df(t)\mathrm{d}t-\frac{1}{2}(f(c)+f(d))(d-c)\\
-&amp;=\int_c^df(t)\mathrm{d}t-\frac{\Delta x}{2}\cdot(f(c)+f(d)).
+\left|\int_c^dg(t)\mathrm{d}t\right|&amp;\le\int_c^d|g(t)|\mathrm{d}t\\
+&amp;\le\int_c^d\frac{M}{2}|t-c||t-d|\mathrm{d}t\\
+&amp;=\frac{M}{2}\cdot\int_c^d|t-c||t-d|\mathrm{d}t\\
+&amp;=\frac{M}{2}\cdot\frac{(\Delta x)^3}{6}\\
+&amp;=\frac{M(\Delta x)^3}{12}.
 \end{align*}
 </div>
 <span class="incontext"><a href="exercicestrapezes.html#p-1190">Contexte</a></span>

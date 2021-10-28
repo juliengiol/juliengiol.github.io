@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:23:02-04:00       *-->
+<!--*       on 2021-10-28T12:22:19-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,40 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Nous allons maintenant voir une façon de calculer un polynôme interpolateur qui évite d'avoir à résoudre un système linéaire : l'interpolation de Lagrange. Cette méthode astucieuse repose sur le lemme technique suivant.</p>
+<p>Par la méthode de Gauss-Jordan, on obtient</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\begin{bmatrix}
+1&amp;1&amp;1&amp;-3\\
+1&amp;2&amp;4&amp;7\\
+1&amp;3&amp;9&amp;0
+\end{bmatrix}
+&amp;\sim
+\begin{bmatrix}
+1&amp;1&amp;1&amp;-3\\
+0&amp;1&amp;3&amp;10\\
+0&amp;2&amp;8&amp;3
+\end{bmatrix}\\
+&amp;\sim
+\begin{bmatrix}
+1&amp;0&amp;-2&amp;-13\\
+0&amp;1&amp;3&amp;10\\
+0&amp;0&amp;2&amp;-17
+\end{bmatrix}\\
+&amp;\sim
+\begin{bmatrix}
+1&amp;0&amp;0&amp;-30\\
+0&amp;1&amp;0&amp;71/2\\
+0&amp;0&amp;1&amp;-17/2
+\end{bmatrix}
+\end{align*}
+</div>
+<p class="continuation">et on en conclut que l'unique solution de ce problème est le polynôme</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P(t)=-30+\frac{71}{2}t-\frac{17}{2}t^2.
+\end{equation*}
+</div>
 <span class="incontext"><a href="presentationlagrange.html#p-649">Contexte</a></span>
 </body>
 </html>
