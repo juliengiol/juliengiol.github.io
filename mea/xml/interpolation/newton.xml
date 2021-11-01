@@ -1170,18 +1170,18 @@
       En utilisant le code donné à la section <xref ref="algorithmediffdiv"/>, on obtient les différences divisées de ces quatre points et on en déduit la forme de Newton de son polynôme interpolateur :
       <md>
         <mrow>P(t)&amp;\approx 362</mrow>
-        <mrow>&amp;\qquad+0{,}260857142857(t-1500)</mrow>
-        <mrow>&amp;\qquad+2{,}22857142857\cdot 10^{-6}(t-1500)(t-5000)</mrow>
-        <mrow>&amp;\qquad-1{,}71438966056\cdot 10^{-10}(t-1500)(t-5000)(t-10000).</mrow>
+        <mrow>&amp;\quad+0{,}260857142857(t-1500)</mrow>
+        <mrow>&amp;\quad+2{,}22857142857\cdot 10^{-6}(t-1500)(t-5000)</mrow>
+        <mrow>&amp;\quad-1{,}71438966056\cdot 10^{-10}(t-1500)(t-5000)(t-10000).</mrow>
       </md>
     </p>
     <p>
       On calcule alors <m>P(15000)</m> et on trouve
-      <me>P(15000)\approx 4216.</me>
+      <me>P(15000)\approx 4069.</me>
     </p>
     <p>
-      On estime ainsi que Victor mettra <m>4216</m> secondes, i.e.
-      <me>1\,\text{heure}\;10\,\text{minutes}\;16\,\text{secondes}</me>
+      On estime ainsi que Victor mettra <m>4069</m> secondes, i.e.
+      <me>1\,\text{heure}\;07\,\text{minutes}\;49\,\text{secondes}</me>
       environ pour courir son prochain <m>15</m> kilomètres.
     </p>
 <!--

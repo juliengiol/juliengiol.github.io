@@ -1070,7 +1070,7 @@
           Première approximation de <m>\displaystyle\sqrt{1{,}1}= f(0{,}1)</m> :
           <md>
             <mrow>T(0{,}1)&amp;=1+\frac{1}{2}\cdot 0{,}1-\frac{1}{8}\cdot 0{,}1^2</mrow>
-            <mrow>&amp;=1{,}048\,705.</mrow>
+            <mrow>&amp;=1{,}048\,750.</mrow>
           </md>
         </p>
       </li>
