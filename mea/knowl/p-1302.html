@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:48:31-04:00       *-->
+<!--*       on 2021-11-25T11:46:44-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,33 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Trop difficile au niveau cégep selon moi.</p>
+<p>Pour \(\displaystyle\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x\) avec \(n=4\text{,}\) posons \(g(x)=\cos\left(\frac{x^3}{5}\right)\text{.}\) Alors, avec un peu de patience ou <a class="external" href="https://tinyurl.com/yyf6fvp8" target="_blank">l'aide de SageMathCell</a>, on obtient</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+g^{(4)}(x)=\frac{81}{625}x^8\cos\left(\frac{x^3}{5}\right)+\frac{324}{125}x^5\sin\left(\frac{x^3}{5}\right)-\frac{36}{5}x^2\cos\left(\frac{x^3}{5}\right).
+\end{equation*}
+</div>
+<p class="continuation">Donc</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+|g^{(4)}(x)|&amp;=\left|\frac{81}{625}x^8\cos\left(\frac{x^3}{5}\right)+\frac{324}{125}x^5\sin\left(\frac{x^3}{5}\right)-\frac{36}{5}x^2\cos\left(\frac{x^3}{5}\right)\right|\\
+&amp;\leq\frac{81}{625}x^8\left|\cos\left(\frac{x^3}{5}\right)\right|+\frac{324}{125}x^5\left|\sin\left(\frac{x^3}{5}\right)\right|+\frac{36}{5}x^2\left|\cos\left(\frac{x^3}{5}\right)\right|\\
+&amp;\leq\frac{81}{625}x^8+\frac{324}{125}x^5+\frac{36}{5}x^2\\
+&amp;\leq\frac{81}{625}4^8+\frac{324}{125}4^5+\frac{36}{5}4^2\\
+&amp;=11\,262{,}8\ldots\\
+&amp;\leq 11\,263
+\end{align*}
+</div>
+<p class="continuation">pour tout \(x\in[2;4]\text{.}\) Donc on peut prendre \(M=11\,263\) dans le théorème <a class="xref" data-knowl="./knowl/erreur_simpson.html" title="Théorème 10.1.3">10.1.3</a> et on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+|\text{Erreur}|&amp;\leq\frac{M(b-a)^5}{2880n^4}\\
+&amp;=\frac{11\,263(4-2)^5}{2880\cdot 4^4}\\
+&amp;=\frac{11\,263\cdot 2^5}{2880\cdot 4^4}\\
+&amp;\leq 0{,}488\ldots\\
+&amp;\leq 0{,}5.
+\end{align*}
+</div>
 <span class="incontext"><a href="exercicessimpson.html#p-1302">Contexte</a></span>
 </body>
 </html>

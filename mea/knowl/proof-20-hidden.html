@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:48:40-04:00       *-->
+<!--*       on 2021-11-25T11:46:54-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -24,35 +24,44 @@ d\vert a\text{ et }d\vert b\quad\Leftrightarrow\quad d\vert b\text{ et }d\vert r
 <li><p xmlns:svg="http://www.w3.org/2000/svg">\(d\vert a\) et \(d\vert b\quad\Rightarrow\quad d\vert r\;\text{;}\)</p></li>
 <li><p xmlns:svg="http://www.w3.org/2000/svg">\(d\vert b\) et \(d\vert r\quad\Rightarrow\quad d\vert a\;\text{.}\)</p></li>
 </ol>
+<ul class="disc">
+<li>
 <p>Commençons par l'implication 1. Supposons que \(d\vert a\) et \(d\vert b\text{,}\) de sorte qu'il existe deux entiers relatifs \(\alpha\) et \(\beta\) tels que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 a=\alpha\cdot d\qquad\text{et}\qquad b=\beta\cdot d.
 \end{equation*}
 </div>
-<p>Comme \(a=b\cdot q+r\text{,}\) on a</p>
+<p>Comme \(a=bq+r\text{,}\) on a</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\alpha\cdot d=\beta\cdot d\cdot q+r&amp;\quad\Rightarrow\quad r=\alpha\cdot d-\beta\cdot d\cdot q\\
-&amp;\quad\Rightarrow\quad r=(\alpha-\beta\cdot q)\cdot d\\
-&amp;\quad\Rightarrow\quad r=\delta\cdot d\quad\text{avec }\delta=\alpha-\beta\cdot q\in\mathbb{Z}\\
-&amp;\quad\Rightarrow\quad d\vert r.
+r&amp;=a-bq\\
+&amp;=\alpha d-\beta dq\\
+&amp;=d\cdot(\alpha-\beta q)\\
+&amp;=d\cdot\rho\quad\text{avec }\rho=\alpha-\beta\cdot q\in\mathbb{Z},
 \end{align*}
 </div>
+<p class="continuation">donc \(d\vert r\text{.}\)</p>
+</li>
+<li>
 <p>Passons maintenant à l'implication 2. Supposons que \(d\vert b\) et \(d\vert r\text{,}\) de sorte qu'il existe deux entiers relatifs \(\beta\) et \(\rho\) tels que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 b=\beta\cdot d\qquad\text{et}\qquad r=\rho\cdot d.
 \end{equation*}
 </div>
-<p>Comme \(a=b\cdot q+r\text{,}\) on a</p>
+<p>On a</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-a=\beta\cdot d\cdot q+\rho\cdot d &amp;\quad\Rightarrow\quad a=(\beta\cdot q+\rho)\cdot d\\
-&amp;\quad\Rightarrow\quad a=\alpha\cdot d\quad\text{avec }\alpha=\beta\cdot q+\rho\in\mathbb{Z}\\
-&amp;\quad\Rightarrow\quad d\vert a.
+a&amp;=bq+r\\
+&amp;=\beta dq+\rho d\\
+&amp;=d\cdot(\beta q+\rho)\\
+&amp;=d\cdot\alpha\quad\text{avec }\alpha=\beta q+\rho\in\mathbb{Z},
 \end{align*}
 </div>
+<p class="continuation">donc \(d\vert a\text{.}\)</p>
+</li>
+</ul>
 <p xmlns:svg="http://www.w3.org/2000/svg">Les deux implications étant démontrées, nous avons prouvé que les couples \((a;b)\) et \((b;r)\) ont les mêmes diviseurs positifs communs.</p>
 <p xmlns:svg="http://www.w3.org/2000/svg">Par définition du PGCD, il en découle que \(\text{PGCD}(a;b)=\text{PGCD}(b;r)\text{.}\)</p></article></body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:45:47-04:00       *-->
+<!--*       on 2021-11-25T11:44:09-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -234,9 +234,9 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="recursivite"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Récursivité</span>
 </h2>
-<p id="p-157">Une fonction est dite <em class="emphasis">récursive</em> lorsqu'elle contient un appel à elle-même.</p>
-<p id="p-158">Attention, une telle fonction doit prévoir au moins un cas de base sur lequel elle finisse par tomber.</p>
-<p id="p-159">La fonction factorielle \(n!\) est un bon exemple de fonction pouvant être définie de manière récursive :</p>
+<p id="p-158">Une fonction est dite <em class="emphasis">récursive</em> lorsqu'elle contient un appel à elle-même.</p>
+<p id="p-159">Attention, une telle fonction doit prévoir au moins un cas de base sur lequel elle finisse par tomber.</p>
+<p id="p-160">La fonction factorielle \(n!\) est un bon exemple de fonction pouvant être définie de manière récursive :</p>
 <div class="displaymath">
 \begin{equation*}
 n!=
@@ -253,7 +253,7 @@ n\cdot(n-1)!&amp;\text{si}\;n\ge 2.
 \end{equation*}
 </div>
 <p class="continuation">de sorte que \(5!\) s'obtient par la multiplication de \(5\) avec la valeur de la fonction factorielle appliquée à 4, l'entier précédent 5.</p>
-<p id="p-160">Le code qui suit définit une fonction <code class="code-inline tex2jax_ignore">factorielle(n)</code> adoptant ce point de vue récursif. On le teste avec <code class="code-inline tex2jax_ignore">print(factorielle(5))</code> qui doit afficher \(\text{120}\text{.}\)</p>
+<p id="p-161">Le code qui suit définit une fonction <code class="code-inline tex2jax_ignore">factorielle(n)</code> adoptant ce point de vue récursif. On le teste avec <code class="code-inline tex2jax_ignore">print(factorielle(5))</code> qui doit afficher \(\text{120}\text{.}\)</p>
 <div class="sagecell-python" id="sage-40"><script type="text/x-sage">def factorielle(n):
     if n == 1:  # si n = 1
         return 1  # renvoie 1
@@ -262,11 +262,11 @@ n\cdot(n-1)!&amp;\text{si}\;n\ge 2.
 
 print(factorielle(5))
 </script></div>
-<p id="p-161">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y235zy2h" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
+<p id="p-162">Cliquez sur <code class="code-inline tex2jax_ignore">Next</code> autant de fois que nécessaire dans l'application <a class="external" href="https://tinyurl.com/y235zy2h" target="_blank">Python Tutor</a> si vous voulez suivre pas à pas l'exécution du code qui précède.</p>
 <article class="remark remark-like" id="remark-11"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-162">Notez que pour calculer <code class="code-inline tex2jax_ignore">factorielle(5)</code> avec la fonction récursive ci-dessus, il faut descendre jusqu'au cas de base <code class="code-inline tex2jax_ignore">factorielle(1)</code> avant de remonter pour calculer <code class="code-inline tex2jax_ignore">factorielle(2)</code>, <code class="code-inline tex2jax_ignore">factorielle(3)</code>, <code class="code-inline tex2jax_ignore">factorielle(4)</code> et enfin <code class="code-inline tex2jax_ignore">factorielle(5)</code> dans cet ordre.</p></article></section></div></main>
+<p id="p-163">Notez que pour calculer <code class="code-inline tex2jax_ignore">factorielle(5)</code> avec la fonction récursive ci-dessus, il faut descendre jusqu'au cas de base <code class="code-inline tex2jax_ignore">factorielle(1)</code> avant de remonter pour calculer <code class="code-inline tex2jax_ignore">factorielle(2)</code>, <code class="code-inline tex2jax_ignore">factorielle(3)</code>, <code class="code-inline tex2jax_ignore">factorielle(4)</code> et enfin <code class="code-inline tex2jax_ignore">factorielle(5)</code> dans cet ordre.</p></article></section></div></main>
 </div>
 <!--Start: StatCounter code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***        GET YOUR OWN FROM STATCOUNTER           ***--><script>
 var sc_project=12152300;

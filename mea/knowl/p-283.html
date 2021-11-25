@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:46:54-04:00       *-->
+<!--*       on 2021-11-25T11:45:22-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,24 +15,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Dans cette formule, seul le premier terme importe vraiment. En effet, comme</p>
+<p>Pour la relation de récurrence, on a</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\left|\frac{1-\sqrt{5}}{2}\right|\approx 0{,}62,
-\end{equation*}
+\begin{align*}
+\sqrt{5}\,G_{n-1}+\sqrt{5}\,G_{n-2}&amp;=\phi_+^{n-1}-\phi_-^{n-1}+\phi_+^{n-2}-\phi_-^{n-2}\\
+&amp;=\phi_+^{n-1}\cdot 1-\phi_+^{n-2}\cdot(-1)-\phi_-^{n-1}\cdot 1+\phi_-^{n-2}\cdot(-1)\\
+&amp;=\phi_+^{n-1}\cdot\left(\phi_++\phi_-\right)-\phi_+^{n-2}\cdot\left(\phi_+\phi_-\right)\\
+&amp;\quad\quad-\phi_-^{n-1}\cdot\left(\phi_++\phi_-\right)+\phi_-^{n-2}\cdot\left(\phi_+\phi_-\right)\\
+&amp;=\phi_+^n+\cancel{\phi_+^{n-1}\phi_-}-\cancel{\phi_+^{n-1}\phi_-}\\
+&amp;\quad\quad-\bcancel{\phi_-^{n-1}\phi_+}-\phi_-^n+\bcancel{\phi_-^{n-1}\phi_+}\\
+&amp;=\sqrt{5}\,G_n,
+\end{align*}
 </div>
-<p class="continuation">le terme</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{(1-\sqrt{5})^n}{2^n\sqrt{5}}
-\end{equation*}
-</div>
-<p class="continuation">est assez petit pour que \(F_n\) soit égal à l'entier le plus proche de</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}.
-\end{equation*}
-</div>
+<p class="continuation">d'où \(G_n=G_{n-1}+G_{n-2}\) pour tout \(n\ge 3\text{.}\)</p>
 <span class="incontext"><a href="fibonacci.html#p-283">Contexte</a></span>
 </body>
 </html>

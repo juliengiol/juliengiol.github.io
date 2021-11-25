@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:47:09-04:00       *-->
+<!--*       on 2021-11-25T11:45:35-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,49 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Partant de \(x_0=2\text{,}\) nous allons effectuer trois itérations de la méthode de Newton-Raphson pour la fonction \(f(x)=x^2-2\text{,}\) dont on a déjà observé à l'exemple <a class="xref" data-knowl="./knowl/exempledecroissanceiteration.html" title="Exemple 5.1.5">5.1.5</a> qu'elle vérifie les hypothèses du théorème <a class="xref" data-knowl="./knowl/methodedenewton.html" title="Théorème 5.1.7: Méthode de Newton-Raphson">5.1.7</a> sur l'intervalle \([c;b]:=[\sqrt{2};3]\text{.}\)</p>
+<p>Raisonnons par l'absurde et supposons que \(c&lt;\ell\text{.}\) Notons alors que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}x_{n+1}=\lim_{n\rightarrow+\infty}x_n=\ell,
+\end{equation*}
+</div>
+<p class="continuation">puis que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}f(x_n)=f(\ell)
+\end{equation*}
+</div>
+<p class="continuation">par la continuité de \(f\) en \(\ell\) (qui découle de sa dérivabilité en ce point), et enfin que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow+\infty}f'(x_n)=f'(\ell)&gt;0
+\end{equation*}
+</div>
+<p class="continuation">par la continuité de \(f'\) en \(\ell\) (qui découle de sa dérivabilité en ce point). En faisant tendre \(n\) vers l'infini dans la relation de récurrence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)},
+\end{equation*}
+</div>
+<p class="continuation">on obtient donc</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\ell=\ell-\frac{f(\ell)}{f'(\ell)},
+\end{equation*}
+</div>
+<p class="continuation">d'où</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(\ell)=0.
+\end{equation*}
+</div>
+<p class="continuation">Mais par ailleurs, la formule de Taylor-Lagrange pour \(n=0\) (voir exercice <a class="xref" data-knowl="./knowl/taylorlagrange.html" title="Exercice 5.3.7: Formule de Taylor-Lagrange">5.3.7</a>) entraîne l'existence de \(\xi\in\;]c;\ell[\) tel que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(\ell)=\cancel{f(c)}+f'(\xi)(\ell-c)&gt;0,
+\end{equation*}
+</div>
+<p class="continuation">d'où la contradiction.</p>
 <span class="incontext"><a href="presentationnewton.html#p-486">Contexte</a></span>
 </body>
 </html>

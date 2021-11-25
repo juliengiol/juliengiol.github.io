@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:46:23-04:00       *-->
+<!--*       on 2021-11-25T11:44:52-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -234,39 +234,34 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="algorithmeeuclide"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">11.2</span> <span class="title">Algorithme</span>
 </h2>
+<p id="p-1490">Dans ce qui suit, on note \(\text{a}\,\%\,\text{b}\) le reste de la division euclidienne de \(\text{a}\) par \(\text{b}\text{.}\)</p>
 <article class="algorithm theorem-like" id="algorithm-8"><h6 class="heading">
 <span class="type">Algorithme</span><span class="space"> </span><span class="codenumber">11.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Algorithme d'Euclide.</span>
 </h6>
 <ul class="disc">
-<li id="li-998">
-<p id="p-1493">Entrées :</p>
+<li id="li-999">
+<p id="p-1491">Entrées :</p>
 <ul class="circle">
-<li id="li-999"><p id="p-1494">Assigner à \(\text{a}\) et \(\text{b}\) les deux entiers positifs dont on veut calculer le PGCD.</p></li>
-<li id="li-1000"><p id="p-1495">S'assurer qu'on a \(\text{a}\geq\text{b}\) si on ne veut pas faire une itération inutile.</p></li>
+<li id="li-1000"><p id="p-1492">Assigner à \(\text{a}\) et \(\text{b}\) les deux entiers positifs dont on veut calculer le PGCD.</p></li>
+<li id="li-1001"><p id="p-1493">S'assurer qu'on a \(\text{a}\geq\text{b}\) si on ne veut pas faire une itération inutile.</p></li>
 </ul>
 </li>
-<li id="li-1001">
-<p id="p-1496">Instructions :</p>
-<ul class="circle"><li id="li-1002">
-<p id="p-1497">Tant que \(\text{a mod b}\neq 0\text{,}\)</p>
-<ul class="square">
-<li id="li-1003"><p id="p-1498">assigner simulanément à \(\text{a}\) et \(\text{b}\) les valeurs de \(\text{b}\) et de \(\text{a mod b}\neq 0\) dans cet ordre.</p></li>
-<li id="li-1004"><p id="p-1499">Attention : S'assurer que \(\text{a mod b}\neq 0\) fasse référence aux valeurs de \(\text{a}\) et \(\text{b}\) issues de l'itération précédente. Si disponible, une double assignation est la meilleure façon d'y parvenir.</p></li>
-</ul>
+<li id="li-1002">
+<p id="p-1494">Instructions :</p>
+<ul class="circle"><li id="li-1003">
+<p id="p-1495">Tant que \(\text{a}\,\%\,\text{b}\ne 0\text{,}\)</p>
+<ul class="square"><li id="li-1004"><p id="p-1496">assigner simulanément à \(\text{a}\) et \(\text{b}\) les valeurs de \(\text{b}\) et de \(\text{a}\,\%\,\text{b}\) dans cet ordre.</p></li></ul>
 </li></ul>
 </li>
-<li id="li-1005"><p id="p-1500">Sortie : Afficher \(\text{b}\text{.}\)</p></li>
-</ul></article><p id="p-1501">En Python, \(\text{a mod b}\) s'obtient avec <code class="code-inline tex2jax_ignore">a % b</code>.</p>
-<p id="p-1502">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/exemple4algoeuclide.html" title="Exemple 11.1.32">11.1.32</a>.</p>
-<div class="sagecell-python" id="sage-60"><script type="text/x-sage"># entrées
+<li id="li-1005"><p id="p-1497">Sortie : Afficher \(\text{b}\text{.}\)</p></li>
+</ul></article><p id="p-1498">Voici une implémentation de cet algorithme qui permet de traiter l'exemple <a class="xref" data-knowl="./knowl/exemple4algoeuclide.html" title="Exemple 11.1.31">11.1.31</a>.</p>
+<div class="sagecell-python" id="sage-60"><script type="text/x-sage"># entrées :
 a = 2589
 b = 234
-
-# instructions
+# instructions :
 while a % b != 0:
     a, b = b, a % b
-
-# sortie
+# sortie :
 print(b)
 </script></div></section></div></main>
 </div>

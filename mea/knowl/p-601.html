@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:47:20-04:00       *-->
+<!--*       on 2021-11-25T11:45:45-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,15 +15,17 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Pour tout \(n\geq 0\text{,}\) on a donc</p>
+<p>Par ailleurs, on a \(k\geq 2\) par hypothèse et, comme on l'a vu à la première question, \(\sqrt{k}&lt;x_n\) pour tout \(n\geq 0\text{.}\) Donc</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\left|x_{n+1}-\sqrt{k}\right|&amp;=\left|\frac{1}{2x_n}\left(x_n-\sqrt{k}\right)^2\right|\\
-&amp;=\left|\frac{1}{2x_n}\cdot\left(x_n-\sqrt{k}\right)\cdot\left(x_n-\sqrt{k}\right)\right|\\
-&amp;=\left|\frac{1}{2x_n}\right|\cdot\left|x_n-\sqrt{k}\right|\cdot\left|x_n-\sqrt{k}\right|\qquad\text{par}\;\knowl{./knowl/propvaleurabsolue.html}{\text{(5.3.1)}}\\
-&amp;=\frac{1}{2x_n}\left|x_n-\sqrt{k}\right|^2\\
-&amp;\leq \frac{1}{2}\left|x_n-\sqrt{k}\right|^2\qquad\text{par}\;\knowl{./knowl/minorxn.html}{\text{(5.3.2)}}.
-\end{align*}
+\begin{equation*}
+2x_n&gt;2\sqrt{k}\ge 2\sqrt{2}&gt;2
+\end{equation*}
+</div>
+<p class="continuation">d'où \(2x_n\ge 2\) et</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+0&lt;\frac{1}{2x_n}\leq\frac{1}{2}\quad\text{pour tout}\;n\geq 0.\tag{5.3.2}
+\end{equation}
 </div>
 <span class="incontext"><a href="exercicesnewton.html#p-601">Contexte</a></span>
 </body>

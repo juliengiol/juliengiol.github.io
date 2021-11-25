@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:49:03-04:00       *-->
+<!--*       on 2021-11-25T11:47:16-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -27,52 +27,53 @@ r=\frac{a}{b}.
 \end{equation*}
 </div>
 <p xmlns:svg="http://www.w3.org/2000/svg">Si \(\text{PGCD}(a;b)=1\text{,}\) on a fini.</p>
-<p>Sinon, notons \(\text{PGCD}(a;b)=d\text{.}\) Comme \(d\) divise \(a\) et \(b\text{,}\) il existe deux entiers relatifs \(a_0, b_0\) tels que</p>
+<p>Sinon, notons \(d:=\text{PGCD}(a;b)\text{.}\) Comme \(d\) divise \(a\) et \(b\text{,}\) il existe deux entiers relatifs \(a_0, b_0\) tels que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-a=da_0\quad\text{et}\quad b=db_0
+a=da_0\quad\text{et}\quad b=db_0.
 \end{equation*}
 </div>
-<p class="continuation">d'où</p>
+<p class="continuation">On a alors</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-r=\frac{a}{b}=\frac{da_0}{db_0}=\frac{a_0}{b_0}.
+r=\frac{a}{b}=\frac{da_0}{db_0}=\frac{a_0}{b_0},
 \end{equation*}
 </div>
-<p class="continuation">Il ne reste plus qu'à montrer que \(\text{PGCD}(a_0;b_0)=1\text{.}\) On commence par appliquer Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a> :</p>
+<p class="continuation">et il ne reste plus qu'à montrer que \(\text{PGCD}(a_0;b_0)=1\text{.}\)</p>
+<p>Par le théorème de Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a>, il existe \((u;v)\in\mathbb{Z}^2\) tel que \(au+bv=d\text{,}\) d'où</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\text{PGCD}(a;b)=d\quad\Rightarrow\quad\exists(u;v)\in\mathbb{Z}^2,\;au+bv=d.
+da_0u+db_0v=d.
 \end{equation*}
 </div>
-<p class="continuation">Puis</p>
+<p class="continuation">En divisant par \(d\text{,}\) on obtient</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{cccr}
-au+bv=d&amp;\quad\Rightarrow\quad&amp;da_0u+db_0v=d&amp;\\
-&amp;\quad\Rightarrow\quad&amp;a_0u+b_0v=1&amp;\text{ par division par }d\\
-&amp;\quad\Rightarrow\quad&amp;\text{PGCD}(a_0;b_0)=1&amp;\text{ par Bézout.}\\
-\end{array}
+a_0u+b_0v=1,
 \end{equation*}
 </div>
+<p class="continuation">d'où \(\text{PGCD}(a_0;b_0)=1\) par le théorème de Bézout <a class="xref" data-knowl="./knowl/thmbezout.html" title="Théorème 12.1.9: Bézout">12.1.9</a>.</p>
 </li>
 <li>
-<p>Raisonnons par l'absurde et supposons qu'il existe \((a_1;a_2)\neq(b_1;b_2)\) tels que</p>
+<p>Supposons qu'il existe \((a_1;a_2)\) et \((b_1;b_2)\) tels que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 r=\frac{a_1}{b_1}=\frac{a_2}{b_2}\quad\text{avec}\quad(a_i;b_i)\in\mathbb{Z}\times\mathbb{N}^*\;\text{ et }\;\text{PGCD}(a_i;b_i)=1.
 \end{equation*}
 </div>
-<p>Notons que</p>
+<p class="continuation">Nous devons montrer que \((a_1;a_2)=(b_1;b_2)\text{.}\)</p>
+<p>Commençons par noter que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 a_1b_2=b_1a_2.
 \end{equation*}
 </div>
+<ul class="disc">
+<li>
 <p>Alors</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-b_1\vert b_1a_2=a_1b_2\quad\text{et}\quad\text{PGCD}(a_1;b_1)
+b_1\vert b_1a_2=a_1b_2\quad\text{et}\quad\text{PGCD}(a_1;b_1)=1
 \end{equation*}
 </div>
 <p class="continuation">implique que</p>
@@ -81,31 +82,43 @@ b_1\vert b_1a_2=a_1b_2\quad\text{et}\quad\text{PGCD}(a_1;b_1)
 b_1\vert b_2
 \end{equation*}
 </div>
-<p class="continuation">par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a> et, par un raisonnement symétrique, on a aussi</p>
+<p class="continuation">par le lemme de Gauss <a class="xref" data-knowl="./knowl/lemmedegauss.html" title="Exercice 12.3.5: Lemme de Gauss">12.3.5</a>.</p>
+<p>Par un raisonnement symétrique, on a aussi</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 b_2\vert b_1.
 \end{equation*}
 </div>
+</li>
+<li>
 <p>Comme \(b_1\) et \(b_2\) sont tous deux positifs, on déduit de ce qui précède qu'il existe deux entiers positifs \(c, d\) tels que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-b_1=cb_2\quad\text{et}\quad b_2=db_1,
+b_1=cb_2\quad\text{et}\quad b_2=db_1.
 \end{equation*}
 </div>
-<p class="continuation">d'où</p>
+<p class="continuation">On a alors</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{cccc}
-b_1=cb_2&amp;\quad\Rightarrow\quad&amp;b_1=cdb_1&amp;\\
-&amp;\quad\Rightarrow\quad&amp;1=cd&amp;\text{ par division par }b_1\\
-&amp;\quad\Rightarrow\quad&amp;c=d=1&amp;\text{ car }c, d\in\mathbb{N}^*\\
-&amp;\quad\Rightarrow\quad&amp;b_1=b_2&amp;\text{ car }b_1=cb_2\\
-&amp;\quad\Rightarrow\quad&amp;a_1=a_2&amp;\text{ car }a_1b_2=b_1a_2.\\
-\end{array}
+b_1=cdb_1,
 \end{equation*}
 </div>
-<p xmlns:svg="http://www.w3.org/2000/svg">On a donc montré que \((a_1;a_2)=(b_1;b_2)\text{,}\) d'où la contradiction cherchée.</p>
+<p class="continuation">si bien qu'une division par \(b_1\) entraîne</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+cd=1.
+\end{equation*}
+</div>
+<p>Comme le seul diviseur positif de \(1\) est \(1\) lui-même, il en découle que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+c=d=1,
+\end{equation*}
+</div>
+<p class="continuation">d'où \(b_1=b_2\text{.}\)</p>
+</li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Finalement, revenant à l'équation \(a_1b_2=a_2b_1\text{,}\) on a aussi \(a_1=a_2\text{,}\) ce qui complète la démonstration.</p></li>
+</ul>
 </li>
 </ol>
 </div>

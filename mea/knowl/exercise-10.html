@@ -1,52 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-03-12T16:29:18-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-11-25T10:03:59-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="exercise exercise-like"><h6 class="heading">
+<article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Exercice</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span>
 </h6>
-<p>On s'intéresse à la méthode des rectangles <a class="xref" data-knowl="./knowl/def_methode_rectangles.html" title="Définition 1.1.8: Méthode des rectangles">1.1.8</a> à droite pour \(n\) rectangles sur un intervalle \([a;b]\text{.}\) Pour toute fonction \(f:[a:b]\longrightarrow\mathbb{R}\) intégrable, elle renvoie</p>
-<div class="displaymath">
-\begin{equation*}
-\Delta x\cdot\sum_{k=1}^nf(x_k)
-\end{equation*}
-</div>
-<p data-braille="continuation">en guise d'approximation de l'intégrale</p>
-<div class="displaymath">
-\begin{equation*}
-\int_a^bf(x)\mathrm{d}x.
-\end{equation*}
-</div>
-<p>Le but de cet exercice est de montrer que cette méthode d'intégration numérique est d'<a class="external" href="https://tinyurl.com/fk4kjruw" target="_blank">ordre</a> zéro.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Le but de cet exercice est d'apprendre à appliquer l'algorithme d'Euclide de façon matricielle, et de découvrir au passage l'objet du chapitre suivant qui est consacré à l'algorithme d'Euclide étendu.</p>
 <ol class="decimal">
 <li>
-<p>Montrez que pour toute fonction constante \(f(x)=c\text{,}\) on a</p>
-<div class="displaymath">
+<p>Soit \(a,b,q,r\) quatre nombres tels que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\Delta x\cdot\sum_{k=1}^nf(x_k)=\int_a^bf(x)\mathrm{d}x.
+a=b\cdot q+r.
+\end{equation*}
+</div>
+<p class="continuation">Vérifiez qu'on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{bmatrix}0&amp;1\\1&amp;-q\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}b\\r\end{bmatrix}.
 \end{equation*}
 </div>
 </li>
 <li>
-<p>Montrez que pour la fonction affine \(f(x)=x\text{,}\) on a</p>
-<div class="displaymath">
+<p>La première étape de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(2589;234)\) consiste en la division euclidienne</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\Delta x\cdot\sum_{k=1}^nf(x_k)\ne\int_a^bf(x)\mathrm{d}x.
+2589=234\cdot 11+15.
+\end{equation*}
+</div>
+<p class="continuation">Donnez une matrice \(2\times 2\) \(M_1\) telle que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}234\\15\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>La deuxième étape de l'algorithme d'Euclide menant au calcul de \(\text{PGCD}(2589;234)\) consiste en la division euclidienne</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+234=15\cdot 15+9.
+\end{equation*}
+</div>
+<p class="continuation">Donnez une matrice \(2\times 2\) \(M_2\) telle que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+M_2\begin{bmatrix}234\\15\end{bmatrix}=\begin{bmatrix}15\\9\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Vérifiez qu'on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+M_2M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}15\\9\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Continuez ainsi afin d'obtenir des matrices \(2\times 2\) \(M_3,M_4,M_5\) telles que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+M_5M_4M_3M_2M_1\begin{bmatrix}2589\\234\end{bmatrix}=\begin{bmatrix}3\\0\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Déterminez la matrice \(M=M_5M_4M_3M_2M_1\text{.}\)</p></li>
+<li>
+<p>En déduire un couple d'entiers relatifs \((u;v)\in\mathbb{Z}^2\) tels que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+2589u+234v=3.
 \end{equation*}
 </div>
 </li>
 </ol>
-<p>Remarque : La question 1 montre que la méthode est <em class="emphasis">exacte</em> sur les polynômes de degré zéro, tandis que la question 2 montre qu'elle ne l'est pas sur les polynômes de degré un.</p>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-10-hidden.html" title="Solution 1.3.10.1"><span class="type">Solution</span></a></div></article><span class="incontext"><a href="exercicesrectangles.html#exercise-10">Contexte</a></span>
+<div class="solutions"><a class="solution-knowl original" data-knowl="./knowl/solution-6-hidden.html" title="Solution 1.3.10.1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution</span></a></div></article><span class="incontext"><a href="exerciceseuclide.html#exercise-10">Contexte</a></span>
 </body>
 </html>

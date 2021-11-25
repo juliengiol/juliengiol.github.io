@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:48:04-04:00       *-->
+<!--*       on 2021-11-25T11:46:22-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,20 +15,17 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Point</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">8.3.12.5</span><span class="period">.</span>
 </h6>
-<p>Sur un seul intervalle \([c;d]\)de largeur</p>
+<p>En appliquant \(k\) fois l'inégalité triangulaire à la formule de la question 1 et en utilisant pour chaque morceau l'estimation de la question 4, on obtient</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Delta x:=d-c,
-\end{equation*}
-</div>
-<p class="continuation">on peut toujours écrire</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-f(t)=p(t)+e(t)
-\end{equation*}
-</div>
-<p class="continuation">où \(p(t)\) est le polynôme de degré un au plus qui interpole les points \((c;f(c))\) et \((d;f(d))\text{.}\)</p></article><span class="incontext"><a href="presentationtrapezes.html#li-772">Contexte</a></span>
+\begin{align*}
+|\text{Erreur}|&amp;=\left|\sum_{k=1}^n\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|\\
+&amp;\le\sum_{k=1}^n\left|\int_{x_{k-1}}^{x_k}(f(x)-f(\xi_k))\mathrm{d}x\right|\\
+&amp;\le\sum_{k=1}^n\frac{M(b-a)^3}{24n^3}\\
+&amp;=\frac{M(b-a)^3}{24n^3}\cdot n\\
+&amp;=\frac{M(b-a)^3}{24n^2}.
+\end{align*}
+</div></article><span class="incontext"><a href="exercicesrectangles.html#li-772">Contexte</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:46:56-04:00       *-->
+<!--*       on 2021-11-25T11:45:24-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,26 +15,17 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">3.5.3.2</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">3.5.3.1</span><span class="period">.</span>
 </h6>
-<p>Cela prend 5 multiplications pour calculer</p>
+<p>Voici les étapes de l'algorithme :</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-&amp;3^2=3\cdot 3=9,\\
-&amp;3^4=3^2\cdot 3^2=81,\\
-&amp;3^8=3^4\cdot 3^4=6\,561,\\
-&amp;3^{16}=3^8\cdot 3^8=43\,046\,721,\\
-&amp;3^{32}=3^{16}\cdot 3^{16}=1\,853\,020\,188\,851\,841,
+3^{45}&amp;=3\cdot\left(3^2\right)^{22},\\
+&amp;=3\cdot\left(3^4\right)^{11},\\
+&amp;=3\cdot 3^4\cdot\left(3^8\right)^5,\\
+&amp;=3\cdot 3^4\cdot 3^8\cdot\left(3^{16}\right)^2,\\
+&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32}.
 \end{align*}
-</div>
-<p class="continuation">et 3 de plus pour calculer</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-3^{45}&amp;=3\cdot 3^4\cdot 3^8\cdot 3^{32},\\
-&amp;=3\cdot 81\cdot 6\,561\cdot 1\,853\,020\,188\,851\,841,\\
-&amp;=2\,954\,312\,706\,550\,833\,698\,643.
-\end{align*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Cela fait donc un total de 8 multiplications.</p></article><span class="incontext"><a href="exercicescomplexite.html#li-149">Contexte</a></span>
+</div></article><span class="incontext"><a href="exercicescomplexite.html#li-149">Contexte</a></span>
 </body>
 </html>

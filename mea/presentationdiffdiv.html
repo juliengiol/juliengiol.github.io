@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:46:05-04:00       *-->
+<!--*       on 2021-11-25T11:44:32-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -218,7 +218,7 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="presentationdiffdiv"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">7.1</span> <span class="title">Présentation</span>
 </h2>
-<p id="p-766">Au chapitre <a href="lagrange.html" class="internal" title="Chapitre 6: Forme de Lagrange">6</a>, on a vu comment calculer la forme de Lagrange</p>
+<p id="p-767">Au chapitre <a href="lagrange.html" class="internal" title="Chapitre 6: Forme de Lagrange">6</a>, on a vu comment calculer la forme de Lagrange</p>
 <div class="displaymath">
 \begin{equation*}
 y_0\,L_0(t)+y_1\,L_1(t)+\cdots+y_n\,L_n(t)
@@ -231,7 +231,7 @@ A_0=(x_0;y_0),\;A_1=(x_1;y_1),\;\ldots,\;A_n=(x_n;y_n)\;\in\mathbb{R}^2.
 \end{equation*}
 </div>
 <p class="continuation">C'est une technique très simple d'un point de vue théorique, mais elle présente un inconvénient majeur : il faut refaire tous les calculs chaque fois qu'on ajoute un point à interpoler.</p>
-<p id="p-767">Dans ce chapitre, nous nous intéressons à la forme de Newton du polynôme interpolateur</p>
+<p id="p-768">Dans ce chapitre, nous nous intéressons à la forme de Newton du polynôme interpolateur</p>
 <div class="displaymath">
 \begin{equation*}
 d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)
@@ -244,16 +244,16 @@ N_i(t)=(t-x_0)(t-x_1)\cdots(t-x_{i-1})
 \end{equation*}
 </div>
 <p class="continuation">est un polynôme de degré \(i\) pour \(i=1,2,\ldots,n\text{.}\)</p>
-<p id="p-768">Comment calculer les coefficients \(d_i\text{?}\)</p>
+<p id="p-769">Comment calculer les coefficients \(d_i\text{?}\)</p>
 <article class="example example-like" id="exemple1newton"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-exemple1newton"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple1newton"><article class="example example-like"><p id="p-769">Déterminons la forme de Newton du polynôme interpolateur des trois points</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple1newton"><article class="example example-like"><p id="p-770">Déterminons la forme de Newton du polynôme interpolateur des trois points</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(1;-3),\; A_1=(2;7)\;\text{et}\; A_2=(3;0).
 \end{equation*}
 </div>
-<p id="p-770">On a</p>
+<p id="p-771">On a</p>
 <div class="displaymath">
 \begin{align*}
 N(t)&amp;=d_0+d_1\,N_1(t)+d_2\,N_2(t)\\
@@ -278,9 +278,9 @@ d_0&amp;+&amp;2d_1&amp;+&amp;2d_2&amp;=&amp;0.\\
 \end{equation*}
 </div>
 <ul class="disc">
-<li id="li-567">La première équation donne tout de suite \(d_0=-3\text{.}\)</li>
-<li id="li-568">
-<p id="p-771">La deuxième équation donne \(d_0+d_1=7\text{,}\) d'où</p>
+<li id="li-568">La première équation donne tout de suite \(d_0=-3\text{.}\)</li>
+<li id="li-569">
+<p id="p-772">La deuxième équation donne \(d_0+d_1=7\text{,}\) d'où</p>
 <div class="displaymath">
 \begin{align*}
 -3+d_1&amp;=7,\\
@@ -288,8 +288,8 @@ d_1&amp;=7+3=10.
 \end{align*}
 </div>
 </li>
-<li id="li-569">
-<p id="p-772">La troisième équation donne \(d_0+2d_1+2d_2=0\text{,}\) d'où</p>
+<li id="li-570">
+<p id="p-773">La troisième équation donne \(d_0+2d_1+2d_2=0\text{,}\) d'où</p>
 <div class="displaymath">
 \begin{align*}
 -3+2\cdot 10+2d_2&amp;=0,\\
@@ -299,13 +299,13 @@ d_2&amp;=-\frac{17}{2}.
 </div>
 </li>
 </ul>
-<p id="p-773">La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
+<p id="p-774">La forme de Newton du polynôme interpolateur de ces trois points est donc</p>
 <div class="displaymath">
 \begin{equation*}
 N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2).
 \end{equation*}
 </div>
-<p id="p-774">Notons pour finir qu'il s'agit bien du même polynôme que celui déjà calculé aux exemples <a class="xref" data-knowl="./knowl/avantlagrange2.html" title="Exemple 6.1.3">6.1.3</a> et <a class="xref" data-knowl="./knowl/aveclagrange2.html" title="Exemple 6.1.9">6.1.9</a>. En effet, on a</p>
+<p id="p-775">Notons pour finir qu'il s'agit bien du même polynôme que celui déjà calculé aux exemples <a class="xref" data-knowl="./knowl/avantlagrange2.html" title="Exemple 6.1.3">6.1.3</a> et <a class="xref" data-knowl="./knowl/aveclagrange2.html" title="Exemple 6.1.9">6.1.9</a>. En effet, on a</p>
 <div class="displaymath">
 \begin{align*}
 N(t)&amp;=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)\\
@@ -314,21 +314,21 @@ N(t)&amp;=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)\\
 &amp;=-30+\frac{71}{2}t-\frac{17}{2}t^2.
 \end{align*}
 </div></article></div>
-<p id="p-775">Il existe un outil qui permet de calculer les coefficients \(d_i\) de la forme de Newton de manière systématique : les <a class="external" href="https://fr.wikipedia.org/wiki/Diff%C3%A9rences_divis%C3%A9es" target="_blank">différences divisées</a>.</p>
+<p id="p-776">Il existe un outil qui permet de calculer les coefficients \(d_i\) de la forme de Newton de manière systématique : les <a class="external" href="https://fr.wikipedia.org/wiki/Diff%C3%A9rences_divis%C3%A9es" target="_blank">différences divisées</a>.</p>
 <article class="definition definition-like" id="definition-2"><h6 class="heading">
 <span class="type">Définition</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Différences divisées.</span>
 </h6>
-<p id="p-776">Soit \(n\geq 0\) un entier et</p>
+<p id="p-777">Soit \(n\geq 0\) un entier et</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(x_0;y_0),\; A_1=(x_1;y_1),\;\ldots,\; A_n=(x_n;y_n)\;\in\mathbb{R}^2
 \end{equation*}
 </div>
 <p class="continuation">\(n+1\) points d'abscisses distinctes deux à deux.</p>
-<p id="p-777">Voici comment on calcule les différences divisées associées à ces \(n+1\) points quand on sélectionne un, deux, trois, et, plus généralement, \(k\) points parmi ces derniers.</p>
+<p id="p-778">Voici comment on calcule les différences divisées associées à ces \(n+1\) points quand on sélectionne un, deux, trois, et, plus généralement, \(k\) points parmi ces derniers.</p>
 <ul class="disc">
-<li id="li-570">
-<p id="p-778">Un point :</p>
+<li id="li-571">
+<p id="p-779">Un point :</p>
 <div class="displaymath">
 \begin{equation*}
 \left[A_i\right]=y_i
@@ -336,8 +336,8 @@ A_0=(x_0;y_0),\; A_1=(x_1;y_1),\;\ldots,\; A_n=(x_n;y_n)\;\in\mathbb{R}^2
 </div>
 <p class="continuation">pour \(0\leq i\leq n\text{.}\)</p>
 </li>
-<li id="li-571">
-<p id="p-779">Deux points :</p>
+<li id="li-572">
+<p id="p-780">Deux points :</p>
 <div class="displaymath">
 \begin{equation*}
 \left[A_{i_1},A_{i_2}\right]=\frac{\left[A_{i_2}\right]-\left[A_{i_1}\right]}{x_{i_2}-x_{i_1}}=\frac{y_{i_2}-y_{i_1}}{x_{i_2}-x_{i_1}}
@@ -345,8 +345,8 @@ A_0=(x_0;y_0),\; A_1=(x_1;y_1),\;\ldots,\; A_n=(x_n;y_n)\;\in\mathbb{R}^2
 </div>
 <p class="continuation">pour \(0\leq i_1&lt;i_2\leq n\text{.}\)</p>
 </li>
-<li id="li-572">
-<p id="p-780">Trois points :</p>
+<li id="li-573">
+<p id="p-781">Trois points :</p>
 <div class="displaymath">
 \begin{equation*}
 \left[A_{i_1},A_{i_2},A_{i_3}\right]=\frac{\left[A_{i_2},A_{i_3}\right]-\left[A_{i_1},A_{i_2}\right]}{x_{i_3}-x_{i_1}}=\frac{\frac{y_{i_3}-y_{i_2}}{x_{i_3}-x_{i_2}}-\frac{y_{i_2}-y_{i_1}}{x_{i_2}-x_{i_1}}}{x_{i_3}-x_{i_1}}
@@ -354,8 +354,8 @@ A_0=(x_0;y_0),\; A_1=(x_1;y_1),\;\ldots,\; A_n=(x_n;y_n)\;\in\mathbb{R}^2
 </div>
 <p class="continuation">pour \(0\leq i_1&lt;i_2&lt;i_3\leq n\text{.}\)</p>
 </li>
-<li id="li-573">
-<p id="p-781">\(k\) points :</p>
+<li id="li-574">
+<p id="p-782">\(k\) points :</p>
 <div class="displaymath">
 \begin{equation*}
 \left[A_{i_1},\ldots,A_{i_k}\right]=\frac{\left[A_{i_2},\ldots,A_{i_k}\right]-\left[A_{i_1},\ldots,A_{i_{k-1}}\right]}{x_{i_k}-x_{i_1}}
@@ -363,26 +363,26 @@ A_0=(x_0;y_0),\; A_1=(x_1;y_1),\;\ldots,\; A_n=(x_n;y_n)\;\in\mathbb{R}^2
 </div>
 <p class="continuation">pour \(0\leq i_1&lt;\ldots&lt;i_k\leq n\text{.}\)</p>
 </li>
-</ul></article><p id="p-782">Notez que cette définition est récursive : pour calculer une différence divisée de \(k\) points, il faut déjà savoir le faire pour \(k-1\) points.</p>
+</ul></article><p id="p-783">Notez que cette définition est récursive : pour calculer une différence divisée de \(k\) points, il faut déjà savoir le faire pour \(k-1\) points.</p>
 <article class="example example-like" id="exemple1diffdiv"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-exemple1diffdiv"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple1diffdiv"><article class="example example-like"><p id="p-783">Soit \(A_0=(1;-3),\;A_1=(2;7)\) et \(A_2=(3;0)\) les trois points de l'exemple <a class="xref" data-knowl="./knowl/exemple1newton.html" title="Exemple 7.1.1">7.1.1</a>. Calculons les différences divisées suivantes :</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple1diffdiv"><article class="example example-like"><p id="p-784">Soit \(A_0=(1;-3),\;A_1=(2;7)\) et \(A_2=(3;0)\) les trois points de l'exemple <a class="xref" data-knowl="./knowl/exemple1newton.html" title="Exemple 7.1.1">7.1.1</a>. Calculons les différences divisées suivantes :</p>
 <div class="displaymath">
 \begin{equation*}
 \left[A_0\right],\;\left[A_0,A_1\right]\;\text{et}\;\left[A_0,A_1,A_2\right].
 \end{equation*}
 </div>
-<ul id="p-784" class="disc">
-<li id="li-574">
-<p id="p-785">Pour le premier point :</p>
+<ul id="p-785" class="disc">
+<li id="li-575">
+<p id="p-786">Pour le premier point :</p>
 <div class="displaymath">
 \begin{equation*}
 \left[A_0\right]=y_0=-3.
 \end{equation*}
 </div>
 </li>
-<li id="li-575">
-<p id="p-786">Pour les deux premiers points :</p>
+<li id="li-576">
+<p id="p-787">Pour les deux premiers points :</p>
 <div class="displaymath">
 \begin{align*}
 \left[A_0,A_1\right]&amp;=\frac{\left[A_1\right]-\left[A_0\right]}{x_1-x_0}\\
@@ -392,8 +392,8 @@ A_0=(x_0;y_0),\; A_1=(x_1;y_1),\;\ldots,\; A_n=(x_n;y_n)\;\in\mathbb{R}^2
 \end{align*}
 </div>
 </li>
-<li id="li-576">
-<p id="p-787">Pour les trois points :</p>
+<li id="li-577">
+<p id="p-788">Pour les trois points :</p>
 <div class="displaymath">
 \begin{align*}
 \left[A_0,A_1,A_2\right]&amp;=\frac{\left[A_1,A_2\right]-\left[A_0,A_1\right]}{x_2-x_0}\\
@@ -405,7 +405,7 @@ A_0=(x_0;y_0),\; A_1=(x_1;y_1),\;\ldots,\; A_n=(x_n;y_n)\;\in\mathbb{R}^2
 </div>
 </li>
 </ul>
-<p id="p-788">Afin d'exploiter la nature récursive des différences divisées, on peut utiliser la présentation classique qui suit :</p>
+<p id="p-789">Afin d'exploiter la nature récursive des différences divisées, on peut utiliser la présentation classique qui suit :</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c|ccc}
@@ -436,40 +436,40 @@ x_2=3&amp;\left[A_2\right]=0&amp;&amp;
 <article class="remark remark-like" id="remark-15"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span>
 </h6>
-<p id="p-789">Les trois différences divisées de l'exemple  <a class="xref" data-knowl="./knowl/exemple1diffdiv.html" title="Exemple 7.1.3">7.1.3</a> correspondent aux trois coefficients de la forme de Newton calculés à l'exemple <a class="xref" data-knowl="./knowl/exemple1newton.html" title="Exemple 7.1.1">7.1.1</a>, i.e.</p>
+<p id="p-790">Les trois différences divisées de l'exemple  <a class="xref" data-knowl="./knowl/exemple1diffdiv.html" title="Exemple 7.1.3">7.1.3</a> correspondent aux trois coefficients de la forme de Newton calculés à l'exemple <a class="xref" data-knowl="./knowl/exemple1newton.html" title="Exemple 7.1.1">7.1.1</a>, i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 d_0=\left[A_0\right],\; d_1=\left[A_0,A_1\right]\;\text{et}\; d_2=\left[A_0,A_1,A_2\right].
 \end{equation*}
 </div>
-<p id="p-790">Autrement dit, la forme de Newton du polynôme interpolateur des trois points \(A_0,A_1,A_2\) est donnée par</p>
+<p id="p-791">Autrement dit, la forme de Newton du polynôme interpolateur des trois points \(A_0,A_1,A_2\) est donnée par</p>
 <div class="displaymath">
 \begin{equation*}
 N(t)=\left[A_0\right]+\left[A_0,A_1\right](t-1)+\left[A_0,A_1,A_2\right](t-1)(t-2).
 \end{equation*}
 </div>
-<p id="p-791">Ce n'est pas un hasard, c'est toute la force de l'<a class="external" href="https://fr.wikipedia.org/wiki/Interpolation_newtonienne" target="_blank">interpolation newtonienne</a>.</p></article><article class="theorem theorem-like" id="newtonavecdiffdiv"><h6 class="heading">
+<p id="p-792">Ce n'est pas un hasard, c'est toute la force de l'<a class="external" href="https://fr.wikipedia.org/wiki/Interpolation_newtonienne" target="_blank">interpolation newtonienne</a>.</p></article><article class="theorem theorem-like" id="newtonavecdiffdiv"><h6 class="heading">
 <span class="type">Théorème</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Forme de Newton du polynôme interpolateur.</span>
 </h6>
-<p id="p-792">Soit \(n\geq 0\) un entier et</p>
+<p id="p-793">Soit \(n\geq 0\) un entier et</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(x_0;y_0),\;A_1=(x_1;y_1),\;\ldots,\;A_n=(x_n;y_n)\;\in\mathbb{R}^2
 \end{equation*}
 </div>
 <p class="continuation">\(n+1\) points d'abscisses distinctes deux à deux.</p>
-<p id="p-793">Alors le polynôme interpolateur de ces points est donné par la formule</p>
+<p id="p-794">Alors le polynôme interpolateur de ces points est donné par la formule</p>
 <div class="displaymath">
 \begin{equation*}
 N(t):=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\cdots+\left[A_0,\ldots,A_n\right](t-x_0)\cdots(t-x_{n-1}).
 \end{equation*}
 </div>
-<p id="p-794">On appelle cela la <em class="emphasis">forme de Newton</em> du polynôme interpolateur.</p></article><article class="hiddenproof" id="proof-12"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><p id="p-795">Notons \(P(t)\) le polynôme interpolateur de ces \(n+1\) points et \(N(t)\) le polynôme défini par la formule ci-dessus. Nous allons scinder cette preuve en deux étapes.</p>
+<p id="p-795">On appelle cela la <em class="emphasis">forme de Newton</em> du polynôme interpolateur.</p></article><article class="hiddenproof" id="proof-12"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><p id="p-796">Notons \(P(t)\) le polynôme interpolateur de ces \(n+1\) points et \(N(t)\) le polynôme défini par la formule ci-dessus. Nous allons scinder cette preuve en deux étapes.</p>
 <ul class="disc">
-<li id="li-577">Étape 1 : Montrer par récurrence sur \(n\) que le coefficient de degré \(n\) de \(P(t)\) est égal à la différence divisée \(\left[A_0,\ldots,A_n\right]\text{.}\)</li>
-<li id="li-578">Étape 2 : Montrer par récurrence sur \(n\) que \(P(t)=N(t)\text{.}\)</li>
+<li id="li-578">Étape 1 : Montrer par récurrence sur \(n\) que le coefficient de degré \(n\) de \(P(t)\) est égal à la différence divisée \(\left[A_0,\ldots,A_n\right]\text{.}\)</li>
+<li id="li-579">Étape 2 : Montrer par récurrence sur \(n\) que \(P(t)=N(t)\text{.}\)</li>
 </ul>
-<p id="p-796">Commençons donc par l'étape 1. Pour un point (\(n=0\)), la propriété est triviale. Supposons-la donc vérifiée pour \(n\) points et notons alors \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{,}\) et \(B(t)\) le polynôme interpolateur des \(n\) derniers \(A_1,\ldots,A_n\text{.}\) Par unicité du polynôme interpolateur, on a</p>
+<p id="p-797">Commençons donc par l'étape 1. Pour un point (\(n=0\)), la propriété est triviale. Supposons-la donc vérifiée pour \(n\) points et notons alors \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{,}\) et \(B(t)\) le polynôme interpolateur des \(n\) derniers \(A_1,\ldots,A_n\text{.}\) Par unicité du polynôme interpolateur, on a</p>
 <div class="displaymath">
 \begin{equation*}
 P(t)=\frac{(t-x_0)B(t)-(t-x_n)A(t)}{x_n-x_0},
@@ -482,7 +482,7 @@ P(t)=\frac{(t-x_0)B(t)-(t-x_n)A(t)}{x_n-x_0},
 \end{equation*}
 </div>
 <p class="continuation">i.e. \(\left[A_0,\ldots,A_n\right]\text{,}\) d'après la formule de récurrence définissant les différences divisées.</p>
-<p id="p-797">Passons maintenant à l'étape 2. Pour un point (\(n=0\)), la propriété est à nouveau triviale. Supposons-la donc vérifiée pour \(n\) points et notons encore \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{.}\) Alors le polynôme \(P(t)-A(t)\) est de degré \(n\) au plus, et il s'annule au moins \(n\) fois, en \(x_0,\ldots,x_{n-1}\text{.}\) On a donc la factorisation</p>
+<p id="p-798">Passons maintenant à l'étape 2. Pour un point (\(n=0\)), la propriété est à nouveau triviale. Supposons-la donc vérifiée pour \(n\) points et notons encore \(A(t)\) le polynôme interpolateur des \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{.}\) Alors le polynôme \(P(t)-A(t)\) est de degré \(n\) au plus, et il s'annule au moins \(n\) fois, en \(x_0,\ldots,x_{n-1}\text{.}\) On a donc la factorisation</p>
 <div class="displaymath">
 \begin{equation*}
 P(t)-A(t)=\lambda(t-x_0)\cdots(t-x_{n-1})
@@ -491,19 +491,19 @@ P(t)-A(t)=\lambda(t-x_0)\cdots(t-x_{n-1})
 <p class="continuation">où, d'après l'étape 1, le coefficient \(\lambda\) et égal à \(\left[A_0,\ldots,A_n\right]\text{.}\) En appliquant enfin l'hypothèse de récurrence à \(A(t)\text{,}\) i.e. aux \(n\) premiers points \(A_0,\ldots,A_{n-1}\text{,}\) on obtient bien la formule \(P(t)=N(t)\) pour \(n+1\) points.</p></article></div>
 <article class="example example-like" id="exemple2diffdiv"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-exemple2diffdiv"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple2diffdiv"><article class="example example-like"><p id="p-798">Déterminons la forme de Newton \(N(t)\) du polynôme interpolateur des quatre points suivants :</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exemple2diffdiv"><article class="example example-like"><p id="p-799">Déterminons la forme de Newton \(N(t)\) du polynôme interpolateur des quatre points suivants :</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(1;-3),\; A_1=(2;7),\; A_2=(3;0)\;\text{et}\; A_3=(4;5).
 \end{equation*}
 </div>
-<p id="p-799">Nous devons calculer les différences divisées suivantes :</p>
+<p id="p-800">Nous devons calculer les différences divisées suivantes :</p>
 <div class="displaymath">
 \begin{equation*}
 \left[A_0\right],\;\left[A_0,A_1\right],\;\left[A_0,A_1,A_2\right]\;\text{et}\;\left[A_0,A_1,A_2,A_3\right].
 \end{equation*}
 </div>
-<p id="p-800">Présentons nos calculs dans un tableau :</p>
+<p id="p-801">Présentons nos calculs dans un tableau :</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c|cccc}
@@ -519,7 +519,7 @@ x_i&amp;y_i&amp;&amp;&amp;\\
 \end{array}
 \end{equation*}
 </div>
-<p id="p-801">On a donc</p>
+<p id="p-802">On a donc</p>
 <div class="displaymath">
 \begin{equation*}
 N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)+\frac{29}{6}(t-1)(t-2)(t-3).
@@ -528,7 +528,7 @@ N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)+\frac{29}{6}(t-1)(t-2)(t-3).
 <article class="remark remark-like" id="remark-16"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">7.1.7</span><span class="period">.</span>
 </h6>
-<p id="p-802">À l'exemple <a class="xref" data-knowl="./knowl/exemple2diffdiv.html" title="Exemple 7.1.6">7.1.6</a>, on a ajouté le point \(A_3=(4;5)\) aux trois points \(A_0=(1;-3),A_1=(2;7)\) et \(A_2=(3;0)\) de l'exemple <a class="xref" data-knowl="./knowl/exemple1newton.html" title="Exemple 7.1.1">7.1.1</a>. La forme de Newton du polynôme interpolateur est alors passée de</p>
+<p id="p-803">À l'exemple <a class="xref" data-knowl="./knowl/exemple2diffdiv.html" title="Exemple 7.1.6">7.1.6</a>, on a ajouté le point \(A_3=(4;5)\) aux trois points \(A_0=(1;-3),A_1=(2;7)\) et \(A_2=(3;0)\) de l'exemple <a class="xref" data-knowl="./knowl/exemple1newton.html" title="Exemple 7.1.1">7.1.1</a>. La forme de Newton du polynôme interpolateur est alors passée de</p>
 <div class="displaymath">
 \begin{equation*}
 N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)
@@ -543,37 +543,37 @@ N(t)=-3+10(t-1)-\frac{17}{2}(t-1)(t-2)+\frac{29}{6}(t-1)(t-2)(t-3).
 <p class="continuation">Seul le coefficient \(29/6\) correspondant au terme de degré \(3\) s'est ajouté : à la différence de la forme de Lagrange, la forme de Newton permet d'ajouter un point à interpoler sans avoir à reprendre tous les calculs.</p></article><article class="remark remark-like" id="lagrangeEtNewtonTroisPoints"><h6 class="heading">
 <span class="type">Remarque</span><span class="space"> </span><span class="codenumber">7.1.8</span><span class="period">.</span>
 </h6>
-<p id="p-803">Comparons la forme de Lagrange et la forme de Newton pour le polynôme interpolateur de trois points d'abscisses distinctes deux à deux</p>
+<p id="p-804">Comparons la forme de Lagrange et la forme de Newton pour le polynôme interpolateur de trois points d'abscisses distinctes deux à deux</p>
 <div class="displaymath">
 \begin{equation*}
 A_0=(x_0;y_0),\: A_1=(x_1;y_1)\;\text{et}\; A_2=(x_2;y_2).
 \end{equation*}
 </div>
-<p id="p-804">Voici sa forme de Lagrange :</p>
+<p id="p-805">Voici sa forme de Lagrange :</p>
 <div class="displaymath">
 \begin{align*}
 L(t)&amp;=y_0\,L_0(t)+y_1\,L_1(t)+y_2\,L_2(t)\\
 &amp;=y_0\frac{(t-x_1)(t-x_2)}{(x_0-x_1)(x_0-x_2)}+y_1\frac{(t-x_0)(t-x_2)}{(x_1-x_0)(x_1-x_2)}+y_2\frac{(t-x_0)(t-x_1)}{(x_2-x_0)(x_2-x_1)}.
 \end{align*}
 </div>
-<p id="p-805">Et voilà sa forme de Newton :</p>
+<p id="p-806">Et voilà sa forme de Newton :</p>
 <div class="displaymath">
 \begin{align*}
 N(t)&amp;=\left[A_0\right]+\left[A_0,A_1\right](t-x_0)+\left[A_0,A_1,A_2\right](t-x_0)(t-x_1)\\
 &amp;=y_0+\frac{y_1-y_0}{x_1-x_0}\cdot(t-x_0)+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0}}{x_2-x_0}\cdot(t-x_0)(t-x_1).
 \end{align*}
 </div>
-<p id="p-806">Pour évaluer la forme de Lagrange écrite ainsi, on a besoin de \(14\) additions / soustractions et de \(12\) multiplications / divisions. Quant à la forme de Newton, elle requiert \(13\) additions / soustractions et \(7\) multiplications / divisions. C'est nettement mieux, et cela peut encore être amélioré en appliquant la méthode de Horner :</p>
+<p id="p-807">Pour évaluer la forme de Lagrange écrite ainsi, on a besoin de \(14\) additions / soustractions et de \(12\) multiplications / divisions. Quant à la forme de Newton, elle requiert \(13\) additions / soustractions et \(7\) multiplications / divisions. C'est nettement mieux, et cela peut encore être amélioré en appliquant la méthode de Horner :</p>
 <div class="displaymath">
 \begin{equation*}
 N(t)=y_0+(t-x_0)\cdot\left(\frac{y_1-y_0}{x_1-x_0}+\frac{\frac{y_2-y_1}{x_2-x_1}-\frac{y_1-y_0}{x_1-x_0}}{x_2-x_0}\cdot(t-x_1)\right).
 \end{equation*}
 </div>
 <p class="continuation">On tombe alors à \(12\) additions / soustractions et \(6\) multiplications / divisions.</p></article><article class="assemblage assemblage-like" id="assemblage-4"><h6 class="heading"><span class="title">Forme de Newton et différences divisées : Calculer efficacement un polynôme interpolateur.</span></h6>
-<ul id="p-807" class="disc">
-<li id="li-579">Objectif : Étant donné \(n+1\) points \(A_0=(x_0;y_0),\ldots,A_n=(x_n;y_n)\) d'abscisses distinctes deux à deux, déterminer le seul polynôme \(N(t)\) de degré \(n\) au plus qui passe par tous ces points.</li>
-<li id="li-580">
-<p id="p-808">Principe : Construire \(N(t)\) comme combinaison linéaire des polynômes</p>
+<ul id="p-808" class="disc">
+<li id="li-580">Objectif : Étant donné \(n+1\) points \(A_0=(x_0;y_0),\ldots,A_n=(x_n;y_n)\) d'abscisses distinctes deux à deux, déterminer le seul polynôme \(N(t)\) de degré \(n\) au plus qui passe par tous ces points.</li>
+<li id="li-581">
+<p id="p-809">Principe : Construire \(N(t)\) comme combinaison linéaire des polynômes</p>
 <div class="displaymath">
 \begin{equation*}
 N_i(t):=(t-x_0)(t-x_1)\cdots(t-x_{i-1})
@@ -592,15 +592,15 @@ d_i=\left[A_0,\ldots,A_i\right]
 \end{equation*}
 </div>
 </li>
-<li id="li-581"><p id="p-809">Terminologie : On appelle \(d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)\) la forme de Newton du polynôme interpolateur des points \(A_0,A_1,\ldots,A_n\text{.}\) Il s'agit du même polynôme que celui obtenu par interpolation de Lagrange, mais écrit différemment.</p></li>
-<li id="li-582">
-<p id="p-810">Avantages :</p>
+<li id="li-582"><p id="p-810">Terminologie : On appelle \(d_0+d_1\,N_1(t)+\cdots+d_n\,N_n(t)\) la forme de Newton du polynôme interpolateur des points \(A_0,A_1,\ldots,A_n\text{.}\) Il s'agit du même polynôme que celui obtenu par interpolation de Lagrange, mais écrit différemment.</p></li>
+<li id="li-583">
+<p id="p-811">Avantages :</p>
 <ul class="circle">
-<li id="li-583">À la différence de la forme de Lagrange, la forme de Newton permet d'ajouter un point d'interpolation sans avoir à reprendre tous les calculs.</li>
-<li id="li-584">Grâce à la technique des différences divisées, le calcul de la forme de Newton nécessite moins d'opérations que celui de la forme de Lagrange.</li>
+<li id="li-584">À la différence de la forme de Lagrange, la forme de Newton permet d'ajouter un point d'interpolation sans avoir à reprendre tous les calculs.</li>
+<li id="li-585">Grâce à la technique des différences divisées, le calcul de la forme de Newton nécessite moins d'opérations que celui de la forme de Lagrange.</li>
 </ul>
 </li>
-<li id="li-585">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1ANZ409wB1DjcOVes1jWh2KRhu0FaUaad/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
+<li id="li-586">Voir aussi : <a class="external" href="https://drive.google.com/file/d/1ANZ409wB1DjcOVes1jWh2KRhu0FaUaad/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
 </ul></article></section></div></main>
 </div>
 <!--Start: StatCounter code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***        GET YOUR OWN FROM STATCOUNTER           ***--><script>

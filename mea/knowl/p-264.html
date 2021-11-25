@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:46:53-04:00       *-->
+<!--*       on 2021-11-25T11:45:21-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,46 +12,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Cette approche naïve conduit à l'implémentation algorithmique <div class="sagecell-python" id="sage-46"><script type="text/x-sage"># entrées :
-n = 3
-coefficients = [10, 7, 3, 5]
-x = 9
-# instructions :
-valeur = coefficients[0]
-for j in range(1, n+1):
-    produit = coefficients[j]
-    for k in range(1, j+1):
-        produit = produit * x
-    valeur = valeur + produit
-# sortie :
-print(valeur)
-</script></div> dont la complexité</p>
+<p>Plus généralement, pour un polynôme de degré \(n\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-T(n)=0{,}5\,n^2+1{,}5\,n
+P(x)=a_0+a_1x+\cdots+a_nx^n
 \end{equation*}
 </div>
-<p class="continuation">est qualifiée de quadratique, c'est-à-dire qu'elle est polynomiale de degré deux.</p>
+<p class="continuation">défini par la liste de ses coefficients \(\left[a_0,a_1,\ldots,a_n\right]\text{,}\) le calcul de \(P(x)\) peut nécessiter jusqu'à \(n\) additions et</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+1+2+\cdots+n=\frac{n(n+1)}{2}
+\end{equation*}
+</div>
+<p class="continuation">multiplications, soit</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+n+\frac{n(n+1)}{2}=0{,}5\,n^2+1{,}5\,n
+\end{equation*}
+</div>
+<p class="continuation">opérations.</p>
 <span class="incontext"><a href="horner.html#p-264">Contexte</a></span>
 </body>
 </html>

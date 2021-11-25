@@ -29,7 +29,8 @@
 
 <definition>
   <p>Soit <m>a, b\in\mathbb{Z}</m>.</p>
-  <p>S'il existe <m>q\in\mathbb{Z}</m> tel que
+  <p>
+    S'il existe <m>q\in\mathbb{Z}</m> tel que
     <me>a=b\cdot q</me>
     alors on dit, de manière équivalente, que
     <ul>
@@ -38,7 +39,7 @@
       <li><p><m>b</m> divise <m>a</m>,</p></li>
       <li><p><m>b</m> est un diviseur de <m>a</m>,</p></li>
     </ul>
-  et on note cela de la façon suivante :
+    et on note cela de la façon suivante :
     <me>b\vert a.</me>
   </p>
 </definition>
@@ -54,7 +55,8 @@
 </example>
 
 <remark>
-  <p>Les critères de divisibilité suivants sont parfois bien utiles.
+  <p>
+    Les critères de divisibilité suivants sont parfois bien utiles.
     <ul>
       <li><p>Un entier est divisible par <m>2</m> si et seulement s'il se termine par un chiffre pair, c'est-à-dire <m>0, 2, 4, 6</m> ou <m>8</m>.</p></li>
       <li><p>Un entier est divisible par <m>5</m> si et seulement s'il se termine par <m>0</m> ou <m>5</m>.</p></li>
@@ -79,10 +81,12 @@
   <title>Division euclidienne</title>
   <statement>
     <p>Soit <m>a\in\mathbb{Z}</m> et <m>b\in\mathbb{Z}^*</m>.</p>
-    <p>Il existe un unique couple <m>(q;r)\in\mathbb{Z}\times\mathbb{N}</m> tel que
+    <p>
+      Il existe un unique couple <m>(q;r)\in\mathbb{Z}\times\mathbb{N}</m> tel que
       <me>a=b\cdot q+r\qquad\text{et}\qquad 0\leq r&lt;|b|.</me>
     </p>
-    <p>On dit alors que
+    <p>
+      On dit alors que
       <ul>
         <li><p><m>a</m> est le dividende,</p></li>
         <li><p><m>b</m> le diviseur,</p></li>
@@ -93,34 +97,10 @@
     </p>
   </statement>
   <proof>
-    <p>Les algorithmes qui suivent l'exemple <xref ref="exemplesDivEucl"/> constituent une preuve de ce théorème essentiellement fondée sur le principe de <url href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_descente_infinie">descente infinie</url>.</p>
+    <p>Les algorithmes Python ci-dessous prouvent l'existence de <m>(q,r)</m>.</p>
+    <p>La preuve de son unicité est laissée en exercice.</p>
   </proof>
 </theorem>
-
-<remark>
-  <p>
-    Il nous arrivera de noter le reste <m>r</m> de la division euclidienne de <m>a</m> par <m>b</m>
-    <ul>
-      <li>
-        <p>
-          <m>a\,\mathrm{mod}\,b</m> qui se lit a modulo b;
-        </p>
-      </li>
-      <li>
-        <p>
-          <c>a % b</c> qui est la commande Python permettant de l'obtenir.
-        </p>
-      </li>
-    </ul>
-  </p>
-</remark>
-
-<remark>
-  <p>Si <m>a</m> et <m>b</m> sont deux entiers relatifs, alors <m>b</m> divise <m>a</m> si et seulement si le reste de la division euclidienne de <m>a</m> par <m>b</m> vaut <m>0</m>.</p>
-  <p>Autrement dit, on a
-    <me>b\vert a\quad\Leftrightarrow\quad a\,\mathrm{mod}\,b=0\quad\Leftrightarrow\quad a\;\%\;b=0.</me>
-  </p>
-</remark>
 
 <example xml:id="exemplesDivEucl">
   <ul>
@@ -131,9 +111,9 @@
       </p>
     </li>
     <li>
-      <p>Lorsqu'on effectue la division de <m>217</m> par <m>3</m>, on trouve que le quotient vaut <m>q=72</m> et le reste <m>r=1</m>.</p>
+      <p>Lorsqu'on effectue la division de <m>-100</m> par <m>35</m>, on trouve que le quotient vaut <m>q=-3</m> et le reste <m>r=5</m>.</p>
       <p>Et on a bien
-        <me>217=3\cdot 72+1\qquad\text{et}\qquad 0\leq 1&lt;3.</me>
+        <me>-100=35\cdot (-3)+5\qquad\text{et}\qquad 0\leq 5&lt;35.</me>
       </p>
     </li>
     <li>
@@ -142,30 +122,30 @@
         <me>432=18\cdot 24+0\qquad\text{et}\qquad 0\leq 0&lt;18.</me>
       </p>
     </li>
-    <li>
-      <p>Lorsqu'on effectue la division de <m>-100</m> par <m>35</m>, on trouve que le quotient vaut <m>q=-3</m> et le reste <m>r=5</m>.</p>
-      <p>Et on a bien
-        <me>-100=35\cdot (-3)+5\qquad\text{et}\qquad 0\leq 5&lt;35.</me>
-      </p>
-    </li>
   </ul>
 </example>
+
+<remark>
+  <p>Pour obtenir le reste <m>r</m> de la division euclidienne de <m>a</m> par <m>b</m> en Python, on utilise la commande <c>a % b</c>.</p>
+  <p>
+    Notez qu'on a
+    <me>b\vert a\quad\Leftrightarrow\quad a\;\%\;b=0.</me>
+  </p>
+</remark>
 
 <p>L'algorithme qui suit renvoie le quotient et le reste de la division euclidienne de <m>a</m> par <m>b</m>. Il fonctionne pour tout couple d'entiers positifs <m>(a;b)</m>.</p>
 
 <sage language='python'>
   <input>
-    # entrées
+    # entrées :
     a = 100
     b = 35
-
-    # instructions
+    # instructions :
     q, r = 0, a
     while r &gt;= b:
         q = q + 1
         r = r - b
-
-    # sortie
+    # sortie :
     print(q, r)
   </input>
 </sage>
@@ -174,14 +154,14 @@
 
 <sage language='python'>
   <input>
-    # fonction renvoyant (q, r)
+    # fonction renvoyant (q, r) :
     def divisionEuclidienne(a, b):
         if b == 0:
             return 'non définie'
         elif a == 0:
             return 0, 0
         else:
-            s = b / abs(b) # le signe de b
+            s = b / abs(b)  # le signe de b
             if a &gt; 0:
                 q, r = 0, a
                 while r - s * b &gt;= 0:
@@ -195,7 +175,7 @@
                     r = r + s * b
                 return q, r
 
-    # tests
+    # tests :
     print(divisionEuclidienne(7, 0))
     print(divisionEuclidienne(0, 2))
     print(divisionEuclidienne(7, 2))
@@ -210,7 +190,8 @@
 <remark>
   <ol>
     <li>
-      <p>Pour tout <m>n\in\mathbb{Z}</m>,
+      <p>
+        Pour tout <m>n\in\mathbb{Z}</m>,
         <ul>
           <li><p><m>1\vert n</m> car <m>n=1\cdot n</m>;</p></li>
           <li><p><m>n\vert n</m> car <m>n=n\cdot 1</m>.</p></li>
@@ -219,7 +200,8 @@
       <p>Tout entier relatif <m>n</m> admet donc au moins <m>\pm 1</m> et <m>\pm n</m> comme diviseurs.</p>
     </li>
     <li>
-      <p>Pour tout <m>n\in\mathbb{Z}^*</m>, on a
+      <p>
+        Pour tout <m>n\in\mathbb{Z}^*</m>, on a
         <me>d\vert n\quad\Rightarrow\quad |d|\leq |n|.</me>
       </p>
     </li>
@@ -231,7 +213,8 @@
   <p>Dressons la liste de tous les diviseurs positifs de <m>15</m>.</p>
   <p>On sait déjà que <m>1</m> et <m>15</m> sont le plus petit et le plus grand élément de cette liste.</p>
   <p>Passons ensuite en revue tous les entiers de <m>2</m> à <m>14</m> et gardons ceux qui divisent <m>15</m>.</p>
-  <p>Finalement, on trouve que les diviseurs positifs de <m>15</m> sont
+  <p>
+    Finalement, on trouve que les diviseurs positifs de <m>15</m> sont
     <me>1,\; 3,\; 5,\; 15.</me>
   </p>
 </example>
@@ -240,13 +223,12 @@
 
 <sage language='python'>
   <input>
-    # entrée
+    # entrée :
     n = 15
-
-    # instructions / sortie
+    # instructions / sortie :
     for k in range(1, n+1):
         if n % k == 0:
-            print(k),
+            print(k)
   </input>
 </sage>
 
@@ -254,7 +236,8 @@
 
 <definition>
   <p>On appelle <url href="https://fr.wikipedia.org/wiki/Nombre_premier">nombre premier</url> tout entier plus grand que <m>1</m> qui n'admet pas d'autre diviseur positif que <m>1</m> et lui-même.</p>
-  <p>Dans l'ordre croissant, la liste des nombres premiers commence ainsi :
+  <p>
+    Dans l'ordre croissant, la liste des nombres premiers commence ainsi :
     <me>2,\; 3,\; 5,\; 7,\; 11,\; 13,\; 17,\; 19,\; 23,\; 29,\; 31,\;\ldots</me>
   </p>
 </definition>
@@ -265,7 +248,8 @@
 </remark>
 
 <example>
-  <p>On a
+  <p>
+    On a
     <me>15=1\cdot 15\quad\text{et}\quad 15=3\cdot 5.</me>
   </p>
   <p>Il n'y a pas d'autre façon de factoriser <m>15</m> comme produit de deux entiers positifs car <m>3</m> et <m>5</m> sont des nombres premiers.</p>
@@ -279,10 +263,12 @@
 
 <example>
   <p>Dressons la liste de tous les diviseurs positifs de <m>18</m>.</p>
-  <p>On commence par décomposer <m>18</m> en produit de facteurs premiers :
+  <p>
+    On commence par décomposer <m>18</m> en produit de facteurs premiers :
     <me>18=2\cdot 3\cdot 3.</me>
   </p>
-  <p>Ses diviseurs positifs sont donc
+  <p>
+    Ses diviseurs positifs sont donc
     <me>1,\; 2,\; 3,\; 2\cdot 3,\; 3\cdot 3,\; 2\cdot 3\cdot 3</me>
     c'est-à-dire
     <me>1,\; 2,\; 3,\; 6,\; 9,\; 18.</me>
@@ -291,10 +277,12 @@
 
 <example>
   <p>Dressons la liste de tous les diviseurs positifs de <m>60</m>.</p>
-  <p>On commence par décomposer <m>60</m> en produit de facteurs premiers :
+  <p>
+    On commence par décomposer <m>60</m> en produit de facteurs premiers :
     <me>60=2\cdot 2\cdot 3\cdot 5.</me>
   </p>
-  <p>Ses diviseurs positifs sont donc
+  <p>
+    Ses diviseurs positifs sont donc
     <me>1,\; 2,\; 3,\; 5,\; 2\cdot 2,\; 2\cdot 3,\; 2\cdot 5,\; 3\cdot 5,\; 2\cdot 2\cdot 3,\; 2\cdot 2\cdot 5,\; 2\cdot 3\cdot 5,\; 2\cdot 2\cdot 3\cdot 5</me>
     c'est-à-dire
     <me>1,\; 2,\; 3,\; 5,\; 4,\; 6,\; 10,\; 15,\; 12,\; 20,\; 30,\; 60</me>
@@ -336,7 +324,7 @@
 <example xml:id="div770">
   <p>Quels sont les diviseurs positifs communs à <m>77</m> et <m>0</m>?</p>
   <p>Diviseurs positifs de 77 : <m>1,\;7,\;11,\;77</m>.</p>
-  <p>Diviseurs positifs de 0 : <m>\mathbb{N}^*</m> car
+  <p>Diviseurs positifs de 0 : tous les entiers positifs, car on a
     <me>0=0\cdot n\quad\Rightarrow\quad n\vert 0</me>
     pour tout entier <m>n</m>.
   </p>
@@ -360,7 +348,8 @@
 </definition>
 
 <example>
-  <p>On déduit des exemples <xref ref="div1518"/>, <xref ref="div1560"/>, <xref ref="div1860"/>, <xref ref="div12077"/> et <xref ref="div770"/> que
+  <p>
+    On déduit des exemples <xref ref="div1518"/>, <xref ref="div1560"/>, <xref ref="div1860"/>, <xref ref="div12077"/> et <xref ref="div770"/> que
     <ul>
       <li><p><m>\text{PGCD}(15;18)=3</m>,</p></li>
       <li><p><m>\text{PGCD}(15;60)=15</m>,</p></li>
@@ -369,7 +358,8 @@
       <li><p><m>\text{PGCD}(77;0)=77</m>.</p></li>
     </ul>
   </p>
-  <p>Notons qu'on retrouve rapidement ces quatre premiers résultats à partir des décompositions en facteurs premiers :
+  <p>
+    Notons qu'on retrouve rapidement ces quatre premiers résultats à partir des décompositions en facteurs premiers :
     <md>
       <mrow>15=3\cdot 5\quad\text{et}\quad 18=2\cdot 3^2\quad&amp;\Rightarrow\quad\text{PGCD}(15;18)=3.</mrow>
       <mrow>15=3\cdot 5\quad\text{et}\quad 60=2^2\cdot 3\cdot 5\quad&amp;\Rightarrow\quad\text{PGCD}(15;60)=3\cdot 5=15.</mrow>
@@ -377,101 +367,146 @@
       <mrow>-120=-2^3\cdot 3\cdot 5\quad\text{et}\quad 77=7\cdot 11\quad&amp;\Rightarrow\quad\text{PGCD}(-120;77)=1.</mrow>
     </md>
   </p>
-  <p>Enfin, l'exemple <xref ref="div770"/> permet de comprendre pourquoi, plus généralement, on a
+  <p>
+    Enfin, l'exemple <xref ref="div770"/> permet de comprendre pourquoi on a
     <me>\text{PGCD}(a;0)=|a|\qquad\text{pour tout }a\in\mathbb{Z}^*.</me>
+    En particulier, ça donne <m>\text{PGCD}(77;0)=77</m>.
   </p>
 </example>
 
 <remark>
-  <p>Dresser la liste des diviseurs communs à deux entiers relatifs ou les décomposer en produits de facteurs premiers sont des opérations qui prennent beaucoup de temps.</p>
-  <p>Il existe une méthode bien plus efficace pour déterminer leur PGCD : il s'agit de l'<url href="https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide">algorithme d'Euclide</url> dont le principe itératif repose sur le fait suivant.</p>
+  <p>Dresser la liste des diviseurs communs à deux entiers relatifs ou les décomposer en produits de facteurs premiers sont des opérations qui prennent du temps.</p>
+  <p>Il existe une méthode plus simple pour déterminer leur PGCD : il s'agit de l'<url href="https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide">algorithme d'Euclide</url> dont le principe itératif repose sur le fait suivant.</p>
 </remark>
 
 <theorem xml:id="principealgoeuclide">
   <statement>
-    <p>Soit <m>a\in\mathbb{Z}</m> et <m>b\in\mathbb{N}^*</m>. Si
-        <me>a=b\cdot q+r\qquad\text{où}\qquad 0\leq r&lt;b</me>
-      est le résultat de la division euclidienne de <m>a</m> par <m>b</m>, alors les couples <m>(a;b)</m> et <m>(b;r)</m> ont les mêmes diviseurs positifs communs.</p>
-    <p>En particulier, on a
+    <p>
+      Soit <m>a\in\mathbb{Z}</m> et <m>b\in\mathbb{Z}^*</m>.
+      Si
+      <me>a=b\cdot q+r\qquad\text{où}\qquad 0\leq r&lt;b</me>
+      est le résultat de la division euclidienne de <m>a</m> par <m>b</m>, alors les couples <m>(a;b)</m> et <m>(b;r)</m> ont les mêmes diviseurs positifs communs.
+    </p>
+    <p>
+      En particulier, on a
       <me>\text{PGCD}(a;b)=\text{PGCD}(b;r).</me>
     </p>
   </statement>
   <proof>
-    <p>Montrer que <m>(a;b)</m> et <m>(b;r)</m> ont les mêmes diviseurs positifs communs revient à établir l'équivalence suivante, pour <m>d\in\mathbb{N}^*</m> :
+    <p>
+      Montrer que <m>(a;b)</m> et <m>(b;r)</m> ont les mêmes diviseurs positifs communs revient à établir l'équivalence suivante, pour <m>d\in\mathbb{N}^*</m> :
       <me>d\vert a\text{ et }d\vert b\quad\Leftrightarrow\quad d\vert b\text{ et }d\vert r.</me>
     </p>
-    <p>Pour cela, nous allons démontrer chacune des deux implications concernées :
+    <p>
+      Pour cela, nous allons démontrer chacune des deux implications concernées :
       <ol>
         <li><p><m>d\vert a</m> et <m>d\vert b\quad\Rightarrow\quad d\vert r\;</m>;</p></li>
         <li><p><m>d\vert b</m> et <m>d\vert r\quad\Rightarrow\quad d\vert a\;</m>.</p></li>
       </ol>
     </p>
-    <p>Commençons par l'implication 1. Supposons que <m>d\vert a</m> et <m>d\vert b</m>, de sorte qu'il existe deux entiers relatifs <m>\alpha</m> et <m>\beta</m> tels que
-      <me>a=\alpha\cdot d\qquad\text{et}\qquad b=\beta\cdot d.</me>
-    </p>
-    <p>Comme <m>a=b\cdot q+r</m>, on a
-      <md>
-        <mrow>\alpha\cdot d=\beta\cdot d\cdot q+r&amp;\quad\Rightarrow\quad r=\alpha\cdot d-\beta\cdot d\cdot q</mrow>
-        <mrow>&amp;\quad\Rightarrow\quad r=(\alpha-\beta\cdot q)\cdot d</mrow>
-        <mrow>&amp;\quad\Rightarrow\quad r=\delta\cdot d\quad\text{avec }\delta=\alpha-\beta\cdot q\in\mathbb{Z}</mrow>
-        <mrow>&amp;\quad\Rightarrow\quad d\vert r.</mrow>
-      </md>
-    </p>
-    <p>Passons maintenant à l'implication 2. Supposons que <m>d\vert b</m> et <m>d\vert r</m>, de sorte qu'il existe deux entiers relatifs <m>\beta</m> et <m>\rho</m> tels que
-      <me>b=\beta\cdot d\qquad\text{et}\qquad r=\rho\cdot d.</me>
-    </p>
-    <p>Comme <m>a=b\cdot q+r</m>, on a
-      <md>
-        <mrow>a=\beta\cdot d\cdot q+\rho\cdot d &amp;\quad\Rightarrow\quad a=(\beta\cdot q+\rho)\cdot d</mrow>
-        <mrow>&amp;\quad\Rightarrow\quad a=\alpha\cdot d\quad\text{avec }\alpha=\beta\cdot q+\rho\in\mathbb{Z}</mrow>
-        <mrow>&amp;\quad\Rightarrow\quad d\vert a.</mrow>
-      </md>
-    </p>
+    <ul>
+      <li>
+        <p>
+          Commençons par l'implication 1.
+          Supposons que <m>d\vert a</m> et <m>d\vert b</m>, de sorte qu'il existe deux entiers relatifs <m>\alpha</m> et <m>\beta</m> tels que
+          <me>a=\alpha\cdot d\qquad\text{et}\qquad b=\beta\cdot d.</me>
+        </p>
+        <p>
+          Comme <m>a=bq+r</m>, on a
+          <md>
+            <mrow>r&amp;=a-bq</mrow>
+            <mrow>&amp;=\alpha d-\beta dq</mrow>
+            <mrow>&amp;=d\cdot(\alpha-\beta q)</mrow>
+            <mrow>&amp;=d\cdot\rho\quad\text{avec }\rho=\alpha-\beta\cdot q\in\mathbb{Z},</mrow>
+          </md>
+          donc <m>d\vert r</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Passons maintenant à l'implication 2.
+          Supposons que <m>d\vert b</m> et <m>d\vert r</m>, de sorte qu'il existe deux entiers relatifs <m>\beta</m> et <m>\rho</m> tels que
+          <me>b=\beta\cdot d\qquad\text{et}\qquad r=\rho\cdot d.</me>
+        </p>
+        <p>
+          On a
+          <md>
+            <mrow>a&amp;=bq+r</mrow>
+            <mrow>&amp;=\beta dq+\rho d</mrow>
+            <mrow>&amp;=d\cdot(\beta q+\rho)</mrow>
+            <mrow>&amp;=d\cdot\alpha\quad\text{avec }\alpha=\beta q+\rho\in\mathbb{Z},</mrow>
+          </md>
+          donc <m>d\vert a</m>.
+        </p>
+      </li>
+    </ul>
     <p>Les deux implications étant démontrées, nous avons prouvé que les couples <m>(a;b)</m> et <m>(b;r)</m> ont les mêmes diviseurs positifs communs.</p>
     <p>Par définition du PGCD, il en découle que <m>\text{PGCD}(a;b)=\text{PGCD}(b;r)</m>.</p>
   </proof>
 </theorem>
 
 <example>
-  <p>Vérifions le théorème <xref ref="principealgoeuclide"/> dans le cas où <m>a=40</m> et <m>b=16</m>. La division euclidienne donne
+  <p>
+    Vérifions le théorème <xref ref="principealgoeuclide"/> dans le cas où <m>a=40</m> et <m>b=16</m>. La division euclidienne donne
     <me>40=16\cdot 2+8.</me>
   </p>
-  <p>Pour <m>(a;b)=(40;16)</m> :
+  <p>
+    Pour <m>(a;b)=(40;16)</m> :
     <ul>
       <li><p>Diviseurs positifs de 40 : <m>1, 2, 4, 5, 8, 10, 20, 40</m>.</p></li>
       <li><p>Diviseurs positifs de 16 : <m>1, 2, 4, 8, 16</m>.</p></li>
-      <li><p>Donc les diviseurs positifs communs sont <m>1, 2, 4, 8</m> et
-        <me>\text{PGCD}(40;16)=8.</me></p></li>
+      <li>
+        <p>
+          Donc les diviseurs positifs communs sont <m>1, 2, 4, 8</m> et
+          <me>\text{PGCD}(40;16)=8.</me>
+        </p>
+      </li>
     </ul>
   </p>
-  <p>Pour <m>(b;r)=(16;8)</m> :
+  <p>
+    Pour <m>(b;r)=(16;8)</m> :
     <ul>
       <li><p>Diviseurs positifs de 16 : <m>1, 2, 4, 8, 16</m>.</p></li>
       <li><p>Diviseurs positifs de 8 : <m>1, 2, 4, 8</m>.</p></li>
-      <li><p>Donc les diviseurs positifs communs sont <m>1, 2, 4, 8</m> et
-        <me>\text{PGCD}(16;8)=8.</me></p></li>
+      <li>
+        <p>
+          Donc les diviseurs positifs communs sont <m>1, 2, 4, 8</m> et
+          <me>\text{PGCD}(16;8)=8.</me>
+        </p>
+      </li>
     </ul>
   </p>
 </example>
 
 <example>
-  <p>Vérifions le théorème <xref ref="principealgoeuclide"/> dans le cas où <m>a=16</m> et <m>b=8</m>. La division euclidienne donne
+  <p>
+    Vérifions le théorème <xref ref="principealgoeuclide"/> dans le cas où <m>a=16</m> et <m>b=8</m>. La division euclidienne donne
     <me>16=8\cdot 2+0.</me>
   </p>
-  <p>Pour <m>(a;b)=(16;8)</m> :
+  <p>
+    Pour <m>(a;b)=(16;8)</m> :
     <ul>
       <li><p>Diviseurs positifs de 16 : <m>1, 2, 4, 8, 16</m>.</p></li>
       <li><p>Diviseurs positifs de 8 : <m>1, 2, 4, 8</m>.</p></li>
-      <li><p>Donc les diviseurs positifs communs sont <m>1, 2, 4, 8</m> et
-        <me>\text{PGCD}(16;8)=8.</me></p></li>
+      <li>
+        <p>
+          Donc les diviseurs positifs communs sont <m>1, 2, 4, 8</m> et
+          <me>\text{PGCD}(16;8)=8.</me>
+        </p>
+      </li>
     </ul>
   </p>
-  <p>Pour <m>(b;r)=(8;0)</m> :
+  <p>
+    Pour <m>(b;r)=(8;0)</m> :
     <ul>
       <li><p>Diviseurs positifs de 8 : <m>1, 2, 4, 8</m>.</p></li>
       <li><p>Diviseurs positifs de 0 : <m>\mathbb{N}^*</m>.</p></li>
-      <li><p>Donc les diviseurs positifs communs sont <m>1, 2, 4, 8</m> et
-        <me>\text{PGCD}(8;0)=8.</me></p></li>
+      <li>
+        <p>
+          Donc les diviseurs positifs communs sont <m>1, 2, 4, 8</m> et
+          <me>\text{PGCD}(8;0)=8.</me>
+        </p>
+      </li>
     </ul>
   </p>
 </example>
@@ -480,18 +515,20 @@
   <title>Algorithme d'Euclide : Calculer le PGCD de deux entiers par divisions euclidiennes successives</title>
   <p>
     <ul>
-      <li><p>Objectif : Calculer le PGCD de deux entiers <m>a\in\mathbb{N}</m> et <m>b\in\mathbb{N}^*</m>.</p></li>
+      <li><p>Objectif : Calculer le PGCD de deux entiers <m>a\in\mathbb{Z}^*</m> et <m>b\in\mathbb{Z}^*</m>.</p></li>
       <li>
         <p>Principe :
           <ul>
+            <li><p>Comme <m>\text{PGCD}(a;b)=\text{PGCD}(|a|;|b|)</m>, on peut toujours se ramener au cas où <m>a\in\mathbb{N}^*</m> et <m>b\in\mathbb{N}^*</m>.</p></li>
             <li>
-              <p>Effectuer la division euclidienne de <m>a</m> par <m>b</m>
+              <p>
+                Effectuer la division euclidienne de <m>a</m> par <m>b</m>
                 <me>a=b\cdot q+r\qquad\text{où}\qquad 0\leq r&lt;b</me>
                 et remplacer <m>(a;b)</m> par <m>(b;r)</m>.
               </p>
             </li>
             <li><p>Recommencer jusqu'à ce que <m>r=0</m>.</p></li>
-            <li><p>Le PGCD est alors le dernier <m>r\neq 0</m>, ou le dernier <m>b</m>.</p></li>
+            <li><p>Le PGCD est alors le dernier <m>r\neq 0</m>, et c'est aussi le dernier <m>b</m>.</p></li>
           </ul>
         </p>
       </li>
@@ -502,7 +539,8 @@
 
 <example xml:id="exemple1algoeuclide">
   <p>Calculons <m>\text{PGCD}(18;15)</m> à l'aide de l'algorithme d'Euclide.</p>
-  <p>On a
+  <p>
+    On a
     <me>
       \begin{array}{|c|c|c|c|}
       \hline
@@ -519,7 +557,8 @@
 
 <example xml:id="exemple2algoeuclide">
   <p>Calculons <m>\text{PGCD}(60;15)</m> à l'aide de l'algorithme d'Euclide.</p>
-  <p>On a
+  <p>
+    On a
     <me>
       \begin{array}{|c|c|c|c|}
       \hline
@@ -535,7 +574,8 @@
 
 <example xml:id="exemple3algoeuclide">
   <p>Calculons <m>\text{PGCD}(120,77)</m> à l'aide de l'algorithme d'Euclide.</p>
-  <p>On a
+  <p>
+    On a
     <me>
       \begin{array}{|c|c|c|c|}
       \hline
@@ -557,7 +597,8 @@
 
 <example xml:id="exemple4algoeuclide">
   <p>Calculons <m>\text{PGCD}(2589;234)</m> à l'aide de l'algorithme d'Euclide.</p>
-  <p>On a
+  <p>
+    On a
     <me>
       \begin{array}{|c|c|c|c|}
       \hline
@@ -578,12 +619,11 @@
 <remark>
   <p>Les restes <m>r</m> obtenus successivement constituent une suite d'entiers strictement décroissante et minorée par <m>0</m>.</p>
   <p>C'est pour cela que l'algorithme converge en un nombre fini d'étapes et qu'on finit par tomber sur <m>r=0</m>.</p>
-  <p>On parle de <url href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_descente_infinie">descente infinie</url>.</p>
 </remark>
 
 <question>
-  <p>Peut-on estimer a priori le nombre d'étapes nécessaires à l'algorithme d'Euclide pour aboutir au <m>\text{PGCD}(a;b)</m>?</p>
-  <p>Le théorème de Lamé répond partiellement à cette question.</p>
+  <p>Peut-on estimer a priori le nombre d'étapes nécessaires à l'algorithme d'Euclide pour aboutir à <m>\text{PGCD}(a;b)</m>?</p>
+  <p>Le théorème de Lamé fait un bon pas dans cette direction.</p>
 </question>
 
 <theorem>
@@ -601,6 +641,8 @@
 <section xml:id="algorithmeeuclide">
 <title>Algorithme</title>
 
+<p>Dans ce qui suit, on note <m>\text{a}\,\%\,\text{b}</m> le reste de la division euclidienne de <m>\text{a}</m> par <m>\text{b}</m>.</p>
+
 <algorithm>
   <title>Algorithme d'Euclide</title>
   <statement>
@@ -614,10 +656,9 @@
       <li><p>Instructions :
         <ul>
           <li>
-            <p>Tant que <m>\text{a mod b}\neq 0</m>,
+            <p>Tant que <m>\text{a}\,\%\,\text{b}\ne 0</m>,
               <ul>
-                <li><p>assigner simulanément à <m>\text{a}</m> et <m>\text{b}</m> les valeurs de <m>\text{b}</m> et de <m>\text{a mod b}\neq 0</m> dans cet ordre.</p></li>
-                <li><p>Attention : S'assurer que <m>\text{a mod b}\neq 0</m> fasse référence aux valeurs de <m>\text{a}</m> et <m>\text{b}</m> issues de l'itération précédente. Si disponible, une double assignation est la meilleure façon d'y parvenir.</p></li>
+                <li><p>assigner simulanément à <m>\text{a}</m> et <m>\text{b}</m> les valeurs de <m>\text{b}</m> et de <m>\text{a}\,\%\,\text{b}</m> dans cet ordre.</p></li>
               </ul>
             </p>
           </li>
@@ -628,21 +669,17 @@
   </statement>
 </algorithm>
 
-<p>En Python, <m>\text{a mod b}</m> s'obtient avec <c>a % b</c>.</p>
-
 <p>Voici une implémentation de cet algorithme qui permet de traiter l'exemple <xref ref="exemple4algoeuclide"/>.</p>
 
 <sage language='python'>
   <input>
-    # entrées
+    # entrées :
     a = 2589
     b = 234
-
-    # instructions
+    # instructions :
     while a % b != 0:
         a, b = b, a % b
-
-    # sortie
+    # sortie :
     print(b)
   </input>
 </sage>
@@ -739,7 +776,10 @@
         <li><p><m>1, 2, 19, 38</m>.</p></li>
         <li><p><m>1, 3, 13, 39</m>.</p></li>
         <li><p><m>1, 2, 3, 6, 9, 18, 27, 54</m>.</p></li>
-        <li><p><url href="https://tinyurl.com/y5ygyt5c"><m>1, 3, 7, 21, 47, 141, 329, 987, 2\,207, 6\,621, 15\,449, 46\,347, 103\,729, 311\,187, 726\,103, 2\,178\,309</m></url>.</p></li>
+        <li>
+          <p><m>1, 3, 7, 21, 47, 141, 329, 987, 2\,207, 6\,621, 15\,449, 46\,347, 103\,729, 311\,187, 726\,103, 2\,178\,309</m>.</p>
+          <p><url href="https://tinyurl.com/y5ygyt5c">Cliquez ici</url> pour voir comment j'ai obtenu cette liste.</p>
+        </li>
       </ol>
     </p>
   </answer>
@@ -860,14 +900,14 @@
   </statement>
   <solution>
     <pre>
-      # fonction
+      # fonction :
       def pgcd(a, b):
           if b == 0:
               return a
           else:
               return pgcd(b, a % b)
 
-      # test
+      # test :
       print(pgcd(43569, 28476))
     </pre>
   </solution>
@@ -905,7 +945,7 @@
     <p>Remarque : Cet exercice est tiré des <url href="https://www.supinfo.com/cours/1ARI/chapitres/02-questions-divisibilite">excellentes notes de cours de Laurent Godefroy</url>, avec l'accord de leur auteur.</p>
   </statement>
   <answer>
-    <p><m>32</m></p>
+    <p><m>\text{PGCD}(325;928)=32</m></p>
   </answer>
   <solution>
     <p>Pour que le pavage soit possible, il faut que la mesure du côté soit un diviseur commun à <m>352</m> et <m>928</m>.</p>
@@ -913,7 +953,7 @@
   </solution>
 </exercise>
 
-<exercise>
+<exercise xml:id="exo_intro_euclide_etendu">
   <statement>
     <p>Le but de cet exercice est d'apprendre à appliquer l'algorithme d'Euclide de façon matricielle, et de découvrir au passage l'objet du chapitre suivant qui est consacré à l'algorithme d'Euclide étendu.</p>
     <ol>

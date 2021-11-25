@@ -282,13 +282,15 @@
         <li><p><m>\text{PGCD}(a;m)=1</m>.</p></li>
       </ol>
     </p>
-    <p>Dans ce cas, on dit que <m>a</m> est inversible modulo <m>m</m>, on appelle <m>u</m> un inverse de <m>a</m> modulo <m>m</m>, et il en existe une infinité.</p>
-    <p>Quand on dispose d'un inverse particulier <m>u_0</m>, les autres s'obtiennent comme suit :
-      <me>u\text{ est un inverse de }a \text{ modulo }m \quad\Leftrightarrow\quad u\equiv u_0\;\mathrm{mod}\;m.</me>
+    <p>Dans ce cas, on dit que <m>a</m> est inversible modulo <m>m</m> et on appelle <m>u</m> un inverse de <m>a</m> modulo <m>m</m>.</p>
+    <p>
+      De plus, quand on dispose d'un inverse particulier <m>u_0</m>, il en existe une infinité qu'on peut paramétrer comme suit :
+      <me>u\text{ est un inverse de }a \text{ modulo }m \quad\Leftrightarrow\quad u=u_0+km\quad\text{où}\;k\in\mathbb{Z}.</me>
     </p>
   </statement>
   <proof>
-    <p>Commençons par établir l'équivalence des trois propriétés indiquées en montrant que
+    <p>
+      Commençons par établir l'équivalence des trois propriétés indiquées en montrant que
       <me>1\;\Rightarrow\;2\;\Rightarrow\;3\;\Rightarrow\;1.</me>
       <ul>
         <li>
@@ -313,27 +315,28 @@
         </li>
       </ul>
     </p>
-    <p>Supposons maintenant que ces propriétés sont vérifiées et fixons <m>u_0\in\mathbb{Z}</m> un inverse de <m>a</m> modulo <m>m</m>, c'est-à-dire tel que
-     <me>au_0\equiv 1\;\mathrm{mod}\;m.</me>
-     Il ne nous reste plus qu'à établir l'équivalence suivante, pour tout <m>u\in\mathbb{Z}</m> :
-     <me>au\equiv 1\;\mathrm{mod}\;m\quad\Leftrightarrow\quad u\equiv u_0\;\mathrm{mod}\;m.</me>
-     D'une part, on a
-     <me>
-       \begin{array}{ccc}
-       au\equiv 1\;\mathrm{mod}\;m&amp;\Rightarrow&amp;u_0\cdot (au)\equiv u_0\cdot 1\;\mathrm{mod}\;m\\
-       &amp;\Rightarrow&amp;(u_0a)\cdot u\equiv u_0\;\mathrm{mod}\;m\\
-       &amp;\Rightarrow&amp;1\cdot u\equiv u_0\;\mathrm{mod}\;m\\
-       &amp;\Rightarrow&amp;u\equiv u_0\;\mathrm{mod}\;m.
-       \end{array}
-     </me>
-     Et réciproquement, on a
-     <me>
-       \begin{array}{ccc}
-       u\equiv u_0\;\mathrm{mod}\;m&amp;\Rightarrow&amp;au\equiv au_0\;\mathrm{mod}\;m\\
-       &amp;\Rightarrow&amp;au\equiv 1\;\mathrm{mod}\;m.
-       \end{array}
-     </me>
-    </p>
+    <p>
+      Supposons maintenant que ces propriétés sont vérifiées et fixons <m>u_0\in\mathbb{Z}</m> un inverse de <m>a</m> modulo <m>m</m>, de sorte que
+      <me>au_0\equiv 1\;\mathrm{mod}\;m.</me>
+      Il ne nous reste plus qu'à établir l'équivalence suivante, pour tout <m>u\in\mathbb{Z}</m> :
+      <me>au\equiv 1\;\mathrm{mod}\;m\quad\Leftrightarrow\quad u\equiv u_0\;\mathrm{mod}\;m.</me>
+      D'une part, on a
+       <me>
+         \begin{array}{ccc}
+         au\equiv 1\;\mathrm{mod}\;m&amp;\Rightarrow&amp;u_0\cdot (au)\equiv u_0\cdot 1\;\mathrm{mod}\;m\\
+         &amp;\Rightarrow&amp;(u_0a)\cdot u\equiv u_0\;\mathrm{mod}\;m\\
+         &amp;\Rightarrow&amp;1\cdot u\equiv u_0\;\mathrm{mod}\;m\\
+         &amp;\Rightarrow&amp;u\equiv u_0\;\mathrm{mod}\;m.
+         \end{array}
+       </me>
+       Et réciproquement, on a
+       <me>
+         \begin{array}{ccc}
+         u\equiv u_0\;\mathrm{mod}\;m&amp;\Rightarrow&amp;au\equiv au_0\;\mathrm{mod}\;m\\
+         &amp;\Rightarrow&amp;au\equiv 1\;\mathrm{mod}\;m.
+         \end{array}
+       </me>
+     </p>
   </proof>
 </theorem>
 
@@ -345,9 +348,14 @@
 <remark>
   <p>Supposons que <m>a</m> soit inversible modulo <m>m</m>.</p>
   <p>Pour trouver un inverse particulier, il suffit d'appliquer l'algorithme d'Euclide étendu.</p>
-  <p>En effet, comme <m>\text{PGCD}(a;m)=1</m>, ce dernier fournit un couple de coefficients <m>(u;v)\in\mathbb{Z}^2</m> tels que
-    <me>au+mv=1\quad\Rightarrow\quad au=1+(-v)m\quad\Rightarrow\quad au\equiv 1\;\mathrm{mod}\;m</me>
-    donc le coefficient <m>u</m> est un inverse de <m>a</m> modulo <m>m</m>.
+  <p>
+    En effet, comme <m>\text{PGCD}(a;m)=1</m>, ce dernier fournit un couple de coefficients <m>(u;v)\in\mathbb{Z}^2</m> tels que
+    <me>au+mv=1</me>
+    d'où
+    <me>au=1+(-v)m</me>
+    et donc
+    <me>au\equiv 1\;\mathrm{mod}\;m</me>
+    de sorte que le coefficient <m>u</m> est un inverse de <m>a</m> modulo <m>m</m>.
   </p>
 </remark>
 
@@ -394,7 +402,7 @@
     </p>
   </statement>
   <proof>
-    <p>À venir.</p>
+    <p>Pour trouver une preuve, on peut voir ça comme un résultat d'interpolation.</p>
   </proof>
 </theorem>
 
@@ -610,32 +618,28 @@
 
 <sage language='python'>
   <input>
-    # entrées
+    # entrées :
     lesA = [3, 4, 5]
     lesM = [17, 11, 6]
-
-    # prérequis
+    # prérequis :
     def euclideEtendu(a, b):
         r0, u0, v0, r1, u1, v1 = a, 1, 0, b, 0, 1
-        while r1 != 0:
+        while r0 % r1 != 0:
             q = r0 // r1
-            r0, u0, v0, r1, u1, v1 = r1, u1, v1, r0 - q * r1, u0 - q * u1, v0 - q * v1
-        return (r0, u0, v0)
-
-    # instructions
+            r0, u0, v0, r1, u1, v1 = r1, u1, v1, r0 % r1, u0 - q * u1, v0 - q * v1
+        return (r1, u1, v1)
+    # instructions :
     M = 1
     for m in lesM:
         M = M * m
-
     x0 = 0
     for i in range(0, len(lesM)):
         ai = lesA[i]
         mi = lesM[i]
-        Mi = M / mi
+        Mi = M // mi
         ui = euclideEtendu(Mi, mi)[1]
         x0 = x0 + ai * Mi * ui
-
-    # sortie
+    # sortie :
     print(x0, M)
   </input>
 </sage>
@@ -784,7 +788,9 @@
 
 <exercise>
   <statement>
-    <p>L'entier <m>a</m> est-il inversible modulo <m>m</m>? Si oui, explicitez l'ensemble de ses inverses et trouvez le plus petit positif parmi eux.
+    <p>
+      L'entier <m>a</m> est-il inversible modulo <m>m</m>?
+      Si oui, explicitez l'ensemble de ses inverses et trouvez le plus petit positif parmi eux.
       <ol>
         <li><p><m>a=4</m> et <m>m=26</m>.</p></li>
         <li><p><m>a=4</m> et <m>m=25</m>.</p></li>
@@ -929,10 +935,13 @@
 
 <exercise>
   <statement>
-    <p>Un grand général chinois nommé Han Xin, mort en 196 avant J.-C., avait une grande armée de mille hommes.</p>
+    <p>Un grand général chinois nommé Han Xin, mort en 196 avant J.-C., avait une armée de mille hommes.</p>
     <p>Après un rude combat, il perdit environ le tiers de ses troupes et voulut savoir combien de ses soldats étaient encore vivants.</p>
     <p>À l’exception de son fidèle conseiller Paul, la plupart ne savaient compter que jusqu’à vingt tout au plus.</p>
-    <p>Paul suggéra alors de demander aux soldats de se grouper par cinq et de compter le nombre de soldats restant seuls. Il recommença l’opération avec des groupes de six puis de onze personnes. Voici les résultats de ces décomptes.
+    <p>
+      Paul suggéra alors de demander aux soldats de se grouper par cinq et de compter le nombre de soldats restant seuls.
+      Il recommença l’opération avec des groupes de six puis de onze personnes.
+      Voici les résultats de ces décomptes.
       <ul>
         <li><p>Par groupes de cinq, il resta deux soldats seuls.</p></li>
         <li><p>Par groupes de six, il resta quatre soldats seuls.</p></li>
@@ -940,7 +949,10 @@
       </ul>
     </p>
     <p>Combien de soldats le général Han Xin avait-il encore dans son armée?</p>
-    <p>Remarque : Cette énigme est bien connue. Je l'ai trouvée dans les <url href="https://drive.google.com/file/d/1XWykGbip4SFK4R56YgqRahgaxohTo-bp/view?usp=sharing">excellentes notes de cours de Jérôme-Melville Giguêre</url>, avec l'accord de leur auteur.</p>
+    <p>
+      Remarque : Cette énigme est bien connue.
+      Je l'ai prise dans les <url href="https://drive.google.com/file/d/1XWykGbip4SFK4R56YgqRahgaxohTo-bp/view?usp=sharing">excellentes notes de cours de Jérôme-Melville Giguêre</url>.
+    </p>
   </statement>
   <solution>
     <p>Il s'agit de trouver un entier <m>x</m> égal environ à <m>667</m> et tel que
@@ -981,9 +993,10 @@
 
 <exercise>
   <statement>
-    <p>Victor possède environ sept cents billes et il aimerait en connaître le nombre exact.</p>
+    <p>Victor possède sept cents billes environ, et il aimerait en connaître le nombre exact.</p>
     <p>Comme il est encore très jeune, il ne sait compter que jusqu'à vingt.</p>
-    <p>Son père lui suggère alors de grouper ses billes par cinq et de lui dire combien il en reste, puis de répéter l'opération en les groupant par sept, et enfin par onze.
+    <p>
+      Son père lui suggère alors de grouper ses billes par cinq et de lui dire combien il en reste, puis de répéter l'opération en les groupant par sept, et enfin par onze.
       <ul>
         <li><p>Par groupes de cinq, il ne reste aucune bille seule.</p></li>
         <li><p>Par groupes de sept, il reste trois billes seules.</p></li>
@@ -991,10 +1004,11 @@
       </ul>
     </p>
     <p>Combien de billes Victor a-t-il exatement?</p>
-    <p>Remarque : Cet exercice est tiré des <url href="https://drive.google.com/file/d/1XWykGbip4SFK4R56YgqRahgaxohTo-bp/view?usp=sharing">excellentes notes de cours de Jérôme-Melville Giguêre</url>, avec l'accord de leur auteur.</p>
+    <p>Remarque : Cet exercice s'inspire des <url href="https://drive.google.com/file/d/1XWykGbip4SFK4R56YgqRahgaxohTo-bp/view?usp=sharing">excellentes notes de cours de Jérôme-Melville Giguêre</url>, avec l'accord de leur auteur.</p>
   </statement>
   <solution>
-    <p>Il s'agit de trouver un entier <m>x</m> égal environ à <m>700</m> et tel que
+    <p>
+      Il s'agit de trouver un entier <m>x</m> égal environ à <m>700</m> et tel que
       <me>\left\{
         \begin{array}{cccl}
         x&amp;\equiv&amp;0&amp;\text{mod}\; 5,\\
@@ -1032,7 +1046,9 @@
 
 <exercise>
   <statement>
-    <p>Pour chaque système de congruences, déterminer si on peut appliquer le théorème des restes chinois. Si oui, résoudre le système.
+    <p>
+      Pour chaque système de congruences, déterminer si on peut appliquer le théorème des restes chinois.
+      Si oui, résoudre le système.
       <ol>
         <li>
           <p>
@@ -1197,9 +1213,8 @@
       <me>a^p\equiv a\;\mathrm{mod}\;p</me>
       pour tout entier <m>a\in\mathbb{Z}</m> et tout nombre premier <m>p</m>.
     </p>
-    <p>Ce résultat porte le nom de <url href="https://fr.wikipedia.org/wiki/Petit_th%C3%A9or%C3%A8me_de_Fermat">petit théorème de Fermat</url> et il est la clef de voûte de l'algorithme de chiffrement RSA.</p>
+    <p>Ce résultat porte le nom de <url href="https://fr.wikipedia.org/wiki/Petit_th%C3%A9or%C3%A8me_de_Fermat">petit théorème de Fermat</url> et il est la clef de voûte de l'algorithme de <url href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">chiffrement RSA</url>.</p>
     <p>Démontrez-le.</p>
-    <p>Remarque : Si vous voulez une présentation claire et concise du chiffrement RSA, je vous recommande <url href="https://www.supinfo.com/cours/1ARI/chapitres/06-systemes-rsa-el-gamal">les excellentes notes de cours de Laurent Godefroy</url>.</p>
   </statement>
 </exercise>
 

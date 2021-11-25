@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:47:08-04:00       *-->
+<!--*       on 2021-11-25T11:45:35-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -17,34 +17,17 @@
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Point</span><span class="period">.</span>
 </h6>
-<p>En appliquant la formule de Taylor-Lagrange pour \(n=1\) à la fonction \(f\text{,}\) on trouve \(\xi_2\in\;]c;b[\) tel que</p>
+<p>En appliquant la formule de Taylor-Lagrange pour \(n=0\) à la fonction \(f\text{,}\) on trouve \(\xi_1\in\;]c;b[\) tel que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-f(c)=f(x_0)+f'(x_0)(c-x_0)+\frac{f''(\xi_2)}{2}(c-x_0)^2.
+f(x_0)=f(c)+f'(\xi_1)(x_0-c).
 \end{equation*}
 </div>
-<p class="continuation">Comme \(f(c)=0\text{,}\) diviser par \(f'(x_0)\) conduit à</p>
+<p class="continuation">Comme \(f(c)=0\text{,}\) \(f'(\xi_1)&gt;0\) et \(x_0&gt;c\text{,}\) on en déduit que \(f(x_0)&gt;0\text{.}\)</p>
+<p>Comme par ailleurs \(f'(x_0)&gt;0\text{,}\) il en découle que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-0=\frac{f(x_0)}{f'(x_0)}+c-x_0+\frac{f''(\xi_2)}{2f'(x_0)}(c-x_0)^2,
-\end{equation*}
-</div>
-<p class="continuation">d'où</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-x_0-\frac{f(x_0)}{f'(x_0)}=c+\frac{f''(\xi_2)}{2f'(x_0)}(c-x_0)^2,
-\end{equation*}
-</div>
-<p class="continuation">soit</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-x_1=c+\frac{f''(\xi_2)}{2f'(x_0)}(c-x_0)^2.
-\end{equation*}
-</div>
-<p>Comme par ailleurs \(f''(\xi_2)&gt;0\text{,}\) \(f'(x_0)&gt;0\) et \((c-x_0)^2&gt;0\text{,}\) on en conclut que</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-x_1=c+\underbrace{\frac{f''(\xi_2)}{2f'(x_0)}(c-x_0)^2}_{\text{positif}}&gt;c.
+x_1=x_0-\underbrace{\frac{f(x_0)}{f'(x_0)}}_{\text{positif}}&lt;x_0.
 \end{equation*}
 </div></article><span class="incontext"><a href="presentationnewton.html#li-290">Contexte</a></span>
 </body>

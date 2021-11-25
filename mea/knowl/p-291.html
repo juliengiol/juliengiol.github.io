@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:46:55-04:00       *-->
+<!--*       on 2021-11-25T11:45:22-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,45 +12,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Évaluer (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-python' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-python',
-                           linked: true,
-                           languages: ['python'],
-                           evalButtonText: 'Évaluer (Python)'});
-});
-</script>
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Évaluez le code suivant pour calculer \(F_{50}\) à l'aide d'une exponentiation matricielle rapide implémentée en Python à l'aide de NumPy. <div class="sagecell-python" id="sage-49"><script type="text/x-sage"># entrée :
-n = 49
-# instructions :
-import numpy as np
-M = np.array([[1,1], [1,0]])
-
-def puissanceRecursive(M, n):
-    if n == 1:
-        return M
-    elif n % 2 == 0:
-        return puissanceRecursive(M.dot(M.T), n / 2)
-    else:
-        N = puissanceRecursive(M.dot(M.T), (n - 1) / 2)
-        return M.dot(N.T)
-
-N = puissanceRecursive(M, n)
-# sortie :
-print(N)
-</script></div> On en déduit à nouveau que \(F_{50}=12\,586\,269\,025\text{.}\)</p>
+<p>Supposons que pour un certain entier \(n\ge 3\) on ait</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Alors par produit matriciel, on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^n&amp;=\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-1}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\\
+&amp;=\begin{bmatrix}F_n&amp;F_{n-1}\\F_{n-1}&amp;F_{n-2}\end{bmatrix}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\\
+&amp;=\begin{bmatrix}F_n+F_{n-1}&amp;F_n\\F_{n-1}+F_{n-2}&amp;F_{n-1}\end{bmatrix},
+\end{align*}
+</div>
+<p class="continuation">ce qui coïncide bien avec</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{bmatrix}F_{n+1}&amp;F_n\\F_n&amp;F_{n-1}\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">car, par définition <a class="xref" data-knowl="./knowl/defi_fibo.html" title="Définition 3.4.2">3.4.2</a>, on a</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+F_n+F_{n-1}=F_{n+1}\quad\text{et}\quad F_{n-1}+F_{n-2}=F_n.
+\end{equation*}
+</div>
+<p class="continuation">La propriété est donc vraie pour \(n+1\text{,}\) ce qui achève la démonstration.</p>
 <span class="incontext"><a href="fibonacci.html#p-291">Contexte</a></span>
 </body>
 </html>

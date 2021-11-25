@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:47:39-04:00       *-->
+<!--*       on 2021-11-25T11:46:02-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,30 +15,11 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Instructions :</p>
+<p>Entrées :</p>
 <ul class="circle">
-<li>Assigner la liste \(\text{y}\) comme premier élément de la liste \(\text{diffDiv}\) qui contiendra toutes les différences divisées.</li>
-<li>
-<p>Pour \(\text{j}\) allant de \(\text{1}\) à \(\text{n}\text{,}\)</p>
-<ul class="square">
-<li>initialiser \(\text{nouvelleColonne}\text{,}\) la liste qui contiendra toutes les différences divisées calculées à l'étape \(j\) : \(\text{nouvelleColonne}=\left[\;\right]\text{;}\)</li>
-<li>
-<p>pour \(\text{i}\) allant de \(\text{0}\) à \(\text{n-j}\text{,}\)</p>
-<ul class="disc">
-<li>
-<p>calculer la différence divisée \(\left[A_i,A_{i+1},\ldots,A_{i+j}\right]\) en utilisant la récursivité et l'assigner à \(\text{nouvelleDiffDiv}\) :</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\text{nouvelleDiffDiv} = \frac{\text{diffDiv}[j-1][i+1]-\text{diffDiv}[j-1][i]}{x[i+j]-x[i]};
-\end{equation*}
-</div>
-</li>
-<li>ajouter la nouvelle différence divisée \(\text{nouvelleDiffDiv}\) à la liste \(\text{nouvelleColonne}\text{;}\)</li>
-</ul>
-</li>
-<li>ajouter \(\text{nouvelleColonne}\) à la liste \(\text{diffDiv}\text{.}\)</li>
-</ul>
-</li>
+<li>Assigner à \(\text{n}\) le degré maximal du polynôme interpolateur.</li>
+<li>Assigner à \(\text{x0},\text{x1},\ldots,\text{xn}\) les abscisses des points à interpoler.</li>
+<li>Assigner à \(\text{y0},\text{y1},\ldots,\text{yn}\) les ordonnées des points à interpoler.</li>
 </ul>
 <span class="incontext"><a href="algorithmediffdiv.html#p-812">Contexte</a></span>
 </body>

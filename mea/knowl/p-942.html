@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:47:51-04:00       *-->
+<!--*       on 2021-11-25T11:46:12-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,67 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<ul class="disc">
-<li>Objectif : Obtenir des approximations de \(\displaystyle\int_a^bf(x)\mathrm{d}x\text{.}\)</li>
-<li>
-<p>Principe :</p>
-<ul class="circle">
-<li>
-<p>Prendre la subdivision régulière</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b
-\end{equation*}
-</div>
-<p class="continuation">de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de longueur</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Delta x:=\frac{b-a}{n}.
-\end{equation*}
-</div>
-</li>
-<li>Choisir un point \(\xi_k\in[x_{k-1};x_k]\) pour tout \(k=1,\ldots,n\)</li>
-<li>
-<p>Calculer la somme de Riemann correspondante, i.e. poser</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\text{Approximation}:=\Delta x\cdot\sum_{k=1}^nf(\xi_k).
-\end{equation*}
-</div>
-</li>
-</ul>
-</li>
-<li>
-<p>Cas particuliers : Les choix</p>
-<ul class="circle">
-<li>\(\xi_k:=x_{k-1}=a+(k-1)\cdot\Delta x\text{,}\)</li>
-<li>\(\xi_k:=x_k=a+k\cdot\Delta x\text{,}\)</li>
-<li>\(\xi_k:=\frac{x_{k-1}+x_k}{2}=a+(k-0{,}5)\cdot\Delta x\text{,}\)</li>
-</ul>
-<p class="continuation">donnent respectivement des rectangles <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">à gauche</em>, <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">à droite</em>, et <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">au milieu</em>.</p>
-</li>
-<li>
-<p>Précision : Si la fonction \(f\) est dérivable avec une dérivée continue sur \([a;b]\) de sorte qu'il existe une constante \(M\) telle que</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-|f'(x)|\leq M\quad\text{pour tout }x\in[a;b],
-\end{equation*}
-</div>
-<p class="continuation">alors on a</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\left|\text{Erreur}\right|\leq \frac{M(b-a)^2}{2n}
-\end{equation*}
-</div>
-<p class="continuation">où l'on définit l'erreur commise par</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\text{Erreur}:=\underbrace{\int_a^bf(x)\mathrm{d}x}_{\text{Valeur exacte}}-\underbrace{\Delta x\cdot\sum_{k=1}^nf(\xi_k)}_{\text{Approximation}}.
-\end{equation*}
-</div>
-</li>
-<li>Voir aussi : <a class="external" href="https://drive.google.com/file/d/1UdauYlwH-DPOj7DwUuNMScPHQ_CybnF0/view?usp=sharing" target="_blank">Notes de cours de Jérôme</a>.</li>
-</ul>
+<p xmlns:svg="http://www.w3.org/2000/svg">Cela prendrait donc \(n=10^5\) rectangles au moins pour obtenir une telle précision.</p>
 <span class="incontext"><a href="presentationrectangles.html#p-942">Contexte</a></span>
 </body>
 </html>

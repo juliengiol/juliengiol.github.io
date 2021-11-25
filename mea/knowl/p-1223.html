@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:48:18-04:00       *-->
+<!--*       on 2021-11-25T11:46:36-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,23 +15,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Soit une intégrale définie</p>
+<p>On a donc</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\int_a^bf(x)\mathrm{d}x
-\end{equation*}
-</div>
-<p class="continuation">et soit</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b
-\end{equation*}
-</div>
-<p class="continuation">la subdivision régulière de l'intervalle d'intégration \([a;b]\) en \(n\) sous-intervalles de même longueur</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Delta x=\frac{b-a}{n}.
-\end{equation*}
+\begin{align*}
+\int_c^dN(t)\mathrm{d}t&amp;=f(c)\cdot I_1+\frac{2(f(m)-f(c))}{\Delta x}\cdot I_2+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot I_3\\
+&amp;=f(c)\cdot\Delta x+\frac{2(f(m)-f(c))}{\Delta x}\cdot\frac{(\Delta x)^2}{2}\\
+&amp;\qquad+\frac{2(f(c)-2f(m)+f(d))}{(\Delta x)^2}\cdot\frac{(\Delta x)^3}{12}\\
+&amp;=f(c)\cdot\Delta x+(f(m)-f(c))\cdot\Delta x+(f(c)-2f(m)+f(d))\cdot\frac{\Delta x}{6}\\
+&amp;=\frac{\Delta x}{6}\cdot\left(6f(c)+6(f(m)-f(c))+f(c)-2f(m)+f(d)\right)\\
+&amp;=\frac{\Delta x}{6}\cdot(f(c)+4f(m)+f(d)).
+\end{align*}
 </div>
 <span class="incontext"><a href="presentationsimpson.html#p-1223">Contexte</a></span>
 </body>

@@ -273,6 +273,8 @@
 <section xml:id="algorithmebezout">
 <title>Algorithme</title>
 
+<p>Dans ce qui suit, on désigne par <m>\text{r0}\,\%\,\text{r1}</m> le reste de la division euclidienne de <m>\text{r0}</m> par <m>\text{r1}</m>, et par <m>\text{r0}\,//\,\text{r1}</m> son quotient.</p>
+
 <algorithm>
   <title>Algorithme d'Euclide étendu</title>
   <statement>
@@ -291,12 +293,12 @@
             </p>
           </li>
           <li>
-            <p>Tant que <m>\text{r1}\neq 0</m>,
+            <p>Tant que <m>\text{r0}\,\%\,\text{r1}\neq 0</m>,
               <ul>
-                <li><p>assigner à <m>\text{q}</m> le quotient de la division euclidienne de <m>\text{r0}</m> par <m>\text{r1}</m> ;</p></li>
+                <li><p>assigner à <m>\text{q}</m> le quotient <m>\text{r0}\,//\,\text{r1}</m> ;</p></li>
                 <li>
                   <p>assigner simultanément à <m>\text{r0}</m>, <m>\text{u0}</m>, <m>\text{v0}</m>, <m>\text{r1}</m>, <m>\text{u1}</m>, <m>\text{v1}</m> les valeurs <m>\text{r1}</m>, <m>\text{u1}</m>, <m>\text{v1}</m>,
-                    <m>\text{r0}-\text{q}\cdot\text{r1}</m>, <m>\text{u0}-\text{q}\cdot\text{u1}</m>, <m>\text{v0}-\text{q}\cdot\text{v1}</m>.
+                    <m>\text{r0}\,\%\,\text{r1}</m>, <m>\text{u0}-\text{q}\cdot\text{u1}</m>, <m>\text{v0}-\text{q}\cdot\text{v1}</m>.
                   </p>
                 </li>
               </ul>
@@ -304,7 +306,7 @@
           </li>
         </ul></p>
       </li>
-      <li><p>Sortie : Afficher <m>\text{r0}</m>, <m>\text{u0}</m>, <m>\text{v0}</m>.</p></li>
+      <li><p>Sortie : Afficher <m>\text{r1}</m>, <m>\text{u1}</m>, <m>\text{v1}</m>.</p></li>
     </ul>
   </statement>
 </algorithm>
@@ -313,18 +315,16 @@
 
 <sage language='python'>
   <input>
-    # entrées
+    # entrées :
     a = 2589
     b = 234
-
-    # instructions
+    # instructions :
     r0, u0, v0, r1, u1, v1 = a, 1, 0, b, 0, 1
-    while r1 != 0:
+    while r0 % r1 != 0:
         q = r0 // r1
-        r0, u0, v0, r1, u1, v1 = r1, u1, v1, r0 - q * r1, u0 - q * u1, v0 - q * v1
-
-    # sortie
-    print(r0, u0, v0)
+        r0, u0, v0, r1, u1, v1 = r1, u1, v1, r0 % r1, u0 - q * u1, v0 - q * v1
+    # sortie :
+    print(r1, u1, v1)
   </input>
 </sage>
 
@@ -345,6 +345,7 @@
       <li><p>Pour <m>a=30</m> et <m>b=5</m>.</p></li>
     </ol>
     </p>
+    <p>Remarque : Vérifiez vos calculs en évaluant la combinaison linéaire obtenue.</p>
   </statement>
   <solution>
     <ol>
@@ -701,7 +702,8 @@
       admet une infinité de solutions <m>(u;v)\in\mathbb{Z}^2</m>.
     </p>
     <p>Notons <m>(u_0;v_0)</m> la solution particulière fournie par l'algorithme d'Euclide étendu.</p>
-    <p>Montrez que pour tout entier <m>k\in\mathbb{Z}</m>, le couple <m>(u;v)\in\mathbb{Z}^2</m> défini par
+    <p>
+      Montrez que, pour tout entier <m>k\in\mathbb{Z}</m>, le couple <m>(u;v)\in\mathbb{Z}^2</m> défini par
       <me>\left\{
         \begin{array}{rcccc}
         u&amp;=&amp;u_0&amp;+&amp;k\cdot b\\
@@ -849,7 +851,7 @@
         &amp;=&amp;ae
         \end{array}
       </me>
-      avec <m>e=uc+dv\in\mathbb{Z}</m>,d'où <m>a\vert c</m>.
+      avec <m>e=uc+dv\in\mathbb{Z}</m>, d'où <m>a\vert c</m>.
     </p>
   </solution>
 </exercise>
@@ -867,7 +869,9 @@
       <ul>
         <li><p>Si <m>p</m> divise <m>b</m>, on a fini.</p></li>
         <li>
-          <p>Si <m>p</m> ne divise pas <m>b</m>, alors le plus grand diviseur commun à <m>p</m> et à <m>b</m> est forcément <m>1</m>. On a donc
+          <p>
+            Si <m>p</m> ne divise pas <m>b</m>, alors le plus grand diviseur commun à <m>p</m> et à <m>b</m> est forcément <m>1</m>.
+            On a donc
             <me>p\vert bc\quad\text{et}\quad\text{PGCD}(p;b)=1</me>
             d'où
             <me>p\vert c</me>
@@ -883,12 +887,12 @@
   <statement>
     <ol>
       <li>
-        <p>Montrez que si <m>a</m> et <m>b</m> sont des entiers premiers entre eux, alors pour tout <m>x\in\mathbb{Z}</m>, on a :
+        <p>Montrez que si <m>a</m> et <m>b</m> sont des entiers premiers entre eux, alors pour tout <m>x\in\mathbb{Z}</m>, on a
           <me>a\vert x\quad\text{et}\quad b\vert x\quad\Rightarrow\quad ab\vert x.</me>
         </p>
       </li>
       <li>
-        <p>Montrez que si <m>m_1,\ldots,m_n\in\mathbb{Z}</m> sont premiers entre eux deux à deux, alors pour tout <m>x\in\mathbb{Z}</m>, on a :
+        <p>Montrez que si <m>m_1,\ldots,m_n\in\mathbb{Z}</m> sont premiers entre eux deux à deux, alors pour tout <m>x\in\mathbb{Z}</m>, on a
           <me>m_i\vert x\quad\text{pour tout } i=1,\ldots,n\quad\Rightarrow\quad m_1\cdots m_n\vert x.</me>
         </p>
       </li>
@@ -908,7 +912,7 @@
           <me>k=mb.</me>
           Finalement, on obtient
           <me>x=ka=(mb)\cdot a=m\cdot(ab)</me>
-          ce qui montre que <m>ab</m> divise <m>x</m>. 
+          ce qui montre que <m>ab</m> divise <m>x</m>.
         </p>
       </li>
       <li>
@@ -936,14 +940,20 @@
       <ul>
         <li>
           <p>L'algorithme d'Euclide étendu permet de mettre une fraction <m>\frac{a}{b}</m> dans sa forme irréductible.</p>
-          <p>Il faut pour cela se rendre jusqu'à la ligne qui permet d'écrire <m>0</m> comme combinaison linéaire <m>a</m> et de <m>b</m> :
+          <p>
+            Il faut pour cela se rendre jusqu'à la ligne qui permet d'écrire <m>0</m> comme combinaison linéaire <m>a</m> et de <m>b</m>.
+            On a alors
             <me>0=au+bv\quad\Rightarrow\quad\frac{a}{b}=-\frac{v}{u}.</me>
-            Et il se trouve que ces coefficients <m>u</m> et <m>v</m> sont forcément premiers entre eux (Sauriez-vous le montrer?).
+            Et il se trouve que ces coefficients <m>u</m> et <m>v</m> sont forcément premiers entre eux.
+            (Tous les couples <m>(u;v)</m> qui apparaissent au long de l'algorithme d'Euclide étendu sont premiers entre eux.
+            Une façon de s'en convaincre est de bien comprendre l'exercice <xref ref="exo_intro_euclide_etendu"/>, d'observer que toutes les matrices y sont de déterminant <m>\pm 1</m>, et de ne pas oublier le théorème de Bézout <xref ref="thmbezout"/>.)
           </p>
         </li>
         <li>
-          <p>Par exemple, l'algorithme d'Euclide étendu appliqué à <url href="https://juliengiol.github.io/mea/bezout.html"><m>2589</m> et <m>234</m></url> donne
-            <me>0=2589\cdot 78+234\cdot(-863)\quad\Rightarrow\quad\frac{2589}{234}=\frac{863}{78}.</me>
+          <p>
+            Par exemple, grâce à l'algorithme d'Euclide étendu appliqué à <url href="https://juliengiol.github.io/mea/bezout.html"><m>2589</m> et <m>234</m></url>, on obtient
+            <me>0=2589\cdot 78+234\cdot(-863)\quad\Rightarrow\quad\frac{2589}{234}=\frac{863}{78}</me>
+            où <m>\text{PGCD}(863;78)=1</m>.
           </p>
         </li>
       </ul>
@@ -952,54 +962,71 @@
   <solution>
     <ol>
       <li>
-        <p>Par définition des nombres rationnels, il existe <m>(a;b)\in\mathbb{Z}\times\mathbb{N}^*</m> tel que
+        <p>
+          Par définition des nombres rationnels, il existe <m>(a;b)\in\mathbb{Z}\times\mathbb{N}^*</m> tel que
           <me>r=\frac{a}{b}.</me>
         </p>
         <p>Si <m>\text{PGCD}(a;b)=1</m>, on a fini.</p>
-        <p>Sinon, notons <m>\text{PGCD}(a;b)=d</m>. Comme <m>d</m> divise <m>a</m> et <m>b</m>, il existe deux entiers relatifs <m>a_0, b_0</m> tels que
-          <me>a=da_0\quad\text{et}\quad b=db_0</me>
-          d'où
-          <me>r=\frac{a}{b}=\frac{da_0}{db_0}=\frac{a_0}{b_0}.</me>
-          Il ne reste plus qu'à montrer que <m>\text{PGCD}(a_0;b_0)=1</m>. On commence par appliquer Bachet-Bézout <xref ref="bachetbezout"/> :
-          <me>\text{PGCD}(a;b)=d\quad\Rightarrow\quad\exists(u;v)\in\mathbb{Z}^2,\;au+bv=d.</me>
-          Puis
-          <me>
-            \begin{array}{cccr}
-            au+bv=d&amp;\quad\Rightarrow\quad&amp;da_0u+db_0v=d&amp;\\
-            &amp;\quad\Rightarrow\quad&amp;a_0u+b_0v=1&amp;\text{ par division par }d\\
-            &amp;\quad\Rightarrow\quad&amp;\text{PGCD}(a_0;b_0)=1&amp;\text{ par Bézout.}\\
-            \end{array}
-          </me>
+        <p>
+          Sinon, notons <m>d:=\text{PGCD}(a;b)</m>.
+          Comme <m>d</m> divise <m>a</m> et <m>b</m>, il existe deux entiers relatifs <m>a_0, b_0</m> tels que
+          <me>a=da_0\quad\text{et}\quad b=db_0.</me>
+          On a alors
+          <me>r=\frac{a}{b}=\frac{da_0}{db_0}=\frac{a_0}{b_0},</me>
+          et il ne reste plus qu'à montrer que <m>\text{PGCD}(a_0;b_0)=1</m>.
+        </p>
+        <p>
+          Par le théorème de Bachet-Bézout <xref ref="bachetbezout"/>, il existe <m>(u;v)\in\mathbb{Z}^2</m> tel que
+          <m>au+bv=d</m>, d'où
+          <me>da_0u+db_0v=d.</me>
+          En divisant par <m>d</m>, on obtient
+          <me>a_0u+b_0v=1,</me>
+          d'où <m>\text{PGCD}(a_0;b_0)=1</m> par le théorème de Bézout <xref ref="thmbezout"/>.
         </p>
       </li>
       <li>
-        <p>Raisonnons par l'absurde et supposons qu'il existe <m>(a_1;a_2)\neq(b_1;b_2)</m> tels que
+        <p>
+          Supposons qu'il existe <m>(a_1;a_2)</m> et <m>(b_1;b_2)</m> tels que
           <me>r=\frac{a_1}{b_1}=\frac{a_2}{b_2}\quad\text{avec}\quad(a_i;b_i)\in\mathbb{Z}\times\mathbb{N}^*\;\text{ et }\;\text{PGCD}(a_i;b_i)=1.</me>
+          Nous devons montrer que <m>(a_1;a_2)=(b_1;b_2)</m>.
         </p>
-        <p>Notons que
+        <p>
+          Commençons par noter que
           <me>a_1b_2=b_1a_2.</me>
         </p>
-        <p>Alors
-          <me>b_1\vert b_1a_2=a_1b_2\quad\text{et}\quad\text{PGCD}(a_1;b_1)</me>
-          implique que
-          <me>b_1\vert b_2</me>
-          par le lemme de Gauss <xref ref="lemmedegauss"/> et, par un raisonnement symétrique, on a aussi
-          <me>b_2\vert b_1.</me>
-        </p>
-        <p>Comme <m>b_1</m> et <m>b_2</m> sont tous deux positifs, on déduit de ce qui précède qu'il existe deux entiers positifs <m>c, d</m> tels que
-          <me>b_1=cb_2\quad\text{et}\quad b_2=db_1,</me>
-          d'où
-          <me>
-            \begin{array}{cccc}
-            b_1=cb_2&amp;\quad\Rightarrow\quad&amp;b_1=cdb_1&amp;\\
-            &amp;\quad\Rightarrow\quad&amp;1=cd&amp;\text{ par division par }b_1\\
-            &amp;\quad\Rightarrow\quad&amp;c=d=1&amp;\text{ car }c, d\in\mathbb{N}^*\\
-            &amp;\quad\Rightarrow\quad&amp;b_1=b_2&amp;\text{ car }b_1=cb_2\\
-            &amp;\quad\Rightarrow\quad&amp;a_1=a_2&amp;\text{ car }a_1b_2=b_1a_2.\\
-            \end{array}
-          </me>
-        </p>
-        <p>On a donc montré que <m>(a_1;a_2)=(b_1;b_2)</m>, d'où la contradiction cherchée.</p>
+        <ul>
+          <li>
+            <p>
+              Alors
+              <me>b_1\vert b_1a_2=a_1b_2\quad\text{et}\quad\text{PGCD}(a_1;b_1)=1</me>
+              implique que
+              <me>b_1\vert b_2</me>
+              par le lemme de Gauss <xref ref="lemmedegauss"/>.
+            </p>
+            <p>
+              Par un raisonnement symétrique, on a aussi
+              <me>b_2\vert b_1.</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              Comme <m>b_1</m> et <m>b_2</m> sont tous deux positifs, on déduit de ce qui précède qu'il existe deux entiers positifs <m>c, d</m> tels que
+              <me>b_1=cb_2\quad\text{et}\quad b_2=db_1.</me>
+              On a alors
+              <me>b_1=cdb_1,</me>
+              si bien qu'une division par <m>b_1</m> entraîne
+              <me>cd=1.</me>
+            </p>
+            <p>
+              Comme le seul diviseur positif de <m>1</m> est <m>1</m> lui-même, il en découle que
+              <me>c=d=1,</me>
+              d'où <m>b_1=b_2</m>.
+            </p>
+          </li>
+          <li>
+             <p>Finalement, revenant à l'équation <m>a_1b_2=a_2b_1</m>, on a aussi <m>a_1=a_2</m>, ce qui complète la démonstration.</p>
+          </li>
+        </ul>
       </li>
     </ol>
   </solution>
@@ -1019,7 +1046,7 @@
     <p>Albert est parti randonner sans montre ni chronomètre, mais avec des oeufs, une casserole, un briquet, et deux sabliers : un de sept minutes, et un autre de neuf minutes.</p>
     <ol>
       <li><p>Comment Albert doit-il procéder pour préparer ses oeufs en suivant à la lettre le secret de Ricardo?</p></li>
-      <li><p>Expliquez comment faire pour chronométrer une durée de <m>n</m> minutes avec ces deux sabliers, quelque soit la valeur de <m>n\in\mathbb{N}^*</m>.</p></li>
+      <li><p>Expliquez comment faire pour chronométrer une durée de <m>n</m> minutes avec ces deux sabliers, quelle que soit la valeur de <m>n\in\mathbb{N}^*</m>.</p></li>
     </ol>
     <p>Remarque : Cet exercice est inspiré des <url href="https://www.supinfo.com/cours/1ARI/chapitres/02-questions-divisibilite">excellentes notes de cours de Laurent Godefroy</url>, avec l'accord de leur auteur.</p>
   </statement>

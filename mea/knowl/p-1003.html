@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:47:58-04:00       *-->
+<!--*       on 2021-11-25T11:46:17-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,21 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Le but de cet exercice est d'établir des résultats techniques utilisés pour démontrer le Théorème <a class="xref" data-knowl="./knowl/erreur_rectangles.html" title="Théorème 8.1.11">8.1.11</a>.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Voici une façon de faire :<pre class="code-block tex2jax_ignore"># fonction :
+def rectanglesAuMilieu(f, a, b, n):
+    approximation = 0
+    deltaX = (b - a) / n
+    x = a + deltaX / 2
+    while x &lt; b:
+        approximation = approximation + f(x)
+        x = x + deltaX
+    approximation = deltaX * approximation
+    return approximation
+# test :
+def f(x):
+    return 1 / (1 + x)
+print(rectanglesAuMilieu(f, 0.0, 1.0, 1000))
+</pre></p>
 <span class="incontext"><a href="exercicesrectangles.html#p-1003">Contexte</a></span>
 </body>
 </html>

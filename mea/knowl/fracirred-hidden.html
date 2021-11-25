@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:49:03-04:00       *-->
+<!--*       on 2021-11-25T11:47:16-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -30,21 +30,22 @@ r=\frac{a}{b}\quad\text{et}\quad\text{PGCD}(a;b)=1.
 <ul class="disc">
 <li>
 <p xmlns:svg="http://www.w3.org/2000/svg">L'algorithme d'Euclide étendu permet de mettre une fraction \(\frac{a}{b}\) dans sa forme irréductible.</p>
-<p>Il faut pour cela se rendre jusqu'à la ligne qui permet d'écrire \(0\) comme combinaison linéaire \(a\) et de \(b\) :</p>
+<p>Il faut pour cela se rendre jusqu'à la ligne qui permet d'écrire \(0\) comme combinaison linéaire \(a\) et de \(b\text{.}\) On a alors</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 0=au+bv\quad\Rightarrow\quad\frac{a}{b}=-\frac{v}{u}.
 \end{equation*}
 </div>
-<p class="continuation">Et il se trouve que ces coefficients \(u\) et \(v\) sont forcément premiers entre eux (Sauriez-vous le montrer?).</p>
+<p class="continuation">Et il se trouve que ces coefficients \(u\) et \(v\) sont forcément premiers entre eux. (Tous les couples \((u;v)\) qui apparaissent au long de l'algorithme d'Euclide étendu sont premiers entre eux. Une façon de s'en convaincre est de bien comprendre l'exercice <a class="xref" data-knowl="./knowl/exo_intro_euclide_etendu.html" title="Exercice 11.3.10">11.3.10</a>, d'observer que toutes les matrices y sont de déterminant \(\pm 1\text{,}\) et de ne pas oublier le théorème de Bézout <a class="xref" data-knowl="./knowl/thmbezout.html" title="Théorème 12.1.9: Bézout">12.1.9</a>.)</p>
 </li>
 <li>
-<p>Par exemple, l'algorithme d'Euclide étendu appliqué à <a class="external" href="https://juliengiol.github.io/mea/bezout.html" target="_blank">\(2589\) et \(234\)</a> donne</p>
+<p>Par exemple, grâce à l'algorithme d'Euclide étendu appliqué à <a class="external" href="https://juliengiol.github.io/mea/bezout.html" target="_blank">\(2589\) et \(234\)</a>, on obtient</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-0=2589\cdot 78+234\cdot(-863)\quad\Rightarrow\quad\frac{2589}{234}=\frac{863}{78}.
+0=2589\cdot 78+234\cdot(-863)\quad\Rightarrow\quad\frac{2589}{234}=\frac{863}{78}
 \end{equation*}
 </div>
+<p class="continuation">où \(\text{PGCD}(863;78)=1\text{.}\)</p>
 </li>
 </ul>
 <div class="solutions"><a class="solution-knowl original" data-knowl="./knowl/solution-126-hidden.html" title="Solution 12.3.8.1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution</span></a></div></article></body>

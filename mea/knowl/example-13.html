@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-06T14:08:46-04:00       *-->
+<!--*       on 2021-11-25T11:43:23-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,36 +15,31 @@
 </head>
 <body>
 <article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">A.1.1</span><span class="period">.</span>
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">1.1.23</span><span class="period">.</span>
 </h6>
-<p>Supposons qu'on s'intéresse à une intégrale dont la valeur exacte est</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\text{Valeur exacte}=12{,}5
-\end{equation*}
-</div>
-<p class="continuation">et qu'à l'aide d'une méthode numérique, on obtienne l'approximation suivante :</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\text{Approximation}=12{,}4.
-\end{equation*}
-</div>
-<p>Alors l'erreur vaut</p>
+<p>On déduit des exemples <a class="xref" data-knowl="./knowl/div1518.html" title="Exemple 1.1.16">1.1.16</a>, <a class="xref" data-knowl="./knowl/div1560.html" title="Exemple 1.1.17">1.1.17</a>, <a class="xref" data-knowl="./knowl/div1860.html" title="Exemple 1.1.18">1.1.18</a>, <a class="xref" data-knowl="./knowl/div12077.html" title="Exemple 1.1.19">1.1.19</a> et <a class="xref" data-knowl="./knowl/div770.html" title="Exemple 1.1.20">1.1.20</a> que</p>
+<ul class="disc">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\text{PGCD}(15;18)=3\text{,}\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\text{PGCD}(15;60)=15\text{,}\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\text{PGCD}(18;60)=6\text{,}\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\text{PGCD}(-120;77)=1\text{,}\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\text{PGCD}(77;0)=77\text{.}\)</p></li>
+</ul>
+<p>Notons qu'on retrouve rapidement ces quatre premiers résultats à partir des décompositions en facteurs premiers :</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\text{Erreur}&amp;=\text{Valeur exacte}-\text{Approximation}\\
-&amp;=12{,}5-12{,}4\\
-&amp;=0{,}1
+15=3\cdot 5\quad\text{et}\quad 18=2\cdot 3^2\quad&amp;\Rightarrow\quad\text{PGCD}(15;18)=3.\\
+15=3\cdot 5\quad\text{et}\quad 60=2^2\cdot 3\cdot 5\quad&amp;\Rightarrow\quad\text{PGCD}(15;60)=3\cdot 5=15.\\
+18=2\cdot 3^2\quad\text{et}\quad 60=2^2\cdot 3\cdot 5\quad&amp;\Rightarrow\quad\text{PGCD}(15;60)=2\cdot 3=6.\\
+-120=-2^3\cdot 3\cdot 5\quad\text{et}\quad 77=7\cdot 11\quad&amp;\Rightarrow\quad\text{PGCD}(-120;77)=1.
 \end{align*}
 </div>
-<p class="continuation">tandis que l'erreur relative représente</p>
+<p>Enfin, l'exemple <a class="xref" data-knowl="./knowl/div770.html" title="Exemple 1.1.20">1.1.20</a> permet de comprendre pourquoi on a</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\text{Erreur relative}&amp;=\frac{\text{Erreur}}{\left|\text{Valeur exacte}\right|}\times 100\;\%\\
-&amp;=\frac{0{,}1}{12{,}5}\times 100\;\%\\
-&amp;=0{,}8\;\%
-\end{align*}
+\begin{equation*}
+\text{PGCD}(a;0)=|a|\qquad\text{pour tout }a\in\mathbb{Z}^*.
+\end{equation*}
 </div>
-<p class="continuation">de la valeur exacte.</p></article><span class="incontext"><a href="erreur_abs_et_rel.html#example-13">Contexte</a></span>
+<p class="continuation">En particulier, ça donne \(\text{PGCD}(77;0)=77\text{.}\)</p></article><span class="incontext"><a href="presentationeuclide.html#example-13">Contexte</a></span>
 </body>
 </html>

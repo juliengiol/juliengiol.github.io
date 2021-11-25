@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:49:04-04:00       *-->
+<!--*       on 2021-11-25T11:47:17-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -24,33 +24,31 @@ r=\frac{a}{b}.
 \end{equation*}
 </div>
 <p xmlns:svg="http://www.w3.org/2000/svg">Si \(\text{PGCD}(a;b)=1\text{,}\) on a fini.</p>
-<p>Sinon, notons \(\text{PGCD}(a;b)=d\text{.}\) Comme \(d\) divise \(a\) et \(b\text{,}\) il existe deux entiers relatifs \(a_0, b_0\) tels que</p>
+<p>Sinon, notons \(d:=\text{PGCD}(a;b)\text{.}\) Comme \(d\) divise \(a\) et \(b\text{,}\) il existe deux entiers relatifs \(a_0, b_0\) tels que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-a=da_0\quad\text{et}\quad b=db_0
+a=da_0\quad\text{et}\quad b=db_0.
 \end{equation*}
 </div>
-<p class="continuation">d'où</p>
+<p class="continuation">On a alors</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-r=\frac{a}{b}=\frac{da_0}{db_0}=\frac{a_0}{b_0}.
+r=\frac{a}{b}=\frac{da_0}{db_0}=\frac{a_0}{b_0},
 \end{equation*}
 </div>
-<p class="continuation">Il ne reste plus qu'à montrer que \(\text{PGCD}(a_0;b_0)=1\text{.}\) On commence par appliquer Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a> :</p>
+<p class="continuation">et il ne reste plus qu'à montrer que \(\text{PGCD}(a_0;b_0)=1\text{.}\)</p>
+<p>Par le théorème de Bachet-Bézout <a class="xref" data-knowl="./knowl/bachetbezout.html" title="Théorème 12.1.1: Bachet-Bézout">12.1.1</a>, il existe \((u;v)\in\mathbb{Z}^2\) tel que \(au+bv=d\text{,}\) d'où</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\text{PGCD}(a;b)=d\quad\Rightarrow\quad\exists(u;v)\in\mathbb{Z}^2,\;au+bv=d.
+da_0u+db_0v=d.
 \end{equation*}
 </div>
-<p class="continuation">Puis</p>
+<p class="continuation">En divisant par \(d\text{,}\) on obtient</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{cccr}
-au+bv=d&amp;\quad\Rightarrow\quad&amp;da_0u+db_0v=d&amp;\\
-&amp;\quad\Rightarrow\quad&amp;a_0u+b_0v=1&amp;\text{ par division par }d\\
-&amp;\quad\Rightarrow\quad&amp;\text{PGCD}(a_0;b_0)=1&amp;\text{ par Bézout.}\\
-\end{array}
+a_0u+b_0v=1,
 \end{equation*}
-</div></article><span class="incontext"><a href="exercicesbezout.html#li-1131">Contexte</a></span>
+</div>
+<p class="continuation">d'où \(\text{PGCD}(a_0;b_0)=1\) par le théorème de Bézout <a class="xref" data-knowl="./knowl/thmbezout.html" title="Théorème 12.1.9: Bézout">12.1.9</a>.</p></article><span class="incontext"><a href="exercicesbezout.html#li-1131">Contexte</a></span>
 </body>
 </html>

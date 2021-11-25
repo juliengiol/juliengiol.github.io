@@ -2,7 +2,7 @@
 <html lang="fr-FR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-01T18:48:09-04:00       *-->
+<!--*       on 2021-11-25T11:46:28-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,57 +15,47 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.3.2</span><span class="period">.</span>
+<span class="type">Point</span><span class="space"> </span><span class="codenumber">9.3.3.1</span><span class="period">.</span>
 </h6>
 <p>On s'occupe ici de l'intégrale</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\int_2^4\cos\left(\frac{x^3}{5}\right)\mathrm{d}x
+\int_0^1e^{x^2}\mathrm{d}x
 \end{equation*}
 </div>
-<p class="continuation">avec quatre trapèzes.</p>
-<p>La fonction \(g(x):=\cos\left(\frac{x^3}{5}\right)\) vérifie</p>
+<p class="continuation">avec six trapèzes.</p>
+<p>La fonction \(f(x):=e^{x^2}\) vérifie</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-g'(x)=-\frac{3x^2}{5}\sin\left(\frac{x^3}{5}\right)
+f'(x)=2xe^{x^2}
 \end{equation*}
 </div>
 <p class="continuation">et</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-g''(x)&amp;=-\frac{6x}{5}\sin\left(\frac{x^3}{5}\right)-\frac{3x^2}{5}\cdot\frac{3x^2}{5}\cos\left(\frac{x^3}{5}\right)\\
-&amp;=-\frac{6x}{5}\sin\left(\frac{x^3}{5}\right)-\frac{9x^4}{25}\cos\left(\frac{x^3}{5}\right).
+f''(x)&amp;=2\cdot e^{x^2}+2x\cdot 2xe^{x^2}\\
+&amp;=(2+4x^2)e^{x^2}.
 \end{align*}
 </div>
-<p>Comme on a</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-|\cos(t)|\le 1\quad\text{et}\quad |\sin(t)|\le 1
-\end{equation*}
-</div>
-<p class="continuation">pour tout \(t\text{,}\) et comme les fonctions</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-x\longmapsto\frac{6|x|}{5}\quad\text{et}\quad x\longmapsto\frac{9x^4}{25}
-\end{equation*}
-</div>
-<p class="continuation">sont positives et croissantes sur l'intervalle \([2;4]\text{,}\) on a</p>
+<p>Comme les fonctions \(x\mapsto e^{x^2}\) et \(x\mapsto 2+4x^2\) sont positives et croissantes sur \([0;1]\text{,}\) on a</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-|g''(x)|&amp;=\left|-\frac{6x}{5}\sin\left(\frac{x^3}{5}\right)-\frac{9x^4}{25}\cos\left(\frac{x^3}{5}\right)\right|\\
-&amp;\le\left|\frac{6x}{5}\sin\left(\frac{x^3}{5}\right)\right|+\left|\frac{9x^4}{25}\cos\left(\frac{x^3}{5}\right)\right|\\
-&amp;=\frac{6|x|}{5}\cdot\left|\sin\left(\frac{x^3}{5}\right)\right|+\frac{9x^4}{25}\cdot\left|\cos\left(\frac{x^3}{5}\right)\right|\\
-&amp;\le\frac{6\cdot 4}{5}\cdot 1+\frac{9\cdot 4^4}{25}\cdot 1\\
-&amp;=96{,}96
+|f''(x)|&amp;=\left|(2+4x^2)\cdot e^{x^2}\right|\\
+&amp;=\left|2+4x^2\right|\cdot\left|e^{x^2}\right|\\
+&amp;=(2+4x^2)\cdot e^{x^2}\\
+&amp;\le (2+4\cdot 1^2)\cdot e^{1^2}\\
+&amp;=6e
 \end{align*}
 </div>
-<p class="continuation">pour tout \(x\in[2;4]\text{.}\)</p>
-<p>On peut donc prendre \(M:=96{,}96\) pour appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> :</p>
+<p class="continuation">pour tout \(x\in[0;1]\text{.}\)</p>
+<p>On peut donc prendre \(M:=6e\) pour appliquer le théorème <a class="xref" data-knowl="./knowl/erreur_trapezes.html" title="Théorème 9.1.2">9.1.2</a> :</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 |\text{Erreur}|&amp;\leq\frac{M(b-a)^3}{12n^2}\\
-&amp;=\frac{96{,}96\cdot(4-2)^3}{12\cdot 4^2}\\
-&amp;=4{,}040.
+&amp;=\frac{6e(1-0)^3}{12\cdot 6^2}\\
+&amp;=\frac{e}{72}\\
+&amp;=0{,}037\,753\ldots\\
+&amp;\le 0{,}038.
 \end{align*}
 </div></article><span class="incontext"><a href="exercicestrapezes.html#li-829">Contexte</a></span>
 </body>
