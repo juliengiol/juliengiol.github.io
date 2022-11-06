@@ -68,7 +68,7 @@ window.MathJax = {
 </head>
 <body class="pretext-content ignore-math"><div style="width:600px; height:667px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">@interact
 def _(points = input_box(label = 'points', default = [[-1, 6], [3, -2], [7, 2], [4, 4], [8, 5]], width = 50)):
-    figure = polygon2d(points, color = 'yellow', edgecolor = 'blue', thickness = 3)
+    figure = polygon2d(points, color = 'yellow', edgecolor = 'blue', thickness = 2)
     show(figure)
     area = 0
     points.append(points[0])
